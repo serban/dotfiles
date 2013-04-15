@@ -1,0 +1,52 @@
+[user]
+        name = Serban Giuroiu
+        email = giuroiu@gmail.com
+[alias]
+        a = add
+        b = branch
+        c = checkout
+        cp = cherry-pick
+        d = diff --stat --unified=5
+        e = blame -e
+        f = fetch
+        g = grep --line-number
+        gi = grep --ignore-case --line-number
+        h = show
+        l = log --decorate --stat
+        o = commit
+        om = commit --amend
+        omh = commit --amend --reuse-message=HEAD
+        p = pull
+        r = rebase
+        t = status
+        u = push
+        z = reset --hard
+
+        sa = stash apply
+        sd = stash drop
+        sh = stash show -v
+        sl = stash list
+        sp = stash pop
+        ss = stash save
+[branch]
+        autosetupmerge = true
+
+        # For newer versions of git, this has been superseded by pull.rebase.
+        # Keep it for now so that old versions of git still rebase on pull.
+        autosetuprebase = always
+[color]
+        ui = auto
+[core]
+        autocrlf = false
+        excludesfile = ~/.gitignore
+        whitespace = space-before-tab,tab-in-indent,trailing-space
+[grep]
+        lineNumber = true
+[merge]
+        stat = true
+[pull]
+        rebase = true
+[push]
+        default = simple
+[rebase]
+        stat = true

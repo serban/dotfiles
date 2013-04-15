@@ -1,0 +1,15 @@
+shelltitle Shell
+hardstatus alwayslastline "[%S] %-w%{= .G}%n %t%{-}%+w"
+
+defscrollback 10000
+ignorecase on
+
+vbell off
+vbellwait 10
+vbell_msg 'Ding!'
+bell_msg 'Ding! - Window %'
+
+startup_message off
+
+bind j focus down
+bind k focus up
