@@ -1,0 +1,62 @@
+# vim:set ts=8 sw=4 sts=4 et:
+
+[begin] (Fluxbox)
+    [submenu] (Terminals)
+        [exec] (Transparent) {pterm}
+        [exec] (Root) {pterm root}
+        [exec] (Xterm) {pterm xterm}
+        [exec] (Reddy) {pterm reddy}
+        [separator]
+        [exec] (White) {pterm white}
+        [exec] (Black) {pterm black}
+        [exec] (Red) {pterm red}
+        [exec] (Orange) {pterm orange}
+        [exec] (Green) {pterm green}
+        [exec] (Cyan) {pterm cyan}
+        [exec] (Purple) {pterm purple}
+    [end]
+
+    [exec] (Konqueror) {kfmclient openProfile filemanagement}
+    [exec] (Home) {kfmclient openProfile Home}
+    [exec] (Files) {kfmclient openProfile Files}
+    [exec] (Share) {kfmclient openProfile Share}
+    [exec] (Nautilus) {nautilus --no-desktop ~}
+    [exec] (KRename) {krename}
+
+    [separator]
+
+    [exec] (Mixer) {pterm alsamixer}
+    [exec] (MOC) {pterm mocp}
+    [exec] (Audacious) {audacious2}
+    [exec] (Grip) {grip}
+
+    [separator]
+
+    [exec] (Chrome) {chromium-bin}
+    [exec] (Firefox) {firefox}
+    [exec] (Opera) {opera -notrayicon}
+    [exec] (Thunderbird) {thunderbird}
+    [exec] (KMail) {kmail}
+    [exec] (KNode) {knode}
+    [exec] (Pidgin) {pidgin}
+
+    [separator]
+
+    [exec] (VirtualBox) {VirtualBox}
+    [exec] (Eclipse) {~/src/eclipse/eclipse}
+    [exec] (NetBeans) {~/src/netbeans-6.7.1/bin/netbeans}
+    [exec] (OpenOffice) {oowriter}
+
+    [separator]
+
+    [exec] (KSnapShot) {ksnapshot}
+    [exec] (HTop) {pterm htop}
+
+    [separator]
+    [config] (Fluxbox)
+    [submenu] (Styles)
+        [include] (/usr/share/fluxbox/menu.d/styles/) 
+    [end]
+    [reconfig] (Refresh Config)
+    [exit] (Exit)
+[end]

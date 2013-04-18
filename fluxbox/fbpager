@@ -1,0 +1,32 @@
+# vim:set ts=8 sw=4 sts=4 et:
+
+fbpager.alpha:                  40
+fbpager.x: 0
+fbpager.y: 0
+fbpager.workspace.width:        19
+fbpager.workspace.height:       19
+fbpager.workspacesPerRow:       8
+fbpager.changeWorkspaceButton:  1
+fbpager.prevWorkspaceButton:    4
+fbpager.nextWorkspaceButton:    5
+fbpager.icons:                  false
+fbpager.color:                  black
+fbpager.backgroundColor:        black
+fbpager.currentBackgroundColor: white
+fbpager.windowColor:            white
+fbpager.focusedWindowColor:     lightblue
+fbpager.windowBorderColor:      black
+fbpager.windowBorderWidth:      1
+
+# Features not implemented yet?
+fbpager.layer:                  Dock
+fbpager.moveInWorkspaceButton:  0
+fbpager.dragToWorkspaceButton:  0
+fbpager.followDrag:             false
+fbpager.followMove:             false
+fbpager.raiseWindowButton: 2
+fbpager.lowerWindowButton: 3
+fbpager.closeWindowButton: 3 3 1
+fbpager.exitButton: 1 3 3
+fbpager.align: LeftToRight
+fbpager.multiClickTime: 250

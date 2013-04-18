@@ -1,0 +1,104 @@
+# vim:set ts=8 sw=4 sts=4 et:
+# [modifiers] key :command [arguments ...]
+
+# Mod1    Alt
+# Mod4    Windows
+#
+# Mouse1  Left Click
+# Mouse2  Middle Click
+# Mouse3  Right Click
+# Mouse4  Scroll Up
+# Mouse5  Scroll Down
+
+# Applications
+Mod4 b :Exec firefox
+Mod4 c :Exec kcalc
+Mod4 e :Exec kwrite
+Mod4 g :Exec pterm mocp
+Mod4 h :Exec pterm htop
+Mod4 l :Exec pterm alsamixer
+Mod4 v :Exec gvim
+
+Mod4 f :Exec kfmclient openProfile Home
+Mod4 d :Exec kfmclient openProfile Files
+Mod4 s :Exec kfmclient openProfile Share
+
+Mod4 q :Exec pterm black
+Mod4 w :Exec pterm white
+Mod4 r :Exec pterm root
+Mod4 t :Exec pterm
+Mod4 j :Exec pterm reddy
+Mod4 k :Exec pterm inst
+
+Menu :Exec pause
+Print :Exec ksnapshot
+Control Mod1 Escape :Exec xkill
+
+# Window actions
+Mod1 F1 :ToggleCmd {SetLayer Top} {SetLayer Normal}
+Mod1 F2 :Exec fbrun
+Mod1 F3 :Stick
+Mod1 F4 :Close
+#Control Mod1 F4 :Kill
+Mod1 F5 :Minimize
+Mod1 F6 :MaximizeVertical
+Mod1 F7 :MaximizeHorizontal
+Mod1 F8 :Maximize
+Mod1 F9 :Shade
+Pause :ShowDesktop
+
+Mod1 Tab :NextWindow
+Mod1 Shift Tab :PrevWindow
+Control Tab :NextWindow {static}
+Control Shift Tab :PrevWindow {static}
+Mod1 grave :NextTab
+Mod1 Shift grave :PrevTab
+
+# Change workspaces
+Mod4 1 :Workspace 1
+Mod4 2 :Workspace 2
+Mod4 3 :Workspace 3
+Mod4 4 :Workspace 4
+Mod4 5 :Workspace 5
+Mod4 6 :Workspace 6
+Mod4 7 :Workspace 7
+Mod4 8 :Workspace 8
+Mod4 9 :Workspace 9
+Mod4 0 :Workspace 10
+
+# Move window to workspace without changing the active workspace
+Control Mod1 1 :SendToWorkspace 1
+Control Mod1 2 :SendToWorkspace 2
+Control Mod1 3 :SendToWorkspace 3
+Control Mod1 4 :SendToWorkspace 4
+Control Mod1 5 :SendToWorkspace 5
+Control Mod1 6 :SendToWorkspace 6
+Control Mod1 7 :SendToWorkspace 7
+Control Mod1 8 :SendToWorkspace 8
+Control Mod1 9 :SendToWorkspace 9
+Control Mod1 0 :SendToWorkspace 10
+
+# Move window
+Control Mod1 Left :MoveLeft 40
+Control Mod1 Right :MoveRight 40
+Control Mod1 Up :MoveUp 40
+Control Mod1 Down :MoveDown 40
+
+# Mouse actions
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
+OnDesktop Mouse1 :HideMenus
+OnDesktop Mouse2 :WorkspaceMenu
+OnDesktop Mouse3 :RootMenu
+
+#OnTitleBar Double Mouse1 :Maximize
+OnTitleBar Double Mouse1 :MacroCmd {Maximize} {Resize -74 0}
+OnTitleBar Mouse2 :StartTabbing
+OnTitleBar Mouse3 :WindowMenu
+OnTitleBar Mouse4 :ShadeOn
+OnTitleBar Mouse5 :ShadeOff
+
+OnWindow Mod1 Mouse1 :StartMoving
+OnWindow Mod1 Mouse3 :StartResizing NearestCorner
+OnWindow Mod1 Mouse4 :MacroCmd {Raise} {Focus} {TakeToPrevWorkspace}
+OnWindow Mod1 Mouse5 :MacroCmd {Raise} {Focus} {TakeToNextWorkspace}

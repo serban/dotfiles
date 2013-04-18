@@ -1,0 +1,24 @@
+# vim:set ts=8 sw=4 sts=4 et:
+
+# Run xprop to find out the WM_CLASS property that identifies a window with
+# its application.
+
+[app] (aterm)
+    [Deco] {NONE}
+[end]
+
+[app] (gkrellm)
+    [FocusHidden] {yes}
+[end]
+
+[app] (fbrun)
+    [Position] (CENTER) {0 0}
+    [Layer] (AboveDock)
+[end]
+
+[app] (fbpager)
+    [Position] (LOWERLEFT) {0 0}
+    [Layer] (Dock)
+    [Deco] {NONE}
+    [FocusHidden] {yes}
+[end]
