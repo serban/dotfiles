@@ -4,7 +4,7 @@ session.screen0.toolbar.height:         20
 session.screen0.toolbar.widthPercent:   90
 session.screen0.toolbar.placement:      BottomCenter
 session.screen0.toolbar.tools:          workspacename, iconbar, systemtray, clock
-session.screen0.strftimeFormat:         %a %b %d - %R
+session.screen0.strftimeFormat:         %a %b %d %R
 session.screen0.userFollowModel:        Ignore
 session.screen0.focusModel:             MouseFocus
 session.screen0.autoRaise:              False

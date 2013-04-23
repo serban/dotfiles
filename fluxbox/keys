@@ -91,12 +91,16 @@ OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse2 :WorkspaceMenu
 OnDesktop Mouse3 :RootMenu
 
-#OnTitleBar Double Mouse1 :Maximize
-OnTitleBar Double Mouse1 :MacroCmd {Maximize} {Resize -74 0}
+# Titlebar actions
+OnTitleBar Double Mouse1 :Maximize
+#OnTitleBar Double Mouse1 :MacroCmd {Maximize} {Resize -74 0}
+OnTitleBar Mouse1 :MacroCmd {Raise} {Focus} {ActivateTab}
 OnTitleBar Mouse2 :StartTabbing
 OnTitleBar Mouse3 :WindowMenu
 OnTitleBar Mouse4 :ShadeOn
 OnTitleBar Mouse5 :ShadeOff
+
+OnTitleBar Move1 :StartMoving
 
 OnWindow Mod1 Mouse1 :StartMoving
 OnWindow Mod1 Mouse3 :StartResizing NearestCorner
