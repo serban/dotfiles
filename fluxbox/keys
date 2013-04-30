@@ -42,8 +42,8 @@ Mod1 F8 :Maximize
 Mod1 F9 :Shade
 Menu :ShowDesktop
 
-Mod1 Tab :NextWindow
-Mod1 Shift Tab :PrevWindow
+Mod1 Tab :NextWindow {groups} (workspace=[current])
+Mod1 Shift Tab :PrevWindow {groups} (workspace=[current])
 Control Tab :NextWindow {static}
 Control Shift Tab :PrevWindow {static}
 Mod1 grave :NextTab
