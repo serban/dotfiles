@@ -1,6 +1,6 @@
 # vim:set ts=8 sw=4 sts=4 et:
 
-export PATH=~/bin:$PATH
+export PATH="~/bin:~/.dotfiles/bin:${PATH}"
 
 # Poweroff the display after five minutes of inactivity
 xset s blank
@@ -13,16 +13,14 @@ xset r rate 200 50
 numlockx on
 
 # Ceter the wallpaper. Use -f if the wallpaper is larger than the screen
-fbsetbg -c ~/.fluxbox/wallpaper.jpg
+#fbsetbg -c ~/.fluxbox/wallpaper.jpg
 
 # Get rid of the horrible default GTK theme
-#gnome-settings-daemon &
+gnome-settings-daemon &
 #gnome-volume-control-applet &
 
 #xscreensaver -nosplash &
 #conky &
 #gkrellm &
-
-#opera -notrayicon &
 
 exec /usr/bin/fluxbox -log ~/.fluxbox/log -verbose
