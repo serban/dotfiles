@@ -1,0 +1,13 @@
+#!/bin/bash
+# vim:set ts=8 sw=4 sts=4 et:
+
+case "$1" in
+    browser)        google-chrome ;;
+    calculator)     gnome-calculator ;;
+    editor)         gedit ;;
+    finder)         nautilus --no-desktop > /dev/null 2>&1 ;;
+    gvim)           gvim ;;
+    screensaver)    gnome-screensaver-command --lock ;;
+    screenshot)     gnome-screenshot ;;
+    *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
+esac

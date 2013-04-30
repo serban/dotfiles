@@ -11,27 +11,22 @@
 # Mouse5  Scroll Down
 
 # Applications
-Mod4 b :Exec firefox
-Mod4 c :Exec kcalc
-Mod4 e :Exec kwrite
-Mod4 g :Exec pterm mocp
+Mod4 b :Exec launch browser
+Mod4 c :Exec launch calculator
+Mod4 e :Exec launch editor
 Mod4 h :Exec pterm htop
-Mod4 l :Exec pterm alsamixer
-Mod4 v :Exec gvim
+Mod4 m :Exec pterm mixer
+Mod4 v :Exec launch gvim
 
-Mod4 f :Exec kfmclient openProfile Home
-Mod4 d :Exec kfmclient openProfile Files
-Mod4 s :Exec kfmclient openProfile Share
+Mod4 f :Exec launch finder
 
 Mod4 q :Exec pterm black
 Mod4 w :Exec pterm white
 Mod4 r :Exec pterm root
 Mod4 t :Exec pterm
-Mod4 j :Exec pterm reddy
-Mod4 k :Exec pterm inst
 
-Menu :Exec pause
-Print :Exec ksnapshot
+Pause :Exec launch screensaver
+Print :Exec launch screenshot
 Control Mod1 Escape :Exec xkill
 
 # Window actions
@@ -45,7 +40,7 @@ Mod1 F6 :MaximizeVertical
 Mod1 F7 :MaximizeHorizontal
 Mod1 F8 :Maximize
 Mod1 F9 :Shade
-Pause :ShowDesktop
+Menu :ShowDesktop
 
 Mod1 Tab :NextWindow
 Mod1 Shift Tab :PrevWindow
