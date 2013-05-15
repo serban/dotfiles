@@ -6,7 +6,7 @@
 set title                           " Set the terminal title to something appropriate (like the filename being edited)
 set background=light                " Set the default colors to look good on white backgrounds. See below for toggling this.
 set winheight=20                    " Set the minimum window height for split windows
-set winwidth=80                     " Set the minimum window width for split windows
+set winwidth=86                     " Set the minimum window width for split windows
 set tabpagemax=100                  " Set the maximum number of tabs that can be opened
 set splitbelow                      " When horizontally splitting a window, insert the new window below the current one
 set splitright                      " When vertically splitting a window, insert the new window to the right of the current one
@@ -24,6 +24,7 @@ endif
 "set columns=114                    " Put this line in gvimrc. It makes the window wider.
 "set lines=52                       " Put this line in gvimrc. It makes the window taller.
 set textwidth=80
+set colorcolumn=+1                  " Show a vertical line one character past the textwidth to help maintain line length
 set numberwidth=5                   " Set the minimum gutter width so that switching back and forth between number and relativenumber isn't annoying
 set nowrap                          " Don't soft-wrap lines
 set nofoldenable                    " Don't fold code
