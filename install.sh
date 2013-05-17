@@ -18,6 +18,8 @@ ln -si $DOTFILES/vimrc          ~/.vimrc
 
 touch ~/.hushlogin          # Silence the message of the day and last login info
 
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
 OS="$(uname -s)"
 
 if [ `whoami` = 'root' ] || [ "${OS}" = 'Darwin' ] || [ "${OS}" = 'FreeBSD' ]; then

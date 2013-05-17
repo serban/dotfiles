@@ -1,6 +1,23 @@
 " vim:set ts=8 sw=4 sts=4 et:
 
 " ------------------------------------------------------------------------------
+" VUNDLE
+
+set nocompatible                    " Don't try to be compatible with the original vi
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" GitHub Plugins
+Bundle 'gmarik/vundle'
+Bundle 'ervandew/supertab'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+
+filetype plugin on                  " Enable filetype detection and load the appropriate plugin files
+
+" ------------------------------------------------------------------------------
 " SETTINGS
 
 set title                           " Set the terminal title to something appropriate (like the filename being edited)
@@ -62,12 +79,6 @@ set modeline                        " Modelines in files take precedent over the
 inoremap # X#
 
 set backspace=eol,indent,start      " Make life easier on crappy terminals
-
-" ------------------------------------------------------------------------------
-" PATHOGEN
-
-call pathogen#infect()
-call pathogen#helptags()
 
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
