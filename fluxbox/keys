@@ -38,8 +38,8 @@ Mod4 F7 :MaximizeHorizontal
 Mod4 F8 :Maximize
 
 # Change window
-Mod4 Tab :NextWindow {groups} (workspace=[current])
-Mod4 Shift Tab :PrevWindow {groups} (workspace=[current])
+Mod4 Tab :NextWindow {groups} (workspace=[current]) (minimized=no)
+Mod4 Shift Tab :PrevWindow {groups} (workspace=[current]) (minimized=no)
 Mod4 grave :NextTab
 Mod4 Shift grave :PrevTab
 
