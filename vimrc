@@ -61,9 +61,7 @@ set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
 "setlocal spell spelllang=en_us
 
-highlight Formatting ctermbg=Gray guibg=Gray
-match Formatting /\s\+$/            " Highlight trailing whitespace
-set listchars=tab:»\ ,trail:⚐
+set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
 
 set tabstop=8                       " \t is 8 characters wide
@@ -194,7 +192,8 @@ nmap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 map <F3> :call WriteTabSettings() <CR>
 map <F6> :call ToggleBackground() <CR>
-map <F7> :TlistToggle <CR>
+
+" Remove trailing whitespace
 map <F10> :%s/\s\+$//g <CR>
 
 " Switch to the previous tab
@@ -210,4 +209,3 @@ autocmd BufRead,BufNewFile *.handlebars :set filetype=html
 autocmd BufRead,BufNewFile *.less :set filetype=css
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for plain text files
-autocmd BufRead * match Formatting /\s\+$/                  " Highlight trailing whitespace
