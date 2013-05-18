@@ -306,6 +306,17 @@ darwin && {
 }
 
 # ------------------------------------------------------------------------------
+# PERMISSIONS
+
+perms() {
+    # Recursively change the permissions of every file and directory in a directory
+    # USAGE: perms DIR_MODE FILE_MODE DIR
+
+    find "$3" -type d -exec chmod -v "$1" '{}' \; | grep -v retained
+    find "$3" -type f -exec chmod -v "$2" '{}' \; | grep -v retained
+}
+
+# ------------------------------------------------------------------------------
 # LS
 
 darwin || freebsd || solaris && {
