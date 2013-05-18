@@ -4,16 +4,24 @@
 " VUNDLE
 
 set nocompatible                    " Don't try to be compatible with the original vi
-filetype off
+filetype off                        " Disable filetype detection while we load Vundle
 set runtimepath+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " GitHub Plugins
 Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'myusuf3/numbers.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'troydm/easybuffer.vim'
 
 filetype plugin on                  " Enable filetype detection and load the appropriate plugin files
 
@@ -51,6 +59,7 @@ set scrolloff=3                     " Always leave some lines above and below th
 set formatoptions=croql             " Auto-wrap comments, insert comment leader on <Enter> and o/O, gq formats comments, don't automatically fix long lines when entering insert mode
 set nojoinspaces                    " When formatting text, insert only one space at the end of a sentence.
 set iskeyword+=-                    " Add hyphen to the list of characters that comprise a word
+set encoding=utf-8                  " Default to UTF-8 encoding
 
 set printoptions=paper:letter       " Set the paper size for America
 
