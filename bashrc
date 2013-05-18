@@ -337,7 +337,7 @@ darwin || freebsd || solaris && {
         fi
     }
 
-    r() {
+    rls() {
         if [ -n "$1" ]; then
             pushd "$1" > /dev/null
         fi
@@ -367,7 +367,7 @@ linux && {
         ls -lhFXA --group-directories-first --color=always | more
     }
 
-    r() {
+    rls() {
         if [ -n "$1" ]; then
             pushd "$1" > /dev/null
         fi
@@ -389,7 +389,7 @@ darwin && {
 # GREP
 
 darwin && {
-    alias re='grep --color=auto -ins'
+    alias r='grep --color=auto -ins'
     rgr() { grep --color=auto -insr "$@" * ; }
     cgr() { grep --color=always -insr --include='*.c' --include='*.h' "$@" * ; }
     jgr() { grep --color=always -insr --include='*.java' "$@" * ; }
@@ -397,9 +397,7 @@ darwin && {
 }
 
 linux && {
-    alias re='grep --color=auto -insT'
-#   alias cgr="find . -type f -name '*.c' -print0 | xargs -0 grep --color=auto -insT"
-#   alias cgr="find . -type f -name '*.c' -exec grep --color=auto -insT \$@ '{}' \;"
+    alias r='grep --color=auto -insT'
     rgr() { grep --color=auto -insTr "$@" * ; }
     cgr() { grep --color=always -insTr --include='*.c' --include='*.h' "$@" * ; }
     jgr() { grep --color=always -insTr --include='*.java' "$@" * ; }
