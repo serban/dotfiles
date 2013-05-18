@@ -168,9 +168,6 @@ rmswp() { find . -type f -name '.*.swp' -exec rm -v '{}' \; ; }
 darwin && {
     alias   safesleep='sudo pmset -a hibernatemode 3; pmset -g'
     alias nosafesleep='sudo pmset -a hibernatemode 0; pmset -g'
-
-    alias chromium='/Users/serban/src/chromium/src/out/Release/Chromium.app/Contents/MacOS/Chromium --user-data-dir=/Users/serban/user-data'
-    alias chrome-no-cache='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disk-cache-size=0 --media-cache-size=0'
 }
 
 # ------------------------------------------------------------------------------
@@ -227,7 +224,6 @@ alias todayp='git log --regexp-ignore-case --author=serban --since=5am --reverse
 
  alias week='git log --regexp-ignore-case --author=serban --since="8 days ago" --reverse --oneline'
 alias weekp='git log --regexp-ignore-case --author=serban --since="8 days ago" --reverse --pretty="* %h %B"'
-
 
 alias gsa='git stash apply'
 alias gsd='git stash drop'
