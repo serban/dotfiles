@@ -140,6 +140,7 @@ alias cp='cp -vi'
 alias rm='rm -v'
 
 alias l='less -iNS'
+alias h='head'
 alias t='tail'
 
 alias cdf='colordiff -u'
