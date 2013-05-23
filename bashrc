@@ -80,15 +80,20 @@ SKINNYYELLOW='\[\033[00;33m\]'
 #umask 027                          # Make directories 750 and files 640 by default
 
 shopt -s cdspell
+shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
-shopt -s checkwinsize               # On by default
-shopt -s cmdhist                    # On by default
+
+export PAGER=/usr/bin/less
+
+# ------------------------------------------------------------------------------
+# HISTORY
+
+shopt -s cmdhist
+shopt -s histappend
 
 export     HISTSIZE=1000000
 export HISTFILESIZE=1000000
-export  HISTCONTROL=erasedups
-
-export PAGER=/usr/bin/less
+export PROMPT_COMMAND='history -a'
 
 # ------------------------------------------------------------------------------
 # PATH
