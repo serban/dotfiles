@@ -132,6 +132,7 @@ darwin && {
 alias s='source ~/.bashrc'
 alias show='declare -f'
 
+alias i='history'
 alias j='jobs'
 alias k='kill'
 
