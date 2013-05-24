@@ -218,3 +218,10 @@ autocmd BufRead,BufNewFile *.handlebars :set filetype=html
 autocmd BufRead,BufNewFile *.less :set filetype=css
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for plain text files
+
+" ------------------------------------------------------------------------------
+" LOCAL SETTINGS
+
+if filereadable("~/.vimrc_local")
+    source ~/.vimrc_local
+endif
