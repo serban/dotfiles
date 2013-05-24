@@ -222,6 +222,6 @@ autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
 
-if filereadable("~/.vimrc_local")
+if filereadable(expand("~/.vimrc_local"))
     source ~/.vimrc_local
 endif
