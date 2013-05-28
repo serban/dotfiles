@@ -104,7 +104,10 @@ def main():
         print_help()
         return
 
-    bookmarks = Bookmarks(BOOKMARKS_PATH)
+    try:
+        bookmarks = Bookmarks(BOOKMARKS_PATH)
+    except IOError:
+        bookmarks = Bookmarks()
 
     if command == 'add':
         bookmarks.add(label, path)
