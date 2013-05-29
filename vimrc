@@ -207,8 +207,12 @@ map <F10> :%s/\s\+$//g <CR>
 
 " Switch to the previous tab
 map <C-h> :tabp<CR>
+
 " Switch to the next tab
 map <C-l> :tabn<CR>
+
+" Open a new tab
+map <C-t> :tabe<CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
