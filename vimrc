@@ -154,6 +154,14 @@ function ToggleBackground()
     endif
 endfunction
 
+function ToggleColorcolumn()
+    if &colorcolumn != "0"
+        windo set colorcolumn=0
+    else
+        windo set colorcolumn=+1
+    endif
+endfunction
+
 function WriteTabSettings()
     if &expandtab
         let expandStr="et"
@@ -201,6 +209,10 @@ nmap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 map <F3> :call WriteTabSettings() <CR>
 map <F6> :call ToggleBackground() <CR>
+map <F7> :EasyBuffer <CR>
+
+map <C-c> :call ToggleColorcolumn() <CR>
+map <C-o> :noh <CR>
 
 " Remove trailing whitespace
 map <F10> :%s/\s\+$//g <CR>
