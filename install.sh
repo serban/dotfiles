@@ -14,6 +14,7 @@ ln -si $DOTFILES/gitignore      ~/.gitignore
 ln -si $DOTFILES/gvimrc         ~/.gvimrc
 ln -si $DOTFILES/inputrc        ~/.inputrc
 ln -si $DOTFILES/screenrc       ~/.screenrc
+ln -si $DOTFILES/tmux.conf      ~/.tmux.conf
 ln -si $DOTFILES/vimrc          ~/.vimrc
 
 touch ~/.hushlogin          # Silence the message of the day and last login info

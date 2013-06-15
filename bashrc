@@ -391,6 +391,20 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
+# TMUX
+
+alias mls='tmux list-sessions'
+alias mlc='tmux list-clients'
+
+m() {
+    if [ -n "$1" ]; then
+        tmux new-session -A -n Shell -s "$1"
+    else
+        tmux new-session -A -n Shell -s misc
+    fi
+}
+
+# ------------------------------------------------------------------------------
 # BOOKMARKS
 
 b() {
