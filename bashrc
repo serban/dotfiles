@@ -415,6 +415,32 @@ b() {
     fi
 }
 
+_b() {
+    COMPREPLY=($(compgen -W "$(bookmarks labels)" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+_bookmarks()
+{
+    local previous_word current_word commands
+
+    previous_word="${COMP_WORDS[COMP_CWORD-1]}"
+    current_word="${COMP_WORDS[COMP_CWORD]}"
+
+    commands="add remove get labels list"
+
+    COMPREPLY=()
+
+    case "${previous_word}" in
+        get|remove)
+            COMPREPLY=( $(compgen -W "$(bookmarks labels)" -- "${current_word}") ) ; return ;;
+    esac
+
+    COMPREPLY=($(compgen -W "${commands}" -- "${current_word}"))
+}
+
+complete -F _b b
+complete -F _bookmarks bookmarks
+
 # ------------------------------------------------------------------------------
 # DIRCOLORS
 

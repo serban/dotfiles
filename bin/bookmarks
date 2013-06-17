@@ -34,12 +34,6 @@ class Bookmarks(object):
     def all(self):
         return sorted(self.bookmarks.items())
 
-    def complete(self, partial):
-        regex = re.compile(partial, re.IGNORECASE)
-        labels = sorted(self.bookmarks.keys())
-
-        return filter(lambda p: regex.match(p), labels)
-
     def save(self, path):
         with open(path, 'w') as f:
             json.dump(self.bookmarks, f, indent=2, sort_keys=True)
@@ -58,7 +52,7 @@ COMMANDS:
     add <label> <path>
     remove <label>
     get <label>
-    complete <partial_label>
+    labels
     list"""
 
     print help_string
@@ -96,7 +90,7 @@ def main():
         'add',
         'remove',
         'get',
-        'complete',
+        'labels',
         'list',
     ]
 
@@ -120,9 +114,9 @@ def main():
     elif command == 'get':
         print bookmarks.get(label)
 
-    elif command == 'complete':
-        for completion in bookmarks.complete(label):
-            print completion
+    elif command == 'labels':
+        for label in bookmarks.labels():
+            print label
 
     elif command == 'list':
         labels = bookmarks.labels()
