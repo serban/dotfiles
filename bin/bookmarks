@@ -68,9 +68,6 @@ def get_command_line_args():
     arg_list = sys.argv[1:]
     num_args = len(arg_list)
 
-    if num_args == 0:
-        arg_dict['command'] = 'help'
-
     if num_args > 0:
         arg_dict['command'] = sys.argv[1]
 
@@ -79,9 +76,6 @@ def get_command_line_args():
 
     if num_args > 2:
         arg_dict['path'] = sys.argv[3]
-
-    if num_args > 3:
-        arg_dict['command'] = 'help'
 
     return arg_dict
 
