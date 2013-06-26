@@ -61,6 +61,8 @@ set nojoinspaces                    " When formatting text, insert only one spac
 set iskeyword+=-                    " Add hyphen to the list of characters that comprise a word
 set encoding=utf-8                  " Default to UTF-8 encoding
 
+set sessionoptions=buffers,curdir,folds,resize,tabpages,winpos,winsize  " What to preserve when saving a session
+
 set printoptions=paper:letter       " Set the paper size for America
 
 syntax on                           " Colors!
