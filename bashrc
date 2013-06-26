@@ -404,6 +404,12 @@ m() {
     fi
 }
 
+_m() {
+    COMPREPLY=($(compgen -W "$(tmux list-sessions -F '#{session_name}')" -- "${COMP_WORDS[COMP_CWORD]}"))
+}
+
+complete -F _m m
+
 # ------------------------------------------------------------------------------
 # BOOKMARKS
 
