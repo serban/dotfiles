@@ -592,8 +592,6 @@ export PATH="/usr/local/cuda/bin:${PATH}"
 # ------------------------------------------------------------------------------
 # PYTHON
 
-export PYTHONSTARTUP="${HOME}/.pythonrc"
-
 export VIRTUALENV_DISTRIBUTE=1
 
 if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
