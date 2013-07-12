@@ -329,7 +329,7 @@ perms() {
 darwin || freebsd || solaris && {
     g() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         if [ $(which gls) ]; then
@@ -341,7 +341,7 @@ darwin || freebsd || solaris && {
 
     a() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         if [ $(which gls) ]; then
@@ -353,7 +353,7 @@ darwin || freebsd || solaris && {
 
     rls() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         if [ $(which gls) ]; then
@@ -367,7 +367,7 @@ darwin || freebsd || solaris && {
 linux && {
     g() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         ls -lhFX --group-directories-first --color=always | more
@@ -375,7 +375,7 @@ linux && {
 
     a() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         ls -lhFXA --group-directories-first --color=always | more
@@ -383,7 +383,7 @@ linux && {
 
     rls() {
         if [ -n "$1" ]; then
-            pushd "$1" > /dev/null
+            pushd "$1" > /dev/null || return
         fi
 
         ls -lhFXR --group-directories-first --color=always | more
