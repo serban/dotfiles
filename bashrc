@@ -508,7 +508,9 @@ linux && {
 
     # Medium
     alias   y='ps --format pid,ruser,euser,rss,command'
-    alias ysm='ps --format pid,ruser,euser,rss,command --user $(whoami)'
+    alias  ys='ps --format pid,ruser,euser,rss,command --user $(whoami)'
+    alias ysm='ps --format pid,ruser,euser,rss,command --user $(whoami) --sort -pmem'
+    alias  ya='ps --format pid,ruser,euser,rss,command -A'
     alias yam='ps --format pid,ruser,euser,rss,command -A --sort -pmem'
 
     # Large
