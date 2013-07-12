@@ -496,6 +496,30 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
+# PS
+
+linux && {
+    # Small
+    alias   u='ps --format pid,euser,command'
+    alias  us='ps --format pid,euser,command --user $(whoami)'
+    alias usf='ps --format pid,euser,command --user $(whoami) --forest'
+    alias  ua='ps --format pid,euser,command -A'
+    alias uaf='ps --format pid,euser,command -A --forest'
+
+    # Medium
+    alias   y='ps --format pid,ruser,euser,rss,command'
+    alias ysm='ps --format pid,ruser,euser,rss,command --user $(whoami)'
+    alias yam='ps --format pid,ruser,euser,rss,command -A --sort -pmem'
+
+    # Large
+    alias   q='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command'
+    alias  qs='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command --user $(whoami)'
+    alias qsm='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command --user $(whoami) --sort -pmem'
+    alias  qa='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command -A'
+    alias qam='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command -A --sort -pmem'
+}
+
+# ------------------------------------------------------------------------------
 # CSCOPE
 
 alias jcs="find . -type f -name '*.java' > cscope.files && cscope -bcq"
