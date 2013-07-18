@@ -79,7 +79,6 @@ SKINNYYELLOW='\[\033[00;33m\]'
 #umask 077                          # Make directories 700 and files 600 by default
 #umask 027                          # Make directories 750 and files 640 by default
 
-shopt -s cdspell
 shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 
