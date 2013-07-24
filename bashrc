@@ -196,6 +196,13 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
+# RAM DISK
+
+linux && {
+    alias ramdisk='sudo mkdir -p /ramdisk && sudo mount -t tmpfs -o size=1g tmpfs /ramdisk'
+}
+
+# ------------------------------------------------------------------------------
 # GIT ALIASES
 
 alias ga='git add'
