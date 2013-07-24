@@ -144,7 +144,7 @@ alias mv='mv -vi'
 alias cp='cp -vi'
 alias rm='rm -v'
 
-alias l='less -iNS'
+alias l='less -iNRS'
 alias h='head'
 alias t='tail'
 
