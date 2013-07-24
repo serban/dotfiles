@@ -40,6 +40,7 @@ set ruler                           " Show the cursor position in the bottom rig
 set showcmd                         " Show a partial command as it is being built
 set laststatus=2                    " Always show the status bar (it tells us the filename)
 set guioptions-=T                   " Get rid of the toolbar in gVim
+set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
 
 if has("gui_macvim")
