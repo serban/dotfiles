@@ -100,7 +100,7 @@ export PROMPT_COMMAND='history -a'
 darwin && {
     # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
     # newer tools are used instead of the outdated Mac OS X utilities
-    export PATH="${HOME}/bin:${HOME}/depot_tools:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/share/python3:${PATH}"
+    export PATH="${HOME}/bin:${HOME}/depot_tools:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin:${PATH}"
 }
 
 linux && {
@@ -115,14 +115,6 @@ linux && {
             export PATH="${HOME}/bin:/usr/local/sbin:/usr/sbin:/sbin:${PATH}"
         fi
     }
-}
-
-# ------------------------------------------------------------------------------
-# MANPATH
-
-darwin && {
-    # /opt/local/* is for MacPorts
-    export MANPATH="/opt/local/share/man:${MANPATH}"
 }
 
 # ------------------------------------------------------------------------------
@@ -609,19 +601,6 @@ else
 fi
 
 # ------------------------------------------------------------------------------
-# CUDA
-
-#export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:${DYLD_LIBRARY_PATH}"
-export PATH="/usr/local/cuda/bin:${PATH}"
-
-# ------------------------------------------------------------------------------
-# MYSQL
-
-#darwin && {
-#    export PATH="/usr/local/mysql/bin:${PATH}"
-#}
-
-# ------------------------------------------------------------------------------
 # PYTHON
 
 export VIRTUALENV_DISTRIBUTE=1
@@ -629,16 +608,6 @@ export VIRTUALENV_DISTRIBUTE=1
 if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
-
-# ------------------------------------------------------------------------------
-# RUBY
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# rvm and rbenv are incompatible
-# if [ -f ${HOME}/.rvm/scripts/rvm ]; then
-#     source ${HOME}/.rvm/scripts/rvm
-# fi
 
 # ------------------------------------------------------------------------------
 # SOURCE OTHER STUFF
