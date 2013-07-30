@@ -57,17 +57,22 @@ function root {
 # COLORS
 
      NOCOLOR='\[\033[00m\]'
+       BRIGHT_BLACK='\[\033[01;30m\]'
          BRIGHT_RED='\[\033[01;31m\]'
        BRIGHT_GREEN='\[\033[01;32m\]'
       BRIGHT_YELLOW='\[\033[01;33m\]'
         BRIGHT_BLUE='\[\033[01;34m\]'
      BRIGHT_MAGENTA='\[\033[01;35m\]'
         BRIGHT_CYAN='\[\033[01;36m\]'
+       BRIGHT_WHITE='\[\033[01;37m\]'
+ SKINNYBLACK='\[\033[00;30m\]'
    SKINNYRED='\[\033[00;31m\]'
  SKINNYGREEN='\[\033[00;32m\]'
 SKINNYYELLOW='\[\033[00;33m\]'
   SKINNYBLUE='\[\033[00;34m\]'
+SKINNYMAGENTA='\[\033[00;35m\]'
   SKINNYCYAN='\[\033[00;36m\]'
+  SKINNYWHITE='\[\033[00;37m\]'
        TITLE='\[\033]0;'            # Note that the \[ appears only in the first part and the \] appears only in the second part.
   CLOSETITLE='\007\]'               # This is because the entire contents betweent the two marks won't be printed to the screen.
       SCREEN='\[\033k'
