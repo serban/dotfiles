@@ -57,12 +57,12 @@ function root {
 # COLORS
 
      NOCOLOR='\[\033[00m\]'
-         RED='\[\033[01;31m\]'
-       GREEN='\[\033[01;32m\]'
-      YELLOW='\[\033[01;33m\]'
-        BLUE='\[\033[01;34m\]'
-     MAGENTA='\[\033[01;35m\]'
-        CYAN='\[\033[01;36m\]'
+         BRIGHT_RED='\[\033[01;31m\]'
+       BRIGHT_GREEN='\[\033[01;32m\]'
+      BRIGHT_YELLOW='\[\033[01;33m\]'
+        BRIGHT_BLUE='\[\033[01;34m\]'
+     BRIGHT_MAGENTA='\[\033[01;35m\]'
+        BRIGHT_CYAN='\[\033[01;36m\]'
    SKINNYRED='\[\033[00;31m\]'
  SKINNYGREEN='\[\033[00;32m\]'
 SKINNYYELLOW='\[\033[00;33m\]'
@@ -587,16 +587,16 @@ gitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
 gitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(gitStatus)/" ; }
 
 if root; then
-    export PS1="${RED}[\u@\h ${NOCOLOR}\w${RED}]${SKINNYRED}\\$ ${NOCOLOR}"
+    export PS1="${BRIGHT_RED}[\u@\h ${NOCOLOR}\w${BRIGHT_RED}]${SKINNYRED}\\$ ${NOCOLOR}"
 else
     case "$TERM" in
         linux)
-            export PS1="${BLUE}[${GREEN}\u${BLUE}@${RED}\h${BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
+            export PS1="${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BRIGHT_BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
         screen.*)
-            export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h${BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
+            export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BRIGHT_BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
         *)
-#           export PS1="${TITLE}\W${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h${BLUE} ${NOCOLOR}\w${BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
-            export PS1="${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h${BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
+#           export PS1="${TITLE}\W${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${BRIGHT_BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
+            export PS1="${TITLE}\w${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${SKINNYCYAN}\$(gitBranch)${BRIGHT_BLUE}]${SKINNYBLUE}\$ ${NOCOLOR}" ;;
     esac
 fi
 
