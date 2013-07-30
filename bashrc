@@ -595,7 +595,7 @@ gitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
 gitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(gitStatus)/" ; }
 
 if root; then
-    export PS1="${BRIGHT_RED}[\u@\h ${NOCOLOR}\w${BRIGHT_RED}]${RED}\\$ ${NOCOLOR}"
+    export PS1="${RED}[\u@\h ${NOCOLOR}\w${RED}]\$ ${NOCOLOR}"
 else
     case "$TERM" in
         linux)
