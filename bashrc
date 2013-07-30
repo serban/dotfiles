@@ -601,10 +601,9 @@ else
         linux)
             export PS1="${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
         screen.*)
-            export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+            export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
         *)
-#           export PS1="${TITLE}\W${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
-            export PS1="${TITLE}\w${CLOSETITLE}${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+                                     export PS1="${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
     esac
 fi
 
