@@ -72,24 +72,30 @@ TERM xterm-debian
 
 # ---------------------------------------------------------------------------
 
-NORMAL  00          # global default, although everything should be something.
-FILE    00          # normal file
-DIR     01;31       # directory
-LINK    00;36       # symbolic link. (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
-FIFO    40;33       # pipe
-SOCK    01;35       # socket
-DOOR    01;35       # door
-BLK     40;33;01    # block device driver
-CHR     40;33;01    # character device driver
-EXEC    01;33       # files with execute permission
-ORPHAN  01;05;37;41 # orphaned syminks
-MISSING 01;05;37;41 # ... and the files they point to
-SETUID  37;41       # file that is setuid (u+s)
-SETGID  30;43       # file that is setgid (g+s)
+RESET   00      # reset to "normal" color
+NORMAL  00      # global default, although everything should be something.
+FILE    00      # normal file
 
-STICKY_OTHER_WRITABLE   30;42 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE          34;42 # dir that is other-writable (o+w) and not sticky
-STICKY                  37;44 # dir with the sticky bit set (+t) and not other-writable
+MULTIHARDLINK 00    # regular file with more than one link
+
+LINK    00;36   # symbolic link. (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
+ORPHAN  00;36   # orphaned syminks
+MISSING 07      # ... and the files they point to
+
+EXEC    00;33   # files with execute permission
+SETUID  00;33   # file that is setuid (u+s)
+SETGID  00;33   # file that is setgid (g+s)
+
+FIFO    01;35   # pipe
+SOCK    01;35   # socket
+DOOR    01;35   # door
+BLK     01;35   # block device driver
+CHR     01;35   # character device driver
+
+DIR                     00;31   # directory
+STICKY_OTHER_WRITABLE   01;31   # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE          01;31   # dir that is other-writable (o+w) and not sticky
+STICKY                  01;31   # dir with the sticky bit set (+t) and not other-writable
 
 # ---------------------------------------------------------------------------
 
