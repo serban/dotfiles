@@ -12,7 +12,7 @@
 # the system defaults.
 # Below, there should be one TERM entry for each termtype that is colorizable
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 TERM Eterm
 TERM ansi
@@ -59,7 +59,7 @@ TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # Below are the color init strings for the basic file types. A color init
 # string consists of one or more of the following numeric codes:
@@ -70,7 +70,7 @@ TERM xterm-debian
 # Background color codes:
 # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 RESET   00      # reset to "normal" color
 NORMAL  00      # global default, although everything should be something.
@@ -97,7 +97,7 @@ STICKY_OTHER_WRITABLE   01;31   # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE          01;31   # dir that is other-writable (o+w) and not sticky
 STICKY                  01;31   # dir with the sticky bit set (+t) and not other-writable
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # SOURCE CODE (Skinny Green)
 .c      00;32
@@ -126,7 +126,7 @@ STICKY                  01;31   # dir with the sticky bit set (+t) and not other
 .o      00;34
 .pyc    00;34
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # DOCUMENTS (Skinny Yellow)
 .doc    00;33
@@ -145,7 +145,7 @@ STICKY                  01;31   # dir with the sticky bit set (+t) and not other
 .xlsx   00;33
 .xml    00;33
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # AUDIO (Skinny Green)
 .aac    00;32
@@ -195,7 +195,7 @@ STICKY                  01;31   # dir with the sticky bit set (+t) and not other
 .xcf    00;35
 .xpm    00;35
 
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 
 # ARCHIVES (Skinny Red)
 .tar    00;31
@@ -225,5 +225,3 @@ STICKY                  01;31   # dir with the sticky bit set (+t) and not other
 .rz     00;31
 .iso    00;31
 .dmg    00;31
-
-# ---------------------------------------------------------------------------
