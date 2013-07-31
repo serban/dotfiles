@@ -72,30 +72,29 @@ TERM xterm-debian
 
 # ------------------------------------------------------------------------------
 
-RESET   00      # reset to "normal" color
-NORMAL  00      # global default, although everything should be something.
-FILE    00      # normal file
-
-MULTIHARDLINK 00    # regular file with more than one link
-
-LINK    00;36   # symbolic link. (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
-ORPHAN  00;36   # orphaned syminks
-MISSING 07      # ... and the files they point to
-
-EXEC    00;33   # files with execute permission
-SETUID  00;33   # file that is setuid (u+s)
-SETGID  00;33   # file that is setgid (g+s)
-
-FIFO    01;35   # pipe
-SOCK    01;35   # socket
-DOOR    01;35   # door
-BLK     01;35   # block device driver
-CHR     01;35   # character device driver
+RESET                   00      # reset to "normal" color
+NORMAL                  00      # global default, although everything should be something.
+FILE                    00      # normal file
+MULTIHARDLINK           00      # regular file with more than one link
 
 DIR                     00;31   # directory
-STICKY_OTHER_WRITABLE   01;31   # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE          01;31   # dir that is other-writable (o+w) and not sticky
-STICKY                  01;31   # dir with the sticky bit set (+t) and not other-writable
+STICKY_OTHER_WRITABLE   00;31   # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE          00;31   # dir that is other-writable (o+w) and not sticky
+STICKY                  00;31   # dir with the sticky bit set (+t) and not other-writable
+
+LINK                    00;36   # symbolic link. (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
+ORPHAN                  00;36   # orphaned syminks
+MISSING                 07      # ... and the files they point to
+
+FIFO                    01;35   # pipe
+SOCK                    01;35   # socket
+DOOR                    01;35   # door
+BLK                     01;35   # block device driver
+CHR                     01;35   # character device driver
+
+EXEC                 04;01;31   # files with execute permission
+SETUID               04;01;31   # file that is setuid (u+s)
+SETGID               04;01;31   # file that is setgid (g+s)
 
 # ------------------------------------------------------------------------------
 
