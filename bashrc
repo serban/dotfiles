@@ -610,8 +610,6 @@ fi
 # ------------------------------------------------------------------------------
 # PYTHON
 
-export VIRTUALENV_DISTRIBUTE=1
-
 if [ -f /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
