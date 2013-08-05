@@ -15,9 +15,9 @@ Mod4 b :Exec launch browser
 Mod4 c :Exec launch calculator
 Mod4 e :Exec launch editor
 Mod4 f :Exec launch finder
-Mod4 m :Exec pterm mixer
-Mod4 o :Exec pterm htop
-Mod4 t :Exec pterm
+Mod4 m :Exec launch mixer
+Mod4 o :Exec launch htop
+Mod4 t :Exec launch terminal
 Mod4 v :Exec launch gvim
 
 # General actions

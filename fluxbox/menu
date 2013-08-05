@@ -1,20 +1,6 @@
 # vim:set ts=8 sw=4 sts=4 et:
 
 [begin] (Fluxbox)
-    [submenu] (Terminals)
-        [exec] (Transparent) {pterm}
-        [exec] (Root) {pterm root}
-        [exec] (Xterm) {pterm xterm}
-        [separator]
-        [exec] (White) {pterm white}
-        [exec] (Black) {pterm black}
-        [exec] (Red) {pterm red}
-        [exec] (Orange) {pterm orange}
-        [exec] (Green) {pterm green}
-        [exec] (Cyan) {pterm cyan}
-        [exec] (Purple) {pterm purple}
-    [end]
-
     [submenu] (Browsers)
         [exec] (Chrome) {google-chrome}
         [exec] (Firefox) {firefox}
@@ -29,7 +15,10 @@
         [exit] (Exit)
     [end]
 
-    [exec] (HTop) {pterm htop}
-    [exec] (Mixer) {pterm mixer}
+    [separator]
+
+    [exec] (Terminal) {launch terminal}
+    [exec] (HTop) {launch htop}
+    [exec] (Mixer) {launch mixer}
     [exec] (Nautilus) {nautilus --no-desktop ~}
 [end]
