@@ -2,6 +2,8 @@
 
 export PATH="~/bin:~/.dotfiles/bin:${PATH}"
 
+xrdb -merge ~/.Xresources
+
 # Poweroff the display after five minutes of inactivity
 xset s blank
 xset dpms 300 300 300
