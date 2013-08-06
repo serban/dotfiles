@@ -89,6 +89,10 @@ OnTitleBar Mouse4 :ShadeOn
 OnTitleBar Mouse5 :ShadeOff
 OnTitleBar Move1 :StartMoving
 
+# Mouse actions on window border
+OnLeftGrip Move1 :StartResizing BottomLeft
+OnRightGrip Move1 :StartResizing BottomRight
+
 # Mouse actions on window
 OnWindow Mod4 Mouse1 :StartMoving
 OnWindow Mod4 Mouse3 :StartResizing NearestCorner
