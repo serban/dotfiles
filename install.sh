@@ -7,6 +7,7 @@ DOTFILES="${HOME}/.dotfiles"
 
 ln -si $DOTFILES/bash_logout    ~/.bash_logout
 ln -si $DOTFILES/bashrc         ~/.bashrc
+ln -si $DOTFILES/colordiffrc    ~/.colordiffrc
 ln -si $DOTFILES/dir_colors     ~/.dir_colors
 ln -si $DOTFILES/gdbinit        ~/.gdbinit
 ln -si $DOTFILES/gitconfig      ~/.gitconfig
