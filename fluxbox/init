@@ -8,6 +8,7 @@ session.screen0.strftimeFormat:         %a %b %d %R
 session.screen0.userFollowModel:        Ignore
 session.screen0.focusModel:             MouseFocus
 session.screen0.autoRaise:              False
+session.screen0.windowPlacement:        UnderMousePlacement
 session.screen0.workspaceNames:         One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten
 session.screen0.workspaces:             8
 session.screen0.workspacewarping:       False
