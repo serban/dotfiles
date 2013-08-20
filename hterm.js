@@ -47,7 +47,7 @@ function setPreferences() {
   term_.prefs_.set('font-size', 14);
   term_.prefs_.set('font-smoothing', 'subpixel-antialiased');
 
-  term_.prefs_.set('enable-bold', 'false');
+  term_.prefs_.set('enable-bold', false);
 
   term_.prefs_.set('background-color', solarized.S_base03);
   term_.prefs_.set('foreground-color', solarized.S_base0);
