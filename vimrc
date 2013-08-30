@@ -58,7 +58,7 @@ set nofoldenable                    " Don't fold code
 set sidescroll=16                   " When the cursor hits the end of the screen, scroll left or right by this many spaces
 set sidescrolloff=10                " Always leave some space to the left and right of the cursor
 set scrolloff=3                     " Always leave some lines above and below the cursor
-set formatoptions=croql             " Auto-wrap comments, insert comment leader on <Enter> and o/O, gq formats comments, don't automatically fix long lines when entering insert mode
+set formatoptions=crql              " Auto-wrap comments, insert comment leader on <Enter>, gq formats comments, don't automatically fix long lines when entering insert mode
 set nojoinspaces                    " When formatting text, insert only one space at the end of a sentence.
 set iskeyword+=-                    " Add hyphen to the list of characters that comprise a word
 set encoding=utf-8                  " Default to UTF-8 encoding
