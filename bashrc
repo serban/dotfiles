@@ -492,13 +492,19 @@ freebsd && {
 }
 
 darwin && {
-    alias v='mvim -p'
     alias v.='find . -type f -print0 | xargs -0 mvim -p'
+    
+    v() {
+        mvim -p "$@" 2> /dev/null
+    }
 }
 
 linux && {
-    alias v='gvim -p'
     alias v.='find . -type f -print0 | xargs -0 gvim -p'
+    
+    v() {
+        gvim -p "$@" 2> /dev/null
+    }
 }
 
 # ------------------------------------------------------------------------------
