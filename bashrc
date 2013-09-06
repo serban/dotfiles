@@ -466,16 +466,16 @@ darwin && {
 # GREP
 
 darwin && {
-    alias r='grep --color=auto -ins'
-    rgr() { grep --color=auto -insr "$@" * ; }
+    alias r='grep --color=always -ins'
+    rgr() { grep --color=always -insr "$@" * ; }
     cgr() { grep --color=always -insr --include='*.c' --include='*.h' "$@" * ; }
     jgr() { grep --color=always -insr --include='*.java' "$@" * ; }
 
 }
 
 linux && {
-    alias r='grep --color=auto -insT'
-    rgr() { grep --color=auto -insTr "$@" * ; }
+    alias r='grep --color=always -insT'
+    rgr() { grep --color=always -insTr "$@" * ; }
     cgr() { grep --color=always -insTr --include='*.c' --include='*.h' "$@" * ; }
     jgr() { grep --color=always -insTr --include='*.java' "$@" * ; }
 }
