@@ -74,6 +74,7 @@ set hlsearch                        " Highlight search results
 set incsearch                       " Search as you type
 set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
+set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
 "setlocal spell spelllang=en_us
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
