@@ -1,5 +1,5 @@
-#!/bin/bash
-# vim:set ts=8 sw=4 sts=4 et:
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
 
 set -e
 
@@ -26,5 +26,5 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 OS="$(uname -s)"
 
 if [ `whoami` = 'root' ] || [ "${OS}" = 'Darwin' ] || [ "${OS}" = 'FreeBSD' ]; then
-    ln -si $DOTFILES/bashrc ~/.bash_profile
+  ln -si $DOTFILES/bashrc ~/.bash_profile
 fi
