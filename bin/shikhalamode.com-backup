@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+VHOST_NAME="shikhalamode.com"
+MYSQL_DATABASE="serban_slmwp"
+NUM_DAYS_TO_KEEP_BACKUPS=7
+
+source "${HOME}/.dotfiles/bin/wordpress-backup.sh"

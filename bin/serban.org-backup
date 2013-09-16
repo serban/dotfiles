@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+VHOST_NAME="serban.org"
+MYSQL_DATABASE="serban_wp"
+NUM_DAYS_TO_KEEP_BACKUPS=30
+
+source "${HOME}/.dotfiles/bin/wordpress-backup.sh"
