@@ -193,7 +193,7 @@ linux && {
 # RAM DISK
 
 linux && {
-    alias ramdisk='sudo mkdir -p /ramdisk && sudo mount -t tmpfs -o size=1g tmpfs /ramdisk'
+    alias ramdisk='sudo mkdir -p /ramdisk && sudo mount -t tmpfs -o size=4g tmpfs /ramdisk'
 }
 
 # ------------------------------------------------------------------------------
