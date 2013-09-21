@@ -50,7 +50,7 @@ pushd "$HTDOCS_DIR"/.. > /dev/null
 tar cjf "$TARBALL_PATH" "$VHOST_NAME"
 popd > /dev/null
 
-echo "Tarball size is $(du -m $TARBALL_PATH | cut -f 1) MiB"
+echo "Tarball size is $(du -s -m $TARBALL_PATH | cut -f 1) MiB"
 
 echo "Writing MySQL dump at $SQLDUMP_PATH"
 
@@ -71,13 +71,13 @@ mysqldump \
     wp_users \
   | bzip2 -c > "$SQLDUMP_PATH"
 
-echo "MySQL dump size is $(du -k $SQLDUMP_PATH | cut -f 1) KiB"
+echo "MySQL dump size is $(du -s -k $SQLDUMP_PATH | cut -f 1) KiB"
 
 echo "Removing backups older than $NUM_DAYS_TO_KEEP_BACKUPS days"
 
 find "$BACKUP_DIR" -type f -mtime "+${NUM_DAYS_TO_KEEP_BACKUPS}d" \
   -exec rm '{}' \;
 
-echo "Total size of backup directory is $(du -m $BACKUP_DIR | cut -f 1) MiB"
+echo "Total size of backup directory is $(du -s -m $BACKUP_DIR | cut -f 1) MiB"
 
 echo "Backup finished at $(date)"
