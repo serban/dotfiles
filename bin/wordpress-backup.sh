@@ -40,11 +40,19 @@ if [[ -e "$SQLDUMP_PATH" ]]; then
   exit 1
 fi
 
+echo "Starting backup for $VHOST_NAME at $(date)"
+
 mkdir -p "$BACKUP_DIR"
+
+echo "Writing tarball at $TARBALL_PATH"
 
 pushd "$HTDOCS_DIR"/.. > /dev/null
 tar cjf "$TARBALL_PATH" "$VHOST_NAME"
 popd > /dev/null
+
+echo "Tarball size is $(du -m $TARBALL_PATH | cut -f 1) MiB"
+
+echo "Writing MySQL dump at $SQLDUMP_PATH"
 
 mysqldump \
   --defaults-file="$MYSQL_OPTIONS_PATH" \
@@ -63,6 +71,13 @@ mysqldump \
     wp_users \
   | bzip2 -c > "$SQLDUMP_PATH"
 
-# Remove old backups to save space
+echo "MySQL dump size is $(du -k $SQLDUMP_PATH | cut -f 1) KiB"
+
+echo "Removing backups older than $NUM_DAYS_TO_KEEP_BACKUPS days"
+
 find "$BACKUP_DIR" -type f -mtime "+${NUM_DAYS_TO_KEEP_BACKUPS}d" \
   -exec rm '{}' \;
+
+echo "Total size of backup directory is $(du -m $BACKUP_DIR | cut -f 1) MiB"
+
+echo "Backup finished at $(date)"
