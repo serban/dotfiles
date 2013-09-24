@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
+
+set -e  # Die if any command fails
+set -u  # Die if an unset variable is used
+
+LOCAL_SITES_DIR="${HOME}/Dropbox/Sites"
+SITES="javatheory.net home.javatheory.net"
+
+REMOTE_HOST="home.javatheory.net"
+REMOTE_SITES_DIR="~/web"
+
+# TODO: Exclude vim swap files
+RSYNC_COMMAND="rsync --archive --hard-links --delete --verbose --human-readable --progress -e ssh"
+
+echo "Starting sites sync at $(date)"
+
+for site in $SITES ; do
+  echo "Syncing $site"
+  $RSYNC_COMMAND \
+      "${LOCAL_SITES_DIR}/${site}/" "${REMOTE_HOST}:${REMOTE_SITES_DIR}/${site}"
+done
+
+echo "Site sync finished at $(date)"
