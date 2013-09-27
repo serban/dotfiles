@@ -21,7 +21,6 @@ Mod4 t :Exec launch terminal
 Mod4 v :Exec launch gvim
 
 # General actions
-Mod4 F1 :ShowDesktop
 Mod4 Return :Exec launch screensaver
 Mod4 BackSpace :Exec launch screenshot
 Mod4 Escape :Exec xkill
@@ -30,12 +29,16 @@ Mod4 space :Exec fbrun
 # Window actions
 Mod4 w :Close
 Mod4 h :Minimize
-Mod4 F3 :ToggleCmd {SetLayer Top} {SetLayer Normal}
-Mod4 F4 :Stick
-Mod4 F5 :Shade
-Mod4 F6 :MaximizeVertical
-Mod4 F7 :MaximizeHorizontal
-Mod4 F8 :Maximize
+
+Mod4 u :Maximize
+Mod4 i :MaximizeVertical
+Mod4 y :MaximizeHorizontal
+
+Mod4 l :ToggleCmd {SetLayer Top} {SetLayer Normal}
+Mod4 s :Shade
+Mod4 p :Stick
+
+Mod4 d :ShowDesktop
 
 # Change window
 Mod4 Tab :NextWindow {groups} (workspace=[current]) (minimized=no)
