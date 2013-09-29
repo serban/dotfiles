@@ -65,7 +65,7 @@ echo "MySQL dump size is $(du -s -k $SQLDUMP_PATH | cut -f 1) KiB"
 echo "Removing backups older than $NUM_DAYS_TO_KEEP_BACKUPS days"
 
 find "$BACKUP_DIR" -type f -mtime "+${NUM_DAYS_TO_KEEP_BACKUPS}d" \
-  -exec rm '{}' \;
+  -exec rm -v -f '{}' \;
 
 echo "Total size of backup directory is $(du -s -m $BACKUP_DIR | cut -f 1) MiB"
 
