@@ -99,6 +99,8 @@ set autochdir                       " Keep the current directory in sync with th
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
+abbreviate TODO: TODO(serban):
+
 abbreviate ## # ------------------------------------------------------------------------------<CR>
 abbreviate %% % ------------------------------------------------------------------------------<CR>
 abbreviate !! <!-- ----------------------------------------------------------------------- --><CR>
@@ -153,6 +155,29 @@ endif
 " ------------------------------------------------------------------------------
 " FUNCTIONS
 
+function InsertModeline()
+    if &expandtab
+        let expandStr="et"
+    else
+        let expandStr="noet"
+    endif
+
+    call append(0, "# vim:set" .
+    \               " ts=" . &tabstop .
+    \               " sw=" . &shiftwidth .
+    \               " sts=" . &softtabstop .
+    \               " " . expandStr . ":")
+endfunction
+
+function RemoveTrailingWhitespace()
+    s/\s\+$//g
+endfunction
+
+function ThreeSplit()
+    vsplit
+    vsplit
+endfunction
+
 function ToggleBackground()
     if &background == "light"
         set background=dark
@@ -169,20 +194,6 @@ function ToggleColorcolumn()
     endif
 endfunction
 
-function WriteTabSettings()
-    if &expandtab
-        let expandStr="et"
-    else
-        let expandStr="noet"
-    endif
-
-    call append(0, "# vim:set" .
-    \               " ts=" . &tabstop .
-    \               " sw=" . &shiftwidth .
-    \               " sts=" . &softtabstop .
-    \               " " . expandStr . ":")
-endfunction
-
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
 
@@ -192,19 +203,19 @@ endfunction
 " Expandtab will insert only spaces when the tab key is pressed
 
 " \t is 8 characters wide. Indents are 2 characters wide. Only use spaces.
-nmap <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+nnoremap <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 
 " \t is 8 characters wide. Indents are 4 characters wide. Only use spaces. (Default)
-nmap <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
+nnoremap <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 
 " \t is 4 characters wide. Only use \t.
-nmap <F5> :set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+nnoremap <F5> :set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
 
 " \t is 8 characters wide. Indents are 8 characters wide. Only use spaces.
-nmap <F8> :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
+nnoremap <F8> :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 
 " \t is 8 characters wide. Only use \t.
-nmap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+nnoremap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 " \t is 8 characters wide. Indents are 4 characters wide. Mix tabs and spaces.
 "
@@ -212,26 +223,27 @@ nmap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " 4 spaces wide. Thus, whitespace will consist of any number of tabs
 " followed by four spaces if the start of the line is not aligned to an
 " eight-charater boundary.
-"nmap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
+"nnoremap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
 
-map <F3> :call WriteTabSettings() <CR>
-map <F6> :call ToggleBackground() <CR>
-map <F7> :EasyBuffer <CR>
-
-map <C-c> :call ToggleColorcolumn() <CR>
-map <C-o> :noh <CR>
-
-" Remove trailing whitespace
-map <F10> :%s/\s\+$//g <CR>
+noremap <C-b> :call ToggleBackground() <CR>
+noremap <C-c> :call ToggleColorcolumn() <CR>
+noremap <C-o> :noh <CR>
 
 " Switch to the previous tab
-map <C-h> :tabp<CR>
+noremap <C-h> :tabp <CR>
 
 " Switch to the next tab
-map <C-l> :tabn<CR>
+noremap <C-l> :tabn <CR>
 
 " Open a new tab
-map <C-t> :tabe<CR>
+noremap <C-t> :tabe <CR>
+
+let mapleader = "\\"
+
+nnoremap <Leader>e :EasyBuffer <CR>
+nnoremap <Leader>m :call InsertModeline() <CR>
+nnoremap <Leader>v :call ThreeSplit() <CR>
+nnoremap <Leader>w :call RemoveTrailingWhitespace() <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
