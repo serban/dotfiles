@@ -232,14 +232,20 @@ noremap <C-c> :call ToggleColorcolumn() <CR>
 " Clear the highlighting for the current search
 noremap <C-o> :nohlsearch <CR>
 
+" Open a new tab
+noremap <C-t> :tabedit <CR>
+
 " Switch to the previous tab
 noremap <C-h> :tabprevious <CR>
 
 " Switch to the next tab
 noremap <C-l> :tabnext <CR>
 
-" Open a new tab
-noremap <C-t> :tabedit <CR>
+" Move the current tab to the left
+noremap <C-j> :tabmove -1 <CR>
+
+" Move the current tab to the right
+noremap <C-k> :tabmove +1 <CR>
 
 let mapleader = "\\"
 
