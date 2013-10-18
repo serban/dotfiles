@@ -170,7 +170,8 @@ function InsertModeline()
 endfunction
 
 function RemoveTrailingWhitespace()
-    s/\s\+$//g
+    silent! %s/\v\s+$//g
+    echo 'Trailing whitespace removed'
 endfunction
 
 function ThreeSplit()
