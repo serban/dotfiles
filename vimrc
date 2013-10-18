@@ -228,16 +228,18 @@ nnoremap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 noremap <C-b> :call ToggleBackground() <CR>
 noremap <C-c> :call ToggleColorcolumn() <CR>
-noremap <C-o> :noh <CR>
+
+" Clear the highlighting for the current search
+noremap <C-o> :nohlsearch <CR>
 
 " Switch to the previous tab
-noremap <C-h> :tabp <CR>
+noremap <C-h> :tabprevious <CR>
 
 " Switch to the next tab
-noremap <C-l> :tabn <CR>
+noremap <C-l> :tabnext <CR>
 
 " Open a new tab
-noremap <C-t> :tabe <CR>
+noremap <C-t> :tabedit <CR>
 
 let mapleader = "\\"
 
