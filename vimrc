@@ -155,6 +155,12 @@ endif
 " ------------------------------------------------------------------------------
 " FUNCTIONS
 
+" TODO(serban): Figure out why this doesn't work
+function HighlightWordUnderCursor()
+    let @/ = "\<".expand("<cword>")."\>"
+    set hlsearch
+endfunction
+
 function InsertModeline()
     if &expandtab
         let expandStr="et"
@@ -167,11 +173,13 @@ function InsertModeline()
     \               " sw=" . &shiftwidth .
     \               " sts=" . &softtabstop .
     \               " " . expandStr . ":")
+
+    echo 'Inserted modeline on the first line'
 endfunction
 
 function RemoveTrailingWhitespace()
     silent! %s/\v\s+$//g
-    echo 'Trailing whitespace removed'
+    echo 'Removed trailing whitespace'
 endfunction
 
 function ThreeSplit()
@@ -247,12 +255,14 @@ noremap <C-j> :tabmove -1 <CR>
 " Move the current tab to the right
 noremap <C-k> :tabmove +1 <CR>
 
-let mapleader = "\\"
+let mapleader = " "
 
 nnoremap <Leader>e :EasyBuffer <CR>
 nnoremap <Leader>m :call InsertModeline() <CR>
 nnoremap <Leader>v :call ThreeSplit() <CR>
 nnoremap <Leader>w :call RemoveTrailingWhitespace() <CR>
+nnoremap <Leader>y :call HighlightWordUnderCursor() <CR>
+nnoremap <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
