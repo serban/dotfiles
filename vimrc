@@ -100,7 +100,7 @@ set autochdir                       " Keep the current directory in sync with th
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
-abbreviate TODO: TODO(serban):
+iabbrev TODO: TODO(serban):
 
 inoremap ## # ------------------------------------------------------------------------------<ESC>o
 inoremap %% % ------------------------------------------------------------------------------<ESC>o
