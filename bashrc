@@ -216,6 +216,16 @@ linux && {
 # ------------------------------------------------------------------------------
 # RAM DISK
 
+darwin && {
+  ramdisk() {
+    # Inspired by https://github.com/ideamonk/Rambola/blob/master/src/helper.sh
+    local blocksize
+
+    let blocksize=2048*8192  # 8 GiB
+    diskutil eraseVolume HFS+ ramdisk $(hdiutil attach -nomount ram://$blocksize)
+  }
+}
+
 linux && {
   alias ramdisk='sudo mkdir -p /ramdisk && sudo mount -t tmpfs -o size=4g tmpfs /ramdisk'
 }
