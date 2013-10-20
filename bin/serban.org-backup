@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
 
 VHOST_NAME="serban.org"
 MYSQL_DATABASE="serban_wp"

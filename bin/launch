@@ -1,18 +1,18 @@
 #!/bin/bash
-# vim:set ts=8 sw=4 sts=4 et:
+# vim:set ts=8 sw=2 sts=2 et:
 
 term='urxvt'
 
 case "$1" in
-    browser)        google-chrome ;;
-    calculator)     gnome-calculator ;;
-    editor)         gedit ;;
-    finder)         nautilus --no-desktop > /dev/null 2>&1 ;;
-    gvim)           gvim ;;
-    htop)           $term -e htop ;;
-    mixer)          $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
-    screensaver)    gnome-screensaver-command --lock ;;
-    screenshot)     gnome-screenshot ;;
-    terminal)       $term ;;
-    *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
+  browser)        google-chrome ;;
+  calculator)     gnome-calculator ;;
+  editor)         gedit ;;
+  finder)         nautilus --no-desktop > /dev/null 2>&1 ;;
+  gvim)           gvim ;;
+  htop)           $term -e htop ;;
+  mixer)          $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
+  screensaver)    gnome-screensaver-command --lock ;;
+  screenshot)     gnome-screenshot ;;
+  terminal)       $term ;;
+  *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
 esac
