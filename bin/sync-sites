@@ -10,7 +10,6 @@ SITES="javatheory.net home.javatheory.net"
 REMOTE_HOST="home.javatheory.net"
 REMOTE_SITES_DIR="~/web"
 
-# TODO: Exclude vim swap files
 RSYNC_COMMAND="rsync --archive --hard-links --delete --verbose --human-readable --progress -e ssh"
 
 echo "Starting sites sync at $(date)"
@@ -18,7 +17,8 @@ echo "Starting sites sync at $(date)"
 for site in $SITES ; do
   echo "Syncing $site"
   $RSYNC_COMMAND \
-      "${LOCAL_SITES_DIR}/${site}/" "${REMOTE_HOST}:${REMOTE_SITES_DIR}/${site}"
+    --exclude='.DS_Store' --exclude='.*.swp' \
+    "${LOCAL_SITES_DIR}/${site}/" "${REMOTE_HOST}:${REMOTE_SITES_DIR}/${site}"
 done
 
 echo "Site sync finished at $(date)"
