@@ -1,4 +1,4 @@
-" vim:set ts=8 sw=4 sts=4 et:
+" vim:set ts=8 sw=2 sts=2 et:
 
 " ------------------------------------------------------------------------------
 " VUNDLE
@@ -47,7 +47,7 @@ set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
 
 if has("gui_macvim")
-    set guifont=Monaco:h15          " Use a good font in MacVim
+  set guifont=Monaco:h15            " Use a good font in MacVim
 endif
 
 "set columns=114                    " Put this line in gvimrc. It makes the window wider.
@@ -112,45 +112,45 @@ inoremap /// // ----------------------------------------------------------------
 " CSOPE
 
 if has("cscope")
-    if filereadable("cscope.out")   " Look in local directory first
-        cscope add cscope.out
-    elseif $CSCOPE_DB != ""         " Then look at environmental variable
-        cscope add $CSCOPE_DB
-    endif
+  if filereadable("cscope.out")   " Look in local directory first
+    cscope add cscope.out
+  elseif $CSCOPE_DB != ""         " Then look at environmental variable
+    cscope add $CSCOPE_DB
+  endif
 
-    set cscopeverbose
-    set cscopetag                   " When pressing CTRL-], search cscope instead of ctags
-    set csto=0                      " Search cscope database before ctags database
-    set cscopepathcomp=0            " Show the entire path of a file in cscope listings
+  set cscopeverbose
+  set cscopetag                   " When pressing CTRL-], search cscope instead of ctags
+  set csto=0                      " Search cscope database before ctags database
+  set cscopepathcomp=0            " Show the entire path of a file in cscope listings
 
-    " The following maps all invoke one of the following cscope search types:
-    "
-    "   's'   symbol:   find all references to the token under cursor
-    "   'g'   global:   find global definition(s) of the token under cursor
-    "   'c'   calls:    find all calls to the function name under cursor
-    "   't'   text:     find all instances of the text under cursor
-    "   'e'   egrep:    egrep search for the word under cursor
-    "   'f'   file:     open the filename under cursor
-    "   'i'   includes: find files that include the filename under cursor
-    "   'd'   called:   find functions that function under cursor calls
+  " The following maps all invoke one of the following cscope search types:
+  "
+  "   's'   symbol:   find all references to the token under cursor
+  "   'g'   global:   find global definition(s) of the token under cursor
+  "   'c'   calls:    find all calls to the function name under cursor
+  "   't'   text:     find all instances of the text under cursor
+  "   'e'   egrep:    egrep search for the word under cursor
+  "   'f'   file:     open the filename under cursor
+  "   'i'   includes: find files that include the filename under cursor
+  "   'd'   called:   find functions that function under cursor calls
 
-    nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
-    nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
-    nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
-    nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
-    nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
-    nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
-    nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
-    nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
+  nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
+  nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
+  nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
+  nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
+  nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
+  nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
+  nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
+  nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
 
-    nnoremap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
-    nnoremap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
-    nnoremap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
-    nnoremap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
-    nnoremap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
-    nnoremap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
-    nnoremap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
-    nnoremap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
+  nnoremap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
+  nnoremap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
+  nnoremap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
+  nnoremap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
+  nnoremap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
+  nnoremap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
+  nnoremap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
+  nnoremap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
 endif
 
 " ------------------------------------------------------------------------------
@@ -158,50 +158,50 @@ endif
 
 " TODO(serban): Figure out why this doesn't work
 function HighlightWordUnderCursor()
-    let @/ = "\<".expand("<cword>")."\>"
-    set hlsearch
+  let @/ = "\<".expand("<cword>")."\>"
+  set hlsearch
 endfunction
 
 function InsertModeline()
-    if &expandtab
-        let expandStr="et"
-    else
-        let expandStr="noet"
-    endif
+  if &expandtab
+    let expandStr="et"
+  else
+    let expandStr="noet"
+  endif
 
-    call append(0, "# vim:set" .
-    \               " ts=" . &tabstop .
-    \               " sw=" . &shiftwidth .
-    \               " sts=" . &softtabstop .
-    \               " " . expandStr . ":")
+  call append(0, "# vim:set" .
+  \               " ts=" . &tabstop .
+  \               " sw=" . &shiftwidth .
+  \               " sts=" . &softtabstop .
+  \               " " . expandStr . ":")
 
-    echo 'Inserted modeline on the first line'
+  echo 'Inserted modeline on the first line'
 endfunction
 
 function RemoveTrailingWhitespace()
-    silent! %s/\v\s+$//g
-    echo 'Removed trailing whitespace'
+  silent! %s/\v\s+$//g
+  echo 'Removed trailing whitespace'
 endfunction
 
 function ThreeSplit()
-    vsplit
-    vsplit
+  vsplit
+  vsplit
 endfunction
 
 function ToggleBackground()
-    if &background == "light"
-        set background=dark
-    else
-        set background=light
-    endif
+  if &background == "light"
+    set background=dark
+  else
+    set background=light
+  endif
 endfunction
 
 function ToggleColorcolumn()
-    if &colorcolumn != "0"
-        windo set colorcolumn=0
-    else
-        windo set colorcolumn=+1
-    endif
+  if &colorcolumn != "0"
+    windo set colorcolumn=0
+  else
+    windo set colorcolumn=+1
+  endif
 endfunction
 
 " ------------------------------------------------------------------------------
@@ -278,5 +278,5 @@ autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for
 " LOCAL SETTINGS
 
 if filereadable(expand("~/.vimrc_local"))
-    source ~/.vimrc_local
+  source ~/.vimrc_local
 endif
