@@ -81,8 +81,8 @@ set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
 
 set tabstop=8                       " \t is 8 characters wide
-set shiftwidth=4                    " Shift commands are 4 characters wide
-set softtabstop=4                   " Indents are 4 characters wide
+set shiftwidth=2                    " Shift commands are 2 characters wide
+set softtabstop=2                   " Indents are 2 characters wide
 set expandtab                       " Only use spaces (\t will never be inserted)
 
 set shiftround                      " Round indent to a multiple of shiftwidth for > and <, and in insert mode for CTRL-T, and CTRL-D
