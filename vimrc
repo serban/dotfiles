@@ -134,23 +134,23 @@ if has("cscope")
     "   'i'   includes: find files that include the filename under cursor
     "   'd'   called:   find functions that function under cursor calls
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
-    nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
-    nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
-    nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
-    nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
-    nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
-    nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
+    nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
+    nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
+    nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
+    nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
+    nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
+    nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
+    nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
+    nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
+    nnoremap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
+    nnoremap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
+    nnoremap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
+    nnoremap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
+    nnoremap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
+    nnoremap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
+    nnoremap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
+    nnoremap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
 endif
 
 " ------------------------------------------------------------------------------
