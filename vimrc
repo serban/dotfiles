@@ -85,6 +85,7 @@ set shiftwidth=4                    " Shift commands are 4 characters wide
 set softtabstop=4                   " Indents are 4 characters wide
 set expandtab                       " Only use spaces (\t will never be inserted)
 
+set shiftround                      " Round indent to a multiple of shiftwidth for > and <, and in insert mode for CTRL-T, and CTRL-D
 set autoindent                      " Keep the indentation the same when inserting a new line
 set smartindent                     " Syntax-aware indenting
 set modeline                        " Modelines in files take precedent over these settings
