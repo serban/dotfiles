@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # vim:set ts=8 sw=2 sts=2 et:
 
-set -e
+set -e  # Die if any command fails
+set -u  # Die if an unset variable is used
 
 DOTFILES="${HOME}/.dotfiles"
 
@@ -19,12 +20,15 @@ ln -si $DOTFILES/tmux.conf      ~/.tmux.conf
 ln -si $DOTFILES/vimrc          ~/.vimrc
 ln -si $DOTFILES/Xresources     ~/.Xresources
 
-touch ~/.hushlogin          # Silence the message of the day and last login info
+# Silence the message of the day and last login info
+touch ~/.hushlogin
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 OS="$(uname -s)"
 
-if [ `whoami` = 'root' ] || [ "${OS}" = 'Darwin' ] || [ "${OS}" = 'FreeBSD' ]; then
+if [ `whoami` = 'root' ] || \
+   [ "${OS}" = 'Darwin' ] || \
+   [ "${OS}" = 'FreeBSD' ]; then
   ln -si $DOTFILES/bashrc ~/.bash_profile
 fi
