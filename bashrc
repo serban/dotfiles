@@ -487,7 +487,7 @@ freebsd && {
 
 darwin && {
     alias v.='find . -type f -print0 | xargs -0 mvim -p'
-    
+
     v() {
         mvim -p "$@" 2> /dev/null
     }
@@ -495,7 +495,7 @@ darwin && {
 
 linux && {
     alias v.='find . -type f -print0 | xargs -0 gvim -p'
-    
+
     v() {
         gvim -p "$@" 2> /dev/null
     }
