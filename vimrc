@@ -75,7 +75,7 @@ set incsearch                       " Search as you type
 set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
-"setlocal spell spelllang=en_us
+set spelllang=en_us                 " Use American English for spell checking
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
@@ -260,6 +260,7 @@ let mapleader = " "
 
 nnoremap <Leader>e :EasyBuffer <CR>
 nnoremap <Leader>m :call InsertModeline() <CR>
+nnoremap <Leader>s :set spell! <CR>
 nnoremap <Leader>v :call ThreeSplit() <CR>
 nnoremap <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <Leader>y :call HighlightWordUnderCursor() <CR>
