@@ -56,6 +56,7 @@ def print_help():
 
 COMMANDS:
     add <label> <path>
+    change <label> <path>
     remove <label>
     get <label>
     labels
@@ -88,6 +89,7 @@ def main():
 
     command_list = [
         'add',
+        'change',
         'remove',
         'get',
         'labels',
@@ -104,6 +106,11 @@ def main():
         bookmarks = Bookmarks()
 
     if command == 'add':
+        bookmarks.add(label, path)
+        bookmarks.save(BOOKMARKS_PATH)
+
+    elif command == 'change':
+        bookmarks.remove(label)
         bookmarks.add(label, path)
         bookmarks.save(BOOKMARKS_PATH)
 
