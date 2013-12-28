@@ -114,7 +114,7 @@ export PROMPT_COMMAND='history -a'
 darwin && {
   # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
   # newer tools are used instead of the outdated Mac OS X utilities
-  export PATH="${HOME}/bin:${HOME}/depot_tools:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+  export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 }
 
 freebsd && {
@@ -122,7 +122,7 @@ freebsd && {
 }
 
 linux && {
-  export PATH="${HOME}/bin:${HOME}/depot_tools:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+  export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 }
 
 # ------------------------------------------------------------------------------
