@@ -432,7 +432,7 @@ alias mlc='tmux list-clients'
 
 m() {
   if [ -n "$1" ]; then
-    tmux new-session -A -n Shell -s "$1"
+    tmux new-session -A -n Shell -c "${HOME}" -s "$1"
   else
     tmux new-session -A -n Shell -s misc
   fi
