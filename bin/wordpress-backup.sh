@@ -12,6 +12,10 @@
 #   user=user
 #   password=password
 
+# To restore a database backup, create "$MYSQL_DATABASE" then run:
+#   $ bunzip2 -c "$SQLDUMP_PATH" | \
+#     mysql --defaults-file="$MYSQL_OPTIONS_PATH" "$MYSQL_DATABASE"
+
 set -e  # Die if any command fails
 set -u  # Die if an unset variable is used
 
