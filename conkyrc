@@ -1,0 +1,48 @@
+# vim:set ts=8 sw=2 sts=2 et:
+
+background no
+
+update_interval 4.0
+double_buffer yes
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=11
+
+alignment top_left
+gap_x 6
+gap_y 4
+
+draw_shades yes
+draw_outline yes
+draw_borders no
+
+default_color white
+default_shade_color black
+default_outline_color lightblue
+
+no_buffers yes
+short_units yes
+
+# ------------------------------------------------------------------------------
+
+TEXT
+$nodename: $sysname $kernel ($machine)
+${hr 2}
+MEM       $mem/$memmax ${alignr}${color lightblue}${membar 6,170}${color}
+SWAP      $swap/$swapmax ${alignr}${color lightblue}${swapbar 6,170}${color}
+/ramdisk  ${fs_used /ramdisk}/${fs_size /ramdisk} ${alignr}${color lightblue}${fs_bar 6,170 /ramdisk}${color}
+/tmp      ${fs_used /tmp}/${fs_size /tmp} ${alignr}${color lightblue}${fs_bar 6,170 /tmp}${color}
+/         ${fs_used /}/${fs_size /}${alignr}${fs_bar 6,170 /}
+/usr      ${fs_used /usr}/${fs_size /usr} ${alignr}${fs_bar 6,170 /usr}
+/home     ${fs_used /home}/${fs_size /home} ${alignr}${fs_bar 6,170 /home}
+${color black}${hr 2}${color}
+  PID PROCESS           CPU%   MEM%
+${color black}${hr 2}${color}
+${top pid 1} ${top name 1} ${top cpu 1} ${top mem 1}
+${top pid 2} ${top name 2} ${top cpu 2} ${top mem 2}
+${top pid 3} ${top name 3} ${top cpu 3} ${top mem 3}
+${color black}${hr 2}${color}
+${top_mem pid 1} ${top_mem name 1} ${top_mem cpu 1} ${top_mem mem 1}
+${top_mem pid 2} ${top_mem name 2} ${top_mem cpu 2} ${top_mem mem 2}
+${top_mem pid 3} ${top_mem name 3} ${top_mem cpu 3} ${top_mem mem 3}
+${top_mem pid 4} ${top_mem name 4} ${top_mem cpu 4} ${top_mem mem 4}
+${top_mem pid 5} ${top_mem name 5} ${top_mem cpu 5} ${top_mem mem 5}
