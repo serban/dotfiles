@@ -98,6 +98,11 @@ set backspace=eol,indent,start      " Make life easier on crappy terminals
 set autochdir                       " Keep the current directory in sync with the folder containing the open file
 
 " ------------------------------------------------------------------------------
+" PLUGIN SETTINGS
+
+let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
+
+" ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
 iabbrev TODO: TODO(serban):
