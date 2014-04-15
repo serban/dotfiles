@@ -4,15 +4,15 @@
 term='urxvt'
 
 case "$1" in
-  browser)        google-chrome ;;
-  calculator)     gnome-calculator ;;
-  editor)         gedit ;;
-  finder)         nautilus --no-desktop > /dev/null 2>&1 ;;
-  gvim)           gvim ;;
-  htop)           $term -e htop ;;
-  mixer)          $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
-  screensaver)    gnome-screensaver-command --lock ;;
-  screenshot)     gnome-screenshot ;;
-  terminal)       $term ;;
+  browser)        exec google-chrome ;;
+  calculator)     exec gnome-calculator ;;
+  editor)         exec gedit ;;
+  finder)         exec nautilus --no-desktop > /dev/null 2>&1 ;;
+  gvim)           exec gvim ;;
+  htop)           exec $term -e htop ;;
+  mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
+  screensaver)    exec gnome-screensaver-command --lock ;;
+  screenshot)     exec gnome-screenshot ;;
+  terminal)       exec $term ;;
   *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
 esac
