@@ -8,7 +8,7 @@ case "$1" in
   calculator)     exec gnome-calculator ;;
   editor)         exec gedit ;;
   finder)         exec nautilus --no-desktop > /dev/null 2>&1 ;;
-  gvim)           exec gvim ;;
+  gvim)           exec gvim --nofork ;;
   htop)           exec $term -e htop ;;
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
   screensaver)    exec gnome-screensaver-command --lock ;;
