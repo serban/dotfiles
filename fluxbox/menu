@@ -1,11 +1,11 @@
-# vim:set ts=8 sw=4 sts=4 et:
+# vim:set ts=8 sw=2 sts=2 et:
 
 [begin] (Fluxbox)
-    [submenu] (Browsers)
-        [exec] (Chrome) {google-chrome}
-        [exec] (Firefox) {firefox}
-        [exec] (Opera) {opera -notrayicon}
-    [end]
+    [exec] (urxvt) {launch terminal}
+    [exec] (Chrome) {launch browser}
+    [exec] (Nautilus) {launch finder}
+
+    [separator]
 
     [submenu] (Fluxbox)
 #       [config] (Config)
@@ -14,11 +14,4 @@
         [restart] (Restart)
         [exit] (Exit)
     [end]
-
-    [separator]
-
-    [exec] (Terminal) {launch terminal}
-    [exec] (HTop) {launch htop}
-    [exec] (Mixer) {launch mixer}
-    [exec] (Nautilus) {nautilus --no-desktop ~}
 [end]
