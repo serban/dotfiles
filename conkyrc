@@ -2,14 +2,21 @@
 
 background no
 
-update_interval 4.0
+update_interval 2.0
 double_buffer yes
 use_xft yes
+
 xftfont Bitstream Vera Sans Mono:size=11
+
+no_buffers yes
+short_units yes
+format_human_readable yes
 
 alignment top_left
 gap_x 6
 gap_y 4
+
+default_bar_size 170 6
 
 draw_shades yes
 draw_outline yes
@@ -19,28 +26,26 @@ default_color white
 default_shade_color black
 default_outline_color lightblue
 
-no_buffers yes
-short_units yes
+color0 black
+color1 white
+color2 lightblue
 
 # ------------------------------------------------------------------------------
 
 TEXT
-$nodename: $sysname $kernel ($machine)
+$nodename
 ${hr 2}
-MEM       $mem/$memmax ${alignr}${color lightblue}${membar 6,170}${color}
-SWAP      $swap/$swapmax ${alignr}${color lightblue}${swapbar 6,170}${color}
-/ramdisk  ${fs_used /ramdisk}/${fs_size /ramdisk} ${alignr}${color lightblue}${fs_bar 6,170 /ramdisk}${color}
-/tmp      ${fs_used /tmp}/${fs_size /tmp} ${alignr}${color lightblue}${fs_bar 6,170 /tmp}${color}
-/         ${fs_used /}/${fs_size /}${alignr}${fs_bar 6,170 /}
-/usr      ${fs_used /usr}/${fs_size /usr} ${alignr}${fs_bar 6,170 /usr}
-/home     ${fs_used /home}/${fs_size /home} ${alignr}${fs_bar 6,170 /home}
-${color black}${hr 2}${color}
-  PID PROCESS           CPU%   MEM%
-${color black}${hr 2}${color}
+MEM       $mem ${alignr}${color1}${membar}${color}
+SWAP      $swap ${alignr}${color1}${swapbar}${color}
+RAMDISK   ${fs_used /ramdisk} ${alignr}${color1}${fs_bar /ramdisk}${color}
+HOME      ${fs_used /usr/local/google} ${alignr}${color2}${fs_bar /usr/local/google}${color}
+${color0}${hr 2}${color}
+  PID PROCESS            CPU%   MEM%
+${color0}${hr 2}${color}
 ${top pid 1} ${top name 1} ${top cpu 1} ${top mem 1}
 ${top pid 2} ${top name 2} ${top cpu 2} ${top mem 2}
 ${top pid 3} ${top name 3} ${top cpu 3} ${top mem 3}
-${color black}${hr 2}${color}
+${color0}${hr 2}${color}
 ${top_mem pid 1} ${top_mem name 1} ${top_mem cpu 1} ${top_mem mem 1}
 ${top_mem pid 2} ${top_mem name 2} ${top_mem cpu 2} ${top_mem mem 2}
 ${top_mem pid 3} ${top_mem name 3} ${top_mem cpu 3} ${top_mem mem 3}
