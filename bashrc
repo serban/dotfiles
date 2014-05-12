@@ -93,6 +93,9 @@ CLOSESCREEN='\033\\\\'
 # Make directories 750 and files 640 by default
 # umask 027
 
+# Make directories 755 and files 644 by default
+# umask 022
+
 shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 
