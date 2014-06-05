@@ -162,6 +162,8 @@ alias emacs='emacs -nw'
 alias fa='flac --analyze --residual-text --force'
 alias tags='metaflac --export-tags-to=-'
 
+alias screencapture='avconv -f x11grab -s sxga -r 60 -i :0.0 -vcodec libx264'
+
 alias f='find . -iname'
 
 # Find any file with an executable bit set
