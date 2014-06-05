@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # vim:set ts=8 sw=2 sts=2 et:
 
-set -e  # Die if any command fails
-set -u  # Die if an unset variable is used
+set -o errexit
+set -o nounset
+set -o pipefail
 
 LOCAL_SITES_DIR="${HOME}/Dropbox/Sites"
 SITES="javatheory.net home.javatheory.net"

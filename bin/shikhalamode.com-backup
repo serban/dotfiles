@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # vim:set ts=8 sw=2 sts=2 et:
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 VHOST_NAME="shikhalamode.com"
 MYSQL_DATABASE="serban_slmwp"
 NUM_DAYS_TO_KEEP_BACKUPS=7

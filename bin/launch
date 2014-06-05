@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # vim:set ts=8 sw=2 sts=2 et:
 
-term='urxvt'
+set -o errexit
+set -o nounset
+set -o pipefail
+
+readonly term='urxvt'
 
 case "$1" in
   browser)        exec google-chrome ;;

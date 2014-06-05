@@ -16,8 +16,9 @@
 #   $ bunzip2 -c "$SQLDUMP_PATH" | \
 #     mysql --defaults-file="$MYSQL_OPTIONS_PATH" "$MYSQL_DATABASE"
 
-set -e  # Die if any command fails
-set -u  # Die if an unset variable is used
+set -o errexit
+set -o nounset
+set -o pipefail
 
 VHOST_NAME=${VHOST_NAME:?VHOST_NAME is undefined}
 MYSQL_DATABASE=${MYSQL_DATABASE:?MYSQL_DATABASE is undefined}

@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # vim:set ts=8 sw=2 sts=2 et:
 
-set -e  # Die if any command fails
-set -u  # Die if an unset variable is used
+set -o errexit
+set -o nounset
+set -o pipefail
 
-DOTFILES="${HOME}/.dotfiles"
+readonly DOTFILES="${HOME}/.dotfiles"
 
 ln -si $DOTFILES/bash_logout    ~/.bash_logout
 ln -si $DOTFILES/bashrc         ~/.bashrc
@@ -28,8 +29,8 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 OS="$(uname -s)"
 
-if [ `whoami` = 'root' ] || \
-   [ "${OS}" = 'Darwin' ] || \
-   [ "${OS}" = 'FreeBSD' ]; then
+if [[ "$(whoami)" = 'root' ]] || \
+   [[ "${OS}" = 'Darwin' ]] || \
+   [[ "${OS}" = 'FreeBSD' ]]; then
   ln -si $DOTFILES/bashrc ~/.bash_profile
 fi
