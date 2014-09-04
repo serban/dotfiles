@@ -273,7 +273,10 @@ nnoremap <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 autocmd FileType css,html,javascript,ruby,eruby :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead,BufNewFile *.handlebars :set filetype=html
 autocmd BufRead,BufNewFile *.less :set filetype=css
+
+autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
+autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
 autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for plain text files
 
 " ------------------------------------------------------------------------------
