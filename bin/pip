@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+PIP2_PATH="$(which pip2)"
+PIP2_LINK="$(readlink $PIP2_PATH)"
+
+PIP3_PATH="$(which pip3)"
+PIP3_LINK="$(readlink $PIP3_PATH)"
+
+echo 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly.'
+echo "pip: pip2 is ${PIP2_PATH} --> ${PIP2_LINK}"
+echo "pip: pip3 is ${PIP3_PATH} --> ${PIP3_LINK}"
