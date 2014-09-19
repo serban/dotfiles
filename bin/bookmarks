@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# vim:set ts=8 sw=4 sts=4 et:
+# vim:set ts=8 sw=2 sts=2 et:
 
 import json
 import os
@@ -10,130 +10,130 @@ BOOKMARKS_PATH = os.path.expanduser('~/.bookmarks.json')
 
 
 class Bookmarks(object):
-    def __init__(self, path=None):
-        if path is None:
-            self.bookmarks = dict()
-        else:
-            self._load(path)
+  def __init__(self, path=None):
+    if path is None:
+      self.bookmarks = dict()
+    else:
+      self._load(path)
 
-    def add(self, label, path):
-        if len(label) == 0:
-            raise Exception("Labels must not be empty")
+  def add(self, label, path):
+    if len(label) == 0:
+      raise Exception("Labels must not be empty")
 
-        if label in self.bookmarks:
-            raise Exception("The label %s already exists" % label)
+    if label in self.bookmarks:
+      raise Exception("The label %s already exists" % label)
 
-        self.bookmarks[label] = path
+    self.bookmarks[label] = path
 
-    def remove(self, label):
-        del self.bookmarks[label]
+  def remove(self, label):
+    del self.bookmarks[label]
 
-    def get(self, label):
-        return self.bookmarks[label]
+  def get(self, label):
+    return self.bookmarks[label]
 
-    def labels(self):
-        return sorted(self.bookmarks.keys())
+  def labels(self):
+    return sorted(self.bookmarks.keys())
 
-    def all(self):
-        return sorted(self.bookmarks.items())
+  def all(self):
+    return sorted(self.bookmarks.items())
 
-    def save(self, path):
-        with open(path, 'w') as f:
-            json.dump(self.bookmarks, f, indent=2, sort_keys=True)
+  def save(self, path):
+    with open(path, 'w') as f:
+      json.dump(self.bookmarks, f, indent=2, sort_keys=True)
 
-    def _load(self, path):
-        with open(path, 'r') as f:
-            self.bookmarks = json.load(f)
+  def _load(self, path):
+    with open(path, 'r') as f:
+      self.bookmarks = json.load(f)
 
 
 def print_help():
-    help_string = """USAGE:
-    bookmarks <command> [label] [path]
+  help_string = """USAGE:
+  bookmarks <command> [label] [path]
 
 COMMANDS:
-    add <label> <path>
-    change <label> <path>
-    remove <label>
-    get <label>
-    labels
-    list"""
+  add <label> <path>
+  change <label> <path>
+  remove <label>
+  get <label>
+  labels
+  list"""
 
-    print help_string
+  print help_string
 
 
 def get_command_line_args():
-    arg_dict = dict()
-    arg_list = sys.argv[1:]
-    num_args = len(arg_list)
+  arg_dict = dict()
+  arg_list = sys.argv[1:]
+  num_args = len(arg_list)
 
-    if num_args > 0:
-        arg_dict['command'] = sys.argv[1]
+  if num_args > 0:
+    arg_dict['command'] = sys.argv[1]
 
-    if num_args > 1:
-        arg_dict['label'] = sys.argv[2]
+  if num_args > 1:
+    arg_dict['label'] = sys.argv[2]
 
-    if num_args > 2:
-        arg_dict['path'] = sys.argv[3]
+  if num_args > 2:
+    arg_dict['path'] = sys.argv[3]
 
-    return arg_dict
+  return arg_dict
 
 
 def main():
-    args = get_command_line_args()
+  args = get_command_line_args()
 
-    command = args.get('command')
-    label = args.get('label')
-    path = args.get('path')
+  command = args.get('command')
+  label = args.get('label')
+  path = args.get('path')
 
-    command_list = [
-        'add',
-        'change',
-        'remove',
-        'get',
-        'labels',
-        'list',
-    ]
+  command_list = [
+    'add',
+    'change',
+    'remove',
+    'get',
+    'labels',
+    'list',
+  ]
 
-    if command not in command_list:
-        print_help()
-        return
+  if command not in command_list:
+    print_help()
+    return
 
-    try:
-        bookmarks = Bookmarks(BOOKMARKS_PATH)
-    except IOError:
-        bookmarks = Bookmarks()
+  try:
+    bookmarks = Bookmarks(BOOKMARKS_PATH)
+  except IOError:
+    bookmarks = Bookmarks()
 
-    if command == 'add':
-        bookmarks.add(label, path)
-        bookmarks.save(BOOKMARKS_PATH)
+  if command == 'add':
+    bookmarks.add(label, path)
+    bookmarks.save(BOOKMARKS_PATH)
 
-    elif command == 'change':
-        bookmarks.remove(label)
-        bookmarks.add(label, path)
-        bookmarks.save(BOOKMARKS_PATH)
+  elif command == 'change':
+    bookmarks.remove(label)
+    bookmarks.add(label, path)
+    bookmarks.save(BOOKMARKS_PATH)
 
-    elif command == 'remove':
-        bookmarks.remove(label)
-        bookmarks.save(BOOKMARKS_PATH)
+  elif command == 'remove':
+    bookmarks.remove(label)
+    bookmarks.save(BOOKMARKS_PATH)
 
-    elif command == 'get':
-        print bookmarks.get(label)
+  elif command == 'get':
+    print bookmarks.get(label)
 
-    elif command == 'labels':
-        for label in bookmarks.labels():
-            print label
+  elif command == 'labels':
+    for label in bookmarks.labels():
+      print label
 
-    elif command == 'list':
-        labels = bookmarks.labels()
+  elif command == 'list':
+    labels = bookmarks.labels()
 
-        if len(labels) == 0:
-            return
+    if len(labels) == 0:
+      return
 
-        max_label_length = len(max(labels, key=len))
+    max_label_length = len(max(labels, key=len))
 
-        for label, path in bookmarks.all():
-            print ('{:<' + str(max_label_length) + '}    {}').format(label, path)
+    for label, path in bookmarks.all():
+      print ('{:<' + str(max_label_length) + '}    {}').format(label, path)
 
 
 if __name__ == '__main__':
-    main()
+  main()
