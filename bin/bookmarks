@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # vim:set ts=8 sw=4 sts=4 et:
 
-# ------------------------------------------------------------------------------
-
 import json
 import os
 import re
@@ -10,7 +8,6 @@ import sys
 
 BOOKMARKS_PATH = os.path.expanduser('~/.bookmarks.json')
 
-# ------------------------------------------------------------------------------
 
 class Bookmarks(object):
     def __init__(self, path=None):
@@ -48,7 +45,6 @@ class Bookmarks(object):
         with open(path, 'r') as f:
             self.bookmarks = json.load(f)
 
-# ------------------------------------------------------------------------------
 
 def print_help():
     help_string = """USAGE:
@@ -63,6 +59,7 @@ COMMANDS:
     list"""
 
     print help_string
+
 
 def get_command_line_args():
     arg_dict = dict()
@@ -79,6 +76,7 @@ def get_command_line_args():
         arg_dict['path'] = sys.argv[3]
 
     return arg_dict
+
 
 def main():
     args = get_command_line_args()
@@ -136,7 +134,6 @@ def main():
         for label, path in bookmarks.all():
             print ('{:<' + str(max_label_length) + '}    {}').format(label, path)
 
-# ------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     main()
