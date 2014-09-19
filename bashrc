@@ -471,12 +471,12 @@ _bookmarks()
   previous_word="${COMP_WORDS[COMP_CWORD-1]}"
   current_word="${COMP_WORDS[COMP_CWORD]}"
 
-  commands="add change remove get labels list"
+  commands="add change remove rename get labels list"
 
   COMPREPLY=()
 
   case "${previous_word}" in
-    change|get|remove)
+    change|get|remove|rename)
       COMPREPLY=( $(compgen -W "$(bookmarks labels)" -- "${current_word}") ) ; return ;;
   esac
 

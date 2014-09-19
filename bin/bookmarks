@@ -54,6 +54,7 @@ COMMANDS:
   add <label> <path>
   change <label> <path>
   remove <label>
+  rename <label> <new-label>
   get <label>
   labels
   list"""
@@ -89,6 +90,7 @@ def main():
     'add',
     'change',
     'remove',
+    'rename',
     'get',
     'labels',
     'list',
@@ -113,6 +115,12 @@ def main():
     bookmarks.save(BOOKMARKS_PATH)
 
   elif command == 'remove':
+    bookmarks.remove(label)
+    bookmarks.save(BOOKMARKS_PATH)
+
+  elif command == 'rename':
+    new_label = path  # TODO(serban): Clean up argument parsing
+    bookmarks.add(new_label, bookmarks.get(label))
     bookmarks.remove(label)
     bookmarks.save(BOOKMARKS_PATH)
 
