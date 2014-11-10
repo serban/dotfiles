@@ -99,26 +99,30 @@ SETGID               04;01;31   # file that is setgid (g+s)
 # ------------------------------------------------------------------------------
 
 # SOURCE CODE (Skinny Green)
-.c      00;32
-.cu     00;32
-.cc     00;32
-.cpp    00;32
-.java   00;32
-.js     00;32
-.m      00;32
-.mm     00;32
-.php    00;32
-.pl     00;32
-.py     00;32
-.rb     00;32
-.s      00;32
-.S      00;32
-.scm    00;32
-.sh     00;32
+.S            00;32
+.applescript  00;32
+.asm          00;32
+.c            00;32
+.cc           00;32
+.cpp          00;32
+.cu           00;32
+.java         00;32
+.js           00;32
+.ly           00;32
+.m            00;32
+.mm           00;32
+.php          00;32
+.pl           00;32
+.py           00;32
+.rb           00;32
+.s            00;32
+.scm          00;32
+.sh           00;32
 
 # HEADER FILES (Skinny Cyan)
 .css    00;36
 .h      00;36
+.proto  00;36
 
 # BINARY DATA (Skinny Blue)
 .class  00;34
@@ -131,12 +135,14 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .doc    00;33
 .docx   00;33
 .html   00;33
+.md     00;33
 .ods    00;33
 .odt    00;33
 .pdf    00;33
 .ppt    00;33
 .pptx   00;33
 .ps     00;33
+.rst    00;33
 .rtf    00;33
 .tex    00;33
 .txt    00;33
@@ -176,51 +182,54 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .ogv    00;36
 .rm     00;36
 .vob    00;36
+.webm   00;36
 .wmv    00;36
+.y4m    00;36
 
 # IMAGES (Skinny Magenta)
+.JPG    00;35
 .bmp    00;35
 .gif    00;35
 .ico    00;35
 .jpeg   00;35
 .jpg    00;35
-.JPG    00;35
 .pbm    00;35
 .png    00;35
 .psd    00;35
 .svg    00;35
 .tif    00;35
 .tiff   00;35
+.webp   00;35
 .xcf    00;35
 .xpm    00;35
 
 # ------------------------------------------------------------------------------
 
 # ARCHIVES (Skinny Red)
-.tar    00;31
-.tgz    00;31
-.svgz   00;31
-.arj    00;31
-.taz    00;31
-.lzh    00;31
-.lzma   00;31
-.zip    00;31
-.z      00;31
+.7z     00;31
 .Z      00;31
+.ace    00;31
+.arj    00;31
+.bz     00;31
+.bz2    00;31
+.cpio   00;31
+.deb    00;31
+.dmg    00;31
 .dz     00;31
 .gz     00;31
-.bz2    00;31
-.bz     00;31
-.tbz2   00;31
-.tz     00;31
-.deb    00;31
-.rpm    00;31
-.jar    00;31
-.rar    00;31
-.ace    00;31
-.zoo    00;31
-.cpio   00;31
-.7z     00;31
-.rz     00;31
 .iso    00;31
-.dmg    00;31
+.jar    00;31
+.lzh    00;31
+.lzma   00;31
+.rar    00;31
+.rpm    00;31
+.rz     00;31
+.svgz   00;31
+.tar    00;31
+.taz    00;31
+.tbz2   00;31
+.tgz    00;31
+.tz     00;31
+.z      00;31
+.zip    00;31
+.zoo    00;31
