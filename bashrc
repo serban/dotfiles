@@ -185,6 +185,8 @@ rmswp() { find . -type f -name '.*.swp' -exec rm -vf '{}' \; ; }
 darwin && {
   alias safesleep='sudo pmset -a hibernatemode 3; pmset -g'
   alias nosafesleep='sudo pmset -a hibernatemode 0; pmset -g'
+
+  alias lilypond='/Applications/LilyPond.app/Contents/Resources/bin/lilypond'
 }
 
 # ------------------------------------------------------------------------------
