@@ -518,12 +518,8 @@ linux && {
 # ------------------------------------------------------------------------------
 # VIM
 
-darwin || linux && {
-  export EDITOR=/usr/bin/vim
-}
-
-freebsd && {
-  export EDITOR=/usr/local/bin/vim
+darwin || freebsd || linux && {
+  export EDITOR=vim
 }
 
 darwin && {
