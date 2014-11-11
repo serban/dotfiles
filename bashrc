@@ -176,8 +176,8 @@ alias fn644='find . -type f -not -perm 644'
 alias fn755='find . -type d -not -perm 755'
 
 fe() { find . -iname '*.'$1 ; }
-rmds() { find . -type f -name .DS_Store -exec rm -v '{}' \; ; }
-rmswp() { find . -type f -name '.*.swp' -exec rm -v '{}' \; ; }
+rmds() { find . -type f -name .DS_Store -exec rm -vf '{}' \; ; }
+rmswp() { find . -type f -name '.*.swp' -exec rm -vf '{}' \; ; }
 
 # ------------------------------------------------------------------------------
 # MAC OS X ALIASES
