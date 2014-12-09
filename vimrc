@@ -216,7 +216,10 @@ endfunction
 " \t is 8 characters wide. Indents are 2 characters wide. Only use spaces.
 nnoremap <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 
-" \t is 8 characters wide. Indents are 4 characters wide. Only use spaces. (Default)
+" \t is 2 characters wide. Only use \t.
+nnoremap <F3> :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
+
+" \t is 8 characters wide. Indents are 4 characters wide. Only use spaces.
 nnoremap <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 
 " \t is 4 characters wide. Only use \t.
