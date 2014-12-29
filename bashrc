@@ -114,19 +114,10 @@ export PROMPT_COMMAND='history -a'
 # ------------------------------------------------------------------------------
 # PATH
 
-darwin && {
-  # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
-  # newer tools are used instead of the outdated Mac OS X utilities
-  export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
-}
-
-freebsd && {
-  export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
-}
-
-linux && {
-  export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
-}
+# Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
+# newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
+# is the same on Mac OS X, FreeBSD, and GNU/Linux.
+export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
