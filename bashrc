@@ -257,9 +257,9 @@ ghx() { git show "$@" | gitx ; }
 alias gl='git log --decorate --stat'  # --graph is nice but slow on Chromium
 alias glf='git ls-files'
 alias gm='git add --update && git commit --amend --reuse-message=HEAD'
-alias go='git commit'
-alias gom='git commit --amend'
-alias gomh='git commit --amend --reuse-message=HEAD'
+alias gco='git commit'
+alias gcom='git commit --amend'
+alias gcomh='git commit --amend --reuse-message=HEAD'
 alias gp='git pull && git remote prune origin'
 alias gr='git rebase'
 alias gs='git log --decorate --regexp-ignore-case --author=serban'
