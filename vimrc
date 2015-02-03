@@ -274,6 +274,8 @@ nnoremap <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
 
+autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+
 autocmd FileType css,html,javascript,ruby,eruby :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead,BufNewFile *.handlebars :set filetype=html
 autocmd BufRead,BufNewFile *.less :set filetype=css
