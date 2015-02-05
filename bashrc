@@ -117,7 +117,7 @@ export PROMPT_COMMAND='history -a'
 # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
 # newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
 # is the same on Mac OS X, FreeBSD, and GNU/Linux.
-export PATH="${HOME}/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/go/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
