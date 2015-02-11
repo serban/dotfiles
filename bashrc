@@ -279,8 +279,8 @@ alias gspp='git stash && git pull && git remote prune origin && git stash pop'
 alias git-ignore-tracked-file='git update-index --assume-unchanged'
 alias git-no-ignore-tracked-file='git update-index --no-assume-unchanged'
 
- gg() { git grep --line-number "$@" --               '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
-ggi() { git grep --line-number --ignore-case "$@" -- '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
+ gg() { git grep --line-number "$@" --               '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
+ggi() { git grep --line-number --ignore-case "$@" -- '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
 
 git-push-branch-to-origin-master() {
   if [ -z "$1" ]; then
