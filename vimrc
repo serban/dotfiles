@@ -243,26 +243,29 @@ nnoremap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " eight-charater boundary.
 "nnoremap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
 
-noremap <C-b> :call ToggleBackground() <CR>
-noremap <C-c> :call ToggleColorcolumn() <CR>
+nnoremap <C-b> :call ToggleBackground() <CR>
+nnoremap <C-c> :call ToggleColorcolumn() <CR>
 
 " Clear the highlighting for the current search
-noremap <C-o> :nohlsearch <CR>
+nnoremap <C-o> :nohlsearch <CR>
 
 " Open a new tab
-noremap <C-t> :tabedit <CR>
+nnoremap <C-t> :tabedit <CR>
 
 " Switch to the previous tab
-noremap <C-h> :tabprevious <CR>
+nnoremap <C-h> :tabprevious <CR>
 
 " Switch to the next tab
-noremap <C-l> :tabnext <CR>
+nnoremap <C-l> :tabnext <CR>
 
 " Move the current tab to the left
-noremap <C-j> :tabmove -1 <CR>
+nnoremap <C-j> :tabmove -1 <CR>
 
 " Move the current tab to the right
-noremap <C-k> :tabmove +1 <CR>
+nnoremap <C-k> :tabmove +1 <CR>
+
+" Close the current tab
+nnoremap <C-i> :tabclose <CR>
 
 let mapleader = " "
 
