@@ -11,7 +11,6 @@ call vundle#rc()
 " GitHub Plugins
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
@@ -26,6 +25,10 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'troydm/easybuffer.vim'
+
+if !filereadable(expand('~/.vimrc_google'))
+  Bundle 'ervandew/supertab'
+endif
 
 filetype plugin on                  " Enable filetype detection and load the appropriate plugin files
 
@@ -287,6 +290,10 @@ autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for
 
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
+
+if filereadable(expand("~/.vimrc_google"))
+  source ~/.vimrc_google
+endif
 
 if filereadable(expand("~/.vimrc_local"))
   source ~/.vimrc_local
