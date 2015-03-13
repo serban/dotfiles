@@ -5,31 +5,32 @@
 
 set nocompatible                    " Don't try to be compatible with the original vi
 filetype off                        " Disable filetype detection while we load Vundle
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " GitHub Plugins
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'fatih/vim-go'
-" Bundle 'godlygeek/tabular'
-" Bundle 'kien/ctrlp.vim'
-" Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'myusuf3/numbers.vim'
-" Bundle 'scrooloose/nerdcommenter'
-" Bundle 'tpope/vim-abolish'
-" Bundle 'tpope/vim-commentary'
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'tpope/vim-repeat'
-" Bundle 'tpope/vim-surround'
-" Bundle 'tpope/vim-unimpaired'
-Bundle 'troydm/easybuffer.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'fatih/vim-go'
+" Plugin 'godlygeek/tabular'
+" Plugin 'kien/ctrlp.vim'
+" Plugin 'Lokaltog/vim-easymotion'
+" Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'myusuf3/numbers.vim'
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'tpope/vim-abolish'
+" Plugin 'tpope/vim-commentary'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-unimpaired'
+Plugin 'troydm/easybuffer.vim'
 
 if !filereadable(expand('~/.vimrc_google'))
-  Bundle 'ervandew/supertab'
+  Plugin 'ervandew/supertab'
 endif
 
+call vundle#end()
 filetype plugin on                  " Enable filetype detection and load the appropriate plugin files
 
 " ------------------------------------------------------------------------------
