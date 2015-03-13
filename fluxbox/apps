@@ -7,10 +7,6 @@
     [Deco] {NONE}
 [end]
 
-[app] (google-chrome)
-    [Deco] {NONE}
-[end]
-
 [app] (gkrellm)
     [FocusHidden] {yes}
 [end]
