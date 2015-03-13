@@ -111,7 +111,7 @@ let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
 iabbrev TODO: TODO(serban):
 
-inoremap ## # ------------------------------------------------------------------------------<ESC>o
+inoremap <unique> ## # ------------------------------------------------------------------------------<ESC>o
 
 " ------------------------------------------------------------------------------
 " CSOPE
@@ -139,23 +139,23 @@ inoremap ## # ------------------------------------------------------------------
 "   "   'i'   includes: find files that include the filename under cursor
 "   "   'd'   called:   find functions that function under cursor calls
 "
-"   nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
-"   nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
-"   nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
-"   nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
-"   nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
-"   nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
-"   nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
-"   nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
+"   nnoremap <unique> <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
+"   nnoremap <unique> <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
+"   nnoremap <unique> <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
+"   nnoremap <unique> <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
+"   nnoremap <unique> <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
+"   nnoremap <unique> <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
+"   nnoremap <unique> <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
+"   nnoremap <unique> <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
 "
-"   nnoremap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
-"   nnoremap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
-"   nnoremap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
-"   nnoremap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
-"   nnoremap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
-"   nnoremap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
-"   nnoremap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
-"   nnoremap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
+"   nnoremap <unique> <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
+"   nnoremap <unique> <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
+"   nnoremap <unique> <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
+"   nnoremap <unique> <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
+"   nnoremap <unique> <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
+"   nnoremap <unique> <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
+"   nnoremap <unique> <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
+"   nnoremap <unique> <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
 " endif
 
 " ------------------------------------------------------------------------------
@@ -218,22 +218,22 @@ endfunction
 " Expandtab will insert only spaces when the tab key is pressed
 
 " \t is 8 characters wide. Indents are 2 characters wide. Only use spaces.
-nnoremap <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+nnoremap <unique> <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 
 " \t is 2 characters wide. Only use \t.
-nnoremap <F3> :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
+nnoremap <unique> <F3> :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
 
 " \t is 8 characters wide. Indents are 4 characters wide. Only use spaces.
-nnoremap <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
+nnoremap <unique> <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 
 " \t is 4 characters wide. Only use \t.
-nnoremap <F5> :set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+nnoremap <unique> <F5> :set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
 
 " \t is 8 characters wide. Indents are 8 characters wide. Only use spaces.
-nnoremap <F8> :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
+nnoremap <unique> <F8> :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
 
 " \t is 8 characters wide. Only use \t.
-nnoremap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 
 " \t is 8 characters wide. Indents are 4 characters wide. Mix tabs and spaces.
 "
@@ -243,39 +243,39 @@ nnoremap <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " eight-charater boundary.
 "nnoremap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
 
-nnoremap <C-b> :call ToggleBackground() <CR>
-nnoremap <C-c> :call ToggleColorcolumn() <CR>
+nnoremap <unique> <C-b> :call ToggleBackground() <CR>
+nnoremap <unique> <C-c> :call ToggleColorcolumn() <CR>
 
 " Clear the highlighting for the current search
-nnoremap <C-o> :nohlsearch <CR>
+nnoremap <unique> <C-o> :nohlsearch <CR>
 
 " Open a new tab
-nnoremap <C-t> :tabedit <CR>
+nnoremap <unique> <C-t> :tabedit <CR>
 
 " Switch to the previous tab
-nnoremap <C-h> :tabprevious <CR>
+nnoremap <unique> <C-h> :tabprevious <CR>
 
 " Switch to the next tab
-nnoremap <C-l> :tabnext <CR>
+nnoremap <unique> <C-l> :tabnext <CR>
 
 " Move the current tab to the left
-nnoremap <C-j> :tabmove -1 <CR>
+nnoremap <unique> <C-j> :tabmove -1 <CR>
 
 " Move the current tab to the right
-nnoremap <C-k> :tabmove +1 <CR>
+nnoremap <unique> <C-k> :tabmove +1 <CR>
 
 " Close the current tab
-nnoremap <C-i> :tabclose <CR>
+nnoremap <unique> <C-i> :tabclose <CR>
 
 let mapleader = " "
 
-nnoremap <Leader>e :EasyBuffer <CR>
-nnoremap <Leader>m :call InsertModeline() <CR>
-nnoremap <Leader>s :set spell! <CR>
-nnoremap <Leader>v :call ThreeSplit() <CR>
-nnoremap <Leader>w :call RemoveTrailingWhitespace() <CR>
-nnoremap <Leader>y :call HighlightWordUnderCursor() <CR>
-nnoremap <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
+nnoremap <unique> <Leader>e :EasyBuffer <CR>
+nnoremap <unique> <Leader>m :call InsertModeline() <CR>
+nnoremap <unique> <Leader>s :set spell! <CR>
+nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
+nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
+nnoremap <unique> <Leader>y :call HighlightWordUnderCursor() <CR>
+nnoremap <unique> <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
