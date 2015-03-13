@@ -274,8 +274,7 @@ nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
-nnoremap <unique> <Leader>y :call HighlightWordUnderCursor() <CR>
-nnoremap <unique> <Leader>u :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
+nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
