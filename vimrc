@@ -262,7 +262,7 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " * Indicatates I've remapped it below.
 " ! Indicatates I've had trouble remapping it.
 
-"   - <C-a>
+"   * <C-a>
 "   - <C-b>
 "   * <C-c>
 "   + <C-d>
@@ -274,20 +274,23 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   * <C-j>
 "   * <C-k>
 "   * <C-l>
-"   - <C-m>
+"   * <C-m>
 "   * <C-n>
 "   + <C-o>
 "   * <C-p>
 "   ! <C-q>
 "   + <C-r>
-"   - <C-s>
+"   ! <C-s>
 "   + <C-t>
 "   + <C-u>
 "   + <C-v>
-"   ? <C-w>
-"   - <C-x>
+"   + <C-w>
+"   * <C-x>
 "   + <C-y>
 "   + <C-z>
+
+" Open a new window
+nnoremap <unique> <C-m> :vsplit <CR>
 
 " Switch to the window to the left
 nnoremap <unique> <C-h> <C-w><C-h>
@@ -304,23 +307,26 @@ nnoremap <unique> <C-l> <C-w><C-l>
 " Close the current window
 nnoremap <unique> <C-c> :close <CR>
 
+" Open a new tab
+nnoremap <unique> <C-a> :tabedit <CR>
+
 " Switch to the previous tab
 nnoremap <unique> <C-p> :tabprevious <CR>
 
 " Switch to the next tab
 nnoremap <unique> <C-n> :tabnext <CR>
 
-" Open a new tab
-nnoremap <unique> <Leader>tn :tabedit <CR>
+" Close the current tab
+nnoremap <unique> <C-x> :tabclose <CR>
 
 " Move the current tab to the left
-nnoremap <unique> <Leader>tj :tabmove -1 <CR>
+nnoremap <unique> <Leader>j :tabmove -1 <CR>
 
 " Move the current tab to the right
-nnoremap <unique> <Leader>tk :tabmove +1 <CR>
+nnoremap <unique> <Leader>k :tabmove +1 <CR>
 
-" Close the current tab
-nnoremap <unique> <Leader>tw :tabclose <CR>
+" Highlight the word under the cursor
+nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>o :nohlsearch <CR>
@@ -331,7 +337,6 @@ nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
-nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 
