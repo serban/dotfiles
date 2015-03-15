@@ -221,6 +221,8 @@ endfunction
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
 
+let mapleader = " "
+
 " Tabstop is the number of characters represented by a \t
 " Shiftwidth is the amount of characters in a shift operation like << or >>
 " Softtabstop is the number of characters that a tab counts for
@@ -252,43 +254,76 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " eight-charater boundary.
 "nnoremap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
 
-nnoremap <unique> <C-b> :call ToggleBackground() <CR>
-nnoremap <unique> <C-c> :call ToggleColorcolumn() <CR>
+" ------------------------------------------------------------------------------
+" CONTROL KEYS
 
-" Clear the highlighting for the current search
-nnoremap <unique> <C-o> :nohlsearch <CR>
+" + Indicates that I use the built-in command.
+" - Indicates that I don't use the built-in command.
+" * Indicatates I've remapped it below.
+" ! Indicatates I've had trouble remapping it.
 
-" Open a new tab
-nnoremap <unique> <C-t> :tabedit <CR>
-
-" Switch to the previous tab
-nnoremap <unique> <C-h> :tabprevious <CR>
-
-" Switch to the next tab
-nnoremap <unique> <C-l> :tabnext <CR>
-
-" Move the current tab to the left
-nnoremap <unique> <C-j> :tabmove -1 <CR>
-
-" Move the current tab to the right
-nnoremap <unique> <C-k> :tabmove +1 <CR>
-
-" Close the current tab
-nnoremap <unique> <C-i> :tabclose <CR>
+"   - <C-a>
+"   - <C-b>
+"   * <C-c>
+"   + <C-d>
+"   + <C-e>
+"   - <C-f>
+"   - <C-g>
+"   * <C-h>
+"   + <C-i>
+"   * <C-j>
+"   * <C-k>
+"   * <C-l>
+"   - <C-m>
+"   - <C-n>
+"   + <C-o>
+"   - <C-p>
+"   ! <C-q>
+"   + <C-r>
+"   - <C-s>
+"   + <C-t>
+"   + <C-u>
+"   + <C-v>
+"   ? <C-w>
+"   - <C-x>
+"   + <C-y>
+"   + <C-z>
 
 " Switch to the window to the left
-nnoremap <unique> ,1 <C-w><C-h>
+nnoremap <unique> <C-h> <C-w><C-h>
 
 " Switch to the window below
-nnoremap <unique> ,2 <C-w><C-j>
+nnoremap <unique> <C-j> <C-w><C-j>
 
 " Switch to the window above
-nnoremap <unique> ,3 <C-w><C-k>
+nnoremap <unique> <C-k> <C-w><C-k>
 
 " Switch to the window to the right
-nnoremap <unique> ,4 <C-w><C-l>
+nnoremap <unique> <C-l> <C-w><C-l>
 
-let mapleader = " "
+" Close the current window
+nnoremap <unique> <C-c> :close <CR>
+
+" Open a new tab
+nnoremap <unique> <Leader>tn :tabedit <CR>
+
+" Switch to the previous tab
+nnoremap <unique> <Leader>th :tabprevious <CR>
+
+" Switch to the next tab
+nnoremap <unique> <Leader>tl :tabnext <CR>
+
+" Move the current tab to the left
+nnoremap <unique> <Leader>tj :tabmove -1 <CR>
+
+" Move the current tab to the right
+nnoremap <unique> <Leader>tk :tabmove +1 <CR>
+
+" Close the current tab
+nnoremap <unique> <Leader>tw :tabclose <CR>
+
+" Clear the highlighting for the current search
+nnoremap <unique> <Leader>o :nohlsearch <CR>
 
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>m :call InsertModeline() <CR>
@@ -296,6 +331,8 @@ nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
+nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
+nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
