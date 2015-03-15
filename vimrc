@@ -275,6 +275,18 @@ nnoremap <unique> <C-k> :tabmove +1 <CR>
 " Close the current tab
 nnoremap <unique> <C-i> :tabclose <CR>
 
+" Switch to the window to the left
+nnoremap <unique> ,1 <C-w><C-h>
+
+" Switch to the window below
+nnoremap <unique> ,2 <C-w><C-j>
+
+" Switch to the window above
+nnoremap <unique> ,3 <C-w><C-k>
+
+" Switch to the window to the right
+nnoremap <unique> ,4 <C-w><C-l>
+
 let mapleader = " "
 
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
