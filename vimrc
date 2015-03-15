@@ -293,16 +293,16 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 nnoremap <unique> <C-m> :vsplit <CR>
 
 " Switch to the window to the left
-nnoremap <unique> <C-h> <C-w><C-h>
+nnoremap <unique> <C-h> :wincmd h <CR>
 
 " Switch to the window below
-nnoremap <unique> <C-j> <C-w><C-j>
+nnoremap <unique> <C-j> :wincmd j <CR>
 
 " Switch to the window above
-nnoremap <unique> <C-k> <C-w><C-k>
+nnoremap <unique> <C-k> :wincmd k <CR>
 
 " Switch to the window to the right
-nnoremap <unique> <C-l> <C-w><C-l>
+nnoremap <unique> <C-l> :wincmd l <CR>
 
 " Close the current window
 nnoremap <unique> <C-c> :close <CR>
