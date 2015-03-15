@@ -106,6 +106,14 @@ set autochdir                       " Keep the current directory in sync with th
 
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
+" Currently broken. See https://github.com/fatih/vim-go/issues/217
+" let g:go_fmt_command = 'goimports'
+
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
