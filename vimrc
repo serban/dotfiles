@@ -275,9 +275,9 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   * <C-k>
 "   * <C-l>
 "   - <C-m>
-"   - <C-n>
+"   * <C-n>
 "   + <C-o>
-"   - <C-p>
+"   * <C-p>
 "   ! <C-q>
 "   + <C-r>
 "   - <C-s>
@@ -304,14 +304,14 @@ nnoremap <unique> <C-l> <C-w><C-l>
 " Close the current window
 nnoremap <unique> <C-c> :close <CR>
 
-" Open a new tab
-nnoremap <unique> <Leader>tn :tabedit <CR>
-
 " Switch to the previous tab
-nnoremap <unique> <Leader>th :tabprevious <CR>
+nnoremap <unique> <C-p> :tabprevious <CR>
 
 " Switch to the next tab
-nnoremap <unique> <Leader>tl :tabnext <CR>
+nnoremap <unique> <C-n> :tabnext <CR>
+
+" Open a new tab
+nnoremap <unique> <Leader>tn :tabedit <CR>
 
 " Move the current tab to the left
 nnoremap <unique> <Leader>tj :tabmove -1 <CR>
