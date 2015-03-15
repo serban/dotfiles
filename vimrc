@@ -325,6 +325,7 @@ nnoremap <unique> <Leader>tw :tabclose <CR>
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>o :nohlsearch <CR>
 
+nnoremap <unique> <Leader>g :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
