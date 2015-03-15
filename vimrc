@@ -328,6 +328,9 @@ nnoremap <unique> <Leader>k :tabmove +1 <CR>
 " Highlight the word under the cursor
 nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
 
+" An alternative to the previous. I wonder if this pollutes the jumplist...
+nnoremap <unique> <Leader>u *<C-o>
+
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>o :nohlsearch <CR>
 
