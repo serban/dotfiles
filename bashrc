@@ -87,6 +87,9 @@ CLOSESCREEN='\033\\\\'
 # ------------------------------------------------------------------------------
 # SHELL SETTINGS
 
+# Ignore CTRL-S and CTRL-Q, which stop and start terminal output, respectively.
+stty -ixon
+
 # Make directories 700 and files 600 by default
 # umask 077
 

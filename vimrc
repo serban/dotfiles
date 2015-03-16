@@ -260,7 +260,6 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " + Indicates that I use the built-in command.
 " - Indicates that I don't use the built-in command.
 " * Indicatates I've remapped it below.
-" ! Indicatates I've had trouble remapping it.
 
 "   * <C-a>
 "   - <C-b>
@@ -278,9 +277,9 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   * <C-n>
 "   + <C-o>
 "   * <C-p>
-"   ! <C-q>
+"   - <C-q>  Must set `stty -ixon` for this to work
 "   + <C-r>
-"   ! <C-s>
+"   * <C-s>  Must set `stty -ixon` for this to work
 "   + <C-t>
 "   + <C-u>
 "   + <C-v>
@@ -288,6 +287,9 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   * <C-x>
 "   + <C-y>
 "   + <C-z>
+
+" Write the file if it has been modified
+nnoremap <unique> <C-s> :update <CR>
 
 " Open a new window
 nnoremap <unique> <C-m> :vsplit <CR>
