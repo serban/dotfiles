@@ -37,7 +37,7 @@ filetype plugin on                  " Enable filetype detection and load the app
 
 set title                           " Set the terminal title to something appropriate (like the filename being edited)
 set background=light                " Set the default colors to look good on white backgrounds. See below for toggling this.
-set helpheight=40                   " Set the minimum window height for help windows
+set helpheight=80                   " Set the minimum window height for help windows
 set winheight=20                    " Set the minimum window height for split windows
 set winwidth=86                     " Set the minimum window width for split windows
 set tabpagemax=100                  " Set the maximum number of tabs that can be opened
