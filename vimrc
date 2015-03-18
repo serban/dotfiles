@@ -362,6 +362,8 @@ autocmd FileType css,html,javascript,ruby,eruby :set tabstop=8 shiftwidth=2 soft
 autocmd BufRead,BufNewFile *.handlebars :set filetype=html
 autocmd BufRead,BufNewFile *.less :set filetype=css
 
+autocmd FileType cpp :set commentstring=//\ \ %s
+
 autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
