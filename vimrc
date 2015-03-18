@@ -358,16 +358,11 @@ nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 
 autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 
-autocmd FileType css,html,javascript,ruby,eruby :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-autocmd BufRead,BufNewFile *.handlebars :set filetype=html
-autocmd BufRead,BufNewFile *.less :set filetype=css
-
 autocmd FileType cpp :set commentstring=//\ \ %s
 
 autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
-autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for plain text files
 
 " ------------------------------------------------------------------------------
 " GOOGLE-SPECIFIC
