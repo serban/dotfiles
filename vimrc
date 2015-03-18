@@ -105,15 +105,23 @@ set autochdir                       " Keep the current directory in sync with th
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
 
+" EASYBUFFER
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
-" Currently broken. See https://github.com/fatih/vim-go/issues/217
-" let g:go_fmt_command = 'goimports'
-
-let g:go_highlight_operators = 1
+" VIM-GO
+" let g:go_fmt_command = 'goimports'  " Currently broken. See https://github.com/fatih/vim-go/issues/217
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
 let g:go_highlight_structs = 1
+
+" VIM-COMMENTARY
+let g:commentary_map_backslash = 0  " Disable deprecated mappings
+
+" YOUCOMPLETEME
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_complete_in_comments = 1
 
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
@@ -334,7 +342,9 @@ nnoremap <unique> <Leader>y *<C-o>
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>n :nohlsearch <CR>
 
-nnoremap <unique> <Leader>g :GoImports <CR>
+nnoremap <unique> <Leader>G :YcmCompleter GoToDeclaration <CR>
+nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
+nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
@@ -356,6 +366,37 @@ autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
 autocmd BufRead,BufNewFile *.txt :set formatoptions+=t      " Auto-wrap text for plain text files
+
+" ------------------------------------------------------------------------------
+" GOOGLE-SPECIFIC
+
+if filereadable("/usr/share/vim/google/google.vim")
+  source /usr/share/vim/google/google.vim
+
+  Glug codefmt
+  Glug codefmt-google auto_filetypes+=blazebuild,clang-format
+  Glug corpweb
+  Glug fileswitch plugin[mappings]
+  Glug g4
+  Glug outline-window
+  Glug relatedfiles plugin[mappings]
+  Glug youcompleteme-google
+
+  " Auto-wrap text for `g4 change`
+  autocmd FileType piperspec :set formatoptions+=t
+
+  nnoremap <unique> <Leader>d :G4Diff <CR>
+  nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
+
+  nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
+  nnoremap <unique> <Leader>h :FileswitchEditH <CR>
+  nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
+  nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
+  nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
+
+  nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
+  nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
+endif
 
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
