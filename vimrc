@@ -275,7 +275,7 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   + <C-d>
 "   + <C-e>
 "   - <C-f>
-"   - <C-g>
+"   * <C-g>
 "   * <C-h>
 "   + <C-i>
 "   * <C-j>
@@ -301,6 +301,9 @@ nnoremap <unique> <C-s> :update <CR>
 
 " Open a new window
 nnoremap <unique> <C-m> :vsplit <CR>
+
+" Open a new window
+nnoremap <unique> <C-g> :split <CR>
 
 " Switch to the window to the left
 nnoremap <unique> <C-h> :wincmd h <CR>
