@@ -30,7 +30,7 @@ if !filereadable(expand('~/.vimrc_google'))
 endif
 
 call vundle#end()
-filetype plugin on                  " Enable filetype detection and load the appropriate plugin files
+filetype plugin indent on           " Enable filetype detection and load the appropriate plugin and indentation files
 
 " ------------------------------------------------------------------------------
 " SETTINGS
@@ -92,10 +92,10 @@ set expandtab                       " Only use spaces (\t will never be inserted
 
 set shiftround                      " Round indent to a multiple of shiftwidth for > and <, and in insert mode for CTRL-T, and CTRL-D
 set autoindent                      " Keep the indentation the same when inserting a new line
-set smartindent                     " Syntax-aware indenting
+"set smartindent                    " Syntax-aware indenting
 set modeline                        " Modelines in files take precedent over these settings
 
-" Don't move comment hashes to the beginning of the line when writing Python
+" Don't move comment hashes to the beginning of the line when writing Python. This behavior is caused by smartindent.
 inoremap # X#
 
 set backspace=eol,indent,start      " Make life easier on crappy terminals
