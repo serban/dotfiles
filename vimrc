@@ -6,6 +6,11 @@
 set nocompatible                    " Don't try to be compatible with the original vi
 filetype off                        " Disable filetype detection while we load Vundle
 set runtimepath+=~/.vim/bundle/Vundle.vim
+
+if filereadable(expand("/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/syntax/lilypond.vim"))
+  set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
+endif
+
 call vundle#begin()
 
 " GitHub Plugins
