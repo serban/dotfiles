@@ -25,7 +25,7 @@ ln -si $DOTFILES/Xresources     ~/.Xresources
 # Silence the message of the day and last login info
 touch ~/.hushlogin
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 OS="$(uname -s)"
 
