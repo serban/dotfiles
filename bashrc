@@ -275,7 +275,7 @@ alias gsp='git stash pop'
 alias gss='git stash save'
 
 alias gx='gitx'
-alias gk="GIT_EXTERNAL_DIFF=${DOTFILES}/bin/git-diff-wrapper.sh git diff"
+alias gk="GIT_EXTERNAL_DIFF=${DOTFILES}/bin/git-external-diff git diff"
 
 alias gspp='git stash && git pull && git remote prune origin && git stash pop'
 

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+if [ -f /usr/bin/opendiff ]; then
+    /usr/bin/opendiff "$2" "$5"
+else
+    echo "git-external-diff: cannot find opendiff" 1>&2
+fi
