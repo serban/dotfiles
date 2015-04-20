@@ -1,0 +1,40 @@
+# vim:set ts=8 sw=2 sts=2 et:
+
+MusicDir = "${HOME}/Dropbox/Music"
+Fastdir1 = "${HOME}/Dropbox/Audio"
+Fastdir2 = "${HOME}/Dropbox/Music/FLAC/flac"
+Fastdir3 = "${HOME}/Dropbox/Music/FLAC/accompaniment"
+
+Layout1 = directory(0,0,100%,100%)
+Layout2 = directory(0,0,50%,100%):playlist(50%,0,FILL,100%)
+
+Theme               = serban
+FormatString        = "(%a) [%A] %n - %t"
+ShowTime            = IfAvailable
+ShowFormat          = no
+ShowStreamErrors    = yes
+ShowTimePercent     = no
+SetScreenTitle      = no
+SetXtermTitle       = no
+
+StartInMusicDir     = yes
+ShowHiddenFiles     = no
+HideFileExtension   = no
+PlaylistFullPaths   = no
+
+FollowPlayedFile    = yes
+PlaylistNumbering   = yes
+
+SeekTime            = 5
+SilentSeekTime      = 10
+
+ReadTags            = yes
+TagsCacheSize       = 10000
+AutoLoadLyrics      = no
+
+SyncPlaylist        = yes
+SavePlaylist        = no
+Softmixer_SaveState = no
+Equalizer_SaveState = no
+
+ResampleMethod      = SincBestQuality

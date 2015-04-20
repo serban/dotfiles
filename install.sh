@@ -22,6 +22,10 @@ ln -si $DOTFILES/tmux.conf      ~/.tmux.conf
 ln -si $DOTFILES/vimrc          ~/.vimrc
 ln -si $DOTFILES/Xresources     ~/.Xresources
 
+mkdir -p ~/.moc
+ln -si $DOTFILES/moc/config     ~/.moc/config
+ln -si $DOTFILES/moc/themes     ~/.moc/themes
+
 # Silence the message of the day and last login info
 touch ~/.hushlogin
 
