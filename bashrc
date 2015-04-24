@@ -223,7 +223,7 @@ darwin && {
     local blocksize
 
     let blocksize=2048*8192  # 8 GiB
-    diskutil eraseVolume HFS+ ramdisk $(hdiutil attach -nomount ram://$blocksize)
+    diskutil eraseVolume HFS+ Ramdisk $(hdiutil attach -nomount ram://$blocksize)
   }
 }
 
