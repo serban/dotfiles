@@ -5,7 +5,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DOTFILES="${HOME}/.dotfiles"
+readonly DOTFILES="${HOME}/src/dotfiles"
 
 ln -si $DOTFILES/bash_logout    ~/.bash_logout
 ln -si $DOTFILES/bashrc         ~/.bashrc
