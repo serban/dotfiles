@@ -2,31 +2,43 @@
 
 export PATH="~/bin:~/src/dotfiles/bin:${PATH}"
 
+log() {
+  echo "SERBAN: $1" 1>&2
+}
+
+# Get rid of the horrible default GTK theme. Do this before running the `xset`
+# invocations below so that gnome-settings-daemon does not override the settings
+# made in this script.
+log 'Starting gnome-settings-daemon'
+gnome-settings-daemon &
+
+# Sleep for a bit so that gnome-settings-daemon can do its thing before we
+# override stuff below.
+log 'Waiting for gnome-settings-daemon'
+sleep 1
+
+log 'Sourcing ~/.Xresources'
 xrdb -merge ~/.Xresources
 
+log 'Turning off the number lock'
+numlockx off
+
+log 'Setting the keyboard repeat delay and repeat rate'
+xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
+
 # Poweroff the display after five minutes of inactivity
+log 'Setting display power preferences'
 xset s blank
 xset dpms 300 300 300
 
-# Set the keyboard repeat delay (ms) and repeat rate (keystrokes/sec)
-xset r rate 200 50
+log 'Starting conky'
+conky &
 
-# Turn on the number lock
-numlockx on
+# log 'Starting gkrellm'
+# gkrellm &
 
-# Set the background color to #CDC8B1
-fbsetroot -solid cornsilk3
+# log 'Starting xscreensaver'
+# xscreensaver -nosplash &
 
-# Ceter the wallpaper. Use -f if the wallpaper is larger than the screen
-#fbsetbg -c ~/.fluxbox/wallpaper.jpg
-
-# Get rid of the horrible default GTK theme
-gnome-settings-daemon &
-#gnome-volume-control-applet &
-bluetooth-applet &
-
-#xscreensaver -nosplash &
-#conky &
-#gkrellm &
-
+log 'Starting fluxbox'
 exec /usr/bin/fluxbox -log ~/.fluxbox/log -verbose
