@@ -1,7 +1,7 @@
 # vim:set ts=8 sw=2 sts=2 et:
 
 SHELL=/usr/local/bin/bash
-PATH=/home/s/serban/bin:/home/s/serban/.dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+PATH=/home/s/serban/bin:/home/s/serban/src/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 MAILTO=giuroiu@gmail.com
 
 0 11 * * * shikhalamode.com-backup
