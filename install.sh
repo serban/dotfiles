@@ -29,8 +29,6 @@ ln -si $DOTFILES/moc/themes     ~/.moc/themes
 # Silence the message of the day and last login info
 touch ~/.hushlogin
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 OS="$(uname -s)"
 
 if [[ "$(whoami)" = 'root' ]] || \
@@ -38,3 +36,5 @@ if [[ "$(whoami)" = 'root' ]] || \
    [[ "${OS}" = 'FreeBSD' ]]; then
   ln -si $DOTFILES/bashrc ~/.bash_profile
 fi
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
