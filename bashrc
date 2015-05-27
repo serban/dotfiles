@@ -17,7 +17,7 @@ fi
 # ------------------------------------------------------------------------------
 # GLOBALS
 
-DOTFILES="${HOME}/.dotfiles"
+DOTFILES="${HOME}/src/dotfiles"
 OS="$(uname -s)"
 
 function darwin {
