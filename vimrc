@@ -115,10 +115,10 @@ let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
 " VIM-GO
 " let g:go_fmt_command = 'goimports'  " Currently broken. See https://github.com/fatih/vim-go/issues/217
-let g:go_highlight_functions = 1
+let g:go_highlight_functions = 0      " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_structs = 0        " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 
 " VIM-COMMENTARY
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
