@@ -2,7 +2,7 @@
 # vim:set ts=8 sw=2 sts=2 et:
 
 # To run this at 05h00 every day, put this in the crontab:
-# 0 5 * * * ~/.dotfiles/bin/vhost-backup
+# 0 5 * * * ~/src/dotfiles/bin/vhost-backup
 
 # Create a MySQL options file at $MYSQL_OPTIONS_PATH that looks like this:
 #

@@ -9,4 +9,4 @@ VHOST_NAME="shikhalamode.com"
 MYSQL_DATABASE="serban_slmwp"
 NUM_DAYS_TO_KEEP_BACKUPS=5
 
-source "${HOME}/.dotfiles/bin/wordpress-backup.sh"
+source "${HOME}/src/dotfiles/bin/wordpress-backup.sh"
