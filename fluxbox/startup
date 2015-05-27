@@ -1,6 +1,6 @@
-# vim:set ts=8 sw=4 sts=4 et:
+# vim:set ts=8 sw=2 sts=2 et:
 
-export PATH="~/bin:~/.dotfiles/bin:${PATH}"
+export PATH="~/bin:~/src/dotfiles/bin:${PATH}"
 
 xrdb -merge ~/.Xresources
 
