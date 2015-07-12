@@ -106,6 +106,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .cc           00;32
 .cpp          00;32
 .cu           00;32
+.go           00;32
 .java         00;32
 .js           00;32
 .ly           00;32
@@ -123,6 +124,12 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .css    00;36
 .h      00;36
 .proto  00;36
+
+# CONFIGURATION (Bold Cyan)
+.json   01;35
+.plist  01;35
+.toml   01;35
+.yaml   01;35
 
 # BINARY DATA (Skinny Blue)
 .class  00;34
@@ -188,6 +195,8 @@ SETGID               04;01;31   # file that is setgid (g+s)
 
 # IMAGES (Skinny Magenta)
 .JPG    00;35
+.PNG    00;35
+.GIF    00;35
 .bmp    00;35
 .gif    00;35
 .ico    00;35
