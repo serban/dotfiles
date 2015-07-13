@@ -5,12 +5,29 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-PIP2_PATH="$(which pip2)"
-PIP2_LINK="$(readlink $PIP2_PATH)"
+print () {
+  echo "$@" 1>&2
+}
 
-PIP3_PATH="$(which pip3)"
-PIP3_LINK="$(readlink $PIP3_PATH)"
+PIP2_PATH="$(which pip2)" || true
+PIP2_LINK="$(readlink $PIP2_PATH)" || true
 
-echo 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly.'
-echo "pip: pip2 is ${PIP2_PATH} --> ${PIP2_LINK}"
-echo "pip: pip3 is ${PIP3_PATH} --> ${PIP3_LINK}"
+PIP3_PATH="$(which pip3)" || true
+PIP3_LINK="$(readlink $PIP3_PATH)" || true
+
+print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly.'
+
+if [[ -z "${PIP2_PATH}" ]]; then
+  print "pip: pip2 is not in your path"
+else
+  print "pip: pip2 is ${PIP2_PATH} --> ${PIP2_LINK}"
+fi
+
+if [[ -z "${PIP3_PATH}" ]]; then
+  print "pip: pip3 is not in your path"
+else
+  print "pip: pip3 is ${PIP3_PATH} --> ${PIP3_LINK}"
+fi
+
+# In case this gets called from a script somewhere, make sure that script fails.
+exit 1
