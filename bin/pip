@@ -10,23 +10,20 @@ print () {
 }
 
 PIP2_PATH="$(which pip2)" || true
-PIP2_LINK="$(readlink $PIP2_PATH)" || true
-
 PIP3_PATH="$(which pip3)" || true
-PIP3_LINK="$(readlink $PIP3_PATH)" || true
 
 print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly.'
 
 if [[ -z "${PIP2_PATH}" ]]; then
   print "pip: pip2 is not in your path"
 else
-  print "pip: pip2 is ${PIP2_PATH} --> ${PIP2_LINK}"
+  print "pip: pip2 is ${PIP2_PATH} --> $(readlink ${PIP2_PATH})"
 fi
 
 if [[ -z "${PIP3_PATH}" ]]; then
   print "pip: pip3 is not in your path"
 else
-  print "pip: pip3 is ${PIP3_PATH} --> ${PIP3_LINK}"
+  print "pip: pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
 fi
 
 # In case this gets called from a script somewhere, make sure that script fails.
