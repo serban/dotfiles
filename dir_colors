@@ -195,10 +195,12 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .y4m    00;36
 
 # IMAGES (Skinny Magenta)
+.CR2    00;35
+.GIF    00;35
 .JPG    00;35
 .PNG    00;35
-.GIF    00;35
 .bmp    00;35
+.cr2    00;35
 .gif    00;35
 .ico    00;35
 .jpeg   00;35
