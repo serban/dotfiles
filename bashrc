@@ -110,9 +110,28 @@ export PAGER=/usr/bin/less
 shopt -s cmdhist
 shopt -s histappend
 
-export     HISTSIZE=1000000
-export HISTFILESIZE=1000000
+# Save a new history file for every session
+export HISTFILE="${HOME}/.history/$(date +%Y-%m-%d-%H%M%S)"
+
+# Save a basically infinite number of commands per session
+export HISTSIZE=1000000
+
+# Save everything read by the shell parser
+unset HISTCONTROL
+unset HISTIGNORE
+
+# Do not truncate the history file
+unset HISTFILESIZE
+
+# When printing history through the bash `history` built-in, use this prefix
+export HISTTIMEFORMAT='[%Y-%m-%d %H:%M:%S] '
+
+# Save history after every command invocation
 export PROMPT_COMMAND='history -a'
+
+darwin || freebsd || linux && {
+  ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.history/* ; }
+}
 
 # ------------------------------------------------------------------------------
 # PATH

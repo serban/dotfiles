@@ -29,6 +29,9 @@ ln -si ${DOTFILES}/moc/themes     ~/.moc/themes
 # Silence the message of the day and last login info
 touch ~/.hushlogin
 
+# Make the bash history folder
+mkdir -p -m 700 ~/.history
+
 OS="$(uname -s)"
 
 if [[ "$(whoami)" = 'root' ]] || \
