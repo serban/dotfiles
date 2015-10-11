@@ -26,7 +26,7 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'tpope/vim-commentary'
 " Plugin 'tpope/vim-fugitive'
 " Plugin 'tpope/vim-repeat'
-" Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'troydm/easybuffer.vim'
 
