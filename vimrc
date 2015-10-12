@@ -377,13 +377,20 @@ if filereadable("/usr/share/vim/google/google.vim")
   source /usr/share/vim/google/google.vim
 
   Glug codefmt
-  Glug codefmt-google auto_filetypes+=blazebuild,clang-format
+  Glug codefmt-google
   Glug corpweb
   Glug fileswitch plugin[mappings]
   Glug g4
   Glug outline-window
   Glug relatedfiles plugin[mappings]
   Glug youcompleteme-google
+
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType python AutoFormatBuffer pyformat
+  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+
+  " I shouldn't need this since I have the vim-go plugin
+  " autocmd FileType go AutoFormatBuffer gofmt
 
   " Auto-wrap text for `g4 change`
   autocmd FileType piperspec :set formatoptions+=t
@@ -399,6 +406,8 @@ if filereadable("/usr/share/vim/google/google.vim")
 
   nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
   nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
+  nnoremap <unique> <Leader>cd :CorpWebDocFindFile <CR>
+  nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
 endif
 
 " ------------------------------------------------------------------------------
