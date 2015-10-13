@@ -31,7 +31,7 @@ Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'troydm/easybuffer.vim'
 
-if !filereadable(expand('~/.vimrc_google'))
+if !filereadable("/usr/share/vim/google/google.vim")
   Plugin 'ervandew/supertab'
 endif
 
@@ -86,6 +86,7 @@ set incsearch                       " Search as you type
 set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
+
 set spelllang=en_us                 " Use American English for spell checking
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
@@ -413,10 +414,6 @@ endif
 
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
-
-if filereadable(expand("~/.vimrc_google"))
-  source ~/.vimrc_google
-endif
 
 if filereadable(expand("~/.vimrc_local"))
   source ~/.vimrc_local
