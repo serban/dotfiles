@@ -12,6 +12,7 @@ ln -si ${DOTFILES}/bashrc         ~/.bashrc
 ln -si ${DOTFILES}/colordiffrc    ~/.colordiffrc
 ln -si ${DOTFILES}/conkyrc        ~/.conkyrc
 ln -si ${DOTFILES}/dir_colors     ~/.dir_colors
+ln -si ${DOTFILES}/en.utf-8.add   ~/.en.utf-8.add
 ln -si ${DOTFILES}/gdbinit        ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig      ~/.gitconfig
 ln -si ${DOTFILES}/gitignore      ~/.gitignore
