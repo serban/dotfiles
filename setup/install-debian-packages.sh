@@ -6,8 +6,12 @@ set -o nounset
 set -o pipefail
 
 sudo apt-get install \
+  bzip2 \
+  dnsutils \
   git \
   htop \
+  psmisc \
   python3 \
   tmux \
+  unzip \
   vim
