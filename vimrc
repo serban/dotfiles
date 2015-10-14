@@ -211,6 +211,11 @@ function RemoveTrailingWhitespace()
   echo 'Removed trailing whitespace'
 endfunction
 
+function RemoveHttpScheme()
+  silent! %s/\vhttp:\/\///g
+  echo 'Removed all occurrences of http://'
+endfunction
+
 function ThreeSplit()
   vsplit
   vsplit
@@ -355,6 +360,7 @@ nnoremap <unique> <Leader>G :YcmCompleter GoToDeclaration <CR>
 nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
+nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
