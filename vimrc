@@ -88,6 +88,7 @@ set smartcase                       " unless there's an uppercase character in t
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
 
 set spelllang=en_us                 " Use American English for spell checking
+set spellfile=~/.en.utf-8.add
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
@@ -116,11 +117,11 @@ set autochdir                       " Keep the current directory in sync with th
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
 " VIM-GO
-let g:go_fmt_command = 'goimports'    " Might be broken. See https://github.com/fatih/vim-go/issues/217
-let g:go_highlight_functions = 0      " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
+let g:go_fmt_command = 'goimports'  " Might be broken. See https://github.com/fatih/vim-go/issues/217
+let g:go_highlight_functions = 0    " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_structs = 0        " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
+let g:go_highlight_structs = 0      " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 
 " VIM-COMMENTARY
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
@@ -376,6 +377,8 @@ autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for
 " GOOGLE-SPECIFIC
 
 if filereadable("/usr/share/vim/google/google.vim")
+  set spellfile+=~/.google.utf-8.add
+
   source /usr/share/vim/google/google.vim
 
   Glug codefmt
