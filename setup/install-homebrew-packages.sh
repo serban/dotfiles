@@ -6,6 +6,7 @@ set -o nounset
 set -o pipefail
 
 brew install \
+  colordiff \
   coreutils \
   findutils \
   gawk \
