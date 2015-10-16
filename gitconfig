@@ -9,12 +9,14 @@
   bl = blame
   br = branch
   ch = checkout
+  cl = clone
   co = commit
   cp = cherry-pick
   di = diff --stat
   fe = fetch
   gi = grep --ignore-case
   gr = grep
+  in = init
   lo = log --decorate --stat
   ls = ls-files
   pl = pull
@@ -24,6 +26,7 @@
   rs = reset
   sh = show
   st = status
+  ta = tag
 
   sa = stash apply
   sd = stash drop
@@ -70,7 +73,7 @@
 
 [color "status"]
   header = normal
-  branch = blue
+  branch = normal
   added = green
   changed = yellow
   untracked = red
