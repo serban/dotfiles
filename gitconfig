@@ -1,52 +1,107 @@
+# vim:set ts=8 sw=2 sts=2 et:
+
 [user]
-        name = Serban Giuroiu
-        email = giuroiu@gmail.com
+  name = Serban Giuroiu
+  email = giuroiu@gmail.com
+
 [alias]
-        a = add
-        b = branch
-        c = checkout
-        cp = cherry-pick
-        d = diff --stat --unified=5
-        e = blame -e
-        f = fetch
-        g = grep --line-number
-        gi = grep --ignore-case --line-number
-        h = show
-        l = log --decorate --stat
-        o = commit
-        om = commit --amend
-        omh = commit --amend --reuse-message=HEAD
-        p = pull
-        r = rebase
-        t = status
-        u = push
-        z = reset --hard
+  ad = add
+  bl = blame
+  br = branch
+  ch = checkout
+  co = commit
+  cp = cherry-pick
+  di = diff --stat
+  fe = fetch
+  gi = grep --ignore-case
+  gr = grep
+  lo = log --decorate --stat
+  ls = ls-files
+  pl = pull
+  ps = push
+  rb = rebase
+  re = remote
+  rs = reset
+  sh = show
+  st = status
 
-        sa = stash apply
-        sd = stash drop
-        sh = stash show -v
-        sl = stash list
-        sp = stash pop
-        ss = stash save
+  sa = stash apply
+  sd = stash drop
+  sl = stash list
+  so = stash show -v
+  sp = stash pop
+  ss = stash save
+
+[blame]
+  showEmail = true
+
 [branch]
-        autosetupmerge = true
+  autosetupmerge = true
 
-        # For newer versions of git, this has been superseded by pull.rebase.
-        # Keep it for now so that old versions of git still rebase on pull.
-        autosetuprebase = always
-[color]
-        ui = auto
+  # For newer versions of git, this has been superseded by pull.rebase.
+  # Keep it for now so that old versions of git still rebase on pull.
+  autosetuprebase = always
+
 [core]
-        autocrlf = false
-        excludesfile = ~/.gitignore
-        whitespace = space-before-tab,tab-in-indent,trailing-space
+  autocrlf = false
+  excludesfile = ~/.gitignore
+  whitespace = space-before-tab,tab-in-indent,trailing-space
+
+[diff]
+  context = 5
+
 [grep]
-        lineNumber = true
+  lineNumber = true
+
 [merge]
-        stat = true
+  stat = true
+
 [pull]
-        rebase = true
+  rebase = true
+
 [push]
-        default = simple
+  default = simple
+
 [rebase]
-        stat = true
+  stat = true
+
+[color]
+  ui = auto
+
+[color "status"]
+  header = normal
+  branch = blue
+  added = green
+  changed = yellow
+  untracked = red
+
+[color "decorate"]
+  branch = green
+  remoteBranch = red
+  tag = yellow
+  stash = yellow
+  HEAD = cyan
+
+[color "diff"]
+  commit = yellow
+  meta = blue
+  frag = blue
+  func = yellow
+  context = normal
+  old = red
+  new = green
+
+[color "grep"]
+  context = normal
+  filename = cyan
+  linenumber = cyan
+  separator = cyan
+  function = yellow
+  selected = normal
+  match = red
+
+[color "interactive"]
+  prompt = blue
+  header = yellow
+  error = red
+  help = normal
