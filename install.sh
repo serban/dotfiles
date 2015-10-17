@@ -27,11 +27,14 @@ mkdir -p ~/.moc
 ln -si ${DOTFILES}/moc/config     ~/.moc/config
 ln -si ${DOTFILES}/moc/themes     ~/.moc/themes
 
-# Silence the message of the day and last login info
-touch ~/.hushlogin
+mkdir -p ~/.vim
+ln -si ${DOTFILES}/ultisnips      ~/.vim/UltiSnips
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
+
+# Silence the message of the day and last login info
+touch ~/.hushlogin
 
 OS="$(uname -s)"
 

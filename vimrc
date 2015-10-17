@@ -15,6 +15,7 @@ call vundle#begin()
 
 " GitHub Plugins
 Plugin 'gmarik/Vundle.vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 " Plugin 'godlygeek/tabular'
@@ -115,6 +116,12 @@ set autochdir                       " Keep the current directory in sync with th
 
 " EASYBUFFER
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
+
+" ULTISNIPS
+let g:UltiSnipsExpandTrigger = '<Tab>'  " Works with Supertab!
+let g:UltiSnipsListSnippets = '<C-Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<C-f>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
 " VIM-GO
 let g:go_fmt_command = 'goimports'  " Might be broken. See https://github.com/fatih/vim-go/issues/217
@@ -281,11 +288,11 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 " * Indicatates I've remapped it below.
 
 "   * <C-a>
-"   - <C-b>
+"   * <C-b>  Mapped by UltiSnips above
 "   * <C-c>
 "   + <C-d>
 "   + <C-e>
-"   - <C-f>
+"   * <C-f>  Mapped by UltiSnips above
 "   * <C-g>
 "   * <C-h>
 "   + <C-i>
