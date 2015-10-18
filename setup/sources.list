@@ -1,0 +1,6 @@
+deb http://security.debian.org/ jessie/updates main contrib non-free
+
+deb http://gce_debian_mirror.storage.googleapis.com/ jessie main contrib non-free
+deb http://gce_debian_mirror.storage.googleapis.com/ jessie-updates main contrib non-free
+
+deb http://gce_debian_mirror.storage.googleapis.com/ stretch main contrib non-free

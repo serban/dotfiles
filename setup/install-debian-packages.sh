@@ -16,3 +16,6 @@ sudo apt-get install \
   tmux \
   unzip \
   vim
+
+# Optionally add Debian testing to /etc/apt/sources.list and then run:
+# sudo apt-get install --only-upgrade git tmux vim
