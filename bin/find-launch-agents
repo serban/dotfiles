@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+list() {
+  find "$1" -type f
+}
+
+list /Library/LaunchAgents
+list /Library/LaunchDaemons
+list /Library/StartupItems
+list /System/Library/LaunchAgents
+list /System/Library/LaunchDaemons
+list /System/Library/StartupItems
+list ~/Library/LaunchAgents
