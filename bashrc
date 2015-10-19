@@ -322,6 +322,14 @@ git-delete-branch-on-origin() {
   git push origin :"$1"
 }
 
+gh-clone() {
+  git clone --origin github "git@github.com:serban/$1.git"
+}
+
+bb-clone() {
+  git clone --origin bitbucket "git@bitbucket.org:serbang/$1.git"
+}
+
 # ------------------------------------------------------------------------------
 # SED
 
