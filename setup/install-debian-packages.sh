@@ -7,6 +7,7 @@ set -o pipefail
 
 sudo apt-get install \
   bzip2 \
+  colordiff \
   colortest \
   dnsutils \
   git \
