@@ -17,8 +17,11 @@ class Bookmarks(object):
       self._load(path)
 
   def add(self, label, path):
-    if len(label) == 0:
-      raise Exception("Labels must not be empty")
+    if not label:
+      raise Exception("label must not be empty")
+
+    if not path:
+      raise Exception("path must not be empty")
 
     if label in self.bookmarks:
       raise Exception("The label %s already exists" % label)
