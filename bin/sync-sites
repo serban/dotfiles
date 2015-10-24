@@ -5,19 +5,19 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-LOCAL_SITES_DIR="${HOME}/Dropbox/Sites"
-SITES="javatheory.net home.javatheory.net"
+readonly LOCAL_SITES_DIR="${HOME}/Dropbox/Sites"
+readonly SITES="javatheory.net home.javatheory.net default"
 
-REMOTE_HOST="home.javatheory.net"
-REMOTE_SITES_DIR="~/web"
+readonly REMOTE_HOST='jt'
+readonly REMOTE_SITES_DIR='/data/www'
 
-RSYNC_COMMAND="rsync --archive --hard-links --delete --verbose --human-readable --progress -e ssh"
+readonly RSYNC_COMMAND="rsync --archive --hard-links --delete --verbose --human-readable --progress -e ssh"
 
 echo "Starting sites sync at $(date)"
 
 for site in $SITES ; do
   echo "Syncing $site"
-  $RSYNC_COMMAND \
+  ${RSYNC_COMMAND} \
     --exclude='.DS_Store' --exclude='.*.swp' \
     "${LOCAL_SITES_DIR}/${site}/" "${REMOTE_HOST}:${REMOTE_SITES_DIR}/${site}"
 done
