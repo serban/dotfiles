@@ -51,7 +51,7 @@ def print_help():
   bookmarks <command> [label] [path]
 
 COMMANDS:
-  add <label> <path>
+  add <label> [<path>]
   change <label> <path>
   remove <label>
   rename <label> <new-label>
@@ -106,6 +106,7 @@ def main():
     bookmarks = Bookmarks()
 
   if command == 'add':
+    path = path or os.getcwd()
     bookmarks.add(label, path)
     bookmarks.save(BOOKMARKS_PATH)
 
