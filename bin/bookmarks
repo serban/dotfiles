@@ -3,7 +3,6 @@
 
 import json
 import os
-import re
 import sys
 
 BOOKMARKS_PATH = os.path.expanduser('~/.bookmarks.json')
@@ -29,9 +28,15 @@ class Bookmarks(object):
     self.bookmarks[label] = path
 
   def remove(self, label):
+    if not label:
+      raise Exception("label must not be empty")
+
     del self.bookmarks[label]
 
   def get(self, label):
+    if not label:
+      raise Exception("label must not be empty")
+
     return self.bookmarks[label]
 
   def labels(self):
