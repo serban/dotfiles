@@ -19,7 +19,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
-" Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'myusuf3/numbers.vim'
@@ -113,6 +113,10 @@ set autochdir                       " Keep the current directory in sync with th
 
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
+
+" CTRLP
+let g:ctrlp_map = '<Leader>f'
+let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
 
 " EASYBUFFER
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
