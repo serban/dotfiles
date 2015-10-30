@@ -16,7 +16,7 @@ sudo apt-get install \
   python3 \
   tmux \
   unzip \
-  vim
+  vim-nox
 
 # Optionally add Debian testing to /etc/apt/sources.list and then run:
-# sudo apt-get install --only-upgrade git tmux vim
+# sudo apt-get install --only-upgrade git tmux vim-nox
