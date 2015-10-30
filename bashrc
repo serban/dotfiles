@@ -130,7 +130,7 @@ export HISTTIMEFORMAT='[%Y-%m-%d %H:%M:%S] '
 export PROMPT_COMMAND='history -a'
 
 darwin || freebsd || linux && {
-  ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.history/* ; }
+  ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.history/* | sort | uniq ; }
 }
 
 # ------------------------------------------------------------------------------
