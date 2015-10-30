@@ -139,7 +139,7 @@ darwin || freebsd || linux && {
 # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
 # newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
 # is the same on Mac OS X, FreeBSD, and GNU/Linux.
-export PATH="${HOME}/bin:${HOME}/go/bin:${DOTFILES}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+export PATH="${HOME}/bin:${DOTFILES}/bin:${HOME}/go/bin:${HOME}/go_appengine:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
@@ -191,6 +191,8 @@ alias fn755='find . -type d -not -perm 755'
 fe() { find . -iname '*.'$1 ; }
 rmds() { find . -type f -name .DS_Store -exec rm -vf '{}' \; ; }
 rmswp() { find . -type f -name '.*.swp' -exec rm -vf '{}' \; ; }
+
+path() { IFS=':'; for component in ${PATH} ; do echo "${component}"; done ; }
 
 # ------------------------------------------------------------------------------
 # MAC OS X ALIASES
