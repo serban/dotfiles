@@ -19,4 +19,5 @@ brew install \
   python3 \
   rsync \
   tmux \
-  vim
+  vim \
+  watch
