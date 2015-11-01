@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# vim:set ts=8 sw=2 sts=2 et:
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+source "${HOME}/src/dotfiles/bin/osx-preferences.sh"
+
+for plist in ${PLISTS} ; do
+  echo "Converting ${plist}"
+  binary_to_xml "${plist}"
+done

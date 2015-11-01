@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>defaultColumnCount</key>
+	<integer>7</integer>
+	<key>defaultRowCount</key>
+	<integer>2</integer>
+	<key>globalHotkey</key>
+	<dict>
+		<key>keyCode</key>
+		<integer>49</integer>
+		<key>modifiers</key>
+		<integer>4096</integer>
+	</dict>
+	<key>lastColumnCount</key>
+	<integer>7</integer>
+	<key>lastRowCount</key>
+	<integer>2</integer>
+	<key>shortcuts</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUIVFVUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLR
+	BgdUcm9vdIABrAkKEyssMzw9RUZPUFUkbnVsbNILDA0OViRjbGFzc1pOUy5vYmplY3Rz
+	gAukDxAREoACgAWAB4AJ3RQVFhcYGRobHB0eHwsgISIjISQlJicmJCkqXxASc2VsZWN0
+	aW9uRW5kQ29sdW1uXxARc2VsZWN0aW9uU3RhcnRSb3dca2V5Q29tYm9Db2RlV2VuYWJs
+	ZWRda2V5Q29tYm9GbGFnc18QFHNlbGVjdGlvblN0YXJ0Q29sdW1uW3NpemVDb2x1bW5z
+	WnN1YmRpdmlkZWRXbmFtZUtleVZnbG9iYWxfEA9zZWxlY3Rpb25FbmRSb3dYc2l6ZVJv
+	d3MQBRAAEDEJEAEQBwiAAwgQAoAEVkNlbnRlctItLi8yWCRjbGFzc2VzWiRjbGFzc25h
+	bWWiMDFYU2hvcnRjdXRYTlNPYmplY3RYU2hvcnRjdXTdFBUWFxgZGhscHR4fCzQhNSM3
+	ISUmOSYkKSoQBhB+CRIAgAAACIAGCIAEWE1heGltaXpl3RQVFhcYGRobHB0eHwspIT4j
+	QCElJkImJCkqEHsJEgCAAAAIgAgIgARUTGVmdN0UFRYXGBkaGxwdHh8LNCFHI0lKJSZM
+	JiQpKhB8CRIAgAAAEAMIgAoIgARVUmlnaHTSLS5RUqNSUzFeTlNNdXRhYmxlQXJyYXlX
+	TlNBcnJheRIAAYagXxAPTlNLZXllZEFyY2hpdmVyAAgAEQAWAB8AKAAyADUAOgA8AEkA
+	TwBUAFsAZgBoAG0AbwBxAHMAdQCQAKUAuQDGAM4A3ADzAP8BCgESARkBKwE0ATYBOAE6
+	ATsBPQE/AUABQgFDAUUBRwFOAVMBXAFnAWoBcwF8AYUBoAGiAaQBpQGqAasBrQGuAbAB
+	uQHUAdYB1wHcAd0B3wHgAeIB5wICAgQCBQIKAgwCDQIPAhACEgIYAh0CIQIwAjgCPQAA
+	AAAAAAIBAAAAAAAAAFYAAAAAAAAAAAAAAAAAAAJP
+	</data>
+	<key>showMenuIcon</key>
+	<false/>
+	<key>useDefaultGrid</key>
+	<true/>
+	<key>useGlobalHotkey</key>
+	<true/>
+</dict>
+</plist>
