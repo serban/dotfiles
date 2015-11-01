@@ -6,6 +6,7 @@ set -o nounset
 set -o pipefail
 
 brew install \
+  caskroom/cask/brew-cask \
   colordiff \
   coreutils \
   findutils \
@@ -21,3 +22,7 @@ brew install \
   tmux \
   vim \
   watch
+
+brew cask install \
+  dropbox \
+  macvim
