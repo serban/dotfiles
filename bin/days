@@ -1,0 +1,79 @@
+#!/usr/bin/env python3
+# vim:set ts=8 sw=2 sts=2 et:
+
+# See Stack Overflow questions:
+# http://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
+# http://stackoverflow.com/questions/3615375/python-count-days-ignoring-weekends
+
+import argparse
+import calendar
+import datetime
+import os
+
+
+def date_range(start_date, end_date):
+  for i in range((end_date - start_date).days):
+    yield start_date + datetime.timedelta(days=i)
+
+
+def count_days(start, end, exclude_weekends=False, exclude=None):
+  exclude = exclude or set()
+  total_days = 0
+
+  for d in date_range(start, end):
+    if exclude_weekends and d.weekday() > calendar.FRIDAY:
+      continue
+
+    if d in exclude:
+      continue
+
+    total_days += 1
+
+  return total_days
+
+
+def parse_exclude_file(path):
+  with open(path) as f:
+    return f.read().splitlines()
+
+
+def parse_command_line_arguments():
+  parser = argparse.ArgumentParser(
+      description='Count the number of days until a target date',
+      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+  parser.add_argument(
+      'target_date_string', metavar='DATE',
+      help='The target date, YYYY-MM-DD')
+
+  parser.add_argument(
+      '-w', '--exclude_weekends',
+      action='store_true',
+      help='Do not count Saturdays and Sundays')
+
+  parser.add_argument(
+      '-e', '--exclude', metavar='PATH', dest='exclude_paths',
+      default=[], action='append',
+      help='A list of dates to exclude')
+
+  return parser.parse_args()
+
+
+def main():
+  args = parse_command_line_arguments()
+
+  exclude_strings = []
+  for p in args.exclude_paths:
+    exclude_strings.extend(parse_exclude_file(os.path.expanduser(p)))
+
+  target_date = datetime.datetime.strptime(args.target_date_string,
+                                           '%Y-%m-%d').date()
+  exclude_dates = set([datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in
+                       exclude_strings])
+
+  print(count_days(datetime.date.today(), target_date,
+                   args.exclude_weekends, exclude=exclude_dates))
+
+
+if __name__ == '__main__':
+  main()
