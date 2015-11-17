@@ -409,8 +409,11 @@ if filereadable("/usr/share/vim/google/google.vim")
   Glug youcompleteme-google
 
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+
+  " Disabling pyformat because it always formats the whole file.
+  " See https://github.com/google/vim-codefmt/issues/9
+  " autocmd FileType python AutoFormatBuffer pyformat
 
   " I shouldn't need this since I have the vim-go plugin
   " autocmd FileType go AutoFormatBuffer gofmt
