@@ -27,8 +27,18 @@ fi
 print 'pip:'
 print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
 print 'pip:'
-print 'pip: PIP_REQUIRE_VIRTUALENV=false pip2 list'
-print 'pip: PIP_REQUIRE_VIRTUALENV=false pip3 list'
+print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip2 list'
+print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip3 list'
+print 'pip:'
+print 'pip: To install Python and virtualenv:'
+print 'pip:'
+print 'pip: $ brew install python python3'
+print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper'
+print 'pip:'
+print 'pip: To create a new virtualenv:'
+print 'pip:'
+print 'pip: $ mkvirtualenv p2-name             # For Python 2'
+print 'pip: $ mkvirtualenv -p python3 p3-name  # For Python 3'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
