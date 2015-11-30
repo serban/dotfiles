@@ -177,6 +177,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .wma    00;32
 
 # VIDEO (Skinny Cyan)
+.MOV    00;36
 .asf    00;36
 .avi    00;36
 .flv    00;36
