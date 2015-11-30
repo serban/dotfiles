@@ -12,8 +12,6 @@ print () {
 PIP2_PATH="$(which pip2)" || true
 PIP3_PATH="$(which pip3)" || true
 
-print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly.'
-
 if [[ -z "${PIP2_PATH}" ]]; then
   print "pip: pip2 is not in your path"
 else
@@ -25,6 +23,12 @@ if [[ -z "${PIP3_PATH}" ]]; then
 else
   print "pip: pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
 fi
+
+print 'pip:'
+print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
+print 'pip:'
+print 'pip: PIP_REQUIRE_VIRTUALENV=false pip2 list'
+print 'pip: PIP_REQUIRE_VIRTUALENV=false pip3 list'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
