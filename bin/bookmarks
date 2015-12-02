@@ -149,7 +149,7 @@ def main():
     max_label_length = len(max(labels, key=len))
 
     for label, path in bookmarks.all():
-      print ('{:<' + str(max_label_length) + '}    {}').format(label, path)
+      print ('{:<{pad}}    {}').format(label, path, pad=max_label_length)
 
 
 if __name__ == '__main__':
