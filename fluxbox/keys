@@ -99,5 +99,3 @@ OnRightGrip Move1 :StartResizing BottomRight
 # Mouse actions on window
 OnWindow Mod4 Mouse1 :StartMoving
 OnWindow Mod4 Mouse3 :StartResizing NearestCorner
-OnWindow Mod4 Mouse4 :MacroCmd {Raise} {Focus} {TakeToPrevWorkspace}
-OnWindow Mod4 Mouse5 :MacroCmd {Raise} {Focus} {TakeToNextWorkspace}
