@@ -80,6 +80,8 @@ Mod4 Down :MoveDown 40
 OnDesktop Mouse1 :HideMenus
 OnDesktop Mouse2 :WorkspaceMenu
 OnDesktop Mouse3 :RootMenu
+OnDesktop Mouse4 :PrevWorkspace
+OnDesktop Mouse5 :NextWorkspace
 
 # Mouse actions on titlebar
 OnTitleBar Double Mouse1 :Maximize
