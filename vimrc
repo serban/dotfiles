@@ -410,13 +410,16 @@ if filereadable("/usr/share/vim/google/google.vim")
   Glug youcompleteme-google
 
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto AutoFormatBuffer clang-format
+  autocmd FileType proto AutoFormatBuffer clang-format
 
-  " Disabling pyformat because it always formats the whole file.
-  " See https://github.com/google/vim-codefmt/issues/9
+  " Disabling autoformatting for C++ and Python because clang-format and
+  " pyformat always format the whole file instead of just the lines that have
+  " changed. See https://github.com/google/vim-codefmt/issues/9.
+  "
+  " autocmd FileType c,cpp AutoFormatBuffer clang-format
   " autocmd FileType python AutoFormatBuffer pyformat
 
-  " I shouldn't need this since I have the vim-go plugin
+  " I shouldn't need this since I have the vim-go plugin.
   " autocmd FileType go AutoFormatBuffer gofmt
 
   " Auto-wrap text for `g4 change`
