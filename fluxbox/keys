@@ -10,15 +10,45 @@
 # Mouse4  Scroll Up
 # Mouse5  Scroll Down
 
+# + Indicates that I use the mapping for an application
+# * Indicates that I use the mapping for a window manager action
+# - Indicates that I don't want to use this mapping
+#
+#   a
+#   b
+# - c
+# * d
+# + e
+# + f
+#   g
+# * h
+# * i
+#   j
+#   k
+# * l
+# + m
+# + n
+# + o
+# * p
+# + q
+#   r
+# * s
+# + t
+# * u
+# - v
+# * w
+# - x
+# * y
+# - z
+
 # Applications
-Mod4 b :Exec launch browser
-Mod4 c :Exec launch calculator
+Mod4 n :Exec launch browser
+Mod4 q :Exec launch calculator
 Mod4 e :Exec launch editor
 Mod4 f :Exec launch finder
 Mod4 m :Exec launch mixer
 Mod4 o :Exec launch htop
 Mod4 t :Exec launch terminal
-Mod4 v :Exec launch gvim
 
 # General actions
 Mod4 Return :Exec launch screensaver
