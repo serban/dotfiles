@@ -17,11 +17,15 @@ ln -si ${DOTFILES}/gdbinit        ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig      ~/.gitconfig
 ln -si ${DOTFILES}/gitignore      ~/.gitignore
 ln -si ${DOTFILES}/gvimrc         ~/.gvimrc
+ln -si ${DOTFILES}/i3status.conf  ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc        ~/.inputrc
 ln -si ${DOTFILES}/screenrc       ~/.screenrc
 ln -si ${DOTFILES}/tmux.conf      ~/.tmux.conf
 ln -si ${DOTFILES}/vimrc          ~/.vimrc
 ln -si ${DOTFILES}/Xresources     ~/.Xresources
+
+mkdir -p ~/.i3
+ln -si ${DOTFILES}/i3-config      ~/.i3/config
 
 mkdir -p ~/.moc
 ln -si ${DOTFILES}/moc/config     ~/.moc/config
