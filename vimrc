@@ -65,6 +65,7 @@ endif
 "set columns=114                    " Put this line in gvimrc. It makes the window wider.
 "set lines=52                       " Put this line in gvimrc. It makes the window taller.
 set textwidth=80
+set wrapmargin=0
 set colorcolumn=+1                  " Show a vertical line one character past the textwidth to help maintain line length
 set numberwidth=5                   " Set the minimum gutter width so that switching back and forth between number and relativenumber isn't annoying
 set nowrap                          " Don't soft-wrap lines
@@ -380,6 +381,7 @@ nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
+nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
