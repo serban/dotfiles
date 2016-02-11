@@ -111,15 +111,33 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-set $red    #ff0000
-set $green  #00ff00
-set $white  #ffffff
-set $black  #000000
+# Solarized colors
 
-# Class                 Border    Backgrond Text     Indicator
-client.focused          $green    $green    $black   $red
-client.focused_inactive $black    $black    $white   $red
-client.unfocused        $black    $black    $white   $red
+set $S_yellow   #b58900
+set $S_orange   #cb4b16
+set $S_red      #dc322f
+set $S_magenta  #d33682
+set $S_violet   #6c71c4
+set $S_blue     #268bd2
+set $S_cyan     #2aa198
+set $S_green    #859900
+
+set $S_bz3      #002b36
+set $S_bz2      #073642
+set $S_bz1      #586e75
+set $S_bz0      #657b83
+set $S_ba0      #839496
+set $S_ba1      #93a1a1
+set $S_ba2      #eee8d5
+set $S_ba3      #fdf6e3
+
+# Class                 Border      Backgrond   Text      Indicator
+client.urgent           $S_red      $S_red      $S_ba3    $S_red
+client.focused          $S_blue     $S_blue     $S_ba3    $S_magenta
+client.focused_inactive $S_bz1      $S_bz1      $S_ba1    $S_bz1
+client.unfocused        $S_bz1      $S_bz1      $S_ba1    $S_bz1
+
+client.background $S_b3
 
 bar {
   status_command i3status
