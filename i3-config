@@ -131,6 +131,8 @@ set $S_ba1      #93a1a1
 set $S_ba2      #eee8d5
 set $S_ba3      #fdf6e3
 
+set $black      #000000
+
 # Class                 Border      Backgrond   Text      Indicator
 client.urgent           $S_red      $S_red      $S_ba3    $S_red
 client.focused          $S_blue     $S_blue     $S_ba3    $S_magenta
@@ -144,6 +146,19 @@ bar {
   position bottom
   tray_output primary
   binding_mode_indicator yes
+
+  colors {
+    background $black
+    statusline $S_ba1
+    separator $S_ba1
+
+    # Class                 Border      Backgrond   Text
+    urgent_workspace        $black      $black      $S_yellow
+    focused_workspace       $black      $black      $S_magenta
+    active_workspace        $black      $black      $S_magenta
+    inactive_workspace      $black      $black      $S_ba1
+    binding_mode            $S_red      $S_red      $S_ba3
+  }
 }
 
 # Get rid of the horrible default GTK theme. Do this before running the `xset`
