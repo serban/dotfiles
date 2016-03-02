@@ -111,6 +111,13 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
+# Application-specific settings
+#
+# Run xprop to find the WM_CLASS property that identifies a window.
+set $hangouts "crx_knipolnnllmklapflnccelgolnpehhpl"
+for_window [instance=$hangouts] move container to workspace 1, move down
+bindsym $mod+m [instance=$hangouts] focus
+
 # Solarized colors
 
 set $S_yellow   #b58900
