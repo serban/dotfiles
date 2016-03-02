@@ -18,7 +18,7 @@ hide_edge_borders none
 default_orientation auto
 workspace_layout default
 
-set $mod Mod4
+set $mod Mod1
 
 set $left h
 set $down j
@@ -42,6 +42,7 @@ bindsym $mod+w kill
 
 # Floating windows
 floating_modifier $mod
+bindsym $mod+o floating toggle
 
 # Focus
 bindsym $mod+$left focus left
