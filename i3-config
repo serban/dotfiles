@@ -25,11 +25,27 @@ set $down j
 set $up k
 set $right l
 
+set $term urxvt
+
+# Disabled keys
+bindsym $mod+c nop
+bindsym $mod+v nop
+bindsym $mod+x nop
+bindsym $mod+z nop
+
+# Available keys
+bindsym $mod+b nop
+bindsym $mod+s nop
+bindsym $mod+g nop
+
 # Applications
 bindsym $mod+n exec google-chrome
 bindsym $mod+e exec gvim
 bindsym $mod+f exec nautilus --no-desktop > /dev/null 2>&1
-bindsym $mod+t exec rxvt-unicode
+bindsym $mod+t exec $term
+bindsym $mod+i exec $term -e htop
+bindsym $mod+y exec $term -e python3
+bindsym $mod+d exec $term -e alsamixer
 
 # General actions
 bindsym $mod+Return exec gnome-screensaver-command --lock
