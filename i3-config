@@ -15,7 +15,7 @@ new_float normal 4
 new_window normal 4
 hide_edge_borders none
 
-default_orientation auto
+default_orientation vertical
 workspace_layout default
 
 set $mod Mod1
@@ -28,15 +28,11 @@ set $right l
 set $term urxvt
 
 # Disabled keys
+bindsym $mod+b nop
 bindsym $mod+c nop
 bindsym $mod+v nop
 bindsym $mod+x nop
 bindsym $mod+z nop
-
-# Available keys
-bindsym $mod+b nop
-bindsym $mod+s nop
-bindsym $mod+g nop
 
 # Applications
 bindsym $mod+n exec google-chrome
@@ -74,9 +70,12 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
+# Resizing windows
+bindsym $mod+g resize grow height
+bindsym $mod+s resize shrink height
+
 # Container layout
-bindsym $mod+bracketleft layout tabbed
-bindsym $mod+bracketright layout toggle split
+bindsym $mod+r layout toggle split
 bindsym $mod+u fullscreen toggle
 
 bindsym $mod+minus split vertical
@@ -110,23 +109,6 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
-
-bindsym $mod+r mode "resize"
-
-mode "resize" {
-  bindsym $left       resize shrink left 10 px or 20 ppt
-  bindsym $down       resize shrink down 10 px or 20 ppt
-  bindsym $up         resize shrink up 10 px or 20 ppt
-  bindsym $right      resize shrink right 10 px or 20 ppt
-
-  bindsym $mod+$left  resize grow left 10 px or 20 ppt
-  bindsym $mod+$down  resize grow down 10 px or 20 ppt
-  bindsym $mod+$up    resize grow up 10 px or 20 ppt
-  bindsym $mod+$right resize grow right 10 px or 20 ppt
-
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
 
 # Application-specific settings
 #
