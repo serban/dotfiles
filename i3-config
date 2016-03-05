@@ -32,7 +32,6 @@ set $term urxvt
 
 # Disabled keys
 bindsym $mod+b nop
-bindsym $mod+c nop
 bindsym $mod+v nop
 bindsym $mod+x nop
 bindsym $mod+z nop
