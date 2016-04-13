@@ -14,7 +14,8 @@ case "$1" in
   finder)         exec nautilus --no-desktop > /dev/null 2>&1 ;;
   htop)           exec $term -e htop ;;
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
-  screensaver)    exec gnome-screensaver-command --lock ;;
+  python)         exec $term -e python3 ;;
+  screensaver)    exec xautolock -locknow ;;
   screenshot)     exec gnome-screenshot ;;
   terminal)       exec $term ;;
   *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;

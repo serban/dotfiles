@@ -22,6 +22,7 @@ ln -si ${DOTFILES}/inputrc        ~/.inputrc
 ln -si ${DOTFILES}/screenrc       ~/.screenrc
 ln -si ${DOTFILES}/tmux.conf      ~/.tmux.conf
 ln -si ${DOTFILES}/vimrc          ~/.vimrc
+ln -si ${DOTFILES}/xsession       ~/.xsession
 ln -si ${DOTFILES}/Xresources     ~/.Xresources
 
 mkdir -p ~/.i3

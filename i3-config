@@ -9,9 +9,6 @@
 # Mouse4  Scroll Up
 # Mouse5  Scroll Down
 
-# TODO(serban): Add ~/src/dotfiles/bin to the PATH seen by i3.
-set $rename_workspace /usr/local/google/home/serban/src/dotfiles/bin/rename-workspace
-
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 
 new_float normal 4
@@ -28,25 +25,23 @@ set $down j
 set $up k
 set $right l
 
-set $term urxvt
-
 # Disabled keys
 bindsym $mod+v nop
 bindsym $mod+x nop
 bindsym $mod+z nop
 
 # Applications
-bindsym $mod+n exec google-chrome
-bindsym $mod+e exec gvim
-bindsym $mod+f exec nautilus --no-desktop > /dev/null 2>&1
-bindsym $mod+t exec $term
-bindsym $mod+i exec $term -e htop
-bindsym $mod+y exec $term -e python3
-bindsym $mod+d exec $term -e alsamixer
+bindsym $mod+d exec launch mixer
+bindsym $mod+e exec launch editor
+bindsym $mod+f exec launch finder
+bindsym $mod+i exec launch htop
+bindsym $mod+n exec launch browser
+bindsym $mod+t exec launch terminal
+bindsym $mod+y exec launch python
 
 # General actions
-bindsym $mod+Return exec gnome-screensaver-command --lock
-bindsym $mod+BackSpace exec gnome-screenshot
+bindsym $mod+Return exec launch screensaver
+bindsym $mod+BackSpace exec launch screenshot
 bindsym $mod+Escape exec xkill
 bindsym $mod+space exec dmenu_run
 
@@ -101,16 +96,16 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # Rename workspace
-bindsym $mod+Control+1 exec $rename_workspace 1
-bindsym $mod+Control+2 exec $rename_workspace 2
-bindsym $mod+Control+3 exec $rename_workspace 3
-bindsym $mod+Control+4 exec $rename_workspace 4
-bindsym $mod+Control+5 exec $rename_workspace 5
-bindsym $mod+Control+6 exec $rename_workspace 6
-bindsym $mod+Control+7 exec $rename_workspace 7
-bindsym $mod+Control+8 exec $rename_workspace 8
-bindsym $mod+Control+9 exec $rename_workspace 9
-bindsym $mod+Control+0 exec $rename_workspace 10
+bindsym $mod+Control+1 exec rename-workspace 1
+bindsym $mod+Control+2 exec rename-workspace 2
+bindsym $mod+Control+3 exec rename-workspace 3
+bindsym $mod+Control+4 exec rename-workspace 4
+bindsym $mod+Control+5 exec rename-workspace 5
+bindsym $mod+Control+6 exec rename-workspace 6
+bindsym $mod+Control+7 exec rename-workspace 7
+bindsym $mod+Control+8 exec rename-workspace 8
+bindsym $mod+Control+9 exec rename-workspace 9
+bindsym $mod+Control+0 exec rename-workspace 10
 
 # Move window to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -180,28 +175,3 @@ bar {
     binding_mode            $S_red      $S_red      $S_ba3
   }
 }
-
-# Get rid of the horrible default GTK theme. Do this before running the `xset`
-# invocations below so that gnome-settings-daemon does not override the settings
-# made here.
-exec gnome-settings-daemon
-
-# Source ~/.Xresources
-exec xrdb -merge ~/.Xresources
-
-# Turn off the number lock.
-exec_always numlockx off
-
-# Set the keyboard repeat delay and repeat rate.
-exec_always xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
-
-# Poweroff the display after five minutes of inactivity
-exec_always xset s blank
-exec_always xset dpms 300 300 300
-
-# Start conky.
-exec conky &
-
-# gnome-settings-daemon overrides these xset settings, so we'll have to invoke
-# `xset` after gnome-settings-daemon is finished loading.
-exec "i3-nagbar -t warning -m 'Is gnome-settings-daemon done loading?' -b 'Yes' 'xset r rate 200 50 && xset s blank && xset dpms 300 300 300'"
