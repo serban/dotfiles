@@ -9,6 +9,20 @@
 # Mouse4  Scroll Up
 # Mouse5  Scroll Down
 
+set $main DVI-I-1
+set $side DP-1
+
+workspace 1 output $main
+workspace 2 output $main
+workspace 3 output $main
+workspace 4 output $main
+workspace 5 output $main
+workspace 6 output $main
+workspace 7 output $main
+workspace 8 output $main
+workspace 9 output $main
+workspace 10 output $side
+
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 
 new_float normal 4
