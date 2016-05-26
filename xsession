@@ -10,13 +10,6 @@ log() {
   echo "SERBAN: $1" 1>&2
 }
 
-if [ -f "${BACKGROUND}" ]; then
-  log 'Setting background image'
-  fbsetbg -f "${BACKGROUND}"
-else
-  log "Cannot set background image: no image found at ${BACKGROUND}"
-fi
-
 # Get rid of the horrible default GTK theme. Do this before running the `xset`
 # invocations below so that gnome-settings-daemon does not override the settings
 # made in this script.
@@ -27,6 +20,13 @@ gnome-settings-daemon &
 # override stuff below.
 log 'Waiting for gnome-settings-daemon'
 sleep 1
+
+if [ -f "${BACKGROUND}" ]; then
+  log 'Setting background image'
+  fbsetbg -f "${BACKGROUND}"
+else
+  log "Cannot set background image: no image found at ${BACKGROUND}"
+fi
 
 log 'Sourcing ~/.Xresources'
 xrdb -merge ~/.Xresources
