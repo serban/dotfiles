@@ -20,7 +20,7 @@ workspace 5 output $main
 workspace 6 output $main
 workspace 7 output $main
 workspace 8 output $main
-workspace 9 output $main
+workspace 9 output $side
 workspace 10 output $side
 
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
