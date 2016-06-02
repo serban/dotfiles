@@ -37,10 +37,10 @@ numlockx off
 log 'Setting the keyboard repeat delay and repeat rate'
 xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
 
-# Poweroff the display after six minutes of inactivity
+# Poweroff the display after ten minutes of inactivity
 log 'Setting display power preferences'
 xset s blank
-xset dpms 360 360 360
+xset dpms 600 600 600
 
 log 'Starting xautolock'
 xautolock -time 5 -locker 'i3lock --ignore-empty-password --color=657b83' &
