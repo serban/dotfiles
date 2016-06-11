@@ -58,6 +58,7 @@ bindsym $mod+Return exec launch screensaver
 bindsym $mod+BackSpace exec launch screenshot
 bindsym $mod+Escape exec xkill
 bindsym $mod+space exec dmenu_run
+bindsym $mod+Tab exec i3viz
 
 # Window actions
 bindsym $mod+w kill
@@ -136,6 +137,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Application-specific settings
 #
 # Run xprop to find the WM_CLASS property that identifies a window.
+for_window [instance=feh] floating enable
+
 set $hangouts "crx_knipolnnllmklapflnccelgolnpehhpl"
 for_window [instance=$hangouts] move container to workspace 1, move down
 bindsym $mod+m [instance=$hangouts] focus
