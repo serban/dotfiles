@@ -12,6 +12,7 @@ sudo apt-get install \
   dnsutils \
   git \
   htop \
+  makepasswd \
   psmisc \
   python3 \
   tmux \
@@ -20,3 +21,17 @@ sudo apt-get install \
 
 # Optionally add Debian testing to /etc/apt/sources.list and then run:
 # sudo apt-get install --only-upgrade git tmux vim-nox
+
+sudo apt-get install \
+  conky \
+  feh \
+  fluxbox \
+  graphviz \
+  i3 \
+  numlockx \
+  rxvt-unicode \
+  vim-gtk \
+  virtualbox-guest-dkms \
+  virtualbox-guest-utils \
+  virtualbox-guest-x11 \
+  xautolock
