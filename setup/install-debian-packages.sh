@@ -7,11 +7,14 @@ set -o pipefail
 
 sudo apt-get install \
   bzip2 \
+  clang \
   colordiff \
   colortest \
   dnsutils \
   git \
+  golang \
   htop \
+  libc++-dev \
   makepasswd \
   psmisc \
   python3 \
