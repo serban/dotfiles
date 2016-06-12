@@ -42,6 +42,10 @@ log 'Setting display power preferences'
 xset s blank
 xset dpms 600 600 600
 
+# Disable screen blanking and do not poweroff the display
+# log 'Disabling screen blanking'
+# xset s off -dpms
+
 log 'Starting xautolock'
 xautolock -time 5 -locker 'i3lock --ignore-empty-password --color=657b83' &
 
