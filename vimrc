@@ -69,6 +69,9 @@ set wrapmargin=0
 set colorcolumn=+1                  " Show a vertical line one character past the textwidth to help maintain line length
 set numberwidth=5                   " Set the minimum gutter width so that switching back and forth between number and relativenumber isn't annoying
 set nowrap                          " Don't soft-wrap lines
+set linebreak                       " When soft-wrap is on (`set wrap`) then break lines at whitespace points instead of where the window boundary is
+set breakindent                     " Indent lines that are soft-wrapped with the characters in 'showbreak'
+set showbreak=⧽\                    " Prepend these characters to continuations of soft-wrapped lines
 set nofoldenable                    " Don't fold code
 set sidescroll=16                   " When the cursor hits the end of the screen, scroll left or right by this many spaces
 set sidescrolloff=10                " Always leave some space to the left and right of the cursor
@@ -250,6 +253,14 @@ function ToggleColorcolumn()
   endif
 endfunction
 
+function ToggleHardWrap()
+  if &textwidth == 0
+    set textwidth=80
+  else
+    set textwidth=0
+  endif
+endfunction
+
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
 
@@ -381,6 +392,8 @@ nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
+nnoremap <unique> <Leader>sh :call ToggleHardWrap() <CR>
+nnoremap <unique> <Leader>ss :set wrap! <CR>
 nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 
 " ------------------------------------------------------------------------------
