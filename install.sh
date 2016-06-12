@@ -20,6 +20,7 @@ ln -si ${DOTFILES}/gvimrc         ~/.gvimrc
 ln -si ${DOTFILES}/i3status.conf  ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc        ~/.inputrc
 ln -si ${DOTFILES}/screenrc       ~/.screenrc
+ln -si ${DOTFILES}/sqliterc       ~/.sqliterc
 ln -si ${DOTFILES}/tmux.conf      ~/.tmux.conf
 ln -si ${DOTFILES}/vimrc          ~/.vimrc
 ln -si ${DOTFILES}/xsession       ~/.xsession
