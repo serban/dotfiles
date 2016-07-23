@@ -39,6 +39,10 @@ print 'To create a new virtualenv:'
 print
 print '$ mkvirtualenv p2-name             # For Python 2'
 print '$ mkvirtualenv -p python3 p3-name  # For Python 3'
+print
+print 'To use a virtualenv:'
+print
+print '$ workon virtualenv-name'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
