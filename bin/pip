@@ -6,39 +6,39 @@ set -o nounset
 set -o pipefail
 
 print () {
-  echo "$@" 1>&2
+  echo "pip: $@" 1>&2
 }
 
 PIP2_PATH="$(which pip2)" || true
 PIP3_PATH="$(which pip3)" || true
 
 if [[ -z "${PIP2_PATH}" ]]; then
-  print "pip: pip2 is not in your path"
+  print "pip2 is not in your path"
 else
-  print "pip: pip2 is ${PIP2_PATH} --> $(readlink ${PIP2_PATH})"
+  print "pip2 is ${PIP2_PATH} --> $(readlink ${PIP2_PATH})"
 fi
 
 if [[ -z "${PIP3_PATH}" ]]; then
-  print "pip: pip3 is not in your path"
+  print "pip3 is not in your path"
 else
-  print "pip: pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
+  print "pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
 fi
 
-print 'pip:'
-print 'pip: You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
-print 'pip:'
-print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip2 list'
-print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip3 list'
-print 'pip:'
-print 'pip: To install Python and virtualenv:'
-print 'pip:'
-print 'pip: $ brew install python python3'
-print 'pip: $ PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper'
-print 'pip:'
-print 'pip: To create a new virtualenv:'
-print 'pip:'
-print 'pip: $ mkvirtualenv p2-name             # For Python 2'
-print 'pip: $ mkvirtualenv -p python3 p3-name  # For Python 3'
+print
+print 'You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
+print
+print '$ PIP_REQUIRE_VIRTUALENV=false pip2 list'
+print '$ PIP_REQUIRE_VIRTUALENV=false pip3 list'
+print
+print 'To install Python and virtualenv:'
+print
+print '$ brew install python python3'
+print '$ PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper'
+print
+print 'To create a new virtualenv:'
+print
+print '$ mkvirtualenv p2-name             # For Python 2'
+print '$ mkvirtualenv -p python3 p3-name  # For Python 3'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
