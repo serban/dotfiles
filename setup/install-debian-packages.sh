@@ -11,6 +11,7 @@ sudo apt-get install \
   colordiff \
   colortest \
   dnsutils \
+  editorconfig \
   git \
   golang \
   htop \

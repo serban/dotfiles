@@ -6,22 +6,24 @@ set -o nounset
 set -o pipefail
 
 brew install \
-  caskroom/cask/brew-cask \
+  homebrew/dupes/grep \
+  homebrew/dupes/rsync \
   colordiff \
   coreutils \
+  editorconfig \
   findutils \
   gawk \
   git \
   gnu-sed \
   gnu-tar \
   go \
-  grep \
   python \
   python3 \
-  rsync \
   tmux \
   vim \
   watch
+
+brew tap caskroom/cask
 
 brew cask install \
   dropbox \
