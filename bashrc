@@ -167,6 +167,7 @@ alias t='tail'
 alias cdf='colordiff -u'
 alias gcc='gcc -std=c99 -g -Wall'
 alias gdb='gdb -q'
+alias p2='python2'
 alias p3='python3'
 alias ip3='ipython3'
 
