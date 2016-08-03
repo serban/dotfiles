@@ -645,6 +645,7 @@ darwin && {
 # ------------------------------------------------------------------------------
 # BASH PROMPT
 
+exitStatus() { local code="$?" ; if [ "${code}" != 0 ]; then echo "(${code}) " ; fi }
 gitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
 gitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(gitStatus)/" ; }
 
@@ -653,11 +654,11 @@ if root; then
 else
   case "$TERM" in
     linux)
-      export PS1="${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+      export PS1="${BRIGHT_RED}\$(exitStatus)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
     screen.*)
-      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
     *)
-                               export PS1="${TITLE}\w${CLOSETITLE}${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
   esac
 fi
 
