@@ -126,9 +126,6 @@ unset HISTFILESIZE
 # When printing history through the bash `history` built-in, use this prefix
 export HISTTIMEFORMAT='[%Y-%m-%d %H:%M:%S] '
 
-# Save history after every command invocation
-export PROMPT_COMMAND='history -a'
-
 darwin || freebsd || linux && {
   ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.history/* | sort | uniq ; }
 }
@@ -645,7 +642,61 @@ darwin && {
 # ------------------------------------------------------------------------------
 # BASH PROMPT
 
-exitStatus() { local code="$?" ; if [ "${code}" != 0 ]; then echo "(${code}) " ; fi }
+startCommandTimer() {
+  commandTimer="${commandTimer:=$SECONDS}"
+}
+
+stopCommandTimer() {
+  commandSeconds="$(( $SECONDS - $commandTimer ))"
+  unset commandTimer
+}
+
+promptCommand() {
+  history -a  # Save history after every command invocation
+  stopCommandTimer
+}
+
+trap 'startCommandTimer' DEBUG
+export PROMPT_COMMAND=promptCommand
+
+formatDuration() {
+  local total_num_seconds="$1"
+
+     let num_days="$(( total_num_seconds / 86400 ))"
+    let num_hours="$(( total_num_seconds % 86400 / 3600 ))"
+  let num_minutes="$(( total_num_seconds % 86400 % 3600 / 60))"
+  let num_seconds="$(( total_num_seconds % 86400 % 3600 % 60))"
+
+  if (( num_days > 0 )); then
+    printf '%dd %02dh %02dm %02ds' ${num_days} ${num_hours} ${num_minutes} ${num_seconds}
+
+  elif (( num_hours > 0 )); then
+    printf '%dh %02dm %02ds' ${num_hours} ${num_minutes} ${num_seconds}
+
+  elif (( num_minutes > 0 )); then
+    printf '%dm %02ds' ${num_minutes} ${num_seconds}
+
+  elif (( num_seconds > 0 )); then
+    printf '%ds' ${num_seconds}
+  fi
+}
+
+commandDuration() {
+  local duration="$(formatDuration ${commandSeconds})"
+
+  if [ -n "${duration}" ]; then
+    echo "|${duration}| "
+  fi
+}
+
+exitStatus() {
+  local code="$?"
+
+  if [ "${code}" != 0 ]; then
+    echo "(${code}) "
+  fi
+}
+
 gitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
 gitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(gitStatus)/" ; }
 
@@ -654,11 +705,11 @@ if root; then
 else
   case "$TERM" in
     linux)
-      export PS1="${BRIGHT_RED}\$(exitStatus)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+      export PS1="${BRIGHT_RED}\$(exitStatus)${BRIGHT_YELLOW}\$(commandDuration)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
     screen.*)
-      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${YELLOW}\$(commandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
     *)
-                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${YELLOW}\$(commandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
   esac
 fi
 
