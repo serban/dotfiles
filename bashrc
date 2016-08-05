@@ -18,6 +18,7 @@ fi
 # GLOBALS
 
 DOTFILES="${HOME}/src/dotfiles"
+PRIVATE="${HOME}/src/private"
 OS="$(uname -s)"
 
 function darwin {
@@ -136,7 +137,7 @@ darwin || freebsd || linux && {
 # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
 # newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
 # is the same on Mac OS X, FreeBSD, and GNU/Linux.
-export PATH="${HOME}/bin:${DOTFILES}/bin:${HOME}/go/bin:${HOME}/go_appengine:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+export PATH="${HOME}/bin:${DOTFILES}/bin:${PRIVATE}/bin:${HOME}/go/bin:${HOME}/go_appengine:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
@@ -742,5 +743,6 @@ fi
 # CLEAR GLOBALS
 
 unset -v DOTFILES
+unset -v PRIVATE
 unset -v OS
 unset -f darwin freebsd linux solaris debian gentoo suse root
