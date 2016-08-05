@@ -330,6 +330,10 @@ bb-clone() {
   git clone --origin bitbucket "git@bitbucket.org:serbang/$1.git"
 }
 
+bump() {
+  git commit --all --message="Bump @ $(date +%Y-%m-%d %H%M%S)"
+}
+
 # ------------------------------------------------------------------------------
 # SED
 
