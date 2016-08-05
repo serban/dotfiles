@@ -685,7 +685,7 @@ commandDuration() {
   local duration="$(formatDuration ${commandSeconds})"
 
   if [ -n "${duration}" ]; then
-    echo "|${duration}| "
+    echo "{${duration}} "
   fi
 }
 
