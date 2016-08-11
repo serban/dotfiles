@@ -332,7 +332,7 @@ bb-clone() {
 }
 
 bump() {
-  git commit --all --message="Bump @ $(date +%Y-%m-%d %H%M%S)"
+  git commit --all --message="Bump @ $(date '+%Y-%m-%d %H:%M:%S')"
 }
 
 # ------------------------------------------------------------------------------
