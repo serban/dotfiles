@@ -471,11 +471,11 @@ m() {
   fi
 }
 
-_m() {
+serbanCompleteM() {
   COMPREPLY=($(compgen -W "$(tmux list-sessions -F '#{session_name}')" -- "${COMP_WORDS[COMP_CWORD]}"))
 }
 
-complete -F _m m
+complete -F serbanCompleteM m
 
 # ------------------------------------------------------------------------------
 # BOOKMARKS
@@ -488,11 +488,11 @@ b() {
   fi
 }
 
-_b() {
+serbanCompleteB() {
   COMPREPLY=($(compgen -W "$(bookmarks labels)" -- "${COMP_WORDS[COMP_CWORD]}"))
 }
 
-_bookmarks()
+serbanCompleteBookmarks()
 {
   local previous_word current_word commands
 
@@ -511,8 +511,8 @@ _bookmarks()
   COMPREPLY=($(compgen -W "${commands}" -- "${current_word}"))
 }
 
-complete -F _b b
-complete -F _bookmarks bookmarks
+complete -F serbanCompleteB b
+complete -F serbanCompleteBookmarks bookmarks
 
 # ------------------------------------------------------------------------------
 # DIRCOLORS
@@ -647,24 +647,24 @@ darwin && {
 # ------------------------------------------------------------------------------
 # BASH PROMPT
 
-startCommandTimer() {
-  commandTimer="${commandTimer:=$SECONDS}"
+serbanStartCommandTimer() {
+  serban_command_timer="${serban_command_timer:=$SECONDS}"
 }
 
-stopCommandTimer() {
-  commandSeconds="$(( $SECONDS - $commandTimer ))"
-  unset commandTimer
+serbanStopCommandTimer() {
+  serban_command_seconds="$(( $SECONDS - $serban_command_timer ))"
+  unset serban_command_timer
 }
 
-promptCommand() {
+serbanPromptCommand() {
   history -a  # Save history after every command invocation
-  stopCommandTimer
+  serbanStopCommandTimer
 }
 
-trap 'startCommandTimer' DEBUG
-export PROMPT_COMMAND=promptCommand
+trap 'serbanStartCommandTimer' DEBUG
+export PROMPT_COMMAND=serbanPromptCommand
 
-formatDuration() {
+serbanFormatDuration() {
   local total_num_seconds="$1"
 
      let num_days="$(( total_num_seconds / 86400 ))"
@@ -686,15 +686,15 @@ formatDuration() {
   fi
 }
 
-commandDuration() {
-  local duration="$(formatDuration ${commandSeconds})"
+serbanCommandDuration() {
+  local duration="$(serbanFormatDuration ${serban_command_seconds})"
 
   if [ -n "${duration}" ]; then
     echo "{${duration}} "
   fi
 }
 
-exitStatus() {
+serbanExitStatus() {
   local code="$?"
 
   if [ "${code}" != 0 ]; then
@@ -702,19 +702,19 @@ exitStatus() {
   fi
 }
 
-gitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
-gitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(gitStatus)/" ; }
+serbanGitStatus() { git diff --quiet 2> /dev/null || echo ' *' ; }
+serbanGitBranch() { git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ > \1$(serbanGitStatus)/" ; }
 
 if root; then
   export PS1="${RED}[\u@\h ${NOCOLOR}\w${RED}]\$ ${NOCOLOR}"
 else
   case "$TERM" in
     linux)
-      export PS1="${BRIGHT_RED}\$(exitStatus)${BRIGHT_YELLOW}\$(commandDuration)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(gitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+      export PS1="${BRIGHT_RED}\$(serbanExitStatus)${BRIGHT_YELLOW}\$(serbanCommandDuration)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
     screen.*)
-      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${YELLOW}\$(commandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${YELLOW}\$(serbanCommandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
     *)
-                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(exitStatus)${YELLOW}\$(commandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(gitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${YELLOW}\$(serbanCommandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
   esac
 fi
 
