@@ -722,14 +722,6 @@ export PROMPT_COMMAND=serbanPostCommandHook
 # ------------------------------------------------------------------------------
 # BASH PROMPT
 
-serbanCommandDuration() {
-  local duration="$(serbanFormatDuration ${serban_command_seconds})"
-
-  if [ -n "${duration}" ]; then
-    echo "{${duration}} "
-  fi
-}
-
 serbanExitStatus() {
   local code="$?"
 
@@ -746,11 +738,11 @@ if root; then
 else
   case "$TERM" in
     linux)
-      export PS1="${BRIGHT_RED}\$(serbanExitStatus)${BRIGHT_YELLOW}\$(serbanCommandDuration)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
+      export PS1="${BRIGHT_RED}\$(serbanExitStatus)${BRIGHT_BLUE}[${BRIGHT_GREEN}\u${BRIGHT_BLUE}@${BRIGHT_RED}\h${BRIGHT_BLUE} ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BRIGHT_BLUE}]${BLUE}\$ ${NOCOLOR}" ;;
     screen.*)
-      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${YELLOW}\$(serbanCommandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+      export PS1="${SCREEN}\W${CLOSESCREEN}${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
     *)
-                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${YELLOW}\$(serbanCommandDuration)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
+                               export PS1="${TITLE}\w${CLOSETITLE}${RED}\$(serbanExitStatus)${BLUE}[${GREEN}\u${BLUE}@${RED}\h ${NOCOLOR}\w${CYAN}\$(serbanGitBranch)${BLUE}]\$ ${NOCOLOR}" ;;
   esac
 fi
 
