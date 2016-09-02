@@ -645,7 +645,7 @@ darwin && {
 #  fi
 
 # ------------------------------------------------------------------------------
-# BASH PROMPT
+# COMMAND HOOKS
 
 serbanStartCommandTimer() {
   serban_command_timer="${serban_command_timer:=$SECONDS}"
@@ -655,14 +655,6 @@ serbanStopCommandTimer() {
   serban_command_seconds="$(( $SECONDS - $serban_command_timer ))"
   unset serban_command_timer
 }
-
-serbanPromptCommand() {
-  history -a  # Save history after every command invocation
-  serbanStopCommandTimer
-}
-
-trap 'serbanStartCommandTimer' DEBUG
-export PROMPT_COMMAND=serbanPromptCommand
 
 serbanFormatDuration() {
   local total_num_seconds="$1"
@@ -685,6 +677,50 @@ serbanFormatDuration() {
     printf '%ds' ${num_seconds}
   fi
 }
+
+serbanPrintCommandDuration() {
+  local duration="$(serbanFormatDuration ${serban_command_seconds})"
+  local yellow='\033[00;33m'
+  local nocolor='\033[00m'
+
+  if [ -n "${duration}" ]; then
+    echo -e "${yellow}{${duration}}${nocolor}"
+  fi
+}
+
+serbanPreCommandHook() {
+  # Run only once after the first command entered at the prompt by a human.
+  if [ -z "$serban_run_pre_command_hook" ]; then
+    return
+  fi
+  unset serban_run_pre_command_hook
+
+  # Put all pre-commands below this line.
+  serbanStartCommandTimer
+}
+
+serbanPostCommandHook() {
+  # Signal to the pre-command hook that it is safe to run.
+  serban_run_pre_command_hook=true
+
+  # Run this hook only after the shell has been initialized.
+  if [ -n "$serban_first_post_command_hook" ]; then
+    unset serban_first_post_command_hook
+    return
+  fi
+
+  # Put all post-commands below this line.
+  serbanStopCommandTimer
+  history -a  # Save history after every command invocation
+  serbanPrintCommandDuration
+}
+
+serban_first_post_command_hook=true
+trap 'serbanPreCommandHook' DEBUG
+export PROMPT_COMMAND=serbanPostCommandHook
+
+# ------------------------------------------------------------------------------
+# BASH PROMPT
 
 serbanCommandDuration() {
   local duration="$(serbanFormatDuration ${serban_command_seconds})"
