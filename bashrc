@@ -176,6 +176,8 @@ alias tags='metaflac --export-tags-to=-'
 
 alias screencapture='avconv -f x11grab -s sxga -r 60 -i :0.0 -vcodec libx264'
 
+alias z='ping 8.8.8.8'
+
 alias f='find . -iname'
 
 # Find any file with an executable bit set
