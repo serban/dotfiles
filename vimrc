@@ -68,6 +68,7 @@ endif
 set textwidth=80
 set wrapmargin=0
 set colorcolumn=+1                  " Show a vertical line one character past the textwidth to help maintain line length
+highlight ColorColumn ctermbg=0     " Make the vertical line subtle
 set numberwidth=5                   " Set the minimum gutter width so that switching back and forth between number and relativenumber isn't annoying
 set nowrap                          " Don't soft-wrap lines
 set linebreak                       " When soft-wrap is on (`set wrap`) then break lines at whitespace points instead of where the window boundary is
