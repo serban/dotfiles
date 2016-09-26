@@ -85,6 +85,10 @@ BRIGHT_MAGENTA='\[\033[01;35m\]'
      SCREEN='\[\033k'
 CLOSESCREEN='\033\\\\'
 
+# TODO(serban): Why are these different from the above?
+   NOCOLOR2='\033[00m'
+    YELLOW2='\033[00;33m'
+
 # ------------------------------------------------------------------------------
 # SHELL SETTINGS
 
@@ -680,13 +684,20 @@ serbanFormatDuration() {
   fi
 }
 
+serbanFormatTime() {
+  printf '%(%Y-%m-%d %H:%M:%S)T'
+}
+
+serbanPrintTime() {
+  printf "${YELLOW2}{$(serbanFormatTime)}${NOCOLOR2}\n"
+}
+
 serbanPrintCommandDuration() {
   local duration="$(serbanFormatDuration ${serban_command_seconds})"
-  local yellow='\033[00;33m'
-  local nocolor='\033[00m'
+  local time="$(serbanFormatTime)"
 
   if [ -n "${duration}" ]; then
-    echo -e "${yellow}{${duration}}${nocolor}"
+    echo -e "${YELLOW2}{${time}} (${duration})${NOCOLOR2}"
   fi
 }
 
@@ -698,6 +709,7 @@ serbanPreCommandHook() {
   unset serban_run_pre_command_hook
 
   # Put all pre-commands below this line.
+  serbanPrintTime
   serbanStartCommandTimer
 }
 
