@@ -688,6 +688,13 @@ serbanFormatTime() {
   printf '%(%Y-%m-%d %H:%M:%S)T'
 }
 
+# Override serbanFormatTime for OS X because it has an ancient version of bash.
+darwin && {
+  serbanFormatTime() {
+    date '+%Y-%m-%d %H:%M:%S'
+  }
+}
+
 serbanPrintTime() {
   printf "${YELLOW2}{$(serbanFormatTime)}${NOCOLOR2}\n"
 }
