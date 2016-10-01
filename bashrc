@@ -559,18 +559,29 @@ darwin || freebsd || linux && {
 }
 
 darwin && {
-  alias v.='find . -type f -print0 | xargs -0 mvim -p'
+  alias e.='find . -type f -print0 | xargs -0 mvim -p'
+  alias v.='find . -type f -print0 | xargs -0 mvim -p -R'
+
+  e() {
+    mvim -p "$@" 2> /dev/null
+  }
 
   v() {
-    mvim -p "$@" 2> /dev/null
+    mvim -p -R "$@" 2> /dev/null
   }
 }
 
 linux && {
-  alias v.='find . -type f -print0 | xargs -0 gvim -p'
+  alias e.='find . -type f -print0 | xargs -0 gvim -p'
+  alias v.='find . -type f -print0 | xargs -0 gvim -p -R'
+
+  e() {
+    gvim -p "$@" 2> /dev/null
+  }
+
 
   v() {
-    gvim -p "$@" 2> /dev/null
+    gvim -p -R "$@" 2> /dev/null
   }
 }
 
