@@ -707,7 +707,7 @@ darwin && {
 }
 
 serbanPrintTime() {
-  printf "${YELLOW2}{$(serbanFormatTime)}${NOCOLOR2}\n"
+  printf "${YELLOW2}======  $(serbanFormatTime)  ======${NOCOLOR2}\n"
 }
 
 serbanPrintCommandDuration() {
@@ -715,7 +715,7 @@ serbanPrintCommandDuration() {
   local time="$(serbanFormatTime)"
 
   if [ -n "${duration}" ]; then
-    echo -e "${YELLOW2}{${time}} (${duration})${NOCOLOR2}"
+    echo -e "${YELLOW2}======  ${time}  ======  (${duration})${NOCOLOR2}"
   fi
 }
 
