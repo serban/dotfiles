@@ -12,16 +12,19 @@
 set $main DVI-I-1
 set $side DP-1
 
-workspace 1 output $main
-workspace 2 output $main
-workspace 3 output $main
-workspace 4 output $main
-workspace 5 output $main
-workspace 6 output $main
-workspace 7 output $main
-workspace 8 output $main
-workspace 9 output $side
-workspace 10 output $side
+workspace  1 output $main
+workspace  2 output $main
+workspace  3 output $main
+workspace  4 output $main
+workspace  5 output $main
+workspace  6 output $main
+workspace  7 output $main
+workspace  8 output $main
+workspace  9 output $main
+workspace 10 output $main
+workspace 11 output $side
+workspace 12 output $side
+workspace 13 output $side
 
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 
@@ -91,7 +94,7 @@ bindsym $mod+r layout toggle split
 bindsym $mod+u fullscreen toggle
 
 bindsym $mod+minus split vertical
-bindsym $mod+backslash split horizontal
+bindsym $mod+equal split horizontal
 
 # i3 Actions
 bindsym $mod+a reload
@@ -99,40 +102,49 @@ bindsym $mod+q restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Quit i3?' -b 'Quit' 'i3-msg exit'"
 
 # Change workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1            workspace  1
+bindsym $mod+2            workspace  2
+bindsym $mod+3            workspace  3
+bindsym $mod+4            workspace  4
+bindsym $mod+5            workspace  5
+bindsym $mod+6            workspace  6
+bindsym $mod+7            workspace  7
+bindsym $mod+8            workspace  8
+bindsym $mod+9            workspace  9
+bindsym $mod+0            workspace 10
+bindsym $mod+bracketleft  workspace 11
+bindsym $mod+bracketright workspace 12
+bindsym $mod+backslash    workspace 13
 
 # Rename workspace
-bindsym $mod+Control+1 exec rename-workspace 1
-bindsym $mod+Control+2 exec rename-workspace 2
-bindsym $mod+Control+3 exec rename-workspace 3
-bindsym $mod+Control+4 exec rename-workspace 4
-bindsym $mod+Control+5 exec rename-workspace 5
-bindsym $mod+Control+6 exec rename-workspace 6
-bindsym $mod+Control+7 exec rename-workspace 7
-bindsym $mod+Control+8 exec rename-workspace 8
-bindsym $mod+Control+9 exec rename-workspace 9
-bindsym $mod+Control+0 exec rename-workspace 10
+bindsym $mod+Control+1            exec rename-workspace  1
+bindsym $mod+Control+2            exec rename-workspace  2
+bindsym $mod+Control+3            exec rename-workspace  3
+bindsym $mod+Control+4            exec rename-workspace  4
+bindsym $mod+Control+5            exec rename-workspace  5
+bindsym $mod+Control+6            exec rename-workspace  6
+bindsym $mod+Control+7            exec rename-workspace  7
+bindsym $mod+Control+8            exec rename-workspace  8
+bindsym $mod+Control+9            exec rename-workspace  9
+bindsym $mod+Control+0            exec rename-workspace 10
+bindsym $mod+Control+bracketleft  exec rename-workspace 11
+bindsym $mod+Control+bracketright exec rename-workspace 12
+bindsym $mod+Control+backslash    exec rename-workspace 13
 
 # Move window to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1            move container to workspace  1
+bindsym $mod+Shift+2            move container to workspace  2
+bindsym $mod+Shift+3            move container to workspace  3
+bindsym $mod+Shift+4            move container to workspace  4
+bindsym $mod+Shift+5            move container to workspace  5
+bindsym $mod+Shift+6            move container to workspace  6
+bindsym $mod+Shift+7            move container to workspace  7
+bindsym $mod+Shift+8            move container to workspace  8
+bindsym $mod+Shift+9            move container to workspace  9
+bindsym $mod+Shift+0            move container to workspace 10
+bindsym $mod+Shift+bracketleft  move container to workspace 11
+bindsym $mod+Shift+bracketright move container to workspace 12
+bindsym $mod+Shift+backslash    move container to workspace 13
 
 # Application-specific settings
 #
