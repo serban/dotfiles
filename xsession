@@ -37,17 +37,18 @@ numlockx off
 log 'Setting the keyboard repeat delay and repeat rate'
 xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
 
-# Poweroff the display after ten minutes of inactivity
 log 'Setting display power preferences'
-xset s blank
-xset dpms 600 600 600
+xset s blank            # Prefer a blank screen over a background pattern
+xset s expose           # Never disable the screensaver
+xset s 0 0              # Don't actually blank the display
+xset dpms 600 600 600   # Poweroff the display after ten minutes of inactivity
 
 # Disable screen blanking and do not poweroff the display
 # log 'Disabling screen blanking'
 # xset s off -dpms
 
 log 'Starting xautolock'
-xautolock -time 5 -locker 'i3lock --ignore-empty-password --color=657b83' &
+xautolock -time 5 -locker 'i3lock --ignore-empty-password --color=657b83' &  # base00
 
 log 'Starting conky'
 conky &
