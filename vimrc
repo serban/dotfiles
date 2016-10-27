@@ -128,6 +128,9 @@ let g:ctrlp_custom_ignore = { 'dir': '\v(bower_components|node_modules)$' }
 " EASYBUFFER
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 
+" EDITORCONFIG
+let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
+
 " ULTISNIPS
 let g:UltiSnipsExpandTrigger = '<Tab>'  " Works with Supertab!
 let g:UltiSnipsListSnippets = '<C-Tab>'
@@ -402,7 +405,6 @@ nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 " EVENT HANDLERS
 
 autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
-
 autocmd FileType cpp :set commentstring=//\ \ %s
 
 autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
