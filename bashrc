@@ -141,7 +141,7 @@ darwin || freebsd || linux && {
 # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
 # newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
 # is the same on Mac OS X, FreeBSD, and GNU/Linux.
-export PATH="${HOME}/bin:${DOTFILES}/bin:${PRIVATE}/bin:${HOME}/go/bin:${HOME}/go_appengine:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+export PATH="${HOME}/bin:${PRIVATE}/bin:${DOTFILES}/bin:${HOME}/go/bin:${HOME}/opt/google-cloud-sdk/bin:${HOME}/opt/go_appengine:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
@@ -648,6 +648,10 @@ darwin && {
     source /usr/local/git/contrib/completion/git-completion.bash
   fi
 }
+
+if [ -f "${HOME}/opt/google-cloud-sdk/completion.bash.inc" ]; then
+  source "${HOME}/opt/google-cloud-sdk/completion.bash.inc"
+fi
 
 # For non-Gentoo distributions that don't have eselect:
 #
