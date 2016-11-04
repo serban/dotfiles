@@ -26,6 +26,9 @@ ln -si ${DOTFILES}/vimrc          ~/.vimrc
 ln -si ${DOTFILES}/xsession       ~/.xsession
 ln -si ${DOTFILES}/Xresources     ~/.Xresources
 
+mkdir -p ~/.config/nitrogen
+ln -si ${DOTFILES}/bg-saved.cfg   ~/.config/nitrogen/bg-saved.cfg
+
 mkdir -p ~/.i3
 ln -si ${DOTFILES}/i3-config      ~/.i3/config
 

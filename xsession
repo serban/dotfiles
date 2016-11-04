@@ -21,12 +21,15 @@ gnome-settings-daemon &
 log 'Waiting for gnome-settings-daemon'
 sleep 1
 
-if [ -f "${BACKGROUND}" ]; then
-  log 'Setting background image'
-  fbsetbg -f "${BACKGROUND}"
-else
-  log "Cannot set background image: no image found at ${BACKGROUND}"
-fi
+# if [ -f "${BACKGROUND}" ]; then
+#   log 'Setting background image'
+#   fbsetbg -f "${BACKGROUND}"
+# else
+#   log "Cannot set background image: no image found at ${BACKGROUND}"
+# fi
+
+log 'Setting background images'
+nitrogen --restore
 
 log 'Sourcing ~/.Xresources'
 xrdb -merge ~/.Xresources
