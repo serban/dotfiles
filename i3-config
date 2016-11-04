@@ -9,29 +9,30 @@
 # Mouse4  Scroll Up
 # Mouse5  Scroll Down
 
-set $main DVI-I-1
-set $side DP-1
+set $display_c DVI-I-1
+set $display_l DP-3
+set $display_r DP-2
 
-workspace  1 output $main
-workspace  2 output $main
-workspace  3 output $main
-workspace  4 output $main
-workspace  5 output $main
-workspace  6 output $main
-workspace  7 output $main
-workspace  8 output $main
-workspace  9 output $main
-workspace 10 output $main
-workspace 11 output $side
-workspace 12 output $side
-workspace 13 output $side
-workspace 14 output $side
-workspace 15 output $side
-workspace 16 output $side
-workspace 17 output $side
-workspace 18 output $side
-workspace 19 output $side
-workspace 20 output $side
+workspace  1 output $display_c
+workspace  2 output $display_c
+workspace  3 output $display_c
+workspace  4 output $display_c
+workspace  5 output $display_c
+workspace  6 output $display_c
+workspace  7 output $display_c
+workspace  8 output $display_c
+workspace  9 output $display_c
+workspace 10 output $display_c
+workspace 11 output $display_l
+workspace 12 output $display_l
+workspace 13 output $display_l
+workspace 14 output $display_l
+workspace 15 output $display_l
+workspace 16 output $display_r
+workspace 17 output $display_r
+workspace 18 output $display_r
+workspace 19 output $display_r
+workspace 20 output $display_r
 
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 
