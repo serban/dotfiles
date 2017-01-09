@@ -37,6 +37,10 @@ xrdb -merge ~/.Xresources
 log 'Turning off the number lock'
 numlockx off
 
+# To use the function keys on an Apple keyboard:
+#
+# echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
+
 log 'Setting the keyboard repeat delay and repeat rate'
 xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
 
