@@ -233,8 +233,9 @@ function RemoveTrailingWhitespace()
 endfunction
 
 function RemoveHttpScheme()
-  silent! %s/\vhttp:\/\///g
-  echo 'Removed all occurrences of http://'
+  silent! %s/\vhttp:\/\/b\//b\//g
+  silent! %s/\vhttp:\/\/cl\//cl\//g
+  echo 'Replaced all occurrences of http://b/ and http://cl/ with b/ and cl/'
 endfunction
 
 function ThreeSplit()
