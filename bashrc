@@ -308,8 +308,8 @@ alias gspp='git stash && git pull && git remote prune origin && git stash pop'
 alias git-ignore-tracked-file='git update-index --assume-unchanged'
 alias git-no-ignore-tracked-file='git update-index --no-assume-unchanged'
 
- gg() { git grep --line-number "$@" --               '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
-ggi() { git grep --line-number --ignore-case "$@" -- '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.handlebars' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
+ gg() { git grep --line-number               "$@" -- '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
+ggi() { git grep --line-number --ignore-case "$@" -- '*.h' '*.hpp' '*.c' '*.cc' '*.cpp' '*.cu' '*.go' '*.html' '*.java' '*.js' '*.m' '*.mm' '*.py' '*.rb' '*.sh' ; }
 
 git-push-branch-to-origin-master() {
   if [ -z "$1" ]; then
@@ -537,18 +537,29 @@ linux && {
 # GREP
 
 darwin && {
-  alias r='grep --color=always -ins'
-  rgr() { grep --color=always -insr "$@" * ; }
-  cgr() { grep --color=always -insr --include='*.c' --include='*.h' "$@" * ; }
-  jgr() { grep --color=always -insr --include='*.java' "$@" * ; }
-
+  alias    r='grep --color=always --no-messages --line-number --ignore-case'
+  alias todo='grep --color=always --no-messages --line-number --ignore-case --recursive "TODO(serban)"'
+  rgr() {     grep --color=always --no-messages --line-number --ignore-case --recursive "$@" * ; }
+  cgr() {
+              grep --color=always --no-messages --line-number --ignore-case --recursive \
+                --include='*.h' --include='*.hpp' \
+                --include='*.c' --include='*.cc' --include='*.cpp' --include='*.cu' \
+                --include='*.go' --include='*.java' --include='*.py' --include='*.sh' \
+                "$@" *
+  }
 }
 
 linux && {
-  alias r='grep --color=always -insT'
-  rgr() { grep --color=always -insTr "$@" * ; }
-  cgr() { grep --color=always -insTr --include='*.c' --include='*.h' "$@" * ; }
-  jgr() { grep --color=always -insTr --include='*.java' "$@" * ; }
+  alias    r='grep --color=always --no-messages --line-number --initial-tab --ignore-case'
+  alias todo='grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive "TODO(serban)"'
+  rgr() {     grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive "$@" * ; }
+  cgr() {
+              grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive \
+                --include='*.h' --include='*.hpp' \
+                --include='*.c' --include='*.cc' --include='*.cpp' --include='*.cu' \
+                --include='*.go' --include='*.java' --include='*.py' --include='*.sh' \
+                "$@" *
+  }
 }
 
 # ------------------------------------------------------------------------------
