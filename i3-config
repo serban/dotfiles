@@ -10,8 +10,8 @@
 # Mouse5  Scroll Down
 
 set $display_c DVI-I-1
-set $display_l DP-3
-set $display_r DP-2
+set $display_l DP-2
+set $display_r DP-3
 
 workspace  1 output $display_c
 workspace  2 output $display_c
