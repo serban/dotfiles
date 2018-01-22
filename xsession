@@ -13,8 +13,9 @@ log() {
 # Get rid of the horrible default GTK theme. Do this before running the `xset`
 # invocations below so that gnome-settings-daemon does not override the settings
 # made in this script.
-log 'Starting gnome-settings-daemon'
-gnome-settings-daemon &
+log 'Starting gnome-settings-daemon (cinnamon-settings-daemon) components'
+/usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-xsettings &
+/usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-xrandr &
 
 # Sleep for a bit so that gnome-settings-daemon can do its thing before we
 # override stuff below.
