@@ -9,7 +9,7 @@ URxvt*scrollstyle: plain
 URxvt*thickness: 6
 
 URxvt*scrollTtyKeypress: True
-URxvt*scrollTtyOutput: True
+URxvt*scrollTtyOutput: False
 URxvt*saveLines: 65535
 
 URxvt*perl-ext-common: default,matcher
