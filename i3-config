@@ -82,6 +82,11 @@ bindsym $mod+Escape exec xkill
 bindsym $mod+space exec dmenu_run
 bindsym $mod+Tab exec i3viz
 
+# Media keys
+bindsym XF86AudioRaiseVolume exec launch volume-up
+bindsym XF86AudioLowerVolume exec launch volume-down
+bindsym XF86AudioMute exec launch volume-mute
+
 # Window actions
 bindsym $mod+w kill
 
@@ -229,7 +234,7 @@ client.focused          $S_blue     $S_blue     $S_ba3    $S_magenta
 client.focused_inactive $S_bz1      $S_bz1      $S_ba1    $S_bz1
 client.unfocused        $S_bz1      $S_bz1      $S_ba1    $S_bz1
 
-client.background $S_b3
+client.background $S_bz3
 
 bar {
   status_command i3status
