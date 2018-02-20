@@ -245,7 +245,7 @@ bar {
   colors {
     background $black
     statusline $S_ba1
-    separator $S_ba1
+    separator $S_bz1
 
     # Class                 Border      Backgrond   Text
     urgent_workspace        $black      $black      $S_yellow
