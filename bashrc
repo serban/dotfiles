@@ -199,6 +199,25 @@ rmswp() { find . -type f -name '.*.swp' -exec rm -vf '{}' \; ; }
 
 path() { IFS=':'; for component in ${PATH} ; do echo "${component}"; done ; }
 
+commas() { python3 -c "print('{:,}'.format($1))" ; }
+
+unix_seconds() {
+  python3 -c \
+    "import time; print(time.strftime('%Y-%m-%d %H:%M:%S %z', time.gmtime($1)))"
+}
+
+# TODO: Preserve millisecond resolution
+unix_millis() {
+  python3 -c \
+    "import time; print(time.strftime('%Y-%m-%d %H:%M:%S %z', time.gmtime($1/1000)))"
+}
+
+# TODO: Preserve microsecond resolution
+unix_micros() {
+  python3 -c \
+    "import time; print(time.strftime('%Y-%m-%d %H:%M:%S %z', time.gmtime($1/1000000)))"
+}
+
 # ------------------------------------------------------------------------------
 # MAC OS X ALIASES
 
