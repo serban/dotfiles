@@ -235,6 +235,13 @@ darwin && {
 }
 
 # ------------------------------------------------------------------------------
+# UNIX ALIASES
+
+linux && {
+  alias key_repeat='xset r rate 200 50'  # in milliseconds and keystrokes/sec
+}
+
+# ------------------------------------------------------------------------------
 # GENTOO ALIASES
 
 linux && {
