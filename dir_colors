@@ -126,6 +126,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .proto  00;36
 
 # CONFIGURATION (Bold Cyan)
+.csv    01;35
 .json   01;35
 .plist  01;35
 .toml   01;35
