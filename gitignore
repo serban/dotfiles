@@ -3,29 +3,3 @@
 
 # Vim
 .*.sw[a-z]
-
-# Emacs
-\#*#
-*~
-
-# Xcode 4
-build/
-xcuserdata/
-*.xcworkspace/
-
-# Eclipse
-.project
-.classpath
-.settings
-
-# Ctags and Cscope
-tags
-cscope.*
-
-# Compiler Output
-*.o
-*.pyc
-*.class
-
-# Other Hidden Files
-#.*
