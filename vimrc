@@ -272,6 +272,11 @@ endfunction
 
 let mapleader = " "
 
+" Remap F1 to ESCAPE for keyboards where the Escape key is far away.
+nnoremap <unique> <F1> <ESC>
+cnoremap <unique> <F1> <ESC>
+inoremap <unique> <F1> <ESC>
+
 " Tabstop is the number of characters represented by a \t
 " Shiftwidth is the amount of characters in a shift operation like << or >>
 " Softtabstop is the number of characters that a tab counts for
