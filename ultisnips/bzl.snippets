@@ -1,0 +1,18 @@
+snippet cc_binary "Bazel C++ Binary"
+cc_binary(
+  name = "$1",
+  srcs = ["$1.cc"],
+  deps = [
+  ],
+)
+endsnippet
+
+snippet cc_library "Bazel C++ Library"
+cc_library(
+  name = "$1",
+  srcs = ["$1.cc"],
+  hdrs = ["$1.h"],
+  deps = [
+  ],
+)
+endsnippet
