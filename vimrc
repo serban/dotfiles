@@ -272,6 +272,14 @@ endfunction
 
 let mapleader = " "
 
+" Disable man pages.
+nnoremap <unique> K <Nop>
+
+" Disable Ex-mode.
+nnoremap <unique> Q <Nop>
+nnoremap <unique> gQ <Nop>
+nnoremap <unique> q: <Nop>
+
 " Remap F1 to ESCAPE for keyboards where the Escape key is far away.
 nnoremap <unique> <F1> <ESC>
 cnoremap <unique> <F1> <ESC>
