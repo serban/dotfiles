@@ -58,6 +58,9 @@ numlockx off
 #
 # echo 2 | sudo tee /sys/module/hid_apple/parameters/fnmode
 
+log 'Swapping the CTRL and CAPS keys'
+setxkbmap -option ctrl:swapcaps
+
 log 'Setting the keyboard repeat delay and repeat rate'
 xset r rate 200 50  # in milliseconds and keystrokes/sec, respectively
 
