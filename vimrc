@@ -281,9 +281,10 @@ nnoremap <unique> gQ <Nop>
 nnoremap <unique> q: <Nop>
 
 " Remap F1 to ESCAPE for keyboards where the Escape key is far away.
-nnoremap <unique> <F1> <ESC>
 cnoremap <unique> <F1> <ESC>
 inoremap <unique> <F1> <ESC>
+nnoremap <unique> <F1> <ESC>
+vnoremap <unique> <F1> <ESC>
 
 " Tabstop is the number of characters represented by a \t
 " Shiftwidth is the amount of characters in a shift operation like << or >>
