@@ -132,8 +132,8 @@ let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
 
 " ULTISNIPS
-let g:UltiSnipsExpandTrigger = '<Tab>'  " Works with Supertab!
-let g:UltiSnipsListSnippets = '<C-Tab>'
+let g:UltiSnipsExpandTrigger = '<C-Tab>'  " <Tab> works with Supertab but conflicts with YouCompleteMe
+" let g:UltiSnipsListSnippets = '<C-Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<C-f>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
