@@ -355,8 +355,8 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 nnoremap <unique> <C-s> :update <CR>
 inoremap <unique> <C-s> <ESC>:update <CR>
 
-" Open a new window
-nnoremap <unique> <C-m> :vsplit <CR>
+" Open a new window at the far right and full height of the Vim window
+nnoremap <unique> <C-m> :botright vsplit <CR>
 
 " Open a new window
 nnoremap <unique> <C-g> :split <CR>
