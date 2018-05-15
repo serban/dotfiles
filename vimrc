@@ -13,6 +13,11 @@ endif
 
 call vundle#begin()
 
+" Note: UltiSnips can crash MacVim on startup due to linking against the wrong Python.
+" Not the fault of UltiSnips, but you can disable it to prevent MacVim from crashing. See:
+" + https://github.com/SirVer/ultisnips/issues/771
+" + https://github.com/SirVer/ultisnips/issues/900
+
 " GitHub Plugins
 Plugin 'gmarik/Vundle.vim'
 Plugin 'SirVer/ultisnips'
