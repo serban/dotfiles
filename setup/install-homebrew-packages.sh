@@ -17,6 +17,7 @@ brew install \
   gnu-sed \
   gnu-tar \
   go \
+  macvim \
   python \
   python3 \
   tmux \
@@ -26,5 +27,4 @@ brew install \
 brew tap caskroom/cask
 
 brew cask install \
-  dropbox \
-  macvim
+  dropbox
