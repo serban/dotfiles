@@ -5,6 +5,9 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+# python   (canonical) = python3 = python@3
+# python@2 (canonical) = python2
+
 brew install \
   homebrew/dupes/grep \
   homebrew/dupes/rsync \
@@ -19,7 +22,7 @@ brew install \
   go \
   macvim \
   python \
-  python3 \
+  python@2 \
   tmux \
   vim \
   watch
