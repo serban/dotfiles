@@ -1,0 +1,3 @@
+[lpedal]>[ctrl]
+[mpedal]>[escape]
+[rpedal]>[shift]
