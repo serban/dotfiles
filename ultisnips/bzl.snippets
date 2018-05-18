@@ -16,3 +16,12 @@ cc_library(
   ],
 )
 endsnippet
+
+snippet cc_test "Bazel C++ Test"
+cc_test(
+  name = "$1",
+  srcs = ["$1.cc"],
+  deps = [
+  ],
+)
+endsnippet
