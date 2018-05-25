@@ -428,6 +428,7 @@ nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 
 autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType cpp :set commentstring=//\ \ %s
+autocmd FileType cpp :set iskeyword-=-
 
 autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
