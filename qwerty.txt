@@ -1,0 +1,6 @@
+[lalt]>[lwin]
+[home]>[lalt]
+[pup]>[ralt]
+[end]>[lshift]
+[pdown]>[rshift]
+[delete]>[tab]
