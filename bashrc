@@ -225,11 +225,11 @@ darwin && {
   alias safesleep='sudo pmset -a hibernatemode 3; pmset -g'
   alias nosafesleep='sudo pmset -a hibernatemode 0; pmset -g'
 
-  alias c01='echo "Staying awake for  1 hour"  ; pmset -g ; caffeinate -t  3600'
-  alias c02='echo "Staying awake for  2 hours" ; pmset -g ; caffeinate -t  7200'
-  alias c04='echo "Staying awake for  4 hours" ; pmset -g ; caffeinate -t 14400'
-  alias c08='echo "Staying awake for  8 hours" ; pmset -g ; caffeinate -t 28800'
-  alias c12='echo "Staying awake for 12 hours" ; pmset -g ; caffeinate -t 43200'
+  alias c01='pmset -g ; printf "\nStaying awake for  1 hour\n"  ; caffeinate -t  3600'
+  alias c02='pmset -g ; printf "\nStaying awake for  2 hours\n" ; caffeinate -t  7200'
+  alias c04='pmset -g ; printf "\nStaying awake for  4 hours\n" ; caffeinate -t 14400'
+  alias c08='pmset -g ; printf "\nStaying awake for  8 hours\n" ; caffeinate -t 28800'
+  alias c12='pmset -g ; printf "\nStaying awake for 12 hours\n" ; caffeinate -t 43200'
 
   alias lilypond='/Applications/LilyPond.app/Contents/Resources/bin/lilypond'
 }
