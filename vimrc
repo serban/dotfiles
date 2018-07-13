@@ -120,6 +120,8 @@ inoremap # X#
 
 set backspace=eol,indent,start      " Make life easier on crappy terminals
 
+set mouse=a                         " Enable the mouse
+
 set autochdir                       " Keep the current directory in sync with the folder containing the open file
 
 " ------------------------------------------------------------------------------
