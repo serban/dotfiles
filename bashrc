@@ -141,7 +141,7 @@ darwin || freebsd || linux && {
 # Prioritize Homebrew over /bin, /sbin, /usr/bin, and /usr/sbin so that
 # newer tools are used instead of the outdated Mac OS X utilities. For now, PATH
 # is the same on Mac OS X, FreeBSD, and GNU/Linux.
-export PATH="${HOME}/bin:${PRIVATE}/bin:${DOTFILES}/bin:${HOME}/go/bin:${HOME}/opt/google-cloud-sdk/bin:${HOME}/opt/go_appengine:/usr/local/cuda/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
+export PATH="${HOME}/bin:${PRIVATE}/bin:${DOTFILES}/bin:${HOME}/go/bin:${HOME}/opt/google-cloud-sdk/bin:/usr/local/cuda/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:${PATH}"
 
 # ------------------------------------------------------------------------------
 # ALIASES
