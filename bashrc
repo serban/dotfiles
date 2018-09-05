@@ -509,10 +509,22 @@ alias mlc='tmux list-clients'
 
 m() {
   if [ -n "$1" ]; then
-    tmux new-session -A -n Shell -c "${HOME}" -s "$1"
+    tmux new-session -A -c "${HOME}" -n Shell -s "$1"
   else
-    tmux new-session -A -n Shell -s misc
+    tmux new-session -A -c "${HOME}" -n Shell -s misc
   fi
+}
+
+ma() {
+  TARGET="${1}"
+
+  # `head` fires off a SIGPIPE, so make sure to `set +o pipefail` in a script.
+  RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
+  SESSION="${TARGET}-${RANDOM_NUMBER}"
+
+  cd "${HOME}/src/${TARGET}"
+  tmux new-session -A -s "${SESSION}" -t "${TARGET}"
+  tmux kill-session -t "${SESSION}"
 }
 
 serbanCompleteM() {
@@ -520,6 +532,7 @@ serbanCompleteM() {
 }
 
 complete -F serbanCompleteM m
+complete -F serbanCompleteM ma
 
 # ------------------------------------------------------------------------------
 # BOOKMARKS
