@@ -522,9 +522,10 @@ ma() {
   RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
   SESSION="${TARGET}-${RANDOM_NUMBER}"
 
-  cd "${HOME}/src/${TARGET}"
+  pushd "${HOME}/src/${TARGET}" > /dev/null
   tmux new-session -A -s "${SESSION}" -t "${TARGET}"
   tmux kill-session -t "${SESSION}"
+  popd > /dev/null
 }
 
 serbanCompleteM() {
