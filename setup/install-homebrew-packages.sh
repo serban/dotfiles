@@ -9,8 +9,6 @@ set -o pipefail
 # python@2 (canonical) = python2
 
 brew install \
-  homebrew/dupes/grep \
-  homebrew/dupes/rsync \
   colordiff \
   coreutils \
   editorconfig \
@@ -20,12 +18,19 @@ brew install \
   gnu-sed \
   gnu-tar \
   go \
+  grep \
+  graphviz \
+  httpie \
+  hugo \
   macvim \
   python \
   python@2 \
+  rsync \
+  sqlite \
   tmux \
   vim \
-  watch
+  watch \
+  watchman
 
 brew tap caskroom/cask
 
