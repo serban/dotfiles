@@ -8,4 +8,11 @@ set -o pipefail
 brew tap caskroom/cask
 
 brew cask install \
-  dropbox
+  atom \
+  audio-hijack \
+  divvy \
+  dropbox \
+  google-chrome \
+  grandperspective \
+  iterm2 \
+  lilypond
