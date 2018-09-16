@@ -31,8 +31,3 @@ brew install \
   vim \
   watch \
   watchman
-
-brew tap caskroom/cask
-
-brew cask install \
-  dropbox
