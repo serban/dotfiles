@@ -15,10 +15,12 @@ sudo apt-get install \
   git \
   golang \
   htop \
+  hugo \
   libc++-dev \
   makepasswd \
   psmisc \
   python3 \
+  silversearcher-ag \
   tmux \
   unzip \
   vim-nox
