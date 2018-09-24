@@ -9,11 +9,11 @@ set -o pipefail
 defaults write -g AppleShowScrollBars WhenScrolling
 
 # System Preferences > Dock > Size
-defaults write com.apple.dock tilesize -int 40  # 30 on a MacBook Pro
+defaults write com.apple.dock tilesize -int 35
 
 # System Preferences > Dock > Magnification
 defaults write com.apple.dock magnification -bool true
-defaults write com.apple.dock largesize -int 75  # 60 on a MacBook Pro
+defaults write com.apple.dock largesize -int 70
 
 # System Preferences > Dock > Position on screen
 defaults write com.apple.dock orientation left
@@ -22,7 +22,10 @@ defaults write com.apple.dock orientation left
 defaults write com.apple.dock minimize-to-application -bool true
 
 # System Preferences > Dock > Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool false
+defaults write com.apple.dock autohide -bool true
+
+# Show the dock immediately when the mouse reaches the edge of the screen
+defaults write com.apple.dock autohide-delay -int 0
 
 # System Preferences > Keyboard > Key Repeat
 defaults write -g KeyRepeat -int 2
