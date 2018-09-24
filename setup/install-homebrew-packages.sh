@@ -27,6 +27,7 @@ brew install \
   python@2 \
   rsync \
   sqlite \
+  the_silver_searcher \
   tmux \
   vim \
   watch \
