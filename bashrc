@@ -162,9 +162,11 @@ alias mv='mv -vi'
 alias cp='cp -vi'
 alias rm='rm -v'
 
-alias l='less -iNRS'
+alias l='less --ignore-case --LINE-NUMBERS --RAW-CONTROL-CHARS --chop-long-lines'
 alias h='head'
 alias t='tail'
+
+alias ag='ag --pager "less --ignore-case --RAW-CONTROL-CHARS" --color-path "01;35" --color-line-number "00;34"'
 
 alias cdf='colordiff -u'
 alias gcc='gcc -std=c99 -g -Wall'
