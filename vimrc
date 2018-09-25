@@ -350,7 +350,7 @@ nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
 "   * <C-n>
 "   + <C-o>
 "   * <C-p>
-"   - <C-q>  Must set `stty -ixon` for this to work
+"   * <C-q>  Must set `stty -ixon` for this to work
 "   + <C-r>
 "   * <C-s>  Must set `stty -ixon` for this to work
 "   + <C-t>
@@ -366,7 +366,11 @@ nnoremap <unique> <C-s> :update <CR>
 inoremap <unique> <C-s> <ESC>:update <CR>
 
 " Open a new window at the far right and full height of the Vim window
+" TODO(serban): <C-m> is the same as <Enter> (ugh!)
 nnoremap <unique> <C-m> :botright vsplit <CR>
+
+" Delete buffer without closing window
+nnoremap <unique> <C-q> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
 
 " Open a new window
 nnoremap <unique> <C-g> :split <CR>
