@@ -277,6 +277,20 @@ function ToggleHardWrap()
   endif
 endfunction
 
+" TODO(serban): Figure out the right way to do this.
+function SerbanDisableLineNumbers()
+  windo NumbersDisable
+  windo setlocal norelativenumber
+  windo setlocal nonumber
+
+  tabdo NumbersDisable
+  tabdo setlocal norelativenumber
+  tabdo setlocal nonumber
+
+  set norelativenumber
+  set nonumber
+endfunction
+
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
 
