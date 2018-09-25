@@ -518,17 +518,21 @@ m() {
 }
 
 ma() {
-  TARGET="${1}"
+  REPO="${1}"
 
+  # This is broken on macOS: 'tr: Illegal byte sequence'
   # `head` fires off a SIGPIPE, so make sure to `set +o pipefail` in a script.
-  RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
+  # RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
+
+  RANDOM_NUMBER="$(python3 -c 'import random; print(random.randint(10, 99))')"
+  TARGET="${REPO//\./-}"
   SESSION="${TARGET}-${RANDOM_NUMBER}"
 
   if ! tmux has-session -t "${TARGET}" ; then
-    tmux new-session -d -s "${TARGET}" -c "${HOME}/src/${TARGET}" -n Shell
+    tmux new-session -d -s "${TARGET}" -c "${HOME}/src/${REPO}" -n Shell
   fi
 
-  pushd "${HOME}/src/${TARGET}" > /dev/null
+  pushd "${HOME}/src/${REPO}" > /dev/null
   tmux new-session -A -s "${SESSION}" -t "${TARGET}"
   tmux kill-session -t "${SESSION}"
   popd > /dev/null
