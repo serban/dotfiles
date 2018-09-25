@@ -278,7 +278,7 @@ function ToggleHardWrap()
 endfunction
 
 " TODO(serban): Figure out the right way to do this.
-function SerbanDisableLineNumbers()
+function DisableLineNumbers()
   windo NumbersDisable
   windo setlocal norelativenumber
   windo setlocal nonumber
@@ -289,6 +289,8 @@ function SerbanDisableLineNumbers()
 
   set norelativenumber
   set nonumber
+
+  echo 'Disabled line numbers'
 endfunction
 
 " ------------------------------------------------------------------------------
