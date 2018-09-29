@@ -32,12 +32,12 @@ print '$ PIP_REQUIRE_VIRTUALENV=false pip3 list'
 print
 print 'To install Python and virtualenv:'
 print
-print '$ brew install python python3'
+print '$ brew install python python@2'
 print '$ PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper'
 print
 print 'To create a new virtualenv:'
 print
-print '$ mkvirtualenv p2-name             # For Python 2'
+print '$ mkvirtualenv -p python2 p2-name  # For Python 2'
 print '$ mkvirtualenv -p python3 p3-name  # For Python 3'
 print
 print 'To use a virtualenv:'
