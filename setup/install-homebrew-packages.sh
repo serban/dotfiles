@@ -23,6 +23,7 @@ brew install \
   httpie \
   hugo \
   macvim \
+  pipenv \
   python \
   python@2 \
   rsync \
