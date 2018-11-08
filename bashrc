@@ -509,7 +509,7 @@ linux && {
 # ------------------------------------------------------------------------------
 # TMUX
 
-alias mls='tmux list-sessions -F "#{?session_attached,A, } #{session_name}"'
+alias mls='tmux list-sessions -F "#{?session_attached,*, } #{session_name}"'
 alias mlc='tmux list-clients -F "#{client_termname}  #{session_name}" | sort'
 
 m() {
