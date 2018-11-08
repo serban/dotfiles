@@ -506,8 +506,8 @@ linux && {
 # ------------------------------------------------------------------------------
 # TMUX
 
-alias mls='tmux list-sessions'
-alias mlc='tmux list-clients'
+alias mls='tmux list-sessions -F "#{?session_attached,A, } #{session_name}"'
+alias mlc='tmux list-clients -F "#{client_termname}  #{session_name}" | sort'
 
 m() {
   if [ -n "$1" ]; then
@@ -526,7 +526,7 @@ ma() {
 
   RANDOM_NUMBER="$(python3 -c 'import random; print(random.randint(10, 99))')"
   TARGET="${REPO//\./-}"
-  SESSION="${TARGET}-${RANDOM_NUMBER}"
+  SESSION="z-${TARGET}-${RANDOM_NUMBER}"
 
   if ! tmux has-session -t "${TARGET}" ; then
     tmux new-session -d -s "${TARGET}" -c "${HOME}/src/${REPO}" -n Shell
@@ -536,6 +536,12 @@ ma() {
   tmux new-session -A -s "${SESSION}" -t "${TARGET}"
   tmux kill-session -t "${SESSION}"
   popd > /dev/null
+}
+
+mc() {
+  while read -r session; do
+    tmux kill-session -t "${session}"
+  done < <(tmux list-sessions -F '#{session_name}' | grep '^z-')
 }
 
 serbanCompleteM() {
