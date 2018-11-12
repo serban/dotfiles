@@ -531,19 +531,25 @@ ma() {
   TARGET="${REPO//\./-}"
   SESSION="z-${TARGET}-${RANDOM_NUMBER}"
 
-  if ! tmux has-session -t "${TARGET}" ; then
+  # From the tmux man page:
+  #
+  # "If the session name is prefixed with an `=', only an exact match is
+  # accepted (so `=mysess' will only match exactly `mysess', not `mysession')."
+  #
+  # This is intended behavior: https://github.com/tmux/tmux/issues/346
+  if ! tmux has-session -t "=${TARGET}" ; then
     tmux new-session -d -s "${TARGET}" -c "${HOME}/src/${REPO}" -n Shell
   fi
 
   pushd "${HOME}/src/${REPO}" > /dev/null
-  tmux new-session -A -s "${SESSION}" -t "${TARGET}"
-  tmux kill-session -t "${SESSION}"
+  tmux new-session -A -s "${SESSION}" -t "=${TARGET}"
+  tmux kill-session -t "=${SESSION}"
   popd > /dev/null
 }
 
 mc() {
   while read -r session; do
-    tmux kill-session -t "${session}"
+    tmux kill-session -t "=${session}"
   done < <(tmux list-sessions -F '#{session_name}' | grep '^z-')
 }
 
