@@ -523,6 +523,11 @@ m() {
 ma() {
   REPO="${1}"
 
+  if [ -z "${REPO}" ]; then
+    echo 'No repo specified'
+    return 1
+  fi
+
   # This is broken on macOS: 'tr: Illegal byte sequence'
   # `head` fires off a SIGPIPE, so make sure to `set +o pipefail` in a script.
   # RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
