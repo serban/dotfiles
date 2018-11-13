@@ -8,7 +8,7 @@ import sys
 BOOKMARKS_PATH = os.path.expanduser('~/.bookmarks.json')
 
 
-class Bookmarks(object):
+class Bookmarks:
   def __init__(self, path=None):
     if path is None:
       self.bookmarks = dict()
@@ -67,7 +67,7 @@ COMMANDS:
   labels
   list"""
 
-  print help_string
+  print(help_string)
 
 
 def get_command_line_args():
@@ -134,11 +134,11 @@ def main():
     bookmarks.save(BOOKMARKS_PATH)
 
   elif command == 'get':
-    print bookmarks.get(label)
+    print(bookmarks.get(label))
 
   elif command == 'labels':
     for label in bookmarks.labels():
-      print label
+      print(label)
 
   elif command == 'list':
     labels = bookmarks.labels()
@@ -149,7 +149,7 @@ def main():
     max_label_length = len(max(labels, key=len))
 
     for label, path in bookmarks.all():
-      print ('{:<{pad}}    {}').format(label, path, pad=max_label_length)
+      print('{:<{pad}}    {}'.format(label, path, pad=max_label_length))
 
 
 if __name__ == '__main__':
