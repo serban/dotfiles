@@ -1,5 +1,3 @@
-# vim:set ts=8 sw=2 sts=2 et:
-
 MusicDir = "${HOME}/Dropbox/Music"
 Fastdir1 = "${HOME}/Dropbox/Audio"
 Fastdir2 = "${HOME}/Dropbox/Music/FLAC/flac"

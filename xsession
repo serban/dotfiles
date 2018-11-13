@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# vim:set ts=8 sw=2 sts=2 et:
 
 set -o nounset
 

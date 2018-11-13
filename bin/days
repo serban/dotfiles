@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# vim:set ts=8 sw=2 sts=2 et:
 
 # See Stack Overflow questions:
 # http://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python

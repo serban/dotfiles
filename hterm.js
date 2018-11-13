@@ -1,5 +1,3 @@
-// vim:set ts=8 sw=2 sts=2 et:
-
 var solarized = {
   // Common
   S_yellow:  '#b58900',

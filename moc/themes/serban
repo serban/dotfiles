@@ -1,5 +1,3 @@
-# vim:set ts=8 sw=2 sts=2 et:
-
 # Example color theme for MOC.
 # You can use a theme by copying it to ~/.moc/themes directory and using
 # Theme config option or -T command line option.

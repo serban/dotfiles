@@ -1,5 +1,3 @@
-# vim:set ts=8 sw=2 sts=2 et:
-
 # Dump these contents into the appropriate files:
 #
 # Linux   :   USER - ~/.bashrc
