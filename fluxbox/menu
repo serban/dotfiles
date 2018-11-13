@@ -1,17 +1,15 @@
-# vim:set ts=8 sw=2 sts=2 et:
-
 [begin] (Fluxbox)
-    [exec] (urxvt) {launch terminal}
-    [exec] (Chrome) {launch browser}
-    [exec] (Nautilus) {launch finder}
+  [exec] (urxvt) {launch terminal}
+  [exec] (Chrome) {launch browser}
+  [exec] (Nautilus) {launch finder}
 
-    [separator]
+  [separator]
 
-    [submenu] (Fluxbox)
-#       [config] (Config)
-#       [stylesmenu] (/usr/share/fluxbox/menu.d/styles/)
-        [reconfig] (Reconfig)
-        [restart] (Restart)
-        [exit] (Exit)
-    [end]
+  [submenu] (Fluxbox)
+#   [config] (Config)
+#   [stylesmenu] (/usr/share/fluxbox/menu.d/styles/)
+    [reconfig] (Reconfig)
+    [restart] (Restart)
+    [exit] (Exit)
+  [end]
 [end]
