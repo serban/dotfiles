@@ -6,37 +6,41 @@ set -o pipefail
 
 readonly DOTFILES="${HOME}/src/dotfiles"
 
-ln -si ${DOTFILES}/bash_logout    ~/.bash_logout
-ln -si ${DOTFILES}/bashrc         ~/.bashrc
-ln -si ${DOTFILES}/colordiffrc    ~/.colordiffrc
-ln -si ${DOTFILES}/conkyrc        ~/.conkyrc
-ln -si ${DOTFILES}/dir_colors     ~/.dir_colors
-ln -si ${DOTFILES}/en.utf-8.add   ~/.en.utf-8.add
-ln -si ${DOTFILES}/gdbinit        ~/.gdbinit
-ln -si ${DOTFILES}/gitconfig      ~/.gitconfig
-ln -si ${DOTFILES}/gitignore      ~/.gitignore
-ln -si ${DOTFILES}/gvimrc         ~/.gvimrc
-ln -si ${DOTFILES}/i3status.conf  ~/.i3status.conf
-ln -si ${DOTFILES}/inputrc        ~/.inputrc
-ln -si ${DOTFILES}/screenrc       ~/.screenrc
-ln -si ${DOTFILES}/sqliterc       ~/.sqliterc
-ln -si ${DOTFILES}/tmux.conf      ~/.tmux.conf
-ln -si ${DOTFILES}/vimrc          ~/.vimrc
-ln -si ${DOTFILES}/xsession       ~/.xsession
-ln -si ${DOTFILES}/Xresources     ~/.Xresources
+ln -si ${DOTFILES}/bash_logout        ~/.bash_logout
+ln -si ${DOTFILES}/bashrc             ~/.bashrc
+ln -si ${DOTFILES}/colordiffrc        ~/.colordiffrc
+ln -si ${DOTFILES}/conkyrc            ~/.conkyrc
+ln -si ${DOTFILES}/dir_colors         ~/.dir_colors
+ln -si ${DOTFILES}/en.utf-8.add       ~/.en.utf-8.add
+ln -si ${DOTFILES}/gdbinit            ~/.gdbinit
+ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
+ln -si ${DOTFILES}/gitignore          ~/.gitignore
+ln -si ${DOTFILES}/gvimrc             ~/.gvimrc
+ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
+ln -si ${DOTFILES}/inputrc            ~/.inputrc
+ln -si ${DOTFILES}/screenrc           ~/.screenrc
+ln -si ${DOTFILES}/sqliterc           ~/.sqliterc
+ln -si ${DOTFILES}/tmux.conf          ~/.tmux.conf
+ln -si ${DOTFILES}/vimrc              ~/.vimrc
+ln -si ${DOTFILES}/xsession           ~/.xsession
+ln -si ${DOTFILES}/Xresources         ~/.Xresources
+
+mkdir -p ~/.config/fish
+ln -si ${DOTFILES}/fish/functions     ~/.config/fish/functions
+ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
 
 mkdir -p ~/.config/nitrogen
-ln -si ${DOTFILES}/bg-saved.cfg   ~/.config/nitrogen/bg-saved.cfg
+ln -si ${DOTFILES}/bg-saved.cfg       ~/.config/nitrogen/bg-saved.cfg
 
 mkdir -p ~/.i3
-ln -si ${DOTFILES}/i3-config      ~/.i3/config
+ln -si ${DOTFILES}/i3-config          ~/.i3/config
 
 mkdir -p ~/.moc
-ln -si ${DOTFILES}/moc/config     ~/.moc/config
-ln -si ${DOTFILES}/moc/themes     ~/.moc/themes
+ln -si ${DOTFILES}/moc/config         ~/.moc/config
+ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
 
 mkdir -p ~/.vim
-ln -si ${DOTFILES}/ultisnips      ~/.vim/UltiSnips
+ln -si ${DOTFILES}/ultisnips          ~/.vim/UltiSnips
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
