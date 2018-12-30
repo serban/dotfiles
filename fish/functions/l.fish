@@ -5,5 +5,6 @@ function l
       --chop-long-lines \
       --ignore-case \
       --no-init \
-      --quit-if-one-screen
+      --quit-if-one-screen \
+      $argv
 end
