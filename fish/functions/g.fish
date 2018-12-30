@@ -47,5 +47,10 @@ function g
   end
 
   $binary $args \
-      | less --ignore-case --RAW-CONTROL-CHARS --no-init --quit-if-one-screen
+      | less \
+          --RAW-CONTROL-CHARS \
+          --chop-long-lines \
+          --ignore-case \
+          --no-init \
+          --quit-if-one-screen
 end
