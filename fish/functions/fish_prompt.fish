@@ -14,7 +14,8 @@ function fish_prompt
     set suffix '#'
   end
 
-  printf '🐡 %s%s%s[%s%s%s@%s%s %s%s%s]%s %s' \
+  # 🐟 🐠 🐡
+  printf '%s%s%s[%s%s%s@%s%s %s%s%s]%s %s><>%s ' \
       (set_color red) $prefix \
       (set_color blue) \
       (set_color green) $user \
@@ -22,5 +23,6 @@ function fish_prompt
       (set_color red) $host \
       (set_color normal) $cwd \
       (set_color blue) $suffix \
+      (set_color cyan) \
       (set_color normal)
 end
