@@ -12,3 +12,8 @@ function serban_postexec --on-event fish_postexec
 
   set --erase --global serban_command_start_time_sec
 end
+
+if status --is-interactive
+  abbr --add --global h head
+  abbr --add --global t tail
+end
