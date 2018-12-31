@@ -1,4 +1,4 @@
-function l
+function l --wraps less
   less \
       --LINE-NUMBERS \
       --RAW-CONTROL-CHARS \

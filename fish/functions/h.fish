@@ -1,3 +1,3 @@
-function h
+function h --wraps head
   head $argv
 end

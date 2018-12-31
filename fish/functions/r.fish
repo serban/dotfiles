@@ -1,4 +1,4 @@
-function r
+function r --wraps grep
   set --local binary grep
 
   # Use GNU grep on macOS
