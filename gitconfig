@@ -4,21 +4,28 @@
 
 [alias]
   ad = add
+  au = add --update
   bl = blame
-  br = branch
+  bb = branch
+  bv = branch --verbose --verbose
+  br = branch --verbose --verbose --remotes
   ch = checkout
+  cn = clean -d -x --dry-run
   cl = clone
   co = commit
+  ca = commit --amend --reuse-message=HEAD
   cp = cherry-pick
-  di = diff --stat
+  di = diff --stat --unified=5
+  ds = diff --stat --unified=5 --staged
   fe = fetch
-  gi = grep --ignore-case
   gr = grep
+  gi = grep --ignore-case
   in = init
   lo = log --decorate --stat
   ls = ls-files
   pl = pull
   ps = push
+  pt = push --tags
   rb = rebase
   re = remote
   rs = reset
