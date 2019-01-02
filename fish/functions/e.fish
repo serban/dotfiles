@@ -20,9 +20,10 @@ function e
   end
 
   if test -n "$_flag_all"
-    find . -type f -not -path '*/.git/*' -print0 | xargs -0 $binary $args $argv
+    find . -type f -not -path '*/.git/*' -print0 \
+        | xargs -0 $binary $args $argv ^ /dev/null
     return
   end
 
-  $binary $args $argv
+  $binary $args $argv ^ /dev/null
 end
