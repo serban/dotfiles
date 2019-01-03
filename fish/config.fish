@@ -35,6 +35,10 @@ if status --is-interactive
   abbr --add --global h head
   abbr --add --global t tail
 
+  abbr --add --global cp cp -vi
+  abbr --add --global mv mv -vi
+  abbr --add --global rm rm -v
+
   abbr --add --global p2 python2
   abbr --add --global p3 python3
 
