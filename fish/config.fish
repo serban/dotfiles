@@ -1,13 +1,30 @@
 function serban_preexec --on-event fish_preexec
   set --global serban_command_start_time_sec (date '+%s')
-  echo (serban_time_marker)
+  printf '%s%s%s\n' \
+      (set_color yellow) (serban_time_marker) \
+      (set_color normal)
 end
 
 function serban_postexec --on-event fish_postexec
+  set --local last_status $status
   set --local duration_sec (math (date '+%s') - $serban_command_start_time_sec)
 
+  set --local duration_string ''
+  set --local last_status_string ''
+
   if test $duration_sec -gt 0
-    echo (serban_time_marker_with_duration $duration_sec)
+    set duration_string (printf '  [%s]' (serban_format_duration $duration_sec))
+  end
+
+  if test $last_status -ne 0
+    set last_status_string (printf '  (%s)' $last_status)
+  end
+
+  if test $duration_sec -gt 0 || test $last_status -ne 0
+    printf '%s%s%s%s%s%s\n' \
+        (set_color yellow) (serban_time_marker) $duration_string \
+        (set_color red) $last_status_string \
+        (set_color normal)
   end
 
   set --erase --global serban_command_start_time_sec
