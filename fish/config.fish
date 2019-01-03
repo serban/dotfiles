@@ -1,5 +1,4 @@
 function serban_preexec --on-event fish_preexec
-  set --global serban_command_start_time_sec (date '+%s')
   printf '%s%s%s\n' \
       (set_color yellow) (serban_time_marker) \
       (set_color normal)
@@ -7,7 +6,7 @@ end
 
 function serban_postexec --on-event fish_postexec
   set --local last_status $status
-  set --local duration_sec (math (date '+%s') - $serban_command_start_time_sec)
+  set --local duration_sec (math --scale=0 $CMD_DURATION / 1000)
 
   set --local duration_string ''
   set --local last_status_string ''
@@ -26,8 +25,6 @@ function serban_postexec --on-event fish_postexec
         (set_color red) $last_status_string \
         (set_color normal)
   end
-
-  set --erase --global serban_command_start_time_sec
 end
 
 set --global PATH \
