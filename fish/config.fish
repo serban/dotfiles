@@ -13,6 +13,24 @@ function serban_postexec --on-event fish_postexec
   set --erase --global serban_command_start_time_sec
 end
 
+set --global PATH \
+    $HOME/bin \
+    $HOME/src/private/bin \
+    $HOME/src/dotfiles/bin \
+    $HOME/go/bin \
+    $HOME/opt/google-cloud-sdk/bin \
+    $HOME/homebrew/bin \
+    /usr/local/bin \
+    /usr/local/sbin \
+    /usr/bin \
+    /usr/sbin \
+    /bin \
+    /sbin
+
+set --global LD_LIBRARY_PATH \
+    $HOME/homebrew/lib \
+    $LD_LIBRARY_PATH
+
 if status --is-interactive
   abbr --add --global h head
   abbr --add --global t tail
