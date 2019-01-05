@@ -27,7 +27,7 @@ function serban_postexec --on-event fish_postexec
   end
 end
 
-set --global PATH \
+set --global --export PATH \
     $HOME/bin \
     $HOME/src/private/bin \
     $HOME/src/dotfiles/bin \
@@ -41,7 +41,7 @@ set --global PATH \
     /bin \
     /sbin
 
-set --global LD_LIBRARY_PATH \
+set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
 
