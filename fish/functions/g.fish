@@ -36,7 +36,7 @@ function g
   end
 
   if test -n "$path"
-    if not pushd $path
+    if not cd $path
       return
     end
   end
