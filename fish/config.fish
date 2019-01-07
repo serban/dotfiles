@@ -98,4 +98,7 @@ if status --is-interactive
   abbr --add --global gso git stash show -v
   abbr --add --global gsp git stash pop
   abbr --add --global gss git stash save
+
+  abbr --add --global hdi hg diff
+  abbr --add --global hst hg status
 end
