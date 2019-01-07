@@ -47,6 +47,8 @@ set --global --export LD_LIBRARY_PATH \
 
 set --global VIRTUAL_ENV_DISABLE_PROMPT true
 
+set --global fish_greeting
+
 if status --is-interactive
   abbr --add --global h head
   abbr --add --global t tail
