@@ -27,6 +27,20 @@ function serban_postexec --on-event fish_postexec
   end
 end
 
+set --global fish_color_command green
+set --global fish_color_quote yellow
+set --global fish_color_redirection cyan
+set --global fish_color_end cyan
+set --global fish_color_error brred
+set --global fish_color_param yellow
+set --global fish_color_comment normal
+set --global fish_color_match blue
+set --global fish_color_operator magenta
+set --global fish_color_escape brmagenta
+set --global fish_color_autosuggestion normal
+
+set --global fish_greeting
+
 set --global --export PATH \
     $HOME/bin \
     $HOME/src/private/bin \
@@ -46,8 +60,6 @@ set --global --export LD_LIBRARY_PATH \
     $LD_LIBRARY_PATH
 
 set --global VIRTUAL_ENV_DISABLE_PROMPT true
-
-set --global fish_greeting
 
 if status --is-interactive
   abbr --add --global h head
