@@ -57,5 +57,11 @@ if [[ "$(whoami)" = 'root' ]] || \
   ln -si ${DOTFILES}/bashrc ~/.bash_profile
 fi
 
+if [[ "${OS}" = 'Darwin' ]]; then
+  mkdir -p ~/bin
+  ln -si  /Applications/LilyPond.app/Contents/Resources/bin/lilypond ~/bin/
+  ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ~/bin/
+fi
+
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +quitall

@@ -234,8 +234,6 @@ darwin && {
   alias c04='pmset -g ; printf "\nStaying awake for  4 hours\n" ; caffeinate -t 14400'
   alias c08='pmset -g ; printf "\nStaying awake for  8 hours\n" ; caffeinate -t 28800'
   alias c12='pmset -g ; printf "\nStaying awake for 12 hours\n" ; caffeinate -t 43200'
-
-  alias lilypond='/Applications/LilyPond.app/Contents/Resources/bin/lilypond'
 }
 
 # ------------------------------------------------------------------------------
