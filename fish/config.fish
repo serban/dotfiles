@@ -114,3 +114,7 @@ if status --is-interactive
   abbr --add --global hdi hg diff
   abbr --add --global hst hg status
 end
+
+if test -f $HOME/.config/fish/local.fish
+  source $HOME/.config/fish/local.fish
+end
