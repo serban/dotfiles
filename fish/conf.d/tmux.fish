@@ -40,6 +40,28 @@ function mas --argument-names repo
   popd
 end
 
+function mag --argument-names client
+  if test -z $client
+    echo 'No client specified'
+    return 1
+  end
+
+  set --local random_number (random 10 99)
+  set --local target $client
+  set --local session z-$client-$random_number
+
+  g4 citc $client || true  # Ignore failure if client already exists
+  if not tmux has-session -t =$target
+    tmux new-session -d -s $target \
+        -c /google/src/cloud/serban/$client/google3 -n Shell
+  end
+
+  pushd /google/src/cloud/serban/$client/google3
+  tmux new-session -A -s $session -t =$target
+  tmux kill-session -t =$session
+  popd
+end
+
 complete \
   --command mat \
   --no-files \
@@ -47,6 +69,7 @@ complete \
 
 complete \
   --command mas \
+  --command mag \
   --no-files \
   --arguments \
       '(tmux list-sessions -F "#{session_name}" | grep --invert-match "^z-")'
