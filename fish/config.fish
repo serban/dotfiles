@@ -41,8 +41,6 @@ set --global fish_color_autosuggestion normal
 
 set --global fish_greeting
 
-set --global --export SHELL (command -s fish)
-
 set --global --export PATH \
     $HOME/bin \
     $HOME/src/private/bin \
@@ -61,11 +59,24 @@ set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
 
-set --global VIRTUAL_ENV_DISABLE_PROMPT true
+set --global --export LESS \
+    --RAW-CONTROL-CHARS \
+    --chop-long-lines \
+    --ignore-case \
+    --no-init \
+    --quit-if-one-screen
+
+set --global --export SHELL (command -s fish)
+set --global --export VISUAL vim
+set --global --export EDITOR vim
+set --global --export PAGER less
+
+set --global --export VIRTUAL_ENV_DISABLE_PROMPT true
 
 if status --is-interactive
   abbr --add --global h head
   abbr --add --global t tail
+  abbr --add --global l less -N
 
   abbr --add --global cp cp -vi
   abbr --add --global mv mv -vi

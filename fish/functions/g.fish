@@ -46,11 +46,5 @@ function g
     set binary gls
   end
 
-  $binary $args \
-      | less \
-          --RAW-CONTROL-CHARS \
-          --chop-long-lines \
-          --ignore-case \
-          --no-init \
-          --quit-if-one-screen
+  $binary $args | less
 end

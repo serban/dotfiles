@@ -5,16 +5,8 @@ function ag --wraps ag
     return
   end
 
-  set --local pager \
-      less \
-          --RAW-CONTROL-CHARS \
-          --chop-long-lines \
-          --ignore-case \
-          --no-init \
-          --quit-if-one-screen
-
   set --local args \
-      --pager "$pager" \
+      --pager less \
       --color-path '01;35' \
       --color-line-number '00;34'
 
