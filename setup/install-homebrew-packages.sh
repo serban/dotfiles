@@ -21,6 +21,7 @@ brew install \
   graphviz \
   httpie \
   hugo \
+  less \
   macvim \
   pipenv \
   python \
