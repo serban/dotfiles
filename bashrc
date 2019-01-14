@@ -105,7 +105,7 @@ stty -ixon
 shopt -s checkwinsize
 shopt -s no_empty_cmd_completion
 
-export PAGER=/usr/bin/less
+export PAGER=less
 
 # ------------------------------------------------------------------------------
 # HISTORY
@@ -157,18 +157,18 @@ alias o='popd'
 alias d='dirs -v'
 alias c='dirs -c'
 
-alias mv='mv -vi'
-alias cp='cp -vi'
-alias rm='rm -v'
-
-alias l='less --ignore-case --LINE-NUMBERS --RAW-CONTROL-CHARS --chop-long-lines'
 alias h='head'
 alias t='tail'
+alias l='less --ignore-case'
 
-alias ag='ag --pager "less --ignore-case --RAW-CONTROL-CHARS --no-init --quit-if-one-screen" --color-path "01;35" --color-line-number "00;34"'
-alias agh='ag --pager "less --ignore-case --RAW-CONTROL-CHARS --no-init --quit-if-one-screen" --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.h$"'
-alias agc='ag --pager "less --ignore-case --RAW-CONTROL-CHARS --no-init --quit-if-one-screen" --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.cc$"'
-alias agt='ag --pager "less --ignore-case --RAW-CONTROL-CHARS --no-init --quit-if-one-screen" --color-path "01;35" --color-line-number "00;34" --ignore "*_test.cc"'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias rm='rm -v'
+
+alias ag='ag --pager less --color-path "01;35" --color-line-number "00;34"'
+alias agh='ag --pager less --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.h$"'
+alias agc='ag --pager less --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.cc$"'
+alias agt='ag --pager less --color-path "01;35" --color-line-number "00;34" --ignore "*_test.cc"'
 
 alias cdf='colordiff -u'
 alias gcc='gcc -std=c99 -g -Wall'
@@ -196,6 +196,9 @@ alias fn644='find . -type f -not -perm 644'
 
 # Find any directory whose permissions aren't 755
 alias fn755='find . -type d -not -perm 755'
+
+# Default options for less
+export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case --no-init --quit-if-one-screen'
 
 fe() { find . -iname '*.'$1 ; }
 rmds() { find . -type f -name .DS_Store -exec rm -vf '{}' \; ; }
@@ -446,7 +449,7 @@ darwin || freebsd || solaris && {
     fi
 
     if [ $(which gls) ]; then
-      gls -lhFX --group-directories-first --color=always
+      gls -lhGFX --group-directories-first --color=always | less
     else
       ls -lhFG
     fi
@@ -458,7 +461,7 @@ darwin || freebsd || solaris && {
     fi
 
     if [ $(which gls) ]; then
-      gls -lhFXA --group-directories-first --color=always
+      gls -lhGFXA --group-directories-first --color=always | less
     else
       ls -lhFGA | more
     fi
@@ -470,7 +473,7 @@ darwin || freebsd || solaris && {
     fi
 
     if [ $(which gls) ]; then
-      gls -lhFXR --group-directories-first --color=always
+      gls -lhGFXR --group-directories-first --color=always | less
     else
       ls -lhFGR | more
     fi
@@ -483,7 +486,7 @@ linux && {
       pushd "$1" > /dev/null || return
     fi
 
-    ls -lhFX --group-directories-first --color=always | more
+    ls -lhGFX --group-directories-first --color=always | less
   }
 
   a() {
@@ -491,7 +494,7 @@ linux && {
       pushd "$1" > /dev/null || return
     fi
 
-    ls -lhFXA --group-directories-first --color=always | more
+    ls -lhGFXA --group-directories-first --color=always | less
   }
 
   rls() {
@@ -499,7 +502,7 @@ linux && {
       pushd "$1" > /dev/null || return
     fi
 
-    ls -lhFXR --group-directories-first --color=always | more
+    ls -lhGFXR --group-directories-first --color=always | less
   }
 }
 
