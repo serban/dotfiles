@@ -41,6 +41,8 @@ set --global fish_color_autosuggestion normal
 
 set --global fish_greeting
 
+set --global --export SHELL (command -s fish)
+
 set --global --export PATH \
     $HOME/bin \
     $HOME/src/private/bin \
