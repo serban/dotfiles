@@ -6,7 +6,7 @@ function serban_header
     set pad $len
   end
 
-  python3 -c "print('+-{}-+'.format('-'*$pad));    \
+  python3 -c "print('+-{}-+'.format('-'*$pad));     \
               print('| {:$pad} |'.format('$argv')); \
-              print('+-{}-+'.format('-'*$pad));    "
+              print('+-{}-+'.format('-'*$pad));     "
 end
