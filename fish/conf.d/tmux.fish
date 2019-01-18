@@ -1,9 +1,16 @@
+function mlc
+  tmux list-clients -F '#{client_termname}  #{session_name}' | sort
+end
+
 function mls
   tmux list-sessions -F '#{?session_attached,*, } #{session_name}'
 end
 
-function mlc
-  tmux list-clients -F '#{client_termname}  #{session_name}' | sort
+function mcl
+  tmux list-sessions -F '#{?session_attached,*, } #{session_name}' \
+      | grep '^  z-' | string trim | while read --line session
+    tmux kill-session -t =$session
+  end
 end
 
 function mat --argument-names session
