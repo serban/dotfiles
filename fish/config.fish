@@ -77,6 +77,8 @@ abbr --add --global h head
 abbr --add --global t tail
 abbr --add --global l less -N
 
+abbr --add --global d colordiff -u
+
 abbr --add --global cp cp -vi
 abbr --add --global mv mv -vi
 abbr --add --global rm rm -v
