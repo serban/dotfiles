@@ -26,13 +26,17 @@ fi
 print
 print 'You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
 print
-print '$ PIP_REQUIRE_VIRTUALENV=false pip2 list'
-print '$ PIP_REQUIRE_VIRTUALENV=false pip3 list'
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 list'
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 list'
 print
 print 'To install Python and virtualenv:'
 print
 print '$ brew install python python@2'
-print '$ PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper'
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper virtualfish'
+print
+print '+----------------------------------------------------------------------+'
+print '| Bash Shell                                                           |'
+print '+----------------------------------------------------------------------+'
 print
 print 'To create a new virtualenv:'
 print
@@ -42,6 +46,19 @@ print
 print 'To use a virtualenv:'
 print
 print '$ workon virtualenv-name'
+print
+print '+----------------------------------------------------------------------+'
+print '| Fish Shell                                                           |'
+print '+----------------------------------------------------------------------+'
+print
+print 'To create a new virtualenv:'
+print
+print '$ vf new -p python2 p2-name  # For Python 2'
+print '$ vf new -p python3 p3-name  # For Python 3'
+print
+print 'To use a virtualenv:'
+print
+print '$ vf activate virtualenv-name'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1

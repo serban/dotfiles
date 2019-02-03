@@ -73,6 +73,10 @@ set --global --export PAGER less
 
 set --global --export VIRTUAL_ENV_DISABLE_PROMPT true
 
+if python -m virtualfish > /dev/null 2>&1
+  eval (python -m virtualfish auto_activation)
+end
+
 abbr --add --global h head
 abbr --add --global t tail
 abbr --add --global l less -N
