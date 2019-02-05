@@ -1,3 +1,5 @@
+# Inspired by https://github.com/ideamonk/Rambola/blob/master/src/helper.sh
+
 function ramdisk --argument-names size_gibibytes
   if test -z "$size_gibibytes"
     echo 'You must specify a size in gibibytes'
