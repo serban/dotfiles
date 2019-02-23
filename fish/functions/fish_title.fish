@@ -1,3 +1,3 @@
 function fish_title
-  pwd
+  string replace --regex "^$HOME" \~ "$PWD"
 end
