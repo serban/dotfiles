@@ -79,6 +79,12 @@ if python -m virtualfish > /dev/null 2>&1
   eval (python -m virtualfish auto_activation)
 end
 
+if type --quiet dircolors
+  eval (dircolors -c ~/.dir_colors)
+else if type --quiet gdircolors
+  eval (gdircolors -c ~/.dir_colors)
+end
+
 abbr --add --global h head
 abbr --add --global t tail
 abbr --add --global l less -N
