@@ -8,17 +8,21 @@ set -o pipefail
 # python@2 (canonical) = python2
 
 brew install \
+  bazel \
   colordiff \
   coreutils \
   editorconfig \
   findutils \
+  fish \
   gawk \
   git \
   gnu-sed \
   gnu-tar \
   go \
-  grep \
   graphviz \
+  grep \
+  hashdeep \
+  hexyl \
   httpie \
   hugo \
   less \
@@ -30,6 +34,5 @@ brew install \
   sqlite \
   the_silver_searcher \
   tmux \
-  vim \
   watch \
   watchman
