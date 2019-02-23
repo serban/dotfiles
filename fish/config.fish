@@ -71,6 +71,7 @@ set --global --export VISUAL vim
 set --global --export EDITOR vim
 set --global --export PAGER less
 
+set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export VIRTUAL_ENV_DISABLE_PROMPT true
 
 if python -m virtualfish > /dev/null 2>&1
