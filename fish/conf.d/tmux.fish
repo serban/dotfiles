@@ -58,14 +58,19 @@ function mag --argument-names client
   set --local random_number (random 10 99)
   set --local target $client
   set --local session z-$client-$random_number
+  set --local google3 /google/src/cloud/serban/$client/google3
 
   g4 citc $client || true  # Ignore failure if client already exists
   if not tmux has-session -t =$target
-    tmux new-session -d -s $target \
-        -c /google/src/cloud/serban/$client/google3 -n Shell
+    tmux new-session -c $google3 -s $target   -n g4 -d
+    tmux new-window  -c $google3 -t $target:2 -n vim
+    tmux new-window  -c $google3 -t $target:3 -n blaze
+    tmux new-window  -c $google3 -t $target:4 -n presubmit
+    tmux new-window  -c $google3 -t $target:5 -n ag
+    tmux new-window  -c /ramdisk -t $target:6 -n ramdisk
   end
 
-  pushd /google/src/cloud/serban/$client/google3
+  pushd $google3
   tmux new-session -A -s $session -t =$target
   tmux kill-session -t =$session
   popd
