@@ -74,6 +74,7 @@ set --global --export PAGER less
 set --global --export VIRTUAL_ENV_DISABLE_PROMPT true
 
 if python -m virtualfish > /dev/null 2>&1
+  set --erase VIRTUAL_ENV  # Auto-activation does not work if this is set
   eval (python -m virtualfish auto_activation)
 end
 
