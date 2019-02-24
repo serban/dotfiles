@@ -9,7 +9,7 @@ function fish_prompt
   set --local suffix '$'
 
   if test -n "$VIRTUAL_ENV"
-    set virtual_env (printf ' ^ %s' (string split / $VIRTUAL_ENV)[-1])
+    set virtual_env (printf ' > %s' (string split / $VIRTUAL_ENV)[-1])
   end
 
   if test $user = root
