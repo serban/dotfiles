@@ -27,7 +27,7 @@ function serban_postexec --on-event fish_postexec
   end
 end
 
-set --global fish_color_command green
+set --global fish_color_command yellow
 set --global fish_color_quote yellow
 set --global fish_color_redirection cyan
 set --global fish_color_end cyan
