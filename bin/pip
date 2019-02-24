@@ -34,6 +34,11 @@ print
 print '$ brew install python python@2'
 print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper virtualfish'
 print
+print 'To upgrade pip itself:'
+print
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 install --upgrade pip'
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
+print
 print '+----------------------------------------------------------------------+'
 print '| Bash Shell                                                           |'
 print '+----------------------------------------------------------------------+'
