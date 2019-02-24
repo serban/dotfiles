@@ -18,9 +18,9 @@ function fish_prompt
   # 🐟 🐠 🐡 ><>
   printf '%s%s %s%s%s%s%s%s%s %s%s ' \
       (set_color red) $host \
-      (set_color green) $cwd \
+      (set_color brmagenta) $cwd \
+      (set_color blue) "$virtual_env" \
       (set_color cyan) "$git_status" \
-      (set_color brmagenta) "$virtual_env" \
-      (set_color blue) $suffix \
+      (set_color yellow) $suffix \
       (set_color normal)
 end
