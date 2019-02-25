@@ -33,12 +33,16 @@ set --global fish_color_redirection cyan
 set --global fish_color_end cyan
 set --global fish_color_error brred
 set --global fish_color_param yellow
-set --global fish_color_comment normal
+set --global fish_color_comment bryellow
 set --global fish_color_match blue
 set --global fish_color_operator magenta
 set --global fish_color_escape brmagenta
 set --global fish_color_autosuggestion normal
 set --global fish_color_cancel brred --reverse
+
+set --global fish_pager_color_prefix magenta --underline
+set --global fish_pager_color_completion normal
+set --global fish_pager_color_description green
 
 set --global fish_greeting
 
