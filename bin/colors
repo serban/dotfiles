@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+
+RESET  = '\033[0m'
+
+COLORS = [
+    ('Normal',                    '\033[0m'),
+    ('Black',                     '\033[30m'),
+    ('Red',                       '\033[31m'),
+    ('Green',                     '\033[32m'),
+    ('Yellow',                    '\033[33m'),
+    ('Blue',                      '\033[34m'),
+    ('Magenta',                   '\033[35m'),
+    ('Cyan',                      '\033[36m'),
+    ('White',                     '\033[37m'),
+    ('Bright Black',              '\033[30;1m'),
+    ('Bright Red',                '\033[31;1m'),
+    ('Bright Green',              '\033[32;1m'),
+    ('Bright Yellow',             '\033[33;1m'),
+    ('Bright Blue',               '\033[34;1m'),
+    ('Bright Magenta',            '\033[35;1m'),
+    ('Bright Cyan',               '\033[36;1m'),
+    ('Bright White',              '\033[37;1m'),
+    ('Background Black',          '\033[40m'),
+    ('Background Red',            '\033[41m'),
+    ('Background Green',          '\033[42m'),
+    ('Background Yellow',         '\033[43m'),
+    ('Background Blue',           '\033[44m'),
+    ('Background Magenta',        '\033[45m'),
+    ('Background Cyan',           '\033[46m'),
+    ('Background White',          '\033[47m'),
+    ('Background Bright Black',   '\033[40;1m'),
+    ('Background Bright Red',     '\033[41;1m'),
+    ('Background Bright Green',   '\033[42;1m'),
+    ('Background Bright Yellow',  '\033[43;1m'),
+    ('Background Bright Blue',    '\033[44;1m'),
+    ('Background Bright Magenta', '\033[45;1m'),
+    ('Background Bright Cyan',    '\033[46;1m'),
+    ('Background Bright White',   '\033[47;1m'),
+]
+
+print(RESET, end='')
+
+for name, escape_code in COLORS:
+  print('{:25} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
+
+print()
+
+for i in range(8):
+  print('  {}Lorem Ipsum{}  {}Lorem Ipsum{}  {}Lorem Ipsum{}  {}Lorem Ipsum{}'.format(
+            '\033[' + str(30 + i) + 'm', RESET,
+            '\033[' + str(30 + i) + ';1m', RESET,
+            '\033[' + str(40 + i) + 'm', RESET,
+            '\033[' + str(40 + i) + ';1m', RESET))
