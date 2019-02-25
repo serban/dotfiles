@@ -36,7 +36,7 @@ function setPreferences() {
   term_.prefs_.resetAll();
 
   term_.prefs_.set('alt-is-meta', true);
-  term_.prefs_.set('environment', {TERM: 'xterm'});
+  term_.prefs_.set('environment', {TERM: 'xterm-256color'});
 
   term_.prefs_.set('scroll-on-keystroke', true);
   term_.prefs_.set('scroll-on-output', false);
