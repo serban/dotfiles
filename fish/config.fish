@@ -38,6 +38,7 @@ set --global fish_color_match blue
 set --global fish_color_operator magenta
 set --global fish_color_escape brmagenta
 set --global fish_color_autosuggestion normal
+set --global fish_color_cancel brred --reverse
 
 set --global fish_greeting
 
