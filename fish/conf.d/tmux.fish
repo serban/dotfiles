@@ -68,12 +68,16 @@ function mag --argument-names client
 
   g4 citc $client || true  # Ignore failure if client already exists
   if not tmux has-session -t =$target
-    tmux new-session -c $google3 -s $target   -n g4 -d
-    tmux new-window  -c $google3 -t $target:2 -n vim
-    tmux new-window  -c $google3 -t $target:3 -n blaze
-    tmux new-window  -c $google3 -t $target:4 -n presubmit
-    tmux new-window  -c $google3 -t $target:5 -n ag
-    tmux new-window  -c /ramdisk -t $target:6 -n ramdisk
+    if test -e /google/src/cloud/serban/$client/.citc/annotations/fig.enabled
+      tmux new-session -c $google3 -s $target   -n hg -d
+    else
+      tmux new-session -c $google3 -s $target   -n g4 -d
+    end
+    tmux new-window    -c $google3 -t $target:2 -n vim
+    tmux new-window    -c $google3 -t $target:3 -n blaze
+    tmux new-window    -c $google3 -t $target:4 -n presubmit
+    tmux new-window    -c $google3 -t $target:5 -n ag
+    tmux new-window    -c /ramdisk -t $target:6 -n ramdisk
   end
 
   pushd $google3
