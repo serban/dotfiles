@@ -23,15 +23,16 @@ function mat --argument-names session
   tmux new-session -A -c $HOME -n Shell -s $session
 end
 
-function mas --argument-names repo
-  if test -z $repo
-    echo 'No repo specified'
+function mas --argument-names project
+  if test -z $project
+    echo 'No project specified'
     return 1
   end
 
   set --local random_number (random 10 99)
-  set --local target (string replace --all . - $repo)
+  set --local target (string replace --all . - $project)
   set --local session z-$target-$random_number
+  set --local repo $HOME/src/$project
 
   # From the tmux man page:
   #
@@ -40,10 +41,10 @@ function mas --argument-names repo
   #
   # This is intended behavior: https://github.com/tmux/tmux/issues/346
   if not tmux has-session -t =$target
-    tmux new-session -d -s $target -c $HOME/src/$repo -n Shell
+    tmux new-session -d -s $target -c $repo -n Shell
   end
 
-  pushd $HOME/src/$repo
+  pushd $repo
   tmux new-session -A -s $session -t =$target
   tmux kill-session -t =$session
   popd
@@ -52,6 +53,11 @@ end
 function mag --argument-names client
   if test -z $client
     echo 'No client specified'
+    return 1
+  end
+
+  if test -d $HOME/src/$client
+    echo 'Client name conflicts with project in ~/src'
     return 1
   end
 
