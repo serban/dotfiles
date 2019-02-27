@@ -27,6 +27,7 @@ ln -si ${DOTFILES}/Xresources         ~/.Xresources
 
 mkdir -p ~/.config/fish
 ln -si ${DOTFILES}/fish/conf.d        ~/.config/fish/conf.d
+ln -si ${DOTFILES}/fish/completions   ~/.config/fish/completions
 ln -si ${DOTFILES}/fish/functions     ~/.config/fish/functions
 ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
 
