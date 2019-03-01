@@ -45,8 +45,7 @@ function mas --argument-names project
   end
 
   pushd $repo
-  tmux new-session -A -s $session -t =$target
-  tmux kill-session -t =$session
+  tmux new-session -A -s $session -t =$target \; set-option destroy-unattached
   popd
 end
 
@@ -81,8 +80,7 @@ function mag --argument-names client
   end
 
   pushd $google3
-  tmux new-session -A -s $session -t =$target
-  tmux kill-session -t =$session
+  tmux new-session -A -s $session -t =$target \; set-option destroy-unattached
   popd
 end
 
