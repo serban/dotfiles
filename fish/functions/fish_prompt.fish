@@ -8,7 +8,7 @@ function fish_prompt
   set --local suffix '$'
 
   if test -n "$VIRTUAL_ENV"
-    set virtual_env (printf ' > %s' (string split / $VIRTUAL_ENV)[-1])
+    set virtual_env (printf ' %s' (string split / $VIRTUAL_ENV)[-1])
   end
 
   if test $USER = root
@@ -16,10 +16,10 @@ function fish_prompt
   end
 
   # 🐟 🐠 🐡 ><>
-  printf '%s%s %s%s%s%s%s%s%s %s%s ' \
+  printf '%s%s%s%s %s%s%s%s%s %s%s ' \
       (set_color red) $host \
-      (set_color brmagenta) $cwd \
-      (set_color blue) "$virtual_env" \
+      (set_color brmagenta) "$virtual_env" \
+      (set_color blue) $cwd \
       (set_color cyan) "$git_status" \
       (set_color yellow) $suffix \
       (set_color normal)
