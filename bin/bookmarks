@@ -24,7 +24,7 @@ class Bookmarks:
     if label in self.bookmarks:
       raise Exception("The label %s already exists" % label)
 
-    self.bookmarks[label] = path
+    self.bookmarks[label] = os.path.normpath(path)
 
   def remove(self, label):
     if not label:
