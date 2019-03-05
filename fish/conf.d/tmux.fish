@@ -34,6 +34,11 @@ function mas --argument-names project
   set --local session z-$target-$random_number
   set --local repo $HOME/src/$project
 
+  if ! test -d $repo
+    echo 'Repo does not exist'
+    return 1
+  end
+
   # From the tmux man page:
   #
   # "If the session name is prefixed with an `=', only an exact match is
