@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+# See "Box Drawing": https://www.unicode.org/charts/PDF/U2500.pdf
+
+import sys
+
+HORIZONTAL_LINE = '═'  # U+2550
+VERTICAL_LINE   = '║'  # U+2551
+UPPER_LEFT      = '╔'  # U+2554
+UPPER_RIGHT     = '╗'  # U+2557
+LOWER_LEFT      = '╚'  # U+255A
+LOWER_RIGHT     = '╝'  # U+255D
+
+PAD = 76
+
+string = ' '.join(sys.argv[1:])
+pad = max(PAD, len(string))
+
+print('{}{}{}{}{}'.format(UPPER_LEFT, HORIZONTAL_LINE,
+                          HORIZONTAL_LINE*PAD,
+                          HORIZONTAL_LINE, UPPER_RIGHT))
+
+print('{} {:{pad}} {}'.format(VERTICAL_LINE, string, VERTICAL_LINE, pad=pad))
+
+print('{}{}{}{}{}'.format(LOWER_LEFT, HORIZONTAL_LINE,
+                          HORIZONTAL_LINE*PAD,
+                          HORIZONTAL_LINE, LOWER_RIGHT))
