@@ -46,7 +46,8 @@ function mas --argument-names project
   #
   # This is intended behavior: https://github.com/tmux/tmux/issues/346
   if not tmux has-session -t =$target
-    tmux new-session -d -s $target -c $repo -n Shell
+    tmux new-session -c $repo -s $target   -n git -d
+    tmux new-window  -c $repo -t $target:2 -n vim
   end
 
   pushd $repo
