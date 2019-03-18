@@ -9,6 +9,10 @@ function e
   set --local binary vim
   set --local args -p
 
+  if test -z "$DISPLAY"
+    set --export DISPLAY :0
+  end
+
   if test -n "$_flag_read_only"
     set args $args -R
   end
