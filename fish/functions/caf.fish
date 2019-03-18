@@ -10,6 +10,6 @@ function caf --argument-names duration_hours
 
   echo
   echo "Staying awake for $duration_hours hours"
-  
+
   caffeinate -t $duration_seconds
 end
