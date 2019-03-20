@@ -62,6 +62,15 @@ if [[ "${OS}" = 'Darwin' ]]; then
   mkdir -p ~/bin
   ln -si  /Applications/LilyPond.app/Contents/Resources/bin/lilypond ~/bin/
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge' ~/bin/
+  ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' ~/bin/
+fi
+
+if [[ "${OS}" = 'Darwin' ]]; then
+  mkdir -p ~/Library/'Application Support'/'Sublime Text 3'/Packages/User
+  ln -si ${DOTFILES}/sublime/Preferences.sublime-settings ~/Library/'Application Support'/'Sublime Text 3'/Packages/User/
+else
+  mkdir -p ~/.config/sublime-text-3/Packages/User
+  ln -si ${DOTFILES}/sublime/Preferences.sublime-settings ~/.config/sublime-text-3/Packages/User/
 fi
 
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
