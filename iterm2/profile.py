@@ -1,5 +1,6 @@
 import iterm2
 
+# https://stackoverflow.com/questions/29643352/converting-hex-to-rgb-value-in-python
 def hex_to_rgb(color):
   return tuple(int(color[i:i+2], 16) for i in [0, 2, 4])
 
@@ -78,13 +79,13 @@ async def main(connection):
   app = await iterm2.async_get_app(connection)
   session = app.current_terminal_window.current_tab.current_session
   await session.async_set_profile_properties(profile_delta)
-  profile = await session.async_get_profile()
 
-  profiles = await iterm2.PartialProfile.async_query(connection)
-  profiles.append(profile)
-  for p in profiles:
-    print('{:<36}  {:<36}  {}'.format(
-        p.original_guid or '-', p.guid or '-', p.name))
+  async with iterm2.NewSessionMonitor(connection) as new_session_monitor:
+    while True:
+      session_id = await new_session_monitor.async_get()
+      print('New Session: {:<36}'.format(session_id))
+      session = app.get_session_by_id(session_id)
+      await session.async_set_profile_properties(profile_delta)
 
 if __name__ == '__main__':
-  iterm2.run_until_complete(main)
+  iterm2.run_forever(main)
