@@ -58,7 +58,7 @@ async def main(connection):
 
   # profile_delta.set_cursor_type(iterm2.CursorType.CURSOR_TYPE_BOX)
   profile_delta.set_blinking_cursor(False)
-  profile_delta.set_use_bold_font(True)
+  profile_delta.set_use_bold_font(False)
   profile_delta.set_use_bright_bold(True)
   profile_delta.set_use_italic_font(True)
   profile_delta.set_blink_allowed(False)
