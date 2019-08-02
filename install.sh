@@ -66,6 +66,11 @@ if [[ "${OS}" = 'Darwin' ]]; then
 fi
 
 if [[ "${OS}" = 'Darwin' ]]; then
+  mkdir -p ~/Library/'Application Support'/iTerm2/Scripts/AutoLaunch
+  ln -si ${DOTFILES}/iterm2/profile.py ~/Library/'Application Support'/iTerm2/Scripts/AutoLaunch/
+fi
+
+if [[ "${OS}" = 'Darwin' ]]; then
   mkdir -p ~/Library/'Application Support'/'Sublime Text 3'/Packages/User
   ln -si ${DOTFILES}/sublime/Preferences.sublime-settings ~/Library/'Application Support'/'Sublime Text 3'/Packages/User/
 else
