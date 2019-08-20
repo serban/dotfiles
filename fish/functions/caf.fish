@@ -8,7 +8,7 @@ function caf --argument-names duration_hours
 
   pmset -g
 
-  echo
+  echo -e "\033]0;awake $duration_hours hours\007"
   echo "Staying awake for $duration_hours hours"
 
   caffeinate -t $duration_seconds
