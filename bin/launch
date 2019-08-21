@@ -10,7 +10,7 @@ case "$1" in
   browser)        exec google-chrome ;;
   calculator)     exec gnome-calculator ;;
   editor)         exec gvim --nofork ;;
-  finder)         exec nautilus --no-desktop > /dev/null 2>&1 ;;
+  finder)         exec nautilus > /dev/null 2>&1 ;;
   htop)           exec $term -e htop ;;
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
   python)         exec $term -e python3 ;;

@@ -1,6 +1,6 @@
 function n
   if type --quiet nautilus
-    nautilus --no-desktop . > /dev/null 2>&1 &
+    nautilus . > /dev/null 2>&1 &
     return
   end
 

@@ -704,7 +704,7 @@ darwin && {
 }
 
 linux && {
-  alias n='nautilus --no-desktop . > /dev/null 2>&1 &'
+  alias n='nautilus . > /dev/null 2>&1 &'
 }
 
 # ------------------------------------------------------------------------------
