@@ -14,6 +14,7 @@
   cl = clone
   co = commit
   ca = commit --amend --reuse-message=HEAD
+  cb = help  # TODO: Bump
   cp = cherry-pick
   di = diff --stat --unified=5
   ds = diff --stat --unified=5 --staged

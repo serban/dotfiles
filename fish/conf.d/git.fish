@@ -11,6 +11,7 @@ abbr --add --global gcn git clean -d -x --dry-run
 abbr --add --global gcl git clone
 abbr --add --global gco git commit
 abbr --add --global gca git commit --amend --reuse-message=HEAD
+abbr --add --global gcb git commit --all --message=\'Bump @ \'\(date \'+%Y-%m-%d %H:%M:%S\'\)  # TODO: Add to gitconfig
 abbr --add --global gcp git cherry-pick
 abbr --add --global gdi git diff --stat --unified=5
 abbr --add --global gds git diff --stat --unified=5 --staged
