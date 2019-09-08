@@ -48,6 +48,8 @@ function mas --argument-names project
   if not tmux has-session -t =$target
     tmux new-session -c $repo -s $target   -n git -d
     tmux new-window  -c $repo -t $target:2 -n vim
+    tmux new-window  -c $repo -t $target:3 -n build
+    tmux new-window  -c $repo -t $target:4 -n ag
   end
 
   pushd $repo
