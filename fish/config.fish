@@ -107,7 +107,7 @@ abbr --add --global p3 python3
 
 abbr --add --global kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 
-abbr --add --global wmt watchman-make --pattern "'**/*.h'" "'**/*.cc'" --run "'bazel test :all'"
+abbr --add --global wmt watchman-make --pattern "'**/BUILD'" "'**/*.h'" "'**/*.cc'" --run "'bazel test :all'"
 
 if test -f $HOME/.config/fish/local.fish
   source $HOME/.config/fish/local.fish
