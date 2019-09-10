@@ -1,3 +1,7 @@
+abbr --add --global cgl clustergit --relative --hide-clean --warn-unversioned
+abbr --add --global cgf clustergit --fetch
+abbr --add --global cgp clustergit --pull
+
 # The abbreviations below correspond one-to-one with the aliases in gitconfig.
 
 abbr --add --global gad git add
