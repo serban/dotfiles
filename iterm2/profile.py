@@ -76,6 +76,12 @@ async def main(connection):
   profile_delta.set_send_session_ended_alert(False)
   profile_delta.set_session_close_undo_timeout(60)
 
+  profile_delta.set_triggers([
+      {'regex': '# waiting for changes', 'action': 'HighlightTrigger'},
+      {'regex': '# waiting for changes', 'action': 'MarkTrigger', 'parameter': 0},
+      {'regex': '# waiting for changes', 'action': 'BounceTrigger', 'parameter': 1},
+  ])
+
   app = await iterm2.async_get_app(connection)
   session = app.current_terminal_window.current_tab.current_session
   await session.async_set_profile_properties(profile_delta)
