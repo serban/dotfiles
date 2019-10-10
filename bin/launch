@@ -12,6 +12,9 @@ case "$1" in
   editor)         exec gvim --nofork ;;
   finder)         exec nautilus > /dev/null 2>&1 ;;
   htop)           exec $term -e htop ;;
+  media-prev)     exec xdotool key XF86AudioPrev ;;
+  media-next)     exec xdotool key XF86AudioNext ;;
+  media-play)     exec xdotool key XF86AudioPlay ;;
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
   python)         exec $term -e python3 ;;
   screensaver)    exec xautolock -locknow ;;

@@ -55,14 +55,8 @@ bindsym $mod+v            nop
 bindsym $mod+x            nop
 bindsym $mod+z            nop
 bindsym $mod+grave        nop
-bindsym $mod+bracketleft  nop
-bindsym $mod+bracketright nop
 bindsym $mod+backslash    nop
-bindsym $mod+semicolon    nop
 bindsym $mod+apostrophe   nop
-bindsym $mod+comma        nop
-bindsym $mod+period       nop
-bindsym $mod+slash        nop
 
 # Applications
 bindsym $mod+d exec launch mixer
@@ -79,6 +73,14 @@ bindsym $mod+BackSpace exec launch screenshot
 bindsym $mod+Escape exec xkill
 bindsym $mod+space exec dmenu_run
 bindsym $mod+Tab exec i3viz
+
+# Audio
+bindsym $mod+bracketleft exec launch media-prev
+bindsym $mod+bracketright exec launch media-next
+bindsym $mod+semicolon exec launch media-play
+bindsym $mod+comma exec launch volume-down
+bindsym $mod+period exec launch volume-up
+bindsym $mod+slash exec launch volume-mute
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec launch volume-up
