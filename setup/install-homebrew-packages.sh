@@ -25,6 +25,7 @@ brew install \
   hexyl \
   httpie \
   hugo \
+  jq \
   less \
   macvim \
   pipenv \

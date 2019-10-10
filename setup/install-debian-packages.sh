@@ -11,10 +11,15 @@ sudo apt-get install \
   colortest \
   dnsutils \
   editorconfig \
+  fish \
   git \
   golang \
+  hashdeep \
+  hexyl \
   htop \
+  httpie \
   hugo \
+  jq \
   libc++-dev \
   makepasswd \
   psmisc \
