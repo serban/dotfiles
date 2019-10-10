@@ -16,7 +16,7 @@ case "$1" in
   media-next)     exec xdotool key XF86AudioNext ;;
   media-play)     exec xdotool key XF86AudioPlay ;;
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
-  python)         exec $term -e python3 ;;
+  python)         exec $term -e bpython3 ;;
   screensaver)    exec xautolock -locknow ;;
   screenshot)     exec gnome-screenshot ;;
   terminal)       exec $term ;;
