@@ -82,8 +82,8 @@ function mag --argument-names client
     end
     tmux new-window    -c $google3 -t $target:2 -n vim
     tmux new-window    -c $google3 -t $target:3 -n blaze
-    tmux new-window    -c $google3 -t $target:4 -n presubmit
-    tmux new-window    -c $google3 -t $target:5 -n ag
+    tmux new-window    -c $google3 -t $target:4 -n ag
+    tmux new-window    -c $google3 -t $target:5 -n presubmit
     tmux new-window    -c /ramdisk -t $target:6 -n ramdisk
   end
 
