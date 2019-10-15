@@ -17,6 +17,7 @@ ln -si ${DOTFILES}/gdbinit            ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
 ln -si ${DOTFILES}/gitignore          ~/.gitignore
 ln -si ${DOTFILES}/gvimrc             ~/.gvimrc
+ln -si ${DOTFILES}/hgrc               ~/.hgrc
 ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc            ~/.inputrc
 ln -si ${DOTFILES}/screenrc           ~/.screenrc
