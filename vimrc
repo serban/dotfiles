@@ -435,6 +435,7 @@ nnoremap <unique> <Leader>G :YcmCompleter GoToDeclaration <CR>
 nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
+nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
