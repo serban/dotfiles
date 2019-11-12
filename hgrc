@@ -3,3 +3,6 @@ extdiff =
 
 [extdiff]
 meld =
+
+[ui]
+merge = internal:merge3
