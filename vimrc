@@ -34,11 +34,11 @@ Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'troydm/easybuffer.vim'
 
-" Disable UltiSnips because it can crash MacVim on startup due to linking
-" against the wrong Python. Not the fault of UltiSnips. See:
+" UltiSnips can crash MacVim on startup if it's linked against the wrong Python.
+" Not the fault of UltiSnips. See:
 "   + https://github.com/SirVer/ultisnips/issues/771
 "   + https://github.com/SirVer/ultisnips/issues/900
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 
 if !filereadable("/usr/share/vim/google/google.vim")
   Plugin 'ervandew/supertab'
