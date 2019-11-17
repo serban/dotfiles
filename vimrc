@@ -149,7 +149,7 @@ let g:UltiSnipsJumpForwardTrigger = '<C-f>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
 " VIM-GO
-let g:go_fmt_command = 'goimports'  " Might be broken. See https://github.com/fatih/vim-go/issues/217
+let g:go_fmt_command = 'goimports'
 let g:go_highlight_functions = 0    " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
