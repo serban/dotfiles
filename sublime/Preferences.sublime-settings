@@ -1,12 +1,18 @@
 {
-  "draw_indent_guides": false,
-  "ensure_newline_at_eof_on_save": true,
-  "fold_buttons": false,
-  "ignored_packages": [],
-  "rulers": [80],
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "vintage_ctrl_keys": true,
-  "vintage_start_in_command_mode": true,
+	"draw_indent_guides": false,
+	"ensure_newline_at_eof_on_save": true,
+	"fold_buttons": false,
+	"ignored_packages":
+	[
+	],
+	"rulers":
+	[
+		80
+	],
+	"tab_size": 2,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true
 }
