@@ -515,6 +515,9 @@ if filereadable("/usr/share/vim/google/google.vim")
   nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
   nnoremap <unique> <Leader>cd :CorpWebDocFindFile <CR>
   nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
+
+  nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
+  nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 endif
 
 " ------------------------------------------------------------------------------
