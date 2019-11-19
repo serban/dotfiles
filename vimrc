@@ -34,10 +34,18 @@ Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'troydm/easybuffer.vim'
 
-" UltiSnips can crash MacVim on startup if it's linked against the wrong Python.
-" Not the fault of UltiSnips. See:
+" gLinux: As of November 18, 2019, the version of Vim on gLinux is not built
+" with support for Python 3, so keep UltiSnips pinned to tag 3.2. The next
+" commit, d2f42d6b43902e5b2ef7bfca2579ccb6cc9f52c0, drops support for Python 2.
+" Follow along at b/71991856.
+"
+" macOS: UltiSnips can crash MacVim on startup if it's linked against the wrong
+" Python. Not the fault of UltiSnips. See:
 "   + https://github.com/SirVer/ultisnips/issues/771
 "   + https://github.com/SirVer/ultisnips/issues/900
+"
+" If problems persist, blow away ~/.vim/bundle/ultisnips and start over with
+" :PluginInstall.
 Plugin 'SirVer/ultisnips'
 
 if !filereadable("/usr/share/vim/google/google.vim")
