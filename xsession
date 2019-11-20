@@ -24,13 +24,20 @@ dots() {
 # invocations below so that gnome-settings-daemon does not override the settings
 # made in this script.
 log 'Starting gnome-settings-daemon (cinnamon-settings-daemon) components'
-/usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-xrandr &
+# /usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-xrandr &
 /usr/lib/x86_64-linux-gnu/cinnamon-settings-daemon/csd-xsettings &
 
 # Sleep for a bit so that gnome-settings-daemon can do its thing before we
 # set the background and override stuff below.
 log 'Waiting for gnome-settings-daemon'
 dots 2
+
+log 'Configuring displays'
+xrandr \
+  --output DP-2 --mode 1920x1200 --rotate right  --pos 0x0 \
+  --output DP-0 --mode 2560x1600 --rotate normal --right-of DP-2 --primary \
+  --output DP-6 --mode 1920x1200 --rotate left   --right-of DP-0 \
+  --output DP-4 --mode 1920x1200 --rotate left   --right-of DP-6
 
 # if [ -f "${BACKGROUND}" ]; then
 #   log 'Setting background image'
