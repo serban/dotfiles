@@ -85,5 +85,8 @@ xautolock -time 5 -locker 'i3lock --ignore-empty-password --color=657b83' &  # b
 log 'Starting conky'
 conky &
 
+log 'Starting Goobuntu Indicator'
+/usr/share/goobuntu-indicator/goobuntu_indicator.py &
+
 log 'Starting i3'
 exec i3
