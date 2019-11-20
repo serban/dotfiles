@@ -7,9 +7,11 @@
 # Mouse4  Scroll Up
 # Mouse5  Scroll Down
 
-set $display_c DVI-I-1
+# Use `xrandr --listmonitors` to get these.
+set $display_c DP-0
 set $display_l DP-2
-set $display_r DP-3
+set $display_r DP-6
+set $display_z DP-4
 
 workspace  1 output $display_c
 workspace  2 output $display_c
@@ -31,8 +33,8 @@ workspace 17 output $display_r
 workspace 18 output $display_r
 workspace 19 output $display_r
 workspace 20 output $display_r
-workspace 21 output $display_r
-workspace 22 output $display_r
+workspace 21 output $display_z
+workspace 22 output $display_z
 
 font -misc-fixed-medium-r-normal--14-130-75-75-c-70-iso10646-1
 
