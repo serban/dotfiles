@@ -73,7 +73,7 @@ bindsym $mod+y exec launch python
 bindsym $mod+Return exec launch screensaver
 bindsym $mod+BackSpace exec launch screenshot
 bindsym $mod+Escape exec xkill
-bindsym $mod+space exec dmenu_run
+bindsym $mod+space exec launch alfred
 bindsym $mod+Tab exec i3viz
 
 # Audio

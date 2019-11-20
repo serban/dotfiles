@@ -7,10 +7,11 @@ set -o pipefail
 readonly term='urxvt'
 
 case "$1" in
+  alfred)         exec rofi -show run ;;
   browser)        exec google-chrome ;;
   calculator)     exec gnome-calculator ;;
   editor)         exec gvim --nofork ;;
-  finder)         exec nautilus > /dev/null 2>&1 ;;
+  finder)         exec thunar ;;
   htop)           exec $term -e htop ;;
   media-prev)     exec xdotool key XF86AudioPrev ;;
   media-next)     exec xdotool key XF86AudioNext ;;
@@ -18,7 +19,7 @@ case "$1" in
   mixer)          exec $term -bg black -fg white -title 'ALSA Mixer' -e alsamixer ;;
   python)         exec $term -e bpython3 ;;
   screensaver)    exec xautolock -locknow ;;
-  screenshot)     exec gnome-screenshot ;;
+  screenshot)     exec xfce4-screenshooter ;;
   terminal)       exec $term ;;
   # Use `pactl list sinks` to discover audio sinks
   volume-up)      exec pactl set-sink-volume 1 +5% ;;
