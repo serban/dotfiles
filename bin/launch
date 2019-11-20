@@ -20,8 +20,9 @@ case "$1" in
   screensaver)    exec xautolock -locknow ;;
   screenshot)     exec gnome-screenshot ;;
   terminal)       exec $term ;;
-  volume-up)      exec pactl set-sink-volume 0 +5% ;;
-  volume-down)    exec pactl set-sink-volume 0 -5% ;;
-  volume-mute)    exec pactl set-sink-mute 0 toggle  ;;
+  # Use `pactl list sinks` to discover audio sinks
+  volume-up)      exec pactl set-sink-volume 1 +5% ;;
+  volume-down)    exec pactl set-sink-volume 1 -5% ;;
+  volume-mute)    exec pactl set-sink-mute 1 toggle  ;;
   *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
 esac
