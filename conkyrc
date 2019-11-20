@@ -39,7 +39,6 @@ MEM       ${mem} ${alignr}${color1}${membar}${color}
 SWAP      ${swap} ${alignr}${color1}${swapbar}${color}
 RAMDISK   ${fs_used /ramdisk} ${alignr}${color1}${fs_bar /ramdisk}${color}
 ROOT      ${fs_used /}${alignr}${color2}${fs_bar /}${color}
-HOME      ${fs_used /usr/local/google} ${alignr}${color2}${fs_bar /usr/local/google}${color}
 ${color0}${hr 2}${color}
   PID PROCESS            CPU%   RSS
 ${color0}${hr 2}${color}
