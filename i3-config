@@ -28,7 +28,7 @@ workspace 12 output $display_l
 workspace 13 output $display_l
 workspace 14 output $display_l
 workspace 15 output $display_l
-workspace 16 output $display_l
+workspace 16 output $display_r
 workspace 17 output $display_r
 workspace 18 output $display_r
 workspace 19 output $display_r
