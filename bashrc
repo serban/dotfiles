@@ -166,42 +166,13 @@ alias mv='mv -vi'
 alias rm='rm -v'
 
 alias cdf='colordiff -u'
-alias gcc='gcc -std=c99 -g -Wall'
-alias gdb='gdb -q'
 alias p2='python2'
 alias p3='python3'
-alias ip3='ipython3'
-
-alias emacs='emacs -nw'
-
-alias fa='flac --analyze --residual-text --force'
-alias tags='metaflac --export-tags-to=-'
-
-alias screencapture='avconv -f x11grab -s sxga -r 60 -i :0.0 -vcodec libx264'
-
-alias z='ping 8.8.8.8'
-
-alias f='find . -iname'
-
-# Find any file with an executable bit set
-alias fx='find . -type f -perm +111'
-
-# Find any file whose permissions aren't 644
-alias fn644='find . -type f -not -perm 644'
-
-# Find any directory whose permissions aren't 755
-alias fn755='find . -type d -not -perm 755'
 
 # Default options for less
 export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case --no-init --quit-if-one-screen'
 
-fe() { find . -iname '*.'$1 ; }
-rmds() { find . -type f -name .DS_Store -exec rm -vf '{}' \; ; }
-rmswp() { find . -type f -name '.*.swp' -exec rm -vf '{}' \; ; }
-
 path() { IFS=':'; for component in ${PATH} ; do echo "${component}"; done ; }
-
-commas() { python3 -c "print('{:,}'.format($1))" ; }
 
 # ------------------------------------------------------------------------------
 # SED
@@ -245,17 +216,6 @@ darwin && {
   # indent size followed by [:graph:], counting the multiples, and inserting
   # multiples of the new indent size
   alias ri42="sed -i '' 's/^    /  /'"
-}
-
-# ------------------------------------------------------------------------------
-# PERMISSIONS
-
-perms() {
-  # Recursively set the permissions of every file and directory in a directory
-  # USAGE: perms DIR_MODE FILE_MODE DIR
-
-  find "$3" -type d -exec chmod -v "$1" '{}' \; | grep -v retained
-  find "$3" -type f -exec chmod -v "$2" '{}' \; | grep -v retained
 }
 
 # ------------------------------------------------------------------------------
@@ -483,17 +443,6 @@ linux && {
   alias ual='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command -A'
   alias uac='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command -A --sort -pcpu'
   alias uam='ps --format pid,nice,nlwp,lstart,ruser,euser,tty,stat,rss,command -A --sort -pmem'
-}
-
-# ------------------------------------------------------------------------------
-# FILE MANAGER
-
-darwin && {
-  alias n='open .'
-}
-
-linux && {
-  alias n='nautilus . > /dev/null 2>&1 &'
 }
 
 # ------------------------------------------------------------------------------
