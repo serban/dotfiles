@@ -135,6 +135,14 @@ set ttymouse=sgr                    " Support mouse past the 223rd column
 
 set autochdir                       " Keep the current directory in sync with the folder containing the open file
 
+" Enable bracketed paste inside tmux. See :help xterm-bracketed-paste
+if &term =~ "screen"
+  let &t_BE = "\e[?2004h"
+  let &t_BD = "\e[?2004l"
+  exec "set t_PS=\e[200~"
+  exec "set t_PE=\e[201~"
+endif
+
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
 
