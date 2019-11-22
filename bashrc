@@ -398,29 +398,11 @@ linux && {
 # GREP
 
 darwin && {
-  alias    r='grep --color=always --no-messages --line-number --ignore-case'
-  alias todo='grep --color=always --no-messages --line-number --ignore-case --recursive "TODO(serban)"'
-  rgr() {     grep --color=always --no-messages --line-number --ignore-case --recursive "$@" * ; }
-  cgr() {
-              grep --color=always --no-messages --line-number --ignore-case --recursive \
-                --include='*.h' --include='*.hpp' \
-                --include='*.c' --include='*.cc' --include='*.cpp' --include='*.cu' \
-                --include='*.go' --include='*.java' --include='*.py' --include='*.sh' \
-                "$@" *
-  }
+  alias r='grep --color=always --no-messages --line-number --ignore-case'
 }
 
 linux && {
-  alias    r='grep --color=always --no-messages --line-number --initial-tab --ignore-case'
-  alias todo='grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive "TODO(serban)"'
-  rgr() {     grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive "$@" * ; }
-  cgr() {
-              grep --color=always --no-messages --line-number --initial-tab --ignore-case --recursive \
-                --include='*.h' --include='*.hpp' \
-                --include='*.c' --include='*.cc' --include='*.cpp' --include='*.cu' \
-                --include='*.go' --include='*.java' --include='*.py' --include='*.sh' \
-                "$@" *
-  }
+  alias r='grep --color=always --no-messages --line-number --initial-tab --ignore-case'
 }
 
 # ------------------------------------------------------------------------------
