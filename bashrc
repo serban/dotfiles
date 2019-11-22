@@ -236,37 +236,6 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
-# GENTOO ALIASES
-
-linux && {
-  root && alias isomount='mount -o loop,ro -t iso9660'
-
-  gentoo && {
-    # Query installed packages
-    alias qp='equery list -i'
-
-    # List files belonging to a package
-    alias qf='equery files --type'
-
-    # Which packages own this file?
-    alias qb='equery belongs'
-
-    # List USE flags of a package
-    alias qu='equery uses'
-
-    # Query USE flag among installed pckages
-    alias qh='equery hasuse -i'
-
-    # Query packages that directly depend on this one
-    alias qd='equery depends -d'
-
-    alias checkglsa='glsa-check --list | grep \\\[N\\\]'
-
-    root && alias psync='time emerge --sync && eix-update'
-  }
-}
-
-# ------------------------------------------------------------------------------
 # RAM DISK
 
 darwin && {
