@@ -223,19 +223,6 @@ darwin && {
 }
 
 # ------------------------------------------------------------------------------
-# UNIX ALIASES
-
-linux && {
-  serbankb() {
-    # Swap the CTRL and CAPS keys
-    setxkbmap -option ctrl:swapcaps
-
-    # Set the keyboard repeat delay and repeat rate
-    xset r rate 200 50  # in milliseconds and keystrokes/sec
-  }
-}
-
-# ------------------------------------------------------------------------------
 # RAM DISK
 
 darwin && {
