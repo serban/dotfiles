@@ -9,6 +9,7 @@ readonly DOTFILES="${HOME}/src/dotfiles"
 ln -si ${DOTFILES}/bash_logout        ~/.bash_logout
 ln -si ${DOTFILES}/bashrc             ~/.bashrc
 ln -si ${DOTFILES}/bazelrc            ~/.bazelrc
+ln -si ${DOTFILES}/blazerc            ~/.blazerc
 ln -si ${DOTFILES}/colordiffrc        ~/.colordiffrc
 ln -si ${DOTFILES}/conkyrc            ~/.conkyrc
 ln -si ${DOTFILES}/dir_colors         ~/.dir_colors
