@@ -286,65 +286,6 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
-# TMUX
-
-alias mls='tmux list-sessions -F "#{?session_attached,*, } #{session_name}"'
-alias mlc='tmux list-clients -F "#{client_termname}  #{session_name}" | sort'
-
-m() {
-  if [ -n "$1" ]; then
-    tmux new-session -A -c "${HOME}" -n Shell -s "$1"
-  else
-    tmux new-session -A -c "${HOME}" -n Shell -s misc
-  fi
-}
-
-ma() {
-  REPO="${1}"
-
-  if [ -z "${REPO}" ]; then
-    echo 'No repo specified'
-    return 1
-  fi
-
-  # This is broken on macOS: 'tr: Illegal byte sequence'
-  # `head` fires off a SIGPIPE, so make sure to `set +o pipefail` in a script.
-  # RANDOM_NUMBER="$(cat /dev/urandom | tr -dc '0-9' | fold -w 2 | head -n 1)"
-
-  RANDOM_NUMBER="$(python3 -c 'import random; print(random.randint(10, 99))')"
-  TARGET="${REPO//\./-}"
-  SESSION="z-${TARGET}-${RANDOM_NUMBER}"
-
-  # From the tmux man page:
-  #
-  # "If the session name is prefixed with an `=', only an exact match is
-  # accepted (so `=mysess' will only match exactly `mysess', not `mysession')."
-  #
-  # This is intended behavior: https://github.com/tmux/tmux/issues/346
-  if ! tmux has-session -t "=${TARGET}" ; then
-    tmux new-session -d -s "${TARGET}" -c "${HOME}/src/${REPO}" -n Shell
-  fi
-
-  pushd "${HOME}/src/${REPO}" > /dev/null
-  tmux new-session -A -s "${SESSION}" -t "=${TARGET}"
-  tmux kill-session -t "=${SESSION}"
-  popd > /dev/null
-}
-
-mc() {
-  while read -r session; do
-    tmux kill-session -t "=${session}"
-  done < <(tmux list-sessions -F '#{session_name}' | grep '^z-')
-}
-
-serbanCompleteM() {
-  COMPREPLY=($(compgen -W "$(tmux list-sessions -F '#{session_name}')" -- "${COMP_WORDS[COMP_CWORD]}"))
-}
-
-complete -F serbanCompleteM m
-complete -F serbanCompleteM ma
-
-# ------------------------------------------------------------------------------
 # BOOKMARKS
 
 b() {
