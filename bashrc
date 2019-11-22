@@ -486,26 +486,6 @@ linux && {
 }
 
 # ------------------------------------------------------------------------------
-# CSCOPE
-
-alias jcs="find . -type f -name '*.java' > cscope.files && cscope -bcq"
-
-darwin && {
-  alias cs='EDITOR=mvim cscope -d'
-
-  if [ $(which gfind) ]; then
-    alias ccs="gfind . -type f -regex '.*\.\(h\|c\|cc\|cpp\|cu\)' > cscope.files && cscope -bcq"
-  else
-    alias ccs="find -E . -type f -regex '.*\.(h|c|cc|cpp|cu)' > cscope.files && cscope -bcq"
-  fi
-}
-
-linux && {
-  alias cs='EDITOR=gvim cscope -d'
-  alias ccs="find . -type f -regex '.*\.\(h\|c\|cc\|cpp\|cu\)' > cscope.files && cscope -bcq"
-}
-
-# ------------------------------------------------------------------------------
 # FILE MANAGER
 
 darwin && {
