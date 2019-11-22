@@ -209,20 +209,6 @@ path() { IFS=':'; for component in ${PATH} ; do echo "${component}"; done ; }
 commas() { python3 -c "print('{:,}'.format($1))" ; }
 
 # ------------------------------------------------------------------------------
-# MAC OS X ALIASES
-
-darwin && {
-  alias safesleep='sudo pmset -a hibernatemode 3; pmset -g'
-  alias nosafesleep='sudo pmset -a hibernatemode 0; pmset -g'
-
-  alias c01='pmset -g ; printf "\nStaying awake for  1 hour\n"  ; caffeinate -t  3600'
-  alias c02='pmset -g ; printf "\nStaying awake for  2 hours\n" ; caffeinate -t  7200'
-  alias c04='pmset -g ; printf "\nStaying awake for  4 hours\n" ; caffeinate -t 14400'
-  alias c08='pmset -g ; printf "\nStaying awake for  8 hours\n" ; caffeinate -t 28800'
-  alias c12='pmset -g ; printf "\nStaying awake for 12 hours\n" ; caffeinate -t 43200'
-}
-
-# ------------------------------------------------------------------------------
 # GIT ALIASES
 
 alias ga='git add'
