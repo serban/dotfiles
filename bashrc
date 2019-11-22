@@ -165,11 +165,6 @@ alias cp='cp -vi'
 alias mv='mv -vi'
 alias rm='rm -v'
 
-alias ag='ag --pager less --color-path "01;35" --color-line-number "00;34"'
-alias agh='ag --pager less --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.h$"'
-alias agc='ag --pager less --color-path "01;35" --color-line-number "00;34" --file-search-regex "\.cc$"'
-alias agt='ag --pager less --color-path "01;35" --color-line-number "00;34" --ignore "*_test.cc"'
-
 alias cdf='colordiff -u'
 alias gcc='gcc -std=c99 -g -Wall'
 alias gdb='gdb -q'
