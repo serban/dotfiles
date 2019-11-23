@@ -20,8 +20,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'inkarkat/vim-ingo-library'
-" Plugin 'inkarkat/vim-mark'
-Plugin 'inkarkat/vim-SearchHighlighting'
+Plugin 'inkarkat/vim-mark'
+" Plugin 'inkarkat/vim-SearchHighlighting'
 " Plugin 'Lokaltog/vim-easymotion'
 " Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'myusuf3/numbers.vim'
@@ -173,6 +173,26 @@ let g:go_highlight_structs = 0      " Makes vim laggy when enabled. See https://
 
 " VIM-COMMENTARY
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
+
+" VIM-MARK
+" DarkYellow   --> Solarized Yellow
+" Red          --> Solarized Orange
+" Dark Red     --> Solarized Red
+" Dark Magenta --> Solarized Magenta
+" Magenta      --> Solarized Violet
+" Dark Blue    --> Solarized Blue
+" Dark Cyan    --> Solarized Cyan
+" Dark Green   --> Solarized Green
+let g:mwDefaultHighlightingPalette = [
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkMagenta', 'guibg':'#d33682' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkBlue',    'guibg':'#268bd2' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkYellow',  'guibg':'#b58900' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'Magenta',     'guibg':'#6c71c4' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'Red',         'guibg':'#cb4b16' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkCyan',    'guibg':'#2aa198' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkRed',     'guibg':'#dc322f' },
+\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkGreen',   'guibg':'#859900' },
+\]
 
 " YOUCOMPLETEME
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -448,7 +468,7 @@ nnoremap <unique> <Leader>k :tabmove +1 <CR>
 nnoremap <unique> <Leader>y *<C-o>
 
 " Clear the highlighting for the current search
-nnoremap <unique> <Leader>n :nohlsearch <CR>
+nnoremap <unique> <Leader>z :nohlsearch <CR>
 
 nnoremap <unique> <Leader>G :YcmCompleter GoToDeclaration <CR>
 nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
@@ -456,13 +476,13 @@ nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
-nnoremap <unique> <Leader>m :call InsertModeline() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 nnoremap <unique> <Leader>sh :call ToggleHardWrap() <CR>
+nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>ss :set wrap! <CR>
 nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 
@@ -491,7 +511,7 @@ if filereadable("/usr/share/vim/google/google.vim")
   Glug fileswitch plugin[mappings]
   Glug g4
   Glug outline-window
-  Glug relatedfiles plugin[mappings]
+  " Glug relatedfiles plugin[mappings]
   Glug youcompleteme-google
 
   autocmd FileType bzl AutoFormatBuffer buildifier
