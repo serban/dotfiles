@@ -175,50 +175,6 @@ export LESS='--RAW-CONTROL-CHARS --chop-long-lines --ignore-case --no-init --qui
 path() { IFS=':'; for component in ${PATH} ; do echo "${component}"; done ; }
 
 # ------------------------------------------------------------------------------
-# SED
-
-# find uniq file extensions in a directory: find . -type f | gsed -rn 's|.*/[^/]+\.([^/.]+)$|\1|p' | sort -u
-
-# Source files:
-#
-# c
-# cc
-# cpp
-# css
-# cu
-# h
-# handlebars
-# hpp
-# html
-# java
-# js
-# json
-# less
-# m
-# mm
-# py
-# rb
-# sh
-# txt
-
-darwin && {
-  # TODO: Use GNU sed
-  # sed is stupid and doesn't understand \t. The real tab character is in there deliberately.
-  #
-  # Alternate tricks:
-  # tab_character=$(printf '\t')
-  alias  ws="find -E . -type f -regex '.*\.(h|hpp|c|cc|cpp|cu|java|js|m|mm|py|rb|sh|handlebars|html|txt)' -print0 | xargs -0 sed -i '' 's/[[:space:]]*$//'"
-  alias et2="find -E . -type f -regex '.*\.(h|hpp|c|cc|cpp|cu|java|js|m|mm|py|rb|sh|handlebars|html|txt)' -print0 | xargs -0 sed -i '' 's/	/  /g'"
-  alias et4="find -E . -type f -regex '.*\.(h|hpp|c|cc|cpp|cu|java|js|m|mm|py|rb|sh|handlebars|html|txt)' -print0 | xargs -0 sed -i '' 's/	/    /g'"
-  alias et8="find -E . -type f -regex '.*\.(h|hpp|c|cc|cpp|cu|java|js|m|mm|py|rb|sh|handlebars|html|txt)' -print0 | xargs -0 sed -i '' 's/	/        /g'"
-
-  # TODO: We can be much more clever, measuring multiples of the original
-  # indent size followed by [:graph:], counting the multiples, and inserting
-  # multiples of the new indent size
-  alias ri42="sed -i '' 's/^    /  /'"
-}
-
-# ------------------------------------------------------------------------------
 # LS
 
 darwin || freebsd || solaris && {
