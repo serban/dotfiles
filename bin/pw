@@ -1,0 +1,14 @@
+#!/usr/bin/env python3
+
+import secrets
+import string
+
+ALPHABET = string.ascii_letters + string.digits
+NUM_CHARS = 32
+NUM_PASSWORDS = 10
+
+print("{:.1e} possible passwords".format(len(ALPHABET) ** NUM_CHARS))
+print()
+
+for i in range(NUM_PASSWORDS):
+  print(''.join(secrets.choice(ALPHABET) for _ in range(NUM_CHARS)))
