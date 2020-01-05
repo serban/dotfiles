@@ -51,6 +51,7 @@ set --global --export PATH \
     $HOME/src/private/bin \
     $HOME/src/dotfiles/bin \
     $HOME/go/bin \
+    $HOME/.cargo/bin \
     $HOME/opt/google-cloud-sdk/bin \
     $HOME/homebrew/bin \
     /usr/local/bin \
