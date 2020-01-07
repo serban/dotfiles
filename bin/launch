@@ -6,6 +6,9 @@ set -o pipefail
 
 readonly term='urxvt'
 
+# Use `pactl list sinks` to discover audio sinks
+readonly sink='alsa_output.pci-0000_00_1f.3.HiFi__hw_PCH_0__sink'
+
 case "$1" in
   alfred)         exec rofi -show run ;;
   browser)        exec google-chrome ;;
@@ -21,9 +24,8 @@ case "$1" in
   screensaver)    exec xautolock -locknow ;;
   screenshot)     exec xfce4-screenshooter ;;
   terminal)       exec $term ;;
-  # Use `pactl list sinks` to discover audio sinks
-  volume-up)      exec pactl set-sink-volume 1 +5% ;;
-  volume-down)    exec pactl set-sink-volume 1 -5% ;;
-  volume-mute)    exec pactl set-sink-mute 1 toggle  ;;
+  volume-up)      exec pactl set-sink-volume $sink +5% ;;
+  volume-down)    exec pactl set-sink-volume $sink -5% ;;
+  volume-mute)    exec pactl set-sink-mute $sink toggle  ;;
   *)              echo 'What do you want to launch?' 1>&2 ; exit 1 ;;
 esac
