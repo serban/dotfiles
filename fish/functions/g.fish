@@ -46,5 +46,5 @@ function g
     set binary gls
   end
 
-  $binary $args | less
+  env LC_COLLATE=C $binary $args | less
 end
