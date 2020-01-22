@@ -32,6 +32,9 @@ defaults write -g KeyRepeat -int 2
 # System Preferences > Keyboard > Delay Until Repeat
 defaults write -g InitialKeyRepeat -int 15
 
+# Open the accent menu when holding down a key
+defaults write -g ApplePressAndHoldEnabled -bool true
+
 # Restart the Dock
 killall Dock
 
