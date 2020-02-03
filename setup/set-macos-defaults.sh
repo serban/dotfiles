@@ -34,6 +34,7 @@ defaults write -g InitialKeyRepeat -int 15
 
 # Open the accent menu when holding down a key
 defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write org.vim.MacVim ApplePressAndHoldEnabled -bool false
 
 # Restart the Dock
 killall Dock
