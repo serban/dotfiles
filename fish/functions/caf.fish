@@ -5,11 +5,13 @@ function caf --argument-names duration_hours
   end
 
   set --local duration_seconds (math 60 \* 60 \* $duration_hours)
+  set --local expiration_time_seconds (math (date +%s) + $duration_seconds)
 
   pmset -g
 
   echo -e "\033]0;awake $duration_hours hours\007"
-  echo "Staying awake for $duration_hours hours"
+  echo "Staying awake for $duration_hours hours until" \
+      (date -r $expiration_time_seconds '+%Y-%m-%d %H:%M')
 
   caffeinate -t $duration_seconds
 end
