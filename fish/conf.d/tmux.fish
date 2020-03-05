@@ -92,6 +92,20 @@ function mag --argument-names client
   popd
 end
 
+function mkg --argument-names client
+  if test -z $client
+    echo 'No client specified'
+    return 1
+  end
+
+  tmux list-sessions -F '#{session_group} #{session_name}' \
+      | grep "^$client " | cut --delimiter=' ' --fields=2 \
+      | while read --line session
+    tmux kill-session -t =$session
+    echo "Killed session $session"
+  end
+end
+
 function serban_complete_mas
   for dir in (find $HOME/src -mindepth 1 -maxdepth 1 -type d)
     echo (string split / $dir)[-1]
@@ -110,6 +124,12 @@ complete \
 
 complete \
   --command mag \
+  --no-files \
+  --arguments \
+      '(tmux list-sessions -F "#{session_name}" | grep --invert-match "^z-")'
+
+complete \
+  --command mkg \
   --no-files \
   --arguments \
       '(tmux list-sessions -F "#{session_name}" | grep --invert-match "^z-")'
