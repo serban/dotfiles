@@ -19,7 +19,7 @@ function pdi --argument-names file
   env P4DIFF='colordiff -u' g4 diff $file | less
 end
 
-abbr --add --global pbu 'g4 change --desc "g3doc bump @ "(date "+%Y-%m-%d %H:%M:%S")'
+abbr --add --global pbu 'g4 change --desc "g3doc bump @ "(date "+%Y-%m-%d %H:%M")'
 abbr --add --global pdc 'g4 citc -d -f'
 abbr --add --global pew 'e (g4 whatsout)'
 abbr --add --global pst 'g4 pending -l; g4 nothave'
