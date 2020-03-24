@@ -36,6 +36,12 @@ defaults write -g InitialKeyRepeat -int 15
 defaults write -g ApplePressAndHoldEnabled -bool true
 defaults write org.vim.MacVim ApplePressAndHoldEnabled -bool false
 
+# Set name and location of screenshots
+defaults write com.apple.screencapture location $HOME/Downloads
+defaults write com.apple.screencapture name Screenshot
+defaults write com.apple.screencapture include-date -bool false
+defaults write com.apple.screencapture disable-shadow -bool true
+
 # Restart the Dock
 killall Dock
 
