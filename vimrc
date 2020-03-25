@@ -267,11 +267,11 @@ function InsertModeline()
     let expandStr="noet"
   endif
 
-  call append(0, "# vim:set" .
+  call append(0, "# vim:" .
   \               " ts=" . &tabstop .
   \               " sw=" . &shiftwidth .
   \               " sts=" . &softtabstop .
-  \               " " . expandStr . ":")
+  \               " " . expandStr)
 
   echo 'Inserted modeline on the first line'
 endfunction
