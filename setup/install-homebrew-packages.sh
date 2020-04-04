@@ -28,6 +28,7 @@ brew install \
   jq \
   less \
   macvim \
+  pastel \
   pipenv \
   python \
   python@2 \
