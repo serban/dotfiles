@@ -10,6 +10,8 @@ abbr --add --global i history
 abbr --add --global j jobs
 abbr --add --global k kill
 
+abbr --add --global s snippets
+
 abbr --add --global cp cp -vi
 abbr --add --global mv mv -vi
 abbr --add --global rm rm -v
