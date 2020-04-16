@@ -46,7 +46,11 @@ def write_snippets_file(date):
 
 
 def open_vim(left_path, right_path):
-  subprocess.check_call(['vim', '-c', 'wincmd l', '-O', left_path, right_path])
+  subprocess.check_call(
+      ['vim',
+       '-c', 'wincmd l',
+       '-c', 'silent bufdo set textwidth=0',
+       '-O', left_path, right_path])
 
 
 def main():
