@@ -1,4 +1,4 @@
-export PATH="~/bin:~/src/dotfiles/bin:${PATH}"
+export PATH="~/bin:~/src/dotfiles/bin:~/src/dotfiles/python:${PATH}"
 
 log() {
   echo "SERBAN: $1" 1>&2

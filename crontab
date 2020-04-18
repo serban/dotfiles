@@ -1,6 +1,5 @@
 SHELL=/usr/local/bin/bash
-PATH=/home/s/serban/bin:/home/s/serban/src/dotfiles/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+PATH=/home/s/serban/bin:/home/s/serban/src/dotfiles/bin:/home/s/serban/src/dotfiles/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 MAILTO=giuroiu@gmail.com
 
-0 11 * * * shikhalamode.com-backup
 0 12 * * * serban.org-backup
