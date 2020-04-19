@@ -457,6 +457,13 @@ nnoremap <unique> <C-n> :tabnext <CR>
 " Close the current tab
 nnoremap <unique> <C-x> :tabclose <CR>
 
+" Arrow keys move the cursor up and down a display line instead of a physical
+" line. Useful when soft-wrapping text.
+nnoremap <unique> <Up> gk
+inoremap <unique> <Up> <ESC>gka
+nnoremap <unique> <Down> gj
+inoremap <unique> <Down> <ESC>gja
+
 " Move the current tab to the left
 nnoremap <unique> <Leader>j :tabmove -1 <CR>
 
