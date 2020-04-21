@@ -158,6 +158,11 @@ let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
 " EDITORCONFIG
 let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
 
+" NUMBERS
+" I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
+" does not exist when this code is run. See numbers.vim for the default value.
+let g:numbers_exclude = ['help']
+
 " ULTISNIPS
 let g:UltiSnipsExpandTrigger = '<C-Tab>'  " <Tab> works with Supertab but conflicts with YouCompleteMe
 " let g:UltiSnipsListSnippets = '<C-Tab>'
@@ -266,20 +271,11 @@ function ToggleHardWrap()
   endif
 endfunction
 
-" TODO(serban): Figure out the right way to do this.
 function DisableLineNumbers()
-  windo NumbersDisable
-  windo setlocal norelativenumber
-  windo setlocal nonumber
-
-  tabdo NumbersDisable
-  tabdo setlocal norelativenumber
-  tabdo setlocal nonumber
-
-  set norelativenumber
+  NumbersDisable
   set nonumber
-
-  echo 'Disabled line numbers'
+  set norelativenumber
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Disabled line numbers'
 endfunction
 
 " ------------------------------------------------------------------------------
