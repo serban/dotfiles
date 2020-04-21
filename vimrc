@@ -420,10 +420,6 @@ nnoremap <unique> <Leader>j :tabmove -1 <CR>
 " Move the current tab to the right
 nnoremap <unique> <Leader>k :tabmove +1 <CR>
 
-" Highlight the word under the cursor
-" nnoremap <unique> <Leader>y :let @/ = '\<'.expand('<cword>').'\>' \| set hlsearch<C-M>
-nnoremap <unique> <Leader>y *<C-o>
-
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>z :nohlsearch <CR>
 
