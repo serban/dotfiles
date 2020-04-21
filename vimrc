@@ -273,18 +273,19 @@ function InsertModeline()
   \               " sts=" . &softtabstop .
   \               " " . expandStr)
 
-  echo 'Inserted modeline on the first line'
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
 function RemoveTrailingWhitespace()
   silent! %s/\v\s+$//g
-  echo 'Removed trailing whitespace'
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
 endfunction
 
 function RemoveHttpScheme()
-  silent! %s/\vhttp:\/\/b\//b\//g
-  silent! %s/\vhttp:\/\/cl\//cl\//g
-  echo 'Replaced all occurrences of http://b/ and http://cl/ with b/ and cl/'
+  silent! %s,\vhttp://b/,b/,g
+  silent! %s,\vhttp://cl/,cl/,g
+  silent! %s,\vhttp://go/,go/,g
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed http:// from shortlinks'
 endfunction
 
 function ThreeSplit()
@@ -503,6 +504,16 @@ autocmd FileType cpp :set iskeyword-=-
 autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
 autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
 autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
+
+augroup serban-markdown
+  autocmd!
+  autocmd FileType markdown autocmd BufWritePre <buffer> silent call RemoveTrailingWhitespace()
+augroup end
+
+augroup serban-snippets
+  autocmd!
+  autocmd BufWritePre ~/snippets/*.md silent call RemoveHttpScheme()
+augroup end
 
 " ------------------------------------------------------------------------------
 " GOOGLE-SPECIFIC
