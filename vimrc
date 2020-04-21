@@ -207,58 +207,7 @@ let g:ycm_enable_diagnostic_highlighting = 0
 iabbrev TODO: TODO(serban):
 
 " ------------------------------------------------------------------------------
-" CSOPE
-
-" if has("cscope")
-"   if filereadable("cscope.out")   " Look in local directory first
-"     cscope add cscope.out
-"   elseif $CSCOPE_DB != ""         " Then look at environmental variable
-"     cscope add $CSCOPE_DB
-"   endif
-"
-"   set cscopeverbose
-"   set cscopetag                   " When pressing CTRL-], search cscope instead of ctags
-"   set csto=0                      " Search cscope database before ctags database
-"   set cscopepathcomp=0            " Show the entire path of a file in cscope listings
-"
-"   " The following maps all invoke one of the following cscope search types:
-"   "
-"   "   's'   symbol:   find all references to the token under cursor
-"   "   'g'   global:   find global definition(s) of the token under cursor
-"   "   'c'   calls:    find all calls to the function name under cursor
-"   "   't'   text:     find all instances of the text under cursor
-"   "   'e'   egrep:    egrep search for the word under cursor
-"   "   'f'   file:     open the filename under cursor
-"   "   'i'   includes: find files that include the filename under cursor
-"   "   'd'   called:   find functions that function under cursor calls
-"
-"   nnoremap <unique> <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>      " Find this C symbol
-"   nnoremap <unique> <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>      " Find this definition
-"   nnoremap <unique> <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>      " Find functions called by this function
-"   nnoremap <unique> <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>      " Find functions calling this function
-"   nnoremap <unique> <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>      " Find this text string
-"   nnoremap <unique> <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>      " Find this egrep pattern
-"   nnoremap <unique> <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>      " Find this file
-"   nnoremap <unique> <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>    " Find files #including this file
-"
-"   nnoremap <unique> <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>     " Find this C symbol
-"   nnoremap <unique> <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>     " Find this definition
-"   nnoremap <unique> <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>     " Find functions called by this function
-"   nnoremap <unique> <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>     " Find functions calling this function
-"   nnoremap <unique> <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>     " Find this text string
-"   nnoremap <unique> <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>     " Find this egrep pattern
-"   nnoremap <unique> <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>     " Find this file
-"   nnoremap <unique> <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>   " Find files #including this file
-" endif
-
-" ------------------------------------------------------------------------------
 " FUNCTIONS
-
-" TODO(serban): Figure out why this doesn't work
-function HighlightWordUnderCursor()
-  let @/ = "\<".expand("<cword>")."\>"
-  set hlsearch
-endfunction
 
 function InsertModeline()
   if &expandtab
