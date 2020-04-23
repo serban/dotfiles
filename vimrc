@@ -149,8 +149,8 @@ endif
 " CTRLP
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
-let g:ctrlp_custom_ignore = { 'dir': '\v(bower_components|node_modules)$' }
 let g:ctrlp_switch_buffer = ''
+let g:ctrlp_extensions = ['autoignore']
 
 " EASYBUFFER
 let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
