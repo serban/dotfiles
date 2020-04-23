@@ -3,6 +3,7 @@ abbr --add --global sm smerge
 abbr --add --global cgl clustergit --relative --hide-clean --warn-unversioned
 abbr --add --global cgf clustergit --fetch
 abbr --add --global cgp clustergit --pull
+abbr --add --global cgs clustergit --exec '"git stash list"'
 
 # The abbreviations below correspond one-to-one with the aliases in gitconfig.
 
