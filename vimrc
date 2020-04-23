@@ -150,6 +150,7 @@ endif
 let g:ctrlp_map = '<Leader>f'
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
 let g:ctrlp_switch_buffer = ''
+let g:ctrlp_clear_cache_on_exit = 1  " NB: This calls ctrlp#clra() on exit. This clears all caches, even those of other running Vim sessions. Caches are only cleared if you invoke CtrlP during the Vim session.
 let g:ctrlp_extensions = ['autoignore']
 
 " EASYBUFFER
