@@ -73,7 +73,7 @@ set laststatus=2                    " Always show the status bar (it tells us th
 set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
-set statusline=%f\ %h%w%q%r%m%=%3v\ \ %Y\ \ " Simple status line with virtual column and filetype
+set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ " Simple status line with virtual column, character value, and filetype
 
 if has("gui_macvim")
   set guifont=Monaco:h15            " Use a good font in MacVim
