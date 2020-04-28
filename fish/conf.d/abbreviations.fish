@@ -23,6 +23,7 @@ abbr --add --global jd jackd --driver coreaudio --rate 44100
 
 abbr --add --global kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 
+abbr --add --global rmclass find . -type f -name "'*.class'" -exec rm -vf "'{}'" \\\;
 abbr --add --global rmds find . -type f -name .DS_Store -exec rm -vf "'{}'" \\\;
 abbr --add --global rmpyc find . -type f -name "'*.pyc'" -exec rm -vf "'{}'" \\\;
 abbr --add --global rmswp find . -type f -regex "'^.*/\\.[^/]*sw[a-z]\$'" -exec rm -vf "'{}'" \\\;
