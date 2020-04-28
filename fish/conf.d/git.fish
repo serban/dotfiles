@@ -1,4 +1,4 @@
-abbr --add --global sm smerge
+abbr --add --global sm smerge .
 
 abbr --add --global cgl clustergit --relative --hide-clean --warn-unversioned
 abbr --add --global cgf clustergit --fetch
