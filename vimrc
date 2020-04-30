@@ -73,7 +73,7 @@ set laststatus=2                    " Always show the status bar (it tells us th
 set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
-set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ " Simple status line with virtual column, character value, and filetype
+set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{CurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has("gui_macvim")
   set guifont=Monaco:h15            " Use a good font in MacVim
@@ -93,7 +93,7 @@ set nofoldenable                    " Don't fold code
 set sidescroll=16                   " When the cursor hits the end of the screen, scroll left or right by this many spaces
 set sidescrolloff=10                " Always leave some space to the left and right of the cursor
 set scrolloff=3                     " Always leave some lines above and below the cursor
-set formatoptions=crqlj             " Auto-wrap comments, insert comment leader on <Enter>, gq formats comments, don't automatically fix long lines when entering insert mode, remove comment leaders when joining lines
+set formatoptions=crqljt            " Auto-wrap comments, insert comment leader on <Enter>, gq formats comments, don't automatically fix long lines when entering insert mode, remove comment leaders when joining lines, hard wrap
 set nojoinspaces                    " When formatting text, insert only one space at the end of a sentence.
 set iskeyword+=-                    " Add hyphen to the list of characters that comprise a word
 set encoding=utf-8                  " Default to UTF-8 encoding
@@ -264,19 +264,59 @@ function ToggleColorcolumn()
   endif
 endfunction
 
-function ToggleHardWrap()
-  if &textwidth == 0
-    set textwidth=80
-  else
-    set textwidth=0
-  endif
-endfunction
-
 function DisableLineNumbers()
   NumbersDisable
   set nonumber
   set norelativenumber
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Disabled line numbers'
+endfunction
+
+" ------------------------------------------------------------------------------
+" WRAP FUNCTIONS
+
+" I like to work in three different wrap modes:
+"
+" * Hard Wrap (Default)
+" * Soft Wrap
+" * No Wrap
+"
+" These modes involve setting the following options, some of which are
+" orthogonal to each other and some of which are not:
+"
+" * textwidth
+" * formatoptions
+" * colorcolumn
+" * wrap
+
+function EnableHardWrap()
+  if &textwidth == 0
+    set textwidth=80
+  endif
+  set formatoptions+=t
+  set colorcolumn=+1
+  set nowrap
+endfunction
+
+function EnableSoftWrap()
+  set formatoptions-=t
+  set colorcolumn=0
+  set wrap
+endfunction
+
+function DisableWrap()
+  set formatoptions-=t
+  set colorcolumn=0
+  set nowrap
+endfunction
+
+function CurrentWrap()
+  if &textwidth != 0 && stridx(&formatoptions, 't') != -1
+    return 'HARD ' . &textwidth
+  elseif &wrap
+    return 'SOFT'
+  else
+    return 'NONE'
+  endif
 endfunction
 
 " ------------------------------------------------------------------------------
@@ -429,12 +469,12 @@ nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
 nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
+nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
-nnoremap <unique> <Leader>sh :call ToggleHardWrap() <CR>
-nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
-nnoremap <unique> <Leader>ss :set wrap! <CR>
-nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
+nnoremap <unique> <Leader>sh :call EnableHardWrap() <CR>
+nnoremap <unique> <Leader>ss :call EnableSoftWrap() <CR>
+nnoremap <unique> <Leader>sn :call DisableWrap() <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
@@ -442,10 +482,6 @@ nnoremap <unique> <Leader>l :set formatoptions-=t <CR>
 autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType cpp :set commentstring=//\ \ %s
 autocmd FileType cpp :set iskeyword-=-
-
-autocmd FileType gitcommit :set formatoptions+=t            " Auto-wrap text for Git commits
-autocmd FileType tex :set formatoptions+=t                  " Auto-wrap text for LaTeX files
-autocmd FileType text :set formatoptions+=t                 " Auto-wrap text for plain text files
 
 augroup serban-markdown
   autocmd!
@@ -486,9 +522,6 @@ if filereadable("/usr/share/vim/google/google.vim")
 
   " I shouldn't need this since I have the vim-go plugin.
   " autocmd FileType go AutoFormatBuffer gofmt
-
-  " Auto-wrap text for `g4 change`
-  autocmd FileType piperspec :set formatoptions+=t
 
   nnoremap <unique> <Leader>d :G4Diff <CR>
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
