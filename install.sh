@@ -71,6 +71,10 @@ fi
 if [[ "${OS}" = 'Darwin' ]]; then
   mkdir -p ~/Library/'Application Support'/iTerm2/Scripts/AutoLaunch
   ln -si ${DOTFILES}/iterm2/profile.py ~/Library/'Application Support'/iTerm2/Scripts/AutoLaunch/
+  ln -si ${DOTFILES}/iterm2/font_12.py ~/Library/'Application Support'/iTerm2/Scripts/
+  ln -si ${DOTFILES}/iterm2/font_15.py ~/Library/'Application Support'/iTerm2/Scripts/
+  ln -si ${DOTFILES}/iterm2/font_18.py ~/Library/'Application Support'/iTerm2/Scripts/
+  ln -si ${DOTFILES}/iterm2/font_24.py ~/Library/'Application Support'/iTerm2/Scripts/
   ln -si ${DOTFILES}/iterm2/solarized_dark.py ~/Library/'Application Support'/iTerm2/Scripts/
   ln -si ${DOTFILES}/iterm2/solarized_light.py ~/Library/'Application Support'/iTerm2/Scripts/
 fi
