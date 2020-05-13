@@ -12,11 +12,11 @@ function serban_postexec --on-event fish_postexec
   set --local last_status_string ''
 
   if test $duration_sec -gt 0
-    set duration_string (printf '  [%s]' (serban_format_duration $duration_sec))
+    set duration_string (printf '  (%s)' (serban_format_duration $duration_sec))
   end
 
   if test $last_status -ne 0
-    set last_status_string (printf '  (%s)' $last_status)
+    set last_status_string (printf '  ‹%s›' $last_status)
   end
 
   if test $duration_sec -gt 0 || test $last_status -ne 0
