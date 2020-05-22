@@ -172,11 +172,15 @@ let g:UltiSnipsJumpForwardTrigger = '<C-f>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
 
 " VIM-GO
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_doc_popup_window = 1
 let g:go_fmt_command = 'goimports'
 let g:go_highlight_functions = 0    " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 0      " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
+let g:go_updatetime = 1
 
 " VIM-COMMENTARY
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
