@@ -23,6 +23,7 @@ Plugin 'inkarkat/vim-ingo-library'
 Plugin 'inkarkat/vim-mark'
 " Plugin 'inkarkat/vim-SearchHighlighting'
 " Plugin 'Lokaltog/vim-easymotion'
+Plugin 'majutsushi/tagbar'
 " Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'myusuf3/numbers.vim'
 " Plugin 'tpope/vim-abolish'
@@ -163,7 +164,14 @@ let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for gol
 " NUMBERS
 " I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
 " does not exist when this code is run. See numbers.vim for the default value.
-let g:numbers_exclude = ['help']
+let g:numbers_exclude = ['help', 'tagbar']
+
+" TAGBAR
+let g:tagbar_indent = 0
+let g:tagbar_left = 1
+let g:tagbar_show_visibility = 0
+let g:tagbar_width = 60
+let g:tagbar_zoomwidth = 0
 
 " ULTISNIPS
 let g:UltiSnipsExpandTrigger = '<C-Tab>'  " <Tab> works with Supertab but conflicts with YouCompleteMe
@@ -480,6 +488,7 @@ nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 nnoremap <unique> <Leader>sh :call EnableHardWrap() <CR>
 nnoremap <unique> <Leader>ss :call EnableSoftWrap() <CR>
 nnoremap <unique> <Leader>sn :call DisableWrap() <CR>
+nnoremap <unique> <Leader>tt :TagbarToggle <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
