@@ -21,7 +21,7 @@ defaults write com.apple.dock orientation left
 defaults write com.apple.dock minimize-to-application -bool true
 
 # System Preferences > Dock > Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide -bool false
 
 # Show the dock immediately when the mouse reaches the edge of the screen
 defaults write com.apple.dock autohide-delay -int 0
