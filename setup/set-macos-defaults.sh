@@ -32,8 +32,13 @@ defaults write -g KeyRepeat -int 2
 # System Preferences > Keyboard > Delay Until Repeat
 defaults write -g InitialKeyRepeat -int 15
 
-# Open the accent menu when holding down a key
-defaults write -g ApplePressAndHoldEnabled -bool true
+# Open the accent menu when holding down a key everywhere except code surfaces
+#
+# See https://github.com/Microsoft/vscode/issues/31919#issuecomment-343897993
+# See https://superuser.com/questions/1408110/set-applepressandholdenabled-for-one-specific-application
+defaults delete -g ApplePressAndHoldEnabled || true
+defaults write com.googlecode.iterm2 ApplePressAndHoldEnabled -bool false
+defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 defaults write org.vim.MacVim ApplePressAndHoldEnabled -bool false
 
 # Set name and location of screenshots
