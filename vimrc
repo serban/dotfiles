@@ -515,6 +515,7 @@ if filereadable("/usr/share/vim/google/google.vim")
 
   source /usr/share/vim/google/google.vim
 
+  Glug blazedeps auto_filetypes=`['go']`
   Glug codefmt
   Glug codefmt-google
   Glug corpweb
