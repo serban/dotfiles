@@ -301,6 +301,9 @@ endfunction
 " * formatoptions
 " * colorcolumn
 " * wrap
+"
+" When textwidth is zero, the lesser of the screen width or 79 is used to wrap
+" code comments. See `:help autoformat` or `:help gq` for more.
 
 function EnableHardWrap()
   if &textwidth == 0
@@ -506,9 +509,9 @@ nnoremap <unique> <Leader>tt :TagbarToggle <CR>
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
 
-autocmd FileType go :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
-autocmd FileType cpp :set commentstring=//\ \ %s
-autocmd FileType cpp :set iskeyword-=-
+" Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
+autocmd FileType cpp set commentstring=//\ \ %s iskeyword-=-
+autocmd FileType go set textwidth=100 tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 
 augroup serban-markdown
   autocmd!
