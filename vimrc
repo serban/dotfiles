@@ -287,11 +287,12 @@ endfunction
 " ------------------------------------------------------------------------------
 " WRAP FUNCTIONS
 
-" I like to work in three different wrap modes:
+" I like to work in four different wrap modes:
 "
-" * Hard Wrap (Default)
-" * Soft Wrap
-" * No Wrap
+" * Hard Wrap - Vim automatically inserts newlines past a certain column
+" * Hint Wrap - Vim shows a column guide but performs no wrapping
+" * Soft Wrap - Vim shows full lines without altering the file
+" *   No Wrap - Vim shows no guide and performs no wrapping
 "
 " These modes involve setting the following options, some of which are
 " orthogonal to each other and some of which are not:
@@ -306,6 +307,15 @@ function EnableHardWrap()
     set textwidth=80
   endif
   set formatoptions+=t
+  set colorcolumn=+1
+  set nowrap
+endfunction
+
+function EnableHintWrap()
+  if &textwidth == 0
+    set textwidth=80
+  endif
+  set formatoptions-=t
   set colorcolumn=+1
   set nowrap
 endfunction
@@ -325,6 +335,8 @@ endfunction
 function CurrentWrap()
   if &textwidth != 0 && stridx(&formatoptions, 't') != -1
     return 'HARD ' . &textwidth
+  elseif &textwidth != 0 && &colorcolumn != '0' && !&wrap
+    return 'HINT ' . &textwidth
   elseif &wrap
     return 'SOFT'
   else
@@ -486,6 +498,7 @@ nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
 nnoremap <unique> <Leader>sh :call EnableHardWrap() <CR>
+nnoremap <unique> <Leader>si :call EnableHintWrap() <CR>
 nnoremap <unique> <Leader>ss :call EnableSoftWrap() <CR>
 nnoremap <unique> <Leader>sn :call DisableWrap() <CR>
 nnoremap <unique> <Leader>tt :TagbarToggle <CR>
