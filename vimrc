@@ -223,7 +223,7 @@ let g:ycm_enable_diagnostic_highlighting = 0
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
-iabbrev TODO: TODO(serban):
+iabbrev td TODO(serban):
 
 " ------------------------------------------------------------------------------
 " FUNCTIONS
