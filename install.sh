@@ -89,6 +89,12 @@ else
   ln -si "${DOTFILES}/sublime/Package Control.sublime-settings" ~/.config/sublime-text-3/Packages/User/
 fi
 
+if [[ "${OS}" = 'Darwin' ]]; then
+  readonly VSCODE="${HOME}/Library/Application Support/Code/User"
+  mkdir -p "${VSCODE}"
+  ln -si ${DOTFILES}/vscode/settings.json "${VSCODE}/"
+fi
+
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +quitall
 vim +GoInstallBinaries +quitall
