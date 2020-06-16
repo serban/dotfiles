@@ -6,6 +6,7 @@
 [caps]>[escape]
 [lshift]>[hyper]
 [rshift]>[hyper]
+[intl-\]>[meh]
 
 [lalt]>[lwin]
 [home]>[lalt]
