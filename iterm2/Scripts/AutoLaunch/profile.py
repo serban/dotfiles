@@ -1,3 +1,7 @@
+# See defaultValueMap in:
+# https://github.com/gnachman/iTerm2/blob/master/sources/ITAddressBookMgr.h
+# https://github.com/gnachman/iTerm2/blob/master/sources/iTermProfilePreferences.m
+
 import iterm2
 
 # https://stackoverflow.com/questions/29643352/converting-hex-to-rgb-value-in-python
@@ -24,7 +28,6 @@ async def main(connection):
 
   profile_delta = iterm2.LocalWriteOnlyProfile()
   profile_delta.set_name('Serban Solarized Dark')
-  profile_delta.set_allow_title_setting(True)
   profile_delta.set_badge_text('*')
 
   profile_delta.set_background_color(base03)
@@ -51,36 +54,6 @@ async def main(connection):
   profile_delta.set_ansi_13_color(violet)
   profile_delta.set_ansi_14_color(base1)
   profile_delta.set_ansi_15_color(base3)
-
-  profile_delta.set_use_tab_color(False)
-  profile_delta.set_use_cursor_guide(False)
-  profile_delta.set_use_underline_color(False)
-
-  profile_delta.set_cursor_type(iterm2.CursorType.CURSOR_TYPE_BOX.value)
-  profile_delta.set_blinking_cursor(False)
-  profile_delta.set_use_bold_font(False)
-  profile_delta.set_use_bright_bold(True)
-  profile_delta.set_use_italic_font(True)
-  profile_delta.set_blink_allowed(False)
-  profile_delta.set_thin_strokes(iterm2.ThinStrokes.THIN_STROKES_SETTING_RETINA_ONLY.value)
-  profile_delta.set_ascii_anti_aliased(True)
-  profile_delta.set_ascii_ligatures(False)
-
-  profile_delta.set_unlimited_scrollback(True)
-  profile_delta.set_mouse_reporting(True)
-  profile_delta.set_mouse_reporting_allow_mouse_wheel(True)
-  profile_delta.set_silence_bell(False)
-  profile_delta.set_bm_growl(False)
-  profile_delta.set_flashing_bell(False)
-  profile_delta.set_visual_bell(True)
-
-  profile_delta.set_close_sessions_on_end(True)
-  profile_delta.set_prompt_before_closing(False)
-  profile_delta.set_send_session_ended_alert(False)
-  profile_delta.set_session_close_undo_timeout(60)
-
-  profile_delta.set_left_option_key_sends(iterm2.OptionKeySends.OPTION_KEY_ESC.value)
-  profile_delta.set_right_option_key_sends(iterm2.OptionKeySends.OPTION_KEY_ESC.value)
 
   profile_delta.set_triggers([
       {'regex': '# waiting for changes', 'action': 'HighlightTrigger'},

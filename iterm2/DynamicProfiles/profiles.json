@@ -2,7 +2,51 @@
   "Profiles": [
     {
       "Name": "Serban Base",
+      "Badge Text" : "Base",
+      "Allow Title Setting" : true,
+      "Use Tab Color": false,
+      "Use Cursor Guide": false,
+      "Use Underline Color": false,
+      "Cursor Type" : 2,
+      "Blinking Cursor": false,
+      "Use Bold Font": false,
+      "Use Bright Bold": true,
+      "Use Italic Font": true,
+      "Blink Allowed": false,
+      "Thin Strokes": 4,
+      "Normal Font" : "Monaco 15",
+      "ASCII Anti Aliased": true,
+      "ASCII Ligatures": false,
+      "Unlimited Scrollback": true,
+      "Terminal Type": "xterm-256color",
+      "Mouse Reporting": true,
+      "Mouse Reporting allow mouse wheel": true,
+      "Allow Paste Bracketing": true,
+      "Disable Window Resizing": true,
+      "Silence Bell": false,
+      "BM Growl": false,
+      "Flashing Bell": false,
+      "Visual Bell": true,
+      "Close Sessions On End": true,
+      "Prompt Before Closing 2": false,
+      "Send Session Ended Alert": false,
+      "Session Close Undo Timeout": 60,
+      "Jobs to Ignore": [],
+      "Option Key Sends": 2,
+      "Right Option Key Sends": 2,
       "Guid": "4182AEDA-3396-4518-B3B2-CF3D0A9FC0F9"
+    },
+    {
+      "Name": "Serban Solarized Dark",
+      "Dynamic Profile Parent Name": "Serban Base",
+      "Badge Text" : "Dark",
+      "Guid": "DABAAFE7-12CA-4D00-A7EC-32E8463D0DA3"
+    },
+    {
+      "Name": "Serban Solarized Light",
+      "Dynamic Profile Parent Name": "Serban Base",
+      "Badge Text" : "Light",
+      "Guid": "1AA9E124-6705-4BCE-A345-69787905B616"
     }
   ]
 }
