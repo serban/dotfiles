@@ -56,7 +56,7 @@ async def main(connection):
   profile_delta.set_use_cursor_guide(False)
   profile_delta.set_use_underline_color(False)
 
-  # profile_delta.set_cursor_type(iterm2.CursorType.CURSOR_TYPE_BOX)
+  profile_delta.set_cursor_type(iterm2.CursorType.CURSOR_TYPE_BOX.value)
   profile_delta.set_blinking_cursor(False)
   profile_delta.set_use_bold_font(False)
   profile_delta.set_use_bright_bold(True)
@@ -75,6 +75,9 @@ async def main(connection):
   profile_delta.set_prompt_before_closing(False)
   profile_delta.set_send_session_ended_alert(False)
   profile_delta.set_session_close_undo_timeout(60)
+
+  profile_delta.set_left_option_key_sends(iterm2.OptionKeySends.OPTION_KEY_ESC.value)
+  profile_delta.set_right_option_key_sends(iterm2.OptionKeySends.OPTION_KEY_ESC.value)
 
   profile_delta.set_triggers([
       {'regex': '# waiting for changes', 'action': 'HighlightTrigger'},
