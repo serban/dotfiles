@@ -62,6 +62,9 @@ async def main(connection):
   profile_delta.set_use_bright_bold(True)
   profile_delta.set_use_italic_font(True)
   profile_delta.set_blink_allowed(False)
+  profile_delta.set_thin_strokes(iterm2.ThinStrokes.THIN_STROKES_SETTING_RETINA_ONLY.value)
+  profile_delta.set_ascii_anti_aliased(True)
+  profile_delta.set_ascii_ligatures(False)
 
   profile_delta.set_unlimited_scrollback(True)
   profile_delta.set_mouse_reporting(True)
