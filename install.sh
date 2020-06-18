@@ -25,7 +25,7 @@ function root {
 }
 
 darwin && {
-  readonly        ITERM="${HOME}/Library/Application Support/iTerm2/Scripts"
+  readonly        ITERM="${HOME}/Library/Application Support/iTerm2"
   readonly SUBLIME_TEXT="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
   readonly       VSCODE="${HOME}/Library/Application Support/Code/User"
 }
@@ -95,14 +95,9 @@ darwin && {
 }
 
 darwin && {
-  mkdir -p "${ITERM}/AutoLaunch"
-  ln -si ${DOTFILES}/iterm2/profile.py          "${ITERM}/AutoLaunch/"
-  ln -si ${DOTFILES}/iterm2/font_12.py          "${ITERM}/"
-  ln -si ${DOTFILES}/iterm2/font_15.py          "${ITERM}/"
-  ln -si ${DOTFILES}/iterm2/font_18.py          "${ITERM}/"
-  ln -si ${DOTFILES}/iterm2/font_24.py          "${ITERM}/"
-  ln -si ${DOTFILES}/iterm2/solarized_dark.py   "${ITERM}/"
-  ln -si ${DOTFILES}/iterm2/solarized_light.py  "${ITERM}/"
+  mkdir -p "${ITERM}"
+  ln -si ${DOTFILES}/iterm2/DynamicProfiles "${ITERM}/DynamicProfiles"
+  ln -si ${DOTFILES}/iterm2/Scripts         "${ITERM}/Scripts"
 }
 
 darwin || linux && {
