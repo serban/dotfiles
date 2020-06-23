@@ -87,6 +87,11 @@ root || darwin || freebsd && {
 }
 
 darwin && {
+  mkdir -p ~/.hammerspoon
+  ln -si ${DOTFILES}/init.lua ~/.hammerspoon/init.lua
+}
+
+darwin && {
   mkdir -p ~/bin
   ln -si  /Applications/LilyPond.app/Contents/Resources/bin/lilypond            ~/bin/
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/bin/
