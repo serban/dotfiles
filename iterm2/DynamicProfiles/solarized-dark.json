@@ -1,0 +1,10 @@
+{
+  "Profiles": [
+    {
+      "Name": "Serban Solarized Dark",
+      "Dynamic Profile Parent Name": "Serban Base",
+      "Badge Text" : "Dark",
+      "Guid": "DABAAFE7-12CA-4D00-A7EC-32E8463D0DA3"
+    }
+  ]
+}

@@ -35,18 +35,6 @@
       "Option Key Sends": 2,
       "Right Option Key Sends": 2,
       "Guid": "4182AEDA-3396-4518-B3B2-CF3D0A9FC0F9"
-    },
-    {
-      "Name": "Serban Solarized Dark",
-      "Dynamic Profile Parent Name": "Serban Base",
-      "Badge Text" : "Dark",
-      "Guid": "DABAAFE7-12CA-4D00-A7EC-32E8463D0DA3"
-    },
-    {
-      "Name": "Serban Solarized Light",
-      "Dynamic Profile Parent Name": "Serban Base",
-      "Badge Text" : "Light",
-      "Guid": "1AA9E124-6705-4BCE-A345-69787905B616"
     }
   ]
 }
