@@ -9,6 +9,7 @@ abbr --add --global i history
 
 abbr --add --global j jobs
 abbr --add --global k kill
+abbr --add --global v 'p | grep -i vim | awk "{print \$NF}"'
 
 abbr --add --global s snippets
 
