@@ -337,9 +337,9 @@ endfunction
 
 function CurrentWrap()
   if &textwidth != 0 && stridx(&formatoptions, 't') != -1
-    return 'HARD ' . &textwidth
+    return 'HARD  ' . &textwidth
   elseif &textwidth != 0 && &colorcolumn != '0' && !&wrap
-    return 'HINT ' . &textwidth
+    return 'HINT  ' . &textwidth
   elseif &wrap
     return 'SOFT'
   else
