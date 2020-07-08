@@ -55,6 +55,7 @@ set --global --export PATH \
     $HOME/.cargo/bin \
     $HOME/opt/google-cloud-sdk/bin \
     $HOME/homebrew/bin \
+    $HOME/homebrew/sbin \
     /usr/local/bin \
     /usr/local/sbin \
     /usr/bin \
