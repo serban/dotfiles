@@ -11,7 +11,15 @@ brew cask install \
   audio-hijack \
   divvy \
   dropbox \
+  firefox \
+  flux \
   google-chrome \
   grandperspective \
+  hammerspoon \
   iterm2 \
-  lilypond
+  karabiner-elements \
+  lilypond \
+  obsidian \
+  signal \
+  spotify \
+  sublime-merge
