@@ -48,6 +48,7 @@ ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
 ln -si ${DOTFILES}/gitignore          ~/.gitignore
 ln -si ${DOTFILES}/gvimrc             ~/.gvimrc
 ln -si ${DOTFILES}/hgrc               ~/.hgrc
+ln -si ${DOTFILES}/hushlogin          ~/.hushlogin
 ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc            ~/.inputrc
 ln -si ${DOTFILES}/screenrc           ~/.screenrc
@@ -78,9 +79,6 @@ ln -si ${DOTFILES}/ultisnips          ~/.vim/UltiSnips
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
-
-# Silence the message of the day and last login info
-touch ~/.hushlogin
 
 root || darwin || freebsd && {
   ln -si ${DOTFILES}/bashrc ~/.bash_profile
