@@ -17,7 +17,6 @@ abbr --add --global cp cp -vi
 abbr --add --global mv mv -vi
 abbr --add --global rm rm -v
 
-abbr --add --global p2 python2
 abbr --add --global p3 python3
 
 abbr --add --global jd jackd --driver coreaudio --rate 44100

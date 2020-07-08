@@ -5,4 +5,6 @@ set -o nounset
 set -o pipefail
 
 PIP_REQUIRE_VIRTUALENV=false pip3 install \
-  bpython
+  bpython \
+  virtualfish \
+  wavemaker

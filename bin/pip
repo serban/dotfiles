@@ -24,19 +24,17 @@ else
 fi
 
 print
-print 'You are outside of a virtualenv. Use pip2 or pip3 explicitly:'
+print 'You are outside of a virtualenv. Use pip3 explicitly:'
 print
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 list'
 print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 list'
 print
-print 'To install Python and virtualenv:'
+print 'To install Python 3 and virtualenv:'
 print
-print '$ brew install python python@2'
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 install virtualenv virtualenvwrapper virtualfish'
+print '$ brew install python'
+print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper virtualfish'
 print
 print 'To upgrade pip itself:'
 print
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip2 install --upgrade pip'
 print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
 print
 print '+----------------------------------------------------------------------+'
@@ -45,8 +43,7 @@ print '+----------------------------------------------------------------------+'
 print
 print 'To create a new virtualenv:'
 print
-print '$ mkvirtualenv -p python2 p2-name  # For Python 2'
-print '$ mkvirtualenv -p python3 p3-name  # For Python 3'
+print '$ mkvirtualenv -p python3 name'
 print
 print 'To use a virtualenv:'
 print
@@ -58,8 +55,7 @@ print '+----------------------------------------------------------------------+'
 print
 print 'To create a new virtualenv:'
 print
-print '$ vf new -p python2 p2-name  # For Python 2'
-print '$ vf new -p python3 p3-name  # For Python 3'
+print '$ vf new -p python3 name'
 print
 print 'To use a virtualenv:'
 print

@@ -166,7 +166,6 @@ alias mv='mv -vi'
 alias rm='rm -v'
 
 alias cdf='colordiff -u'
-alias p2='python2'
 alias p3='python3'
 
 # Default options for less

@@ -4,9 +4,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# python   (canonical) = python3 = python@3
-# python@2 (canonical) = python2
-
 brew install \
   bazel \
   colordiff \
@@ -31,7 +28,6 @@ brew install \
   pastel \
   pipenv \
   python \
-  python@2 \
   rsync \
   sqlite \
   the_silver_searcher \
