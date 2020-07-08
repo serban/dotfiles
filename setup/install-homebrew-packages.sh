@@ -8,6 +8,7 @@ brew install \
   bazel \
   colordiff \
   coreutils \
+  duti \
   editorconfig \
   findutils \
   fish \
