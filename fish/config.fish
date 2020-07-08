@@ -46,23 +46,6 @@ set --global fish_pager_color_description green
 
 set --global fish_greeting
 
-set --global --export PATH \
-    $HOME/bin \
-    $HOME/src/private/bin \
-    $HOME/src/dotfiles/bin \
-    $HOME/src/dotfiles/python \
-    $HOME/go/bin \
-    $HOME/.cargo/bin \
-    $HOME/opt/google-cloud-sdk/bin \
-    $HOME/homebrew/bin \
-    $HOME/homebrew/sbin \
-    /usr/local/bin \
-    /usr/local/sbin \
-    /usr/bin \
-    /usr/sbin \
-    /bin \
-    /sbin
-
 set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
