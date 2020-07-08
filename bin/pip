@@ -26,40 +26,30 @@ fi
 print
 print 'You are outside of a virtualenv. Use pip3 explicitly:'
 print
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 list'
+print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 list'
 print
 print 'To install Python 3 and virtualenv:'
 print
-print '$ brew install python'
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper virtualfish'
+print '  $ brew install python'
+print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper virtualfish'
 print
 print 'To upgrade pip itself:'
 print
-print '$ env PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
+print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
 print
 print '+----------------------------------------------------------------------+'
 print '| Bash Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
-print 'To create a new virtualenv:'
-print
-print '$ mkvirtualenv -p python3 name'
-print
-print 'To use a virtualenv:'
-print
-print '$ workon virtualenv-name'
+print 'To create a new virtualenv:  $ mkvirtualenv -p python3 name'
+print 'To use a virtualenv:         $ workon virtualenv-name'
 print
 print '+----------------------------------------------------------------------+'
 print '| Fish Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
-print 'To create a new virtualenv:'
-print
-print '$ vf new -p python3 name'
-print
-print 'To use a virtualenv:'
-print
-print '$ vf activate virtualenv-name'
+print 'To create a new virtualenv:  $ vf new -p python3 name'
+print 'To use a virtualenv:         $ vf activate virtualenv-name'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
