@@ -8,3 +8,5 @@ PIP_REQUIRE_VIRTUALENV=false pip3 install \
   bpython \
   virtualfish \
   wavemaker
+
+vf install auto_activation update_python
