@@ -170,6 +170,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .m4a    00;32
 .m4b    00;32
 .m4p    00;32
+.m4r    00;32
 .mp3    00;32
 .ogg    00;32
 .ra     00;32
