@@ -109,6 +109,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .go           00;32
 .java         00;32
 .js           00;32
+.lua          00;32
 .ly           00;32
 .m            00;32
 .mm           00;32
