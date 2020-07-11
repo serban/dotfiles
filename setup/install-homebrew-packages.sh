@@ -19,6 +19,7 @@ brew install \
   go \
   graphviz \
   grep \
+  grip \
   hashdeep \
   hexyl \
   httpie \
