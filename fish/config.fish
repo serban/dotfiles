@@ -63,7 +63,6 @@ set --global --export EDITOR vim
 set --global --export PAGER less
 
 set --global --export PIP_REQUIRE_VIRTUALENV true
-set --global --export VIRTUAL_ENV_DISABLE_PROMPT true
 
 if type --quiet dircolors
   eval (dircolors -c ~/.dir_colors)
