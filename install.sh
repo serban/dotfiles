@@ -67,6 +67,9 @@ ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
 mkdir -p ~/.config/nitrogen
 ln -si ${DOTFILES}/bg-saved.cfg       ~/.config/nitrogen/bg-saved.cfg
 
+mkdir -p ~/.hammerspoon
+ln -si ${DOTFILES}/init.lua           ~/.hammerspoon/init.lua
+
 mkdir -p ~/.i3
 ln -si ${DOTFILES}/i3-config          ~/.i3/config
 
@@ -82,11 +85,6 @@ mkdir -p -m 700 ~/.history
 
 root || darwin || freebsd && {
   ln -si ${DOTFILES}/bashrc ~/.bash_profile
-}
-
-darwin && {
-  mkdir -p ~/.hammerspoon
-  ln -si ${DOTFILES}/init.lua ~/.hammerspoon/init.lua
 }
 
 darwin && {
