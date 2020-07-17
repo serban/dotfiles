@@ -14,9 +14,9 @@ hs.hotkey.bind("⌃⌥⇧⌘", "f10",   function() hs.grid.set(hs.window.focused
 hs.hotkey.bind("⌃⌥⇧⌘", "f11",   function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 3, 1}) end) -- Bottom Left
 hs.hotkey.bind("⌃⌥⇧⌘", "f12",   function() hs.grid.set(hs.window.focusedWindow(), {3, 1, 4, 1}) end) -- Bottom Right
 
-hs.hotkey.bind("⌃⌥⇧⌘", "1", function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow() end) -- Built-in Display
-hs.hotkey.bind("⌃⌥⇧⌘", "2", function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow() end) -- Thunderbolt Display
-hs.hotkey.bind("⌃⌥⇧⌘", "3", function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow() end) -- Old Faithful
+hs.hotkey.bind("⌃⌥⇧⌘", "1", function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
+hs.hotkey.bind("⌃⌥⇧⌘", "2", function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
+hs.hotkey.bind("⌃⌥⇧⌘", "3", function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')) end) -- Old Faithful
 
 hs.hotkey.bind("⌃⌥⇧⌘", "b", function() hs.application.launchOrFocus("Firefox.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "c", function() hs.application.launchOrFocus("Google Chrome.app") end)
@@ -37,3 +37,4 @@ hs.hotkey.bind("⌃⌥⇧⌘", "u", function() hs.application.launchOrFocus("Uly
 hs.hotkey.bind("⌃⌥⇧⌘", "v", function() hs.application.launchOrFocus("MacVim.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "x", function() hs.application.launchOrFocus("Signal.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "y", function() hs.application.launchOrFocus("Dictionary.app") end)
+hs.hotkey.bind("⌃⌥⇧⌘", "z", function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end)
