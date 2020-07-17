@@ -20,6 +20,9 @@ TEMPLATE = """## Week of $MONTH $DAY, $YEAR
 ### Friday
 """
 
+SCRATCH_PATH = pathlib.Path(pathlib.Path.home(), 'snippets', 'scratch.md')
+TOP_PATH     = pathlib.Path(pathlib.Path.home(), 'snippets', 'top.md')
+
 def snippets_path(date):
   return pathlib.Path(
       pathlib.Path.home(), 'snippets',
@@ -45,12 +48,20 @@ def write_snippets_file(date):
   path.chmod(stat.S_IRUSR | stat.S_IWUSR)
 
 
-def open_vim(left_path, right_path):
+def open_vim(*paths):
+  # NB: bufdo changes the buffer of the current window to the last buffer.
   subprocess.run(
       ['vim',
-       '-c', 'wincmd l',
        '-c', 'silent bufdo set textwidth=0',
-       '-O', left_path, right_path])
+       '-c', 'buffer 1',
+       '-c', 'split',
+       '-c', 'buffer 2',
+       '-c', 'botright vsplit',
+       '-c', 'buffer 3',
+       '-c', 'botright vsplit',
+       '-c', 'buffer 4',
+       '-c', 'wincmd =',
+       *paths])
 
 
 def main():
@@ -64,7 +75,7 @@ def main():
   if not this_week_path.exists():
     write_snippets_file(this_monday)
 
-  open_vim(last_week_path, this_week_path)
+  open_vim(SCRATCH_PATH, TOP_PATH, last_week_path, this_week_path)
 
 
 if __name__ == '__main__':
