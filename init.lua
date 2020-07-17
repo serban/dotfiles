@@ -1,3 +1,10 @@
+local function highlightMousePointer()
+  local m = hs.mouse.getAbsolutePosition()
+  hs.canvas.new({x=m.x-150, y=m.y-150, w=300, h=300}):appendElements({
+    type='circle', action='fill', fillColor={hex='#ff4081', alpha=0.5}, -- 2014 Material Design A200
+  }):show():delete(0.75)
+end
+
 hs.window.animationDuration = 0
 
 hs.grid.setGrid('7x2')
@@ -30,6 +37,7 @@ hs.hotkey.bind("⌃⌥⇧⌘", "m", function() hs.application.launchOrFocus("Mes
 hs.hotkey.bind("⌃⌥⇧⌘", "n", function() hs.application.launchOrFocus("Obsidian.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "o", function() hs.application.launchOrFocus("OmniFocus.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "p", function() hs.application.launchOrFocus("Photo Booth.app") end)
+hs.hotkey.bind("⌃⌥⇧⌘", "q", function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end)
 hs.hotkey.bind("⌃⌥⇧⌘", "r", function() hs.application.launchOrFocus("Calendar.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "s", function() hs.application.launchOrFocus("Spotify.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "t", function() hs.application.launchOrFocus("iTerm.app") end)
@@ -37,4 +45,4 @@ hs.hotkey.bind("⌃⌥⇧⌘", "u", function() hs.application.launchOrFocus("Uly
 hs.hotkey.bind("⌃⌥⇧⌘", "v", function() hs.application.launchOrFocus("MacVim.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "x", function() hs.application.launchOrFocus("Signal.app") end)
 hs.hotkey.bind("⌃⌥⇧⌘", "y", function() hs.application.launchOrFocus("Dictionary.app") end)
-hs.hotkey.bind("⌃⌥⇧⌘", "z", function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end)
+hs.hotkey.bind("⌃⌥⇧⌘", "z", function() highlightMousePointer() end)
