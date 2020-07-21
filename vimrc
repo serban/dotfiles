@@ -193,6 +193,9 @@ let g:go_updatetime = 1
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
 
 " VIM-MARK
+let g:mw_no_mappings = 0
+let g:mwAutoSaveMarks = 0
+
 " DarkYellow   --> Solarized Yellow
 " Red          --> Solarized Orange
 " Dark Red     --> Solarized Red
@@ -487,6 +490,10 @@ nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
+
+nnoremap <unique> <Leader>l :Marks <CR>
+nmap <unique> <Leader>m <Plug>MarkSet
+nmap <unique> <Leader>n <Plug>MarkAllClear
 
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
