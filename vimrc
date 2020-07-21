@@ -227,7 +227,7 @@ iabbrev td TODO(serban):
 " ------------------------------------------------------------------------------
 " FUNCTIONS
 
-function InsertModeline()
+function SerbanInsertModeline()
   if &expandtab
     let expandStr="et"
   else
@@ -255,7 +255,7 @@ function SerbanRemoveHttpScheme()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed http:// from shortlinks'
 endfunction
 
-function ToggleBackground()
+function SerbanToggleBackground()
   if &background == "light"
     set background=dark
   else
@@ -263,7 +263,7 @@ function ToggleBackground()
   endif
 endfunction
 
-function ToggleColorcolumn()
+function SerbanToggleColorColumn()
   if &colorcolumn != "0"
     windo set colorcolumn=0
   else
@@ -271,7 +271,7 @@ function ToggleColorcolumn()
   endif
 endfunction
 
-function DisableLineNumbers()
+function SerbanDisableLineNumbers()
   NumbersDisable
   set nonumber
   set norelativenumber
@@ -491,10 +491,12 @@ nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
-nnoremap <unique> <Leader>sp :set spell! <CR>
-nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
-nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
-nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
+nnoremap <unique> <Leader>sd :call SerbanDisableLineNumbers() <CR>
+nnoremap <unique> <Leader>sm :call SerbanInsertModeline() <CR>
+
+nnoremap <unique> <Leader>tb :call SerbanToggleBackground() <CR>
+nnoremap <unique> <Leader>tc :call SerbanToggleColorColumn() <CR>
+nnoremap <unique> <Leader>ts :set spell! <CR>
 nnoremap <unique> <Leader>tt :TagbarToggle <CR>
 
 nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
