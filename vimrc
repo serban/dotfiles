@@ -255,11 +255,6 @@ function RemoveHttpScheme()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed http:// from shortlinks'
 endfunction
 
-function ThreeSplit()
-  vsplit
-  vsplit
-endfunction
-
 function ToggleBackground()
   if &background == "light"
     set background=dark
@@ -494,7 +489,6 @@ nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>s :set spell! <CR>
-nnoremap <unique> <Leader>v :call ThreeSplit() <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
