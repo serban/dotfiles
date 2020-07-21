@@ -243,12 +243,12 @@ function InsertModeline()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
-function RemoveTrailingWhitespace()
+function SerbanRemoveTrailingWhitespace()
   silent! %s/\v\s+$//g
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
 endfunction
 
-function RemoveHttpScheme()
+function SerbanRemoveHttpScheme()
   silent! %s,\vhttp://b/,b/,g
   silent! %s,\vhttp://cl/,cl/,g
   silent! %s,\vhttp://go/,go/,g
@@ -487,9 +487,11 @@ nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
-nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
+
+nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
+nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
+
 nnoremap <unique> <Leader>sp :set spell! <CR>
-nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
@@ -509,12 +511,12 @@ autocmd FileType go set textwidth=100 tabstop=2 shiftwidth=2 softtabstop=0 noexp
 
 augroup serban-markdown
   autocmd!
-  autocmd FileType markdown autocmd BufWritePre <buffer> silent call RemoveTrailingWhitespace()
+  autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
 augroup end
 
 augroup serban-snippets
   autocmd!
-  autocmd BufWritePre ~/snippets/*.md silent call RemoveHttpScheme()
+  autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
 augroup end
 
 " ------------------------------------------------------------------------------
