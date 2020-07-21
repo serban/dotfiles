@@ -73,7 +73,7 @@ set laststatus=2                    " Always show the status bar (it tells us th
 set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
-set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{CurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
+set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has("gui_macvim")
   set guifont=Monaco:h15            " Use a good font in MacVim
@@ -332,7 +332,7 @@ function SerbanWrapNone()
   set nowrap
 endfunction
 
-function CurrentWrap()
+function SerbanCurrentWrap()
   if &textwidth != 0 && stridx(&formatoptions, 't') != -1
     return 'HARD  ' . &textwidth
   elseif &textwidth != 0 && &colorcolumn != '0' && !&wrap
