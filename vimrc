@@ -485,9 +485,11 @@ nnoremap <unique> <Leader>k :tabmove +1 <CR>
 " Clear the highlighting for the current search
 nnoremap <unique> <Leader>z :nohlsearch <CR>
 
-nnoremap <unique> <Leader>G :YcmCompleter GoToDeclaration <CR>
+nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
 nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
+
 nnoremap <unique> <Leader>i :GoImports <CR>
+
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 
