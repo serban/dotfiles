@@ -30,6 +30,10 @@ hs.hotkey.bind('⌃⌥⇧⌘', '1', function() hs.window.focusedWindow():moveToS
 hs.hotkey.bind('⌃⌥⇧⌘', '2', function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
 hs.hotkey.bind('⌃⌥⇧⌘', '3', function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')) end) -- Old Faithful
 
+hs.hotkey.bind('⌃⌥⇧⌘', 'f1', function() hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )); highlightMousePointer() end) -- Built-in Display
+hs.hotkey.bind('⌃⌥⇧⌘', 'f2', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end) -- Thunderbolt Display
+hs.hotkey.bind('⌃⌥⇧⌘', 'f3', function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')); highlightMousePointer() end) -- Old Faithful
+
 hs.hotkey.bind('⌃⌥⇧⌘', 'b', function() activate('Firefox.app') end)
 hs.hotkey.bind('⌃⌥⇧⌘', 'c', function() activate('Google Chrome.app') end)
 hs.hotkey.bind('⌃⌥⇧⌘', 'f', function() activate('Finder.app') end)
