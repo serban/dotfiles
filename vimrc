@@ -539,27 +539,21 @@ if filereadable("/usr/share/vim/google/google.vim")
   Glug blazedeps auto_filetypes=`['go']`
   Glug codefmt
   Glug codefmt-google
-  Glug corpweb
-  Glug fileswitch plugin[mappings]
-  Glug g4
+  Glug fileswitch
   Glug outline-window
-  " Glug relatedfiles plugin[mappings]
   Glug youcompleteme-google
-
-  autocmd FileType bzl AutoFormatBuffer buildifier
 
   " Disabling autoformatting for C++, protocol buffers, and Python because
   " clang-format and pyformat always format the whole file instead of just the
   " lines that have changed. See https://github.com/google/vim-codefmt/issues/9.
+  " Don't need it for Go because I have the vim-go plugin installed.
   "
+  " autocmd FileType go AutoFormatBuffer gofmt
   " autocmd FileType c,cpp AutoFormatBuffer clang-format
   " autocmd FileType proto AutoFormatBuffer clang-format
   " autocmd FileType python AutoFormatBuffer pyformat
+  autocmd FileType bzl AutoFormatBuffer buildifier
 
-  " I shouldn't need this since I have the vim-go plugin.
-  " autocmd FileType go AutoFormatBuffer gofmt
-
-  nnoremap <unique> <Leader>d :G4Diff <CR>
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
 
   nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
@@ -568,13 +562,14 @@ if filereadable("/usr/share/vim/google/google.vim")
   nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
   nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
 
-  nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
-  nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
-  nnoremap <unique> <Leader>cd :CorpWebDocFindFile <CR>
-  nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
-
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
+
+  " Glug corpweb
+  " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
+  " nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
+  " nnoremap <unique> <Leader>cd :CorpWebDocFindFile <CR>
+  " nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
 endif
 
 " ------------------------------------------------------------------------------
