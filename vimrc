@@ -299,7 +299,7 @@ endfunction
 " When textwidth is zero, the lesser of the screen width or 79 is used to wrap
 " code comments. See `:help autoformat` or `:help gq` for more.
 
-function EnableHardWrap()
+function SerbanWrapHard()
   if &textwidth == 0
     set textwidth=80
   endif
@@ -308,7 +308,7 @@ function EnableHardWrap()
   set nowrap
 endfunction
 
-function EnableHintWrap()
+function SerbanWrapHint()
   if &textwidth == 0
     set textwidth=80
   endif
@@ -317,13 +317,13 @@ function EnableHintWrap()
   set nowrap
 endfunction
 
-function EnableSoftWrap()
+function SerbanWrapSoft()
   set formatoptions-=t
   set colorcolumn=0
   set wrap
 endfunction
 
-function DisableWrap()
+function SerbanWrapNone()
   set formatoptions-=t
   set colorcolumn=0
   set nowrap
@@ -488,16 +488,17 @@ nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>p :call RemoveHttpScheme() <CR>
-nnoremap <unique> <Leader>s :set spell! <CR>
+nnoremap <unique> <Leader>sp :set spell! <CR>
 nnoremap <unique> <Leader>w :call RemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sm :call InsertModeline() <CR>
 nnoremap <unique> <Leader>sb :call ToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call ToggleColorcolumn() <CR>
-nnoremap <unique> <Leader>sh :call EnableHardWrap() <CR>
-nnoremap <unique> <Leader>si :call EnableHintWrap() <CR>
-nnoremap <unique> <Leader>ss :call EnableSoftWrap() <CR>
-nnoremap <unique> <Leader>sn :call DisableWrap() <CR>
 nnoremap <unique> <Leader>tt :TagbarToggle <CR>
+
+nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
+nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
+nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
+nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
 
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
