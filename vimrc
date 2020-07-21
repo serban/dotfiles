@@ -242,11 +242,6 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 
 " ------------------------------------------------------------------------------
-" ABBREVIATIONS
-
-iabbrev td TODO(serban):
-
-" ------------------------------------------------------------------------------
 " FUNCTIONS
 
 function SerbanInsertModeline()
@@ -362,6 +357,28 @@ function SerbanCurrentWrap()
     return 'NONE'
   endif
 endfunction
+
+" ------------------------------------------------------------------------------
+" EVENT HANDLERS
+
+" Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
+autocmd FileType cpp set commentstring=//\ \ %s iskeyword-=-
+autocmd FileType go set textwidth=100 tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+
+augroup serban-markdown
+  autocmd!
+  autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
+augroup end
+
+augroup serban-snippets
+  autocmd!
+  autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
+augroup end
+
+" ------------------------------------------------------------------------------
+" ABBREVIATIONS
+
+iabbrev td TODO(serban):
 
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
@@ -551,23 +568,6 @@ nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile 
 " nnoremap <unique> <Leader>cf :CorpWebCsFile <CR>
 " nnoremap <unique> <Leader>cd :CorpWebDocFindFile <CR>
 " nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
-
-" ------------------------------------------------------------------------------
-" EVENT HANDLERS
-
-" Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
-autocmd FileType cpp set commentstring=//\ \ %s iskeyword-=-
-autocmd FileType go set textwidth=100 tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
-
-augroup serban-markdown
-  autocmd!
-  autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
-augroup end
-
-augroup serban-snippets
-  autocmd!
-  autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
-augroup end
 
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
