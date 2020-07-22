@@ -288,11 +288,14 @@ function SerbanToggleColorColumn()
   endif
 endfunction
 
-function SerbanDisableLineNumbers()
-  NumbersDisable
-  set nonumber
-  set norelativenumber
-  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Disabled line numbers'
+function SerbanToggleLineNumbers()
+  if &number
+    NumbersDisable
+    set nonumber
+    set norelativenumber
+  else
+    NumbersEnable
+  endif
 endfunction
 
 " ------------------------------------------------------------------------------
@@ -553,11 +556,11 @@ nmap <unique> <Leader>n <Plug>MarkAllClear
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
-nnoremap <unique> <Leader>sd :call SerbanDisableLineNumbers() <CR>
 nnoremap <unique> <Leader>sm :call SerbanInsertModeline() <CR>
 
 nnoremap <unique> <Leader>tb :call SerbanToggleBackground() <CR>
 nnoremap <unique> <Leader>tc :call SerbanToggleColorColumn() <CR>
+nnoremap <unique> <Leader>tn :call SerbanToggleLineNumbers() <CR>
 nnoremap <unique> <Leader>ts :set spell! <CR>
 nnoremap <unique> <Leader>tt :TagbarToggle <CR>
 
