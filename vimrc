@@ -359,6 +359,46 @@ function SerbanCurrentWrap()
 endfunction
 
 " ------------------------------------------------------------------------------
+" INDENTATION FUNCTIONS
+
+" tabstop is the number of characters represented by a \t.
+" shiftwidth is the number of characters in a shift operation like << or >>.
+" softtabstop is the number of characters that a tab counts for.
+" expandtab inserts only spaces when the tab key is pressed.
+
+function SerbanIndentSpaces2()
+  set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+endfunction
+
+function SerbanIndentSpaces4()
+  set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
+endfunction
+
+function SerbanIndentSpaces8()
+  set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
+endfunction
+
+function SerbanIndentTabs2()
+  set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
+endfunction
+
+function SerbanIndentTabs4()
+  set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
+endfunction
+
+function SerbanIndentTabs8()
+  set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+endfunction
+
+" Mix tabs and spaces so that \t is 8 characters wide but indentation is aligned
+" at 4-character boundaries. Leading whitespace consists of any number of tabs
+" followed by 4 spaces if the start of the line is not aligned to an 8-character
+" boundary.
+function SerbanIndentMixed4()
+  set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
+endfunction
+
+" ------------------------------------------------------------------------------
 " EVENT HANDLERS
 
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
@@ -399,36 +439,13 @@ inoremap <unique> <F1> <ESC>
 nnoremap <unique> <F1> <ESC>
 vnoremap <unique> <F1> <ESC>
 
-" Tabstop is the number of characters represented by a \t
-" Shiftwidth is the amount of characters in a shift operation like << or >>
-" Softtabstop is the number of characters that a tab counts for
-" Expandtab will insert only spaces when the tab key is pressed
-
-" \t is 8 characters wide. Indents are 2 characters wide. Only use spaces.
-nnoremap <unique> <F2> :set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-
-" \t is 2 characters wide. Only use \t.
-nnoremap <unique> <F3> :set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab
-
-" \t is 8 characters wide. Indents are 4 characters wide. Only use spaces.
-nnoremap <unique> <F4> :set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
-
-" \t is 4 characters wide. Only use \t.
-nnoremap <unique> <F5> :set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab
-
-" \t is 8 characters wide. Indents are 8 characters wide. Only use spaces.
-nnoremap <unique> <F8> :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
-
-" \t is 8 characters wide. Only use \t.
-nnoremap <unique> <F9> :set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
-
-" \t is 8 characters wide. Indents are 4 characters wide. Mix tabs and spaces.
-"
-" Mix tabs and spaces so that tabs are 8 characters wide but indentation is
-" 4 spaces wide. Thus, whitespace will consist of any number of tabs
-" followed by four spaces if the start of the line is not aligned to an
-" eight-charater boundary.
-"nnoremap <F12> :set tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab
+nnoremap <unique>  <F2> :call SerbanIndentSpaces2() <CR>
+nnoremap <unique>  <F3> :call SerbanIndentTabs2() <CR>
+nnoremap <unique>  <F4> :call SerbanIndentSpaces4() <CR>
+nnoremap <unique>  <F5> :call SerbanIndentTabs4() <CR>
+nnoremap <unique>  <F8> :call SerbanIndentSpaces8() <CR>
+nnoremap <unique>  <F9> :call SerbanIndentTabs8() <CR>
+nnoremap <unique> <F12> :call SerbanIndentMixed4() <CR>
 
 " ------------------------------------------------------------------------------
 " CONTROL KEYS
