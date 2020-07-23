@@ -470,6 +470,9 @@ nnoremap <unique> <C-s> :update <CR>
 inoremap <unique> <C-s> <ESC>:update <CR>
 nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
 
+" TODO(serban): Does not work in tmux. See:
+" - https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
+" - https://stackoverflow.com/questions/38133250/cannot-get-control-arrow-keys-working-in-vim-through-tmux
 nnoremap <unique> <C-Left>  :tabmove -1 <CR>
 nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
@@ -478,18 +481,21 @@ nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
 nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
 nnoremap <unique> <Leader>e :EasyBuffer <CR>
 nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
-nnoremap <unique> <Leader>g :FileswitchEditGo
+nnoremap <unique> <Leader>g :FileswitchEditGo <CR>
 nnoremap <unique> <Leader>h :FileswitchEditH <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
-nnoremap <unique> <Leader>j :FileswitchEditJava
+nnoremap <unique> <Leader>j :FileswitchEditJava <CR>
 nnoremap <unique> <Leader>k :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>l :Marks <CR>
     nmap <unique> <Leader>m <Plug>MarkSet
     nmap <unique> <Leader>n <Plug>MarkAllClear
 nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
-nnoremap <unique> <Leader>p :FileswitchEditPy
+nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
 nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
+nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
 nnoremap <unique> <Leader>z :nohlsearch <CR>
+
+nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
 
 nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
