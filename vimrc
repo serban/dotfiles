@@ -167,7 +167,7 @@ endif
 " PLUGIN SETTINGS
 
 " CTRLP
-let g:ctrlp_map = '<Leader>f'
+let g:ctrlp_map = '<C-f>'
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
 let g:ctrlp_switch_buffer = ''
 let g:ctrlp_clear_cache_on_exit = 1  " NB: This calls ctrlp#clra() on exit. This clears all caches, even those of other running Vim sessions. Caches are only cleared if you invoke CtrlP during the Vim session.
@@ -194,8 +194,8 @@ let g:tagbar_zoomwidth = 0
 " ULTISNIPS
 let g:UltiSnipsExpandTrigger = '<C-Tab>'  " <Tab> works with Supertab but conflicts with YouCompleteMe
 " let g:UltiSnipsListSnippets = '<C-Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<C-f>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-b>'
+let g:UltiSnipsJumpForwardTrigger = '<C-Down>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-Up>'
 
 " VIM-GO
 let g:go_auto_sameids = 1
@@ -428,20 +428,25 @@ iabbrev td TODO(serban):
 
 let mapleader = " "
 
-" Disable man pages.
+" Disable man pages
 nnoremap <unique> K <Nop>
 
-" Disable Ex-mode.
-nnoremap <unique> Q <Nop>
+" Disable Ex-mode
+nnoremap <unique> Q  <Nop>
 nnoremap <unique> gQ <Nop>
 nnoremap <unique> q: <Nop>
 
-" Remap F1 to ESCAPE for keyboards where the Escape key is far away.
-cnoremap <unique> <F1> <ESC>
-inoremap <unique> <F1> <ESC>
-nnoremap <unique> <F1> <ESC>
-vnoremap <unique> <F1> <ESC>
+" Arrow keys move the cursor up and down a display line instead of a physical
+" line. Useful when soft-wrapping text.
+nnoremap <unique> <Up>   gk
+inoremap <unique> <Up>   <ESC>gka
+nnoremap <unique> <Down> gj
+inoremap <unique> <Down> <ESC>gja
 
+cnoremap <unique>  <F1> <ESC>
+inoremap <unique>  <F1> <ESC>
+nnoremap <unique>  <F1> <ESC>
+vnoremap <unique>  <F1> <ESC>
 nnoremap <unique>  <F2> :call SerbanIndentSpaces2() <CR>
 nnoremap <unique>  <F3> :call SerbanIndentTabs2() <CR>
 nnoremap <unique>  <F4> :call SerbanIndentSpaces4() <CR>
@@ -450,138 +455,58 @@ nnoremap <unique>  <F8> :call SerbanIndentSpaces8() <CR>
 nnoremap <unique>  <F9> :call SerbanIndentTabs8() <CR>
 nnoremap <unique> <F12> :call SerbanIndentMixed4() <CR>
 
-" ------------------------------------------------------------------------------
-" CONTROL KEYS
-
-" + Indicates that I use the built-in command.
-" - Indicates that I don't use the built-in command.
-" * Indicatates I've remapped it below.
-
-"   * <C-a>
-"   * <C-b>  Mapped by UltiSnips above
-"   * <C-c>
-"   + <C-d>
-"   + <C-e>
-"   * <C-f>  Mapped by UltiSnips above
-"   * <C-g>
-"   * <C-h>
-"   + <C-i>
-"   * <C-j>
-"   * <C-k>
-"   * <C-l>
-"   * <C-m>
-"   * <C-n>
-"   + <C-o>
-"   * <C-p>
-"   * <C-q>  Must set `stty -ixon` for this to work
-"   + <C-r>
-"   * <C-s>  Must set `stty -ixon` for this to work
-"   + <C-t>
-"   + <C-u>
-"   + <C-v>
-"   + <C-w>
-"   * <C-x>
-"   + <C-y>
-"   + <C-z>
-
-" Write the file if it has been modified
+nnoremap <unique> <C-a> :botright vsplit <CR>
+nnoremap <unique> <C-b> :tabnew <CR>
+nnoremap <unique> <C-c> :close <CR>
+nnoremap <unique> <C-g> :split <CR>
+nnoremap <unique> <C-h> :wincmd h <CR>
+nnoremap <unique> <C-j> :wincmd j <CR>
+nnoremap <unique> <C-k> :wincmd k <CR>
+nnoremap <unique> <C-l> :wincmd l <CR>
+nnoremap <unique> <C-n> :tabnext <CR>
+nnoremap <unique> <C-p> :tabprevious <CR>
+nnoremap <unique> <C-q> :quitall <CR>
 nnoremap <unique> <C-s> :update <CR>
 inoremap <unique> <C-s> <ESC>:update <CR>
+nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
 
-" Open a new window at the far right and full height of the Vim window
-" TODO(serban): <C-m> is the same as <Enter> (ugh!)
-nnoremap <unique> <C-m> :botright vsplit <CR>
+nnoremap <unique> <C-Left>  :tabmove -1 <CR>
+nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
-" Delete buffer without closing window
-nnoremap <unique> <C-q> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
-
-" Open a new window
-nnoremap <unique> <C-g> :split <CR>
-
-" Switch to the window to the left
-nnoremap <unique> <C-h> :wincmd h <CR>
-
-" Switch to the window below
-nnoremap <unique> <C-j> :wincmd j <CR>
-
-" Switch to the window above
-nnoremap <unique> <C-k> :wincmd k <CR>
-
-" Switch to the window to the right
-nnoremap <unique> <C-l> :wincmd l <CR>
-
-" Close the current window
-nnoremap <unique> <C-c> :close <CR>
-
-" Open a new tab
-nnoremap <unique> <C-a> :tabedit <CR>
-
-" Switch to the previous tab
-nnoremap <unique> <C-p> :tabprevious <CR>
-
-" Switch to the next tab
-nnoremap <unique> <C-n> :tabnext <CR>
-
-" Close the current tab
-nnoremap <unique> <C-x> :tabclose <CR>
-
-" Arrow keys move the cursor up and down a display line instead of a physical
-" line. Useful when soft-wrapping text.
-nnoremap <unique> <Up> gk
-inoremap <unique> <Up> <ESC>gka
-nnoremap <unique> <Down> gj
-inoremap <unique> <Down> <ESC>gja
-
-" Move the current tab to the left
-nnoremap <unique> <Leader>j :tabmove -1 <CR>
-
-" Move the current tab to the right
-nnoremap <unique> <Leader>k :tabmove +1 <CR>
-
-" Clear the highlighting for the current search
+nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
+nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
+nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
+nnoremap <unique> <Leader>e :EasyBuffer <CR>
+nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
+nnoremap <unique> <Leader>g :FileswitchEditGo
+nnoremap <unique> <Leader>h :FileswitchEditH <CR>
+nnoremap <unique> <Leader>i :GoImports <CR>
+nnoremap <unique> <Leader>j :FileswitchEditJava
+nnoremap <unique> <Leader>k :CtrlPBuffer <CR>
+nnoremap <unique> <Leader>l :Marks <CR>
+    nmap <unique> <Leader>m <Plug>MarkSet
+    nmap <unique> <Leader>n <Plug>MarkAllClear
+nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
+nnoremap <unique> <Leader>p :FileswitchEditPy
+nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
 nnoremap <unique> <Leader>z :nohlsearch <CR>
 
-nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
-nnoremap <unique> <Leader>g :YcmCompleter GoToDefinition <CR>
-
-nnoremap <unique> <Leader>i :GoImports <CR>
-
-nnoremap <unique> <Leader>e :EasyBuffer <CR>
-nnoremap <unique> <Leader>q :CtrlPBuffer <CR>
-
-nnoremap <unique> <Leader>l :Marks <CR>
-nmap <unique> <Leader>m <Plug>MarkSet
-nmap <unique> <Leader>n <Plug>MarkAllClear
+nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
+nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
-nnoremap <unique> <Leader>sm :call SerbanInsertModeline() <CR>
-
-nnoremap <unique> <Leader>tb :call SerbanToggleBackground() <CR>
-nnoremap <unique> <Leader>tc :call SerbanToggleColorColumn() <CR>
-nnoremap <unique> <Leader>tn :call SerbanToggleLineNumbers() <CR>
-nnoremap <unique> <Leader>ts :set spell! <CR>
-nnoremap <unique> <Leader>tt :TagbarToggle <CR>
+nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
+nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
+nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
+nnoremap <unique> <Leader>ss :set spell! <CR>
+nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
 nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
 nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
 nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
 nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
-
-" ------------------------------------------------------------------------------
-" GOOGLE MAPPINGS
-
-nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
-
-nnoremap <unique> <Leader>fb :FileswitchEditBUILD <CR>
-nnoremap <unique> <Leader>fh :FileswitchEditH <CR>
-nnoremap <unique> <Leader>fc :FileswitchEditCC <CR>
-nnoremap <unique> <Leader>ft :FileswitchEditTest <CR>
-nnoremap <unique> <Leader>fu :FileswitchEditUnitTest <CR>
-
-nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
-nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
