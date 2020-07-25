@@ -34,6 +34,17 @@
       "Jobs to Ignore": [],
       "Option Key Sends": 2,
       "Right Option Key Sends": 2,
+      "Use libtickit protocol" : true,
+      "Keyboard Map" : {
+        "0x32-0x40000" : {
+          "Action" : 10,
+          "Text" : "[50;5u"
+        },
+        "0x36-0x40000" : {
+          "Action" : 10,
+          "Text" : "[54;5u"
+        }
+      },
       "Guid": "4182AEDA-3396-4518-B3B2-CF3D0A9FC0F9"
     }
   ]
