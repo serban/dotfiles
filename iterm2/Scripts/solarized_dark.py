@@ -55,12 +55,6 @@ async def main(connection):
   profile_delta.set_ansi_14_color(base1)
   profile_delta.set_ansi_15_color(base3)
 
-  profile_delta.set_triggers([
-      {'regex': '# waiting for changes', 'action': 'HighlightTrigger'},
-      {'regex': '# waiting for changes', 'action': 'MarkTrigger', 'parameter': 0},
-      {'regex': '# waiting for changes', 'action': 'BounceTrigger', 'parameter': 1},
-  ])
-
   app = await iterm2.async_get_app(connection)
   session = app.current_terminal_window.current_tab.current_session
   await session.async_set_profile_properties(profile_delta)
