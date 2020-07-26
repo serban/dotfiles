@@ -1,3 +1,7 @@
+# See defaultValueMap in:
+# https://github.com/gnachman/iTerm2/blob/master/sources/ITAddressBookMgr.h
+# https://github.com/gnachman/iTerm2/blob/master/sources/iTermProfilePreferences.m
+
 import iterm2
 
 # https://stackoverflow.com/questions/29643352/converting-hex-to-rgb-value-in-python
@@ -32,8 +36,8 @@ async def main(connection):
   profile_delta.set_link_color(blue)
   profile_delta.set_cursor_color(base0)
   profile_delta.set_cursor_text_color(base03)
-  profile_delta.set_selected_text_color(base2)
   profile_delta.set_selection_color(magenta)
+  profile_delta.set_selected_text_color(base2)
   profile_delta.set_ansi_0_color(base02)
   profile_delta.set_ansi_1_color(red)
   profile_delta.set_ansi_2_color(green)
