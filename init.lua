@@ -34,6 +34,8 @@ hs.hotkey.bind('⌃⌥⇧⌘', 'f1', function() hs.mouse.setRelativePosition(hs.
 hs.hotkey.bind('⌃⌥⇧⌘', 'f2', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end) -- Thunderbolt Display
 hs.hotkey.bind('⌃⌥⇧⌘', 'f3', function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')); highlightMousePointer() end) -- Old Faithful
 
+hs.hotkey.bind('⌃⌥⇧⌘', 'f8', function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
+
 hs.hotkey.bind('⌃⌥⇧⌘', 'b', function() activate('Firefox.app') end)
 hs.hotkey.bind('⌃⌥⇧⌘', 'c', function() activate('Google Chrome.app') end)
 hs.hotkey.bind('⌃⌥⇧⌘', 'f', function() activate('Finder.app') end)
