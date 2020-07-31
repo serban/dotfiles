@@ -12,19 +12,20 @@ end
 
 hs.window.animationDuration = 0
 
-hs.grid.setGrid('7x2')
+hs.grid.setGrid('7x9')
 hs.grid.setMargins('6x6')
 
-hs.hotkey.bind('⌃⌥⇧⌘', "'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 2}) end) -- Maximize
-hs.hotkey.bind('⌃⌥⇧⌘', ';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 2}) end) -- Center
-hs.hotkey.bind('⌃⌥⇧⌘', 'left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 2}) end) -- Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 2}) end) -- Right
-hs.hotkey.bind('⌃⌥⇧⌘', 'up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 1}) end) -- Top
-hs.hotkey.bind('⌃⌥⇧⌘', 'down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 7, 1}) end) -- Bottom
-hs.hotkey.bind('⌃⌥⇧⌘', 'f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 1}) end) -- Top Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 1}) end) -- Top Right
-hs.hotkey.bind('⌃⌥⇧⌘', 'f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 3, 1}) end) -- Bottom Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 1, 4, 1}) end) -- Bottom Right
+hs.hotkey.bind('⌃⌥⇧⌘', "'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
+hs.hotkey.bind('⌃⌥⇧⌘', '\\',    function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
+hs.hotkey.bind('⌃⌥⇧⌘', ';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
+hs.hotkey.bind('⌃⌥⇧⌘', 'left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
+hs.hotkey.bind('⌃⌥⇧⌘', 'right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
+hs.hotkey.bind('⌃⌥⇧⌘', 'up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 5}) end) -- Top
+hs.hotkey.bind('⌃⌥⇧⌘', 'down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 7, 4}) end) -- Bottom
+hs.hotkey.bind('⌃⌥⇧⌘', 'f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 5}) end) -- Top Left
+hs.hotkey.bind('⌃⌥⇧⌘', 'f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
+hs.hotkey.bind('⌃⌥⇧⌘', 'f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
+hs.hotkey.bind('⌃⌥⇧⌘', 'f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
 
 hs.hotkey.bind('⌃⌥⇧⌘', '1', function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
 hs.hotkey.bind('⌃⌥⇧⌘', '2', function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
