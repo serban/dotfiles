@@ -38,20 +38,19 @@ def parse_exclude_file(path):
 
 def parse_command_line_arguments():
   parser = argparse.ArgumentParser(
-      description='Count the number of days until a target date',
-      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+      description='Count the number of days until a target date')
 
   parser.add_argument(
-      'target_date_string', metavar='DATE',
+      'date',
       help='The target date, YYYY-MM-DD')
 
   parser.add_argument(
-      '-w', '--exclude_weekends',
+      '-w', '--exclude-weekends', dest='exclude_weekends',
       action='store_true',
       help='Do not count Saturdays and Sundays')
 
   parser.add_argument(
-      '-e', '--exclude', metavar='PATH', dest='exclude_paths',
+      '-e', '--exclude', dest='exclude_paths', metavar='PATH',
       default=[], action='append',
       help='A list of dates to exclude')
 
@@ -61,14 +60,14 @@ def parse_command_line_arguments():
 def main():
   args = parse_command_line_arguments()
 
-  exclude_strings = []
+  exclude = []
   for p in args.exclude_paths:
-    exclude_strings.extend(parse_exclude_file(os.path.expanduser(p)))
+    exclude.extend(parse_exclude_file(os.path.expanduser(p)))
 
-  target_date = datetime.datetime.strptime(args.target_date_string,
-                                           '%Y-%m-%d').date()
-  exclude_dates = set([datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in
-                       exclude_strings])
+  target_date = datetime.datetime.strptime(
+      args.date, '%Y-%m-%d').date()
+  exclude_dates = set(
+      [datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in exclude])
 
   print(count_days(datetime.date.today(), target_date,
                    args.exclude_weekends, exclude=exclude_dates))
