@@ -260,9 +260,13 @@ function SerbanInsertModeline()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
-function SerbanRemoveTrailingWhitespace()
-  silent! %s/\v\s+$//g
-  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
+function SerbanFormatBullets()
+  silent! %s/\v^[+-] /* /g
+  silent! %s/\v^  [*-] /  + /g
+  silent! %s/\v^    [*+] /    - /g
+  silent! %s/\v^      [*-] /      + /g
+  silent! %s/\v^        [*+] /        - /g
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted bullets'
 endfunction
 
 function SerbanRemoveHttpScheme()
@@ -270,6 +274,11 @@ function SerbanRemoveHttpScheme()
   silent! %s,\vhttp://cl/,cl/,g
   silent! %s,\vhttp://go/,go/,g
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed http:// from shortlinks'
+endfunction
+
+function SerbanRemoveTrailingWhitespace()
+  silent! %s/\v\s+$//g
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
 endfunction
 
 function SerbanToggleBackground()
@@ -415,6 +424,7 @@ augroup end
 
 augroup serban-snippets
   autocmd!
+  autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
 augroup end
 
@@ -500,6 +510,7 @@ nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
 nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
+nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
