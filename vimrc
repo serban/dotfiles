@@ -505,6 +505,8 @@ nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
 nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
 nnoremap <unique> <Leader>z :nohlsearch <CR>
 
+nnoremap <unique> <Leader>ac :Tabularize /:\zs<CR>
+nnoremap <unique> <Leader>ae :Tabularize /=<CR>
 nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
 
 nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
