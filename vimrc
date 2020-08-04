@@ -269,6 +269,11 @@ function SerbanFormatBullets()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted bullets'
 endfunction
 
+function SerbanFormatShortlinks()
+  silent! %s,\vb/\d+\zs \ze[^-], - ,g
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted shortlinks'
+endfunction
+
 function SerbanRemoveHttpScheme()
   silent! %s,\vhttp://b/,b/,g
   silent! %s,\vhttp://cl/,cl/,g
@@ -426,6 +431,7 @@ augroup serban-snippets
   autocmd!
   autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
+  autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatShortlinks()
 augroup end
 
 " ------------------------------------------------------------------------------
@@ -513,6 +519,7 @@ nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile 
 nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
 nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
+nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
 nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
 nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
