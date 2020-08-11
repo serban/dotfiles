@@ -2,19 +2,18 @@
   "Profiles": [
     {
       "Name": "Serban Base",
-      "Badge Text": "Base",
-      "Allow Title Setting": true,
+      "Allow Title Setting" : true,
       "Use Tab Color": false,
       "Use Cursor Guide": false,
       "Use Underline Color": false,
-      "Cursor Type": 2,
+      "Cursor Type" : 2,
       "Blinking Cursor": false,
       "Use Bold Font": false,
       "Use Bright Bold": true,
       "Use Italic Font": true,
       "Blink Allowed": false,
       "Thin Strokes": 4,
-      "Normal Font": "Monaco 15",
+      "Normal Font" : "Monaco 15",
       "ASCII Anti Aliased": true,
       "ASCII Ligatures": false,
       "Unlimited Scrollback": true,
@@ -34,15 +33,15 @@
       "Jobs to Ignore": [],
       "Option Key Sends": 2,
       "Right Option Key Sends": 2,
-      "Use libtickit protocol": true,
-      "Keyboard Map": {
-        "0x32-0x40000": {
-          "Action": 10,
-          "Text": "[50;5u"
+      "Use libtickit protocol" : true,
+      "Keyboard Map" : {
+        "0x32-0x40000" : {
+          "Action" : 10,
+          "Text" : "[50;5u"
         },
-        "0x36-0x40000": {
-          "Action": 10,
-          "Text": "[54;5u"
+        "0x36-0x40000" : {
+          "Action" : 10,
+          "Text" : "[54;5u"
         }
       },
       "Guid": "4182AEDA-3396-4518-B3B2-CF3D0A9FC0F9"
