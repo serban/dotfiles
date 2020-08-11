@@ -5,7 +5,7 @@ async def main(connection):
   profile_delta.set_normal_font('Monaco 15')
 
   app = await iterm2.async_get_app(connection)
-  session = app.current_terminal_window.current_tab.current_session
+  session = app.current_window.current_tab.current_session
   await session.async_set_profile_properties(profile_delta)
 
 if __name__ == '__main__':
