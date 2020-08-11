@@ -1,0 +1,13 @@
+{
+  "Profiles": [
+    {
+      "Name": "monk",
+      "Dynamic Profile Parent Name": "Serban Solarized Light",
+      "Badge Text": "",
+      "Title Components": 64,
+      "Custom Command": "Yes",
+      "Command": "ssh monk",
+      "Guid": "20AC1D1F-5956-444C-B7C9-5094420117DA"
+    }
+  ]
+}
