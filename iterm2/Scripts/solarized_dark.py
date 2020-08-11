@@ -27,7 +27,6 @@ async def main(connection):
   green   = iterm2.Color(*hex_to_rgb('859900'))
 
   profile_delta = iterm2.LocalWriteOnlyProfile()
-  profile_delta.set_name('Serban Solarized Dark')
   profile_delta.set_badge_text('*')
 
   profile_delta.set_background_color(base03)
@@ -56,8 +55,11 @@ async def main(connection):
   profile_delta.set_ansi_15_color(base3)
 
   app = await iterm2.async_get_app(connection)
-  session = app.current_terminal_window.current_tab.current_session
-  await session.async_set_profile_properties(profile_delta)
+
+  for window in app.windows:
+    for tab in window.tabs:
+      for session in tab.sessions:
+        await session.async_set_profile_properties(profile_delta)
 
 if __name__ == '__main__':
   iterm2.run_until_complete(main)
