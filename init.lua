@@ -3,6 +3,28 @@ local function activate(name)
   hs.application.frontmostApplication():activate(true)
 end
 
+local function stackApplicationWindows()
+  local app = hs.application.frontmostApplication()
+  app:activate(true)
+
+  for _, s in pairs(hs.screen.allScreens()) do
+    local windows = {}
+    for _, w in pairs(app:visibleWindows()) do
+      if w:screen() == s then
+        table.insert(windows, w)
+      end
+    end
+
+    local l = #windows
+    if l > 1 then
+      for i, w in ipairs(windows) do
+        hs.grid.set(w, {0, 0, 5, 7})
+        w:setTopLeft(s:frame() + {6 + 43*(l-i), 6 + 43*(l-i)})
+      end
+    end
+  end
+end
+
 local function highlightMousePointer()
   local m = hs.mouse.getAbsolutePosition()
   hs.canvas.new({x=m.x-150, y=m.y-150, w=300, h=300}):appendElements({
@@ -26,6 +48,8 @@ hs.hotkey.bind('⌃⌥⇧⌘', 'f9',    function() hs.grid.set(hs.window.focused
 hs.hotkey.bind('⌃⌥⇧⌘', 'f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
 hs.hotkey.bind('⌃⌥⇧⌘', 'f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
 hs.hotkey.bind('⌃⌥⇧⌘', 'f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
+
+hs.hotkey.bind('⌃⌥⇧⌘', '-', function() stackApplicationWindows() end)
 
 hs.hotkey.bind('⌃⌥⇧⌘', '1', function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
 hs.hotkey.bind('⌃⌥⇧⌘', '2', function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
