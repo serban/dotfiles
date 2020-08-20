@@ -17,3 +17,7 @@
 
 [up]>[down]
 [down]>[up]
+
+[lp-tab]>[lwin]
+[mp-kpshf]>[lctrl]
+[rp-kpent]>[hyper]
