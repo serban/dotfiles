@@ -39,6 +39,7 @@ hs.grid.setMargins('6x6')
 
 hs.hotkey.bind('⌃⌥⇧⌘', "'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
 hs.hotkey.bind('⌃⌥⇧⌘', '\\',    function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
+hs.hotkey.bind('⌃⌥⇧⌘', '0',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
 hs.hotkey.bind('⌃⌥⇧⌘', ';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
 hs.hotkey.bind('⌃⌥⇧⌘', 'left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
 hs.hotkey.bind('⌃⌥⇧⌘', 'right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
