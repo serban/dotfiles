@@ -1,3 +1,19 @@
+hs.window.animationDuration = 0
+
+hs.grid.setGrid('7x9')
+hs.grid.setMargins('6x6')
+
+local modal = hs.hotkey.modal.new('⌘', 'e', 'Hotkey')
+
+function modal:entered()
+  hs.timer.doAfter(1, function() modal:exit() end)
+end
+
+local function bind(key, fn)
+  hs.hotkey.bind('⌃⌥⇧⌘', key, fn)
+  modal:bind('', key, function() fn(); modal:exit() end)
+end
+
 local function activate(name)
   hs.application.launchOrFocus(name)
   hs.application.frontmostApplication():activate(true)
@@ -32,55 +48,50 @@ local function highlightMousePointer()
   }):show():delete(0.75)
 end
 
-hs.window.animationDuration = 0
+bind("'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
+bind('\\',    function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
+bind('0',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
+bind(';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
+bind('left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
+bind('right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
+bind('up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 5}) end) -- Top
+bind('down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 7, 4}) end) -- Bottom
+bind('f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 5}) end) -- Top Left
+bind('f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
+bind('f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
+bind('f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
 
-hs.grid.setGrid('7x9')
-hs.grid.setMargins('6x6')
+bind('-', function() stackApplicationWindows() end)
 
-hs.hotkey.bind('⌃⌥⇧⌘', "'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
-hs.hotkey.bind('⌃⌥⇧⌘', '\\',    function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
-hs.hotkey.bind('⌃⌥⇧⌘', '0',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
-hs.hotkey.bind('⌃⌥⇧⌘', ';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
-hs.hotkey.bind('⌃⌥⇧⌘', 'left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
-hs.hotkey.bind('⌃⌥⇧⌘', 'up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 5}) end) -- Top
-hs.hotkey.bind('⌃⌥⇧⌘', 'down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 7, 4}) end) -- Bottom
-hs.hotkey.bind('⌃⌥⇧⌘', 'f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 5}) end) -- Top Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
-hs.hotkey.bind('⌃⌥⇧⌘', 'f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
-hs.hotkey.bind('⌃⌥⇧⌘', 'f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
+bind('1', function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
+bind('2', function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
+bind('3', function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')) end) -- Old Faithful
 
-hs.hotkey.bind('⌃⌥⇧⌘', '-', function() stackApplicationWindows() end)
+bind('f1', function() hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )); highlightMousePointer() end) -- Built-in Display
+bind('f2', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end) -- Thunderbolt Display
+bind('f3', function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')); highlightMousePointer() end) -- Old Faithful
 
-hs.hotkey.bind('⌃⌥⇧⌘', '1', function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
-hs.hotkey.bind('⌃⌥⇧⌘', '2', function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
-hs.hotkey.bind('⌃⌥⇧⌘', '3', function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')) end) -- Old Faithful
+bind('f8', function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
 
-hs.hotkey.bind('⌃⌥⇧⌘', 'f1', function() hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )); highlightMousePointer() end) -- Built-in Display
-hs.hotkey.bind('⌃⌥⇧⌘', 'f2', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end) -- Thunderbolt Display
-hs.hotkey.bind('⌃⌥⇧⌘', 'f3', function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')); highlightMousePointer() end) -- Old Faithful
-
-hs.hotkey.bind('⌃⌥⇧⌘', 'f8', function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
-
-hs.hotkey.bind('⌃⌥⇧⌘', 'b', function() activate('Firefox.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'c', function() activate('Google Chrome.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'f', function() activate('Finder.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'g', function() activate('Chat.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'h', function() activate('Audio Hijack.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'i', function() activate('Sublime Text.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'j', function() activate('Sublime Merge.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'k', function() activate('Activity Monitor.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'l', function() activate('Spotify.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'm', function() activate('Messages.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'n', function() activate('Obsidian.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'o', function() activate('OmniFocus.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'p', function() activate('Photo Booth.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'q', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'r', function() activate('Calendar.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 's', function() activate('Safari.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 't', function() activate('iTerm.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'u', function() activate('UlyssesMac.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'v', function() activate('MacVim.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'x', function() activate('Signal.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'y', function() activate('Dictionary.app') end)
-hs.hotkey.bind('⌃⌥⇧⌘', 'z', function() highlightMousePointer() end)
+bind('b', function() activate('Firefox.app') end)
+bind('c', function() activate('Google Chrome.app') end)
+bind('f', function() activate('Finder.app') end)
+bind('g', function() activate('Chat.app') end)
+bind('h', function() activate('Audio Hijack.app') end)
+bind('i', function() activate('Sublime Text.app') end)
+bind('j', function() activate('Sublime Merge.app') end)
+bind('k', function() activate('Activity Monitor.app') end)
+bind('l', function() activate('Spotify.app') end)
+bind('m', function() activate('Messages.app') end)
+bind('n', function() activate('Obsidian.app') end)
+bind('o', function() activate('OmniFocus.app') end)
+bind('p', function() activate('Photo Booth.app') end)
+bind('q', function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end)
+bind('r', function() activate('Calendar.app') end)
+bind('s', function() activate('Safari.app') end)
+bind('t', function() activate('iTerm.app') end)
+bind('u', function() activate('UlyssesMac.app') end)
+bind('v', function() activate('MacVim.app') end)
+bind('x', function() activate('Signal.app') end)
+bind('y', function() activate('Dictionary.app') end)
+bind('z', function() highlightMousePointer() end)
