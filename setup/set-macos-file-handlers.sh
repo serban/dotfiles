@@ -55,6 +55,7 @@ duti -s org.vim.MacVim              .rb                                 all
 duti -s org.vim.MacVim              .rst                                all
 duti -s org.vim.MacVim              .s                                  all
 duti -s org.vim.MacVim              .sh                                 all
+duti -s org.vim.MacVim              .sql                                all
 duti -s org.vim.MacVim              .swift                              all
 duti -s org.vim.MacVim              .tex                                all
 duti -s org.vim.MacVim              .toml                               all

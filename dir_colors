@@ -120,6 +120,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .s            00;32
 .scm          00;32
 .sh           00;32
+.sql          00;32
 .swift        00;32
 
 # HEADER FILES (Skinny Cyan)
