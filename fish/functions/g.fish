@@ -44,6 +44,19 @@ function g
   # Use GNU ls on macOS
   if type --quiet gls
     set binary gls
+
+    if test "$PWD" = "$HOME"
+      set args $args \
+          --hide=Applications \
+          --hide=Desktop \
+          --hide=Documents \
+          --hide=Downloads \
+          --hide=Library \
+          --hide=Movies \
+          --hide=Music \
+          --hide=Pictures \
+          --hide=Public
+    end
   end
 
   env LC_COLLATE=C $binary $args | less
