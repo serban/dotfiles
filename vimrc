@@ -17,7 +17,6 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'inkarkat/vim-ingo-library'
 Plugin 'inkarkat/vim-mark'
@@ -42,6 +41,7 @@ Plugin 'SirVer/ultisnips'
 
 if !filereadable("/usr/share/vim/google/google.vim")
   Plugin 'ervandew/supertab'
+  Plugin 'fatih/vim-go'
 endif
 
 call vundle#end()
