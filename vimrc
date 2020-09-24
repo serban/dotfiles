@@ -234,6 +234,11 @@ let g:mwDefaultHighlightingPalette = [
 \   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkGreen',   'guibg':'#859900' },
 \]
 
+" VIM-MARKDOWN
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
+
 " YOUCOMPLETEME
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
