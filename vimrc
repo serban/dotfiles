@@ -156,6 +156,19 @@ set ttymouse=sgr                    " Support mouse past the 223rd column
 
 set autochdir                       " Keep the current directory in sync with the folder containing the open file
 
+" Vim sets `background` on startup based on the terminal's background color.
+" This can sometimes result in Vim's theme being the opposite of the terminal's
+" (light instead of dark or dark instead of light). When I want to toggle
+" between light and dark themes in the terminal, I change the terminal colors in
+" iTerm2 instead of toggling Vim's `background` setting. The Vim Solarized color
+" scheme matches correctly with the terminal colors when `background=dark`, so
+" peg the value here. See:
+"   - :help 'background'
+"   - :help t_RB
+"   - :help v:termrbgresp
+"   - https://vi.stackexchange.com/questions/16951/how-to-set-vims-background-based-on-terminals-background-colour
+set background=dark
+
 " Enable bracketed paste inside tmux. See :help xterm-bracketed-paste
 if &term =~ "screen"
   let &t_BE = "\e[?2004h"
