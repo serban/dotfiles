@@ -526,6 +526,7 @@ nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
 nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
 nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
+nnoremap <unique> <Leader>sl :set list! <CR>
 nnoremap <unique> <Leader>ss :set spell! <CR>
 nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
@@ -533,6 +534,10 @@ nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
 nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
 nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
 nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
+
+nnoremap <unique> <Leader>1 :set guifont=Monaco:h15 <CR>
+nnoremap <unique> <Leader>2 :set guifont=Monaco:h18 <CR>
+nnoremap <unique> <Leader>3 :set guifont=Monaco:h24 <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
