@@ -28,6 +28,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'troydm/easybuffer.vim'
 
 " macOS: UltiSnips can crash MacVim on startup if it's linked against the wrong
