@@ -436,6 +436,13 @@ augroup serban-snippets
   autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatShortlinks()
 augroup end
 
+augroup serban-text
+  autocmd!
+  autocmd BufWritePre ~/text/*.md silent call SerbanFormatBullets()
+  autocmd BufWritePre ~/text/*.md silent call SerbanRemoveHttpScheme()
+  autocmd BufWritePre ~/text/*.md silent call SerbanFormatShortlinks()
+augroup end
+
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
