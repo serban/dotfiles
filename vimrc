@@ -419,8 +419,10 @@ endfunction
 " EVENT HANDLERS
 
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
-autocmd FileType cpp set commentstring=//\ \ %s iskeyword-=-
-autocmd FileType go set textwidth=100 tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+autocmd FileType cpp    set commentstring=//\ \ %s iskeyword-=-
+autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist colorcolumn=81,101,121
+autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType swift  set textwidth=100
 
 augroup serban-markdown
   autocmd!
