@@ -106,6 +106,16 @@ function mkg --argument-names client
   end
 end
 
+function mcd
+  tmux list-panes -a \
+      -f '#{==:2,#{e|+:#{==:#{pane_current_command},fish},#{m:*/cloud/*/google3*,#{pane_current_path}}}}' \
+      -F '#{pane_id}' | sort --unique \
+      | while read --line pane
+    tmux send-keys -t $pane 'cd . # mcd '
+    echo "Sent keys to $pane"
+  end
+end
+
 function serban_complete_mas
   for dir in (find $HOME/src -mindepth 1 -maxdepth 1 -type d)
     echo (string split / $dir)[-1]
