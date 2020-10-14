@@ -77,8 +77,6 @@ endif
 " ------------------------------------------------------------------------------
 " SETTINGS
 
-colorscheme solarized
-
 set title                           " Set the terminal title to something appropriate (like the filename being edited)
 set helpheight=80                   " Set the minimum window height for help windows
 set winheight=20                    " Set the minimum window height for split windows
@@ -93,6 +91,7 @@ set laststatus=2                    " Always show the status bar (it tells us th
 set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
+set fillchars=vert:│                " Use a box-drawing character to get a clean vertical line between splits
 set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has("gui_macvim")
@@ -294,6 +293,23 @@ function SerbanFormatShortlinks()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted shortlinks'
 endfunction
 
+function SerbanHighlight()
+  " NAME    ANSI  NOTES
+  " -------------------------------
+  " base03     8  Background Color
+  " base02     0  Bar Color
+  " base01    10
+  " base00    11
+  " base0     12  Foreground Color
+  " base1     14
+  " base2      7
+  " base3     15
+  " magenta    5
+  highlight VertSplit    cterm=none ctermbg=8 ctermfg=0
+  highlight StatusLine   cterm=none ctermbg=5 ctermfg=8
+  highlight StatusLineNC cterm=none ctermbg=0 ctermfg=12
+endfunction
+
 function SerbanRemoveHttpScheme()
   silent! %s,\vhttp://b/,b/,g
   silent! %s,\vhttp://cl/,cl/,g
@@ -444,6 +460,11 @@ autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nol
 autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift  set textwidth=100
 
+augroup serban-highlight
+  autocmd!
+  autocmd ColorScheme solarized silent call SerbanHighlight()
+augroup end
+
 augroup serban-markdown
   autocmd!
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
@@ -462,6 +483,11 @@ augroup serban-text
   autocmd BufWritePre ~/text/*.md silent call SerbanRemoveHttpScheme()
   autocmd BufWritePre ~/text/*.md silent call SerbanFormatShortlinks()
 augroup end
+
+" ------------------------------------------------------------------------------
+" COLORS
+
+colorscheme solarized
 
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
