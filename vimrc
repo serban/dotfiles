@@ -75,6 +75,8 @@ if filereadable("/usr/share/vim/google/google.vim")
   " autocmd FileType proto AutoFormatBuffer clang-format
   " autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType bzl AutoFormatBuffer buildifier
+
+  autocmd FileType go setlocal textwidth=100 colorcolumn=+1,121,141
 endif
 
 " ------------------------------------------------------------------------------
@@ -464,7 +466,7 @@ endfunction
 
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
 autocmd FileType cpp    set commentstring=//\ \ %s iskeyword-=-
-autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist colorcolumn=81,101,121
+autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift  set textwidth=100
 
