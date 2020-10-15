@@ -85,6 +85,7 @@ set tabpagemax=100                  " Set the maximum number of tabs that can be
 set splitbelow                      " When horizontally splitting a window, insert the new window below the current one
 set splitright                      " When vertically splitting a window, insert the new window to the right of the current one
 set number                          " Show line numbers
+set signcolumn=number               " Show signs in the number column instead of the sign column
 set ruler                           " Show the cursor position in the bottom right
 set showcmd                         " Show a partial command as it is being built
 set laststatus=2                    " Always show the status bar (it tells us the filename)
@@ -256,8 +257,8 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_complete_in_comments = 1
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_warning_symbol = '🟠'
+let g:ycm_error_symbol = '🔴'
 let g:ycm_auto_hover = ''
 
 " ------------------------------------------------------------------------------
@@ -308,6 +309,7 @@ function SerbanHighlight()
   highlight VertSplit    cterm=none ctermbg=8 ctermfg=0
   highlight StatusLine   cterm=none ctermbg=5 ctermfg=8
   highlight StatusLineNC cterm=none ctermbg=0 ctermfg=12
+  highlight SignColumn   cterm=none ctermbg=8 ctermfg=12
 endfunction
 
 function SerbanRemoveHttpScheme()
