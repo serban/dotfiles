@@ -17,6 +17,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dag/vim-fish'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
 Plugin 'inkarkat/vim-ingo-library'
 Plugin 'inkarkat/vim-mark'
@@ -41,7 +42,6 @@ Plugin 'SirVer/ultisnips'
 
 if !filereadable("/usr/share/vim/google/google.vim")
   Plugin 'ervandew/supertab'
-  Plugin 'fatih/vim-go'
 endif
 
 call vundle#end()
@@ -52,6 +52,9 @@ filetype plugin indent on           " Enable filetype detection and load the app
 
 if filereadable("/usr/share/vim/google/google.vim")
   set spellfile+=~/.google.utf-8.add
+
+  let g:go_info_mode = 'guru'
+  let g:go_gopls_enabled = 0
 
   source /usr/share/vim/google/google.vim
 
@@ -212,8 +215,6 @@ let g:UltiSnipsJumpForwardTrigger = '<C-Down>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-Up>'
 
 " VIM-GO
-let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
 let g:go_doc_popup_window = 1
 let g:go_fmt_command = 'goimports'
 let g:go_highlight_functions = 0    " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
@@ -221,6 +222,11 @@ let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_structs = 0      " Makes vim laggy when enabled. See https://github.com/fatih/vim-go/issues/72
 let g:go_updatetime = 1
+
+if !filereadable("/usr/share/vim/google/google.vim")
+  let g:go_auto_sameids = 1
+  let g:go_auto_type_info = 1
+endif
 
 " VIM-COMMENTARY
 let g:commentary_map_backslash = 0  " Disable deprecated mappings
