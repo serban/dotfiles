@@ -322,8 +322,11 @@ endfunction
 
 function SerbanRemoveHttpScheme()
   silent! %s,\vhttp://b/,b/,g
+  silent! %s,\vhttp://g/,g/,g
   silent! %s,\vhttp://cl/,cl/,g
   silent! %s,\vhttp://go/,go/,g
+  silent! %s,\vhttp://yaqs/,yaqs/,g
+  silent! %s,\vhttp://google3/,google3/,g
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed http:// from shortlinks'
 endfunction
 
