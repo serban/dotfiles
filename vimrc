@@ -318,6 +318,10 @@ function SerbanHighlight()
   highlight StatusLine   cterm=none ctermbg=5 ctermfg=8
   highlight StatusLineNC cterm=none ctermbg=0 ctermfg=7
   highlight SignColumn   cterm=none ctermbg=8 ctermfg=12
+  highlight TabLineFill  cterm=none ctermbg=0
+  highlight TabLine      cterm=none ctermbg=0 ctermfg=12
+  highlight TabLineSel   cterm=none ctermbg=0 ctermfg=5
+  highlight Title        cterm=none ctermbg=0 ctermfg=12
 endfunction
 
 function SerbanRemoveHttpScheme()
