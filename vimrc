@@ -98,7 +98,7 @@ set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
 set fillchars=vert:│                " Use a box-drawing character to get a clean vertical line between splits
-set statusline=%f\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
+set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has("gui_macvim")
   set guifont=Monaco:h15            " Use a good font in MacVim
@@ -607,6 +607,8 @@ nnoremap <unique> <Leader>1 :set guifont=Monaco:h12 <CR>
 nnoremap <unique> <Leader>2 :set guifont=Monaco:h15 <CR>
 nnoremap <unique> <Leader>3 :set guifont=Monaco:h18 <CR>
 nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
+
+nnoremap <unique> <Leader><Leader> :echo expand('%:p') <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
