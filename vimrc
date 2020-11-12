@@ -160,6 +160,7 @@ set mouse=a                         " Enable the mouse
 set ttymouse=sgr                    " Support mouse past the 223rd column
 
 set autochdir                       " Keep the current directory in sync with the folder containing the open file
+set autoread                        " If an open file has changed outside of Vim but was not modified inside of Vim, reload it without asking when running :checktime
 
 " Vim sets `background` on startup based on the terminal's background color.
 " This can sometimes result in Vim's theme being the opposite of the terminal's
