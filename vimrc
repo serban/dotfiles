@@ -98,6 +98,7 @@ set guioptions-=T                   " Get rid of the toolbar in gVim
 set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
 set fillchars=vert:│                " Use a box-drawing character to get a clean vertical line between splits
+set tabline=%!SerbanTabLine()       " Use a custom tab line
 set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has("gui_macvim")
@@ -275,6 +276,20 @@ let g:ycm_auto_hover = ''
 " ------------------------------------------------------------------------------
 " FUNCTIONS
 
+function SerbanTabLine()
+  let s = '»'
+  for i in range(1, tabpagenr('$'))
+    let n = bufname(tabpagebuflist(i)[tabpagewinnr(i) - 1])
+    let s .= '%' . i . 'T'
+    let s .= (i == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' '
+    let s .= (n == '' ? '[No Name]' : fnamemodify(n, ':t'))
+    let s .= ' '
+  endfor
+  let s .= '%#TabLineFill#%T'
+  return s
+endfunction
+
 function SerbanInsertModeline()
   if &expandtab
     let expandStr="et"
@@ -316,15 +331,15 @@ function SerbanHighlight()
   " base1     14
   " base2      7
   " base3     15
+  " yellow     3
   " magenta    5
   highlight VertSplit    cterm=none ctermbg=8 ctermfg=0
   highlight StatusLine   cterm=none ctermbg=5 ctermfg=8
   highlight StatusLineNC cterm=none ctermbg=0 ctermfg=7
   highlight SignColumn   cterm=none ctermbg=8 ctermfg=12
-  highlight TabLineFill  cterm=none ctermbg=0
+  highlight TabLineFill  cterm=none ctermbg=0 ctermfg=3
   highlight TabLine      cterm=none ctermbg=0 ctermfg=12
   highlight TabLineSel   cterm=none ctermbg=0 ctermfg=5
-  highlight Title        cterm=none ctermbg=0 ctermfg=12
 endfunction
 
 function SerbanRemoveHttpScheme()
