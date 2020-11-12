@@ -65,6 +65,9 @@ if filereadable("/usr/share/vim/google/google.vim")
   Glug outline-window
   Glug youcompleteme-google
 
+  " Disable autogen because it slows down EasyBuffer
+  Glaive autogen !plugin[autocmds]
+
   " Disabling autoformatting for C++, protocol buffers, and Python because
   " clang-format and pyformat always format the whole file instead of just the
   " lines that have changed. See https://github.com/google/vim-codefmt/issues/9.
