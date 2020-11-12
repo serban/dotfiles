@@ -194,7 +194,9 @@ let g:ctrlp_clear_cache_on_exit = 1  " NB: This calls ctrlp#clra() on exit. This
 let g:ctrlp_extensions = ['autoignore']
 
 " EASYBUFFER
-let g:easybuffer_sort_mode = 'n'    " Sort by buffer name, ascending
+let g:easybuffer_use_sequence = 1                       " Use ascending numbers instead of buffer numbers for quick switching
+let g:easybuffer_sort_mode = 'n'                        " Sort by buffer name, ascending
+let g:easybuffer_bufname = 'expand("#" . bnr . ":p")'   " Show full path
 
 " EDITORCONFIG
 let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
