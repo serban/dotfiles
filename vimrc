@@ -510,6 +510,7 @@ augroup end
 
 augroup serban-snippets
   autocmd!
+  autocmd BufReadPost ~/snippets/*.md silent call SerbanWrapNone()
   autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
   autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatShortlinks()
@@ -517,6 +518,7 @@ augroup end
 
 augroup serban-text
   autocmd!
+  autocmd BufReadPost ~/text/*.md silent call SerbanWrapNone()
   autocmd BufWritePre ~/text/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/text/*.md silent call SerbanRemoveHttpScheme()
   autocmd BufWritePre ~/text/*.md silent call SerbanFormatShortlinks()
