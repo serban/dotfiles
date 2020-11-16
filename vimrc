@@ -310,7 +310,7 @@ function SerbanInsertModeline()
 endfunction
 
 function SerbanEasyBufferBufName(bufferNumber)
-  let path = expand('#' . a:bufferNumber . ':p')
+  let path = expand('#' . a:bufferNumber . ':p:~')
   return substitute(path, '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
 endfunction
 
