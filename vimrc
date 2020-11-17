@@ -309,6 +309,12 @@ function SerbanInsertModeline()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
+function SerbanEchoFilePath()
+  echohl SerbanPath
+  echo expand('%:p:~')
+  echohl None
+endfunction
+
 function SerbanEasyBufferBufName(bufferNumber)
   let path = expand('#' . a:bufferNumber . ':p:~')
   return substitute(path, '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
@@ -348,6 +354,7 @@ function SerbanHighlight()
   highlight TabLineFill  cterm=none ctermbg=0 ctermfg=3
   highlight TabLine      cterm=none ctermbg=0 ctermfg=12
   highlight TabLineSel   cterm=none ctermbg=0 ctermfg=5
+  highlight SerbanPath   cterm=none ctermbg=8 ctermfg=7
 endfunction
 
 function SerbanRemoveHttpScheme()
@@ -640,7 +647,7 @@ nnoremap <unique> <Leader>2 :set guifont=Monaco:h15 <CR>
 nnoremap <unique> <Leader>3 :set guifont=Monaco:h18 <CR>
 nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
 
-nnoremap <unique> <Leader><Leader> :echo expand('%:p') <CR>
+nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
