@@ -280,7 +280,7 @@ let g:ycm_auto_hover = ''
 " FUNCTIONS
 
 function SerbanTabLine()
-  let s = '»'
+  let s = ''
   for i in range(1, tabpagenr('$'))
     let n = bufname(tabpagebuflist(i)[tabpagewinnr(i) - 1])
     let s .= '%' . i . 'T'
@@ -352,8 +352,8 @@ function SerbanHighlight()
   highlight StatusLineNC cterm=none ctermbg=0 ctermfg=7
   highlight SignColumn   cterm=none ctermbg=8 ctermfg=12
   highlight TabLineFill  cterm=none ctermbg=0 ctermfg=3
-  highlight TabLine      cterm=none ctermbg=0 ctermfg=12
-  highlight TabLineSel   cterm=none ctermbg=0 ctermfg=5
+  highlight TabLine      cterm=none ctermbg=0 ctermfg=7
+  highlight TabLineSel   cterm=none ctermbg=5 ctermfg=8
   highlight SerbanPath   cterm=none ctermbg=8 ctermfg=7
 endfunction
 
