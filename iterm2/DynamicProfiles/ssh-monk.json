@@ -2,7 +2,7 @@
   "Profiles": [
     {
       "Name": "monk",
-      "Dynamic Profile Parent Name": "Serban Solarized Light",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark",
       "Shortcut": "M",
       "Title Components": 64,
       "Custom Command": "Yes",
