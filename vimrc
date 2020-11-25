@@ -520,20 +520,14 @@ augroup serban-markdown
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
 augroup end
 
-augroup serban-snippets
-  autocmd!
-  autocmd BufReadPost ~/snippets/*.md silent call SerbanWrapNone()
-  autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatBullets()
-  autocmd BufWritePre ~/snippets/*.md silent call SerbanRemoveHttpScheme()
-  autocmd BufWritePre ~/snippets/*.md silent call SerbanFormatShortlinks()
-augroup end
-
+" The pattern ~/txt/*.md matches all files ending in '.md' under ~/txt, even
+" those in subdirectories.
 augroup serban-text
   autocmd!
-  autocmd BufReadPost ~/text/*.md silent call SerbanWrapNone()
-  autocmd BufWritePre ~/text/*.md silent call SerbanFormatBullets()
-  autocmd BufWritePre ~/text/*.md silent call SerbanRemoveHttpScheme()
-  autocmd BufWritePre ~/text/*.md silent call SerbanFormatShortlinks()
+  autocmd BufReadPost ~/txt/*.md silent call SerbanWrapNone()
+  autocmd BufWritePre ~/txt/*.md silent call SerbanFormatBullets()
+  autocmd BufWritePre ~/txt/*.md silent call SerbanRemoveHttpScheme()
+  autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
 augroup end
 
 " ------------------------------------------------------------------------------
