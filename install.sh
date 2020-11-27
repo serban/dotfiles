@@ -78,7 +78,7 @@ ln -si ${DOTFILES}/moc/config         ~/.moc/config
 ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
 
 mkdir -p ~/.vim
-ln -si ${DOTFILES}/ultisnips          ~/.vim/UltiSnips
+ln -si ${DOTFILES}/vim/ultisnips      ~/.vim/UltiSnips
 
 mkdir -p ~/.vim/pack/serban/start
 ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
