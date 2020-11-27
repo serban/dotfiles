@@ -346,15 +346,19 @@ function SerbanHighlight()
   " base2      7
   " base3     15
   " yellow     3
+  " blue       4
   " magenta    5
-  highlight VertSplit    cterm=none ctermbg=8 ctermfg=0
-  highlight StatusLine   cterm=none ctermbg=5 ctermfg=8
-  highlight StatusLineNC cterm=none ctermbg=0 ctermfg=7
-  highlight SignColumn   cterm=none ctermbg=8 ctermfg=12
-  highlight TabLineFill  cterm=none ctermbg=0 ctermfg=3
-  highlight TabLine      cterm=none ctermbg=0 ctermfg=7
-  highlight TabLineSel   cterm=none ctermbg=5 ctermfg=8
-  highlight SerbanPath   cterm=none ctermbg=8 ctermfg=7
+  highlight VertSplit                cterm=none ctermbg=8 ctermfg=0
+  highlight StatusLine               cterm=none ctermbg=5 ctermfg=8
+  highlight StatusLineNC             cterm=none ctermbg=0 ctermfg=7
+  highlight SignColumn               cterm=none ctermbg=8 ctermfg=12
+  highlight TabLineFill              cterm=none ctermbg=0 ctermfg=3
+  highlight TabLine                  cterm=none ctermbg=0 ctermfg=7
+  highlight TabLineSel               cterm=none ctermbg=5 ctermfg=8
+  highlight SerbanPath               cterm=none ctermbg=8 ctermfg=7
+  highlight BufSelectHighlight       cterm=none ctermbg=8 ctermfg=7
+  highlight BufSelectBorderHighlight cterm=none ctermbg=8 ctermfg=7
+  highlight PopupSelected            cterm=none ctermbg=4 ctermfg=7
 endfunction
 
 function SerbanRemoveHttpScheme()
@@ -642,6 +646,8 @@ nnoremap <unique> <Leader>3 :set guifont=Monaco:h18 <CR>
 nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
 
 nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
+
+nnoremap <silent> <unique> <Leader>, :call bufselect#OpenMenu() <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>

@@ -80,6 +80,9 @@ ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
 mkdir -p ~/.vim
 ln -si ${DOTFILES}/ultisnips          ~/.vim/UltiSnips
 
+mkdir -p ~/.vim/pack/serban/start
+ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
+
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
 
