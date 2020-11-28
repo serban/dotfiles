@@ -8,6 +8,13 @@ function mls
   tmux list-sessions -F '#{?session_attached,*, } #{session_name}'
 end
 
+function mlv
+  tmux list-panes -a \
+      -f '#{m/ri:vim,#{pane_current_command}}' \
+      -F '#{p30:session_name}  #{p-2:window_index} #{p10:window_name}  #{p-4:pane_current_command}  #{pane_current_path}' \
+      | grep --invert-match '^z-'
+end
+
 function mcl
   tmux list-sessions -F '#{?session_attached,*, } #{session_name}' \
       | grep '^  z-' | string trim | while read --line session
