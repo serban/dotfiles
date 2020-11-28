@@ -1,5 +1,6 @@
 function e
   set --local  options (fish_opt --short=a --long=all)
+  set options $options (fish_opt --short=g --long=gui)
   set options $options (fish_opt --short=r --long=read-only)
   set options $options (fish_opt --short=t --long=tabs)
 
@@ -11,13 +12,23 @@ function e
     set --export DISPLAY :0
   end
 
+  set --local xargs '-o'
   set --local binary vim
   set --local args ''
+  set --local stderr /dev/stderr
 
-  if type --quiet gvim
-    set binary gvim
-  else if type --quiet mvim
-    set binary mvim
+  if test -n "$_flag_gui"
+    set xargs ''
+    set stderr /dev/null
+
+    if type --quiet gvim
+      set binary gvim
+    else if type --quiet mvim
+      set binary mvim
+    else
+      echo 'Could not find gvim or mvim'
+      return 1
+    end
   end
 
   if test -n "$_flag_read_only"
@@ -31,9 +42,9 @@ function e
   if test -n "$_flag_all"
     find . -type f -not -path '*/.git/*' -print0 \
         | sort --zero-terminated \
-        | eval xargs -0 $binary $args ^ /dev/null
+        | eval xargs -0 $xargs $binary $args 2> $stderr
     return
   end
 
-  eval $binary $args $argv ^ /dev/null
+  eval $binary $args $argv 2> $stderr
 end
