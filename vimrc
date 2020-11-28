@@ -376,6 +376,14 @@ function SerbanRemoveTrailingWhitespace()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
 endfunction
 
+function SerbanSetMacVimBackground()
+  if v:os_appearance == 0
+    set background=light
+  else
+    set background=dark
+  endif
+endfunction
+
 function SerbanToggleBackground()
   if &background == "light"
     set background=dark
@@ -513,6 +521,10 @@ autocmd FileType cpp    set commentstring=//\ \ %s iskeyword-=-
 autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift  set textwidth=100
+
+if has('gui_macvim')
+  autocmd OSAppearanceChanged * call SerbanSetMacVimBackground()
+endif
 
 augroup serban-highlight
   autocmd!

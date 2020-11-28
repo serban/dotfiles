@@ -1,4 +1,3 @@
-set background=light
 set columns=90
 set lines=60
 
