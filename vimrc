@@ -345,9 +345,9 @@ function SerbanHighlight()
   " base1     14
   " base2      7
   " base3     15
-  " yellow     3
-  " blue       4
-  " magenta    5
+  " yellow     3  #b58900
+  " blue       4  #268bd2
+  " magenta    5  #d33682
   highlight VertSplit                cterm=none ctermbg=8 ctermfg=0
   highlight StatusLine               cterm=none ctermbg=5 ctermfg=8
   highlight StatusLineNC             cterm=none ctermbg=0 ctermfg=7
@@ -358,7 +358,7 @@ function SerbanHighlight()
   highlight SerbanPath               cterm=none ctermbg=8 ctermfg=7
   highlight BufSelectHighlight       cterm=none ctermbg=8 ctermfg=7
   highlight BufSelectBorderHighlight cterm=none ctermbg=8 ctermfg=7
-  highlight PopupSelected            cterm=none ctermbg=4 ctermfg=7
+  highlight PopupSelected            cterm=none ctermbg=4 ctermfg=7  gui=none guibg=#268bd2 guifg=#eee8d5
 endfunction
 
 function SerbanRemoveHttpScheme()
@@ -550,6 +550,15 @@ augroup end
 " COLORS
 
 colorscheme solarized
+
+" MacVim does not trigger the 'ColorScheme solarized' autocommand on startup.
+" Not sure what's going on, but this hacky timer gets the job done.
+if has('gui_macvim')
+  function SerbanHighlightWrapper(_)
+    call SerbanHighlight()
+  endfunction
+  call timer_start(400, 'SerbanHighlightWrapper')
+endif
 
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
