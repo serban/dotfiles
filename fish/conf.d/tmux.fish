@@ -9,9 +9,30 @@ function mls
 end
 
 function mlv
+  set --local session_pad 0
+  set --local window_pad 0
+
   tmux list-panes -a \
       -f '#{m/ri:vim,#{pane_current_command}}' \
-      -F '#{p30:session_name}  #{p-2:window_index} #{p10:window_name}  #{p-4:pane_current_command}  #{pane_current_path}' \
+      -F '#{session_name} #{window_name}' \
+      | grep --invert-match '^z-' \
+      | while read --line line
+    set --local token (string split ' ' $line)
+    set --local session_len (string length $token[1])
+    set --local window_len (string length $token[2])
+
+    if test $session_len -gt $session_pad
+      set session_pad $session_len
+    end
+
+    if test $window_len -gt $window_pad
+      set window_pad $window_len
+    end
+  end
+
+  tmux list-panes -a \
+      -f '#{m/ri:vim,#{pane_current_command}}' \
+      -F "#{p$session_pad:session_name}  #{p-2:window_index} #{p$window_pad:window_name}  #{pane_current_path}" \
       | grep --invert-match '^z-'
 end
 
