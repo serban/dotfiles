@@ -1,0 +1,14 @@
+{
+  "Profiles": [
+    {
+      "Name": "mingus",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark",
+      "Shortcut": "I",
+      "Title Components": 64,
+      "Custom Command": "Yes",
+      "Command": "ssh mingus",
+      "Close Sessions On End": false,
+      "Guid": "396DDE49-6FE8-43AB-ABB9-49B28B4EEA2B"
+    }
+  ]
+}
