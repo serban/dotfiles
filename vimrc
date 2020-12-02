@@ -89,6 +89,7 @@ set title                           " Set the terminal title to something approp
 set helpheight=80                   " Set the minimum window height for help windows
 set winheight=20                    " Set the minimum window height for split windows
 set winwidth=86                     " Set the minimum window width for split windows
+set pumheight=7                     " Set the maximum number of items to show in the popup menu for insert mode completion
 set tabpagemax=100                  " Set the maximum number of tabs that can be opened
 set splitbelow                      " When horizontally splitting a window, insert the new window below the current one
 set splitright                      " When vertically splitting a window, insert the new window to the right of the current one
