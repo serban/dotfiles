@@ -121,14 +121,15 @@ function mag --argument-names client
   popd
 end
 
-function mkg --argument-names client
-  if test -z $client
-    echo 'No client specified'
+function mkg --argument-names group
+  if test -z $group
+    echo 'No session group specified'
     return 1
   end
 
-  tmux list-sessions -F '#{session_group} #{session_name}' \
-      | grep "^$client " | cut --delimiter=' ' --fields=2 \
+  tmux list-sessions \
+      -f "#{==:#{session_group},$group}" \
+      -F '#{session_name}' \
       | while read --line session
     tmux kill-session -t =$session
     echo "Killed session $session"
