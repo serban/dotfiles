@@ -37,9 +37,11 @@ function bufselect#CompareBuffers(d1, d2)
   return p1 ==# p2 ? 0 : (p1 <# p2 ? -1 : 1)
 endfunction
 
-function bufselect#BufferDisplayName(number, path)
+function bufselect#BufferDisplayName(number, path, changed)
+  let s = a:changed ? '+ ' : '  '
+
   if a:path ==# ''
-    return '[No Name] (' . a:number . ')'
+    return s . '[No Name] (' . a:number . ')'
   endif
 
   " fnamemodify() manipulates the full path into a shorter version if it is
@@ -50,7 +52,7 @@ function bufselect#BufferDisplayName(number, path)
   let path = substitute(path,
              \          '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
 
-  return path
+  return s . path
 endfunction
 
 " Return all the buffers in a tuple of three items.
@@ -72,12 +74,13 @@ function bufselect#Buffers()
   let names = []
 
   for i in range(len(buffers))
-    let number = buffers[i].bufnr
-    let path   = buffers[i].name
+    let number  = buffers[i].bufnr
+    let path    = buffers[i].name
+    let changed = buffers[i].changed
 
     call add(numbers, number)
     call add(paths, path)
-    call add(names, bufselect#BufferDisplayName(number, path))
+    call add(names, bufselect#BufferDisplayName(number, path, changed))
   endfor
 
   return [numbers, paths, names]
