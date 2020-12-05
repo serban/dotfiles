@@ -276,6 +276,13 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_warning_symbol = '🟠'
 let g:ycm_error_symbol = '🔴'
 let g:ycm_auto_hover = ''
+let g:ycm_language_server = [
+\   {
+\     'name': 'ciderlsp',
+\     'cmdline': [ '/google/bin/releases/editor-devtools/ciderlsp', '--noforward_sync_responses' ],
+\     'filetypes': [ 'java' ]
+\   },
+\]
 
 " ------------------------------------------------------------------------------
 " FUNCTIONS
