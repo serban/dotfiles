@@ -78,6 +78,7 @@ function mas --argument-names project
     tmux new-window  -c $repo -t $target:2 -n vim
     tmux new-window  -c $repo -t $target:3 -n build
     tmux new-window  -c $repo -t $target:4 -n ag
+    tmux new-window  -c $HOME -t $target:5 -n home
   end
 
   pushd $repo
