@@ -629,13 +629,14 @@ nnoremap <unique> <C-Right> :tabmove +1 <CR>
 nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
 nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
 nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
-nnoremap <unique> <Leader>e :EasyBuffer <CR>
+nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
 nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
 nnoremap <unique> <Leader>g :FileswitchEditGo <CR>
 nnoremap <unique> <Leader>h :FileswitchEditH <CR>
 nnoremap <unique> <Leader>i :GoImports <CR>
 nnoremap <unique> <Leader>j :FileswitchEditJava <CR>
-nnoremap <unique> <Leader>k :CtrlPBuffer <CR>
+nnoremap <unique> <Leader>k :marks abcdefghijklmnopqrstuvwxyz <CR>
+nnoremap <unique> <Leader>K :marks ABCDEFGHIJKLMNOPQRSTUVWXYZ <CR>
 nnoremap <unique> <Leader>l :Marks <CR>
     nmap <unique> <Leader>m <Plug>MarkSet
     nmap <unique> <Leader>n <Plug>MarkAllClear
