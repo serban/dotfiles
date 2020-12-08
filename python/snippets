@@ -22,7 +22,7 @@ TEMPLATE = """## Week of $MONTH $DAY, $YEAR
 
 SNIPPETS_DIR = pathlib.Path(pathlib.Path.home(), 'txt', 'snippets')
 SCRATCH_PATH = pathlib.Path(SNIPPETS_DIR, 'scratch.md')
-TOP_PATH     = pathlib.Path(SNIPPETS_DIR, 'top.md')
+ACTIVE_PATH  = pathlib.Path(SNIPPETS_DIR, 'active.md')
 
 
 def snippets_path(date):
@@ -75,7 +75,7 @@ def main():
   if not this_week_path.exists():
     write_snippets_file(this_monday)
 
-  open_vim(SCRATCH_PATH, TOP_PATH, last_week_path, this_week_path)
+  open_vim(SCRATCH_PATH, ACTIVE_PATH, last_week_path, this_week_path)
 
 
 if __name__ == '__main__':
