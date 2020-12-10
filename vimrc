@@ -244,24 +244,21 @@ let g:commentary_map_backslash = 0  " Disable deprecated mappings
 " VIM-MARK
 let g:mw_no_mappings = 0
 let g:mwAutoSaveMarks = 0
-
-" DarkYellow   --> Solarized Yellow
-" Red          --> Solarized Orange
-" Dark Red     --> Solarized Red
-" Dark Magenta --> Solarized Magenta
-" Magenta      --> Solarized Violet
-" Dark Blue    --> Solarized Blue
-" Dark Cyan    --> Solarized Cyan
-" Dark Green   --> Solarized Green
 let g:mwDefaultHighlightingPalette = [
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkMagenta', 'guibg':'#d33682' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkBlue',    'guibg':'#268bd2' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkYellow',  'guibg':'#b58900' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'Magenta',     'guibg':'#6c71c4' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'Red',         'guibg':'#cb4b16' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkCyan',    'guibg':'#2aa198' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkRed',     'guibg':'#dc322f' },
-\   { 'ctermfg':'White', 'guifg':'White', 'ctermbg':'DarkGreen',   'guibg':'#859900' },
+\   { 'cterm':'none', 'ctermbg': 5, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 4, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 1, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 2, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg':13, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 6, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 1 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 2 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 3 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 4 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 5 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 6 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 9 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg':13 },
 \]
 
 " VIM-MARKDOWN
@@ -353,9 +350,14 @@ function SerbanHighlight()
   " base1     14
   " base2      7
   " base3     15
+  " red        1  #dc322f
+  " green      2  #859900
   " yellow     3  #b58900
   " blue       4  #268bd2
   " magenta    5  #d33682
+  " cyan       6  #2aa198
+  " orange     9  #cb4b16
+  " violet    13  #6c71c4
   highlight VertSplit                cterm=none ctermbg=8 ctermfg=0
   highlight StatusLine               cterm=none ctermbg=5 ctermfg=8
   highlight StatusLineNC             cterm=none ctermbg=0 ctermfg=7
