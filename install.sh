@@ -46,7 +46,6 @@ ln -si ${DOTFILES}/en.utf-8.add       ~/.en.utf-8.add
 ln -si ${DOTFILES}/gdbinit            ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
 ln -si ${DOTFILES}/gitignore          ~/.gitignore
-ln -si ${DOTFILES}/gvimrc             ~/.gvimrc
 ln -si ${DOTFILES}/hgrc               ~/.hgrc
 ln -si ${DOTFILES}/hushlogin          ~/.hushlogin
 ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
@@ -54,7 +53,6 @@ ln -si ${DOTFILES}/inputrc            ~/.inputrc
 ln -si ${DOTFILES}/screenrc           ~/.screenrc
 ln -si ${DOTFILES}/sqliterc           ~/.sqliterc
 ln -si ${DOTFILES}/tmux.conf          ~/.tmux.conf
-ln -si ${DOTFILES}/vimrc              ~/.vimrc
 ln -si ${DOTFILES}/xsession           ~/.xsession
 ln -si ${DOTFILES}/Xresources         ~/.Xresources
 
@@ -79,6 +77,8 @@ ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
 
 mkdir -p ~/.vim
 ln -si ${DOTFILES}/vim/ultisnips      ~/.vim/UltiSnips
+ln -si ${DOTFILES}/vim/gvimrc         ~/.vim/gvimrc
+ln -si ${DOTFILES}/vim/vimrc          ~/.vim/vimrc
 
 mkdir -p ~/.vim/pack/serban/start
 ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
