@@ -33,7 +33,7 @@ def count_days(start, end, exclude_weekends=False, exclude=None):
 
 def parse_exclude_file(path):
   with open(path) as f:
-    return f.read().splitlines()
+    return [l for l in f.read().splitlines() if l and not l.startswith('#')]
 
 
 def parse_command_line_arguments():
