@@ -1,0 +1,3 @@
+flac
+lame
+vorbis-tools
