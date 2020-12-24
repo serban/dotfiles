@@ -1,3 +1,6 @@
+import sys
+sys.dont_write_bytecode = True
+
 import iterm2
 
 import solarized
