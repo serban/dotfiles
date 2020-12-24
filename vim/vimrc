@@ -139,6 +139,7 @@ set incsearch                       " Search as you type
 set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
+set nowrapscan                      " Do not wrap around the end of the file when searching
 
 set spelllang=en_us                 " Use American English for spell checking
 set spellfile=~/.en.utf-8.add
