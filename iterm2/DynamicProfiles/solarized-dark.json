@@ -47,9 +47,9 @@
       },
       "Selected Text Color": {
         "Color Space": "sRGB",
-        "Red Component": 0.9333333333333333,
-        "Green Component": 0.9098039215686274,
-        "Blue Component": 0.8352941176470589
+        "Red Component": 0.0,
+        "Green Component": 0.16862745098039217,
+        "Blue Component": 0.21176470588235294
       },
       "Ansi 0 Color": {
         "Color Space": "sRGB",
