@@ -4,6 +4,7 @@ diffutils
 duti
 editorconfig
 findutils
+firebase-cli
 fish
 gawk
 git
