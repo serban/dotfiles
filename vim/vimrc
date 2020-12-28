@@ -131,7 +131,8 @@ set encoding=utf-8                  " Default to UTF-8 encoding
 
 set sessionoptions=buffers,curdir,folds,resize,tabpages,winpos,winsize  " What to preserve when saving a session
 
-set printoptions=paper:letter       " Set the paper size for America
+set printoptions=paper:letter,left:36pt,right:36pt,bottom:27pt,top:27pt,header:2  " American letter paper with ~ 1/2 inch margins
+set printheader=%{strftime(\'%B\ %e,\ %Y\')}%=%N                                  " Print the date in the upper left corner and page number in the upper right corner of every page
 
 syntax on                           " Colors!
 set hlsearch                        " Highlight search results
