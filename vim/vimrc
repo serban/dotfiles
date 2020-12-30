@@ -184,7 +184,7 @@ set hidden                          " Allow buffers with unsaved changes to be h
 set background=dark
 
 " Enable bracketed paste inside tmux. See :help xterm-bracketed-paste
-if &term =~ "screen"
+if &term =~# 'screen'
   let &t_BE = "\e[?2004h"
   let &t_BD = "\e[?2004l"
   exec "set t_PS=\e[200~"
@@ -276,9 +276,9 @@ function SerbanTabLine()
   for i in range(1, tabpagenr('$'))
     let n = bufname(tabpagebuflist(i)[tabpagewinnr(i) - 1])
     let s .= '%' . i . 'T'
-    let s .= (i == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= (i ==# tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
     let s .= ' '
-    let s .= (n == '' ? '[No Name]' : fnamemodify(n, ':t'))
+    let s .= (n ==# '' ? '[No Name]' : fnamemodify(n, ':t'))
     let s .= ' '
   endfor
   let s .= '%#TabLineFill#%T'
@@ -435,7 +435,7 @@ function SerbanRemoveTrailingWhitespace()
 endfunction
 
 function SerbanSetMacVimBackground()
-  if v:os_appearance == 0
+  if v:os_appearance ==# 0
     set background=light
   else
     set background=dark
@@ -443,7 +443,7 @@ function SerbanSetMacVimBackground()
 endfunction
 
 function SerbanToggleBackground()
-  if &background == "light"
+  if &background ==# 'light'
     set background=dark
   else
     set background=light
@@ -451,7 +451,7 @@ function SerbanToggleBackground()
 endfunction
 
 function SerbanToggleColorColumn()
-  if &colorcolumn != "0"
+  if &colorcolumn !=# '0'
     windo set colorcolumn=0
   else
     windo set colorcolumn=+1
@@ -490,7 +490,7 @@ endfunction
 " code comments. See `:help autoformat` or `:help gq` for more.
 
 function SerbanWrapHard()
-  if &textwidth == 0
+  if &textwidth ==# 0
     set textwidth=80
   endif
   set formatoptions+=t
@@ -499,7 +499,7 @@ function SerbanWrapHard()
 endfunction
 
 function SerbanWrapHint()
-  if &textwidth == 0
+  if &textwidth ==# 0
     set textwidth=80
   endif
   set formatoptions-=t
@@ -520,9 +520,9 @@ function SerbanWrapNone()
 endfunction
 
 function SerbanCurrentWrap()
-  if &textwidth != 0 && stridx(&formatoptions, 't') != -1
+  if &textwidth !=# 0 && stridx(&formatoptions, 't') !=# -1
     return 'HARD  ' . &textwidth
-  elseif &textwidth != 0 && &colorcolumn != '0' && !&wrap
+  elseif &textwidth !=# 0 && &colorcolumn !=# '0' && !&wrap
     return 'HINT  ' . &textwidth
   elseif &wrap
     return 'SOFT'
