@@ -26,21 +26,17 @@ fi
 print
 print 'You are outside of a virtualenv. Use pip3 explicitly:'
 print
-print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 list'
-print
-print 'To install Python 3 and virtualenv:'
-print
-print '  $ brew install python'
-print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper virtualfish'
+print '  $ pip3 list'
 print
 print 'To upgrade pip itself:'
 print
-print '  $ env PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
+print '  $ PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
 print
 print '+----------------------------------------------------------------------+'
 print '| Bash Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
+print 'To install virtualenv:       $ PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper'
 print 'To create a new virtualenv:  $ mkvirtualenv -p python3 name'
 print 'To use a virtualenv:         $ workon virtualenv-name'
 print
@@ -48,6 +44,8 @@ print '+----------------------------------------------------------------------+'
 print '| Fish Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
+print 'To install virtualfish:      $ PIP_REQUIRE_VIRTUALENV=false pip3 install virtualfish'
+print 'To set up virtualfish:       $ vf install auto_activation update_python'
 print 'To create a new virtualenv:  $ vf new -p python3 name'
 print 'To use a virtualenv:         $ vf activate virtualenv-name'
 
