@@ -1,0 +1,16 @@
+let g:mwPalettes['serban'] = [
+\   { 'cterm':'none', 'ctermbg': 5, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 4, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 1, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 2, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg':13, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 6, 'ctermfg': 8 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 1 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 2 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 3 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 4 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 5 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 6 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 9 },
+\   { 'cterm':'none', 'ctermbg': 0, 'ctermfg':13 },
+\]

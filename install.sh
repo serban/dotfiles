@@ -76,6 +76,7 @@ ln -si ${DOTFILES}/moc/config         ~/.moc/config
 ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
 
 mkdir -p ~/.vim
+ln -si ${DOTFILES}/vim/after          ~/.vim/after
 ln -si ${DOTFILES}/vim/ultisnips      ~/.vim/UltiSnips
 ln -si ${DOTFILES}/vim/gvimrc         ~/.vim/gvimrc
 ln -si ${DOTFILES}/vim/vimrc          ~/.vim/vimrc
