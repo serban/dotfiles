@@ -327,14 +327,15 @@ function SerbanFormatShortlinks()
 endfunction
 
 function SerbanHighlight()
-  let g:serban_solarized_base03  = '#002b36'
-  let g:serban_solarized_base02  = '#073642'
-  let g:serban_solarized_base01  = '#586e75'
-  let g:serban_solarized_base00  = '#657b83'
-  let g:serban_solarized_base0   = '#839496'
-  let g:serban_solarized_base1   = '#93a1a1'
-  let g:serban_solarized_base2   = '#eee8d5'
-  let g:serban_solarized_base3   = '#fdf6e3'
+  let g:serban_solarized_base03  = &background ==# 'dark' ? '#002b36' : '#fdf6e3'
+  let g:serban_solarized_base02  = &background ==# 'dark' ? '#073642' : '#eee8d5'
+  let g:serban_solarized_base01  = &background ==# 'dark' ? '#586e75' : '#93a1a1'
+  let g:serban_solarized_base00  = &background ==# 'dark' ? '#657b83' : '#839496'
+  let g:serban_solarized_base0   = &background ==# 'dark' ? '#839496' : '#657b83'
+  let g:serban_solarized_base1   = &background ==# 'dark' ? '#93a1a1' : '#586e75'
+  let g:serban_solarized_base2   = &background ==# 'dark' ? '#eee8d5' : '#073642'
+  let g:serban_solarized_base3   = &background ==# 'dark' ? '#fdf6e3' : '#002b36'
+
   let g:serban_solarized_red     = '#dc322f'
   let g:serban_solarized_green   = '#859900'
   let g:serban_solarized_yellow  = '#b58900'
@@ -380,9 +381,30 @@ function SerbanHighlight()
   " From the mark.vim documentation:
   " If you want to avoid losing the highlightings on :colorscheme commands,
   " you need to re-apply your highlights on the ColorScheme event.
+  call SerbanMarkPalette()
+endfunction
+
+function SerbanMarkPalette()
   if !exists('g:mwPalettes')
     return
   endif
+
+  let g:mwPalettes['serban'] = [
+  \   { 'cterm':'none', 'ctermbg': 5, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_magenta, 'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg': 4, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_blue,    'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg': 1, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_red,     'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg': 2, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_green,   'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg':13, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_violet,  'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg': 6, 'ctermfg': 8, 'gui':'none', 'guibg':g:serban_solarized_cyan,    'guifg':g:serban_solarized_base02  },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 1, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_red     },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 2, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_green   },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 3, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_yellow  },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 4, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_blue    },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 5, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_magenta },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 6, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_cyan    },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg': 9, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_orange  },
+  \   { 'cterm':'none', 'ctermbg': 0, 'ctermfg':13, 'gui':'none', 'guibg':g:serban_solarized_base02,  'guifg':g:serban_solarized_violet  },
+  \]
 
   if has('gui_running')
     MarkPalette maximum
