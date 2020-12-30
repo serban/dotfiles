@@ -1,0 +1,15 @@
+audio-hijack
+browserosaurus
+dropbox
+firefox
+flux
+google-chrome
+grandperspective
+hammerspoon
+iterm2
+lilypond
+obsidian
+omnifocus
+signal
+spotify
+sublime-merge
