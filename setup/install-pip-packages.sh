@@ -4,10 +4,6 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-PIP_REQUIRE_VIRTUALENV=false pip3 install \
-  bpython \
-  pynvim \
-  virtualfish \
-  wavemaker
+readonly PIP_REQUIRE_VIRTUALENV=false
 
-vf install auto_activation update_python
+cat ~/src/dotfiles/packages/pip.txt | xargs pip3 install
