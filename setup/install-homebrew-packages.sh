@@ -7,4 +7,4 @@ set -o pipefail
 brew tap \
   heroku/brew
 
-cat homebrew-core.txt | xargs brew install --formula
+cat ~/src/dotfiles/packages/homebrew-core.txt | xargs brew install --formula
