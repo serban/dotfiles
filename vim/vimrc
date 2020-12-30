@@ -343,6 +343,23 @@ function SerbanFormatShortlinks()
 endfunction
 
 function SerbanHighlight()
+  let g:serban_solarized_base03  = '#002b36'
+  let g:serban_solarized_base02  = '#073642'
+  let g:serban_solarized_base01  = '#586e75'
+  let g:serban_solarized_base00  = '#657b83'
+  let g:serban_solarized_base0   = '#839496'
+  let g:serban_solarized_base1   = '#93a1a1'
+  let g:serban_solarized_base2   = '#eee8d5'
+  let g:serban_solarized_base3   = '#fdf6e3'
+  let g:serban_solarized_red     = '#dc322f'
+  let g:serban_solarized_green   = '#859900'
+  let g:serban_solarized_yellow  = '#b58900'
+  let g:serban_solarized_blue    = '#268bd2'
+  let g:serban_solarized_magenta = '#d33682'
+  let g:serban_solarized_cyan    = '#2aa198'
+  let g:serban_solarized_orange  = '#cb4b16'
+  let g:serban_solarized_violet  = '#6c71c4'
+
   " NAME    ANSI  NOTES
   " -------------------------------
   " base03     8  Background Color
@@ -371,8 +388,10 @@ function SerbanHighlight()
   highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectBorderHighlight cterm=none ctermbg=8  ctermfg=7
-  highlight PopupSelected            cterm=none ctermbg=4  ctermfg=7  gui=none guibg=#268bd2 guifg=#eee8d5
+  highlight PopupSelected            cterm=none ctermbg=4  ctermfg=7
   highlight goSameId                 cterm=none ctermbg=11 ctermfg=8
+
+  execute 'highlight PopupSelected gui=none guibg='.g:serban_solarized_blue.' guifg='.g:serban_solarized_base2
 endfunction
 
 function SerbanRemoveHttpScheme()
