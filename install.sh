@@ -42,7 +42,6 @@ ln -si ${DOTFILES}/blazerc            ~/.blazerc
 ln -si ${DOTFILES}/colordiffrc        ~/.colordiffrc
 ln -si ${DOTFILES}/conkyrc            ~/.conkyrc
 ln -si ${DOTFILES}/dir_colors         ~/.dir_colors
-ln -si ${DOTFILES}/en.utf-8.add       ~/.en.utf-8.add
 ln -si ${DOTFILES}/gdbinit            ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
 ln -si ${DOTFILES}/gitignore          ~/.gitignore
@@ -83,6 +82,9 @@ ln -si ${DOTFILES}/vim/vimrc          ~/.vim/vimrc
 
 mkdir -p ~/.vim/pack/serban/start
 ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
+
+mkdir -p ~/.vim/spell
+ln -si ${DOTFILES}/vim/spell/en.utf-8.add       ~/.vim/spell/en.utf-8.add
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history

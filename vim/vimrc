@@ -51,8 +51,6 @@ filetype plugin indent on           " Enable filetype detection and load the app
 " GOOGLE
 
 if filereadable('/usr/share/vim/google/google.vim')
-  set spellfile+=~/.google.utf-8.add
-
   let g:go_info_mode = 'guru'
   let g:go_gopls_enabled = 0
 
@@ -143,7 +141,7 @@ set gdefault                        " Replace all occurrences on a line by defau
 set nowrapscan                      " Do not wrap around the end of the file when searching
 
 set spelllang=en_us                 " Use American English for spell checking
-set spellfile=~/.en.utf-8.add
+set spellfile=~/.vim/spell/en.utf-8.add
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
