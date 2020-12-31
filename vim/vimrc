@@ -141,7 +141,7 @@ set gdefault                        " Replace all occurrences on a line by defau
 set nowrapscan                      " Do not wrap around the end of the file when searching
 
 set spelllang=en_us                 " Use American English for spell checking
-set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/proper.utf-8.add
+set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/proper.utf-8.add,~/.vim/spell/google.utf-8.add
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
@@ -310,6 +310,8 @@ function SerbanGenerateSpellFiles()
   mkspell! ~/.vim/spell/en.utf-8.add
   echom '--------------------------------------------------------------'
   mkspell! ~/.vim/spell/proper.utf-8.add
+  echom '--------------------------------------------------------------'
+  mkspell! ~/.vim/spell/google.utf-8.add
   echom '--------------------------------------------------------------'
   spellinfo
 endfunction
