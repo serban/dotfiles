@@ -305,6 +305,15 @@ function SerbanEchoFilePath()
   echohl None
 endfunction
 
+function SerbanGenerateSpellFiles()
+  set spell
+  mkspell! ~/.vim/spell/en.utf-8.add
+  echom '--------------------------------------------------------------'
+  mkspell! ~/.vim/spell/proper.utf-8.add
+  echom '--------------------------------------------------------------'
+  spellinfo
+endfunction
+
 function SerbanEasyBufferBufName(bufferNumber)
   let path = expand('#' . a:bufferNumber . ':p:~')
   return substitute(path, '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
@@ -712,6 +721,8 @@ nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
 nnoremap <unique> <Leader>sl :set list! <CR>
 nnoremap <unique> <Leader>ss :set spell! <CR>
 nnoremap <unique> <Leader>st :TagbarToggle <CR>
+
+nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
 
 nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
 nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
