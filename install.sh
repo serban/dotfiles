@@ -85,6 +85,7 @@ ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
 
 mkdir -p ~/.vim/spell
 ln -si ${DOTFILES}/vim/spell/en.utf-8.add       ~/.vim/spell/en.utf-8.add
+ln -si ${DOTFILES}/vim/spell/proper.utf-8.add   ~/.vim/spell/proper.utf-8.add
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
