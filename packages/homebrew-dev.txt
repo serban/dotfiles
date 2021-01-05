@@ -1,3 +1,5 @@
+automake
 bazel
 graphviz
+pkg-config
 postgresql

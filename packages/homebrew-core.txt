@@ -1,5 +1,6 @@
 colordiff
 coreutils
+ctags
 diffutils
 duti
 editorconfig
