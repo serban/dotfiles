@@ -101,7 +101,7 @@ set guioptions+=c                   " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
 set fillchars=vert:│                " Use a box-drawing character to get a clean vertical line between splits
 set tabline=%!SerbanTabLine()       " Use a custom tab line
-set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
+set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentSpell()}%{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has('gui_macvim')
   set guifont=Monaco:h15            " Use a good font in MacVim
@@ -283,6 +283,10 @@ function SerbanTabLine()
   return s
 endfunction
 
+function SerbanCurrentSpell()
+  return &spell ? 'Ⓐ   ' : ''
+endfunction
+
 function SerbanInsertModeline()
   if &expandtab
     let expandStr='et'
@@ -314,6 +318,11 @@ function SerbanGenerateSpellFiles()
   mkspell! ~/.vim/spell/google.utf-8.add
   echom '--------------------------------------------------------------'
   spellinfo
+  echom '--------------------------------------------------------------'
+  highlight SpellBad
+  highlight SpellCap
+  highlight SpellLocal
+  highlight SpellRare
 endfunction
 
 function SerbanEasyBufferBufName(bufferNumber)
