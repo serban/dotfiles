@@ -140,6 +140,7 @@ set smartcase                       " unless there's an uppercase character in t
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
 set nowrapscan                      " Do not wrap around the end of the file when searching
 
+set spellcapcheck=                  " Disable checking for a capital letter at the beginning of a sentence (SpellCap highlight).
 set spelllang=en_us                 " Use American English for spell checking
 set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/proper.utf-8.add,~/.vim/spell/google.utf-8.add
 
