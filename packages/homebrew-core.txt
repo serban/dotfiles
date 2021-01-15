@@ -11,6 +11,7 @@ gawk
 git
 gnu-sed
 gnu-tar
+gnu-units
 go
 grep
 grip
