@@ -326,6 +326,23 @@ function SerbanGenerateSpellFiles()
   highlight SpellRare
 endfunction
 
+function SerbanDeleteEmptyBuffers()
+  let predicate  = 'buflisted(v:val) && '
+  let predicate .= 'empty(bufname(v:val)) && '
+  let predicate .= 'getbufline(v:val, 1, "$") ==# [""] && '
+  let predicate .= 'bufwinnr(v:val) <# 0'
+
+  let buffers = filter(range(1, bufnr('$')), predicate)
+
+  if empty(buffers)
+    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'No empty buffers to delete'
+    return
+  endif
+
+  execute 'bdelete ' . join(buffers, ' ')
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Deleted empty buffers'
+endfunction
+
 function SerbanEasyBufferBufName(bufferNumber)
   let path = expand('#' . a:bufferNumber . ':p:~')
   return substitute(path, '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
@@ -741,6 +758,7 @@ nnoremap <unique> <Leader>sl :set list! <CR>
 nnoremap <unique> <Leader>ss :set spell! <CR>
 nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
+nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers() <CR>
 nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
 
 nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
