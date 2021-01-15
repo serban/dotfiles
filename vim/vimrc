@@ -759,6 +759,7 @@ nnoremap <unique> <Leader>ss :set spell! <CR>
 nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
 nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers() <CR>
+nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
 nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
 
 nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
