@@ -662,6 +662,7 @@ iabbrev td TODO(serban):
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
+digraphs al  8592  " 0x2190 = ←
 digraphs ar  8594  " 0x2192 = →
 digraphs ch 10003  " 0x2713 = ✓
 digraphs cr 10007  " 0x2717 = ✗
