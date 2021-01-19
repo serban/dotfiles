@@ -60,6 +60,7 @@ duti -s org.vim.MacVim              .swift                              all
 duti -s org.vim.MacVim              .tex                                all
 duti -s org.vim.MacVim              .toml                               all
 duti -s org.vim.MacVim              .txt                                all
+duti -s org.vim.MacVim              .ulss                               all
 duti -s org.vim.MacVim              .vim                                all
 duti -s org.vim.MacVim              .xml                                all
 duti -s org.vim.MacVim              .yaml                               all

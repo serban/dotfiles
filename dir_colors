@@ -128,6 +128,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .css    00;36
 .h      00;36
 .proto  00;36
+.ulss   00;36
 
 # CONFIGURATION (Bold Cyan)
 .csv    01;35
