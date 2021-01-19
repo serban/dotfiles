@@ -41,20 +41,9 @@ local function stackApplicationWindows()
   end
 end
 
-local function maximizeApplicationWindows()
-  local app = hs.application.frontmostApplication()
-  app:activate(true)
-
-  for _, s in pairs(hs.screen.allScreens()) do
-    local windows = {}
-    for _, w in pairs(app:visibleWindows()) do
-      if w:screen() == s then
-        table.insert(windows, w)
-      end
-    end
-    for _, w in ipairs(windows) do
-      hs.grid.set(w, {0, 0, 7, 9})
-    end
+local function maximizeVisibleWindows()
+  for _, w in pairs(hs.window.visibleWindows()) do
+    hs.grid.set(w, {0, 0, 7, 9})
   end
 end
 
@@ -79,7 +68,7 @@ bind('f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) en
 bind('f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
 
 bind('-',     function() stackApplicationWindows() end)
-bind('=',     function() maximizeApplicationWindows() end)
+bind('=',     function() maximizeVisibleWindows() end)
 
 bind('1',     function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
 bind('2',     function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
