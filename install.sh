@@ -114,7 +114,3 @@ darwin || linux && {
   mkdir -p "${VSCODE}"
   ln -si ${DOTFILES}/vscode/settings.json "${VSCODE}/"
 }
-
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +quitall
-vim +GoInstallBinaries +quitall
