@@ -15,6 +15,8 @@ set --global --export PATH \
     $HOME/opt/google-cloud-sdk/bin \
     $HOME/homebrew/bin \
     $HOME/homebrew/sbin \
+    /opt/homebrew/bin \
+    /opt/homebrew/sbin \
     /usr/local/bin \
     /usr/local/sbin \
     /usr/bin \
