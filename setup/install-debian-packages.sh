@@ -13,6 +13,7 @@ sudo apt-get install \
   dnsutils \
   editorconfig \
   fish \
+  fzf \
   git \
   golang \
   hashdeep \

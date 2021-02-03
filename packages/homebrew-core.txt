@@ -7,6 +7,7 @@ editorconfig
 findutils
 firebase-cli
 fish
+fzf
 gawk
 git
 gnu-sed
