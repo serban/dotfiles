@@ -356,6 +356,10 @@ function SerbanFormatBullets()
   silent! %s/\v^    [*+] /    - /g
   silent! %s/\v^      [*-] /      + /g
   silent! %s/\v^        [*+] /        - /g
+  silent! %s/\v^          [*-] /          + /g
+  silent! %s/\v^            [*+] /            - /g
+  silent! %s/\v^              [*-] /              + /g
+  silent! %s/\v^                [*+] /                - /g
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted bullets'
 endfunction
 
