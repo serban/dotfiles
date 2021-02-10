@@ -168,7 +168,7 @@ set backspace=eol,indent,start      " Make life easier on crappy terminals
 set mouse=a                         " Enable the mouse
 set ttymouse=sgr                    " Support mouse past the 223rd column
 
-set autochdir                       " Keep the current directory in sync with the folder containing the open file
+set noautochdir                     " When enabled, keep the current directory in sync with the folder containing the open file
 set autoread                        " If an open file has changed outside of Vim but was not modified inside of Vim, reload it without asking when running :checktime
 set hidden                          " Allow buffers with unsaved changes to be hidden from view
 
@@ -208,7 +208,7 @@ let g:ctrlsf_position = 'right'
 let g:ctrlsf_auto_focus = { 'at': 'done' }
 let g:ctrlsf_auto_close = { 'normal': 0, 'compact': 0 }
 let g:ctrlsf_auto_preview = 0
-let g:ctrlsf_absolute_file_path = 0  " TODO(serban): Does nothing when autochdir is set. Disable autochdir.
+let g:ctrlsf_absolute_file_path = 0  " Does nothing when autochdir is set.
 let g:ctrlsf_indent = 2
 
 function g:CtrlSFAfterMainWindowInit()
