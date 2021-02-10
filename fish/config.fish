@@ -27,6 +27,10 @@ function serban_postexec --on-event fish_postexec
   end
 end
 
+function serban_dirchange --on-variable PWD
+  echo → (pwd)
+end
+
 set --global fish_color_command yellow
 set --global fish_color_quote yellow
 set --global fish_color_redirection cyan
