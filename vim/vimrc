@@ -16,6 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dag/vim-fish'
+Plugin 'dyng/ctrlsf.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
@@ -201,6 +202,20 @@ let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
 let g:ctrlp_switch_buffer = ''
 let g:ctrlp_clear_cache_on_exit = 1  " NB: This calls ctrlp#clra() on exit. This clears all caches, even those of other running Vim sessions. Caches are only cleared if you invoke CtrlP during the Vim session.
 let g:ctrlp_extensions = ['autoignore']
+
+" CTRLSF
+let g:ctrlsf_position = 'right'
+let g:ctrlsf_auto_focus = { 'at': 'done' }
+let g:ctrlsf_auto_close = { 'normal': 0, 'compact': 0 }
+let g:ctrlsf_auto_preview = 0
+let g:ctrlsf_absolute_file_path = 0  " TODO(serban): Does nothing when autochdir is set. Disable autochdir.
+let g:ctrlsf_indent = 2
+
+function g:CtrlSFAfterMainWindowInit()
+  NumbersDisable
+  set nonumber
+  set norelativenumber
+endfunction
 
 " EASYBUFFER
 let g:easybuffer_use_sequence = 1                           " Use ascending numbers instead of buffer numbers for quick switching
@@ -751,6 +766,8 @@ nnoremap <unique> <Leader>z :nohlsearch <CR>
 nnoremap <unique> <Leader>ac :Tabularize /:\zs<CR>
 nnoremap <unique> <Leader>ae :Tabularize /=<CR>
 nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
+
+    nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
 
 nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
