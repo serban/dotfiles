@@ -664,6 +664,8 @@ endif
 " ABBREVIATIONS
 
 iabbrev td TODO(serban):
+iabbrev #t # TODO(serban):
+iabbrev /t // TODO(serban):
 
 " ------------------------------------------------------------------------------
 " DIGRAPHS
