@@ -343,7 +343,7 @@ function SerbanGenerateSpellFiles()
   highlight SpellRare
 endfunction
 
-function SerbanDeleteEmptyBuffers()
+function SerbanDeleteEmptyBuffers(verbose)
   let predicate  = 'buflisted(v:val) && '
   let predicate .= 'empty(bufname(v:val)) && '
   let predicate .= 'getbufline(v:val, 1, "$") ==# [""] && '
@@ -352,12 +352,16 @@ function SerbanDeleteEmptyBuffers()
   let buffers = filter(range(1, bufnr('$')), predicate)
 
   if empty(buffers)
-    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'No empty buffers to delete'
+    if a:verbose
+      echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'No empty buffers to delete'
+    endif
     return
   endif
 
   execute 'bdelete ' . join(buffers, ' ')
-  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Deleted empty buffers'
+  if a:verbose
+    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Deleted empty buffers'
+  endif
 endfunction
 
 function SerbanEasyBufferBufName(bufferNumber)
@@ -784,7 +788,7 @@ nnoremap <unique> <Leader>sl :set list! <CR>
 nnoremap <unique> <Leader>ss :set spell! <CR>
 nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
-nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers() <CR>
+nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
 nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
 nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
 
@@ -800,7 +804,7 @@ nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
 
 nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
 
-nnoremap <silent> <unique> <Leader>, :call bufselect#OpenMenu() <CR>
+nnoremap <silent> <unique> <Leader>, :call SerbanDeleteEmptyBuffers(v:false) <Bar> call bufselect#OpenMenu() <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
