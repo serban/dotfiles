@@ -197,7 +197,7 @@ endif
 " PLUGIN SETTINGS
 
 " CTRLP
-let g:ctrlp_map = '<C-f>'
+let g:ctrlp_map = ''  " Mapped below with all the others
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
 let g:ctrlp_switch_buffer = ''
 let g:ctrlp_clear_cache_on_exit = 1  " NB: This calls ctrlp#clra() on exit. This clears all caches, even those of other running Vim sessions. Caches are only cleared if you invoke CtrlP during the Vim session.
@@ -735,7 +735,7 @@ let mapleader = ' '
   nnoremap <unique> <C-c> :close <CR>
 " nnoremap <unique> <C-d> DEFAULT
 " nnoremap <unique> <C-e> DEFAULT
-" nnoremap <unique> <C-f> TODO(serban): Used by CtrlP above
+      nmap <unique> <C-f> <Plug>(ctrlp)
   nnoremap <unique> <C-g> :split <CR>
   nnoremap <unique> <C-h> :wincmd h <CR>
 " nnoremap <unique> <C-i> SAME AS <Tab>
