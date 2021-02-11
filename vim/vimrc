@@ -699,112 +699,137 @@ digraphs cr 10007  " 0x2717 = ✗
 
 let mapleader = ' '
 
-" Disable man pages
-nnoremap <unique> K <Nop>
+  " Disable man pages
+  nnoremap <unique> K <Nop>
 
-" Disable Ex-mode
-nnoremap <unique> Q  <Nop>
-nnoremap <unique> gQ <Nop>
-nnoremap <unique> q: <Nop>
+  " Disable Ex-mode
+  nnoremap <unique> Q  <Nop>
+  nnoremap <unique> gQ <Nop>
+  nnoremap <unique> q: <Nop>
 
-" Arrow keys move the cursor up and down a display line instead of a physical
-" line. Useful when soft-wrapping text.
-nnoremap <unique> <Up>   gk
-inoremap <unique> <Up>   <ESC>gka
-nnoremap <unique> <Down> gj
-inoremap <unique> <Down> <ESC>gja
+  " Arrow keys move the cursor up and down a display line instead of a physical
+  " line. Useful when soft-wrapping text.
+  nnoremap <unique> <Up>   gk
+  inoremap <unique> <Up>   <ESC>gka
+  nnoremap <unique> <Down> gj
+  inoremap <unique> <Down> <ESC>gja
 
-cnoremap <unique>  <F1> <ESC>
-inoremap <unique>  <F1> <ESC>
-nnoremap <unique>  <F1> <ESC>
-vnoremap <unique>  <F1> <ESC>
-nnoremap <unique>  <F2> :call SerbanIndentSpaces2() <CR>
-nnoremap <unique>  <F3> :call SerbanIndentTabs2() <CR>
-nnoremap <unique>  <F4> :call SerbanIndentSpaces4() <CR>
-nnoremap <unique>  <F5> :call SerbanIndentTabs4() <CR>
-nnoremap <unique>  <F8> :call SerbanIndentSpaces8() <CR>
-nnoremap <unique>  <F9> :call SerbanIndentTabs8() <CR>
-nnoremap <unique> <F12> :call SerbanIndentMixed4() <CR>
+  cnoremap <unique>  <F1> <ESC>
+  inoremap <unique>  <F1> <ESC>
+  nnoremap <unique>  <F1> <ESC>
+  vnoremap <unique>  <F1> <ESC>
+  nnoremap <unique>  <F2> :call SerbanIndentSpaces2() <CR>
+  nnoremap <unique>  <F3> :call SerbanIndentTabs2() <CR>
+  nnoremap <unique>  <F4> :call SerbanIndentSpaces4() <CR>
+  nnoremap <unique>  <F5> :call SerbanIndentTabs4() <CR>
+" nnoremap <unique>  <F6>
+" nnoremap <unique>  <F7>
+  nnoremap <unique>  <F8> :call SerbanIndentSpaces8() <CR>
+  nnoremap <unique>  <F9> :call SerbanIndentTabs8() <CR>
+" nnoremap <unique> <F10>
+" nnoremap <unique> <F11>
+  nnoremap <unique> <F12> :call SerbanIndentMixed4() <CR>
 
-nnoremap <unique> <C-a> :botright vsplit <CR>
-nnoremap <unique> <C-b> :tabnew <CR>
-nnoremap <unique> <C-c> :close <CR>
-nnoremap <unique> <C-g> :split <CR>
-nnoremap <unique> <C-h> :wincmd h <CR>
-nnoremap <unique> <C-j> :wincmd j <CR>
-nnoremap <unique> <C-k> :wincmd k <CR>
-nnoremap <unique> <C-l> :wincmd l <CR>
-nnoremap <unique> <C-n> :tabnext <CR>
-nnoremap <unique> <C-p> :tabprevious <CR>
-nnoremap <unique> <C-q> :quitall <CR>
-nnoremap <unique> <C-s> :update <CR>
-inoremap <unique> <C-s> <ESC>:update <CR>
-nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
+  nnoremap <unique> <C-a> :botright vsplit <CR>
+  nnoremap <unique> <C-b> :tabnew <CR>
+  nnoremap <unique> <C-c> :close <CR>
+" nnoremap <unique> <C-d> DEFAULT
+" nnoremap <unique> <C-e> DEFAULT
+" nnoremap <unique> <C-f> TODO(serban): Used by CtrlP above
+  nnoremap <unique> <C-g> :split <CR>
+  nnoremap <unique> <C-h> :wincmd h <CR>
+" nnoremap <unique> <C-i> SAME AS <Tab>
+  nnoremap <unique> <C-j> :wincmd j <CR>
+  nnoremap <unique> <C-k> :wincmd k <CR>
+  nnoremap <unique> <C-l> :wincmd l <CR>
+" nnoremap <unique> <C-m> SAME AS <Enter> and <Return>
+  nnoremap <unique> <C-n> :tabnext <CR>
+" nnoremap <unique> <C-o> DEFAULT
+  nnoremap <unique> <C-p> :tabprevious <CR>
+  nnoremap <unique> <C-q> :quitall <CR>
+" nnoremap <unique> <C-r> DEFAULT
+  nnoremap <unique> <C-s> :update <CR>
+  inoremap <unique> <C-s> <ESC>:update <CR>
+" nnoremap <unique> <C-t> DEFAULT
+" nnoremap <unique> <C-u> DEFAULT
+" nnoremap <unique> <C-v> DEFAULT
+" nnoremap <unique> <C-w> DEFAULT
+  nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
+" nnoremap <unique> <C-y> DEFAULT
+" nnoremap <unique> <C-z> DEFAULT
 
-" TODO(serban): Does not work in tmux. See:
-" - https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
-" - https://stackoverflow.com/questions/38133250/cannot-get-control-arrow-keys-working-in-vim-through-tmux
-nnoremap <unique> <C-Left>  :tabmove -1 <CR>
-nnoremap <unique> <C-Right> :tabmove +1 <CR>
+  " TODO(serban): Does not work in tmux. See:
+  " - https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
+  " - https://stackoverflow.com/questions/38133250/cannot-get-control-arrow-keys-working-in-vim-through-tmux
+  nnoremap <unique> <C-Left>  :tabmove -1 <CR>
+  nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
-nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
-nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
-nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
-nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
-nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
-nnoremap <unique> <Leader>g :FileswitchEditGo <CR>
-nnoremap <unique> <Leader>h :FileswitchEditH <CR>
-nnoremap <unique> <Leader>i :GoImports <CR>
-nnoremap <unique> <Leader>j :FileswitchEditJava <CR>
-nnoremap <unique> <Leader>k :marks abcdefghijklmnopqrstuvwxyz <CR>
-nnoremap <unique> <Leader>K :marks ABCDEFGHIJKLMNOPQRSTUVWXYZ <CR>
-nnoremap <unique> <Leader>l :Marks <CR>
-    nmap <unique> <Leader>m <Plug>MarkSet
-    nmap <unique> <Leader>n <Plug>MarkAllClear
-nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
-nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
-nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
-nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
-nnoremap <unique> <Leader>z :nohlsearch <CR>
+" nnoremap <unique> <Leader>a RESERVED
+  nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
+  nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
+  nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
+  nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
+  nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
+  nnoremap <unique> <Leader>g :FileswitchEditGo <CR>
+  nnoremap <unique> <Leader>h :FileswitchEditH <CR>
+  nnoremap <unique> <Leader>i :GoImports <CR>
+  nnoremap <unique> <Leader>j :FileswitchEditJava <CR>
+  nnoremap <unique> <Leader>k :marks abcdefghijklmnopqrstuvwxyz <CR>
+  nnoremap <unique> <Leader>K :marks ABCDEFGHIJKLMNOPQRSTUVWXYZ <CR>
+  nnoremap <unique> <Leader>l :Marks <CR>
+      nmap <unique> <Leader>m <Plug>MarkSet
+      nmap <unique> <Leader>n <Plug>MarkAllClear
+  nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
+  nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
+" nnoremap <unique> <Leader>q
+" nnoremap <unique> <Leader>r RESERVED
+" nnoremap <unique> <Leader>s RESERVED
+  nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
+  nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
+" nnoremap <unique> <Leader>v RESERVED
+" nnoremap <unique> <Leader>w RESERVED
+" nnoremap <unique> <Leader>x RESERVED
+" nnoremap <unique> <Leader>y RESERVED
+  nnoremap <unique> <Leader>z :nohlsearch <CR>
 
-nnoremap <unique> <Leader>ac :Tabularize /:\zs<CR>
-nnoremap <unique> <Leader>ae :Tabularize /=<CR>
-nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
+  nnoremap <unique> <Leader>ac :Tabularize /:\zs<CR>
+  nnoremap <unique> <Leader>ae :Tabularize /=<CR>
+  nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
 
-    nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
+      nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
 
-nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
-nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
+  nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
+  nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
-nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
-nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
-nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
-nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
+  nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
+  nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
+  nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
+  nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
 
-nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
-nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
-nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
-nnoremap <unique> <Leader>sl :set list! <CR>
-nnoremap <unique> <Leader>ss :set spell! <CR>
-nnoremap <unique> <Leader>st :TagbarToggle <CR>
+  nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
+  nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
+  nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
+  nnoremap <unique> <Leader>sl :set list! <CR>
+  nnoremap <unique> <Leader>ss :set spell! <CR>
+  nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
-nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
-nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
-nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
+  nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
+  nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
+  nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
 
-nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
-nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
-nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
-nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
+  nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
+  nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
+  nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
+  nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
 
-nnoremap <unique> <Leader>1 :set guifont=Monaco:h12 <CR>
-nnoremap <unique> <Leader>2 :set guifont=Monaco:h15 <CR>
-nnoremap <unique> <Leader>3 :set guifont=Monaco:h18 <CR>
-nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
+  nnoremap <unique> <Leader>1 :set guifont=Monaco:h12 <CR>
+  nnoremap <unique> <Leader>2 :set guifont=Monaco:h15 <CR>
+  nnoremap <unique> <Leader>3 :set guifont=Monaco:h18 <CR>
+  nnoremap <unique> <Leader>4 :set guifont=Monaco:h24 <CR>
 
-nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
+  nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
 
-nnoremap <silent> <unique> <Leader>, :call SerbanDeleteEmptyBuffers(v:false) <Bar> call bufselect#OpenMenu() <CR>
+  nnoremap <silent> <unique> <Leader>, :call SerbanDeleteEmptyBuffers(v:false) <Bar> call bufselect#OpenMenu() <CR>
 
 " Glug corpweb
 " nnoremap <unique> <Leader>cs :CorpWebCs <C-R>=expand('<cword>')<CR><CR>
