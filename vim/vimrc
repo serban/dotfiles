@@ -733,30 +733,30 @@ let mapleader = ' '
   nnoremap <unique> <C-a> :botright vsplit <CR>
   nnoremap <unique> <C-b> :tabnew <CR>
   nnoremap <unique> <C-c> :close <CR>
-" nnoremap <unique> <C-d> DEFAULT
-" nnoremap <unique> <C-e> DEFAULT
+" nnoremap <unique> <C-d>
+" nnoremap <unique> <C-e>
   nnoremap <unique> <C-f> :pwd <CR>
   nnoremap <unique> <C-g> :split <CR>
   nnoremap <unique> <C-h> :wincmd h <CR>
-" nnoremap <unique> <C-i> SAME AS <Tab>
+" nnoremap <unique> <C-i>
   nnoremap <unique> <C-j> :wincmd j <CR>
   nnoremap <unique> <C-k> :wincmd k <CR>
   nnoremap <unique> <C-l> :wincmd l <CR>
-" nnoremap <unique> <C-m> SAME AS <Enter> and <Return>
+" nnoremap <unique> <C-m>
   nnoremap <unique> <C-n> :tabnext <CR>
-" nnoremap <unique> <C-o> DEFAULT
+" nnoremap <unique> <C-o>
   nnoremap <unique> <C-p> :tabprevious <CR>
   nnoremap <unique> <C-q> :quitall <CR>
-" nnoremap <unique> <C-r> DEFAULT
+" nnoremap <unique> <C-r>
   nnoremap <unique> <C-s> :update <CR>
   inoremap <unique> <C-s> <ESC>:update <CR>
-" nnoremap <unique> <C-t> DEFAULT
-" nnoremap <unique> <C-u> DEFAULT
-" nnoremap <unique> <C-v> DEFAULT
-" nnoremap <unique> <C-w> DEFAULT
+" nnoremap <unique> <C-t>
+" nnoremap <unique> <C-u>
+" nnoremap <unique> <C-v>
+" nnoremap <unique> <C-w>
   nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
-" nnoremap <unique> <C-y> DEFAULT
-" nnoremap <unique> <C-z> DEFAULT
+" nnoremap <unique> <C-y>
+" nnoremap <unique> <C-z>
 
   " TODO(serban): Does not work in tmux. See:
   " - https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
@@ -764,7 +764,7 @@ let mapleader = ' '
   nnoremap <unique> <C-Left>  :tabmove -1 <CR>
   nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
-" nnoremap <unique> <Leader>a RESERVED
+" nnoremap <unique> <Leader>a
   nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
   nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
   nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
@@ -782,14 +782,14 @@ let mapleader = ' '
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
   nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
       nmap <unique> <Leader>q <Plug>(ctrlp)
-" nnoremap <unique> <Leader>r RESERVED
-" nnoremap <unique> <Leader>s RESERVED
+" nnoremap <unique> <Leader>r
+" nnoremap <unique> <Leader>s
   nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
   nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
-" nnoremap <unique> <Leader>v RESERVED
-" nnoremap <unique> <Leader>w RESERVED
-" nnoremap <unique> <Leader>x RESERVED
-" nnoremap <unique> <Leader>y RESERVED
+" nnoremap <unique> <Leader>v
+" nnoremap <unique> <Leader>w
+" nnoremap <unique> <Leader>x
+" nnoremap <unique> <Leader>y
   nnoremap <unique> <Leader>z :nohlsearch <CR>
 
   nnoremap <unique> <Leader>ac :Tabularize /:\zs<CR>
