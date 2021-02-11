@@ -519,6 +519,14 @@ function SerbanToggleColorColumn()
   endif
 endfunction
 
+function SerbanToggleWinWidth()
+  if &winwidth ==# 86
+    set winwidth=106
+  else
+    set winwidth=86
+  endif
+endfunction
+
 function SerbanToggleLineNumbers()
   if &number
     NumbersDisable
@@ -812,6 +820,7 @@ let mapleader = ' '
 
   nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
   nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
+  nnoremap <unique> <Leader>sm :call SerbanToggleWinWidth() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
