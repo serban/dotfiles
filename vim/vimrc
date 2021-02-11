@@ -735,7 +735,7 @@ let mapleader = ' '
   nnoremap <unique> <C-c> :close <CR>
 " nnoremap <unique> <C-d> DEFAULT
 " nnoremap <unique> <C-e> DEFAULT
-      nmap <unique> <C-f> <Plug>(ctrlp)
+  nnoremap <unique> <C-f> :pwd <CR>
   nnoremap <unique> <C-g> :split <CR>
   nnoremap <unique> <C-h> :wincmd h <CR>
 " nnoremap <unique> <C-i> SAME AS <Tab>
@@ -781,7 +781,7 @@ let mapleader = ' '
       nmap <unique> <Leader>n <Plug>MarkAllClear
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
   nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
-" nnoremap <unique> <Leader>q
+      nmap <unique> <Leader>q <Plug>(ctrlp)
 " nnoremap <unique> <Leader>r RESERVED
 " nnoremap <unique> <Leader>s RESERVED
   nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
