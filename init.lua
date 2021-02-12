@@ -83,7 +83,7 @@ bind('f8',    function() hs.osascript.applescript('tell application "System Even
 bind('b',     function() activate('Firefox.app') end)
 bind('c',     function() activate('Google Chrome.app') end)
 bind('f',     function() activate('Finder.app') end)
-bind('g',     function() activate('Chat.app') end)
+bind('g',     function() activate('Google Chat.app') end)
 bind('h',     function() activate('Audio Hijack.app') end)
 bind('i',     function() activate('Sublime Text.app') end)
 bind('j',     function() activate('Sublime Merge.app') end)
