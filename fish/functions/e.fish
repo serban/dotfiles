@@ -15,10 +15,12 @@ function e
   set --local xargs '-o'
   set --local binary vim
   set --local args ''
+  set --local stdout /dev/stdout
   set --local stderr /dev/stderr
 
   if test -n "$_flag_gui"
     set xargs ''
+    set stdout /dev/null
     set stderr /dev/null
 
     if type --quiet gvim
@@ -42,9 +44,9 @@ function e
   if test -n "$_flag_all"
     find . -type f -not -path '*/.git/*' -print0 \
         | sort --zero-terminated \
-        | eval xargs -0 $xargs $binary $args 2> $stderr
+        | eval xargs -0 $xargs $binary $args > $stdout 2> $stderr
     return
   end
 
-  eval $binary $args $argv 2> $stderr
+  eval $binary $args $argv > $stdout 2> $stderr
 end
