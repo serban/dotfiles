@@ -13,6 +13,7 @@ set --global --export PATH \
     $HOME/go/bin \
     $HOME/.cargo/bin \
     $HOME/opt/google-cloud-sdk/bin \
+    /usr/local/git/current/bin \
     $HOME/homebrew/bin \
     $HOME/homebrew/sbin \
     /opt/homebrew/bin \
