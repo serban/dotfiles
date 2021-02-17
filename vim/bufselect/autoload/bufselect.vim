@@ -108,10 +108,16 @@ function bufselect#OpenMenu()
 
   let window_id = popup_menu(names, opts)
 
+  " Check if bufselect is being invoked from an unlisted buffer.
+  let idx = index(numbers, bufnr())
+  if idx <# 0
+    return
+  endif
+
   " Move the selection down to the current buffer.
   " The following does not work because zero is not a valid count:
   "   call win_execute(id, 'normal! ' . index(numbers, bufnr()) . 'j')
-  for i in range(index(numbers, bufnr()))
+  for i in range(idx)
     call win_execute(window_id, 'normal! j')
   endfor
 endfunction
