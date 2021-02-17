@@ -323,7 +323,8 @@ function SerbanInsertModeline()
 endfunction
 
 function SerbanEchoFilePath()
-  echo fnamemodify(getcwd(), ':~')
+  echo substitute(fnamemodify(getcwd(), ':~'),
+       \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
   echohl SerbanPath
   echo substitute(expand('%:p:~'),
        \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
