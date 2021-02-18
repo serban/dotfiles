@@ -226,6 +226,9 @@ let g:easybuffer_bufname = 'SerbanEasyBufferBufName(bnr)'   " Display a custom p
 " EDITORCONFIG
 let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
 
+" FZF.VIM
+let g:fzf_command_prefix = 'Fzf'
+
 " NUMBERS
 " I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
 " does not exist when this code is run. See numbers.vim for the default value.
@@ -818,6 +821,15 @@ let mapleader = ' '
   nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
 
       nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
+
+  nnoremap <unique> <Leader>hb :FzfBuffers <CR>
+  nnoremap <unique> <Leader>hf :FzfFiles <CR>
+  nnoremap <unique> <Leader>hl :FzfBLines <CR>
+  nnoremap <unique> <Leader>hi :FzfLines <CR>
+  nnoremap <unique> <Leader>hm :FzfMarks <CR>
+  nnoremap <unique> <Leader>hh :FzfHelptags <CR>
+  nnoremap <unique> <Leader>hc :FzfCommands <CR>
+  nnoremap <unique> <Leader>ha :FzfMaps <CR>
 
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
