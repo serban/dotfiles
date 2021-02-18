@@ -62,7 +62,7 @@ if filereadable('/usr/share/vim/google/google.vim')
   Glug blazedeps auto_filetypes=`['go']`
   Glug codefmt
   Glug codefmt-google
-  Glug fileswitch
+  Glug fileswitch plugin[mappings]='<Leader>j'
   Glug outline-window
   Glug youcompleteme-google
 
@@ -786,27 +786,27 @@ let mapleader = ' '
   nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
 " nnoremap <unique> <Leader>a
-  nnoremap <unique> <Leader>b :FileswitchEditBUILD <CR>
-  nnoremap <unique> <Leader>c :FileswitchEditCC <CR>
+" nnoremap <unique> <Leader>b
+" nnoremap <unique> <Leader>c
   nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
   nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
   nnoremap <unique> <Leader>f :YcmCompleter GoToDefinition <CR>
-  nnoremap <unique> <Leader>g :FileswitchEditGo <CR>
-  nnoremap <unique> <Leader>h :FileswitchEditH <CR>
+" nnoremap <unique> <Leader>g
+" nnoremap <unique> <Leader>h
   nnoremap <unique> <Leader>i :GoImports <CR>
-  nnoremap <unique> <Leader>j :FileswitchEditJava <CR>
+" nnoremap <unique> <Leader>j
   nnoremap <unique> <Leader>k :marks abcdefghijklmnopqrstuvwxyz <CR>
   nnoremap <unique> <Leader>K :marks ABCDEFGHIJKLMNOPQRSTUVWXYZ <CR>
   nnoremap <unique> <Leader>l :Marks <CR>
       nmap <unique> <Leader>m <Plug>MarkSet
       nmap <unique> <Leader>n <Plug>MarkAllClear
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
-  nnoremap <unique> <Leader>p :FileswitchEditPy <CR>
+" nnoremap <unique> <Leader>p
       nmap <unique> <Leader>q <Plug>(ctrlp)
 " nnoremap <unique> <Leader>r
 " nnoremap <unique> <Leader>s
-  nnoremap <unique> <Leader>t :FileswitchEditTest <CR>
-  nnoremap <unique> <Leader>u :FileswitchEditUnitTest <CR>
+" nnoremap <unique> <Leader>t
+" nnoremap <unique> <Leader>u
 " nnoremap <unique> <Leader>v
 " nnoremap <unique> <Leader>w
 " nnoremap <unique> <Leader>x
