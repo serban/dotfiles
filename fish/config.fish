@@ -28,7 +28,9 @@ function serban_postexec --on-event fish_postexec
 end
 
 function serban_dirchange --on-variable PWD
-  printf '%s→ %s%s\n' (set_color brgreen) (pwd) (set_color normal)
+  printf '%s→ %s%s\n' \
+      (set_color brgreen) (serban_working_dir) \
+      (set_color normal)
 end
 
 set --global fish_color_command yellow
