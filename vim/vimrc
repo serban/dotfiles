@@ -326,8 +326,10 @@ function SerbanInsertModeline()
 endfunction
 
 function SerbanEchoWorkingDir()
+  echohl SerbanWorkingDir
   echo substitute(fnamemodify(getcwd(), ':~'),
        \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
+  echohl None
 endfunction
 
 function SerbanEchoFilePath()
@@ -441,6 +443,7 @@ function SerbanHighlight()
   highlight TabLineFill              cterm=none ctermbg=0  ctermfg=3
   highlight TabLine                  cterm=none ctermbg=0  ctermfg=7
   highlight TabLineSel               cterm=none ctermbg=5  ctermfg=8
+  highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
   highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectBorderHighlight cterm=none ctermbg=8  ctermfg=7
