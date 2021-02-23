@@ -325,9 +325,12 @@ function SerbanInsertModeline()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
-function SerbanEchoFilePath()
+function SerbanEchoWorkingDir()
   echo substitute(fnamemodify(getcwd(), ':~'),
        \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
+endfunction
+
+function SerbanEchoFilePath()
   echohl SerbanPath
   echo substitute(expand('%:p:~'),
        \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
@@ -759,7 +762,7 @@ let mapleader = ' '
   nnoremap <unique> <C-c> :close <CR>
 " nnoremap <unique> <C-d>
 " nnoremap <unique> <C-e>
-  nnoremap <unique> <C-f> :pwd <CR>
+" nnoremap <unique> <C-f>
   nnoremap <unique> <C-g> :split <CR>
   nnoremap <unique> <C-h> :wincmd h <CR>
 " nnoremap <unique> <C-i>
@@ -804,7 +807,7 @@ let mapleader = ' '
       nmap <unique> <Leader>m <Plug>MarkSet
       nmap <unique> <Leader>n <Plug>MarkAllClear
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
-" nnoremap <unique> <Leader>p
+  nnoremap <unique> <Leader>p :call SerbanEchoWorkingDir() <CR>
       nmap <unique> <Leader>q <Plug>(ctrlp)
 " nnoremap <unique> <Leader>r
 " nnoremap <unique> <Leader>s
