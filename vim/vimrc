@@ -555,6 +555,20 @@ function SerbanToggleLineNumbers()
   endif
 endfunction
 
+function SerbanFzfGoogle3Files()
+  call fzf#run(fzf#wrap({
+  \   'source': 'cat ~/src/dotfiles-google/google3-files',
+  \   'sink': 'PiperOpenPath',
+  \ }))
+endfunction
+
+function SerbanFzfGoogle3Folders()
+  call fzf#run(fzf#wrap({
+  \   'source': 'cat ~/src/dotfiles-google/google3-folders',
+  \   'sink': 'PiperChangeDirectory',
+  \ }))
+endfunction
+
 " ------------------------------------------------------------------------------
 " WRAP FUNCTIONS
 
@@ -836,6 +850,8 @@ let mapleader = ' '
   nnoremap <unique> <Leader>hh :FzfHelptags <CR>
   nnoremap <unique> <Leader>hc :FzfCommands <CR>
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
+  nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
+  nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
 
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
