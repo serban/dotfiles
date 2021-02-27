@@ -325,6 +325,10 @@ function SerbanInsertModeline()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Inserted modeline'
 endfunction
 
+function SerbanChangeWorkingDirToCurrentFileParent()
+  execute 'cd' fnameescape(expand('%:p:h'))
+endfunction
+
 function SerbanEchoWorkingDir()
   echohl SerbanWorkingDir
   echo substitute(fnamemodify(getcwd(), ':~'),
@@ -883,6 +887,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
+  nnoremap <unique> <Leader>vc :call SerbanChangeWorkingDirToCurrentFileParent() <Bar> call SerbanEchoWorkingDir() <CR>
   nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
   nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
   nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
