@@ -80,7 +80,7 @@ if filereadable('/usr/share/vim/google/google.vim')
   " autocmd FileType python AutoFormatBuffer pyformat
   autocmd FileType bzl AutoFormatBuffer buildifier
 
-  autocmd FileType go setlocal textwidth=100 colorcolumn=+1,121,141
+  autocmd FileType go setlocal textwidth=100 winwidth=106 colorcolumn=+1,121,141
 endif
 
 " ------------------------------------------------------------------------------
@@ -694,8 +694,9 @@ endfunction
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
 autocmd FileType cpp    set commentstring=//\ \ %s iskeyword-=-
 autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+autocmd FileType java   set textwidth=100 winwidth=106
 autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType swift  set textwidth=100
+autocmd FileType swift  set textwidth=100 winwidth=106
 
 if has('gui_macvim')
   autocmd OSAppearanceChanged * call SerbanSetMacVimBackground()
