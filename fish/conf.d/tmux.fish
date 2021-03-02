@@ -147,6 +147,12 @@ function mcd
   end
 end
 
+function mfs
+  set --global --export SSH_AUTH_SOCK \
+      (string replace --regex '^SSH_AUTH_SOCK=' '' \
+          (tmux show-environment SSH_AUTH_SOCK))
+end
+
 function serban_complete_mas
   for dir in (find $HOME/src -mindepth 1 -maxdepth 1 -type d)
     echo (string split / $dir)[-1]
