@@ -16,8 +16,10 @@ set --global --export PATH \
     /usr/local/git/current/bin \
     $HOME/homebrew/bin \
     $HOME/homebrew/sbin \
+    $HOME/homebrew/opt/sqlite/bin \
     /opt/homebrew/bin \
     /opt/homebrew/sbin \
+    /opt/homebrew/opt/sqlite/bin \
     /usr/local/bin \
     /usr/local/sbin \
     /usr/bin \
