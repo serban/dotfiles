@@ -56,10 +56,19 @@ set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
 
+# TODO: fzf v0.25 introduces the 'query' color option. Set 'prompt' and 'query'.
 set --global --export FZF_DEFAULT_OPTS \
     --reverse \
     --no-info \
     --height 8 \
+    --pointer › \
+    --marker ● \
+    --no-bold \
+    --color dark,border:13 \
+    --color gutter:0,marker:2 \
+    --color hl:1,hl+:1 \
+    --color bg:8,fg:12 \
+    --color bg+:0,fg+:7,pointer:7 \
     #
 
 set --global --export LESS \
