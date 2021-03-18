@@ -65,9 +65,9 @@ set --global --export FZF_DEFAULT_OPTS \
     --marker ● \
     --no-bold \
     --color dark,border:13 \
-    --color gutter:0,marker:2 \
+    --color gutter:-1,marker:2 \
     --color hl:1,hl+:1 \
-    --color bg:8,fg:12 \
+    --color bg:-1,fg:12 \
     --color bg+:0,fg+:7,pointer:7 \
     #
 
