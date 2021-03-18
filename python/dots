@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+
+import argparse
+import time
+
+
+def parse_command_line_arguments():
+  parser = argparse.ArgumentParser()
+
+  parser.add_argument(
+      '-v', '--verbose', dest='verbose', action='store_true',
+      help='enable verbose output')
+
+  parser.add_argument(
+      'seconds', type=int,
+      help='the number of seconds to wait')
+
+  return parser.parse_args()
+
+
+def main():
+  args = parse_command_line_arguments()
+  assert args.seconds >= 0
+
+  total_seconds = args.seconds
+  minutes, seconds = divmod(total_seconds, 60)
+
+  if args.verbose:
+    if minutes:
+      print(f'Waiting {minutes:d}m {seconds:02d}s')
+    else:
+      print(f'Waiting {seconds:d}s')
+
+  for i in range(1, total_seconds+1):
+    time.sleep(1)
+    print('.', end='', flush=True)
+    m, s = divmod(i, 60)
+    if s == 0:
+      print(f' {m:2d}m')
+
+  if seconds > 0:
+    print()
+
+
+if __name__ == '__main__':
+  main()
