@@ -7,6 +7,7 @@
 Software    | Release Date | Version
 --------    | ------------ | -------
 fish        | 2020-04-29   | 3.1.2
+fzf         | 2020-11-09   | 0.24.3
 hammerspoon | 2020-11-17   | 0.9.82
 iTerm2      | 2020-07-02   | 3.3.12
 macvim      | 2020-12-19   | 169
@@ -20,6 +21,7 @@ virtualfish | 2020-12-01   | 2.5.1
 Software    | Releases                                                        | Commits                                                               | Issues                                                      | Discussion
 --------    | --------                                                        | -------                                                               | ------                                                      | ----------
 fish        | [Releases](https://github.com/fish-shell/fish-shell/releases)   | [Commits](https://github.com/fish-shell/fish-shell/commits/master)    | [Issues](https://github.com/fish-shell/fish-shell/issues)   |
+fzf         | [Releases](https://github.com/junegunn/fzf/releases)            | [Commits](https://github.com/junegunn/fzf/commits/master)             | [Issues](https://github.com/junegunn/fzf/issues)            |
 hammerspoon | [Releases](https://github.com/Hammerspoon/hammerspoon/releases) | [Commits](https://github.com/Hammerspoon/hammerspoon/commits/master)  | [Issues](https://github.com/Hammerspoon/hammerspoon/issues) |
 iTerm2      | [Releases](https://github.com/gnachman/iTerm2/releases)         | [Commits](https://github.com/gnachman/iTerm2/commits/master)          | [Issues](https://gitlab.com/gnachman/iterm2/-/issues)       |
 macvim      | [Releases](https://github.com/macvim-dev/macvim/releases)       | [Commits](https://github.com/macvim-dev/macvim/commits/master)        | [Issues](https://github.com/macvim-dev/macvim/issues)       |
@@ -33,6 +35,7 @@ virtualfish | [Releases](https://github.com/justinmayer/virtualfish/releases) | 
 Software    | Debian                                                    | Homebrew                                                | PyPI
 --------    | ------                                                    | --------                                                | ----
 fish        | [Debian](https://tracker.debian.org/pkg/fish)             | [Homebrew](https://formulae.brew.sh/formula/fish)       |
+fzf         | [Debian](https://tracker.debian.org/pkg/fzf)              | [Homebrew](https://formulae.brew.sh/formula/fzf)        |
 hammerspoon |                                                           |                                                         |
 iTerm2      |                                                           |                                                         |
 macvim      |                                                           | [Homebrew](https://formulae.brew.sh/formula/macvim)     |
