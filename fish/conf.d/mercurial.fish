@@ -15,4 +15,6 @@ abbr --add --global hup hg update
 abbr --add --global hau 'hg amend && hg uploadchain && hg xl'
 abbr --add --global hae 'hg amend && hg evolve && hg uploadchain && hg xl'
 abbr --add --global huc 'hg uploadchain && hg xl'
+abbr --add --global hsy 'hg sync && hg xl'
+abbr --add --global hsu 'hg sync && hg uploadchain && hg xl'
 abbr --add --global hxl 'hg xl'
