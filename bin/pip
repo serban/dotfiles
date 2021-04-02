@@ -45,7 +45,7 @@ print '| Fish Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
 print 'To install virtualfish:      $ PIP_REQUIRE_VIRTUALENV=false pip3 install virtualfish'
-print 'To set up virtualfish:       $ vf install auto_activation update_python'
+print 'To set up virtualfish:       $ vf install auto_activation'
 print 'To create a new virtualenv:  $ vf new -p python3 name'
 print 'To use a virtualenv:         $ vf activate virtualenv-name'
 
