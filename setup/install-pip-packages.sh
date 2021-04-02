@@ -7,3 +7,5 @@ set -o pipefail
 readonly PIP_REQUIRE_VIRTUALENV=false
 
 cat ~/src/dotfiles/packages/pip.txt | xargs pip3 install
+
+vf install auto_activation
