@@ -43,7 +43,8 @@ end
 
 local function maximizeWindows()
   for _, w in pairs(hs.window.allWindows()) do
-    if w:application():name() ~= 'Audio Hijack' then
+    local a = w:application():name()
+    if a ~= 'Audio Hijack' and a ~= 'Hammerspoon' then
       hs.grid.set(w, {0, 0, 7, 9})
     end
   end
