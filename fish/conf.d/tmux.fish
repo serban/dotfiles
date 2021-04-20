@@ -143,7 +143,7 @@ function mcd
       | while read --line line
     set --local pane %$line
     set --local pid (tmux list-panes -t $pane -f "#{==:#{pane_id},$pane}" -F '#{pane_pid}')
-    set --local pids (children $pid)
+    set --local pids (descendants $pid)
     set --local skip 0
     set --local mark ✓
 
