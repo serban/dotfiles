@@ -5,7 +5,7 @@ function serban_working_dir
   set --local pwd (string replace --regex '^'"$home"'/' '~/' $PWD)
 
   string replace --regex \
-      '^/google/src/cloud/serban/[^/]+/google3/' \
+      '^/google/src/cloud/[^/]+/[^/]+/google3/' \
       'google3/' \
       $pwd
 end

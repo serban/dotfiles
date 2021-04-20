@@ -50,7 +50,7 @@ function bufselect#BufferDisplayName(number, path, changed)
 
   " Strip the leading srcfs path from CitC files.
   let path = substitute(path,
-             \          '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
+             \          '\v^/google/src/cloud/[^/]+/[^/]+/google3/', '', '')
 
   return s . path
 endfunction

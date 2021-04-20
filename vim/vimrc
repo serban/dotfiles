@@ -334,26 +334,26 @@ endfunction
 function SerbanEchoWorkingDir()
   echohl SerbanWorkingDir
   echo substitute(fnamemodify(getcwd(), ':~'),
-       \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
+       \          '\v^/google/src/cloud/[^/]+/[^/]+/', '→ ', '')
   echohl None
 endfunction
 
 function SerbanEchoFilePath()
   echohl SerbanPath
   echo substitute(expand('%:p:~'),
-       \          '\v^/google/src/cloud/serban/[^/]+/', '→ ', '')
+       \          '\v^/google/src/cloud/[^/]+/[^/]+/', '→ ', '')
   echohl None
 endfunction
 
 function SerbanAppendGoogle3File()
   let path = substitute(expand('%:p'),
-             \          '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
+             \          '\v^/google/src/cloud/[^/]+/[^/]+/google3/', '', '')
   execute '!echo' path '>> ~/src/dotfiles-google/google3-files'
 endfunction
 
 function SerbanAppendGoogle3Folder()
   let path = substitute(getcwd(),
-             \          '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
+             \          '\v^/google/src/cloud/[^/]+/[^/]+/google3/', '', '')
   execute '!echo' path '>> ~/src/dotfiles-google/google3-folders'
 endfunction
 
@@ -396,7 +396,7 @@ endfunction
 
 function SerbanEasyBufferBufName(bufferNumber)
   let path = expand('#' . a:bufferNumber . ':p:~')
-  return substitute(path, '\v^/google/src/cloud/serban/[^/]+/google3/', '', '')
+  return substitute(path, '\v^/google/src/cloud/[^/]+/[^/]+/google3/', '', '')
 endfunction
 
 function SerbanFormatBullets()
