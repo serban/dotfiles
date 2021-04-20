@@ -139,11 +139,30 @@ end
 function mcd
   tmux list-panes -a \
       -f '#{==:2,#{e|+:#{==:#{pane_current_command},fish},#{m:*/cloud/*/google3*,#{pane_current_path}}}}' \
-      -F '#{pane_id}' | sort --unique \
-      | while read --line pane
+      -F '#{s/%//:pane_id}' | sort --unique --numeric-sort \
+      | while read --line line
+    set --local pane %$line
+    set --local pid (tmux list-panes -t $pane -f "#{==:#{pane_id},$pane}" -F '#{pane_pid}')
+    set --local pids (children $pid)
+    set --local skip 0
+    set --local mark ✓
+
+    for p in $pids
+      readlink /proc/$p/exe | grep --quiet vim
+      and set skip 1
+      and set mark ✗
+    end
+
+    tmux list-panes -t $pane \
+        -f "#{==:#{pane_id},$pane}" \
+        -F "$mark  #{p-4:pane_id}  #{p-7:pane_pid}  #{p30:session_name}  #{p-2:window_index} #{p10:window_name}"
+
+    if test $skip -eq 1
+      continue
+    end
+
     tmux send-keys -t $pane C-c
     tmux send-keys -t $pane ' cd . # mcd #' Enter
-    echo "Sent keys to $pane"
   end
 end
 
