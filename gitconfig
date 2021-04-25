@@ -62,6 +62,9 @@
 [grep]
   lineNumber = true
 
+[init]
+  defaultBranch = master
+
 [merge]
   stat = true
 
