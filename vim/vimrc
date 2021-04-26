@@ -752,10 +752,18 @@ iabbrev /- // ---------------------------------------------------------
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
-digraphs al  8592  " 0x2190 = ←
-digraphs ar  8594  " 0x2192 = →
-digraphs ch 10003  " 0x2713 = ✓
-digraphs cr 10007  " 0x2717 = ✗
+digraphs dl   171  "  0x00ab  «  <<
+digraphs dg   176  "  0x00b0  °  DG
+digraphs dr   187  "  0x00bb  »  >>
+digraphs bl  8226  "  0x2022  •  oo
+digraphs sl  8249  "  0x2039  ‹  <1
+digraphs sr  8250  "  0x203a  ›  >1
+digraphs al  8592  "  0x2190  ←  <-
+digraphs ar  8594  "  0x2192  →  ->
+digraphs le  8804  "  0x2264  ≤  =<
+digraphs ge  8805  "  0x2265  ≥  >=
+digraphs ch 10003  "  0x2713  ✓  OK
+digraphs cr 10007  "  0x2717  ✗  XX
 
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
