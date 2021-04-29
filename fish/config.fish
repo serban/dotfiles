@@ -71,12 +71,22 @@ set --global --export FZF_DEFAULT_OPTS \
     --color bg+:0,fg+:7,pointer:7 \
     #
 
+# TODO: less 581: --use-color
+# TODO: less 581: --color
+# TODO: less 581: --line-num-width 5
+# TODO: less 581: --incsearch
+# NB: --rscroll must appear last, otherwise options that follow are ignored.
 set --global --export LESS \
     --RAW-CONTROL-CHARS \
-    --chop-long-lines \
+    --mouse \
+    --wheel-lines 3 \
     --ignore-case \
+    --no-histdups \
     --no-init \
-    --quit-if-one-screen
+    --quit-if-one-screen \
+    --chop-long-lines \
+    --rscroll '|' \
+    #
 
 set --global --export SHELL (command -s fish)
 set --global --export VISUAL vim
