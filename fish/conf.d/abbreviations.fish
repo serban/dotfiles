@@ -5,7 +5,7 @@ abbr --add --global l less -N
 abbr --add --global d colordiff -u
 abbr --add --global f find . -iname
 
-abbr --add --global i history
+abbr --add --global i " history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' --reverse"
 
 abbr --add --global j jobs
 abbr --add --global k kill
