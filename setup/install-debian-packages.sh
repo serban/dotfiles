@@ -5,6 +5,7 @@ set -o nounset
 set -o pipefail
 
 sudo apt-get install \
+  bat \
   bpython3 \
   bzip2 \
   clang \
@@ -12,6 +13,7 @@ sudo apt-get install \
   colortest \
   dnsutils \
   editorconfig \
+  fd-find \
   fish \
   fzf \
   git \
