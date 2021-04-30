@@ -1,3 +1,4 @@
+abbr --add --global c bat
 abbr --add --global h head
 abbr --add --global t tail
 abbr --add --global l less -N
