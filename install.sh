@@ -55,6 +55,9 @@ ln -si ${DOTFILES}/tmux.conf          ~/.tmux.conf
 ln -si ${DOTFILES}/xsession           ~/.xsession
 ln -si ${DOTFILES}/Xresources         ~/.Xresources
 
+mkdir -p ~/.config/bat
+ln -si ${DOTFILES}/bat-config         ~/.config/bat/config
+
 mkdir -p ~/.config/fish
 ln -si ${DOTFILES}/fish/conf.d        ~/.config/fish/conf.d
 ln -si ${DOTFILES}/fish/completions   ~/.config/fish/completions
