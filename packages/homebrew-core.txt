@@ -5,6 +5,7 @@ ctags
 diffutils
 duti
 editorconfig
+fd
 findutils
 firebase-cli
 fish
