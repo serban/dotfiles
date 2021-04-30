@@ -71,21 +71,31 @@ set --global --export FZF_DEFAULT_OPTS \
     --color bg+:0,fg+:7,pointer:7 \
     #
 
-# TODO: less 581: --use-color
-# TODO: less 581: --color
-# TODO: less 581: --line-num-width 5
-# TODO: less 581: --incsearch
-# NB: --rscroll must appear last, otherwise options that follow are ignored.
+# NB: From the `less` man page:
+# Options are also taken from the environment variable "LESS". Some options like
+# -k or -D require a string to follow the option letter. The string for that
+# option is considered to end when a dollar sign ($) is found.
 set --global --export LESS \
     --RAW-CONTROL-CHARS \
+    --chop-long-lines \
+    --rscroll '|$' \
+    --prompt '=%f$' \
     --mouse \
     --wheel-lines 3 \
     --ignore-case \
     --no-histdups \
     --no-init \
     --quit-if-one-screen \
-    --chop-long-lines \
-    --rscroll '|' \
+    #
+
+test (less --version | head -n 1 | cut -d ' ' -f 2) -ge 581
+and set LESS $LESS \
+    --use-color \
+    --color 'Pb$' \
+    --color 'Er$' \
+    --color 'SKg$' \
+    --line-num-width 5 \
+    --incsearch \
     #
 
 set --global --export SHELL (command -s fish)
