@@ -22,6 +22,7 @@ set --global --export PATH \
     /opt/homebrew/opt/sqlite/bin \
     /usr/local/bin \
     /usr/local/sbin \
+    /usr/lib/cargo/bin \
     /usr/bin \
     /usr/sbin \
     /bin \
