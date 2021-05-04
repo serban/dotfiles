@@ -1,9 +1,13 @@
 function fish_prompt
   set --global __fish_git_prompt_showdirtystate true
+  set --global __fish_git_prompt_showuntrackedfiles true
+
+  set --global __fish_git_prompt_char_dirtystate ∙
+  set --global __fish_git_prompt_char_untrackedfiles ∘
 
   set --local host (prompt_hostname)
   set --local cwd (prompt_pwd)
-  set --local git_status (__fish_git_prompt ' > %s')
+  set --local git_status (fish_git_prompt ' › %s')
   set --local virtual_env ''
   set --local suffix '$'
 
