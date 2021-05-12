@@ -12,6 +12,7 @@ fish
 fzf
 gawk
 git
+git-delta
 gnu-sed
 gnu-tar
 gnu-units

@@ -117,3 +117,7 @@
   header = yellow
   error = red
   help = normal
+
+[delta]
+  light = true
+  side-by-side = true
