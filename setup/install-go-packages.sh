@@ -4,4 +4,4 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-go get -v github.com/carlmjohnson/pomodoro
+cat ~/src/dotfiles/packages/go-core.txt | sed 's/$/@latest/' | xargs go install
