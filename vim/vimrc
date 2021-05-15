@@ -86,26 +86,27 @@ endif
 " ------------------------------------------------------------------------------
 " SETTINGS
 
-set title                           " Set the terminal title to something appropriate (like the filename being edited)
-set helpheight=80                   " Set the minimum window height for help windows
-set winheight=20                    " Set the minimum window height for split windows
-set winwidth=86                     " Set the minimum window width for split windows
-set winminheight=3                  " Set the minimum window height for collapsed windows
-set winminwidth=5                   " Set the minimum window width for collapsed windows
-set pumheight=7                     " Set the maximum number of items to show in the popup menu for insert mode completion
-set tabpagemax=100                  " Set the maximum number of tabs that can be opened
-set splitbelow                      " When horizontally splitting a window, insert the new window below the current one
-set splitright                      " When vertically splitting a window, insert the new window to the right of the current one
-set number                          " Show line numbers
-set signcolumn=number               " Show signs in the number column instead of the sign column
-set ruler                           " Show the cursor position in the bottom right
-set showcmd                         " Show a partial command as it is being built
-set laststatus=2                    " Always show the status bar (it tells us the filename)
-set guioptions-=T                   " Get rid of the toolbar in gVim
-set guioptions+=c                   " Don't use popup dialogs in gVim
-set guicursor+=n:blinkon0           " Don't blink the cursor in normal mode
-set fillchars=vert:│                " Use a box-drawing character to get a clean vertical line between splits
-set tabline=%!SerbanTabLine()       " Use a custom tab line
+set title                             " Set the terminal title to something appropriate (like the filename being edited)
+set helpheight=80                     " Set the minimum window height for help windows
+set winheight=20                      " Set the minimum window height for split windows
+set winwidth=86                       " Set the minimum window width for split windows
+set winminheight=3                    " Set the minimum window height for collapsed windows
+set winminwidth=5                     " Set the minimum window width for collapsed windows
+set pumheight=7                       " Set the maximum number of items to show in the popup menu for insert mode completion
+set tabpagemax=100                    " Set the maximum number of tabs that can be opened
+set splitbelow                        " When horizontally splitting a window, insert the new window below the current one
+set splitright                        " When vertically splitting a window, insert the new window to the right of the current one
+set number                            " Show line numbers
+set signcolumn=number                 " Show signs in the number column instead of the sign column
+set ruler                             " Show the cursor position in the bottom right
+set showcmd                           " Show a partial command as it is being built
+set laststatus=2                      " Always show the status bar (it tells us the filename)
+set guioptions-=T                     " Get rid of the toolbar in gVim
+set guioptions+=c                     " Don't use popup dialogs in gVim
+set guicursor+=n:blinkon0             " Don't blink the cursor in normal mode
+set fillchars=vert:│                  " Use a box-drawing character to get a clean vertical line between splits
+set tabline=%!SerbanTabLine()         " Use a custom tab line
+set guitablabel=%!SerbanGuiTabLabel() " Use a custom tab title in gVim
 set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentSpell()}%{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
 if has('gui_macvim')
@@ -305,6 +306,18 @@ function SerbanTabLine()
   endfor
   let s .= '%#TabLineFill#%T'
   return s
+endfunction
+
+function SerbanGuiTabLabel()
+  let n = bufname(tabpagebuflist(v:lnum)[tabpagewinnr(v:lnum) - 1])
+
+  if n ==# ''
+    return '[No Name]'
+  elseif fnamemodify(n, ':~') =~# '^\~/txt/.*\.md$'
+    return fnamemodify(n, ':t:r')
+  else
+    return fnamemodify(n, ':t')
+  endif
 endfunction
 
 function SerbanCurrentSpell()
