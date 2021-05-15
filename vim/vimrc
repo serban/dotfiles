@@ -587,6 +587,25 @@ function SerbanFzfGoogle3Folders()
   \ }))
 endfunction
 
+function SerbanNewNote()
+  let name = trim(input('New Note: '))
+  let date = strftime('%Y-%m-%d')
+  let head = '# ' . date . ' - ' . name
+  let file = date . ' ' . name . '.md'
+  let path = '~/txt/' . file
+
+  if filereadable(expand(path))
+    redraw
+    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Note exists: ' . path
+    return
+  endif
+
+  execute 'edit' path
+  call setline(1, head)
+  execute 'write'
+  normal! $
+endfunction
+
 " ------------------------------------------------------------------------------
 " WRAP FUNCTIONS
 
@@ -865,7 +884,7 @@ let mapleader = ' '
       nmap <unique> <Leader>q <Plug>(ctrlp)
 " nnoremap <unique> <Leader>r
 " nnoremap <unique> <Leader>s
-" nnoremap <unique> <Leader>t
+  nnoremap <unique> <Leader>t :call SerbanNewNote() <CR>
 " nnoremap <unique> <Leader>u
 " nnoremap <unique> <Leader>v
 " nnoremap <unique> <Leader>w
