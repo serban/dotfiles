@@ -110,8 +110,10 @@ set tabline=%!SerbanTabLine()         " Use a custom tab line
 set guitablabel=%!SerbanGuiTabLabel() " Use a custom tab title in gVim
 set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentSpell()}%{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
 
-if has('gui_macvim')
+if has('gui_macvim') && has('gui_running')
   set guifont=Monaco:h15            " Use a good font in MacVim
+  set lines=32                      " Centers nicely on a 13" MacBook Pro
+  set columns=90                    " Centers nicely on a 13" MacBook Pro
 endif
 
 "set columns=114                    " Put this line in gvimrc. It makes the window wider.
