@@ -314,7 +314,9 @@ function SerbanGuiTabLabel()
   if n ==# ''
     return '[No Name]'
   elseif fnamemodify(n, ':~') =~# '^\~/txt/.*\.md$'
-    return fnamemodify(n, ':t:r')
+    let s = fnamemodify(n, ':t:r')
+    return
+    \ tabpagenr('$') <# 3 ? s : substitute(s, '\v^\d\d\d\d-\d\d-\d\d ', '', '')
   else
     return fnamemodify(n, ':t')
   endif
