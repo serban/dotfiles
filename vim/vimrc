@@ -105,6 +105,7 @@ set guioptions-=T                     " Get rid of the toolbar in gVim
 set guioptions+=c                     " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0             " Don't blink the cursor in normal mode
 set fillchars=vert:│                  " Use a box-drawing character to get a clean vertical line between splits
+set titlestring=%t                    " Use a custom window title that just shows the filename
 set tabline=%!SerbanTabLine()         " Use a custom tab line
 set guitablabel=%!SerbanGuiTabLabel() " Use a custom tab title in gVim
 set statusline=%t\ %h%w%q%r%m%=%3v\ \ 0x%02B\ \ %Y\ \ %{SerbanCurrentSpell()}%{SerbanCurrentWrap()}\ \ " Simple status line with virtual column, character value, filetype, and wrap settings
