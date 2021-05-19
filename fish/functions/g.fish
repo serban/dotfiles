@@ -48,6 +48,7 @@ function g
     if test "$PWD" = "$HOME"
       set args $args \
           --hide=Applications \
+          --hide=Data \
           --hide=Desktop \
           --hide=Documents \
           --hide=Downloads \
