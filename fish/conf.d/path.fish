@@ -10,6 +10,7 @@ set --global --export PATH \
     $HOME/src/private/bin \
     $HOME/src/dotfiles/bin \
     $HOME/src/dotfiles/python \
+    $HOME/pre/bin \
     $HOME/go/bin \
     $HOME/.cargo/bin \
     $HOME/opt/google-cloud-sdk/bin \
