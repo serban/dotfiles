@@ -2,38 +2,35 @@
 " VUNDLE
 
 set nocompatible                    " Don't try to be compatible with the original vi
-filetype off                        " Disable filetype detection while we load Vundle
-set runtimepath+=~/.vim/bundle/Vundle.vim
 
 if filereadable(expand('/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/syntax/lilypond.vim'))
   set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 endif
 
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
 " GitHub Plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'dag/vim-fish'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'fatih/vim-go'
-Plugin 'godlygeek/tabular'
-Plugin 'inkarkat/vim-ingo-library'
-Plugin 'inkarkat/vim-mark'
-Plugin 'inkarkat/vim-SearchHighlighting'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'troydm/easybuffer.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dag/vim-fish'
+Plug 'dyng/ctrlsf.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'inkarkat/vim-mark'
+Plug 'inkarkat/vim-SearchHighlighting'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
+Plug 'myusuf3/numbers.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'troydm/easybuffer.vim'
 
 " macOS: UltiSnips can crash MacVim on startup if it's linked against the wrong
 " Python. Not the fault of UltiSnips. See:
@@ -42,14 +39,13 @@ Plugin 'troydm/easybuffer.vim'
 "
 " If problems persist, blow away ~/.vim/bundle/ultisnips and start over with
 " :PluginInstall.
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 if !filereadable('/usr/share/vim/google/google.vim')
-  Plugin 'ervandew/supertab'
+  Plug 'ervandew/supertab'
 endif
 
-call vundle#end()
-filetype plugin indent on           " Enable filetype detection and load the appropriate plugin and indentation files
+call plug#end()
 
 " ------------------------------------------------------------------------------
 " GOOGLE

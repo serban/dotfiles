@@ -9,13 +9,14 @@ print () {
 }
 
 print 'Creating parent directories'
-mkdir -p ~/.vim
+mkdir -p ~/.vim/autoload
 
-print 'Installing Vundle'
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+print 'Installing vim-plug'
+curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
+  --output ~/.vim/autoload/plug.vim
 
 print 'Installing plugins'
-vim +PluginInstall +quitall
+vim +PlugInstall +quitall
 
 print 'Installing Go binaries'
 vim +GoInstallBinaries +quitall
