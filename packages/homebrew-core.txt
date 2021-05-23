@@ -2,6 +2,7 @@ bat
 colordiff
 coreutils
 ctags
+curl
 diffutils
 duti
 editorconfig

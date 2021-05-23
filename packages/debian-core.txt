@@ -4,6 +4,7 @@ bzip2
 clang
 colordiff
 colortest
+curl
 dnsutils
 editorconfig
 fd-find
