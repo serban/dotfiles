@@ -28,6 +28,7 @@ abbr --add --global ggi git grep --ignore-case
 abbr --add --global gin git init
 abbr --add --global glo git log --decorate --stat
 abbr --add --global gls git ls-files
+abbr --add --global glu git ls-files --others --exclude-standard --directory
 abbr --add --global gpl git pull
 abbr --add --global gps git push
 abbr --add --global gpt git push --tags
