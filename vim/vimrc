@@ -235,7 +235,7 @@ let g:fzf_command_prefix = 'Fzf'
 " NUMBERS
 " I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
 " does not exist when this code is run. See numbers.vim for the default value.
-let g:numbers_exclude = ['help', 'tagbar']
+let g:numbers_exclude = ['help', 'qf', 'tagbar']
 
 " TAGBAR
 let g:tagbar_indent = 0
@@ -476,6 +476,8 @@ function SerbanHighlight()
   highlight TabLineFill              cterm=none ctermbg=0  ctermfg=3
   highlight TabLine                  cterm=none ctermbg=0  ctermfg=7
   highlight TabLineSel               cterm=none ctermbg=5  ctermfg=8
+  highlight qfFileName               cterm=none ctermbg=8  ctermfg=13
+  highlight QuickFixLine             cterm=none ctermbg=0  ctermfg=13
   highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
   highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
@@ -491,6 +493,8 @@ function SerbanHighlight()
   execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
   execute 'highlight StatusLineNC             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight qfFileName               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight QuickFixLine             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight SerbanPath               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight BufSelectHighlight       gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight BufSelectBorderHighlight gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
@@ -586,6 +590,28 @@ function SerbanToggleLineNumbers()
   else
     NumbersEnable
   endif
+endfunction
+
+" FYI: The following does not work:
+"
+"   nnoremap <unique> <Leader>am :Toc <Bar> wincmd H <CR>
+"
+" This is because the command Toc is defined as:
+"
+"   command! -buffer Toc call s:Toc()
+"
+" In order to prevent Vim from interpreting `|` as an argument to the command,
+" it would have to be defined using `command -bar`. See `help :command-bar` and
+" https://unix.stackexchange.com/questions/144568/how-do-i-write-a-command-in-vim-to-run-multiple-commands.
+function SerbanToc()
+  let id = win_getid()
+  let ln = '[TOC]\ ' . fnameescape(expand('%:t'))
+  Toc
+  execute 'setlocal statusline=' . ln
+  wincmd H
+  vertical resize 40
+  setlocal winfixwidth
+  call win_gotoid(id)
 endfunction
 
 function SerbanFzfGoogle3Files()
@@ -912,6 +938,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
   nnoremap <unique> <Leader>af :call SerbanAppendGoogle3File() <CR>
   nnoremap <unique> <Leader>ao :call SerbanAppendGoogle3Folder() <CR>
+  nnoremap <unique> <Leader>am :call SerbanToc() <CR>
 
       nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
 
