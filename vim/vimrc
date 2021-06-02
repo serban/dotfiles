@@ -761,7 +761,12 @@ autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift  set textwidth=100 winwidth=106
 
 if has('gui_macvim')
+augroup serban-darkmode
+  autocmd!
   autocmd OSAppearanceChanged * call SerbanSetMacVimBackground()
+  autocmd OSAppearanceChanged * call SerbanHighlight()
+  autocmd OSAppearanceChanged * redraw
+augroup end
 endif
 
 augroup serban-highlight
