@@ -19,6 +19,7 @@ httpie
 hugo
 jq
 libc++-dev
+lookatme
 makepasswd
 psmisc
 python3
