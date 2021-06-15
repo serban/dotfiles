@@ -821,6 +821,7 @@ digraphs dl   171  "  0x00ab  «  <<
 digraphs dg   176  "  0x00b0  °  DG
 digraphs dr   187  "  0x00bb  »  >>
 digraphs bl  8226  "  0x2022  •  oo
+digraphs el  8230  "  0x2026  …  ,.
 digraphs sl  8249  "  0x2039  ‹  <1
 digraphs sr  8250  "  0x203a  ›  >1
 digraphs al  8592  "  0x2190  ←  <-
