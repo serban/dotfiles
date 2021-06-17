@@ -10,17 +10,38 @@ print () {
 
 PIP2_PATH="$(which pip2)" || true
 PIP3_PATH="$(which pip3)" || true
+PYTHON_PATH="$(which python)" || true
+PYTHON2_PATH="$(which python2)" || true
+PYTHON3_PATH="$(which python3)" || true
 
 if [[ -z "${PIP2_PATH}" ]]; then
-  print "pip2 is not in your path"
+  print "   pip2 is not in your path"
 else
-  print "pip2 is ${PIP2_PATH} --> $(readlink ${PIP2_PATH})"
+  print "   pip2 is ${PIP2_PATH} --> $(readlink ${PIP2_PATH})"
+fi
+
+if [[ -z "${PYTHON_PATH}" ]]; then
+  print " python is not in your path"
+else
+  print " python is ${PYTHON_PATH} --> $(readlink ${PYTHON_PATH})"
+fi
+
+if [[ -z "${PYTHON2_PATH}" ]]; then
+  print "python2 is not in your path"
+else
+  print "python2 is ${PYTHON2_PATH} --> $(readlink ${PYTHON2_PATH})"
 fi
 
 if [[ -z "${PIP3_PATH}" ]]; then
-  print "pip3 is not in your path"
+  print "   pip3 is not in your path"
 else
-  print "pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
+  print "   pip3 is ${PIP3_PATH} --> $(readlink ${PIP3_PATH})"
+fi
+
+if [[ -z "${PYTHON3_PATH}" ]]; then
+  print "python3 is not in your path"
+else
+  print "python3 is ${PYTHON3_PATH} --> $(readlink ${PYTHON3_PATH})"
 fi
 
 print
