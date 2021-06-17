@@ -13,6 +13,7 @@ set --global --export PATH \
     $HOME/pre/bin \
     $HOME/go/bin \
     $HOME/.cargo/bin \
+    $HOME/.local/bin \
     $HOME/opt/google-cloud-sdk/bin \
     /usr/lib/google-golang/bin \
     /usr/local/git/current/bin \
