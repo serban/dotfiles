@@ -15,6 +15,9 @@ async def main(connection):
       theme = await app.async_get_theme()
       print(f'New Session: {session_id:<36}  Theme: {theme}')
 
+      # Disable this script in favor of profiles with both dark and light colors
+      continue
+
       await session.async_set_profile_properties(
           solarized.Profile(light='light' in theme))
 

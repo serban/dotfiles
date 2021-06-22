@@ -14,6 +14,9 @@ async def main(connection):
       theme = await monitor.async_get()
       print(f'Theme Change: {theme}')
 
+      # Disable this script in favor of profiles with both dark and light colors
+      continue
+
       for window in app.windows:
         for tab in window.tabs:
           for session in tab.sessions:

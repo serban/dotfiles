@@ -2,7 +2,7 @@
   "Profiles": [
     {
       "Name": "mingus",
-      "Dynamic Profile Parent Name": "Serban Solarized Dark",
+      "Dynamic Profile Parent Name": "Serban Solarized",
       "Shortcut": "I",
       "Title Components": 64,
       "Custom Command": "Yes",
