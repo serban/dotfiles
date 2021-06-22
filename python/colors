@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import argparse
+
 RESET  = '\033[0m'
 
 COLORS = [
@@ -20,6 +22,14 @@ COLORS = [
     ('Bright Magenta',            '\033[35;1m'),
     ('Bright Cyan',               '\033[36;1m'),
     ('Bright White',              '\033[37;1m'),
+    ('Aixterm Black',             '\033[90m'),
+    ('Aixterm Red',               '\033[91m'),
+    ('Aixterm Green',             '\033[92m'),
+    ('Aixterm Yellow',            '\033[93m'),
+    ('Aixterm Blue',              '\033[94m'),
+    ('Aixterm Magenta',           '\033[95m'),
+    ('Aixterm Cyan',              '\033[96m'),
+    ('Aixterm White',             '\033[97m'),
     ('Background Black',          '\033[40m'),
     ('Background Red',            '\033[41m'),
     ('Background Green',          '\033[42m'),
@@ -36,18 +46,41 @@ COLORS = [
     ('Background Bright Magenta', '\033[45;1m'),
     ('Background Bright Cyan',    '\033[46;1m'),
     ('Background Bright White',   '\033[47;1m'),
+    ('Background Aixterm Black',  '\033[100m'),
+    ('Background Aixterm Red',    '\033[101m'),
+    ('Background Aixterm Green',  '\033[102m'),
+    ('Background Aixterm Yellow', '\033[103m'),
+    ('Background Aixterm Blue',   '\033[104m'),
+    ('Background Aixterm Magenta','\033[105m'),
+    ('Background Aixterm Cyan',   '\033[106m'),
+    ('Background Aixterm White',  '\033[107m'),
 ]
 
-print(RESET, end='')
+def parse_command_line_arguments():
+  parser = argparse.ArgumentParser()
 
-for name, escape_code in COLORS:
-  print('{:25} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
+  parser.add_argument(
+      '-v', '--verbose', dest='verbose', action='store_true',
+      help='enable verbose output')
 
-print()
+  return parser.parse_args()
 
-for i in range(8):
-  print('  {}Lorem Ipsum{}  {}Lorem Ipsum{}  {}Lorem Ipsum{}  {}Lorem Ipsum{}'.format(
-            '\033[' + str(30 + i) + 'm', RESET,
-            '\033[' + str(30 + i) + ';1m', RESET,
-            '\033[' + str(40 + i) + 'm', RESET,
-            '\033[' + str(40 + i) + ';1m', RESET))
+def main():
+  args = parse_command_line_arguments()
+
+  if args.verbose:
+    for name, escape_code in COLORS:
+      print('{:26} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
+  else:
+    for i in range(8):
+      print((' ' + '  {}Lorem Ipsum{}'*7).format(
+          '\033[' + str( 30 + i) +   'm', RESET,
+          '\033[' + str( 30 + i) + ';1m', RESET,
+          '\033[' + str( 90 + i) +   'm', RESET,
+          '\033[' + str( 90 + i) + ';1m', RESET,
+          '\033[' + str( 40 + i) +   'm', RESET,
+          '\033[' + str( 40 + i) + ';1m', RESET,
+          '\033[' + str(100 + i) +   'm', RESET))
+
+if __name__ == '__main__':
+  main()
