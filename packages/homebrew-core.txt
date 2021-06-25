@@ -25,6 +25,7 @@ hexyl
 httpie
 hugo
 jq
+jsonnet
 less
 macvim
 md5deep

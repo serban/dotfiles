@@ -125,23 +125,25 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .vim          00;32
 
 # HEADER FILES (Skinny Cyan)
-.css    00;36
-.h      00;36
-.proto  00;36
-.ulss   00;36
+.css          00;36
+.h            00;36
+.proto        00;36
+.ulss         00;36
 
 # CONFIGURATION (Bold Cyan)
-.csv    01;35
-.json   01;35
-.plist  01;35
-.toml   01;35
-.yaml   01;35
-.yml    01;35
+.csv          01;35
+.json         01;35
+.jsonnet      01;35
+.libsonnet    01;35
+.plist        01;35
+.toml         01;35
+.yaml         01;35
+.yml          01;35
 
 # BINARY DATA (Skinny Blue)
-.class  00;34
-.o      00;34
-.pyc    00;34
+.class        00;34
+.o            00;34
+.pyc          00;34
 
 # ------------------------------------------------------------------------------
 

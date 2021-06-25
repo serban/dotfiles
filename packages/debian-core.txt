@@ -18,6 +18,7 @@ htop
 httpie
 hugo
 jq
+jsonnet
 libc++-dev
 lookatme
 makepasswd

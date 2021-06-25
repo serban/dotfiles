@@ -40,6 +40,8 @@ duti -s org.vim.MacVim              .h                                  all
 duti -s org.vim.MacVim              .java                               all
 duti -s org.vim.MacVim              .js                                 all
 duti -s org.vim.MacVim              .json                               all
+duti -s org.vim.MacVim              .jsonnet                            all
+duti -s org.vim.MacVim              .libsonnet                          all
 duti -s org.vim.MacVim              .log                                all
 duti -s org.vim.MacVim              .lua                                all
 duti -s org.vim.MacVim              .ly                                 all
