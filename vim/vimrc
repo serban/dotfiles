@@ -636,6 +636,11 @@ function SerbanNewNote()
   let file = date . ' ' . name . '.md'
   let path = '~/txt/' . file
 
+  if name ==# ''
+    echo '✗'
+    return
+  endif
+
   if filereadable(expand(path))
     redraw
     echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Note exists: ' . path
