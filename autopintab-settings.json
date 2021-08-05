@@ -1,0 +1,49 @@
+{
+ "patterns": [
+  {
+   "pattern": "https://music.youtube.com/playlist?list=LM",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://musicforprogramming.net/",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://web.whatsapp.com/",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://www.messenger.com/.*",
+   "isRegex": true,
+   "enabled": true
+  },
+  {
+   "pattern": "https://mail.google.com/mail/u/0/#inbox",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://calendar.google.com/calendar/u/0/r/month",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://www.icloud.com/notes/",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://app.youneedabudget.com/",
+   "isRegex": false,
+   "enabled": true
+  },
+  {
+   "pattern": "https://cheatsheets.javatheory.net/",
+   "isRegex": false,
+   "enabled": true
+  }
+ ]
+}
