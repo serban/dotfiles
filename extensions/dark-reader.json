@@ -1,6 +1,6 @@
 {
   "applyToListedOnly": false,
-  "automation": "system",
+  "automation": "",
   "changeBrowserTheme": false,
   "customThemes": [],
   "enableForPDF": true,
@@ -13,7 +13,9 @@
   "notifyOfNews": false,
   "presets": [],
   "previewNewDesign": true,
-  "siteList": [],
+  "siteList": [
+    "github.com"
+  ],
   "siteListEnabled": [],
   "syncSettings": true,
   "syncSitesFixes": false,
