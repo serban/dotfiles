@@ -29,6 +29,7 @@ jsonnet
 less
 macvim
 md5deep
+moreutils
 neovim
 pastel
 python@3.9

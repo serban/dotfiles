@@ -22,6 +22,7 @@ jsonnet
 libc++-dev
 lookatme
 makepasswd
+moreutils
 psmisc
 python3
 silversearcher-ag
