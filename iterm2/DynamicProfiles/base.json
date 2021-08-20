@@ -45,6 +45,7 @@
       "Jobs to Ignore": [],
       "Option Key Sends": 2,
       "Right Option Key Sends": 2,
+      "Allow modifyOtherKeys": false,
       "Use libtickit protocol" : true,
       "Keyboard Map" : {
         "0x32-0x40000" : {
