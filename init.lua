@@ -3,6 +3,7 @@ hs.window.animationDuration = 0
 hs.grid.setGrid('7x9')
 hs.grid.setMargins('6x6')
 
+local nexus = hs.host.names()[1] == 'nexus.local'
 local modal = hs.hotkey.modal.new('⌘', 'e', 'Hotkey')
 
 function modal:entered()
@@ -86,7 +87,7 @@ bind('f8',    function() hs.osascript.applescript('tell application "System Even
 bind('b',     function() activate('Firefox.app') end)
 bind('c',     function() activate('Google Chrome.app') end)
 bind('f',     function() activate('Finder.app') end)
-bind('g',     function() activate('Google Chat 2.app') end)
+bind('g',     function() activate(nexus and 'Numbers.app' or 'Google Chat 2.app') end)
 bind('h',     function() activate('Audio Hijack.app') end)
 bind('i',     function() activate('Maps.app') end)
 bind('j',     function() activate('Sublime Merge.app') end)
@@ -98,7 +99,7 @@ bind('o',     function() activate('OmniFocus.app') end)
 bind('p',     function() activate('Photo Booth.app') end)
 bind('q',     function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end)
 bind('r',     function() activate('Calendar.app') end)
-bind('s',     function() activate('Google Meet.app') end)
+bind('s',     function() activate(nexus and 'Safari.app' or 'Google Meet.app') end)
 bind('t',     function() activate('iTerm.app') end)
 bind('u',     function() activate('UlyssesMac.app') end)
 bind('v',     function() activate('MacVim.app') end)
