@@ -27,6 +27,12 @@ abbr --add --global kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 
 abbr --add --global bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
+# The regular expression we want to pass to perl is \\n, with two backslashes.
+# If we were typing out this abbr invocation on the command line, we would need
+# four backslashes to represent the original two. Here, we need *eight*
+# backslashes to represent the four we want inserted in the abbreviation string.
+abbr --add --global sn "perl -pe 's/\\\\\\\\n/\n/g'"
+
 abbr --add --global rmclass find . -type f -name "'*.class'" -exec rm -vf "'{}'" \\\;
 abbr --add --global rmds find . -type f -name .DS_Store -exec rm -vf "'{}'" \\\;
 abbr --add --global rmpyc find . -type f -name "'*.pyc'" -exec rm -vf "'{}'" \\\;
