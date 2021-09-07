@@ -19,6 +19,7 @@ abbr --add --global mv mv -vi
 abbr --add --global rm rm -v
 
 abbr --add --global p3 python3 -B
+abbr --add --global p8 ping 8.8.8.8
 
 abbr --add --global bu 'brew update && header Outdated Formulae && brew outdated'
 abbr --add --global jd jackd --driver coreaudio --rate 44100
