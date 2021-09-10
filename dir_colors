@@ -136,6 +136,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .jsonnet      01;35
 .libsonnet    01;35
 .plist        01;35
+.tf           01;35
 .toml         01;35
 .yaml         01;35
 .yml          01;35
