@@ -1,6 +1,11 @@
 {
   "patterns": [
     {
+      "pattern": "https://www.youtube.com/watch?v=5qap5aO4i9A",
+      "isRegex": false,
+      "enabled": true
+    },
+    {
       "pattern": "https://music.youtube.com/playlist?list=LM",
       "isRegex": false,
       "enabled": true
