@@ -79,6 +79,7 @@ function mas --argument-names project
     tmux new-window  -c $repo -t $target:3 -n build
     tmux new-window  -c $repo -t $target:4 -n ag
     tmux new-window  -c $HOME -t $target:5 -n home
+    tmux send-keys            -t $target:2 vim Enter
   end
 
   pushd $repo
@@ -114,6 +115,7 @@ function mag --argument-names client
     tmux new-window    -c $google3 -t $target:4 -n ag
     tmux new-window    -c $google3 -t $target:5 -n presubmit
     tmux new-window    -c $HOME    -t $target:6 -n home
+    tmux send-keys                 -t $target:2 vim
   end
 
   pushd $google3
