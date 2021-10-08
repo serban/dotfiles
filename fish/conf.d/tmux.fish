@@ -123,7 +123,15 @@ function mag --argument-names client
   popd
 end
 
-function mkg --argument-names group
+function mkg
+  set --local options (fish_opt --short=q --long=quiet)
+
+  if not argparse --max-args 1 $options -- $argv
+    return 1
+  end
+
+  set --local group $argv[1]
+
   if test -z $group
     echo 'No session group specified'
     return 1
@@ -134,7 +142,9 @@ function mkg --argument-names group
       -F '#{session_name}' \
       | while read --line session
     tmux kill-session -t =$session
-    echo "Killed session $session"
+    if test -z $_flag_quiet
+      echo "Killed session $session"
+    end
   end
 end
 
