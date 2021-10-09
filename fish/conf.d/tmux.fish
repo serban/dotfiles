@@ -9,6 +9,12 @@ function mls
 end
 
 function mlv
+  set --local options (fish_opt --short=f --long=fzf)
+
+  if not argparse --max-args 0 $options -- $argv
+    return 1
+  end
+
   set --local session_pad 0
   set --local window_pad 0
 
@@ -30,10 +36,16 @@ function mlv
     end
   end
 
-  tmux list-panes -a \
-      -f '#{m/ri:vim,#{pane_current_command}}' \
-      -F "#{p$session_pad:session_name}  #{p-2:window_index} #{p$window_pad:window_name}  #{pane_current_path}" \
-      | grep --invert-match '^z-'
+  if test -z $_flag_fzf
+    tmux list-panes -a \
+        -f '#{m/ri:vim,#{pane_current_command}}' \
+        -F "#{p$session_pad:session_name}  #{p-2:window_index} #{p$window_pad:window_name}  #{pane_current_path}" \
+        | grep --invert-match '^z-'
+  else
+    tmux list-panes -a \
+        -f '#{==:2,#{e|+:#{m/ri:vim,#{pane_current_command}},#{m/r:^(.|([^z].*)|(z[^-].*))$,#{session_name}}}}' \
+        -F " #{p-4:pane_id}  #{p$session_pad:session_name}  #{p-2:window_index} #{p$window_pad:window_name}  #{pane_current_path}"
+  end
 end
 
 function mcl
