@@ -1,5 +1,6 @@
 function ag --wraps ag
-  set --local options (fish_opt --short=t --long=ignore-tests)
+  set --local  options (fish_opt --short=t --long=ignore-tests)
+  set options $options (fish_opt --short=v --long=variants)
 
   if not argparse $options -- $argv
     return
@@ -12,6 +13,27 @@ function ag --wraps ag
 
   if test -n "$_flag_ignore_tests"
     set args $args --ignore '*_test.*'
+  end
+
+  if test -n "$_flag_variants"
+    if test -z $argv[1]
+      echo 'No pattern specified'
+      return 1
+    end
+
+    set --local tokens \
+        (string split _ \
+            (string replace --all ' ' _ \
+                (string replace --all - _ \
+                    (string lower $argv[1]))))
+
+    set argv[1] (string join '|' \
+        (string join '' $tokens) \
+        (string join '-' $tokens) \
+        (string join '_' $tokens) \
+        (string join '\s+' $tokens))
+
+    printf '%s⁖ %s ⁙%s\n\n' (set_color magenta) $argv[1] (set_color normal)
   end
 
   command ag $args $argv
