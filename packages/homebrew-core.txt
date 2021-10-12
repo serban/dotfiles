@@ -34,6 +34,7 @@ moreutils
 neovim
 pastel
 python@3.9
+ripgrep
 rsync
 sqlite
 terminal-notifier

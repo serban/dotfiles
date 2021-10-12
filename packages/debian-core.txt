@@ -25,6 +25,7 @@ makepasswd
 moreutils
 psmisc
 python3
+ripgrep
 silversearcher-ag
 tmux
 unzip
