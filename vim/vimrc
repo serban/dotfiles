@@ -835,15 +835,28 @@ iabbrev /- // ---------------------------------------------------------
 
 digraphs dl   171  "  0x00ab  «  <<
 digraphs dg   176  "  0x00b0  °  DG
+digraphs pm   177  "  0x00b1  ±  +-
+digraphs md   183  "  0x00b7  ·  ~.
 digraphs dr   187  "  0x00bb  »  >>
+digraphs ml   215  "  0x00d7  ×  *X
+digraphs dv   247  "  0x00f7  ÷  -:
+digraphs ql  8220  "  0x201c  “  "6
+digraphs qr  8221  "  0x201d  ”  "9
 digraphs bl  8226  "  0x2022  •  oo
 digraphs el  8230  "  0x2026  …  ,.
 digraphs sl  8249  "  0x2039  ‹  <1
 digraphs sr  8250  "  0x203a  ›  >1
 digraphs al  8592  "  0x2190  ←  <-
 digraphs ar  8594  "  0x2192  →  ->
+digraphs lr  8646  "  0x21c6  ⇆
+digraphs mi  8722  "  0x2212  −  -2
+digraphs sq  8730  "  0x221a  √  RT
+digraphs ae  8776  "  0x2248  ≈  ?2
+digraphs ne  8800  "  0x2260  ≠  !=
 digraphs le  8804  "  0x2264  ≤  =<
 digraphs ge  8805  "  0x2265  ≥  >=
+digraphs bs  9632  "  0x25a0  ■  fS
+digraphs bc  9679  "  0x25cf  ●  0M
 digraphs ch 10003  "  0x2713  ✓  OK
 digraphs cr 10007  "  0x2717  ✗  XX
 
