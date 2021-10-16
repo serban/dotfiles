@@ -398,6 +398,36 @@ function SerbanGenerateSpellFiles()
   highlight SpellRare
 endfunction
 
+function SerbanDeleteBuffer()
+  if &modified
+    echo 'Cannot delete modified buffer'
+    return
+  endif
+
+  let onewin = winnr('$') ==# 1
+  let onetab = tabpagenr('$') ==# 1
+  let empbuf = empty(bufname()) && getbufline('%', 1, '$') ==# ['']
+  let delbuf = 'enew | split | bnext | bdelete'
+
+  if onewin
+    if onetab
+      if empbuf
+        echo 'Cannot close last window'
+      else
+        execute delbuf
+      endif
+    else
+      execute 'bdelete'
+    endif
+  else
+    if empbuf
+      execute 'bdelete'
+    else
+      execute delbuf
+    endif
+  endif
+endfunction
+
 function SerbanDeleteEmptyBuffers(verbose)
   let predicate  = 'buflisted(v:val) && '
   let predicate .= 'empty(bufname(v:val)) && '
@@ -930,7 +960,7 @@ let mapleader = ' '
 " nnoremap <unique> <C-u>
 " nnoremap <unique> <C-v>
 " nnoremap <unique> <C-w>
-  nnoremap <unique> <C-x> :bp <Bar> sp <Bar> bn <Bar> bd <CR>
+  nnoremap <unique> <C-x> :call SerbanDeleteBuffer() <CR>
 " nnoremap <unique> <C-y>
 " nnoremap <unique> <C-z>
 
