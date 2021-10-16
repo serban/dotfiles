@@ -4,6 +4,25 @@ import argparse
 
 RESET  = '\033[0m'
 
+SOLARIZED_ANSI_BACKGROUND_COLORS = {
+    'base03    8': 100,  # base03 - bright black
+    'base02    0':  40,  # base02 - black
+    'base01   10': 102,  # base01 - bright green
+    'base00   11': 103,  # base00 - bright yellow
+    'base0    12': 104,  # base0  - bright blue
+    'base1    14': 106,  # base1  - bright cyan
+    'base2     7':  47,  # base2  - white
+    'base3    15': 107,  # base3  - bright white
+    'yellow    3':  43,  # yellow
+    'orange    9': 101,  # orange - bright red
+    'red       1':  41,  # red
+    'magenta   5':  45,  # magenta
+    'violet   13': 105,  # violet - bright magenta
+    'blue      4':  44,  # blue
+    'cyan      6':  46,  # cyan
+    'green     2':  42,  # green
+}
+
 COLORS = [
     ('Normal',                    '\033[0m'),
     ('Black',                     '\033[30m'),
@@ -62,8 +81,13 @@ def print_table_header(columns):
 
 def parse_command_line_arguments():
   parser = argparse.ArgumentParser()
+  group = parser.add_mutually_exclusive_group()
 
-  parser.add_argument(
+  group.add_argument(
+      '-s', '--solarized', dest='solarized', action='store_true',
+      help='print Solarized tables')
+
+  group.add_argument(
       '-v', '--verbose', dest='verbose', action='store_true',
       help='enable verbose output')
 
@@ -75,6 +99,45 @@ def main():
   if args.verbose:
     for name, escape_code in COLORS:
       print('{:26} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
+  elif args.solarized:
+    row_format = '{:11}  ' + '{}Lorem Ipsum{}  ' * 8
+
+    print_table_header([
+        '↓ bg · fg →',
+        'base03    8', 'base02    0', 'base01   10', 'base00   11',
+        'base0    12', 'base1    14', 'base2     7', 'base3    15',
+        ])
+    for color, i in SOLARIZED_ANSI_BACKGROUND_COLORS.items():
+      print(row_format.format(
+          color,
+          '\033[30;1;' + str(      i) +   'm', RESET,  # base03 - bright black
+          '\033[30;'   + str(      i) +   'm', RESET,  # base02 - black
+          '\033[32;1;' + str(      i) +   'm', RESET,  # base01 - bright green
+          '\033[33;1;' + str(      i) +   'm', RESET,  # base00 - bright yellow
+          '\033[34;1;' + str(      i) +   'm', RESET,  # base0  - bright blue
+          '\033[36;1;' + str(      i) +   'm', RESET,  # base1  - bright cyan
+          '\033[37;'   + str(      i) +   'm', RESET,  # base2  - white
+          '\033[37;1;' + str(      i) +   'm', RESET,  # base3  - bright white
+          ))
+
+    print()
+    print_table_header([
+        '↓ bg · fg →',
+        'yellow    3', 'orange    9', 'red       1', 'magenta   5',
+        'violet   13', 'blue      4', 'cyan      6', 'green     2',
+        ])
+    for color, i in SOLARIZED_ANSI_BACKGROUND_COLORS.items():
+      print(row_format.format(
+          color,
+          '\033[33;'   + str(      i) +   'm', RESET,  # yellow
+          '\033[31;1;' + str(      i) +   'm', RESET,  # orange - bright red
+          '\033[31;'   + str(      i) +   'm', RESET,  # red
+          '\033[35;'   + str(      i) +   'm', RESET,  # magenta
+          '\033[35;1;' + str(      i) +   'm', RESET,  # violet - bright magenta
+          '\033[34;'   + str(      i) +   'm', RESET,  # blue
+          '\033[36;'   + str(      i) +   'm', RESET,  # cyan
+          '\033[32;'   + str(      i) +   'm', RESET,  # green
+          ))
   else:
     lorem_ipsum = '{}Lorem Ipsum{}  ' * 8
 
