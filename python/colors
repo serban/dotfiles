@@ -56,6 +56,10 @@ COLORS = [
     ('Background Aixterm White',  '\033[107m'),
 ]
 
+def print_table_header(columns):
+  print(('{:11}  ' * len(columns)).format(*columns))
+  print('─' * (13 * len(columns) - 2))
+
 def parse_command_line_arguments():
   parser = argparse.ArgumentParser()
 
@@ -72,15 +76,57 @@ def main():
     for name, escape_code in COLORS:
       print('{:26} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
   else:
+    lorem_ipsum = '{}Lorem Ipsum{}  ' * 8
+
+    print_table_header([
+        'Foreground', 'Bright', 'Aixterm', 'Bright Aix',
+        'Background', 'Bright', 'Aixterm', 'Bright Aix',
+        ])
     for i in range(8):
-      print((' ' + '  {}Lorem Ipsum{}'*7).format(
-          '\033[' + str( 30 + i) +   'm', RESET,
-          '\033[' + str( 30 + i) + ';1m', RESET,
-          '\033[' + str( 90 + i) +   'm', RESET,
-          '\033[' + str( 90 + i) + ';1m', RESET,
-          '\033[' + str( 40 + i) +   'm', RESET,
-          '\033[' + str( 40 + i) + ';1m', RESET,
-          '\033[' + str(100 + i) +   'm', RESET))
+      print(lorem_ipsum.format(
+          '\033['      + str( 30 + i) +   'm', RESET,
+          '\033['      + str( 30 + i) + ';1m', RESET,
+          '\033['      + str( 90 + i) +   'm', RESET,
+          '\033['      + str( 90 + i) + ';1m', RESET,
+          '\033['      + str( 40 + i) +   'm', RESET,
+          '\033['      + str( 40 + i) + ';1m', RESET,
+          '\033['      + str(100 + i) +   'm', RESET,
+          '\033['      + str(100 + i) + ';1m', RESET,
+          ))
+
+    print()
+    print_table_header([
+        'base03    8', 'base02    0', 'base01   10', 'base00   11',
+        'base0    12', 'base1    14', 'base2     7', 'base3    15',
+        ])
+    for i in range(8):
+      print(lorem_ipsum.format(
+          '\033[30;1;' + str( 40 + i) +   'm', RESET,  # base03 - bright black
+          '\033[30;'   + str( 40 + i) +   'm', RESET,  # base02 - black
+          '\033[32;1;' + str( 40 + i) +   'm', RESET,  # base01 - bright green
+          '\033[33;1;' + str( 40 + i) +   'm', RESET,  # base00 - bright yellow
+          '\033[34;1;' + str( 40 + i) +   'm', RESET,  # base0  - bright blue
+          '\033[36;1;' + str( 40 + i) +   'm', RESET,  # base1  - bright cyan
+          '\033[37;'   + str( 40 + i) +   'm', RESET,  # base2  - white
+          '\033[37;1;' + str( 40 + i) +   'm', RESET,  # base3  - bright white
+          ))
+
+    print()
+    print_table_header([
+        'base03  Aix', 'base02  Aix', 'base01  Aix', 'base00  Aix',
+        'base0   Aix', 'base1   Aix', 'base2   Aix', 'base3   Aix',
+        ])
+    for i in range(8):
+      print(lorem_ipsum.format(
+          '\033[30;1;' + str(100 + i) +   'm', RESET,  # base03 - bright black
+          '\033[30;'   + str(100 + i) +   'm', RESET,  # base02 - black
+          '\033[32;1;' + str(100 + i) +   'm', RESET,  # base01 - bright green
+          '\033[33;1;' + str(100 + i) +   'm', RESET,  # base00 - bright yellow
+          '\033[34;1;' + str(100 + i) +   'm', RESET,  # base0  - bright blue
+          '\033[36;1;' + str(100 + i) +   'm', RESET,  # base1  - bright cyan
+          '\033[37;'   + str(100 + i) +   'm', RESET,  # base2  - white
+          '\033[37;1;' + str(100 + i) +   'm', RESET,  # base3  - bright white
+          ))
 
 if __name__ == '__main__':
   main()
