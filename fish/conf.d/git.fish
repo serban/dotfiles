@@ -20,8 +20,8 @@ abbr --add --global gco git commit
 abbr --add --global gca git commit --amend --reuse-message=HEAD
 abbr --add --global gcb git commit --all --message='"Bump @ "(date "+%Y-%m-%d %H:%M:%S")'  # TODO: Add to gitconfig
 abbr --add --global gcp git cherry-pick
-abbr --add --global gdi git diff --stat --unified=5
-abbr --add --global gds git diff --stat --unified=5 --staged
+abbr --add --global gdi git diff --stat --patch
+abbr --add --global gds git diff --stat --patch --staged
 abbr --add --global gfe git fetch
 abbr --add --global ggr git grep
 abbr --add --global ggi git grep --ignore-case
@@ -35,13 +35,13 @@ abbr --add --global gpt git push --tags
 abbr --add --global grb git rebase
 abbr --add --global gre git remote
 abbr --add --global grs git reset
-abbr --add --global gsh git show
+abbr --add --global gsh git show --stat --patch
 abbr --add --global gst git status
 abbr --add --global gta git tag
 
 abbr --add --global gsa git stash apply
 abbr --add --global gsd git stash drop
 abbr --add --global gsl git stash list
-abbr --add --global gso git stash show -v
+abbr --add --global gso git stash show --stat --patch
 abbr --add --global gsp git stash pop
 abbr --add --global gss git stash save

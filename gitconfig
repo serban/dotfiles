@@ -16,8 +16,8 @@
   ca = commit --amend --reuse-message=HEAD
   cb = help  # TODO: Bump
   cp = cherry-pick
-  di = diff --stat --unified=5
-  ds = diff --stat --unified=5 --staged
+  di = diff --stat --patch
+  ds = diff --stat --patch --staged
   fe = fetch
   gr = grep
   gi = grep --ignore-case
@@ -30,14 +30,14 @@
   rb = rebase
   re = remote
   rs = reset
-  sh = show
+  sh = show --stat --patch
   st = status
   ta = tag
 
   sa = stash apply
   sd = stash drop
   sl = stash list
-  so = stash show -v
+  so = stash show --stat --patch
   sp = stash pop
   ss = stash save
 
@@ -77,6 +77,10 @@
 [rebase]
   autoStash = true
   stat = true
+
+[stash]
+  showStat = true
+  showPatch = true
 
 [color]
   ui = auto
