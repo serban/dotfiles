@@ -5,7 +5,7 @@
 [alias]
   ad = add
   au = add --update
-  bl = blame
+  bl = blame -s
   bb = branch
   bv = branch --verbose --verbose
   br = branch --verbose --verbose --remotes
@@ -43,6 +43,8 @@
 
 [blame]
   showEmail = true
+  showRoot = true
+  date = short ; YYYY-MM-DD
 
 [branch]
   autosetupmerge = true

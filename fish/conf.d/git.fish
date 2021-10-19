@@ -9,7 +9,7 @@ abbr --add --global cgs clustergit --exec '"git stash list"'
 
 abbr --add --global gad git add
 abbr --add --global gau git add --update
-abbr --add --global gbl git blame
+abbr --add --global gbl git blame -s
 abbr --add --global gbb git branch
 abbr --add --global gbv git branch --verbose --verbose
 abbr --add --global gbr git branch --verbose --verbose --remotes
