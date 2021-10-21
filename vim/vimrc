@@ -908,6 +908,10 @@ let mapleader = ' '
   " Disable man pages
   nnoremap <unique> K <Nop>
 
+  " Make n search forward and N search backward always.
+  nnoremap <unique> <expr> n (v:searchforward ? 'n' : 'N')
+  nnoremap <unique> <expr> N (v:searchforward ? 'N' : 'n')
+
   " Disable Ex-mode
   nnoremap <unique> Q  <Nop>
   nnoremap <unique> gQ <Nop>
