@@ -45,3 +45,41 @@ abbr --add --global gsl git stash list
 abbr --add --global gso git stash show --stat --patch
 abbr --add --global gsp git stash pop
 abbr --add --global gss git stash save
+
+# dandavison/delta wrappers
+
+function gbld
+  git blame --date=iso $argv | delta
+end
+
+function gdis
+  git diff --color --stat --patch $argv | delta --features light-side-by-side
+end
+
+function gdiu
+  git diff --color --stat --patch $argv | delta --features light-unified-diff
+end
+
+function gdss
+  git diff --color --stat --patch --staged $argv | delta --features light-side-by-side
+end
+
+function gdsu
+  git diff --color --stat --patch --staged $argv | delta --features light-unified-diff
+end
+
+function gshs
+  git show --color --stat --patch $argv | delta --features light-side-by-side
+end
+
+function gshu
+  git show --color --stat --patch $argv | delta --features light-unified-diff
+end
+
+function gsos
+  git stash show --color --stat --patch $argv | delta --features light-side-by-side
+end
+
+function gsou
+  git stash show --color --stat --patch $argv | delta --features light-unified-diff
+end

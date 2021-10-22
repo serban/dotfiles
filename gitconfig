@@ -126,5 +126,47 @@
   help = normal
 
 [delta]
-  light = true
-  side-by-side = true
+  tabs                          = 8
+  navigate                      = true
+  blame-format                  = "{commit:8} │ "
+
+[delta "common"]
+  line-numbers                  = true
+  line-numbers-left-format      = "{nm:>4} "
+  line-numbers-right-format     = "{np:>4} "
+  line-numbers-left-style       = auto black        ; gutter style
+  line-numbers-right-style      = auto black        ; gutter style
+  line-numbers-zero-style       = brightgreen black ; number style
+  line-numbers-minus-style      = magenta black     ; number style
+  line-numbers-plus-style       = cyan black        ; number style
+  inline-hint-style             = red bold
+  file-style                    = white
+  file-decoration-style         = white box
+  file-removed-label            = "  🔴 "
+  file-modified-label           = "  🟡 "
+  file-added-label              = "  🟢 "
+  file-renamed-label            = "  🟠 "
+  file-copied-label             = "  🔵 "
+  hunk-label                    = "  🟣 "
+  hunk-header-style             = hidden
+  hunk-header-file-style        = omit
+  hunk-header-line-number-style = omit
+  hunk-header-decoration-style  = omit
+
+[delta "common-light"]
+  features                      = common
+  light                         = true
+  syntax-theme                  = GitHub
+  pager = less --color SKw$     ; base03 (bright black) fg on base2 (white) bg
+
+[delta "light-side-by-side"]
+  features                      = common-light
+  side-by-side                  = true
+  wrap-max-lines                = unlimited
+  wrap-right-percent            = 50
+
+[delta "light-unified-diff"]
+  features                      = common-light
+  side-by-side                  = false
+  wrap-max-lines                = 0
+  hunk-label                    = "  🟣      "
