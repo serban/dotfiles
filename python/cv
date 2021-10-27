@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+import dataclasses
+import re
+import subprocess
+
+import packaging.version
+
+RESET  = '\033[0m'
+RED    = '\033[31m'
+GREEN  = '\033[32m'
+YELLOW = '\033[33m'
+
+@dataclasses.dataclass
+class Package:
+  name: str
+  args: list[str]
+  regx: str
+  date: str
+  okay: str
+  want: str
+  have: str = ''
+  colo: str = RED
+  mark: str = '✗'
+
+packages = [
+    Package('bat',    ['bat', '--version'],     r'bat (.+)',           '2021-10-27', '0.18.3', '0.18.3'),
+    Package('delta',  ['delta', '--version'],   r'delta (.+)',         '2021-10-27', '0.9.1',  '0.9.1'),
+    Package('fd',     ['fd', '--version'],      r'fd (.+)',            '2021-10-27', '8.2.1',  '8.2.1'),
+    Package('fish',   ['fish', '--version'],    r'fish, version (.+)', '2021-10-27', '3.1.2',  '3.3.1'),
+    Package('fzf',    ['fzf', '--version'],     r'(.+) \(.*',          '2021-10-27', '0.24',   '0.27.3'),
+    Package('less',   ['less', '--version'],    r'less (.+) \(.*',     '2021-10-27', '551',    '590'),
+    Package('python', ['python3', '--version'], r'Python (.+)',        '2021-10-27', '3.9.7',  '3.9.7'),
+    Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2021-10-27', '3.2a',   '3.3'),
+]
+
+for p in packages:
+  try:
+    output = subprocess.run(
+        p.args, check=True, stdout=subprocess.PIPE).stdout.decode().strip()
+  except (FileNotFoundError, subprocess.CalledProcessError):
+    continue
+
+  match = re.match(p.regx, output)
+  if match:
+    p.have = match.group(1)
+
+    okay = packaging.version.parse(p.okay)
+    want = packaging.version.parse(p.want)
+    have = packaging.version.parse(p.have)
+
+    if have >= okay:
+      p.colo = YELLOW
+      p.mark = '·'
+
+    if have >= want:
+      p.colo = GREEN
+      p.mark = '✓'
+
+for p in packages:
+  print(f'{p.colo}{p.mark}{RESET}  {p.name:6}  {p.okay:8}  {p.want:8}  {p.colo}{p.have:8}{RESET}')
