@@ -33,6 +33,8 @@ function serban_dirchange --on-variable PWD
       (set_color normal)
 end
 
+set --universal fish_features qmark-noglob,stderr-nocaret
+
 set --global fish_color_command yellow
 set --global fish_color_quote yellow
 set --global fish_color_redirection cyan
