@@ -36,6 +36,7 @@ pastel
 python@3.9
 ripgrep
 rsync
+rust
 sqlite
 terminal-notifier
 the_silver_searcher
