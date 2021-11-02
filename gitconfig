@@ -153,17 +153,34 @@
   hunk-header-line-number-style = omit
   hunk-header-decoration-style  = omit
 
+[delta "common-dark"]
+  features                      = common
+  dark                          = true
+  pager = less --color SkC$     ; base02 (black) fg on base1 (bright cyan) bg
+
 [delta "common-light"]
   features                      = common
   light                         = true
   syntax-theme                  = GitHub
   pager = less --color SKw$     ; base03 (bright black) fg on base2 (white) bg
 
+[delta "dark-side-by-side"]
+  features                      = common-dark
+  side-by-side                  = true
+  wrap-max-lines                = unlimited
+  wrap-right-percent            = 50
+
 [delta "light-side-by-side"]
   features                      = common-light
   side-by-side                  = true
   wrap-max-lines                = unlimited
   wrap-right-percent            = 50
+
+[delta "dark-unified-diff"]
+  features                      = common-dark
+  side-by-side                  = false
+  wrap-max-lines                = 0
+  hunk-label                    = "  🟣      "
 
 [delta "light-unified-diff"]
   features                      = common-light
