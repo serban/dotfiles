@@ -53,33 +53,33 @@ function gbld
 end
 
 function gdis
-  git diff --color --stat --patch $argv | delta --features light-side-by-side
+  git diff --color --stat --patch $argv | delta --features (dark)-side-by-side
 end
 
 function gdiu
-  git diff --color --stat --patch $argv | delta --features light-unified-diff
+  git diff --color --stat --patch $argv | delta --features (dark)-unified-diff
 end
 
 function gdss
-  git diff --color --stat --patch --staged $argv | delta --features light-side-by-side
+  git diff --color --stat --patch --staged $argv | delta --features (dark)-side-by-side
 end
 
 function gdsu
-  git diff --color --stat --patch --staged $argv | delta --features light-unified-diff
+  git diff --color --stat --patch --staged $argv | delta --features (dark)-unified-diff
 end
 
 function gshs
-  git show --color --stat --patch $argv | delta --features light-side-by-side
+  git show --color --stat --patch $argv | delta --features (dark)-side-by-side
 end
 
 function gshu
-  git show --color --stat --patch $argv | delta --features light-unified-diff
+  git show --color --stat --patch $argv | delta --features (dark)-unified-diff
 end
 
 function gsos
-  git stash show --color --stat --patch $argv | delta --features light-side-by-side
+  git stash show --color --stat --patch $argv | delta --features (dark)-side-by-side
 end
 
 function gsou
-  git stash show --color --stat --patch $argv | delta --features light-unified-diff
+  git stash show --color --stat --patch $argv | delta --features (dark)-unified-diff
 end

@@ -26,8 +26,8 @@ abbr --add --global jd jackd --driver coreaudio --rate 44100
 
 abbr --add --global kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 
-abbr --add --global dfs delta --features light-side-by-side
-abbr --add --global dfu delta --features light-unified-diff
+abbr --add --global dfs 'delta --features (dark)-side-by-side'
+abbr --add --global dfu 'delta --features (dark)-unified-diff'
 
 abbr --add --global bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
