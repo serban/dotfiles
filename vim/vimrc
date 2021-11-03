@@ -669,11 +669,20 @@ function SerbanFzfGoogle3Folders()
 endfunction
 
 function SerbanNewNote()
-  let name = trim(input('New Note: '))
+  call fzf#run(fzf#wrap({
+  \   'dir': '~/txt',
+  \   'source': 'echo && fd --type directory',
+  \   'sink': function('SerbanNewNoteInDir'),
+  \ }))
+endfunction
+
+function SerbanNewNoteInDir(dir)
+  let prom = 'New Note' . (a:dir ==# '' ? ': ' : ' › ' . a:dir . ' › ')
+  let name = trim(input(prom))
   let date = strftime('%Y-%m-%d')
   let head = '# ' . date . ' - ' . name
   let file = date . ' ' . name . '.md'
-  let path = '~/txt/' . file
+  let path = '~/txt/' . (a:dir ==# '' ? file : a:dir . '/' . file)
 
   if name ==# ''
     echo '✗'
