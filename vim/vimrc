@@ -33,6 +33,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'troydm/easybuffer.vim'
+Plug 'udalov/kotlin-vim'
 
 " macOS: UltiSnips can crash MacVim on startup if it's linked against the wrong
 " Python. Not the fault of UltiSnips. See:
