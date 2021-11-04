@@ -13,6 +13,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
@@ -985,7 +986,7 @@ let mapleader = ' '
   nnoremap <unique> <C-Right> :tabmove +1 <CR>
 
 " nnoremap <unique> <Leader>a
-" nnoremap <unique> <Leader>b
+  nnoremap <unique> <Leader>b :call SerbanNewNote() <CR>
 " nnoremap <unique> <Leader>c
   nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
   nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
@@ -1004,7 +1005,7 @@ let mapleader = ' '
       nmap <unique> <Leader>q <Plug>(ctrlp)
 " nnoremap <unique> <Leader>r
 " nnoremap <unique> <Leader>s
-  nnoremap <unique> <Leader>t :call SerbanNewNote() <CR>
+" nnoremap <unique> <Leader>t
 " nnoremap <unique> <Leader>u
 " nnoremap <unique> <Leader>v
 " nnoremap <unique> <Leader>w
