@@ -902,6 +902,7 @@ digraphs bc  9679  "  0x25cf  ●  0M
 digraphs ch 10003  "  0x2713  ✓  OK
 digraphs cr 10007  "  0x2717  ✗  XX
 
+digraphs n0  9450  "  0x24ea  ⓪
 digraphs n1  9312  "  0x2460  ①
 digraphs n2  9313  "  0x2461  ②
 digraphs n3  9314  "  0x2462  ③
