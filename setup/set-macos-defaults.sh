@@ -42,8 +42,8 @@ defaults write com.sublimetext.3 ApplePressAndHoldEnabled -bool false
 defaults write org.vim.MacVim ApplePressAndHoldEnabled -bool false
 
 # Set name and location of screenshots
-mkdir -p $HOME/Downloads/Screenshots
-defaults write com.apple.screencapture location $HOME/Downloads/Screenshots
+mkdir -p $HOME/Screenshots
+defaults write com.apple.screencapture location $HOME/Screenshots
 defaults write com.apple.screencapture name Screenshot
 defaults write com.apple.screencapture include-date -bool false
 defaults write com.apple.screencapture disable-shadow -bool true

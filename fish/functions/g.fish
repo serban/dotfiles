@@ -56,7 +56,8 @@ function g
           --hide=Movies \
           --hide=Music \
           --hide=Pictures \
-          --hide=Public
+          --hide=Public \
+          --hide=Screenshots
     end
   end
 
