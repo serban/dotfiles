@@ -868,6 +868,9 @@ iabbrev td TODO(serban):
 iabbrev #t # TODO(serban):
 iabbrev /t // TODO(serban):
 
+iabbrev <expr> zd strftime('%Y-%m-%d')
+iabbrev <expr> zt strftime('%Y-%m-%d %H:%M')
+
 iabbrev !- ------------------------------------------------------------
 iabbrev #- # ----------------------------------------------------------
 iabbrev /- // ---------------------------------------------------------
