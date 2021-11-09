@@ -58,6 +58,17 @@ local function highlightMousePointer()
   }):show():delete(0.75)
 end
 
+local function openFirefoxHomeTabs()
+  activate('Firefox.app')
+  os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
+      'https://mail.google.com/mail/u/0/#inbox',
+      'https://calendar.google.com/calendar/u/0/r/month',
+  }, ' '))
+  hs.timer.doAfter(0.1, function()
+    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+  end)
+end
+
 bind("'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
 bind('\\',    function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
 bind('0',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
@@ -85,6 +96,7 @@ bind('f3',    function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs
 bind('f8',    function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
 
 bind('b',     function() activate('Firefox.app') end)
+bind('4',     function() openFirefoxHomeTabs() end)
 bind('c',     function() activate('Google Chrome.app') end)
 bind('f',     function() activate('Finder.app') end)
 bind('g',     function() activate(nexus and 'Numbers.app' or 'Google Chat 2.app') end)
