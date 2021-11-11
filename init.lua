@@ -64,7 +64,7 @@ local function openFirefoxHomeTabs()
       'https://mail.google.com/mail/u/0/#inbox',
       'https://calendar.google.com/calendar/u/0/r/month',
   }, ' '))
-  hs.timer.doAfter(0.1, function()
+  hs.timer.doAfter(0.2, function()
     hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
   end)
 end
