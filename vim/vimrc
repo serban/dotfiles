@@ -494,6 +494,27 @@ function SerbanHighlight()
   let g:serban_solarized_orange  = '#cb4b16'
   let g:serban_solarized_violet  = '#6c71c4'
 
+  if has('gui_running')
+    let g:terminal_ansi_colors = [
+    \   g:serban_solarized_base02,
+    \   g:serban_solarized_red,
+    \   g:serban_solarized_green,
+    \   g:serban_solarized_yellow,
+    \   g:serban_solarized_blue,
+    \   g:serban_solarized_magenta,
+    \   g:serban_solarized_cyan,
+    \   g:serban_solarized_base2,
+    \   g:serban_solarized_base03,
+    \   g:serban_solarized_orange,
+    \   g:serban_solarized_base01,
+    \   g:serban_solarized_base00,
+    \   g:serban_solarized_base0,
+    \   g:serban_solarized_violet,
+    \   g:serban_solarized_base1,
+    \   g:serban_solarized_base3,
+    \]
+  endif
+
   " NAME    ANSI  NOTES
   " -------------------------------
   " base03     8  Background Color
