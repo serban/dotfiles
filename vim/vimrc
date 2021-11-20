@@ -917,7 +917,9 @@ digraphs el  8230  "  0x2026  …  ,.
 digraphs sl  8249  "  0x2039  ‹  <1
 digraphs sr  8250  "  0x203a  ›  >1
 digraphs al  8592  "  0x2190  ←  <-
+digraphs au  8593  "  0x2191  ↑  -!
 digraphs ar  8594  "  0x2192  →  ->
+digraphs ad  8595  "  0x2193  ↓  -v
 digraphs lr  8646  "  0x21c6  ⇆
 digraphs mi  8722  "  0x2212  −  -2
 digraphs sq  8730  "  0x221a  √  RT
