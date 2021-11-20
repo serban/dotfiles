@@ -60,15 +60,18 @@ set --global --export LD_LIBRARY_PATH \
 
 set --global --export FZF_DEFAULT_COMMAND fd --type file
 
-# TODO: fzf v0.25 introduces the 'query' color option. Set 'prompt' and 'query'.
 set --global --export FZF_DEFAULT_OPTS \
     --reverse \
     --no-info \
     --height 8 \
+    --scroll-off 1 \
+    --header-first \
+    --prompt '"⁖ "' \
     --pointer › \
     --marker ● \
     --no-bold \
     --color dark,border:13 \
+    --color prompt:3,query:3 \
     --color gutter:-1,marker:2 \
     --color hl:1,hl+:1 \
     --color bg:-1,fg:12 \
