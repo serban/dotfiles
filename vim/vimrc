@@ -234,8 +234,12 @@ let g:easybuffer_bufname = 'SerbanEasyBufferBufName(bnr)'   " Display a custom p
 " EDITORCONFIG
 let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for golang is set below
 
+" FZF
+let g:fzf_layout = {'window': {'width': 0.95, 'height': 0.90}}
+
 " FZF.VIM
 let g:fzf_command_prefix = 'Fzf'
+let g:fzf_preview_window = ['right,50%,border-left']
 
 " NUMBERS
 " I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
