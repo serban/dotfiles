@@ -851,6 +851,11 @@ augroup serban-darkmode
 augroup end
 endif
 
+augroup serban-help
+  autocmd!
+  autocmd BufEnter *.txt if &buftype ==# 'help' | wincmd L | endif
+augroup end
+
 augroup serban-highlight
   autocmd!
   autocmd ColorScheme solarized silent call SerbanHighlight()
