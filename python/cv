@@ -12,6 +12,8 @@ GREEN  = '\033[32m'
 YELLOW = '\033[33m'
 CYAN   = '\033[36m'
 
+VIM_REGEX = r'VIM - Vi IMproved (.+) \(.*\s.*\sIncluded patches: 1-(.+)'
+
 @dataclasses.dataclass
 class Package:
   name: str
@@ -20,19 +22,20 @@ class Package:
   date: str
   okay: str
   want: str
-  have: str = ''
+  have: str = '∅'
   colo: str = RED
   mark: str = '✗'
 
 packages = [
-    Package('bat',    ['bat', '--version'],     r'bat (.+)',           '2021-10-27', '0.18.3', '0.18.3'),
-    Package('delta',  ['delta', '--version'],   r'delta (.+)',         '2021-10-27', '0.9.1',  '0.9.1'),
-    Package('fd',     ['fd', '--version'],      r'fd (.+)',            '2021-10-27', '8.2.1',  '8.2.1'),
-    Package('fish',   ['fish', '--version'],    r'fish, version (.+)', '2021-10-27', '3.1.2',  '3.3.1'),
-    Package('fzf',    ['fzf', '--version'],     r'(.+) \(.*',          '2021-10-27', '0.28.0', '0.28.0'),
-    Package('less',   ['less', '--version'],    r'less (.+) \(.*',     '2021-10-27', '551',    '590'),
-    Package('python', ['python3', '--version'], r'Python (.+)',        '2021-10-27', '3.9.7',  '3.9.7'),
-    Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2021-10-27', '3.2a',   '3.3'),
+    Package('bat',    ['bat', '--version'],     r'bat (.+)',           '2021-10-27', '0.18.3',   '0.18.3'),
+    Package('delta',  ['delta', '--version'],   r'delta (.+)',         '2021-10-27', '0.9.1',    '0.9.1'),
+    Package('fd',     ['fd', '--version'],      r'fd (.+)',            '2021-10-27', '8.2.1',    '8.2.1'),
+    Package('fish',   ['fish', '--version'],    r'fish, version (.+)', '2021-10-27', '3.1.2',    '3.3.1'),
+    Package('fzf',    ['fzf', '--version'],     r'(.+) \(.*',          '2021-10-27', '0.28.0',   '0.28.0'),
+    Package('less',   ['less', '--version'],    r'less (.+) \(.*',     '2021-10-27', '551',      '590'),
+    Package('python', ['python3', '--version'], r'Python (.+)',        '2021-10-27', '3.9.7',    '3.9.7'),
+    Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2021-10-27', '3.2a',     '3.3'),
+    Package('vim',    ['vim', '--version'],     VIM_REGEX,             '2021-11-25', '8.2.3653', '8.2.3653'),
 ]
 
 for p in packages:
@@ -42,25 +45,27 @@ for p in packages:
   except (FileNotFoundError, subprocess.CalledProcessError):
     continue
 
-  match = re.match(p.regx, output)
-  if match:
-    p.have = match.group(1)
+  m = re.match(p.regx, output)
+  if not m:
+    continue
 
-    okay = packaging.version.parse(p.okay)
-    want = packaging.version.parse(p.want)
-    have = packaging.version.parse(p.have)
+  p.have = m.group(1) if p.name != 'vim' else f'{m.group(1)}.{m.group(2)}'
 
-    if have >= okay:
-      p.colo = YELLOW
-      p.mark = '·'
+  okay = packaging.version.parse(p.okay)
+  want = packaging.version.parse(p.want)
+  have = packaging.version.parse(p.have)
 
-    if have == want:
-      p.colo = GREEN
-      p.mark = '✓'
+  if have >= okay:
+    p.colo = YELLOW
+    p.mark = '·'
 
-    if have > want:
-      p.colo = CYAN
-      p.mark = '✓'
+  if have == want:
+    p.colo = GREEN
+    p.mark = '✓'
+
+  if have > want:
+    p.colo = CYAN
+    p.mark = '✓'
 
 for p in packages:
   print(f'{p.colo}{p.mark}{RESET}  {p.name:6}  {p.okay:8}  {p.want:8}  {p.colo}{p.have:8}{RESET}')
