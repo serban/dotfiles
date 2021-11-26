@@ -4,8 +4,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+# https://unix.stackexchange.com/questions/209123/understanding-ifs-read-r-line
+# https://unix.stackexchange.com/questions/275794/iterating-over-multiple-line-string-stored-in-variable
 print () {
-  echo "pip: $@" 1>&2
+  while IFS= read -r line; do
+    echo "pip: $line" 1>&2
+  done <<< "$@"
 }
 
 PIP2_PATH="$(which pip2)" || true
@@ -13,6 +17,7 @@ PIP3_PATH="$(which pip3)" || true
 PYTHON_PATH="$(which python)" || true
 PYTHON2_PATH="$(which python2)" || true
 PYTHON3_PATH="$(which python3)" || true
+PYTHON3_SITE_INFO="$(python3 -m site)" || true
 
 if [[ -z "${PIP2_PATH}" ]]; then
   print "   pip2 is not in your path"
@@ -44,14 +49,24 @@ else
   print "python3 is ${PYTHON3_PATH} --> $(readlink ${PYTHON3_PATH})"
 fi
 
+if [[ -z "${PYTHON3_SITE_INFO}" ]]; then
+  print "python3 site info missing"
+else
+  print "${PYTHON3_SITE_INFO}"
+fi
+
+print
+print '+----------------------------------------------------------------------+'
+print '| Usage                                                                |'
+print '+----------------------------------------------------------------------+'
 print
 print 'You are outside of a virtualenv. Use pip3 explicitly:'
 print
-print '  $ pip3 list'
-print
-print 'To upgrade pip itself:'
-print
-print '  $ PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
+print 'List packages:               $ pip3 list'
+print 'List user packages:          $ pip3 list --user'
+print 'Install a package (macOS):   $ PIP_REQUIRE_VIRTUALENV=false pip3 install package'
+print 'Install a package (Debian):  $ PIP_REQUIRE_VIRTUALENV=false pip3 install --user package'
+print 'Upgrade pip itself (macOS):  $ PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
 print
 print '+----------------------------------------------------------------------+'
 print '| Bash Shell                                                           |'
