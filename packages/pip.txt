@@ -1,5 +1,6 @@
 bpython
 lookatme
+packaging
 pynvim
 virtualfish
 wavemaker
