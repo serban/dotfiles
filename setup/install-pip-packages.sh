@@ -6,6 +6,10 @@ set -o pipefail
 
 readonly PIP_REQUIRE_VIRTUALENV=false
 
-cat ~/src/dotfiles/packages/pip.txt | xargs pip3 install
+if [[ "$(uname -s)" == Darwin ]]; then
+  cat ~/src/dotfiles/packages/pip.txt | xargs pip3 install
+else
+  cat ~/src/dotfiles/packages/pip.txt | xargs pip3 install --user
+fi
 
-vf install auto_activation
+fish -c 'vf install auto_activation'
