@@ -1,6 +1,6 @@
 function fn
   set --local theme (bat_theme)
-  fd --base-directory ~/txt --type file \
+  fd --base-directory ~/txt --strip-cwd-prefix --type file \
       | fzf --multi \
             --height 100% \
             --preview-window right,60% \

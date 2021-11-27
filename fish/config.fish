@@ -58,7 +58,7 @@ set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
 
-set --global --export FZF_DEFAULT_COMMAND fd --type file
+set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
 set --global --export FZF_DEFAULT_OPTS \
     --reverse \
