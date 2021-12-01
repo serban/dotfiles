@@ -63,6 +63,20 @@ local function openFirefoxHomeTabs()
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
       'https://mail.google.com/mail/u/0/#inbox',
       'https://calendar.google.com/calendar/u/0/r/month',
+      'https://app.youneedabudget.com',
+  }, ' '))
+  hs.timer.doAfter(0.2, function()
+    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+  end)
+end
+
+local function openChromeHomeTabs()
+  activate('Google Chrome.app')
+  os.execute(table.concat({
+      '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"',
+          '--new-window',
+          'https://calendar.google.com/calendar/u/0/r/week',
+          'https://mail.google.com/mail/u/0/#inbox',
   }, ' '))
   hs.timer.doAfter(0.2, function()
     hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
@@ -98,6 +112,7 @@ bind('f8',    function() hs.osascript.applescript('tell application "System Even
 bind('b',     function() activate('Firefox.app') end)
 bind('4',     function() openFirefoxHomeTabs() end)
 bind('c',     function() activate('Google Chrome.app') end)
+bind('5',     function() openChromeHomeTabs() end)
 bind('f',     function() activate('Finder.app') end)
 bind('g',     function() activate(nexus and 'Numbers.app' or 'Google Chat 2.app') end)
 bind('h',     function() activate('Audio Hijack.app') end)
