@@ -47,6 +47,12 @@ function bd
   header 'Packages Removable'
   cat $removable
 
+  header 'Cheatsheet'
+  echo '• brew deps --tree --include-build formula'
+  echo '• brew uses --installed --recursive --include-build formula'
+  echo '• brew autoremove --dry-run'
+  echo '• brew cleanup -s --dry-run'
+
   popd
   rm -r $output_dir
 end
