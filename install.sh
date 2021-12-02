@@ -64,6 +64,9 @@ ln -si ${DOTFILES}/fish/completions   ~/.config/fish/completions
 ln -si ${DOTFILES}/fish/functions     ~/.config/fish/functions
 ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
 
+mkdir -p ~/.config/lf
+ln -si ${DOTFILES}/lfrc               ~/.config/lf/lfrc
+
 mkdir -p ~/.config/nitrogen
 ln -si ${DOTFILES}/bg-saved.cfg       ~/.config/nitrogen/bg-saved.cfg
 

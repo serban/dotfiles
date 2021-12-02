@@ -1,0 +1,22 @@
+set drawbox
+set incfilter
+set incsearch
+set nopreview
+set promptfmt " \033[34m%w › \033[36m%f\033[0m"
+set ratios 1:3
+set scrolloff 3
+set sortby name
+set timefmt '› 2006-01-02 15:04'
+set truncatechar …
+set nowrapscan
+
+set hiddenfiles ".*:~/Applications:~/Data:~/Desktop:~/Documents:~/Downloads:~/Library:~/Movies:~/Music:~/Pictures:~/Public:~/Screenshots:~/Workspace"
+
+map J :updir ; down ; open
+map K :updir ; up   ; open
+
+map I :set ratios 1:3
+map W :set ratios 1:1:1:1:2
+map S :set ratios 1:1:1:1:1:1:2
+
+cmd open

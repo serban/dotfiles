@@ -57,7 +57,8 @@ function g
           --hide=Music \
           --hide=Pictures \
           --hide=Public \
-          --hide=Screenshots
+          --hide=Screenshots \
+          --hide=Workspace
     end
   end
 

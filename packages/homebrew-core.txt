@@ -29,6 +29,7 @@ hugo
 jq
 jsonnet
 less
+lf
 macvim
 md5deep
 moreutils
