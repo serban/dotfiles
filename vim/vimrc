@@ -363,6 +363,11 @@ function SerbanChangeWorkingDirToCurrentFileParent()
   execute 'cd' fnameescape(expand('%:p:h'))
 endfunction
 
+function SerbanSwitchGraphToProducerModule()
+  execute 'edit' substitute(expand('%:p'),
+                 \          '\vGraph.java$', 'ProducerModule.java', '')
+endfunction
+
 function SerbanEchoWorkingDir()
   echohl SerbanWorkingDir
   echo substitute(fnamemodify(getcwd(), ':~'),
@@ -686,6 +691,12 @@ function SerbanToc()
   vertical resize 40
   setlocal winfixwidth
   call win_gotoid(id)
+endfunction
+
+function SerbanFzfProducerModules()
+  call fzf#run(fzf#wrap({
+  \   'source': 'fd --type file --strip-cwd-prefix ProducerModule.java',
+  \ }))
 endfunction
 
 function SerbanFzfGoogle3Files()
@@ -1075,6 +1086,8 @@ let mapleader = ' '
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
   nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
   nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
+  nnoremap <unique> <Leader>hp :call SerbanFzfProducerModules() <CR>
+  nnoremap <unique> <Leader>hz :call SerbanSwitchGraphToProducerModule() <CR>
 
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
