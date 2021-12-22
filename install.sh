@@ -58,6 +58,9 @@ ln -si ${DOTFILES}/Xresources         ~/.Xresources
 mkdir -p ~/.config/bat
 ln -si ${DOTFILES}/bat-config         ~/.config/bat/config
 
+mkdir -p ~/.config/emacs
+ln -si ${DOTFILES}/emacs/init.el      ~/.config/emacs/init.el
+
 mkdir -p ~/.config/fish
 ln -si ${DOTFILES}/fish/conf.d        ~/.config/fish/conf.d
 ln -si ${DOTFILES}/fish/completions   ~/.config/fish/completions
