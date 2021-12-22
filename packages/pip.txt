@@ -1,4 +1,5 @@
 lookatme
+numpy_financial
 packaging
 pynvim
 virtualfish
