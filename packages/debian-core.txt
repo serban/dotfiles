@@ -17,6 +17,7 @@ hexyl
 htop
 httpie
 hugo
+ipython3
 jq
 jsonnet
 libc++-dev

@@ -76,6 +76,9 @@ ln -si ${DOTFILES}/init.lua           ~/.hammerspoon/init.lua
 mkdir -p ~/.i3
 ln -si ${DOTFILES}/i3-config          ~/.i3/config
 
+mkdir -p ~/.ipython/profile_default
+ln -si ${DOTFILES}/ipython_config.py  ~/.ipython/profile_default/ipython_config.py
+
 mkdir -p ~/.moc
 ln -si ${DOTFILES}/moc/config         ~/.moc/config
 ln -si ${DOTFILES}/moc/themes         ~/.moc/themes

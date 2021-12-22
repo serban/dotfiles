@@ -26,6 +26,7 @@ heroku/brew/heroku
 hexyl
 httpie
 hugo
+ipython
 jq
 jsonnet
 less
