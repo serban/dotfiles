@@ -27,6 +27,8 @@ abbr --add --global ggr git grep
 abbr --add --global ggi git grep --ignore-case
 abbr --add --global gin git init
 abbr --add --global glo git log --decorate --stat
+abbr --add --global gl1 git log --decorate=no --oneline
+abbr --add --global glp git log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
 abbr --add --global gls git ls-files
 abbr --add --global glu git ls-files --others --exclude-standard --directory
 abbr --add --global gpl git pull
