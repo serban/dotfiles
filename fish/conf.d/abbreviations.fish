@@ -28,6 +28,17 @@ abbr --add --global kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 abbr --add --global dfs 'delta --features (dark)-side-by-side'
 abbr --add --global dfu 'delta --features (dark)-unified-diff'
 
+# The slash in front of each name tells fd to match relative to the current
+# directory. Without the slash, fd excludes any file matching the name at any
+# level below the current one. For example, if run from $HOME, this excludes
+# everything under ~/Music but not ~/Downloads/Music. See:
+#
+# * https://git-scm.com/docs/gitignore and
+# * https://docs.rs/ignore/latest/ignore/struct.WalkBuilder.html
+#
+# Tested on 2021-12-22 with fd 8.3.0.
+abbr --add --global fdh 'fd -E /Data -E /Library -E /Movies -E /Music -E /Pictures'
+
 abbr --add --global bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
 # The regular expression we want to pass to perl is \\n, with two backslashes.
