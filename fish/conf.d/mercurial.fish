@@ -18,3 +18,16 @@ abbr --add --global huc 'hg uploadchain && hg xl'
 abbr --add --global hsy 'hg sync && hg xl'
 abbr --add --global hsu 'hg sync && hg uploadchain && hg xl'
 abbr --add --global hxl 'hg xl'
+
+# dandavison/delta wrappers
+
+abbr --add --global hdps 'hg diff --change . | delta --features (dark)-side-by-side'
+abbr --add --global hdpu 'hg diff --change . | delta --features (dark)-unified-diff'
+
+function hdis
+  hg diff $argv | delta --features (dark)-side-by-side
+end
+
+function hdiu
+  hg diff $argv | delta --features (dark)-unified-diff
+end
