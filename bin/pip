@@ -69,6 +69,13 @@ print 'Install a package (Debian):  $ PIP_REQUIRE_VIRTUALENV=false pip3 install 
 print 'Upgrade pip itself (macOS):  $ PIP_REQUIRE_VIRTUALENV=false pip3 install --upgrade pip'
 print
 print '+----------------------------------------------------------------------+'
+print '| Pips                                                                 |'
+print '+----------------------------------------------------------------------+'
+print
+print '$ PIP_REQUIRE_VIRTUALENV=false /opt/homebrew/opt/python@3.9/bin/pip3'
+print '$ PIP_REQUIRE_VIRTUALENV=false /opt/homebrew/opt/python@3.10/bin/pip3'
+print
+print '+----------------------------------------------------------------------+'
 print '| Bash Shell                                                           |'
 print '+----------------------------------------------------------------------+'
 print
