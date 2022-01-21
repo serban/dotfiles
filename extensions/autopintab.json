@@ -44,11 +44,6 @@
       "pattern": "https://app.youneedabudget.com/",
       "isRegex": false,
       "enabled": true
-    },
-    {
-      "pattern": "https://cheatsheets.javatheory.net/",
-      "isRegex": false,
-      "enabled": true
     }
   ]
 }
