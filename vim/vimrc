@@ -1133,6 +1133,13 @@ let mapleader = ' '
 " nnoremap <unique> <Leader>cl :CorpWebCritiqueCl <CR>
 
 " ------------------------------------------------------------------------------
+" NOTES
+
+if has('gui_running') && argc() ==# 0 && isdirectory(expand('~/txt'))
+  cd ~/txt
+endif
+
+" ------------------------------------------------------------------------------
 " LOCAL SETTINGS
 
 if filereadable(expand('~/.vimrc_local'))
