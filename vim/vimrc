@@ -880,6 +880,7 @@ augroup end
 
 augroup serban-markdown
   autocmd!
+  autocmd FileType markdown TableModeEnable
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
 augroup end
 
