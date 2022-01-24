@@ -246,6 +246,9 @@ let g:fzf_preview_window = ['right,50%,border-left']
 " does not exist when this code is run. See numbers.vim for the default value.
 let g:numbers_exclude = ['help', 'qf', 'tagbar']
 
+" TABLE MODE
+let g:table_mode_verbose = 0
+
 " TAGBAR
 let g:tagbar_indent = 0
 let g:tagbar_left = 1
