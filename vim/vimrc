@@ -420,26 +420,12 @@ function SerbanDeleteBuffer()
   endif
 
   let onewin = winnr('$') ==# 1
-  let onetab = tabpagenr('$') ==# 1
   let empbuf = empty(bufname()) && getbufline('%', 1, '$') ==# ['']
-  let delbuf = 'enew | split | bnext | bdelete'
 
-  if onewin
-    if onetab
-      if empbuf
-        echo 'Cannot close last window'
-      else
-        execute delbuf
-      endif
-    else
-      execute 'bdelete'
-    endif
+  if onewin || empbuf
+    execute 'bdelete'
   else
-    if empbuf
-      execute 'bdelete'
-    else
-      execute delbuf
-    endif
+    execute 'enew | bdelete ' . bufnr()
   endif
 endfunction
 
