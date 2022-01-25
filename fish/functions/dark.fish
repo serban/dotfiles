@@ -6,6 +6,11 @@
 # For the construction of the escape codes, see:
 # • https://iterm2.com/documentation-escape-codes.html
 # • https://github.com/tmux/tmux/wiki/FAQ#what-is-the-passthrough-escape-sequence-and-how-do-i-use-it
+#
+# NB: iTerm2 commit d98595cf42e24777ce10463b5ee206aed3cbaff4 adds support for
+# the Display P3 color space, which changes iTerm2's response to OSC 4 when
+# enabled. See https://gitlab.com/gnachman/iterm2/-/issues/9652 -
+#   Color rendering not as vibrant as other editors.
 function dark
   if test "$TERM" = screen-256color
     read response --silent --nchars 25 \
