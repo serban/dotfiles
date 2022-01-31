@@ -933,6 +933,7 @@ digraphs au  8593  "  0x2191  ↑  -!
 digraphs ar  8594  "  0x2192  →  ->
 digraphs ad  8595  "  0x2193  ↓  -v
 digraphs lr  8646  "  0x21c6  ⇆
+digraphs es  8709  "  0x2205  ∅  /0
 digraphs mi  8722  "  0x2212  −  -2
 digraphs sq  8730  "  0x221a  √  RT
 digraphs ae  8776  "  0x2248  ≈  ?2
