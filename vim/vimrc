@@ -107,7 +107,7 @@ set laststatus=2                      " Always show the status bar (it tells us 
 set guioptions-=T                     " Get rid of the toolbar in gVim
 set guioptions+=c                     " Don't use popup dialogs in gVim
 set guicursor+=n:blinkon0             " Don't blink the cursor in normal mode
-set fillchars=vert:│,fold:·           " Use a box-drawing character to get a clean vertical line between splits
+set fillchars=vert:│                  " Use a box-drawing character to get a clean vertical line between splits
 set titlestring=%t                    " Use a custom window title that just shows the filename
 set tabline=%!SerbanTabLine()         " Use a custom tab line
 set guitablabel=%!SerbanGuiTabLabel() " Use a custom tab title in gVim
@@ -131,6 +131,8 @@ set display=lastline                " Show as much as possible of the last line 
 set breakindent                     " Indent lines that are soft-wrapped with the characters in 'showbreak'
 set showbreak=⧽\                    " Prepend these characters to continuations of soft-wrapped lines
 set nofoldenable                    " Don't fold code
+set foldmethod=indent
+set foldtext='⋮'
 set sidescroll=16                   " When the cursor hits the end of the screen, scroll left or right by this many spaces
 set sidescrolloff=10                " Always leave some space to the left and right of the cursor
 set scrolloff=3                     " Always leave some lines above and below the cursor
@@ -549,7 +551,7 @@ function SerbanHighlight()
   highlight TabLineFill              cterm=none ctermbg=0  ctermfg=3
   highlight TabLine                  cterm=none ctermbg=0  ctermfg=7
   highlight TabLineSel               cterm=none ctermbg=5  ctermfg=8
-  highlight Folded                   cterm=none ctermbg=8  ctermfg=3
+  highlight Folded                   cterm=none ctermbg=8  ctermfg=13
   highlight FoldColumn               cterm=none ctermbg=0  ctermfg=13
   highlight qfFileName               cterm=none ctermbg=8  ctermfg=13
   highlight QuickFixLine             cterm=none ctermbg=0  ctermfg=13
@@ -569,7 +571,7 @@ function SerbanHighlight()
   execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
   execute 'highlight StatusLineNC             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight Folded                   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_yellow
+  execute 'highlight Folded                   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight FoldColumn               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight qfFileName               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight QuickFixLine             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
@@ -882,7 +884,8 @@ augroup serban-markdown
   autocmd!
   autocmd FileType markdown TableModeEnable
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
-  autocmd FileType markdown set foldtext=getline(v:foldstart).'\ '
+  " https://github.com/vim/vim/issues/5206 - Make fillchars a local setting
+  autocmd FileType markdown set foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
 augroup end
 
 " The pattern ~/txt/*.md matches all files ending in '.md' under ~/txt, even
