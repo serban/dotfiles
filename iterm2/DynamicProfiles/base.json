@@ -2,6 +2,7 @@
   "Profiles": [
     {
       "Name": "Serban Base",
+      "Title Components": 32,
       "Allow Title Setting" : true,
       "Use Separate Colors for Light and Dark Mode": false,
       "Use Tab Color": false,
