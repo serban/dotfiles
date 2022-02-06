@@ -14,6 +14,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
@@ -207,6 +208,9 @@ endif
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
 
+" BULLETS
+let g:bullets_outline_levels = ['num', 'abc', 'std*', 'std+', 'std-']
+
 " CTRLP
 let g:ctrlp_map = ''  " Mapped below with all the others
 let g:ctrlp_match_window = 'order:ttb,min:20,max:20'
@@ -289,6 +293,7 @@ let g:mwAutoSaveMarks = 0
 " VIM-MARKDOWN
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 
 " VIM-MARKDOWN-FOLDING
@@ -886,6 +891,9 @@ augroup serban-markdown
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
   " https://github.com/vim/vim/issues/5206 - Make fillchars a local setting
   autocmd FileType markdown set foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
+  " https://github.com/preservim/vim-markdown/issues/232 - Rewrapping a bullet point inserts new bullet points
+  " https://github.com/preservim/vim-markdown/issues/390 - gq wrapping is still broken
+  autocmd FileType markdown set comments=fb:*,fb:+,fb:-,n:> indentexpr=
 augroup end
 
 " The pattern ~/txt/*.md matches all files ending in '.md' under ~/txt, even
