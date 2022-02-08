@@ -778,7 +778,7 @@ function SerbanWrapHard()
   if &textwidth ==# 0
     set textwidth=80
   endif
-  set formatoptions+=t
+  set formatoptions+=tc
   set colorcolumn=+1
   set nowrap
 endfunction
@@ -787,19 +787,19 @@ function SerbanWrapHint()
   if &textwidth ==# 0
     set textwidth=80
   endif
-  set formatoptions-=t
+  set formatoptions-=tc
   set colorcolumn=+1
   set nowrap
 endfunction
 
 function SerbanWrapSoft()
-  set formatoptions-=t
+  set formatoptions-=tc
   set colorcolumn=0
   set wrap
 endfunction
 
 function SerbanWrapNone()
-  set formatoptions-=t
+  set formatoptions-=tc
   set colorcolumn=0
   set nowrap
 endfunction
