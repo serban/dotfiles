@@ -15,6 +15,7 @@ async def main(connection):
       print(f'Theme Change: {theme}')
 
       # Disable this script in favor of profiles with both dark and light colors
+      print(f'→ NOP: Script is disabled in favor of profile Serban Solarized')
       continue
 
       for window in app.windows:

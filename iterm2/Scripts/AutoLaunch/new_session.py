@@ -16,6 +16,7 @@ async def main(connection):
       print(f'New Session: {session_id:<36}  Theme: {theme}')
 
       # Disable this script in favor of profiles with both dark and light colors
+      print(f'→ NOP: Script is disabled in favor of profile Serban Solarized')
       continue
 
       await session.async_set_profile_properties(
