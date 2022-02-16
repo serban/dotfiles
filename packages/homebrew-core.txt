@@ -31,12 +31,10 @@ jq
 jsonnet
 less
 lf
-macvim
 md5deep
 moreutils
-neovim
 pastel
-python@3.9
+python@3.10
 ripgrep
 rsync
 rust
@@ -44,5 +42,7 @@ sqlite
 terminal-notifier
 the_silver_searcher
 tmux
+tree
+vim
 watch
 watchman
