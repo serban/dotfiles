@@ -860,11 +860,14 @@ endfunction
 " EVENT HANDLERS
 
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
-autocmd FileType cpp    set commentstring=//\ \ %s iskeyword-=-
-autocmd FileType go     set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
-autocmd FileType java   set textwidth=100 winwidth=106
-autocmd FileType python set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType swift  set textwidth=100 winwidth=106
+autocmd FileType cpp       set commentstring=//\ \ %s iskeyword-=-
+autocmd FileType gitcommit set spell
+autocmd FileType go        set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+autocmd FileType hgcommit  set spell
+autocmd FileType java      set textwidth=100 winwidth=106
+autocmd FileType piperspec set spell
+autocmd FileType python    set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType swift     set textwidth=100 winwidth=106
 
 if has('gui_macvim')
 augroup serban-darkmode
