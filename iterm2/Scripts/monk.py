@@ -26,6 +26,15 @@ async def main(connection):
   for i, c in enumerate(commands):
     await sessions[i].async_send_text(c + '\n')
 
+  tabs = list(window.tabs)
+  for w in app.windows:
+    for t in w.tabs:
+      for s in t.sessions:
+        p = await s.async_get_profile()
+        if p.name == 'monk' and w.window_id != window.window_id:
+          tabs.append(t)
+
+  await window.async_set_tabs(tabs)
   await window.tabs[0].async_activate()
 
 if __name__ == '__main__':
