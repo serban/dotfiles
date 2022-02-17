@@ -7,7 +7,9 @@ import stat
 import string
 import subprocess
 
-TEMPLATE = """## Week of $MONTH $DAY, $YEAR
+TEMPLATE = """# $DATE - Snippets
+
+## Week of $MONTH $DAY, $YEAR
 
 ### Monday
 
@@ -21,16 +23,17 @@ TEMPLATE = """## Week of $MONTH $DAY, $YEAR
 """
 
 SNIPPETS_DIR = pathlib.Path(pathlib.Path.home(), 'txt', 'snippets')
-SCRATCH_PATH = pathlib.Path(SNIPPETS_DIR, 'scratch.md')
-ACTIVE_PATH  = pathlib.Path(SNIPPETS_DIR, 'active.md')
+SCRATCH_PATH = pathlib.Path(SNIPPETS_DIR, '0000-00-00 Scratch.md')
+ACTIVE_PATH  = pathlib.Path(SNIPPETS_DIR, '0000-00-00 Active.md')
 
 
 def snippets_path(date):
-  return pathlib.Path(SNIPPETS_DIR, 'snippets-' + date.isoformat() + '.md')
+  return pathlib.Path(SNIPPETS_DIR, date.isoformat() + ' Snippets' + '.md')
 
 
 def write_snippets_file(date):
   substitutions = {
+    'DATE': date.isoformat(),
     'MONTH': calendar.month_name[date.month],
     'DAY': date.day,
     'YEAR': date.year,
@@ -61,6 +64,7 @@ def open_vim(*paths):
        '-c', 'botright vsplit',
        '-c', 'buffer 4',
        '-c', 'wincmd =',
+       '-c', f'cd {SNIPPETS_DIR}',
        *paths])
 
 
