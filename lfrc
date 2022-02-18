@@ -12,7 +12,7 @@ set nowrapscan
 
 set hiddenfiles ".*:~/Applications:~/Data:~/Desktop:~/Documents:~/Downloads:~/Library:~/Movies:~/Music:~/Pictures:~/Public:~/Screenshots:~/Workspace"
 
-map i !bat $f
+map i !bat "$f"
 
 map J :updir ; down ; open
 map K :updir ; up   ; open
