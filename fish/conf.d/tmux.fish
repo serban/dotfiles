@@ -86,13 +86,16 @@ function mas --argument-names project
   #
   # This is intended behavior: https://github.com/tmux/tmux/issues/346
   if not tmux has-session -t =$target
-    tmux new-session -c $repo -s $target   -n git -d
-    tmux new-window  -c $repo -t $target:2 -n vim
-    tmux new-window  -c $repo -t $target:3 -n build
-    tmux new-window  -c $repo -t $target:4 -n ag
-    tmux new-window  -c $repo -t $target:5 -n lf
-    tmux new-window  -c $HOME -t $target:6 -n home
-    tmux send-keys            -t $target:2 vim Enter
+    tmux new-session  -c $repo -s $target   -n git -d
+    tmux split-window -c $repo -t $target:1 -v -b
+    tmux split-window -c $repo -t $target:1 -h
+    tmux new-window   -c $repo -t $target:2 -n vim
+    tmux new-window   -c $repo -t $target:3 -n build
+    tmux new-window   -c $repo -t $target:4 -n ag
+    tmux new-window   -c $repo -t $target:5 -n lf
+    tmux new-window   -c $HOME -t $target:6 -n home
+    tmux send-keys             -t $target:2 vim Enter
+    tmux select-pane           -t $target:1.1
   end
 
   pushd $repo
