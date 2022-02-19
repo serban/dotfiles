@@ -72,9 +72,12 @@ function mas --argument-names project
   set --local random_number (random 10 99)
   set --local target (string replace --all . - $project)
   set --local session z-$target-$random_number
-  set --local repo $HOME/src/$project
 
-  if ! test -d $repo
+  if test -d $HOME/src/$project
+    set repo $HOME/src/$project
+  else if test -d $HOME/oss/$project
+    set repo $HOME/oss/$project
+  else
     echo 'Repo does not exist'
     return 1
   end
