@@ -49,6 +49,7 @@ ln -si ${DOTFILES}/hgrc               ~/.hgrc
 ln -si ${DOTFILES}/hushlogin          ~/.hushlogin
 ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc            ~/.inputrc
+ln -si ${DOTFILES}/lesskey            ~/.lesskey
 ln -si ${DOTFILES}/screenrc           ~/.screenrc
 ln -si ${DOTFILES}/sqliterc           ~/.sqliterc
 ln -si ${DOTFILES}/tmux.conf          ~/.tmux.conf
