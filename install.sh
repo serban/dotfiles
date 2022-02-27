@@ -106,6 +106,7 @@ root || darwin || freebsd && {
 darwin && {
   mkdir -p ~/bin
   ln -si  /Applications/LilyPond.app/Contents/Resources/bin/lilypond            ~/bin/
+  ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/bin/
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/bin/
   ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/bin/
   ln -si '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ~/bin/
