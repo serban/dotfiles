@@ -28,11 +28,11 @@ class Package:
 
 packages = [
     Package('bat',    ['bat', '--version'],     r'bat (.+)',           '2021-11-29', '0.18.3',   '0.18.3'),
-    Package('delta',  ['delta', '--version'],   r'delta (.+)',         '2021-11-29', '0.9.1',    '0.10.2'),
+    Package('delta',  ['delta', '--version'],   r'\033\[0mdelta (.+)', '2022-03-06', '0.12.1',   '0.12.1'),
     Package('fd',     ['fd', '--version'],      r'fd (.+)',            '2021-11-29', '8.3.0',    '8.3.0'),
     Package('fish',   ['fish', '--version'],    r'fish, version (.+)', '2021-11-29', '3.1.2',    '3.3.1'),
     Package('fzf',    ['fzf', '--version'],     r'(.+) \(.*',          '2021-11-29', '0.28.0',   '0.28.0'),
-    Package('git',    ['git', '--version'],     r'git version (.+)',   '????-??-??', '2.35.0',   '2.35.0'),
+    Package('git',    ['git', '--version'],     r'git version (.+)',   '2022-01-29', '2.35.1',   '2.35.1'),
     Package('less',   ['less', '--version'],    r'less (.+) \(.*',     '2021-11-29', '551',      '590'),
     Package('lf',     ['lf', '--version'],      r'r?(.+)',             '2021-11-29', '26',       '26'),
     Package('python', ['python3', '--version'], r'Python (.+)',        '2021-11-29', '3.9.7',    '3.9.9'),
