@@ -205,7 +205,7 @@ function mfs
 end
 
 function serban_complete_mas
-  for dir in (find $HOME/src -mindepth 1 -maxdepth 1 -type d)
+  for dir in (find $HOME/src $HOME/oss -mindepth 1 -maxdepth 1 -type d)
     echo (string split / $dir)[-1]
   end
 end
