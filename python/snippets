@@ -79,6 +79,7 @@ def main():
   if not this_week_path.exists():
     write_snippets_file(this_monday)
 
+  print('\033]0;Snippets\007', end='', flush=True)
   open_vim(SCRATCH_PATH, ACTIVE_PATH, last_week_path, this_week_path)
 
 
