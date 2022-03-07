@@ -79,6 +79,7 @@ duti -s com.apple.QuickTimePlayerX  public.mp3                          all
 duti -s com.apple.QuickTimePlayerX  com.microsoft.waveform-audio        all
 duti -s com.apple.QuickTimePlayerX  .aif                                all
 duti -s com.apple.QuickTimePlayerX  .aiff                               all
+duti -s com.apple.QuickTimePlayerX  .flac                               all
 duti -s com.apple.QuickTimePlayerX  .m4a                                all
 duti -s com.apple.QuickTimePlayerX  .m4r                                all
 duti -s com.apple.QuickTimePlayerX  .mp3                                all
