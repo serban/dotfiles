@@ -3,6 +3,10 @@
 
 set nocompatible                    " Don't try to be compatible with the original vi
 
+if has('gui_macvim')
+  set pythonthreedll=/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/Python
+endif
+
 if filereadable(expand('/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/syntax/lilypond.vim'))
   set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 endif
