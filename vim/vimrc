@@ -903,6 +903,7 @@ augroup serban-markdown
   autocmd!
   autocmd FileType markdown TableModeEnable
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
+  autocmd FileType markdown set iskeyword=@,48-57,-,_
   " https://github.com/vim/vim/issues/5206 - Make fillchars a local setting
   autocmd FileType markdown set foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
   " https://github.com/preservim/vim-markdown/issues/232 - Rewrapping a bullet point inserts new bullet points
