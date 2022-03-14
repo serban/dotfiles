@@ -1,3 +1,6 @@
+hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
+local logger = hs.logger.new('serban', 'warning') -- Quiet all loggers but mine
+
 hs.window.animationDuration = 0
 
 hs.grid.setGrid('7x9')
@@ -52,10 +55,34 @@ local function maximizeWindows()
 end
 
 local function highlightMousePointer()
-  local m = hs.mouse.getAbsolutePosition()
+  local m = hs.mouse.absolutePosition()
   hs.canvas.new({x=m.x-150, y=m.y-150, w=300, h=300}):appendElements({
     type='circle', action='fill', fillColor={hex='#ff4081', alpha=0.5}, -- 2014 Material Design A200
   }):show():delete(0.75)
+end
+
+local function moveMouseToScreen(hint)
+  local s = hs.screen(hint)
+  local f = s:fullFrame()
+  local x, y = f.w // 2, f.h // 2
+  logger.f(
+      ' Mouse → %23s [%4d×%4d] › Mouse → (%4d, %3d)',
+      s:name(), f.w, f.h, x, y)
+  hs.mouse.setRelativePosition(hs.geometry(x, y), s)
+  highlightMousePointer()
+end
+
+local function moveFocusedWindowToScreen(hint)
+  local w = hs.window.focusedWindow()
+  local s = hs.screen(hint)
+  local f = s:fullFrame()
+  local x, y = f.w // 2, f.h // 2
+  logger.f(
+      'Window → %23s [%4d×%4d] › Mouse → (%4d, %3d) › %s',
+      s:name(), f.w, f.h, x, y, w:title())
+  w:moveToScreen(s, false, true)
+  hs.grid.maximizeWindow()
+  hs.mouse.setRelativePosition(hs.geometry(x, y), s)
 end
 
 local function openFirefoxHomeTabs()
@@ -99,13 +126,13 @@ bind('f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) en
 bind('-',     function() stackApplicationWindows() end)
 bind('=',     function() maximizeWindows() end)
 
-bind('1',     function() hs.window.focusedWindow():moveToScreen('1440x900',  false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )) end) -- Built-in Display
-bind('2',     function() hs.window.focusedWindow():moveToScreen('2560x1440', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')) end) -- Thunderbolt Display
-bind('3',     function() hs.window.focusedWindow():moveToScreen('1920x1200', false, true); hs.grid.maximizeWindow(); hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')) end) -- Old Faithful
+bind('1',     function() moveFocusedWindowToScreen('0 0') end) -- Left
+bind('2',     function() moveFocusedWindowToScreen('1 0') end) -- Center
+bind('3',     function() moveFocusedWindowToScreen('2 0') end) -- Right
 
-bind('f1',    function() hs.mouse.setRelativePosition(hs.geometry( 720, 450), hs.screen('1440x900' )); highlightMousePointer() end) -- Built-in Display
-bind('f2',    function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end) -- Thunderbolt Display
-bind('f3',    function() hs.mouse.setRelativePosition(hs.geometry( 960, 600), hs.screen('1920x1200')); highlightMousePointer() end) -- Old Faithful
+bind('f1',    function() moveMouseToScreen('0 0') end) -- Left
+bind('f2',    function() moveMouseToScreen('1 0') end) -- Center
+bind('f3',    function() moveMouseToScreen('2 0') end) -- Right
 
 bind('f8',    function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
 
@@ -124,7 +151,7 @@ bind('m',     function() activate('Messages.app') end)
 bind('n',     function() activate('Notes.app') end)
 bind('o',     function() activate('OmniFocus.app') end)
 bind('p',     function() activate('Photo Booth.app') end)
-bind('q',     function() hs.mouse.setRelativePosition(hs.geometry(1280, 720), hs.screen('2560x1440')); highlightMousePointer() end)
+bind('q',     function() moveMouseToScreen('1 0') end) -- Center
 bind('r',     function() activate('Calendar.app') end)
 bind('s',     function() activate(nexus and 'Safari.app' or 'Google Meet.app') end)
 bind('t',     function() activate('iTerm.app') end)
