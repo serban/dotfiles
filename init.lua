@@ -6,6 +6,14 @@ hs.window.animationDuration = 0
 hs.grid.setGrid('7x9')
 hs.grid.setMargins('6x6')
 
+local function b(v)
+  if     v == nil then return '∅' -- utf8.len('∅') → 1, string.len('∅') → 3
+  elseif v == true then return '✓' -- utf8.len('✓') → 1, string.len('✓') → 3
+  elseif v == false then return '✗' -- utf8.len('✗') → 1, string.len('✗') → 3
+  else return '?'
+  end
+end
+
 local nexus = hs.host.names()[1] == 'nexus.local'
 local modal = hs.hotkey.modal.new('⌘', 'e', 'Hotkey')
 
@@ -163,3 +171,22 @@ bind('6',     function() activate('YouTube.app') end)
 bind('7',     function() activate('YouTube Music.app') end)
 bind('8',     function() activate('IntelliJ CE (stable).app') end)
 bind('z',     function() highlightMousePointer() end)
+
+local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
+for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
+                      'Sublime Merge', 'iTerm2'}) do
+  wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
+end
+wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
+  logger.f(
+      'New Window ›  %-18s  %-18s  %-18s  %d × %d', -- %-18s b/c of utf8.len()
+      'isVisible: ' .. b(w:isVisible()),
+      'isStandard: ' .. b(w:isStandard()),
+      'isFullScreen: ' .. b(w:isFullScreen()),
+      w:size().w, w:size().h) -- alternatively, use w:size().string
+  logger.f(
+      '           ›  %-16s  %-16s  %-16s  %s',
+      w:role(), w:subrole(), app, w:title())
+  hs.grid.set(w, {0, 0, 7, 9})
+end)
+logger.d(hs.inspect(wf.filters))
