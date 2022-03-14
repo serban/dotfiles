@@ -1056,6 +1056,7 @@ let mapleader = ' '
 " nnoremap <unique> <C-r>
   nnoremap <unique> <C-s> :update <CR>
   inoremap <unique> <C-s> <ESC>:update <CR>
+  vnoremap <unique> <C-s> <ESC>:update <CR>
 " nnoremap <unique> <C-t>
 " nnoremap <unique> <C-u>
 " nnoremap <unique> <C-v>
