@@ -570,6 +570,7 @@ function SerbanHighlight()
   highlight TabLineSel               cterm=none ctermbg=5  ctermfg=8
   highlight Folded                   cterm=none ctermbg=8  ctermfg=13
   highlight FoldColumn               cterm=none ctermbg=0  ctermfg=13
+  highlight NonText                  cterm=none ctermbg=8  ctermfg=0
   highlight qfFileName               cterm=none ctermbg=8  ctermfg=13
   highlight QuickFixLine             cterm=none ctermbg=0  ctermfg=13
   highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
@@ -590,6 +591,7 @@ function SerbanHighlight()
   execute 'highlight StatusLineNC             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight Folded                   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight FoldColumn               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight NonText                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight qfFileName               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight QuickFixLine             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight SerbanPath               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
