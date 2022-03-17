@@ -1,5 +1,5 @@
 hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
-local logger = hs.logger.new('serban', 'warning') -- Quiet all loggers but mine
+local logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
 
 hs.window.animationDuration = 0
 
@@ -24,6 +24,21 @@ end
 local function bind(key, fn)
   hs.hotkey.bind('⌃⌥⇧⌘', key, fn)
   modal:bind('', key, function() fn(); modal:exit() end)
+end
+
+local function logScreens()
+  logger.i('Layout › ──────────────────────────────────────────')
+  local screens = hs.screen.allScreens()
+  table.sort(screens, function(p, q)
+    local px, py = p:position()
+    local qx, qy = q:position()
+    return px < qx
+  end)
+  for _, s in ipairs(screens) do
+    local x, y = s:position()
+    local f = s:fullFrame()
+    logger.f('       › (%d, %d) [%4d×%4d] %s', x, y, f.w, f.h, s:name())
+  end
 end
 
 local function activate(name)
@@ -73,8 +88,8 @@ local function moveMouseToScreen(hint)
   local s = hs.screen(hint)
   local f = s:fullFrame()
   local x, y = f.w // 2, f.h // 2
-  logger.f(
-      ' Mouse → %23s [%4d×%4d] › Mouse → (%4d, %3d)',
+  logger.df(
+      ' Mouse → %23s [%4d×%4d] › Mouse → (%4d, %4d)',
       s:name(), f.w, f.h, x, y)
   hs.mouse.setRelativePosition(hs.geometry(x, y), s)
   highlightMousePointer()
@@ -85,8 +100,8 @@ local function moveFocusedWindowToScreen(hint)
   local s = hs.screen(hint)
   local f = s:fullFrame()
   local x, y = f.w // 2, f.h // 2
-  logger.f(
-      'Window → %23s [%4d×%4d] › Mouse → (%4d, %3d) › %s',
+  logger.df(
+      'Window → %23s [%4d×%4d] › Mouse → (%4d, %4d) › %s',
       s:name(), f.w, f.h, x, y, w:title())
   w:moveToScreen(s, false, true)
   hs.grid.maximizeWindow()
@@ -172,21 +187,24 @@ bind('7',     function() activate('YouTube Music.app') end)
 bind('8',     function() activate('IntelliJ CE (stable).app') end)
 bind('z',     function() highlightMousePointer() end)
 
+hs.screen.watcher.new(function() logScreens() end):start()
+logScreens()
+
 local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
 for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
                       'Sublime Merge', 'iTerm2'}) do
   wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
 end
 wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
-  logger.f(
+  logger.df(
       'New Window ›  %-18s  %-18s  %-18s  %d × %d', -- %-18s b/c of utf8.len()
       'isVisible: ' .. b(w:isVisible()),
       'isStandard: ' .. b(w:isStandard()),
       'isFullScreen: ' .. b(w:isFullScreen()),
       w:size().w, w:size().h) -- alternatively, use w:size().string
-  logger.f(
+  logger.df(
       '           ›  %-16s  %-16s  %-16s  %s',
       w:role(), w:subrole(), app, w:title())
   hs.grid.set(w, {0, 0, 7, 9})
 end)
-logger.d(hs.inspect(wf.filters))
+logger.v(hs.inspect(wf.filters))
