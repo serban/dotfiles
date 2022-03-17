@@ -256,6 +256,9 @@ let g:fzf_layout = {'window': {'width': 0.95, 'height': 0.90}}
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_preview_window = ['right,50%,border-left']
 
+" NETRW
+let g:netrw_nogx = 1
+
 " NUMBERS
 " I would simply call add(g:numbers_exclude, 'help') here, but g:numbers_exclude
 " does not exist when this code is run. See numbers.vim for the default value.
@@ -303,6 +306,7 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_no_default_key_mappings = 1
 
 " VIM-MARKDOWN-FOLDING
 let g:markdown_fold_override_foldtext = 0
@@ -762,6 +766,25 @@ function SerbanNewNoteInDir(dir)
   normal! $
 endfunction
 
+function SerbanOpenLink()
+  let link = expand('<cWORD>')
+
+  if link =~# '\v^https?://'
+    let url = link
+  elseif link =~# '\v^\l+\@$'
+    let url = 'http://who/' . link[0:-2]
+  else
+    let url = 'http://' . link
+  endif
+
+  echom strftime('[%Y-%m-%d %H:%M:%S]') '→' url
+
+  " Must call redraw! after execution because (from :help :silent):
+  " “for an external command, this may cause the screen to be messed up.”
+  silent execute '!open' url
+  redraw!
+endfunction
+
 " ------------------------------------------------------------------------------
 " WRAP FUNCTIONS
 
@@ -1014,6 +1037,8 @@ let mapleader = ' '
   nnoremap <unique> Q  <Nop>
   nnoremap <unique> gQ <Nop>
   nnoremap <unique> q: <Nop>
+
+  nnoremap <unique> gx :call SerbanOpenLink() <CR>
 
   " Arrow keys move the cursor up and down a display line instead of a physical
   " line. Useful when soft-wrapping text.
