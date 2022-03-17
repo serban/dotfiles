@@ -778,11 +778,18 @@ function SerbanOpenLink()
   endif
 
   echom strftime('[%Y-%m-%d %H:%M:%S]') '→' url
+  silent let out = trim(system('open ' . shellescape(url)))
+  if !empty(out)
+    echom strftime('[%Y-%m-%d %H:%M:%S]') '!' out
+  endif
 
+  " Does not work with special characters like #, even using shellescape():
+  " → E194: No alternate file name to substitute for '#'
+  " silent execute '!open' url
+  "
   " Must call redraw! after execution because (from :help :silent):
   " “for an external command, this may cause the screen to be messed up.”
-  silent execute '!open' url
-  redraw!
+  " redraw!
 endfunction
 
 " ------------------------------------------------------------------------------
