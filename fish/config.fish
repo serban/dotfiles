@@ -35,16 +35,17 @@ end
 
 set --universal fish_features qmark-noglob,stderr-nocaret
 
+set --global fish_color_keyword green
 set --global fish_color_command yellow
-set --global fish_color_quote yellow
-set --global fish_color_redirection cyan
-set --global fish_color_end cyan
-set --global fish_color_error brred
+set --global fish_color_option yellow
 set --global fish_color_param yellow
-set --global fish_color_comment bryellow
-set --global fish_color_match blue
+set --global fish_color_quote yellow
 set --global fish_color_operator magenta
 set --global fish_color_escape brmagenta
+set --global fish_color_redirection cyan
+set --global fish_color_end blue
+set --global fish_color_error brred
+set --global fish_color_comment bryellow
 set --global fish_color_autosuggestion normal
 set --global fish_color_cancel brred --reverse
 
