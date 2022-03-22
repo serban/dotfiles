@@ -942,6 +942,13 @@ augroup serban-markdown
   " https://github.com/preservim/vim-markdown/issues/232 - Rewrapping a bullet point inserts new bullet points
   " https://github.com/preservim/vim-markdown/issues/390 - gq wrapping is still broken
   autocmd FileType markdown set comments=fb:*,fb:+,fb:-,n:> indentexpr=
+  autocmd FileType markdown iabbrev hc ```
+  autocmd FileType markdown iabbrev h1 #
+  autocmd FileType markdown iabbrev h2 ##
+  autocmd FileType markdown iabbrev h3 ###
+  autocmd FileType markdown iabbrev h4 ####
+  autocmd FileType markdown iabbrev h5 #####
+  autocmd FileType markdown iabbrev h6 ######
 augroup end
 
 " The pattern ~/txt/*.md matches all files ending in '.md' under ~/txt, even
