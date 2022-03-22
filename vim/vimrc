@@ -916,6 +916,7 @@ if has('gui_macvim')
 augroup serban-darkmode
   autocmd!
   autocmd OSAppearanceChanged * call SerbanSetMacVimBackground()
+  autocmd OSAppearanceChanged * syntax enable  " source after/syntax/*.vim files
   autocmd OSAppearanceChanged * call SerbanHighlight()
   autocmd OSAppearanceChanged * redraw
 augroup end
