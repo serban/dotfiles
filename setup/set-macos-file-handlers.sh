@@ -72,6 +72,9 @@ duti -s org.vim.MacVim              .yml                                all
 
 duti -s com.google.Chrome           .svg                                all
 
+duti -s com.apple.Preview           com.adobe.pdf                       all
+duti -s com.apple.Preview           .pdf                                all
+
 duti -s com.apple.QuickTimePlayerX  public.audio                        all
 duti -s com.apple.QuickTimePlayerX  public.aiff-audio                   all
 duti -s com.apple.QuickTimePlayerX  public.mpeg-4-audio                 all
