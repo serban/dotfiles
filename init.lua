@@ -174,7 +174,7 @@ bind('m',     function() activate('Messages.app') end)
 bind('n',     function() activate('Notes.app') end)
 bind('o',     function() activate('OmniFocus.app') end)
 bind('p',     function() activate('Photo Booth.app') end)
-bind('q',     function() moveMouseToScreen('1 0') end) -- Center
+bind('q',     function() activate('Hammerspoon.app') end)
 bind('r',     function() activate('Calendar.app') end)
 bind('s',     function() activate(nexus and 'Safari.app' or 'Google Meet.app') end)
 bind('t',     function() activate('iTerm.app') end)
