@@ -120,6 +120,17 @@ local function openFirefoxHomeTabs()
   end)
 end
 
+local function openFirefoxChatTabs()
+  activate('Firefox.app')
+  os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
+      'https://web.whatsapp.com',
+      'https://www.messenger.com',
+  }, ' '))
+  hs.timer.doAfter(0.2, function()
+    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+  end)
+end
+
 local function openChromeHomeTabs()
   activate('Google Chrome.app')
   os.execute(table.concat({
@@ -161,9 +172,7 @@ bind('f3',    function() moveMouseToScreen('2 0') end) -- Right
 bind('f8',    function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
 
 bind('b',     function() activate('Firefox.app') end)
-bind('4',     function() openFirefoxHomeTabs() end)
 bind('c',     function() activate('Google Chrome.app') end)
-bind('5',     function() openChromeHomeTabs() end)
 bind('f',     function() activate('Finder.app') end)
 bind('g',     function() activate(nexus and 'Numbers.app' or 'Google Chat.app') end)
 bind('h',     function() activate('Audio Hijack.app') end)
@@ -183,10 +192,12 @@ bind('u',     function() activate('UlyssesMac.app') end)
 bind('v',     function() activate('MacVim.app') end)
 bind('x',     function() activate('Signal.app') end)
 bind('y',     function() activate('Dictionary.app') end)
-bind('6',     function() activate('YouTube.app') end)
-bind('7',     function() activate('YouTube Music.app') end)
-bind('8',     function() activate('IntelliJ CE (stable).app') end)
 bind('z',     function() highlightMousePointer() end)
+bind('4',     function() openFirefoxHomeTabs() end)
+bind('5',     function() openFirefoxChatTabs() end)
+bind('6',     function() openChromeHomeTabs() end)
+bind('7',     function() activate('YouTube.app') end)
+bind('8',     function() activate('YouTube Music.app') end)
 
 hs.screen.watcher.new(function() logScreens() end):start()
 logScreens()
