@@ -39,7 +39,7 @@ abbr --add --global dfu 'delta --features (dark)-unified-diff'
 # * https://docs.rs/ignore/latest/ignore/struct.WalkBuilder.html
 #
 # Tested on 2021-12-22 with fd 8.3.0.
-abbr --add --global fdh 'fd -E /Data -E /Library -E /Movies -E /Music -E /Pictures'
+abbr --add --global fdh 'fd -E /Data -E /Library -E /Movies -E /Music -E /Pictures -E /go -E /oss'
 
 abbr --add --global bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
