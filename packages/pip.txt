@@ -2,5 +2,6 @@ lookatme
 numpy_financial
 packaging
 pynvim
+rich
 virtualfish
 wavemaker
