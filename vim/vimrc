@@ -336,6 +336,13 @@ function SerbanLog(m)
   echom strftime('[%Y-%m-%d %H:%M:%S]') a:m
 endfunction
 
+function SerbanConfirm(prompt)
+  echohl SerbanConfirm
+  echo '■ ' . a:prompt . ' '
+  echohl None
+  return nr2char(getchar()) ==# 'y'
+endfunction
+
 function SerbanTabLine()
   let s = ''
   for i in range(1, tabpagenr('$'))
@@ -581,6 +588,7 @@ function SerbanHighlight()
   highlight NonText                  cterm=none ctermbg=8  ctermfg=0
   highlight qfFileName               cterm=none ctermbg=8  ctermfg=13
   highlight QuickFixLine             cterm=none ctermbg=0  ctermfg=13
+  highlight SerbanConfirm            cterm=none ctermbg=8  ctermfg=13
   highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
   highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
@@ -602,6 +610,8 @@ function SerbanHighlight()
   execute 'highlight NonText                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight qfFileName               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight QuickFixLine             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanConfirm            gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanWorkingDir         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
   execute 'highlight SerbanPath               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight BufSelectHighlight       gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight BufSelectBorderHighlight gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
