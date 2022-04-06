@@ -780,6 +780,29 @@ function SerbanNewNoteInDir(dir)
   normal! $
 endfunction
 
+function SerbanRenameNote()
+  " NB: matchlist() always returns a list of 10 items except
+  "     “when there is no match an empty list is returned” 🙄
+  " See https://vi.stackexchange.com/questions/22451/why-does-matchlist-return-empty-strings-at-the-end-of-the-result
+  let head = getline(1)
+  let toks = matchlist(head, '\v^# (\d{4}-\d{2}-\d{2}) - (.+)$')
+
+  if len(toks) < 3
+    echo '✗'
+    return
+  endif
+
+  let date = toks[1]
+  let name = toks[2]
+  let file = date . ' ' . name . '.md'
+
+  if !SerbanConfirm(file . ' ← Rename?')
+    return
+  endif
+
+  execute 'Rename' fnameescape(file)
+endfunction
+
 function SerbanOpenLink()
   let link = expand('<cWORD>')
 
@@ -1129,6 +1152,7 @@ let mapleader = ' '
 
 " nnoremap <unique> <Leader>a
   nnoremap <unique> <Leader>b :call SerbanNewNote() <CR>
+  nnoremap <unique> <Leader>B :call SerbanRenameNote() <CR>
 " nnoremap <unique> <Leader>c
   nnoremap <unique> <Leader>d :YcmCompleter GoToDeclaration <CR>
   nnoremap <unique> <Leader>e :CtrlPBuffer <CR>
