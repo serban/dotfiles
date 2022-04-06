@@ -49,6 +49,10 @@ set --global fish_color_comment bryellow
 set --global fish_color_autosuggestion normal
 set --global fish_color_cancel brred --reverse
 
+# https://github.com/fish-shell/fish-shell/issues/2442
+# ↳ $fish_color_search_match only supports background colors
+set --global fish_color_search_match --background yellow
+
 set --global fish_pager_color_prefix magenta --underline
 set --global fish_pager_color_completion normal
 set --global fish_pager_color_description green
