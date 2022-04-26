@@ -67,6 +67,8 @@ if filereadable('/usr/share/vim/google/google.vim')
   let g:go_info_mode = 'guru'
   let g:go_gopls_enabled = 0
 
+  let g:piperlib_ignored_dirs = ['/usr']  " b/78183173
+
   source /usr/share/vim/google/google.vim
 
   Glug blazedeps auto_filetypes=`['go']`
