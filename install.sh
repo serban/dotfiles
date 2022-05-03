@@ -71,6 +71,9 @@ ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
 mkdir -p ~/.config/lf
 ln -si ${DOTFILES}/lfrc               ~/.config/lf/lfrc
 
+mkdir -p ~/.config/newsboat
+ln -si ${DOTFILES}/newsboat-config    ~/.config/newsboat/config
+
 mkdir -p ~/.config/nitrogen
 ln -si ${DOTFILES}/bg-saved.cfg       ~/.config/nitrogen/bg-saved.cfg
 

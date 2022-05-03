@@ -1,0 +1,53 @@
+feedlist-title-format             "                  Feeds%?T? › %T?"
+feedlist-format                   "%n   %-11T   %t"
+feed-sort-order                   firsttag
+
+articlelist-title-format          "                  %T"
+articlelist-format                "%f  %D   %?T?%-24T   ?%t"
+datetime-format                   "%Y %b %d"
+
+selecttag-title-format            "                  Select Tag"
+selecttag-format                  "                  %T"
+
+itemview-title-format             "                  %F › %T"
+urlview-title-format              "                  URLs"
+
+searchresult-title-format         "                  Search › %F"
+
+color listnormal                  default default
+color listnormal_unread           yellow  default
+color listfocus                   default black
+color listfocus_unread            yellow  black
+color info                        default black
+color title                       blue    black
+color hint-key                    red     black
+color hint-separator              green   black bold
+color hint-description            cyan    black bold
+color end-of-text-marker          black   default
+
+highlight article "^Feed:.*$"     blue    default
+highlight article "^Title:.*$"    cyan    default
+highlight article "^Author:.*$"   magenta default
+highlight article "^Date:.*$"     red     default
+highlight article "^Link:.*$"     magenta default bold
+
+browser "/Applications/Firefox.app/Contents/MacOS/firefox %u"
+
+history-limit 10
+reload-threads 20
+
+confirm-mark-feed-read no
+prepopulate-query-feeds yes
+
+unbind-key   g
+unbind-key   G
+unbind-key  ^K
+
+bind-key     g home
+bind-key     G end
+bind-key     j down
+bind-key     k up
+bind-key    ^D pagedown
+bind-key    ^U pageup
+bind-key RIGHT open
+bind-key  LEFT prev-dialog
