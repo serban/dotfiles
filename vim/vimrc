@@ -1033,50 +1033,57 @@ iabbrev /- // ---------------------------------------------------------
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
-digraphs dl   171  "  0x00ab  «  <<
-digraphs dg   176  "  0x00b0  °  DG
-digraphs pm   177  "  0x00b1  ±  +-
-digraphs md   183  "  0x00b7  ·  ~.
-digraphs dr   187  "  0x00bb  »  >>
-digraphs ml   215  "  0x00d7  ×  *X
-digraphs dv   247  "  0x00f7  ÷  -:
-digraphs ql  8220  "  0x201c  “  "6
-digraphs qr  8221  "  0x201d  ”  "9
-digraphs bl  8226  "  0x2022  •  oo
-digraphs el  8230  "  0x2026  …  ,.
-digraphs sl  8249  "  0x2039  ‹  <1
-digraphs sr  8250  "  0x203a  ›  >1
-digraphs bh  8259  "  0x2043  ⁃
-digraphs td  8278  "  0x2056  ⁖
-digraphs al  8592  "  0x2190  ←  <-
-digraphs au  8593  "  0x2191  ↑  -!
-digraphs ar  8594  "  0x2192  →  ->
-digraphs ad  8595  "  0x2193  ↓  -v
-digraphs ac  8627  "  0x21b3  ↳
-digraphs ah  8628  "  0x21b4  ↴
-digraphs lr  8646  "  0x21c6  ⇆
-digraphs es  8709  "  0x2205  ∅  /0
-digraphs mi  8722  "  0x2212  −  -2
-digraphs sq  8730  "  0x221a  √  RT
-digraphs ae  8776  "  0x2248  ≈  ?2
-digraphs ne  8800  "  0x2260  ≠  !=
-digraphs le  8804  "  0x2264  ≤  =<
-digraphs ge  8805  "  0x2265  ≥  >=
-digraphs bs  9632  "  0x25a0  ■  fS
-digraphs bc  9679  "  0x25cf  ●  0M
-digraphs ch 10003  "  0x2713  ✓  OK
-digraphs cr 10007  "  0x2717  ✗  XX
+digraphs dl    171  "  0x00ab  «  <<
+digraphs dg    176  "  0x00b0  °  DG
+digraphs pm    177  "  0x00b1  ±  +-
+digraphs md    183  "  0x00b7  ·  ~.
+digraphs dr    187  "  0x00bb  »  >>
+digraphs ml    215  "  0x00d7  ×  *X
+digraphs dv    247  "  0x00f7  ÷  -:
+digraphs ql   8220  "  0x201c  “  "6
+digraphs qr   8221  "  0x201d  ”  "9
+digraphs bl   8226  "  0x2022  •  oo
+digraphs el   8230  "  0x2026  …  ,.
+digraphs sl   8249  "  0x2039  ‹  <1
+digraphs sr   8250  "  0x203a  ›  >1
+digraphs bh   8259  "  0x2043  ⁃
+digraphs td   8278  "  0x2056  ⁖
+digraphs al   8592  "  0x2190  ←  <-
+digraphs au   8593  "  0x2191  ↑  -!
+digraphs ar   8594  "  0x2192  →  ->
+digraphs ad   8595  "  0x2193  ↓  -v
+digraphs ac   8627  "  0x21b3  ↳
+digraphs ah   8628  "  0x21b4  ↴
+digraphs lr   8646  "  0x21c6  ⇆
+digraphs es   8709  "  0x2205  ∅  /0
+digraphs mi   8722  "  0x2212  −  -2
+digraphs sq   8730  "  0x221a  √  RT
+digraphs ae   8776  "  0x2248  ≈  ?2
+digraphs ne   8800  "  0x2260  ≠  !=
+digraphs le   8804  "  0x2264  ≤  =<
+digraphs ge   8805  "  0x2265  ≥  >=
+digraphs bs   9632  "  0x25a0  ■  fS
+digraphs bc   9679  "  0x25cf  ●  0M
+digraphs ch  10003  "  0x2713  ✓  OK
+digraphs cr  10007  "  0x2717  ✗  XX
 
-digraphs n0  9450  "  0x24ea  ⓪
-digraphs n1  9312  "  0x2460  ①
-digraphs n2  9313  "  0x2461  ②
-digraphs n3  9314  "  0x2462  ③
-digraphs n4  9315  "  0x2463  ④
-digraphs n5  9316  "  0x2464  ⑤
-digraphs n6  9317  "  0x2465  ⑥
-digraphs n7  9318  "  0x2466  ⑦
-digraphs n8  9319  "  0x2467  ⑧
-digraphs n9  9320  "  0x2468  ⑨
+digraphs n0   9450  "  0x24ea  ⓪
+digraphs n1   9312  "  0x2460  ①
+digraphs n2   9313  "  0x2461  ②
+digraphs n3   9314  "  0x2462  ③
+digraphs n4   9315  "  0x2463  ④
+digraphs n5   9316  "  0x2464  ⑤
+digraphs n6   9317  "  0x2465  ⑥
+digraphs n7   9318  "  0x2466  ⑦
+digraphs n8   9319  "  0x2467  ⑧
+digraphs n9   9320  "  0x2468  ⑨
+
+digraphs cd 128308  "  0x1f534 🔴
+digraphs co 128992  "  0x1f7e0 🟠
+digraphs cy 128993  "  0x1f7e1 🟡
+digraphs cg 128994  "  0x1f7e2 🟢
+digraphs cb 128309  "  0x1f535 🔵
+digraphs cp 128995  "  0x1f7e3 🟣
 
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
