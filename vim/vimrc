@@ -1062,6 +1062,7 @@ digraphs ae   8776  "  0x2248  ≈  ?2
 digraphs ne   8800  "  0x2260  ≠  !=
 digraphs le   8804  "  0x2264  ≤  =<
 digraphs ge   8805  "  0x2265  ≥  >=
+digraphs bn   9004  "  0x232c  ⌬
 digraphs bs   9632  "  0x25a0  ■  fS
 digraphs bc   9679  "  0x25cf  ●  0M
 digraphs ch  10003  "  0x2713  ✓  OK
