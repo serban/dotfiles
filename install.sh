@@ -35,69 +35,70 @@ linux && {
   readonly       VSCODE="${HOME}/.config/Code/User"
 }
 
-ln -si ${DOTFILES}/bash_logout        ~/.bash_logout
-ln -si ${DOTFILES}/bashrc             ~/.bashrc
-ln -si ${DOTFILES}/bazelrc            ~/.bazelrc
-ln -si ${DOTFILES}/blazerc            ~/.blazerc
-ln -si ${DOTFILES}/colordiffrc        ~/.colordiffrc
-ln -si ${DOTFILES}/conkyrc            ~/.conkyrc
-ln -si ${DOTFILES}/dir_colors         ~/.dir_colors
-ln -si ${DOTFILES}/gdbinit            ~/.gdbinit
-ln -si ${DOTFILES}/gitconfig          ~/.gitconfig
-ln -si ${DOTFILES}/gitignore          ~/.gitignore
-ln -si ${DOTFILES}/hgrc               ~/.hgrc
-ln -si ${DOTFILES}/hushlogin          ~/.hushlogin
-ln -si ${DOTFILES}/i3status.conf      ~/.i3status.conf
-ln -si ${DOTFILES}/inputrc            ~/.inputrc
-ln -si ${DOTFILES}/lesskey            ~/.lesskey
-ln -si ${DOTFILES}/screenrc           ~/.screenrc
-ln -si ${DOTFILES}/sqliterc           ~/.sqliterc
-ln -si ${DOTFILES}/tmux.conf          ~/.tmux.conf
-ln -si ${DOTFILES}/xsession           ~/.xsession
-ln -si ${DOTFILES}/Xresources         ~/.Xresources
+ln -si ${DOTFILES}/bash_logout          ~/.bash_logout
+ln -si ${DOTFILES}/bashrc               ~/.bashrc
+ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
+ln -si ${DOTFILES}/blazerc              ~/.blazerc
+ln -si ${DOTFILES}/colordiffrc          ~/.colordiffrc
+ln -si ${DOTFILES}/conkyrc              ~/.conkyrc
+ln -si ${DOTFILES}/dir_colors           ~/.dir_colors
+ln -si ${DOTFILES}/gdbinit              ~/.gdbinit
+ln -si ${DOTFILES}/gitconfig            ~/.gitconfig
+ln -si ${DOTFILES}/gitignore            ~/.gitignore
+ln -si ${DOTFILES}/hgrc                 ~/.hgrc
+ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
+ln -si ${DOTFILES}/i3status.conf        ~/.i3status.conf
+ln -si ${DOTFILES}/inputrc              ~/.inputrc
+ln -si ${DOTFILES}/lesskey              ~/.lesskey
+ln -si ${DOTFILES}/screenrc             ~/.screenrc
+ln -si ${DOTFILES}/sqliterc             ~/.sqliterc
+ln -si ${DOTFILES}/tmux.conf            ~/.tmux.conf
+ln -si ${DOTFILES}/xsession             ~/.xsession
+ln -si ${DOTFILES}/Xresources           ~/.Xresources
 
 mkdir -p ~/.config/bat
-ln -si ${DOTFILES}/bat-config         ~/.config/bat/config
+ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
 
 mkdir -p ~/.config/emacs
-ln -si ${DOTFILES}/emacs/init.el      ~/.config/emacs/init.el
+ln -si ${DOTFILES}/emacs/early-init.el  ~/.config/emacs/early-init.el
+ln -si ${DOTFILES}/emacs/init.el        ~/.config/emacs/init.el
 
 mkdir -p ~/.config/fish
-ln -si ${DOTFILES}/fish/conf.d        ~/.config/fish/conf.d
-ln -si ${DOTFILES}/fish/completions   ~/.config/fish/completions
-ln -si ${DOTFILES}/fish/functions     ~/.config/fish/functions
-ln -si ${DOTFILES}/fish/config.fish   ~/.config/fish/config.fish
+ln -si ${DOTFILES}/fish/conf.d          ~/.config/fish/conf.d
+ln -si ${DOTFILES}/fish/completions     ~/.config/fish/completions
+ln -si ${DOTFILES}/fish/functions       ~/.config/fish/functions
+ln -si ${DOTFILES}/fish/config.fish     ~/.config/fish/config.fish
 
 mkdir -p ~/.config/lf
-ln -si ${DOTFILES}/lfrc               ~/.config/lf/lfrc
+ln -si ${DOTFILES}/lfrc                 ~/.config/lf/lfrc
 
 mkdir -p ~/.config/newsboat
-ln -si ${DOTFILES}/newsboat-config    ~/.config/newsboat/config
+ln -si ${DOTFILES}/newsboat-config      ~/.config/newsboat/config
 
 mkdir -p ~/.config/nitrogen
-ln -si ${DOTFILES}/bg-saved.cfg       ~/.config/nitrogen/bg-saved.cfg
+ln -si ${DOTFILES}/bg-saved.cfg         ~/.config/nitrogen/bg-saved.cfg
 
 mkdir -p ~/.hammerspoon
-ln -si ${DOTFILES}/init.lua           ~/.hammerspoon/init.lua
+ln -si ${DOTFILES}/init.lua             ~/.hammerspoon/init.lua
 
 mkdir -p ~/.i3
-ln -si ${DOTFILES}/i3-config          ~/.i3/config
+ln -si ${DOTFILES}/i3-config            ~/.i3/config
 
 mkdir -p ~/.ipython/profile_default
-ln -si ${DOTFILES}/ipython_config.py  ~/.ipython/profile_default/ipython_config.py
+ln -si ${DOTFILES}/ipython_config.py    ~/.ipython/profile_default/ipython_config.py
 
 mkdir -p ~/.moc
-ln -si ${DOTFILES}/moc/config         ~/.moc/config
-ln -si ${DOTFILES}/moc/themes         ~/.moc/themes
+ln -si ${DOTFILES}/moc/config           ~/.moc/config
+ln -si ${DOTFILES}/moc/themes           ~/.moc/themes
 
 mkdir -p ~/.vim
-ln -si ${DOTFILES}/vim/after          ~/.vim/after
-ln -si ${DOTFILES}/vim/ultisnips      ~/.vim/UltiSnips
-ln -si ${DOTFILES}/vim/gvimrc         ~/.vim/gvimrc
-ln -si ${DOTFILES}/vim/vimrc          ~/.vim/vimrc
+ln -si ${DOTFILES}/vim/after            ~/.vim/after
+ln -si ${DOTFILES}/vim/ultisnips        ~/.vim/UltiSnips
+ln -si ${DOTFILES}/vim/gvimrc           ~/.vim/gvimrc
+ln -si ${DOTFILES}/vim/vimrc            ~/.vim/vimrc
 
 mkdir -p ~/.vim/pack/serban/start
-ln -si ${DOTFILES}/vim/bufselect      ~/.vim/pack/serban/start/bufselect
+ln -si ${DOTFILES}/vim/bufselect        ~/.vim/pack/serban/start/bufselect
 
 # Make the bash history folder
 mkdir -p -m 700 ~/.history
