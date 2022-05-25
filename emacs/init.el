@@ -4,6 +4,8 @@
 (setq make-backup-files nil)
 (setq auto-save-list-file-prefix nil)
 
+(setq inhibit-startup-screen t)
+
 (set-frame-font "Monaco 15" nil t)
 
 (load-theme 'tango-dark)
