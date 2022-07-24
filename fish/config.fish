@@ -33,7 +33,9 @@ function serban_dirchange --on-variable PWD
       (set_color normal)
 end
 
-set --universal fish_features qmark-noglob,stderr-nocaret,ampersand-nobg-in-token
+# See `status features` for current shell's feature flag state.
+set --universal fish_features \
+  qmark-noglob,stderr-nocaret,ampersand-nobg-in-token,regex-easyesc
 
 set --global fish_color_keyword green
 set --global fish_color_command yellow
