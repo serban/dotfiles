@@ -1034,6 +1034,7 @@ iabbrev /- // ---------------------------------------------------------
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
+digraphs ce    162  "  0x00a2  ¢  Ct
 digraphs dl    171  "  0x00ab  «  <<
 digraphs dg    176  "  0x00b0  °  DG
 digraphs pm    177  "  0x00b1  ±  +-
@@ -1049,6 +1050,7 @@ digraphs sl   8249  "  0x2039  ‹  <1
 digraphs sr   8250  "  0x203a  ›  >1
 digraphs bh   8259  "  0x2043  ⁃
 digraphs td   8278  "  0x2056  ⁖
+digraphs eu   8364  "  0x20ac  €  Eu  =e
 digraphs al   8592  "  0x2190  ←  <-
 digraphs au   8593  "  0x2191  ↑  -!
 digraphs ar   8594  "  0x2192  →  ->
