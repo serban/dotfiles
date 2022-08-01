@@ -1237,6 +1237,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
   nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
   nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
+  nnoremap <unique> <Leader>vv :botright vertical sview ~/src/dotfiles/vim/vimrc <CR>
 
   nnoremap <unique> <Leader>wh :call SerbanWrapHard() <CR>
   nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
