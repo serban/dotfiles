@@ -157,6 +157,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .md     00;33
 .ods    00;33
 .odt    00;33
+.org    00;33
 .pdf    00;33
 .ppt    00;33
 .pptx   00;33
