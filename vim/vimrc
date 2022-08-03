@@ -1071,6 +1071,11 @@ digraphs bc   9679  "  0x25cf  ●  0M
 digraphs ch  10003  "  0x2713  ✓  OK
 digraphs cr  10007  "  0x2717  ✗  XX
 
+digraphs kc   8984  "  0x2318  ⌘
+digraphs ko   8997  "  0x2325  ⌥
+digraphs ku   8963  "  0x2303  ⌃
+digraphs ks   8679  "  0x21e7  ⇧
+
 digraphs n0   9450  "  0x24ea  ⓪
 digraphs n1   9312  "  0x2460  ①
 digraphs n2   9313  "  0x2461  ②
