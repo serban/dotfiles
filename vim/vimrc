@@ -754,7 +754,7 @@ endfunction
 function SerbanNewNote()
   call fzf#run(fzf#wrap({
   \   'dir': '~/txt',
-  \   'source': 'echo && fd --type directory --strip-cwd-prefix',
+  \   'source': "echo && fd --type directory --strip-cwd-prefix | sed 's|/$||'",
   \   'sink': function('SerbanNewNoteInDir'),
   \ }))
 endfunction
