@@ -626,6 +626,10 @@ function SerbanHighlight()
   execute 'highlight PopupSelected            gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
   execute 'highlight mkdHeading               gui=bold guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_orange
 
+  " https://github.com/vim/vim/issues/10785 - g:terminal_ansi_colors not setting background color of terminal in MacVim
+  " https://github.com/vim/colorschemes/issues/198 - MacVim/GUI :terminal doesn't set Terminal background
+  execute 'highlight Terminal                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base0
+
   " From the mark.vim documentation:
   " If you want to avoid losing the highlightings on :colorscheme commands,
   " you need to re-apply your highlights on the ColorScheme event.
