@@ -1013,6 +1013,11 @@ augroup serban-text
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
 augroup end
 
+augroup serban-terminal
+  autocmd!
+  autocmd TerminalWinOpen * setlocal statusline=%{term_gettitle(bufnr())}\ \ %=%(№\ %n\ \ %)
+augroup end
+
 " ------------------------------------------------------------------------------
 " COLORS
 
