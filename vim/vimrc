@@ -376,15 +376,17 @@ function SerbanGuiTabLabel()
 endfunction
 
 function SerbanStatusLine()
-  let s  = '%t %h%w%q%r%m'
-  let s .= '%='  " left-right separator
-  let s .= '%3v  0x%02B  '
-  let s .= strlen(&filetype) ? '%Y  ' : ''
-  let s .= &spell ? 'Ⓐ   ' : ''
-  let s .= '%{&foldenable ? "Ⓕ   " : ""}'
+  let s  = '%t '            " filename
+  let s .= '%h%w%q%r%m'     " {help,preview,quickfix,readonly,modified} flags
+  let s .= '%='             " left-right separator
+  let s .= '%3v  '          " virtual column number under cursor
+  let s .= 'U+%04B  '       " code point under cursor
+  let s .= '%(%Y  %)'       " filetype
+  let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
+  let s .= '%{&foldenable ? "Ⓕ   " : ""}'   " window-local
   let s .= ObsessionStatus('Ⓢ   ', '')
-  let s .= zoom#statusline()  " Ⓩ
-  let s .= SerbanCurrentWrap()
+  let s .= '%{zoom#statusline()}' " Ⓩ       " window-local, effectively
+  let s .= '%{SerbanCurrentWrap()}'         " window-local + buffer-local
   let s .= '  '
   return s
 endfunction
@@ -854,10 +856,10 @@ endfunction
 " These modes involve setting the following options, some of which are
 " orthogonal to each other and some of which are not:
 "
-" * textwidth
-" * formatoptions
-" * colorcolumn
-" * wrap
+" * textwidth       buffer-local
+" * formatoptions   buffer-local
+" * colorcolumn     window-local
+" * wrap            window-local
 "
 " When textwidth is zero, the lesser of the screen width or 79 is used to wrap
 " code comments. See `:help autoformat` or `:help gq` for more.
