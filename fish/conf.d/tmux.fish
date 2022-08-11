@@ -106,7 +106,7 @@ function mas --argument-names project
   popd
 end
 
-function mag --argument-names client
+function mag --argument-names client subdir
   if test -z $client
     echo 'No client specified'
     return 1
@@ -121,21 +121,29 @@ function mag --argument-names client
   set --local target $client
   set --local session z-$client-$random_number
   set --local google3 /google/src/cloud/serban/$client/google3
+  set --local first_window_name g4
+  set --local first_window_cmd pst
+
+  if test -n "$subdir"
+    set google3 /google/src/cloud/serban/$client/google3/$subdir
+  end
 
   g4 citc $client || true  # Ignore failure if client already exists
   if not tmux has-session -t =$target
     if test -e /google/src/cloud/serban/$client/.citc/annotations/fig.enabled
-      tmux new-session -c $google3 -s $target   -n hg -d
-    else
-      tmux new-session -c $google3 -s $target   -n g4 -d
+      set first_window_name hg
+      set first_window_cmd hxl
     end
-    tmux new-window    -c $google3 -t $target:2 -n vim
-    tmux new-window    -c $google3 -t $target:3 -n blaze
-    tmux new-window    -c $google3 -t $target:4 -n ag
-    tmux new-window    -c $google3 -t $target:5 -n lf
-    tmux new-window    -c $google3 -t $target:6 -n presubmit
-    tmux new-window    -c $HOME    -t $target:7 -n home
-    tmux send-keys                 -t $target:2 vim
+    tmux new-session -c $google3 -s $target   -n $first_window_name -d
+    tmux new-window  -c $google3 -t $target:2 -n vim
+    tmux new-window  -c $google3 -t $target:3 -n blaze
+    tmux new-window  -c $google3 -t $target:4 -n ag
+    tmux new-window  -c $google3 -t $target:5 -n lf
+    tmux new-window  -c $google3 -t $target:6 -n presubmit
+    tmux new-window  -c $HOME    -t $target:7 -n home
+    dots 3
+    tmux send-keys               -t $target:1 "$first_window_cmd" Enter
+    tmux send-keys               -t $target:2 "cd . && vim -S ~/ses/$target.vim"
   end
 
   pushd $google3
