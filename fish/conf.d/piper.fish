@@ -15,8 +15,16 @@ function plc
   echo
 end
 
-function pdi --argument-names file
-  env P4DIFF='colordiff -u' g4 diff $file | less
+function pdi
+  env P4DIFF='colordiff -u' g4 diff $argv | less
+end
+
+function pdis
+  env P4DIFF='colordiff -u' g4 diff $argv | delta --features (dark)-side-by-side
+end
+
+function pdiu
+  env P4DIFF='colordiff -u' g4 diff $argv | delta --features (dark)-unified-diff
 end
 
 function pre --argument-names changelist
