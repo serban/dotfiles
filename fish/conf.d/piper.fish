@@ -42,6 +42,13 @@ function pre --argument-names changelist
   mag $client
 end
 
+function prf
+  g4 pending -s fullpath \
+    | grep --only-matching --extended-regexp '//depot/google3/\S+' \
+    | sed 's|^//depot/google3/||' \
+    | grep --invert-match BUILD
+end
+
 abbr --add --global sj g4d @%
 abbr --add --global gcd 'g4d /(cat ~/src/dotfiles-google/google3-folders | fzf)'
 abbr --add --global hcd 'g /google/src/head/depot/google3/(cat ~/src/dotfiles-google/google3-folders | fzf)'
