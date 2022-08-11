@@ -18,6 +18,18 @@ function gcpls
     --format 'table[box](parent.type:label=PARENT_TYPE,parent.id:label=PARENT_ID,projectNumber,projectId,name)'
 end
 
+function gcccc --argument-names project
+  if test -z $project
+    echo 'No project specified'
+    return 1
+  end
+  gcloud config configurations create $project
+  gcloud config set account $USER@google.com
+  gcloud config set project --quiet $project
+  gcloud config set disable_prompts true
+  gcloud config set survey/disable_prompts true
+end
+
 function gcpd --argument-names project
   if test -z $project
     echo 'No project specified'
