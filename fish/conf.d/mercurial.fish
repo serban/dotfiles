@@ -17,7 +17,7 @@ abbr --add --global hae 'hg amend && hg evolve && hg uploadchain && hg xl'
 abbr --add --global huc 'hg uploadchain && hg xl'
 abbr --add --global hsy 'hg sync && hg xl'
 abbr --add --global hsu 'hg sync && hg uploadchain && hg xl'
-abbr --add --global hxl 'hg xl'
+abbr --add --global hxl 'hg xl && hg status'
 
 # dandavison/delta wrappers
 
