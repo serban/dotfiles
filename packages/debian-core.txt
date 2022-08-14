@@ -5,6 +5,7 @@ clang
 colordiff
 colortest
 curl
+dateutils
 dnsutils
 editorconfig
 fd-find

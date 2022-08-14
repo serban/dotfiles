@@ -4,6 +4,7 @@ colordiff
 coreutils
 ctags
 curl
+dateutils
 diffutils
 duti
 editorconfig
