@@ -34,6 +34,7 @@ less
 lf
 md5deep
 moreutils
+newsboat
 pastel
 python@3.10
 ripgrep
