@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# GNU ln › What's the difference between --no-dereference and --no-target-directory?
+# ↳ https://serverfault.com/questions/147787/how-to-update-a-symbolic-link-target-ln-f-s-not-working
+
 set -o errexit
 set -o nounset
 set -o pipefail
