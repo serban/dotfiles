@@ -177,6 +177,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .aif    00;32
 .aiff   00;32
 .au     00;32
+.caf    00;32
 .flac   00;32
 .m4a    00;32
 .m4b    00;32
