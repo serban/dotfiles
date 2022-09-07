@@ -1066,8 +1066,10 @@ digraphs bl   8226  "  0x2022  •  oo
 digraphs el   8230  "  0x2026  …  ,.
 digraphs sl   8249  "  0x2039  ‹  <1
 digraphs sr   8250  "  0x203a  ›  >1
+digraphs rm   8251  "  0x203b  ※  :X
 digraphs bh   8259  "  0x2043  ⁃
 digraphs td   8278  "  0x2056  ⁖
+digraphs fd   8280  "  0x2058  ⁘
 digraphs eu   8364  "  0x20ac  €  Eu  =e
 digraphs al   8592  "  0x2190  ←  <-
 digraphs au   8593  "  0x2191  ↑  -!
