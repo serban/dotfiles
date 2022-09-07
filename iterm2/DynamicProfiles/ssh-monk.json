@@ -6,7 +6,7 @@
       "Shortcut": "M",
       "Title Components": 64,
       "Custom Command": "Yes",
-      "Command": "ssh monk",
+      "Command": "/usr/local/bin/ssh monk",
       "Close Sessions On End": false,
       "Guid": "20AC1D1F-5956-444C-B7C9-5094420117DA"
     }
