@@ -8,6 +8,7 @@ dateutils
 diffutils
 duti
 editorconfig
+exiftool
 fd
 findutils
 firebase-cli
