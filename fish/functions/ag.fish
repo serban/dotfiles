@@ -1,5 +1,8 @@
 function ag --wraps ag
-  set --local  options (fish_opt --short=t --long=ignore-tests)
+  set --local  options (fish_opt --short=c --long=cpp)
+  set options $options (fish_opt --short=h --long=html)
+  set options $options (fish_opt --short=p --long=python)
+  set options $options (fish_opt --short=t --long=ignore-tests)
   set options $options (fish_opt --short=v --long=variants)
 
   if not argparse $options -- $argv
@@ -10,6 +13,18 @@ function ag --wraps ag
       --pager less \
       --color-path '01;35' \
       --color-line-number '00;34'
+
+  if test -n "$_flag_cpp"
+    set args $args --cc --cpp
+  end
+
+  if test -n "$_flag_html"
+    set args $args --html
+  end
+
+  if test -n "$_flag_python"
+    set args $args --python
+  end
 
   if test -n "$_flag_ignore_tests"
     set args $args --ignore '*_test.*'
