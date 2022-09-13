@@ -337,6 +337,11 @@ let g:ycm_language_server = [
 \]
 
 " ------------------------------------------------------------------------------
+" GLOBALS
+
+let g:serban_statusline_path_relative = 0
+
+" ------------------------------------------------------------------------------
 " FUNCTIONS
 
 function SerbanLog(m)
@@ -379,7 +384,7 @@ function SerbanGuiTabLabel()
 endfunction
 
 function SerbanStatusLine()
-  let s  = '%t '            " filename
+  let s  = g:serban_statusline_path_relative ? '%f ' : '%t '  " path or filename
   let s .= '%h%w%q%r%m'     " {help,preview,quickfix,readonly,modified} flags
   let s .= '%='             " left-right separator
   let s .= '%3v  '          " virtual column number under cursor
@@ -720,6 +725,11 @@ function SerbanToggleLineNumbers()
   else
     NumbersEnable
   endif
+endfunction
+
+function SerbanToggleStatusLinePath()
+  let g:serban_statusline_path_relative = !g:serban_statusline_path_relative
+  redrawstatus!
 endfunction
 
 " FYI: The following does not work:
@@ -1254,6 +1264,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
   nnoremap <unique> <Leader>sm :call SerbanToggleWinWidth() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
+  nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
