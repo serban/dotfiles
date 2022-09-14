@@ -27,6 +27,7 @@
   lg = log --decorate=no --oneline --grep
   lp = log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
   ls = ls-files
+  lu = ls-files --others --exclude-standard --directory
   pl = pull
   ps = push
   pt = push --tags
