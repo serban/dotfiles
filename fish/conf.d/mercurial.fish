@@ -4,7 +4,7 @@ abbr --add --global hco hg commit
 abbr --add --global hdi hg diff
 abbr --add --global hev hg evolve
 abbr --add --global hlo hg log --stat
-abbr --add --global hlp hg log --patch --stat
+abbr --add --global hlp hg log --stat --patch --verbose --limit 1
 abbr --add --global hme hg meld
 abbr --add --global hrb hg rebase
 abbr --add --global hrs hg resolve
