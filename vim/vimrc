@@ -1259,6 +1259,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
   nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
   nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
+  nnoremap <unique> <Leader>rr :checktime <CR>
 
   nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
   nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
