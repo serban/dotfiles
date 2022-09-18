@@ -5,6 +5,7 @@ function fn
             --height 100% \
             --preview-window right,60% \
             --preview "bat --color always --theme '$theme' --plain ~/txt/{}" \
+            --bind 'ctrl-o:execute-silent(open -R ~/txt/{})' \
             --print0 \
       | gsed --null-data 's|^|~/txt/|' \
       | xargs -0 mvim --remote-tab-silent
