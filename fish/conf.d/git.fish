@@ -86,3 +86,20 @@ end
 function gsou
   git stash show --color --stat --patch $argv | delta --features (dark)-unified-diff
 end
+
+function glf
+  set --function commit \
+      (git log --oneline --no-decorate $argv \
+           | fzf --no-sort \
+                 --with-nth 2.. \
+                 --height 100% \
+                 --preview-window right,60% \
+                 --preview 'git show --color --stat --patch {1}' \
+                 --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
+                 --bind 'double-click:execute-silent(smerge search commit:{1})' \
+           | cut -d ' ' -f 1 \
+           | tr -d '\n' \
+           | base64)
+
+  test -n "$commit" && echo -n \033]52\;p\;$commit\007
+end
