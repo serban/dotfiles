@@ -37,7 +37,7 @@ packages = [
     Package('lf',     ['lf', '--version'],      r'r?(.+)',             '2022-08-09', '27',       '27'),
     Package('python', ['python3', '--version'], r'Python (.+)',        '2022-08-09', '3.10.5',   '3.10.6'),
     Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2022-08-09', '3.3a',     'next-3.4'),
-    Package('vim',    ['vim', '--version'],     VIM_REGEX,             '2022-08-09', '8.2.4793', '9.0.0150'),
+    Package('vim',    ['vim', '--version'],     VIM_REGEX,             '2022-09-18', '9.0.0242', '9.0.0500'),
 ]
 
 for p in packages:

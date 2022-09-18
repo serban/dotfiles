@@ -345,7 +345,11 @@ let g:serban_statusline_path_relative = 0
 " FUNCTIONS
 
 function SerbanLog(m)
-  echom strftime('[%Y-%m-%d %H:%M:%S]') a:m
+  if v:versionlong >= 9000472  " Vim 9.0.0472
+    echow strftime('[%Y-%m-%d %H:%M:%S]') a:m
+  else
+    echom strftime('[%Y-%m-%d %H:%M:%S]') a:m
+  endif
 endfunction
 
 function SerbanConfirm(prompt)
