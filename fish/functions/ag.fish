@@ -1,7 +1,10 @@
 function ag --wraps ag
   set --local  options (fish_opt --short=c --long=cpp)
+  set options $options (fish_opt --short=g --long=go)
   set options $options (fish_opt --short=h --long=html)
+  set options $options (fish_opt --short=l --long=list-file-types)
   set options $options (fish_opt --short=p --long=python)
+  set options $options (fish_opt --short=r --long=rust)
   set options $options (fish_opt --short=t --long=ignore-tests)
   set options $options (fish_opt --short=v --long=variants)
 
@@ -18,12 +21,24 @@ function ag --wraps ag
     set args $args --cc --cpp
   end
 
+  if test -n "$_flag_go"
+    set args $args --go
+  end
+
   if test -n "$_flag_html"
     set args $args --html
   end
 
+  if test -n "$_flag_list_file_types"
+    set args $args --list-file-types
+  end
+
   if test -n "$_flag_python"
     set args $args --python
+  end
+
+  if test -n "$_flag_rust"
+    set args $args --rust
   end
 
   if test -n "$_flag_ignore_tests"
