@@ -23,8 +23,29 @@ SOLARIZED_ANSI_BACKGROUND_COLORS = {
     'green     2':  42,  # green
 }
 
+STYLES = {
+    'Normal':                     '\033[0m',
+    'Strikethrough':              '\033[9m',
+    'Underline Single':           '\033[4m',
+    'Underline Double':           '\033[21m',
+    'Kitty Underline Single':     '\033[4:1m',
+    'Kitty Underline Double':     '\033[4:2m',
+    'Kitty Underline Curly':      '\033[4:3m',
+    'Kitty Underline Dotted':     '\033[4:4m',
+    'Kitty Underline Dashed':     '\033[4:5m',
+}
+
 COLORS = [
     ('Normal',                    '\033[0m'),
+    ('Italic',                    '\033[3m'),
+    ('Strikethrough',             '\033[9m'),
+    ('Underline Single',          '\033[4m'),
+    ('Underline Double',          '\033[21m'),
+    ('Kitty Underline Single',    '\033[4:1m'),
+    ('Kitty Underline Double',    '\033[4:2m'),
+    ('Kitty Underline Curly',     '\033[4:3m'),
+    ('Kitty Underline Dotted',    '\033[4:4m'),
+    ('Kitty Underline Dashed',    '\033[4:5m'),
     ('Black',                     '\033[30m'),
     ('Red',                       '\033[31m'),
     ('Green',                     '\033[32m'),
@@ -84,6 +105,10 @@ def parse_command_line_arguments():
   group = parser.add_mutually_exclusive_group()
 
   group.add_argument(
+      '-f', '--formatting', dest='formatting', action='store_true',
+      help='print formatting tables')
+
+  group.add_argument(
       '-s', '--solarized', dest='solarized', action='store_true',
       help='print Solarized tables')
 
@@ -99,6 +124,25 @@ def main():
   if args.verbose:
     for name, escape_code in COLORS:
       print('{:26} : {}Lorem Ipsum{}'.format(name, escape_code, RESET))
+  elif args.formatting:
+    row_format = '{:24}  ' + '{}Lorem Ipsum{}  ' * 7
+
+    print_table_header([
+        'Style', '',
+        'Normal     ', 'yellow    3', 'orange    9', 'red       1',
+        'magenta   5', 'violet   13', 'blue      4',
+        ])
+    for style, escape_code in STYLES.items():
+      print(row_format.format(
+          style,
+          escape_code,                   RESET,
+          escape_code + '\033[58;5;3m',  RESET,  # yellow
+          escape_code + '\033[58;5;9m',  RESET,  # orange
+          escape_code + '\033[58;5;1m',  RESET,  # red
+          escape_code + '\033[58;5;5m',  RESET,  # magenta
+          escape_code + '\033[58;5;13m', RESET,  # violet
+          escape_code + '\033[58;5;4m',  RESET,  # blue
+          ))
   elif args.solarized:
     row_format = '{:11}  ' + '{}Lorem Ipsum{}  ' * 8
 
