@@ -621,6 +621,7 @@ function SerbanHighlight()
   highlight ctrlsfLnumMatch          cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfMatch              cterm=none            ctermfg=1
   highlight mkdHeading               cterm=bold ctermbg=8  ctermfg=9
+  highlight SpellBad                 cterm=underline       ctermul=1
 
   execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
