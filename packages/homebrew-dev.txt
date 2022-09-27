@@ -2,4 +2,4 @@ automake
 bazel
 graphviz
 pkg-config
-postgresql
+postgresql@14
