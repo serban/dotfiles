@@ -13,6 +13,7 @@ fd
 findutils
 firebase-cli
 fish
+flyctl
 fzf
 gawk
 git
