@@ -624,6 +624,9 @@ function SerbanHighlight()
   highlight ctrlsfMatch              cterm=none            ctermfg=1
   highlight mkdHeading               cterm=bold ctermbg=8  ctermfg=9
   highlight SpellBad                 cterm=underline       ctermul=1
+  highlight SpellCap                 cterm=underline       ctermul=3
+  highlight SpellLocal               cterm=underline       ctermul=6
+  highlight SpellRare                cterm=underline       ctermul=6
 
   execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
@@ -642,6 +645,10 @@ function SerbanHighlight()
   execute 'highlight BufSelectBorderHighlight gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PopupSelected            gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
   execute 'highlight mkdHeading               gui=bold guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_orange
+  execute 'highlight SpellBad                 gui=underline'                                . ' guisp=' . g:serban_solarized_red
+  execute 'highlight SpellCap                 gui=underline'                                . ' guisp=' . g:serban_solarized_yellow
+  execute 'highlight SpellLocal               gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
+  execute 'highlight SpellRare                gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
 
   " https://github.com/vim/vim/issues/10785 - g:terminal_ansi_colors not setting background color of terminal in MacVim
   " https://github.com/vim/colorschemes/issues/198 - MacVim/GUI :terminal doesn't set Terminal background
