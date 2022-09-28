@@ -212,12 +212,14 @@ set hidden                          " Allow buffers with unsaved changes to be h
 "   - https://vi.stackexchange.com/questions/16951/how-to-set-vims-background-based-on-terminals-background-colour
 set background=dark
 
-" Enable bracketed paste inside tmux. See :help xterm-bracketed-paste
-if &term =~# 'screen'
+" Enable paste bracketing inside tmux. See:
+" • :help xterm-bracketed-paste
+" • :help tmux-integration
+if &term =~# 'tmux'
   let &t_BE = "\e[?2004h"
   let &t_BD = "\e[?2004l"
-  exec "set t_PS=\e[200~"
-  exec "set t_PE=\e[201~"
+  let &t_PS = "\e[200~"
+  let &t_PE = "\e[201~"
 endif
 
 " ------------------------------------------------------------------------------
