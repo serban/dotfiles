@@ -1244,6 +1244,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>o :GoogleOutlineWindow <CR>
   nnoremap <unique> <Leader>p :call SerbanEchoWorkingDir() <CR>
       nmap <unique> <Leader>q <Plug>(ctrlp)
+  nnoremap <unique> <Leader>Q :quitall! <CR>
 " nnoremap <unique> <Leader>r
 " nnoremap <unique> <Leader>s
 " nnoremap <unique> <Leader>t
