@@ -104,6 +104,7 @@ endif
 " SETTINGS
 
 set title                             " Set the terminal title to something appropriate (like the filename being edited)
+set cmdwinheight=9                    " Set the height of the command line window
 set helpheight=80                     " Set the minimum window height for help windows
 set winheight=20                      " Set the minimum window height for split windows
 set winwidth=86                       " Set the minimum window width for split windows
@@ -1150,10 +1151,15 @@ let mapleader = ' '
   nnoremap <unique> <expr> n (v:searchforward ? 'n' : 'N')
   nnoremap <unique> <expr> N (v:searchforward ? 'N' : 'n')
 
+  " Make it harder to accidentally open the command line window.
+  " It can still be done with :<C-f> or /<C-f> or ?<C-f>.
+  nnoremap <unique> q: <Nop>
+  nnoremap <unique> q/ <Nop>
+  nnoremap <unique> q? <Nop>
+
   " Disable Ex-mode
   nnoremap <unique> Q  <Nop>
   nnoremap <unique> gQ <Nop>
-  nnoremap <unique> q: <Nop>
 
   nnoremap <unique> gx :call SerbanOpenLink() <CR>
 
