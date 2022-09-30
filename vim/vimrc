@@ -473,6 +473,16 @@ function SerbanGenerateSpellFiles()
   highlight SpellRare
 endfunction
 
+" @ Unnamed Register
+" - Small Delete Register
+" = Expression Register
+" / Last Search Pattern Register
+function SerbanClearRegisters()
+  for r in split('abcdefghijklmnopqrstuvwxyz0123456789@-=/', '\zs')
+    call setreg(r, [])
+  endfor
+endfunction
+
 function SerbanDeleteBuffer()
   if &modified
     echo 'Cannot delete modified buffer'
@@ -1298,6 +1308,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>vc :call SerbanChangeWorkingDirToCurrentFileParent() <Bar> call SerbanEchoWorkingDir() <CR>
   nnoremap <unique> <Leader>vd :call SerbanDeleteEmptyBuffers(v:true) <CR>
   nnoremap <unique> <Leader>vh :call SerbanHighlight() <CR>
+  nnoremap <unique> <Leader>vr :call SerbanClearRegisters() <Bar> registers <CR>
   nnoremap <unique> <Leader>vs :call SerbanGenerateSpellFiles() <CR>
   nnoremap <unique> <Leader>vv :botright vertical sview ~/src/dotfiles/vim/vimrc <CR>
 
