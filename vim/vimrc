@@ -1151,6 +1151,11 @@ let mapleader = ' '
   nnoremap <unique> <expr> n (v:searchforward ? 'n' : 'N')
   nnoremap <unique> <expr> N (v:searchforward ? 'N' : 'n')
 
+  " Make it harder to accidentally start macro recording.
+  " Start and stop recording with Q instead of q.
+  nnoremap <unique> q  <Nop>
+  nnoremap <unique> Q  q
+
   " Make it harder to accidentally open the command line window.
   " It can still be done with :<C-f> or /<C-f> or ?<C-f>.
   nnoremap <unique> q: <Nop>
@@ -1158,7 +1163,6 @@ let mapleader = ' '
   nnoremap <unique> q? <Nop>
 
   " Disable Ex-mode
-  nnoremap <unique> Q  <Nop>
   nnoremap <unique> gQ <Nop>
 
   nnoremap <unique> gx :call SerbanOpenLink() <CR>
