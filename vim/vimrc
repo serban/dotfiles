@@ -1284,6 +1284,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>am :call SerbanToc() <CR>
 
       nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
+      nmap <unique> <Leader>cs <Plug>CtrlSFPrompt
 
   nnoremap <unique> <Leader>hb :FzfBuffers <CR>
   nnoremap <unique> <Leader>hf :FzfFiles <CR>
