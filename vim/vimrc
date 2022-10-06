@@ -1294,6 +1294,7 @@ let mapleader = ' '
   nnoremap <unique> <Leader>hh :FzfHelptags <CR>
   nnoremap <unique> <Leader>hc :FzfCommands <CR>
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
+  nnoremap <unique> <Leader>hr :FzfRg<Space>
   nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
   nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
   nnoremap <unique> <Leader>hp :call SerbanFzfProducerModules() <CR>
