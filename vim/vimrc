@@ -188,6 +188,11 @@ set autoindent                      " Keep the indentation the same when inserti
 "set smartindent                    " Syntax-aware indenting
 set modeline                        " Modelines in files take precedent over these settings
 
+set ttimeout                        " Wait for full escape sequences to arrive …
+set ttimeoutlen=10                  " … for up to ten milliseconds.
+set timeout                         " Wait for full key mappings to arrive …
+set timeoutlen=500                  " … for up to half a second.
+
 " Don't move comment hashes to the beginning of the line when writing Python. This behavior is caused by smartindent.
 inoremap # X#
 
