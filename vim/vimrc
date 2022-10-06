@@ -218,6 +218,12 @@ set hidden                          " Allow buffers with unsaved changes to be h
 "   - https://vi.stackexchange.com/questions/16951/how-to-set-vims-background-based-on-terminals-background-colour
 set background=dark
 
+" Set unique cursor shapes for normal mode, insert mode, and replace mode. See:
+" https://invisible-island.net/xterm/ctlseqs/ctlseqs.html - XTerm Control Sequences
+let &t_EI = "\e[2 q"  "  Normal Mode → Block
+let &t_SI = "\e[6 q"  "  Insert Mode → Vertical Bar
+let &t_SR = "\e[4 q"  " Replace Mode → Underline
+
 " Enable paste bracketing inside tmux. See:
 " • :help xterm-bracketed-paste
 " • :help tmux-integration
