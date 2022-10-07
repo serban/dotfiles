@@ -1,6 +1,14 @@
 {
-    "editor.minimap.enabled": false,
-    "editor.renderIndentGuides": false,
-    "editor.tabSize": 2,
-    "workbench.colorTheme": "Default Light+"
+  "editor.folding": false,
+  "editor.fontFamily": "Monaco",
+  "editor.fontSize": 15,
+  "editor.guides.indentation": false,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "trailing",
+  "editor.tabSize": 2,
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Braver's Solarized Dark",
+  "workbench.preferredDarkColorTheme": "Braver's Solarized Dark",
+  "workbench.statusBar.visible": false
 }
