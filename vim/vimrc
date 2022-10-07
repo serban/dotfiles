@@ -369,8 +369,8 @@ let g:ycm_auto_hover = ''
 let g:ycm_language_server = [
 \   {
 \     'name': 'ciderlsp',
-\     'cmdline': [ '/google/bin/releases/editor-devtools/ciderlsp', '--noforward_sync_responses' ],
-\     'filetypes': [ 'java' ]
+\     'cmdline': [ '/google/bin/releases/cider/ciderlsp/ciderlsp', '--noforward_sync_responses' ],
+\     'filetypes': [ 'java', 'kotlin' ]
 \   },
 \]
 
