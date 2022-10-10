@@ -170,6 +170,10 @@ set smartcase                       " unless there's an uppercase character in t
 set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
 set nowrapscan                      " Do not wrap around the end of the file when searching
 
+set wildmenu                        " Turn on visual selection of command line completions
+set wildoptions=pum                 " Use a popup menu for command line completions
+set wildmode=longest:full,full      " On the first press of <Tab>, complete until the end of the longest common substring and open the popup menu. On subsequent presses of <Tab>, complete the next full match.
+
 set spellcapcheck=                  " Disable checking for a capital letter at the beginning of a sentence (SpellCap highlight).
 set spelllang=en_us                 " Use American English for spell checking
 set spellsuggest=best,9             " Limit spelling suggestions for z= to nine items
