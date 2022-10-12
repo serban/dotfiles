@@ -1,12 +1,16 @@
 import pathlib
+import platform
 import time
 
 import iterm2
 
-COMMANDS_PATH = pathlib.Path(pathlib.Path.home(), 'tmp', 'local.sh')
+COMMANDS_DIR = pathlib.Path(pathlib.Path.home(), 'src', 'private', 'iterm2')
 
 async def main(connection):
-  with open(COMMANDS_PATH) as f:
+  hostname = platform.node().split('.')[0]
+  commands_path = COMMANDS_DIR / f'{hostname}.sh'
+
+  with open(commands_path) as f:
     commands = [l for l in f.read().splitlines() if l and not l.startswith('#')]
 
   app = await iterm2.async_get_app(connection)
