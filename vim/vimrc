@@ -157,6 +157,8 @@ set nojoinspaces                    " When formatting text, insert only one spac
 set iskeyword+=-                    " Add hyphen to the list of characters that comprise a word
 set encoding=utf-8                  " Default to UTF-8 encoding
 
+set history=27                      " The number of commands, search patterns, expressions, and input() lines to remember
+set viminfo='0,f0,<0,s0,h           " Do not store marks, file marks, or registers. Ignore previous hlsearch setting on startup
 set sessionoptions=buffers,curdir,folds,resize,tabpages,winpos,winsize  " What to preserve when saving a session
 
 set printoptions=paper:letter,left:36pt,right:36pt,bottom:27pt,top:27pt,header:2  " American letter paper with ~ 1/2 inch margins
