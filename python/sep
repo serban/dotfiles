@@ -9,10 +9,13 @@ import subprocess
 Style = collections.namedtuple('Style', 'horizontal_line')
 
 STYLES = {
-    'ascii':  Style('-'),
-    'light':  Style('─'),
-    'heavy':  Style('━'),
-    'double': Style('═'),
+    'ascii':       Style('-'),  # U+002D Hyphen-Minus
+    'light':       Style('─'),  # U+2500 Box Drawings Light Horizontal
+    'heavy':       Style('━'),  # U+2501 Box Drawings Heavy Horizontal
+    'double':      Style('═'),  # U+2550 Box Drawings Double Horizontal
+    'double-dash': Style('╌'),  # U+254C Box Drawings Light Double Dash Horizontal
+    'triple-dash': Style('┄'),  # U+2504 Box Drawings Light Triple Dash Horizontal
+    'quad-dash':   Style('┈'),  # U+2508 Box Drawings Light Quadruple Dash Horizontal
 }
 
 RESET  = '\033[0m'
