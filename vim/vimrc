@@ -380,6 +380,14 @@ function SerbanLog(m)
   endif
 endfunction
 
+function SerbanSep()
+  if v:versionlong >= 9000472  " Vim 9.0.0472
+    echow strftime('[%Y-%m-%d %H:%M:%S]') '───────────────────────────────────────────────────────'
+  else
+    echom strftime('[%Y-%m-%d %H:%M:%S]') '───────────────────────────────────────────────────────'
+  endif
+endfunction
+
 function SerbanConfirm(prompt)
   echohl SerbanConfirm
   echo '■ ' . a:prompt . ' '
@@ -400,7 +408,7 @@ function SerbanDumpRuntimePath()
   for p in map(split(&runtimepath, ','), {i, v -> fnamemodify(v, ':~')})
     echom '  ' . p
   endfor
-  echom ' ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ '
+  echom ' ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈'
 endfunction
 
 function SerbanDisplayRuntimePath()
