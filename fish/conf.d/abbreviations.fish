@@ -21,6 +21,7 @@ abbr --add --global p3 python3 -B
 abbr --add --global p8 ping 8.8.8.8
 
 abbr --add --global bu 'brew update && header Outdated Formulae && brew outdated'
+abbr --add --global it 'python3 -B ~/src/dotfiles/iterm2/Scripts/local.py'
 abbr --add --global jd jackd --driver coreaudio --rate 44100
 
 abbr --add --global gc gcert
