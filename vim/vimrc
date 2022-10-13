@@ -379,6 +379,33 @@ function SerbanConfirm(prompt)
   return nr2char(getchar()) ==# 'y'
 endfunction
 
+function SerbanDumpRuntimePath()
+  echom '╭────────────────────────────────────────────────────────────────────╮'
+  echom '│ packpath                                                           │'
+  echom '╰────────────────────────────────────────────────────────────────────╯'
+  for p in map(split(&packpath, ','), {i, v -> fnamemodify(v, ':~')})
+    echom '  ' . p
+  endfor
+  echom '╭────────────────────────────────────────────────────────────────────╮'
+  echom '│ runtimepath                                                        │'
+  echom '╰────────────────────────────────────────────────────────────────────╯'
+  for p in map(split(&runtimepath, ','), {i, v -> fnamemodify(v, ':~')})
+    echom '  ' . p
+  endfor
+  echom ' ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈ '
+endfunction
+
+function SerbanDisplayRuntimePath()
+  let lines = map(split(&runtimepath, ','), {i, v -> fnamemodify(v, ':~')})
+  let opts = {
+  \   'title': ' runtimepath ',
+  \   'padding': [1, 3, 1, 3],
+  \   'highlight': 'BufSelectHighlight',
+  \   'borderhighlight': ['BufSelectBorderHighlight'],
+  \}
+  call popup_menu(lines, opts)
+endfunction
+
 function SerbanTabLine()
   let s = ''
   for i in range(1, tabpagenr('$'))
