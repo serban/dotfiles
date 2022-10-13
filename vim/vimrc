@@ -7,6 +7,12 @@ if has('gui_macvim')
   set pythonthreedll=/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/Python
 endif
 
+if has('nvim')
+  set runtimepath^=~/.vim
+  set runtimepath+=~/.vim/after
+  let &packpath = &runtimepath
+endif
+
 if filereadable(expand('/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/syntax/lilypond.vim'))
   set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
 endif
@@ -205,7 +211,9 @@ inoremap # X#
 set backspace=eol,indent,start      " Make life easier on crappy terminals
 
 set mouse=a                         " Enable the mouse
+if !has('nvim')
 set ttymouse=sgr                    " Support mouse past the 223rd column
+endif
 
 set noautochdir                     " When enabled, keep the current directory in sync with the folder containing the open file
 set autoread                        " If an open file has changed outside of Vim but was not modified inside of Vim, reload it without asking when running :checktime
@@ -682,10 +690,12 @@ function SerbanHighlight()
   highlight ctrlsfLnumMatch          cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfMatch              cterm=none            ctermfg=1
   highlight mkdHeading               cterm=bold ctermbg=8  ctermfg=9
+if !has('nvim')
   highlight SpellBad                 cterm=underline       ctermul=1
   highlight SpellCap                 cterm=underline       ctermul=3
   highlight SpellLocal               cterm=underline       ctermul=6
   highlight SpellRare                cterm=underline       ctermul=6
+endif
 
   execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
@@ -1103,10 +1113,12 @@ augroup serban-text
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
 augroup end
 
+if !has('nvim')
 augroup serban-terminal
   autocmd!
   autocmd TerminalWinOpen * setlocal statusline=%{term_gettitle(bufnr())}\ \ %=%(№\ %n\ \ %)
 augroup end
+endif
 
 " ------------------------------------------------------------------------------
 " COLORS
@@ -1205,6 +1217,10 @@ digraphs cp 128995  "  0x1f7e3 🟣
 " KEY MAPPINGS
 
 let mapleader = ' '
+
+if has('nvim')
+  nunmap <C-l>
+endif
 
   " Disable man pages
   nnoremap <unique> K <Nop>

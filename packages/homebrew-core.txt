@@ -36,6 +36,7 @@ less
 lf
 md5deep
 moreutils
+neovim
 newsboat
 pastel
 python@3.10

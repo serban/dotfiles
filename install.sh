@@ -81,6 +81,9 @@ ln -si ${DOTFILES}/newsboat-config      ~/.config/newsboat/config
 mkdir -p ~/.config/nitrogen
 ln -si ${DOTFILES}/bg-saved.cfg         ~/.config/nitrogen/bg-saved.cfg
 
+mkdir -p ~/.config/nvim
+ln -si ${DOTFILES}/vim/vimrc            ~/.config/nvim/init.vim
+
 mkdir -p ~/.hammerspoon
 ln -si ${DOTFILES}/init.lua             ~/.hammerspoon/init.lua
 
