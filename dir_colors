@@ -13,6 +13,7 @@
 # ------------------------------------------------------------------------------
 
 TERM Eterm
+TERM alacritty
 TERM ansi
 TERM color-xterm
 TERM con132x25

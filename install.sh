@@ -59,6 +59,9 @@ ln -si ${DOTFILES}/tmux.conf            ~/.tmux.conf
 ln -si ${DOTFILES}/xsession             ~/.xsession
 ln -si ${DOTFILES}/Xresources           ~/.Xresources
 
+mkdir -p ~/.config/alacritty
+ln -si ${DOTFILES}/alacritty.yml        ~/.config/alacritty/alacritty.yml
+
 mkdir -p ~/.config/bat
 ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
 
