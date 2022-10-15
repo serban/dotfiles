@@ -72,6 +72,9 @@ ln -si ${DOTFILES}/fish/completions     ~/.config/fish/completions
 ln -si ${DOTFILES}/fish/functions       ~/.config/fish/functions
 ln -si ${DOTFILES}/fish/config.fish     ~/.config/fish/config.fish
 
+mkdir -p ~/.config/kitty
+ln -si ${DOTFILES}/kitty.conf           ~/.config/kitty/kitty.conf
+
 mkdir -p ~/.config/lf
 ln -si ${DOTFILES}/lfrc                 ~/.config/lf/lfrc
 
