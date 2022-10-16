@@ -21,6 +21,7 @@ call plug#begin('~/.vim/bundle')
 
 " GitHub Plugins
 Plug 'altercation/vim-colors-solarized'
+Plug 'andrewradev/bufferize.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'dhruvasagar/vim-table-mode'
@@ -255,6 +256,10 @@ endif
 
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
+
+" BUFFERIZE
+let g:bufferize_command = 'botright vnew'
+let g:bufferize_focus_output = 1
 
 " BULLETS
 let g:bullets_outline_levels = ['num', 'abc', 'std*', 'std+', 'std-']
