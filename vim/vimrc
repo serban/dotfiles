@@ -69,6 +69,11 @@ if !filereadable('/usr/share/vim/google/google.vim')
   Plug 'ervandew/supertab'
 endif
 
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+  Plug 'nvim-treesitter/nvim-treesitter-context',
+endif
+
 call plug#end()
 
 " ------------------------------------------------------------------------------
@@ -363,6 +368,52 @@ let g:ycm_language_server = [
 \     'filetypes': [ 'java' ]
 \   },
 \]
+
+" ------------------------------------------------------------------------------
+" NEOVIM PLUGIN SETTINGS
+
+if has('nvim')
+lua << EOF
+
+require('nvim-treesitter.configs').setup({
+  ensure_installed = {
+    'bash',
+    'c',
+    'comment',
+    'cpp',
+    'css',
+    'cuda',
+    'dockerfile',
+    'dot',
+    'fish',
+    'go',
+    'help',
+    'html',
+    'java',
+    'javascript',
+    'json',
+    'jsonnet',
+    'kotlin',
+    'lua',
+    'markdown',
+    'markdown_inline',
+    'proto',
+    'python',
+    'regex',
+    'rst',
+    'rust',
+    'sql',
+    'swift',
+    'toml',
+    'vim',
+    'yaml',
+  },
+  highlight = {enable = true},
+  incremental_selection = {enable = true},
+})
+
+EOF
+endif
 
 " ------------------------------------------------------------------------------
 " GLOBALS
