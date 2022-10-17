@@ -1,6 +1,8 @@
 abbr --add --global had hg add
 abbr --add --global ham hg amend
 abbr --add --global hco hg commit
+abbr --add --global hdc hg diff --change
+abbr --add --global hdf hg diff --from
 abbr --add --global hdi hg diff
 abbr --add --global hev hg evolve
 abbr --add --global hlo hg log --stat
@@ -10,6 +12,9 @@ abbr --add --global hrb hg rebase
 abbr --add --global hrs hg resolve
 abbr --add --global hst hg status
 abbr --add --global hup hg update
+
+abbr --add --global hec 'e (hg status --no-status --change .)'
+abbr --add --global heb 'e (hg status --no-status --rev p4base)'
 
 # Fig Aliases
 abbr --add --global hau 'hg amend && hg uploadchain && hg xl'
