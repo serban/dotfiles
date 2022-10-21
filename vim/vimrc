@@ -8,6 +8,10 @@ if has('gui_macvim')
 endif
 
 if has('nvim')
+  let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin/python3'
+endif
+
+if has('nvim')
   set runtimepath^=~/.vim
   set runtimepath+=~/.vim/after
   let &packpath = &runtimepath
