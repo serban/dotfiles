@@ -18,6 +18,7 @@ set --global --export PATH \
     $HOME/.local/bin \
     $HOME/opt/google-cloud-sdk/bin \
     /usr/lib/google-golang/bin \
+    /usr/local/git/git-google/bin \
     /usr/local/git/current/bin \
     $HOME/homebrew/opt/python@3.10/bin \
     $HOME/homebrew/bin \
