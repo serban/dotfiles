@@ -1,6 +1,7 @@
 function e
   set --local  options (fish_opt --short=a --long=all)
   set options $options (fish_opt --short=g --long=gui)
+  set options $options (fish_opt --short=n --long=neovim)
   set options $options (fish_opt --short=r --long=read-only)
   set options $options (fish_opt --short=t --long=tabs)
 
@@ -31,6 +32,10 @@ function e
       echo 'Could not find gvim or mvim'
       return 1
     end
+  end
+
+  if test -n "$_flag_neovim"
+    set binary nvim
   end
 
   if test -n "$_flag_read_only"
