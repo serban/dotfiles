@@ -108,13 +108,46 @@ PREFERENCES = {
 # PreferenceKey.DISABLE_TRANSPARENCY_FOR_KEY_WINDOW:      False,
 }
 
-async def main(connection):
+# iTerm2/api/library/python/iterm2/iterm2/binding.py → BindingAction, KeyBinding
+# iTerm2/api/library/python/iterm2/iterm2/keyboard.py → Keycode, Modifier
+async def dump_key_bindings(connection):
+  bindings = await iterm2.binding.async_get_global_key_bindings(connection)
+  for i, kb in enumerate(sorted(bindings, key=lambda b: b.action.value)):
+    print(f'  {i+1:2} {str(kb.modifiers):66}  {kb.character:4x}  {kb.action}')
+
+# Delete « Keys › Key Bindings › ‘Cycle Tabs Forward’ & ‘Cycle Tabs Backward’ »
+async def tweak_key_bindings(connection):
+  bindings_old = await iterm2.binding.async_get_global_key_bindings(connection)
+  bindings_new = [kb for kb in bindings_old
+                  if not iterm2.keyboard.Modifier.CONTROL in kb.modifiers]
+  await iterm2.binding.async_set_global_key_bindings(connection, bindings_new)
+
+async def dump_preferences(connection):
   for key in PreferenceKey:
     out = await iterm2.preferences.async_get_preference(connection, key)
-    print(f'{str(key) + ":":54}  {repr(out)},')
+    print(f'  {str(key) + ":":54}  {repr(out)},')
 
+async def set_preferences(connection):
   for key, value in PREFERENCES.items():
     await iterm2.preferences.async_set_preference(connection, key.value, value)
+
+async def dump(connection):
+  await dump_key_bindings(connection)
+  print()
+  await dump_preferences(connection)
+
+async def main(connection):
+  print('╭───────────────────────────────────────────────────────────────────╮')
+  print('│ Before                                                            │')
+  print('╰───────────────────────────────────────────────────────────────────╯')
+  await dump(connection)
+
+  print('╭───────────────────────────────────────────────────────────────────╮')
+  print('│ After                                                             │')
+  print('╰───────────────────────────────────────────────────────────────────╯')
+  await tweak_key_bindings(connection)
+  await set_preferences(connection)
+  await dump(connection)
 
 if __name__ == '__main__':
   iterm2.run_until_complete(main)
