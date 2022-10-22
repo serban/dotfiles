@@ -429,6 +429,51 @@ endif
 
 let g:serban_statusline_path_relative = 0
 
+let g:serban_command_palette_commands = [
+\   'SerbanDumpRuntimePath',
+\   'SerbanDisplayRuntimePath',
+\   'SerbanInsertModeline',
+\   'SerbanChangeWorkingDirToCurrentFileParent',
+\   'SerbanSwitchGraphToProducerModule',
+\   'SerbanEchoWorkingDir',
+\   'SerbanEchoFilePath',
+\   'SerbanAppendGoogle3File',
+\   'SerbanAppendGoogle3Folder',
+\   'SerbanGenerateSpellFiles',
+\   'SerbanClearRegisters',
+\   'SerbanDeleteBuffer',
+\   'SerbanFormatBullets',
+\   'SerbanFormatShortlinks',
+\   'SerbanHighlight',
+\   'SerbanMarkPalette',
+\   'SerbanRemoveHttpScheme',
+\   'SerbanRemoveTrailingWhitespace',
+\   'SerbanSetMacVimBackground',
+\   'SerbanToggleBackground',
+\   'SerbanToggleColorColumn',
+\   'SerbanToggleWinWidth',
+\   'SerbanToggleLineNumbers',
+\   'SerbanToggleStatusLinePath',
+\   'SerbanToc',
+\   'SerbanFzfProducerModules',
+\   'SerbanFzfGoogle3Files',
+\   'SerbanFzfGoogle3Folders',
+\   'SerbanNewNote',
+\   'SerbanRenameNote',
+\   'SerbanOpenLink',
+\   'SerbanWrapHard',
+\   'SerbanWrapHint',
+\   'SerbanWrapSoft',
+\   'SerbanWrapNone',
+\   'SerbanIndentSpaces2',
+\   'SerbanIndentSpaces4',
+\   'SerbanIndentSpaces8',
+\   'SerbanIndentTabs2',
+\   'SerbanIndentTabs4',
+\   'SerbanIndentTabs8',
+\   'SerbanIndentMixed4',
+\]
+
 " ------------------------------------------------------------------------------
 " FUNCTIONS
 
@@ -909,6 +954,19 @@ function SerbanToc()
   call win_gotoid(id)
 endfunction
 
+function SerbanCommandPalette()
+  call fzf#run(fzf#wrap({
+  \   'source': map(copy(g:serban_command_palette_commands),
+  \                 {_, v -> substitute(v, '\v^Serban', '', '')}),
+  \   'sink': function('SerbanCommandPaletteRun'),
+  \   'window': {'width': 48, 'height': 0.90},
+  \ }))
+endfunction
+
+function SerbanCommandPaletteRun(cmd)
+  call feedkeys(':call Serban' . a:cmd . '()' . "\n", 'n')
+endfunction
+
 function SerbanFzfProducerModules()
   call fzf#run(fzf#wrap({
   \   'source': 'fd --type file --strip-cwd-prefix ProducerModule.java',
@@ -1332,7 +1390,7 @@ endif
 " nnoremap <unique>  <F7>
   nnoremap <unique>  <F8> :call SerbanIndentSpaces8() <CR>
   nnoremap <unique>  <F9> :call SerbanIndentTabs8() <CR>
-" nnoremap <unique> <F10>
+  nnoremap <unique> <F10> :call SerbanCommandPalette() <CR>
 " nnoremap <unique> <F11>
   nnoremap <unique> <F12> :call SerbanIndentMixed4() <CR>
 
