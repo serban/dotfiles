@@ -14,6 +14,7 @@ syntax match   SerbanLinkSeparator     '\v - '                                  
 syntax match   SerbanLinkTitle         '\v.*$'                                                                                      contained
 syntax match   SerbanAbsolutePath      '\v(^|\s)\zs/\S+>'                           containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                         containedin=mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'      containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanDateTime          '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2})?>'       containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                     containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanUserName          '\v<\l+\@'                                   containedin=mkdNonListItemBlock,mkdListItemLine
@@ -24,6 +25,7 @@ highlight link SerbanLinkSeparator      Identifier
 highlight link SerbanLinkTitle          Constant
 highlight link SerbanAbsolutePath       Special
 highlight link SerbanHomePath           Underlined
+highlight link SerbanCurrency           Statement
 highlight link SerbanDateTime           Identifier
 highlight link SerbanTodo               Special
 highlight link SerbanUserName           Statement
