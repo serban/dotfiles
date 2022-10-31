@@ -18,6 +18,9 @@ syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'
 syntax match   SerbanDateTime          '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2})?>'       containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                     containedin=mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanUserName          '\v<\l+\@'                                   containedin=mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanCheck             '✓'                                          containedin=mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanCross             '✗'                                          containedin=mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanNull              '∅'                                          containedin=mkdNonListItemBlock,mkdListItemLine
 
 highlight link SerbanUrl                Underlined
 highlight link SerbanShortLink          Underlined
@@ -29,3 +32,6 @@ highlight link SerbanCurrency           Statement
 highlight link SerbanDateTime           Identifier
 highlight link SerbanTodo               Special
 highlight link SerbanUserName           Statement
+highlight link SerbanCheck              Statement
+highlight link SerbanCross              Special
+highlight link SerbanNull               Comment
