@@ -17,6 +17,8 @@ abbr --add --global cp cp -vi
 abbr --add --global mv mv -vi
 abbr --add --global rm rm -v
 
+abbr --add --global pt pstree -g 3 -s
+
 abbr --add --global p3 python3 -B
 abbr --add --global p8 ping 8.8.8.8
 
