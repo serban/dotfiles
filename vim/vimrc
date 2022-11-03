@@ -74,8 +74,14 @@ if !filereadable('/usr/share/vim/google/google.vim')
   Plug 'ervandew/supertab'
 endif
 
+" • https://github.com/nvim-neorg/tree-sitter-norg/issues/7
+"   ↳ Compilation error during install
+" Workaround:
+"   $ brew install gcc
+"   $ CC=gcc-12 nvim -c 'TSInstall norg'
 if has('nvim')
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-neorg/neorg', { 'do': ':Neorg sync-parsers' }
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
   Plug 'nvim-telescope/telescope-symbols.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -423,6 +429,8 @@ require('nvim-treesitter.configs').setup({
     'lua',
     'markdown',
     'markdown_inline',
+    'norg',
+    'norg_meta',
     'proto',
     'python',
     'regex',
@@ -436,6 +444,12 @@ require('nvim-treesitter.configs').setup({
   },
   highlight = {enable = true},
   incremental_selection = {enable = true},
+})
+
+require('neorg').setup({
+  load = {
+    ['core.defaults'] = {},
+  },
 })
 
 EOF
