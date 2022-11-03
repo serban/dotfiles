@@ -39,6 +39,7 @@ moreutils
 neovim
 newsboat
 pastel
+procs
 python@3.10
 ripgrep
 rsync

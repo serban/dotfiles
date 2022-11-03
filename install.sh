@@ -90,6 +90,9 @@ ln -si ${DOTFILES}/bg-saved.cfg         ~/.config/nitrogen/bg-saved.cfg
 mkdir -p ~/.config/nvim
 ln -si ${DOTFILES}/vim/vimrc            ~/.config/nvim/init.vim
 
+mkdir -p ~/.config/procs
+ln -si ${DOTFILES}/procs.toml           ~/.config/procs/config.toml
+
 mkdir -p ~/.hammerspoon
 ln -si ${DOTFILES}/init.lua             ~/.hammerspoon/init.lua
 

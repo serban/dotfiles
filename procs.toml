@@ -1,0 +1,48 @@
+[display]                # Values increase in the direction of the arrow.
+ascending         = '▼'  # Values go from small to large from top to bottom.
+descending        = '▲'  # Values go from large to small from top to bottom.
+
+[sort]
+column            = 1
+order             = 'Descending'  # Highest memory to lowest from top to bottom.
+
+[style]
+header            = 'White'
+unit              = 'Blue'
+tree              = 'BrightGreen'
+
+[style.by_unit]
+color_k           = 'Green'
+color_m           = 'Yellow'
+color_g           = 'BrightRed'
+color_t           = 'Red'
+color_p           = 'Magenta'
+color_x           = 'BrightWhite'
+
+[[columns]]
+kind              = 'Pid'
+align             = 'Right'
+style             = 'BrightMagenta'
+numeric_search    = true
+nonnumeric_search = false
+
+[[columns]]
+kind              = 'VmRss'
+align             = 'Right'
+style             = 'ByUnit'
+numeric_search    = false
+nonnumeric_search = false
+
+[[columns]]
+kind              = 'MultiSlot'
+style             = 'Green'
+
+[[columns]]
+kind              = 'TreeSlot'
+
+[[columns]]
+kind              = 'Command'
+align             = 'Left'
+style             = 'BrightBlue'
+numeric_search    = false
+nonnumeric_search = true
