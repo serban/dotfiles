@@ -122,6 +122,7 @@ set --global --export EDITOR vim
 set --global --export PAGER less
 
 set --global --export PIP_REQUIRE_VIRTUALENV true
+set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
 if type --quiet dircolors
   eval (dircolors -c ~/.dir_colors)
