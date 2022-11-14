@@ -34,12 +34,14 @@ jq
 jsonnet
 less
 lf
+make
 md5deep
 moreutils
 neovim
 newsboat
 pastel
 procs
+pstree
 python@3.10
 ripgrep
 rsync
