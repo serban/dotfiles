@@ -133,6 +133,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 # HEADER FILES (Skinny Cyan)
 .css          00;36
 .h            00;36
+.ily          00;36
 .proto        00;36
 .ulss         00;36
 
@@ -149,6 +150,8 @@ SETGID               04;01;31   # file that is setgid (g+s)
 
 # BINARY DATA (Skinny Blue)
 .class        00;34
+.mid          00;34
+.midi         00;34
 .o            00;34
 .pyc          00;34
 
