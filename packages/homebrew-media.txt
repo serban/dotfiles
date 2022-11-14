@@ -1,3 +1,5 @@
 flac
 lame
+lilypond
+timidity
 vorbis-tools
