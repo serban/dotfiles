@@ -17,9 +17,7 @@ if has('nvim')
   let &packpath = &runtimepath
 endif
 
-if filereadable(expand('/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim/syntax/lilypond.vim'))
-  set runtimepath+=/Applications/LilyPond.app/Contents/Resources/share/lilypond/current/vim
-endif
+set runtimepath^=/opt/homebrew/Cellar/lilypond/*/share/lilypond/*/vim
 
 call plug#begin('~/.vim/bundle')
 
@@ -1216,6 +1214,7 @@ autocmd FileType gitcommit set spell
 autocmd FileType go        set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType hgcommit  set spell
 autocmd FileType java      set textwidth=100 winwidth=106
+autocmd FileType lilypond  set commentstring=%\ %s
 autocmd FileType piperspec set spell
 autocmd FileType python    set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift     set textwidth=100 winwidth=106
