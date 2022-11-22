@@ -78,6 +78,7 @@ endif
 "   $ brew install gcc
 "   $ CC=gcc-12 nvim -c 'TSInstall norg'
 if has('nvim')
+  Plug 'ggandor/leap.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-neorg/neorg', { 'do': ':Neorg sync-parsers' }
   Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -443,6 +444,8 @@ require('nvim-treesitter.configs').setup({
   highlight = {enable = true},
   incremental_selection = {enable = true},
 })
+
+require('leap').add_default_mappings()
 
 require('neorg').setup({
   load = {
