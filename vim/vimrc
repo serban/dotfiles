@@ -266,6 +266,19 @@ if &term =~# 'tmux'
   let &t_PE = "\e[201~"
 endif
 
+" For a given key chord `⌥ + κ` iTerm2 sends two bytes: `0x1b` + `κ`.
+" Neovim recognizes this as `<M-κ>` out of the box, but Vim does not. See:
+" • https://vi.stackexchange.com/questions/2350/how-to-map-alt-key
+" • :help :set-termcap
+if !has('nvim')
+execute "set <M-h>=\eh"
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+execute "set <M-n>=\en"
+execute "set <M-p>=\ep"
+endif
+
 " ------------------------------------------------------------------------------
 " PLUGIN SETTINGS
 
@@ -1456,11 +1469,21 @@ endif
 " nnoremap <unique> <C-y>
 " nnoremap <unique> <C-z>
 
-  " TODO(serban): Does not work in tmux. See:
-  " - https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
-  " - https://stackoverflow.com/questions/38133250/cannot-get-control-arrow-keys-working-in-vim-through-tmux
+  " Meta keys do not work in MacVim without setting macmeta. See :help macmeta.
+  nnoremap <unique> <M-h> :tabmove -1 <CR>
+  nnoremap <unique> <M-j> :move +1 <CR>
+  nnoremap <unique> <M-k> :move -2 <CR>
+  nnoremap <unique> <M-l> :tabmove +1 <CR>
+  nnoremap <unique> <M-n> :bnext <CR>
+  nnoremap <unique> <M-p> :bprevious <CR>
+
+  " <C-Arrow> works in iTerm2 and MacVim. It does not work in tmux. See:
+  " • https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
+  " • https://stackoverflow.com/questions/38133250/cannot-get-control-arrow-keys-working-in-vim-through-tmux
   nnoremap <unique> <C-Left>  :tabmove -1 <CR>
   nnoremap <unique> <C-Right> :tabmove +1 <CR>
+  nnoremap <unique> <C-Down>  :move +1 <CR>
+  nnoremap <unique> <C-Up>    :move -2 <CR>
 
 " nnoremap <unique> <Leader>a
   nnoremap <unique> <Leader>b :call SerbanNewNote() <CR>
