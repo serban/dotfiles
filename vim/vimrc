@@ -463,6 +463,11 @@ require('leap').add_default_mappings()
 require('neorg').setup({
   load = {
     ['core.defaults'] = {},
+    ['core.norg.news'] = {
+      config = {
+        check_news = false,
+      },
+    },
   },
 })
 
