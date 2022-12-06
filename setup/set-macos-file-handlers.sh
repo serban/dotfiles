@@ -91,3 +91,5 @@ duti -s com.apple.QuickTimePlayerX  .m4r                                all
 duti -s com.apple.QuickTimePlayerX  .mp3                                all
 duti -s com.apple.QuickTimePlayerX  .wav                                all
 duti -s com.apple.QuickTimePlayerX  .wave                               all
+
+duti -s com.colliderli.iina         .webm                               all
