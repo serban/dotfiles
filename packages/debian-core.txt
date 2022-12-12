@@ -1,5 +1,5 @@
 bat
-bpython3
+bpython
 bzip2
 clang
 colordiff
@@ -21,6 +21,7 @@ hugo
 ipython3
 jq
 jsonnet
+lf
 libc++-dev
 lookatme
 makepasswd
