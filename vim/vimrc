@@ -1336,6 +1336,8 @@ digraphs md    183  "  0x00b7  ·  ~.
 digraphs dr    187  "  0x00bb  »  >>
 digraphs ml    215  "  0x00d7  ×  *X
 digraphs dv    247  "  0x00f7  ÷  -:
+digraphs wl   8216  "  0x2018  ‘  '6
+digraphs wr   8217  "  0x2019  ’  '9
 digraphs ql   8220  "  0x201c  “  "6
 digraphs qr   8221  "  0x201d  ”  "9
 digraphs bl   8226  "  0x2022  •  oo
@@ -1347,6 +1349,7 @@ digraphs bh   8259  "  0x2043  ⁃
 digraphs td   8278  "  0x2056  ⁖
 digraphs fd   8280  "  0x2058  ⁘
 digraphs eu   8364  "  0x20ac  €  Eu  =e
+digraphs no   8470  "  0x2116  №  N0
 digraphs al   8592  "  0x2190  ←  <-
 digraphs au   8593  "  0x2191  ↑  -!
 digraphs ar   8594  "  0x2192  →  ->
@@ -1366,6 +1369,7 @@ digraphs bs   9632  "  0x25a0  ■  fS
 digraphs bc   9679  "  0x25cf  ●  0M
 digraphs ch  10003  "  0x2713  ✓  OK
 digraphs cr  10007  "  0x2717  ✗  XX
+digraphs lc  10013  "  0x271d  ✝
 
 digraphs kc   8984  "  0x2318  ⌘
 digraphs ko   8997  "  0x2325  ⌥
