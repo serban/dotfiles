@@ -1328,53 +1328,53 @@ iabbrev /- // ---------------------------------------------------------
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
-digraphs ce    162  "  0x00a2  ¢  Ct
-digraphs dl    171  "  0x00ab  «  <<
-digraphs dg    176  "  0x00b0  °  DG
-digraphs pm    177  "  0x00b1  ±  +-
-digraphs md    183  "  0x00b7  ·  ~.
-digraphs dr    187  "  0x00bb  »  >>
-digraphs ml    215  "  0x00d7  ×  *X
-digraphs dv    247  "  0x00f7  ÷  -:
-digraphs wl   8216  "  0x2018  ‘  '6
-digraphs wr   8217  "  0x2019  ’  '9
-digraphs ql   8220  "  0x201c  “  "6
-digraphs qr   8221  "  0x201d  ”  "9
-digraphs bl   8226  "  0x2022  •  oo
-digraphs el   8230  "  0x2026  …  ,.
-digraphs sl   8249  "  0x2039  ‹  <1
-digraphs sr   8250  "  0x203a  ›  >1
-digraphs rm   8251  "  0x203b  ※  :X
-digraphs bh   8259  "  0x2043  ⁃
-digraphs td   8278  "  0x2056  ⁖
-digraphs fd   8280  "  0x2058  ⁘
-digraphs eu   8364  "  0x20ac  €  Eu  =e
-digraphs no   8470  "  0x2116  №  N0
-digraphs al   8592  "  0x2190  ←  <-
-digraphs au   8593  "  0x2191  ↑  -!
-digraphs ar   8594  "  0x2192  →  ->
-digraphs ad   8595  "  0x2193  ↓  -v
-digraphs ac   8627  "  0x21b3  ↳
-digraphs ah   8628  "  0x21b4  ↴
-digraphs lr   8646  "  0x21c6  ⇆
-digraphs es   8709  "  0x2205  ∅  /0
-digraphs mi   8722  "  0x2212  −  -2
-digraphs sq   8730  "  0x221a  √  RT
-digraphs ae   8776  "  0x2248  ≈  ?2
-digraphs ne   8800  "  0x2260  ≠  !=
-digraphs le   8804  "  0x2264  ≤  =<
-digraphs ge   8805  "  0x2265  ≥  >=
-digraphs bn   9004  "  0x232c  ⌬
-digraphs bs   9632  "  0x25a0  ■  fS
-digraphs bc   9679  "  0x25cf  ●  0M
-digraphs ch  10003  "  0x2713  ✓  OK
-digraphs cr  10007  "  0x2717  ✗  XX
-digraphs lc  10013  "  0x271d  ✝
+digraphs ce    162  "  0x00a2  ¢  Ct      Cent Sign
+digraphs dl    171  "  0x00ab  «  <<      Left-Pointing Double Angle Quotation Mark
+digraphs dg    176  "  0x00b0  °  DG      Degree Sign
+digraphs pm    177  "  0x00b1  ±  +-      Plus-Minus Sign
+digraphs md    183  "  0x00b7  ·  ~.      Middle Dot
+digraphs dr    187  "  0x00bb  »  >>      Right-Pointing Double Angle Quotation Mark
+digraphs ml    215  "  0x00d7  ×  *X      Multiplication Sign
+digraphs dv    247  "  0x00f7  ÷  -:      Division Sign
+digraphs wl   8216  "  0x2018  ‘  '6      Left Single Quotation Mark
+digraphs wr   8217  "  0x2019  ’  '9      Right Single Quotation Mark
+digraphs ql   8220  "  0x201c  “  "6      Left Double Quotation Mark
+digraphs qr   8221  "  0x201d  ”  "9      Right Double Quotation Mark
+digraphs bl   8226  "  0x2022  •  oo      Bullet
+digraphs el   8230  "  0x2026  …  ,.      Horizontal Ellipsis
+digraphs sl   8249  "  0x2039  ‹  <1      Single Left-Pointing Angle Quotation Mark
+digraphs sr   8250  "  0x203a  ›  >1      Single Right-Pointing Angle Quotation Mark
+digraphs rm   8251  "  0x203b  ※  :X      Reference Mark
+digraphs bh   8259  "  0x2043  ⁃          Hyphen Bullet
+digraphs td   8278  "  0x2056  ⁖          Three Dot Punctuation
+digraphs fd   8280  "  0x2058  ⁘          Four Dot Punctuation
+digraphs eu   8364  "  0x20ac  €  Eu  =e  Euro Sign
+digraphs no   8470  "  0x2116  №  N0      Numero Sign
+digraphs al   8592  "  0x2190  ←  <-      Leftwards Arrow
+digraphs au   8593  "  0x2191  ↑  -!      Upwards Arrow
+digraphs ar   8594  "  0x2192  →  ->      Rightwards Arrow
+digraphs ad   8595  "  0x2193  ↓  -v      Downwards Arrow
+digraphs ac   8627  "  0x21b3  ↳          Downwards Arrow With Tip Rightwards
+digraphs ah   8628  "  0x21b4  ↴          Rightwards Arrow With Corner Downwards
+digraphs lr   8646  "  0x21c6  ⇆          Leftwards Arrow Over Rightwards Arrow
+digraphs es   8709  "  0x2205  ∅  /0      Empty Set
+digraphs mi   8722  "  0x2212  −  -2      Minus Sign
+digraphs sq   8730  "  0x221a  √  RT      Square Root
+digraphs ae   8776  "  0x2248  ≈  ?2      Almost Equal To
+digraphs ne   8800  "  0x2260  ≠  !=      Not Equal To
+digraphs le   8804  "  0x2264  ≤  =<      Less-Than Or Equal To
+digraphs ge   8805  "  0x2265  ≥  >=      Greater-Than Or Equal To
+digraphs bn   9004  "  0x232c  ⌬          Benzene Ring
+digraphs bs   9632  "  0x25a0  ■  fS      Black Square
+digraphs bc   9679  "  0x25cf  ●  0M      Black Circle
+digraphs ch  10003  "  0x2713  ✓  OK      Check Mark
+digraphs cr  10007  "  0x2717  ✗  XX      Ballot X
+digraphs lc  10013  "  0x271d  ✝          Latin Cross
 
-digraphs kc   8984  "  0x2318  ⌘
-digraphs ko   8997  "  0x2325  ⌥
-digraphs ku   8963  "  0x2303  ⌃
-digraphs ks   8679  "  0x21e7  ⇧
+digraphs kc   8984  "  0x2318  ⌘          Place Of Interest Sign
+digraphs ko   8997  "  0x2325  ⌥          Option Key
+digraphs ku   8963  "  0x2303  ⌃          Up Arrowhead
+digraphs ks   8679  "  0x21e7  ⇧          Upwards White Arrow
 
 digraphs n0   9450  "  0x24ea  ⓪
 digraphs n1   9312  "  0x2460  ①
