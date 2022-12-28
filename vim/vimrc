@@ -1328,12 +1328,14 @@ iabbrev /- // ---------------------------------------------------------
 " ------------------------------------------------------------------------------
 " DIGRAPHS
 
+digraphs ix    161  "  0x00a1  ¡  !I      Inverted Exclamation Mark
 digraphs ce    162  "  0x00a2  ¢  Ct      Cent Sign
 digraphs dl    171  "  0x00ab  «  <<      Left-Pointing Double Angle Quotation Mark
 digraphs dg    176  "  0x00b0  °  DG      Degree Sign
 digraphs pm    177  "  0x00b1  ±  +-      Plus-Minus Sign
 digraphs md    183  "  0x00b7  ·  ~.      Middle Dot
 digraphs dr    187  "  0x00bb  »  >>      Right-Pointing Double Angle Quotation Mark
+digraphs iq    191  "  0x00bf  ¿  ?I      Inverted Question Mark
 digraphs ml    215  "  0x00d7  ×  *X      Multiplication Sign
 digraphs dv    247  "  0x00f7  ÷  -:      Division Sign
 digraphs hy   8208  "  0x2010  ‐  -1      Hyphen
