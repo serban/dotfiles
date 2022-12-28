@@ -1336,6 +1336,11 @@ digraphs md    183  "  0x00b7  ·  ~.      Middle Dot
 digraphs dr    187  "  0x00bb  »  >>      Right-Pointing Double Angle Quotation Mark
 digraphs ml    215  "  0x00d7  ×  *X      Multiplication Sign
 digraphs dv    247  "  0x00f7  ÷  -:      Division Sign
+digraphs hy   8208  "  0x2010  ‐  -1      Hyphen
+digraphs df   8210  "  0x2012  ‒          Figure Dash
+digraphs dn   8211  "  0x2013  –  -N      En Dash
+digraphs dm   8212  "  0x2014  —  -M      Em Dash
+digraphs hb   8213  "  0x2015  ―  -3      Horizontal Bar
 digraphs wl   8216  "  0x2018  ‘  '6      Left Single Quotation Mark
 digraphs wr   8217  "  0x2019  ’  '9      Right Single Quotation Mark
 digraphs ql   8220  "  0x201c  “  "6      Left Double Quotation Mark
