@@ -507,6 +507,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleWinWidth',
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleStatusLinePath',
+\   'SerbanToggleTypographyHighlighting',
 \   'SerbanToc',
 \   'SerbanFzfProducerModules',
 \   'SerbanFzfGoogle3Files',
@@ -618,6 +619,7 @@ function SerbanStatusLine()
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
   let s .= '%{&foldenable ? "Ⓕ   " : ""}'   " window-local
   let s .= ObsessionStatus('Ⓢ   ', '')
+  let s .= '%{get(w:, "serban_typography_bad") ># 0 ? "Ⓣ   " : ""}'  " window-local
   let s .= '%{zoom#statusline()}' " Ⓩ       " window-local, effectively
   let s .= '%{SerbanCurrentWrap()}'         " window-local + buffer-local
   let s .= '  '
@@ -842,6 +844,8 @@ function SerbanHighlight()
   highlight SerbanConfirm            cterm=none ctermbg=8  ctermfg=13
   highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
   highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
+  highlight SerbanTypographyBad      cterm=none ctermbg=1  ctermfg=8
+  highlight SerbanTypographyGood     cterm=none ctermbg=2  ctermfg=8
   highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
   highlight BufSelectBorderHighlight cterm=none ctermbg=8  ctermfg=7
   highlight PopupSelected            cterm=none ctermbg=4  ctermfg=7
@@ -876,6 +880,8 @@ endif
   execute 'highlight SerbanConfirm            gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight SerbanWorkingDir         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
   execute 'highlight SerbanPath               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight SerbanTypographyBad      gui=none guibg=' . g:serban_solarized_red     . ' guifg=' . g:serban_solarized_base03
+  execute 'highlight SerbanTypographyGood     gui=none guibg=' . g:serban_solarized_green   . ' guifg=' . g:serban_solarized_base03
   execute 'highlight BufSelectHighlight       gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight BufSelectBorderHighlight gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PopupSelected            gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
@@ -983,6 +989,35 @@ endfunction
 function SerbanToggleStatusLinePath()
   let g:serban_statusline_path_relative = !g:serban_statusline_path_relative
   redrawstatus!
+endfunction
+
+"   | Bad | Alt | Code Point                         |
+"   |-----|:---:|------------------------------------|
+"   | ... |  …  | U+2026 Horizontal Ellipsis         |
+"   | -   |  ‐  | U+2010 Hyphen                      |
+"   | -   |  ‒  | U+2012 Figure Dash                 |
+"   | --  |  –  | U+2013 En Dash                     |
+"   | --- |  —  | U+2014 Em Dash                     |
+"   | --  |  ―  | U+2015 Horizontal Bar              |
+"   | -   |  −  | U+2212 Minus Sign                  |
+"   | -   |  ⁃  | U+2043 Hyphen Bullet               |
+"   | x   |  ✗  | U+2717 Ballot X                    |
+"   | x   |  ×  | U+00D7 Multiplication Sign         |
+"   | '   |  ′  | U+2032 Prime                       |
+"   | '   |  ‘  | U+2018 Left Single Quotation Mark  |
+"   | '   |  ’  | U+2019 Right Single Quotation Mark |
+"   | "   |  ″  | U+2033 Double Prime                |
+"   | "   |  “  | U+201C Left Double Quotation Mark  |
+"   | "   |  ”  | U+201D Right Single Quotation Mark |
+function SerbanToggleTypographyHighlighting()
+  if get(w:, 'serban_typography_bad') ># 0 || get(w:, 'serban_typography_good') ># 0
+    let w:serban_typography_bad = matchdelete(w:serban_typography_bad)
+    let w:serban_typography_good = matchdelete(w:serban_typography_good)
+    return
+  endif
+  let w:serban_typography_bad = matchadd('SerbanTypographyBad', '\v\.{3}|-|x|''|"')
+  let w:serban_typography_good = matchadd('SerbanTypographyGood',
+                                 \        '\v…|‐|‒|–|—|―|−|⁃|✗|×|′|‘|’|″|“|”')
 endfunction
 
 " FYI: The following does not work:
@@ -1588,6 +1623,7 @@ endif
   nnoremap <unique> <Leader>sm :call SerbanToggleWinWidth() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
+  nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
