@@ -13,7 +13,7 @@ mkdir -p "${HOME}/bin"
 mkdir -p "${HOME}/src"
 
 print 'Cloning clustergit repo'
-git clone --quiet --recursive \
+git clone --quiet --recurse-submodules \
   https://github.com/mnagel/clustergit.git "${HOME}/src/clustergit"
 
 print 'Copying clustergit executable into ~/bin'
