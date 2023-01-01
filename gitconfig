@@ -67,6 +67,7 @@
 
 [diff]
   context = 5
+  submodule = diff
 
 [grep]
   lineNumber = true
