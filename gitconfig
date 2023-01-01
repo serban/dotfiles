@@ -37,6 +37,7 @@
   sh = show --stat --patch
   st = status
   su = submodule update --init --recursive
+  sy = submodule summary
   ta = tag
 
   sa = stash apply

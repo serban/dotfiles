@@ -41,6 +41,7 @@ abbr --add --global grs git reset
 abbr --add --global gsh git show --stat --patch
 abbr --add --global gst git status
 abbr --add --global gsu git submodule update --init --recursive
+abbr --add --global gsy git submodule summary
 abbr --add --global gta git tag
 
 abbr --add --global gsa git stash apply
