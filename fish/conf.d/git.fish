@@ -32,7 +32,7 @@ abbr --add --global glg git log --decorate=no --oneline --regexp-ignore-case --g
 abbr --add --global glp git log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
 abbr --add --global gls git ls-files
 abbr --add --global glu git ls-files --others --exclude-standard --directory
-abbr --add --global gpl git pull
+abbr --add --global gpl git pull --recurse-submodules
 abbr --add --global gps git push
 abbr --add --global gpt git push --tags
 abbr --add --global grb git rebase
