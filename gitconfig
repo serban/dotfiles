@@ -37,6 +37,7 @@
   sh = show --stat --patch
   st = status
   su = submodule update --init --recursive
+  sr = submodule update --remote --rebase --recursive
   sy = submodule summary
   ta = tag
 
