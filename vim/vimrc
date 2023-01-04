@@ -160,6 +160,7 @@ if has('gui_macvim') && has('gui_running')
   set guifont=Monaco:h15            " Use a good font in MacVim
   set lines=32                      " Centers nicely on a 13" MacBook Pro
   set columns=90                    " Centers nicely on a 13" MacBook Pro
+  set macmeta                       " Use the option key (⌥) as a Meta key. Turn off to enable standard macOS special character keyboard shortcuts.
 endif
 
 "set columns=114                    " Put this line in gvimrc. It makes the window wider.
@@ -1626,12 +1627,13 @@ endif
 
   nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
   nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
-  nnoremap <unique> <Leader>sm :call SerbanToggleWinWidth() <CR>
+  nnoremap <unique> <Leader>sw :call SerbanToggleWinWidth() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
+  nnoremap <unique> <Leader>sm :set macmeta! <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
   nnoremap <unique> <Leader>vc :call SerbanChangeWorkingDirToCurrentFileParent() <Bar> call SerbanEchoWorkingDir() <CR>
