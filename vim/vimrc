@@ -269,17 +269,23 @@ if &term =~# 'tmux'
   let &t_PE = "\e[201~"
 endif
 
+" ------------------------------------------------------------------------------
+" META KEYS
+
 " For a given key chord `⌥ + κ` iTerm2 sends two bytes: `0x1b` + `κ`.
 " Neovim recognizes this as `<M-κ>` out of the box, but Vim does not. See:
 " • https://vi.stackexchange.com/questions/2350/how-to-map-alt-key
 " • :help :set-termcap
 if !has('nvim')
+execute "set <M-b>=\eb"
+execute "set <M-f>=\ef"
 execute "set <M-h>=\eh"
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
 execute "set <M-n>=\en"
 execute "set <M-p>=\ep"
+execute "set <M-s>=\es"
 endif
 
 " ------------------------------------------------------------------------------
@@ -348,10 +354,10 @@ let g:tagbar_width = 60
 let g:tagbar_zoomwidth = 0
 
 " ULTISNIPS
-let g:UltiSnipsExpandTrigger = '<C-Tab>'  " <Tab> works with Supertab but conflicts with YouCompleteMe
-" let g:UltiSnipsListSnippets = '<C-Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<C-Down>'
-let g:UltiSnipsJumpBackwardTrigger = '<C-Up>'
+let g:UltiSnipsListSnippets = '<M-s>'
+let g:UltiSnipsExpandTrigger = '<M-f>'
+let g:UltiSnipsJumpForwardTrigger = '<M-f>'
+let g:UltiSnipsJumpBackwardTrigger = '<M-b>'
 
 " VIM-GO
 let g:go_doc_popup_window = 1
