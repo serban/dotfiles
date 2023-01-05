@@ -1,7 +1,8 @@
 function fn
   set --local theme (bat_theme)
   fd --base-directory ~/txt --strip-cwd-prefix --type file \
-      | fzf --multi \
+      | fzf --no-sort \
+            --multi \
             --height 100% \
             --preview-window right,60% \
             --preview "bat --color always --theme '$theme' --plain ~/txt/{}" \
