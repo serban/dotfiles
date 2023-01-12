@@ -36,3 +36,20 @@ end
 function hdiu
   hg diff $argv | delta --features (dark)-unified-diff
 end
+
+# Fig
+
+function hre --argument-names changelist
+  if test -z $changelist
+    echo 'No changelist specified'
+    return 1
+  end
+
+  set --function client review-$changelist
+
+  hgd -f $client
+  hg patch $changelist
+  hg reword --message "Review of cl/$changelist"
+
+  mag $client
+end
