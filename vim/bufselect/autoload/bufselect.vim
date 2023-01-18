@@ -102,6 +102,7 @@ function bufselect#OpenMenu()
   \   'callback': 'bufselect#MenuCallback',
   \   'title': ' Buffers ',
   \   'padding': [1, 3, 1, 3],
+  \   'maxheight': &lines - 7,
   \   'highlight': 'BufSelectHighlight',
   \   'borderhighlight': ['BufSelectBorderHighlight'],
   \}
