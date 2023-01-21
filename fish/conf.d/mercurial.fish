@@ -39,13 +39,18 @@ end
 
 # Fig
 
-function hre --argument-names changelist
+function hre --argument-names changelist slug
   if test -z $changelist
     echo 'No changelist specified'
     return 1
   end
 
-  set --function client review-$changelist
+  if test -z $slug
+    echo 'No slug specified'
+    return 1
+  end
+
+  set --function client review-$changelist-$slug
 
   hgd -f $client
   hg patch $changelist
