@@ -334,7 +334,7 @@ let g:fzf_layout = {'window': {'width': 0.95, 'height': 0.90}}
 
 " FZF.VIM
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_preview_window = ['right,50%,border-left']
+let g:fzf_preview_window = ['right,border-left,50%,<86(bottom,border-top,60%,hidden)', 'ctrl-g']
 
 " NETRW
 let g:netrw_nogx = 1
