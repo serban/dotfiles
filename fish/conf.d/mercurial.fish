@@ -58,3 +58,10 @@ function hre --argument-names changelist slug
 
   mag $client
 end
+
+function hrf
+  hg status --no-status --change . \
+    | grep --invert-match 'BUILD$' \
+    | sort \
+    | sed 's/^/· /'
+end
