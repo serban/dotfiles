@@ -100,8 +100,9 @@ function glf
            | fzf --no-sort \
                  --with-nth 2.. \
                  --height 100% \
-                 --preview-window right,60% \
+                 --preview-window 'right,60%,<84(hidden)' \
                  --preview 'git show --color --stat --patch {1}' \
+                 --bind 'ctrl-g:toggle-preview' \
                  --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
                  --bind 'double-click:execute-silent(smerge search commit:{1})' \
            | cut -d ' ' -f 1 \
