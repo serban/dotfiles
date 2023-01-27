@@ -29,6 +29,9 @@ REPLACEMENTS = {
   'zau': '↑',
   'zdr': '↳',
   'zrd': '↴',
+
+  'zsh': r'¯\_(ツ)_/¯',
+  'ztf': r'(ノಠ益ಠ )ノ彡 ┻━┻',
 }
 
 APPLESCRIPT = '''
