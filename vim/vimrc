@@ -279,6 +279,9 @@ endif
 " • :help :set-termcap
 if !has('nvim')
 execute "set <M-b>=\eb"
+execute "set <M-c>=\ec"
+execute "set <M-d>=\ed"
+execute "set <M-e>=\ee"
 execute "set <M-f>=\ef"
 execute "set <M-h>=\eh"
 execute "set <M-j>=\ej"
@@ -286,7 +289,9 @@ execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
 execute "set <M-n>=\en"
 execute "set <M-p>=\ep"
+execute "set <M-r>=\er"
 execute "set <M-s>=\es"
+execute "set <M-t>=\et"
 endif
 
 " ------------------------------------------------------------------------------
@@ -1536,12 +1541,22 @@ endif
 " nnoremap <unique> <C-z>
 
   " Meta keys do not work in MacVim without setting macmeta. See :help macmeta.
+  nnoremap <unique> <M-c> r✓
+  vnoremap <unique> <M-c> r✓
+  nnoremap <unique> <M-d> r·
+  vnoremap <unique> <M-d> r·
+  nnoremap <unique> <M-e> r∅
+  vnoremap <unique> <M-e> r∅
   nnoremap <unique> <M-h> :tabmove -1 <CR>
   nnoremap <unique> <M-j> :move +1 <CR>
   nnoremap <unique> <M-k> :move -2 <CR>
   nnoremap <unique> <M-l> :tabmove +1 <CR>
   nnoremap <unique> <M-n> :bnext <CR>
   nnoremap <unique> <M-p> :bprevious <CR>
+  nnoremap <unique> <M-r> r✗
+  vnoremap <unique> <M-r> r✗
+  nnoremap <unique> <M-t> r~
+  vnoremap <unique> <M-t> r~
 
   " <C-Arrow> works in iTerm2 and MacVim. It does not work in tmux. See:
   " • https://superuser.com/questions/401926/how-to-get-shiftarrows-and-ctrlarrows-working-in-vim-in-tmux
