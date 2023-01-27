@@ -30,6 +30,8 @@ REPLACEMENTS = {
   'zdr': '↳',
   'zrd': '↴',
 
+  'zk': ':black-ack',
+
   'zsh': r'¯\_(ツ)_/¯',
   'ztf': r'(ノಠ益ಠ )ノ彡 ┻━┻',
 }
