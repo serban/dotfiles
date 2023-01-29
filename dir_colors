@@ -252,6 +252,7 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .bz     00;31
 .bz2    00;31
 .cpio   00;31
+.db     00;31
 .deb    00;31
 .dmg    00;31
 .dz     00;31
