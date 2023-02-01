@@ -11,6 +11,11 @@
       "enabled": true
     },
     {
+      "pattern": "https://listen.tidal.com/",
+      "isRegex": false,
+      "enabled": true
+    },
+    {
       "pattern": "https://musicforprogramming.net/",
       "isRegex": false,
       "enabled": true
