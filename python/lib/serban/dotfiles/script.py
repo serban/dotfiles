@@ -83,23 +83,17 @@ def heading(s: str) -> None:
   print('{} {:{pad}} {}'.format(vertical_line, s, vertical_line, pad=pad))
   print('{}{}{}'.format(lower_left, horizontal_line*(pad+2), lower_right))
 
-def getstatus(args, verbose=True) -> int:
-  """Get the exit status of a command.
+def _run_and_indent_output(args) -> int:
+  with subprocess.Popen(
+      args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True) as p:
+    for line in p.stdout:
+      if l := line.rstrip():
+        print(' ', l)
+      else:
+        print()
+  return p.returncode
 
-  Args:
-    args:
-      The command to run. See the documentation for subprocess.Popen().
-    verbose:
-      A boolean. Print the command before running it.
-
-  Returns:
-    An integer.
-  """
-  if verbose:
-    print(f'{YELLOW}⁖', shlex.join(args), RESET)
-  return subprocess.run(args).returncode
-
-def run(args, exit=True, verbose=True) -> None:
+def run(args, exit=True, verbose=True, indent=True) -> None:
   """Run a command.
 
   Args:
@@ -111,15 +105,42 @@ def run(args, exit=True, verbose=True) -> None:
       When False, ignore the failure.
     verbose:
       A boolean. Print the command before running it.
+    indent:
+      A boolean. Indent the output of the command.
   """
   if verbose:
-    print(f'{YELLOW}»', shlex.join(args), RESET)
+    print(f'{YELLOW}»', shlex.join(args), RESET, flush=True)
   try:
-    subprocess.run(args, check=True)
+    if indent:
+      if returncode := _run_and_indent_output(args) != 0:
+        raise subprocess.CalledProcessError(returncode, args)
+    else:
+      subprocess.run(args, check=True)
   except subprocess.CalledProcessError as e:
     error(e)
     if exit:
       sys.exit(e.returncode)
+
+def getstatus(args, verbose=True, indent=True) -> int:
+  """Get the exit status of a command.
+
+  Args:
+    args:
+      The command to run. See the documentation for subprocess.Popen().
+    verbose:
+      A boolean. Print the command before running it.
+    indent:
+      A boolean. Indent the output of the command.
+
+  Returns:
+    An integer.
+  """
+  if verbose:
+    print(f'{YELLOW}⁖', shlex.join(args), RESET, flush=True)
+  if indent:
+    return _run_and_indent_output(args)
+  else:
+    return subprocess.run(args).returncode
 
 # When invoking subprocess.run(), getoutput() always captures stdout from the
 # child process. However, there is a choice to be made for stderr.
@@ -174,7 +195,7 @@ def getoutput(args, exit=True, verbose=True, stderr=True) -> str:
     A string.
   """
   if verbose:
-    print(f'{YELLOW}›', shlex.join(args), RESET)
+    print(f'{YELLOW}›', shlex.join(args), RESET, flush=True)
   try:
     return subprocess.run(
         args, check=True, stdout=subprocess.PIPE,
