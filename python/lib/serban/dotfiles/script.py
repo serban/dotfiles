@@ -1,7 +1,9 @@
+import collections
 import pathlib
 import shlex
 import subprocess
 import sys
+import time
 
 RESET   = '\033[0m'
 RED     = '\033[31m'
@@ -29,6 +31,14 @@ def message(*args, **kwargs) -> None:
   """Print an info message. Takes the same arguments as built-in print()."""
   print(f'{CYAN}❋', *args, RESET, **kwargs)
 
+def success(*args, **kwargs) -> None:
+  """Print a success message. Takes the same arguments as built-in print()."""
+  print(f'{GREEN}✓', *args, RESET, **kwargs)
+
+def result(*args, **kwargs) -> None:
+  """Print a result message. Takes the same arguments as built-in print()."""
+  print(f'{MAGENTA}→', *args, RESET, **kwargs)
+
 def error(*args, **kwargs) -> None:
   """Print an error message. Takes the same arguments as built-in print()."""
   print(f'{RED}!', *args, RESET, **kwargs)
@@ -37,6 +47,21 @@ def die(*args, **kwargs) -> None:
   """Die with exit status 1 and print an error message. Same args as print()."""
   error(*args, **kwargs)
   sys.exit(1)
+
+def bullets(l: collections.abc.Iterable) -> None:
+  """Print a bulleted list from the supplied iterable."""
+  for item in l:
+    print('  ⁃', item)
+
+def map(d: collections.abc.Mapping) -> None:
+  """Print a key-value pair list from the supplied mapping."""
+  p = len(max([str(k) for k in d.keys()], key=len, default=''))
+  for k, v in d.items():
+    print(f'  {k!s:>{p}} : {v}')  # Need !s for keys that don't have __format__
+
+def timestamp() -> None:
+  """Print the current local time."""
+  print('✝', time.strftime('%Y-%m-%d %H:%M:%S'))
 
 def separator() -> None:
   """Print a nice horizontal line."""
