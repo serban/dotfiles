@@ -289,6 +289,7 @@ execute "set <M-k>=\ek"
 execute "set <M-l>=\el"
 execute "set <M-n>=\en"
 execute "set <M-p>=\ep"
+execute "set <M-q>=\eq"
 execute "set <M-r>=\er"
 execute "set <M-s>=\es"
 execute "set <M-t>=\et"
@@ -1562,6 +1563,8 @@ endif
   nnoremap <unique> <M-l> :tabmove +1 <CR>
   nnoremap <unique> <M-n> :bnext <CR>
   nnoremap <unique> <M-p> :bprevious <CR>
+  nnoremap <unique> <M-q> r?
+  vnoremap <unique> <M-q> r?
   nnoremap <unique> <M-r> r✗
   vnoremap <unique> <M-r> r✗
   nnoremap <unique> <M-t> r~
