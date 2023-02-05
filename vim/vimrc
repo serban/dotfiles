@@ -1438,6 +1438,15 @@ digraphs ko   8997  "  0x2325  ⌥          Option Key
 digraphs ku   8963  "  0x2303  ⌃          Up Arrowhead
 digraphs ks   8679  "  0x21e7  ⇧          Upwards White Arrow
 
+digraphs hd    248  "  0x00f8  ø  o/      Latin Small Letter O With Stroke
+digraphs ma    916  "  0x0394  Δ  D*      Greek Capital Letter Delta
+digraphs ag   8314  "  0x207a  ⁺  +S      Superscript Plus Sign
+digraphs mf   9837  "  0x266d  ♭  Mb      Music Flat Sign
+digraphs mn   9838  "  0x266e  ♮  Mx      Music Natural Sign
+digraphs ms   9839  "  0x266f  ♯  MX      Music Sharp Sign
+digraphs mx 119082  "  0x1d12a 𝄪          Musical Symbol Double Sharp
+digraphs mb 119083  "  0x1d12b 𝄫          Musical Symbol Double Flat
+
 digraphs n0   9450  "  0x24ea  ⓪
 digraphs n1   9312  "  0x2460  ①
 digraphs n2   9313  "  0x2461  ②
