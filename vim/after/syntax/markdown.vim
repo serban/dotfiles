@@ -4,14 +4,16 @@
 " • https://vi.stackexchange.com/q/37995
 "   ↳ Neovim wont match beginning of word with # sign
 "
+" For base highlight groups, see :help group-name.
+"
 " TODO(serban): Consider using \f (:help \f) to match paths. See :help isfname.
 
 syntax match   SerbanAcronym           '\v<\u+s?>'                    contains=@NoSpell containedin=Table,mkdNonListItemBlock,mkdListItemLine,mkdBlockquote,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlBold,htmlItalic,htmlBoldItalic
 
 syntax match   SerbanUrl               '\v<https?://\S+>'                               containedin=Table,mkdNonListItemBlock,mkdListItemLine nextgroup=SerbanLinkSeparator
 syntax match   SerbanShortLink         '\v<(b|cl|g|go|google3|g3doc|omg|yaqs)/\S+>'     containedin=Table,mkdNonListItemBlock,mkdListItemLine nextgroup=SerbanLinkSeparator
-syntax match   SerbanLinkSeparator     '\v - '                                                                                            nextgroup=SerbanLinkTitle
-syntax match   SerbanLinkTitle         '\v.*$'                                                                                            contained
+syntax match   SerbanLinkSeparator     '\v - '                                                                                                nextgroup=SerbanLinkTitle
+syntax match   SerbanLinkTitle         '\v.*$'                                                                                                contained
 syntax match   SerbanAbsolutePath      '\v(^|\s)\zs/\S+>'                               containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                             containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table,mkdNonListItemBlock,mkdListItemLine
@@ -21,6 +23,8 @@ syntax match   SerbanUserName          '\v<\l+\@'                               
 syntax match   SerbanCheck             '✓'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanCross             '✗'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanNull              '∅'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanQuestion          '\v(^|\s)\zs\?'                                  containedin=Table,mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanTilde             '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table,mkdNonListItemBlock,mkdListItemLine
 
 highlight link SerbanUrl                Underlined
 highlight link SerbanShortLink          Underlined
@@ -35,3 +39,5 @@ highlight link SerbanUserName           Statement
 highlight link SerbanCheck              Statement
 highlight link SerbanCross              Special
 highlight link SerbanNull               Comment
+highlight link SerbanQuestion           Folded
+highlight link SerbanTilde              Type
