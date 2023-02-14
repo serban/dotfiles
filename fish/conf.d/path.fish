@@ -20,11 +20,11 @@ set --global --export PATH \
     /usr/lib/google-golang/bin \
     /usr/local/git/git-google/bin \
     /usr/local/git/current/bin \
-    $HOME/homebrew/opt/python@3.10/bin \
+    $HOME/homebrew/opt/python@3.11/bin \
     $HOME/homebrew/bin \
     $HOME/homebrew/sbin \
     $HOME/homebrew/opt/sqlite/bin \
-    /opt/homebrew/opt/python@3.10/bin \
+    /opt/homebrew/opt/python@3.11/bin \
     /opt/homebrew/bin \
     /opt/homebrew/sbin \
     /opt/homebrew/opt/sqlite/bin \

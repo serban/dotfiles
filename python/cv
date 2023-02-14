@@ -36,7 +36,7 @@ packages = [
     Package('less',   ['less', '--version'],    r'less (.+) \(.*',     '2022-11-30', '590',      '608'),
     Package('lf',     ['lf', '--version'],      r'r?(.+)',             '2022-11-30', '27',       '27'),
     Package('neovim', ['nvim', '--version'],    r'NVIM v(.+)',         '2022-11-30', '0.8.1',    '0.8.1'),
-    Package('python', ['python3', '--version'], r'Python (.+)',        '2022-11-30', '3.10.8',   '3.10.8'),
+    Package('python', ['python3', '--version'], r'Python (.+)',        '2023-02-13', '3.11.2',   '3.11.2'),
     Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2022-11-30', '3.3a',     'next-3.4'),
     Package('vim',    ['vim', '--version'],     VIM_REGEX,             '2022-11-30', '9.0.0813', '9.0.0950'),
 ]
