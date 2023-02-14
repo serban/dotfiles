@@ -37,7 +37,7 @@ packages = [
     Package('lf',     ['lf', '--version'],      r'r?(.+)',             '2022-11-30', '27',       '27'),
     Package('neovim', ['nvim', '--version'],    r'NVIM v(.+)',         '2022-11-30', '0.8.1',    '0.8.1'),
     Package('python', ['python3', '--version'], r'Python (.+)',        '2023-02-13', '3.11.2',   '3.11.2'),
-    Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2022-11-30', '3.3a',     'next-3.4'),
+    Package('tmux',   ['tmux', '-V'],           r'tmux (.+)',          '2022-11-30', '3.3a',     '3.3a'),
     Package('vim',    ['vim', '--version'],     VIM_REGEX,             '2022-11-30', '9.0.0813', '9.0.0950'),
 ]
 
@@ -56,7 +56,11 @@ for p in packages:
 
   okay = packaging.version.parse(p.okay)
   want = packaging.version.parse(p.want)
-  have = packaging.version.parse(p.have)
+
+  try:
+    have = packaging.version.parse(p.have)
+  except packaging.version.InvalidVersion:
+    have = packaging.version.parse('0')
 
   if have >= okay:
     p.colo = YELLOW
