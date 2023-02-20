@@ -67,7 +67,8 @@ set --global --export LD_LIBRARY_PATH \
 
 set --global --export PYTHONPATH \
     $HOME/src/dotfiles/python/lib \
-    $PYTHONPATH
+    $HOME/src/wip/python/lib \
+    #
 
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
