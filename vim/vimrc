@@ -1316,6 +1316,11 @@ augroup serban-markdown
   autocmd!
   autocmd FileType markdown TableModeEnable
   autocmd FileType markdown autocmd BufWritePre <buffer> silent call SerbanRemoveTrailingWhitespace()
+  " Override indentation settings back to my default of two spaces per indent.
+  " Alternatively, `let g:markdown_recommended_style = 0`:
+  " ↳ https://github.com/vim/vim/blob/6b066c6d8f57aa05f1ab29ab4d098bc4bfabb1bb/runtime/ftplugin/markdown.vim#L25
+  " ↳ https://github.com/tpope/vim-markdown/commit/b78bbce3371a2eb56c89f618cd4ab2baadc9ee61
+  autocmd FileType markdown set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
   autocmd FileType markdown set iskeyword=@,48-57,-,_
   " https://github.com/vim/vim/issues/5206 - Make fillchars a local setting
   autocmd FileType markdown set foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
