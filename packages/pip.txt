@@ -2,6 +2,7 @@ iterm2
 lookatme
 numpy_financial
 packaging
+phonenumbers
 pynvim
 rich
 virtualfish
