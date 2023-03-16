@@ -10,7 +10,8 @@ function fn
             --bind 'ctrl-o:execute-silent(open -R ~/txt/{})' \
             --bind 'ctrl-r:reload(fd --base-directory ~/txt --strip-cwd-prefix --type file)' \
             --bind 'double-click:execute-silent(mvim --remote-tab-silent ~/txt/{})' \
-            --bind 'enter:execute-silent(mvim --remote-tab-silent ~/txt/{})'
+            --bind 'enter:execute-silent(mvim --remote-tab-silent ~/txt/{})' \
+            --bind 'esc:cancel'
 #           --print0 \
 #     | gsed --null-data 's|^|~/txt/|' \
 #     | xargs -0 mvim --remote-tab-silent

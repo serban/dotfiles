@@ -105,6 +105,7 @@ function glf
                  --bind 'ctrl-g:toggle-preview' \
                  --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
                  --bind 'double-click:execute-silent(smerge search commit:{1})' \
+                 --bind 'esc:cancel' \
            | cut -d ' ' -f 1 \
            | tr -d '\n' \
            | base64)
