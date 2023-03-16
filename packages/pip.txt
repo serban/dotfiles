@@ -2,6 +2,7 @@ iterm2
 lookatme
 numpy_financial
 packaging
+pendulum
 phonenumbers
 pynvim
 rich
