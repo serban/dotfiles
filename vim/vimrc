@@ -508,6 +508,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanGenerateSpellFiles',
 \   'SerbanClearRegisters',
 \   'SerbanDeleteBuffer',
+\   'SerbanSortParagraph',
 \   'SerbanFormatBullets',
 \   'SerbanFormatShortlinks',
 \   'SerbanHighlight',
@@ -757,6 +758,17 @@ endfunction
 function SerbanEasyBufferBufName(bufferNumber)
   let path = expand('#' . a:bufferNumber . ':p:~')
   return substitute(path, '\v^/google/src/cloud/[^/]+/[^/]+/google3/', '', '')
+endfunction
+
+" '{,'}sort does not work because it selects the blank lines outside the paragraph.
+"
+" Use `execute "normal! …"` instead of just `normal! …` to avoid inserting a
+" literal carriage return (aka U+0013 aka \r aka ^M aka <CR>) in the code. See:
+" https://stackoverflow.com/questions/9724123/vim-functions-when-to-use-normal-when-to-use-exec-and-when-to-use-nothing
+function SerbanSortParagraph()
+  let v = winsaveview()
+  execute "normal! vip:sort \<CR>"
+  call winrestview(v)
 endfunction
 
 function SerbanFormatBullets()
@@ -1654,6 +1666,7 @@ endif
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
+  nnoremap <unique> <Leader>ro :call SerbanSortParagraph() <CR>
   nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
   nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
   nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
