@@ -1682,6 +1682,7 @@ endif
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>sm :set macmeta! <CR>
+  nnoremap <unique> <Leader>so :messages <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
   nnoremap <unique> <Leader>vc :call SerbanChangeWorkingDirToCurrentFileParent() <Bar> call SerbanEchoWorkingDir() <CR>
