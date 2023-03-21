@@ -70,10 +70,10 @@ function hrt
   set --function width_outer 110
   set --function width_inner (math $width_outer - 2)
 
-  printf '| ✓ | %-'$width_inner's | Notes |\n' File
-  printf '|---|%s|-------|\n' (string repeat --no-newline --count $width_outer -)
+  printf '│ ✓ │ %-'$width_inner's │ ‹ Notes │\n' '‹ File'
+  printf '├───┼%s┼─────────┤\n' (string repeat --no-newline --count $width_outer ─)
 
   for f in (hg status --no-status --change . | grep --invert-match 'BUILD$' | sort)
-    printf '| · | %-'$width_inner's |       |\n' $f
+    printf '│ · │ %-'$width_inner's │         │\n' $f
   end
 end
