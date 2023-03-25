@@ -632,6 +632,9 @@ function SerbanStatusLine()
   let s .= 'U+%04B  '       " code point under cursor
   let s .= '%(%Y  %)'       " filetype
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
+  if has('gui_macvim')
+  let s .= '%{&macmeta ? "" : "Ⓜ  " }'     " buffer-local · NB: Indicator appears when macmeta is _off_
+  endif
   let s .= '%{&foldenable ? "Ⓕ   " : ""}'   " window-local
   let s .= ObsessionStatus('Ⓢ   ', '')
   let s .= '%{get(w:, "serban_typography_bad") ># 0 ? "Ⓣ   " : ""}'  " window-local
