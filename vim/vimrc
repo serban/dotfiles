@@ -303,7 +303,7 @@ let g:bufferize_command = 'botright vnew'
 let g:bufferize_focus_output = 1
 
 " BULLETS
-let g:bullets_outline_levels = ['num', 'abc', 'std*', 'std+', 'std-']
+let g:bullets_outline_levels = ['num', 'abc', 'std*', 'std+', 'std-', 'std+', 'std-']
 
 " CTRLP
 let g:ctrlp_map = ''  " Mapped below with all the others
