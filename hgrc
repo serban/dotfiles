@@ -1,4 +1,5 @@
 [extensions]
+amend =
 extdiff =
 
 [extdiff]
