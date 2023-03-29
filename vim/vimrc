@@ -1453,6 +1453,7 @@ digraphs bc   9679  "  0x25cf  ●  0M      Black Circle
 digraphs ch  10003  "  0x2713  ✓  OK      Check Mark
 digraphs cr  10007  "  0x2717  ✗  XX      Ballot X
 digraphs lc  10013  "  0x271d  ✝          Latin Cross
+digraphs ba  10020  "  0x2724  ✤          Heavy Four Balloon-Spoked Asterisk
 digraphs tl  10216  "  0x27e8  ⟨          Mathematical Left Angle Bracket
 digraphs tr  10217  "  0x27e9  ⟩          Mathematical Right Angle Bracket
 
