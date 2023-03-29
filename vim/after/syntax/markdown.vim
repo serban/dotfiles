@@ -25,6 +25,7 @@ syntax match   SerbanCross             '✗'                                    
 syntax match   SerbanNull              '∅'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanQuestion          '\v(^|\s)\zs\?'                                  containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanTilde             '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table,mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanTable             '\v[│├┼┤─]'                                      containedin=mkdNonListItemBlock
 
 highlight link SerbanUrl                Underlined
 highlight link SerbanShortLink          Underlined
@@ -41,3 +42,4 @@ highlight link SerbanCross              Special
 highlight link SerbanNull               Comment
 highlight link SerbanQuestion           Folded
 highlight link SerbanTilde              Type
+highlight link SerbanTable              PreProc
