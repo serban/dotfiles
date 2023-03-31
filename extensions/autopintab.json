@@ -46,7 +46,7 @@
       "enabled": true
     },
     {
-      "pattern": "https://app.youneedabudget.com/",
+      "pattern": "https://app.ynab.com/",
       "isRegex": false,
       "enabled": true
     }

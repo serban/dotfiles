@@ -113,7 +113,7 @@ local function openFirefoxHomeTabs()
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
       'https://mail.google.com/mail/u/0/#inbox',
       'https://calendar.google.com/calendar/u/0/r/month',
-      'https://app.youneedabudget.com',
+      'https://app.ynab.com',
   }, ' '))
   hs.timer.doAfter(0.2, function()
     hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
