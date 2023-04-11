@@ -41,6 +41,12 @@ local function logScreens()
   end
 end
 
+local function setDockAutoHide()
+  hs.osascript.applescript(
+      'tell application "System Events" to tell dock preferences to set autohide to ' ..
+      (#hs.screen.allScreens() == 1 and 'true' or 'false'))
+end
+
 local function activate(name)
   hs.application.launchOrFocus(name)
   hs.application.frontmostApplication():activate(true)
@@ -201,9 +207,11 @@ bind('8',     function() activate('YouTube Music.app') end)
 
 screenWatcher = hs.screen.watcher.new(function() -- global to prevent garbage collection
   logScreens()
+  setDockAutoHide()
 end)
 screenWatcher:start()
 logScreens()
+setDockAutoHide()
 
 local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
 for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
