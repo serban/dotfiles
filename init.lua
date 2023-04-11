@@ -199,7 +199,10 @@ bind('6',     function() openChromeHomeTabs() end)
 bind('7',     function() activate('YouTube.app') end)
 bind('8',     function() activate('YouTube Music.app') end)
 
-hs.screen.watcher.new(function() logScreens() end):start()
+screenWatcher = hs.screen.watcher.new(function() -- global to prevent garbage collection
+  logScreens()
+end)
+screenWatcher:start()
 logScreens()
 
 local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
