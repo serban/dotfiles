@@ -1,4 +1,9 @@
 function fish_prompt
+  if set --query SERBAN_FISH_PROMPT_MINIMAL
+    printf '%s%s%s ' (set_color yellow) '$' (set_color normal)
+    return
+  end
+
   set --global __fish_git_prompt_showdirtystate true
   set --global __fish_git_prompt_showuntrackedfiles true
 
