@@ -25,7 +25,6 @@ gnu-units
 go
 grep
 grip
-heroku/brew/heroku
 hexyl
 httpie
 hugo
