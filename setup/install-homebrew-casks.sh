@@ -4,4 +4,8 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-cat ~/src/dotfiles/packages/casks.txt | xargs brew install --cask
+brew tap \
+  homebrew/cask-fonts \
+  #
+
+cat ~/src/dotfiles/packages/homebrew-casks.txt | xargs brew install --cask

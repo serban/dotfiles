@@ -1,13 +1,2 @@
-audio-hijack
-browserosaurus
-firefox
-flux
-google-chrome
-grandperspective
-hammerspoon
-iterm2
-obsidian
-omnifocus
-signal
-spotify
-sublime-merge
+font-jetbrains-mono
+font-jetbrains-mono-nerd-font
