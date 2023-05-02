@@ -37,6 +37,10 @@ abbr --add --global l3 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set lu
 abbr --add --global dfs 'delta --features (dark)-side-by-side'
 abbr --add --global dfu 'delta --features (dark)-unified-diff'
 
+abbr --add --global nva NVIM_APPNAME=nvim-astro nvim
+abbr --add --global nvf NVIM_APPNAME=nvim-fresh nvim
+abbr --add --global nvl NVIM_APPNAME=nvim-lazy nvim
+
 abbr --add --global sha sha256sum
 
 # The slash in front of each name tells fd to match relative to the current
