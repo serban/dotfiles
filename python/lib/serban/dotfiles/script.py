@@ -13,6 +13,22 @@ BLUE    = '\033[34m'
 MAGENTA = '\033[35m'
 CYAN    = '\033[36m'
 
+# Setting dry_run to True makes all of the subprocess wrappers below impotent.
+# This functionality exists so that during development of a script you can
+# quickly disable command invocation but still allow the subprocess wrappers to
+# print the commands they would have executed. This mechanism allows for a quick
+# but dangerous hack, as enabling it may change the behavior of your code in
+# ways you don’t expect. Be careful!
+#
+# Turning on this flag has the following effects:
+#
+# •       run() does nothing
+# • getstatus() returns zero
+# • getoutput() returns an empty string
+# •   getline() returns an empty string
+# •  getlines() returns an empty list
+dry_run = False
+
 def tilde(p: pathlib.PurePath) -> str:
   """Replace the $HOME prefix of a PurePath with '~'. Returns a string."""
   path, home = str(p), str(pathlib.Path.home())
@@ -110,6 +126,8 @@ def run(args, exit=True, verbose=True, indent=True) -> None:
   """
   if verbose:
     print(f'{YELLOW}»', shlex.join(args), RESET, flush=True)
+  if dry_run:
+    return
   try:
     if indent:
       if returncode := _run_and_indent_output(args) != 0:
@@ -137,6 +155,8 @@ def getstatus(args, verbose=True, indent=True) -> int:
   """
   if verbose:
     print(f'{YELLOW}⁖', shlex.join(args), RESET, flush=True)
+  if dry_run:
+    return 0
   if indent:
     return _run_and_indent_output(args)
   else:
@@ -196,6 +216,8 @@ def getoutput(args, exit=True, verbose=True, stderr=True) -> str:
   """
   if verbose:
     print(f'{YELLOW}›', shlex.join(args), RESET, flush=True)
+  if dry_run:
+    return ''
   try:
     return subprocess.run(
         args, check=True, stdout=subprocess.PIPE,
