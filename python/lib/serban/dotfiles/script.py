@@ -4,6 +4,7 @@ import shlex
 import subprocess
 import sys
 import time
+import typing
 
 RESET   = '\033[0m'
 RED     = '\033[31m'
@@ -63,6 +64,14 @@ def die(*args, **kwargs) -> None:
   """Die with exit status 1 and print an error message. Same args as print()."""
   error(*args, **kwargs)
   sys.exit(1)
+
+def indent(o: typing.Any) -> None:
+  """Print an object and prefix two spaces to each non-blank line of output."""
+  for line in str(o).splitlines():
+    if l := line.rstrip():
+      print(' ', l)
+    else:
+      print()
 
 def bullets(l: collections.abc.Iterable) -> None:
   """Print a bulleted list from the supplied iterable."""
