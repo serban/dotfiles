@@ -1,5 +1,6 @@
 function g
   set --local  options (fish_opt --short=a --long=all)
+  set options $options (fish_opt --short=h --long=hidden)
   set options $options (fish_opt --short=r --long=recursive)
   set options $options (fish_opt --short=s --long=size)
   set options $options (fish_opt --short=t --long=time)
@@ -45,7 +46,7 @@ function g
   if type --quiet gls
     set binary gls
 
-    if test "$PWD" = "$HOME"
+    if test -z "$_flag_hidden" && test "$PWD" = "$HOME"
       set args $args \
           --hide=Applications \
           --hide=Data \
