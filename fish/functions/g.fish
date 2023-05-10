@@ -49,6 +49,7 @@ function g
       set args $args \
           --hide=Applications \
           --hide=Data \
+          --hide=Deletable \
           --hide=Desktop \
           --hide=Documents \
           --hide=Downloads \
