@@ -1,6 +1,7 @@
 function g
   set --local  options (fish_opt --short=a --long=all)
   set options $options (fish_opt --short=h --long=hidden)
+  set options $options (fish_opt --short=p --long=no-pager)
   set options $options (fish_opt --short=r --long=recursive)
   set options $options (fish_opt --short=s --long=size)
   set options $options (fish_opt --short=t --long=time)
@@ -64,5 +65,9 @@ function g
     end
   end
 
-  env LC_COLLATE=C $binary $args | less
+  if test -n "$_flag_no_pager"
+    env LC_COLLATE=C $binary $args
+  else
+    env LC_COLLATE=C $binary $args | less
+  end
 end
