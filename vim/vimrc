@@ -17,6 +17,7 @@ if has('nvim')
   let &packpath = &runtimepath
 endif
 
+set runtimepath^=~/src/wip/vim
 set runtimepath^=/opt/homebrew/Cellar/lilypond/*/share/lilypond/*/vim
 
 call plug#begin('~/.vim/bundle')
