@@ -492,6 +492,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanGenerateSpellFiles',
 \   'SerbanClearRegisters',
 \   'SerbanDeleteBuffer',
+\   'SerbanSaveSimpleSession',
 \   'SerbanSortParagraph',
 \   'SerbanFormatBullets',
 \   'SerbanFormatShortlinks',
@@ -510,6 +511,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanFzfProducerModules',
 \   'SerbanFzfGoogle3Files',
 \   'SerbanFzfGoogle3Folders',
+\   'SerbanFzfSimpleSession',
 \   'SerbanNewNote',
 \   'SerbanRenameNote',
 \   'SerbanOpenLink',
@@ -740,6 +742,40 @@ function SerbanDeleteEmptyBuffers(verbose)
   if a:verbose
     echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Deleted empty buffers'
   endif
+endfunction
+
+function SerbanSaveSimpleSession()
+  let prom = 'New Session › '
+  let name = trim(input(prom))
+  let date = strftime('%Y-%m-%d')
+  let file = date . ' ' . name . '.txt'
+  let path = '~/ses/' . file
+
+  if name ==# ''
+    echo '✗'
+    return
+  endif
+
+  if filereadable(expand(path))
+    redraw
+    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Session exists: ' . path
+    return
+  endif
+
+  let paths = filter(bufselect#Buffers()[1], '!empty(v:val)')
+  let paths = map(paths, {i, v -> fnamemodify(v, ':~')})
+
+  call writefile(paths, expand(path))
+endfunction
+
+function SerbanLoadSimpleSession(file)
+  let buf = bufnr()
+
+  for path in readfile(a:file)
+    execute 'edit' fnameescape(path)
+  endfor
+
+  execute 'silent' 'buffer' buf
 endfunction
 
 function SerbanEasyBufferBufName(bufferNumber)
@@ -1085,6 +1121,14 @@ function SerbanFzfGoogle3Folders()
   call fzf#run(fzf#wrap({
   \   'source': 'cat ~/src/dotfiles-google/google3-folders',
   \   'sink': 'PiperChangeDirectory',
+  \ }))
+endfunction
+
+function SerbanFzfSimpleSession()
+  call fzf#run(fzf#wrap({
+  \   'dir': '~/ses',
+  \   'source': 'fd --type file --extension txt --strip-cwd-prefix',
+  \   'sink': function('SerbanLoadSimpleSession'),
   \ }))
 endfunction
 
@@ -1621,6 +1665,7 @@ endif
   nnoremap <unique> <Leader>af :call SerbanAppendGoogle3File() <CR>
   nnoremap <unique> <Leader>ao :call SerbanAppendGoogle3Folder() <CR>
   nnoremap <unique> <Leader>am :call SerbanToc() <CR>
+  nnoremap <unique> <Leader>as :call SerbanSaveSimpleSession() <CR>
 
       nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
       nmap <unique> <Leader>cs <Plug>CtrlSFPrompt
@@ -1634,6 +1679,7 @@ endif
   nnoremap <unique> <Leader>hc :FzfCommands <CR>
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
   nnoremap <unique> <Leader>hr :FzfRg<Space>
+  nnoremap <unique> <Leader>hs :call SerbanFzfSimpleSession() <CR>
   nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
   nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
   nnoremap <unique> <Leader>hp :call SerbanFzfProducerModules() <CR>
