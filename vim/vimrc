@@ -17,6 +17,7 @@ if has('nvim')
   let &packpath = &runtimepath
 endif
 
+set packpath^=~/src/wip/vim
 set runtimepath^=~/src/wip/vim
 set runtimepath^=/opt/homebrew/Cellar/lilypond/*/share/lilypond/*/vim
 
