@@ -29,7 +29,7 @@ class Package:
 packages = [
     Package('bat',    ['bat', '--version'],     r'bat (.+)',           '2023-03-22', '0.22.1',   '0.22.1'),
     Package('delta',  ['delta', '--version'],   r'\033\[0mdelta (.+)', '2023-03-22', '0.15.1',   '0.15.1'),
-    Package('fd',     ['fd', '--version'],      r'fd (.+)',            '2023-03-22', '8.4.0',    '8.7.0'),
+    Package('fd',     ['fd', '--version'],      r'fd(?:find)? (.+)',   '2023-03-22', '8.4.0',    '8.7.0'),
     Package('fish',   ['fish', '--version'],    r'fish, version (.+)', '2023-03-22', '3.6.0',    '3.6.0'),
     Package('fzf',    ['fzf', '--version'],     r'(.+) \(.*',          '2023-03-22', '0.35.0',   '0.38.0'),
     Package('git',    ['git', '--version'],     r'git version (.+)',   '2023-03-22', '2.40.0',   '2.40.0'),
