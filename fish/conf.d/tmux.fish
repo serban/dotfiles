@@ -96,9 +96,11 @@ function mas --argument-names project
     tmux split-window -c $repo -t $target:1 -h
     tmux new-window   -c $repo -t $target:2 -n vim
     tmux new-window   -c $repo -t $target:3 -n build
-    tmux new-window   -c $repo -t $target:4 -n ag
-    tmux new-window   -c $repo -t $target:5 -n lf
-    tmux new-window   -c $HOME -t $target:6 -n home
+    tmux new-window   -c $repo -t $target:4 -n repl
+    tmux new-window   -c $repo -t $target:5 -n run
+    tmux new-window   -c $repo -t $target:6 -n ag
+    tmux new-window   -c $repo -t $target:7 -n lf
+    tmux new-window   -c $HOME -t $target:8 -n home
     tmux send-keys             -t $target:1.1 'git status' Enter
     tmux send-keys             -t $target:2.1 'vic' Enter
     tmux select-pane           -t $target:1.1
