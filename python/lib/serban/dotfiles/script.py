@@ -1,4 +1,5 @@
 import collections
+import datetime
 import pathlib
 import shlex
 import subprocess
@@ -29,6 +30,51 @@ CYAN    = '\033[36m'
 # •   getline() returns an empty string
 # •  getlines() returns an empty list
 dry_run = False
+
+# Type hints for numeric types are a mess:
+#
+# • https://peps.python.org/pep-0484/#the-numeric-tower
+# • https://docs.python.org/3/library/numbers.html#numbers.Real
+# • https://docs.python.org/3/library/typing.html#typing.SupportsInt
+# • https://docs.python.org/3/library/typing.html#typing.SupportsFloat
+# • https://github.com/python/mypy/issues/3186 - int is not a Number?
+# • https://stackoverflow.com/a/69383462/599692 - How to hint at number types
+def human_duration(d: float | datetime.timedelta, compact: bool = False) -> str:
+  """Get a human-readable representation of a duration value.
+
+  Args:
+    d:
+      A numeric value encoding seconds or a datetime.timedelta. Must be
+      non-negative. Fractional components finer than a second are discarded.
+    compact:
+      A boolean. Produce a shorter output string.
+
+  Returns:
+    A string.
+  """
+  if isinstance(d, datetime.timedelta):
+    total_seconds = int(d.total_seconds())
+  else:
+    total_seconds = int(d)
+
+  if total_seconds < 0:  # Lossy. A more strict check would be d != abs(d)
+    raise ValueError(
+        f'Duration must be non-negative. Got {d!r} = {total_seconds:,} seconds')
+
+  days,    hours_remaining_seconds = divmod(            total_seconds, 86_400)
+  hours, minutes_remaining_seconds = divmod(  hours_remaining_seconds,  3_600)
+  minutes, seconds                 = divmod(minutes_remaining_seconds,     60)
+
+  s = '' if compact else ' '
+
+  if days:
+    return f'{days:d}d{s}{hours:02d}h{s}{minutes:02d}m{s}{seconds:02d}s'
+  elif hours:
+    return               f'{hours:d}h{s}{minutes:02d}m{s}{seconds:02d}s'
+  elif minutes:
+    return                              f'{minutes:d}m{s}{seconds:02d}s'
+  else:
+    return                                               f'{seconds:d}s'
 
 def tilde(p: pathlib.PurePath) -> str:
   """Replace the $HOME prefix of a PurePath with '~'. Returns a string."""
@@ -111,7 +157,7 @@ def heading(s: str) -> None:
 def _run_and_indent_output(args) -> int:
   with subprocess.Popen(
       args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True) as p:
-    for line in p.stdout:
+    for line in p.stdout:  # type: ignore
       if l := line.rstrip():
         print(' ', l)
       else:

@@ -4,14 +4,7 @@ import argparse
 import sys
 import time
 
-
-def human_duration(total_seconds):
-  minutes, seconds = divmod(total_seconds, 60)
-
-  if minutes:
-    return f'{minutes:d}m {seconds:02d}s'
-  else:
-    return f'{seconds:d}s'
+from serban.dotfiles import script
 
 
 def parse_command_line_arguments():
@@ -36,16 +29,16 @@ def main():
   minutes, seconds = divmod(total_seconds, 60)
 
   if args.verbose:
-    print(f'Waiting {human_duration(total_seconds)}')
+    print(f'Waiting {script.human_duration(total_seconds)}')
 
   for i in range(1, total_seconds+1):
     try:
       time.sleep(1)
     except KeyboardInterrupt:
       if args.verbose:
-        print(f'\nInterrupted after {human_duration(i-1)}')
+        print(f'\nInterrupted after {script.human_duration(i-1)}')
       else:
-        print(f' {human_duration(i-1)}')
+        print(f' {script.human_duration(i-1)}')
       sys.exit(0)
     print('.', end='', flush=True)
     m, s = divmod(i, 60)
@@ -53,7 +46,7 @@ def main():
       print(f' {m:2d}m')
 
   if seconds > 0:
-    print(f' {human_duration(i)}')
+    print(f' {script.human_duration(i)}')
 
 
 if __name__ == '__main__':
