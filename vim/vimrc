@@ -7,7 +7,7 @@ if has('gui_macvim')
   set pythonthreedll=/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/Python
 endif
 
-if has('nvim')
+if has('nvim') && has('mac')
   let g:python3_host_prog = '/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin/python3'
 endif
 
