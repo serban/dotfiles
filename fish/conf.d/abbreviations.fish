@@ -34,6 +34,8 @@ abbr --add --global l1 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set lu
 abbr --add --global l2 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance 20
 abbr --add --global l3 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance 30
 
+abbr --add --global ago "ag 'TODO\(serban\)'"
+
 abbr --add --global dfs 'delta --features (dark)-side-by-side'
 abbr --add --global dfu 'delta --features (dark)-unified-diff'
 
