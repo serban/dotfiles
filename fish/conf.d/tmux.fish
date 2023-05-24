@@ -221,7 +221,7 @@ function mcd
     end
 
     tmux send-keys -t $pane C-c
-    tmux send-keys -t $pane ' cd . # mcd #' Enter
+    tmux send-keys -t $pane ' cd . ; mfs ; # mcd #' Enter
   end
 end
 
