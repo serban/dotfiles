@@ -55,12 +55,22 @@ function mcl
   end
 end
 
-function mat --argument-names session
-  if test -z $session
-    set session misc
+function mat --argument-names group
+  if test -z $group
+    set group misc
   end
 
-  tmux new-session -A -c $HOME -n Shell -s $session
+  set --function random_number (random 10 99)
+  set --function target $group
+  set --function session z-$target-$random_number
+
+  if not tmux has-session -t =$target
+    tmux new-session -c $HOME -s $target -n Shell -d
+  end
+
+  pushd $HOME
+  tmux new-session -A -s $session -t =$target \; set-option destroy-unattached
+  popd
 end
 
 function mas --argument-names project
@@ -226,7 +236,7 @@ end
 complete \
   --command mat \
   --no-files \
-  --arguments '(tmux list-sessions -F "#{session_name}")'
+  --arguments '(tmux list-sessions -F "#{session_name}" | grep --invert-match "^z-")'
 
 complete \
   --command mas \
