@@ -149,16 +149,20 @@ function mag --argument-names client subdir
       set first_window_name hg
       set first_window_cmd hxl
     end
-    tmux new-session -c $google3 -s $target   -n $first_window_name -d
-    tmux new-window  -c $google3 -t $target:2 -n vim
-    tmux new-window  -c $google3 -t $target:3 -n blaze
-    tmux new-window  -c $google3 -t $target:4 -n ag
-    tmux new-window  -c $google3 -t $target:5 -n lf
-    tmux new-window  -c $google3 -t $target:6 -n presubmit
-    tmux new-window  -c $HOME    -t $target:7 -n home
+    tmux new-session -c $google3  -s $target    -n $first_window_name -d
+    tmux new-window  -c $google3  -t $target:2  -n vim
+    tmux new-window  -c $google3  -t $target:3  -n blaze
+    tmux new-window  -c $google3  -t $target:4  -n run
+    tmux new-window  -c $google3  -t $target:5  -n ag
+    tmux new-window  -c $google3  -t $target:6  -n lf
+    tmux new-window  -c $google3  -t $target:7  -n presubmit
+    tmux new-window  -c $HOME/txt -t $target:8  -n msg
+    tmux new-window  -c $HOME/txt -t $target:9  -n txt
+    tmux new-window  -c $HOME     -t $target:10 -n gcloud
+    tmux new-window  -c $HOME     -t $target:11 -n home
     dots 3
-    tmux send-keys               -t $target:1 "$first_window_cmd" Enter
-    tmux send-keys               -t $target:2 "cd . && vim -S ~/ses/$target.vim"
+    tmux send-keys                -t $target:1  "$first_window_cmd" Enter
+    tmux send-keys                -t $target:2  "cd . && vim -S ~/ses/$target.vim"
   end
 
   pushd $google3
