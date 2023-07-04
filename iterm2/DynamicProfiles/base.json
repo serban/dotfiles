@@ -44,6 +44,7 @@
       "BM Growl": false,
       "Flashing Bell": false,
       "Visual Bell": true,
+      "Show Mark Indicators": false,
       "Close Sessions On End": true,
       "Prompt Before Closing 2": false,
       "Send Session Ended Alert": false,
