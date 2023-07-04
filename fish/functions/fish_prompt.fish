@@ -1,6 +1,13 @@
 function fish_prompt
+  set --local prompt_start  \033]133\;A\007
+  set --local command_start \033]133\;B\007
+
   if set --query SERBAN_FISH_PROMPT_MINIMAL
-    printf '%s%s%s ' (set_color yellow) '$' (set_color normal)
+    printf '%s%s%s%s %s' \
+        $prompt_start \
+        (set_color yellow) '$' \
+        (set_color normal) \
+        $command_start
     return
   end
 
@@ -26,11 +33,13 @@ function fish_prompt
   end
 
   # 🐟 🐠 🐡 ><>
-  printf '%s%s%s%s %s%s%s%s%s %s%s ' \
+  printf '%s%s%s%s%s %s%s%s%s%s %s%s %s' \
+      $prompt_start \
       (set_color red) $host \
       (set_color brmagenta) "$virtual_env" \
       (set_color blue) $cwd \
       (set_color cyan) "$git_status" \
       (set_color yellow) $suffix \
-      (set_color normal)
+      (set_color normal) \
+      $command_start
 end

@@ -1,5 +1,6 @@
 function serban_preexec --on-event fish_preexec
-  printf '%s%s%s\n' \
+  printf '%s%s%s%s\n' \
+      \033]133\;C\007 \
       (set_color yellow) (serban_time_marker) \
       (set_color normal)
 end
@@ -25,6 +26,8 @@ function serban_postexec --on-event fish_postexec
         (set_color red) $last_status_string \
         (set_color normal)
   end
+
+  printf '\033]133;D;%s\007' $last_status
 end
 
 function serban_dirchange --on-variable PWD
