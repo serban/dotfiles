@@ -49,11 +49,11 @@ function prf
     | grep --invert-match BUILD
 end
 
-abbr --add --global sj g4d @%
-abbr --add --global gcd 'g4d /(cat ~/src/dotfiles-google/google3-folders | fzf)'
-abbr --add --global hcd 'g /google/src/head/depot/google3/(cat ~/src/dotfiles-google/google3-folders | fzf)'
+abbr --add sj g4d @%
+abbr --add gcd 'g4d /(cat ~/src/dotfiles-google/google3-folders | fzf)'
+abbr --add hcd 'g /google/src/head/depot/google3/(cat ~/src/dotfiles-google/google3-folders | fzf)'
 
-abbr --add --global pbu 'g4 change --desc "g3doc bump @ "(date "+%Y-%m-%d %H:%M")'
-abbr --add --global pdc 'g4 citc -d -f'
-abbr --add --global pew 'e (g4 whatsout)'
-abbr --add --global pst 'g4 pending -l; g4 nothave'
+abbr --add pbu 'g4 change --desc "g3doc bump @ "(date "+%Y-%m-%d %H:%M")'
+abbr --add pdc 'g4 citc -d -f'
+abbr --add pew 'e (g4 whatsout)'
+abbr --add pst 'g4 pending -l; g4 nothave'

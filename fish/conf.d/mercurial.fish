@@ -1,33 +1,33 @@
-abbr --add --global had hg add
-abbr --add --global ham hg amend
-abbr --add --global hco hg commit
-abbr --add --global hdc hg diff --change
-abbr --add --global hdf hg diff --from
-abbr --add --global hdi hg diff
-abbr --add --global hev hg evolve
-abbr --add --global hlo hg log --stat
-abbr --add --global hlp hg log --stat --patch --verbose --limit 1
-abbr --add --global hme hg meld
-abbr --add --global hrb hg rebase
-abbr --add --global hrs hg resolve
-abbr --add --global hst hg status
-abbr --add --global hup hg update
+abbr --add had hg add
+abbr --add ham hg amend
+abbr --add hco hg commit
+abbr --add hdc hg diff --change
+abbr --add hdf hg diff --from
+abbr --add hdi hg diff
+abbr --add hev hg evolve
+abbr --add hlo hg log --stat
+abbr --add hlp hg log --stat --patch --verbose --limit 1
+abbr --add hme hg meld
+abbr --add hrb hg rebase
+abbr --add hrs hg resolve
+abbr --add hst hg status
+abbr --add hup hg update
 
-abbr --add --global hec 'e (hg status --no-status --change .)'
-abbr --add --global heb 'e (hg status --no-status --rev p4base)'
+abbr --add hec 'e (hg status --no-status --change .)'
+abbr --add heb 'e (hg status --no-status --rev p4base)'
 
 # Fig Aliases
-abbr --add --global hau 'hg amend && hg uploadchain && hg xl'
-abbr --add --global hae 'hg amend && hg evolve && hg uploadchain && hg xl'
-abbr --add --global huc 'hg uploadchain && hg xl'
-abbr --add --global hsy 'hg sync && hg xl'
-abbr --add --global hsu 'hg sync && hg uploadchain && hg xl'
-abbr --add --global hxl 'hg xl && hg status'
+abbr --add hau 'hg amend && hg uploadchain && hg xl'
+abbr --add hae 'hg amend && hg evolve && hg uploadchain && hg xl'
+abbr --add huc 'hg uploadchain && hg xl'
+abbr --add hsy 'hg sync && hg xl'
+abbr --add hsu 'hg sync && hg uploadchain && hg xl'
+abbr --add hxl 'hg xl && hg status'
 
 # dandavison/delta wrappers
 
-abbr --add --global hdps 'hg diff --change . | delta --features (dark)-side-by-side'
-abbr --add --global hdpu 'hg diff --change . | delta --features (dark)-unified-diff'
+abbr --add hdps 'hg diff --change . | delta --features (dark)-side-by-side'
+abbr --add hdpu 'hg diff --change . | delta --features (dark)-unified-diff'
 
 function hdis
   hg diff $argv | delta --features (dark)-side-by-side

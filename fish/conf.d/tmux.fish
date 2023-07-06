@@ -1,4 +1,4 @@
-abbr --add --global mdc tmux detach-client -s
+abbr --add mdc tmux detach-client -s
 
 function mlc
   tmux list-clients -F '#{client_termname}  #{session_name}' | sort
