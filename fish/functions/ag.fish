@@ -7,6 +7,7 @@ function ag --wraps ag
   set options $options (fish_opt --short=p --long=python)
   set options $options (fish_opt --short=r --long=rust)
   set options $options (fish_opt --short=t --long=ignore-tests)
+  set options $options (fish_opt --short=u --long=unrestricted)
   set options $options (fish_opt --short=v --long=variants)
 
   if not argparse $options -- $argv
@@ -49,6 +50,10 @@ function ag --wraps ag
 
   if test -n "$_flag_ignore_tests"
     set args $args --ignore '*_test.*'
+  end
+
+  if test -n "$_flag_unrestricted"
+    set args $args --unrestricted
   end
 
   if test -n "$_flag_variants"
