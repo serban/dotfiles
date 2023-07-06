@@ -34,4 +34,5 @@ set --global --export PATH \
     /usr/bin \
     /usr/sbin \
     /bin \
-    /sbin
+    /sbin \
+    #
