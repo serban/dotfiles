@@ -2,7 +2,7 @@ function r --wraps grep
   set --local binary grep
 
   # Use GNU grep on macOS
-  if type --quiet ggrep
+  if type --query ggrep
     set binary ggrep
   end
 

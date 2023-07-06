@@ -24,9 +24,9 @@ function e
     set stdout /dev/null
     set stderr /dev/null
 
-    if type --quiet gvim
+    if type --query gvim
       set binary gvim
-    else if type --quiet mvim
+    else if type --query mvim
       set binary mvim
     else
       echo 'Could not find gvim or mvim'

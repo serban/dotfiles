@@ -6,7 +6,7 @@ function ramdisk --argument-names size_gibibytes
     return 1
   end
 
-  if type --quiet diskutil
+  if type --query diskutil
     echo "Mounting ramdisk at /Volumes/ramdisk with size $size_gibibytes GiB"
     set --local block_size (math --scale=0 "2048 * 1024 * $size_gibibytes")
     set --local disk (string trim (hdiutil attach -nomount ram://$block_size))

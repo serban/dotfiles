@@ -46,7 +46,7 @@ function g
   end
 
   # Use GNU ls on macOS
-  if type --quiet gls
+  if type --query gls
     set binary gls
 
     if test -z "$_flag_hidden" && test "$PWD" = "$HOME"

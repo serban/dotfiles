@@ -128,9 +128,9 @@ set --global --export PAGER less
 set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
-if type --quiet dircolors
+if type --query dircolors
   eval (dircolors -c ~/.dir_colors)
-else if type --quiet gdircolors
+else if type --query gdircolors
   eval (gdircolors -c ~/.dir_colors)
 end
 
