@@ -3,6 +3,7 @@ function ag --wraps ag
   set options $options (fish_opt --short=f --long=files)
   set options $options (fish_opt --short=g --long=go)
   set options $options (fish_opt --short=h --long=html)
+  set options $options (fish_opt --short=i --long=literal)
   set options $options (fish_opt --short=l --long=list-file-types)
   set options $options (fish_opt --short=p --long=python)
   set options $options (fish_opt --short=r --long=rust)
@@ -34,6 +35,10 @@ function ag --wraps ag
 
   if test -n "$_flag_html"
     set args $args --html
+  end
+
+  if test -n "$_flag_literal"
+    set args $args --literal
   end
 
   if test -n "$_flag_list_file_types"
