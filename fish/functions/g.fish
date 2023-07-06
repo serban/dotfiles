@@ -18,6 +18,7 @@ function g
       --no-group \
       --group-directories-first \
       --human-readable \
+      --literal \
       --classify \
       --color=always
 
