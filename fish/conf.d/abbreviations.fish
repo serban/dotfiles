@@ -17,6 +17,8 @@ abbr --add cp cp -vi
 abbr --add mv mv -vi
 abbr --add rm rm -v
 
+abbr --add lc wc -l
+
 abbr --add pt pstree -g 3 -s
 
 abbr --add p3 python3 -B
