@@ -1,5 +1,6 @@
 function ag --wraps ag
   set --local  options (fish_opt --short=c --long=cpp)
+  set options $options (fish_opt --short=f --long=files)
   set options $options (fish_opt --short=g --long=go)
   set options $options (fish_opt --short=h --long=html)
   set options $options (fish_opt --short=l --long=list-file-types)
@@ -20,6 +21,10 @@ function ag --wraps ag
 
   if test -n "$_flag_cpp"
     set args $args --cc --cpp
+  end
+
+  if test -n "$_flag_files"
+    set args $args --files-with-matches
   end
 
   if test -n "$_flag_go"
