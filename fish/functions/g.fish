@@ -70,8 +70,8 @@ function g
   end
 
   if test -n "$_flag_no_pager"
-    env LC_COLLATE=C $binary $args
+    env LC_COLLATE=C $binary $args | tail -n +2
   else
-    env LC_COLLATE=C $binary $args | less
+    env LC_COLLATE=C $binary $args | tail -n +2 | less
   end
 end
