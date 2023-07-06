@@ -625,6 +625,9 @@ function SerbanStatusLine()
   let s .= '%{&foldenable ? "Ⓕ   " : ""}'   " window-local
   let s .= ObsessionStatus('Ⓢ   ', '')
   let s .= '%{get(w:, "serban_typography_bad") ># 0 ? "Ⓣ   " : ""}'  " window-local
+  if exists('g:loaded_foxytables')
+  let s .= '%{foxytables#IsEnabledInBuffer() ? "Ⓧ   " : ""}'         " buffer-local
+  endif
   let s .= '%{zoom#statusline()}' " Ⓩ       " window-local, effectively
   let s .= '%{SerbanCurrentWrap()}'         " window-local + buffer-local
   let s .= '  '
