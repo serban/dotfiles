@@ -20,7 +20,8 @@ function g
       --human-readable \
       --literal \
       --classify \
-      --color=always
+      --color \
+      #
 
   if test -n "$_flag_all"
     set args $args --almost-all
