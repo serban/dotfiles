@@ -15,7 +15,8 @@ function ag --wraps ag
   set --local args \
       --pager less \
       --color-path '01;35' \
-      --color-line-number '00;34'
+      --color-line-number '00;34' \
+      #
 
   if test -n "$_flag_cpp"
     set args $args --cc --cpp
@@ -61,7 +62,8 @@ function ag --wraps ag
         (string join '' $tokens) \
         (string join '-' $tokens) \
         (string join '_' $tokens) \
-        (string join '\s+' $tokens))
+        (string join '\s+' $tokens)) \
+        #
 
     printf '%s⁖ %s ⁙%s\n\n' (set_color magenta) $argv[1] (set_color normal)
   end
