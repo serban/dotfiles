@@ -21,6 +21,8 @@ syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                     
 syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanDateTime          '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2}(:\d{2})?)?>'  containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                         containedin=Table,mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanPend              '\v<PEND(\(serban\))?:?'                         containedin=Table,mkdNonListItemBlock,mkdListItemLine
+syntax match   SerbanDone              '\v<DONE(\(serban\))?:?'                         containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanUserName          '\v<\l+\@'                                       containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanCheck             '✓'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
 syntax match   SerbanCross             '✗'                                              containedin=Table,mkdNonListItemBlock,mkdListItemLine
@@ -38,6 +40,8 @@ highlight link SerbanHomePath           Underlined
 highlight link SerbanCurrency           Statement
 highlight link SerbanDateTime           Identifier
 highlight link SerbanTodo               Special
+highlight link SerbanPend               Type
+highlight link SerbanDone               Statement
 highlight link SerbanUserName           Statement
 highlight link SerbanCheck              Statement
 highlight link SerbanCross              Special
