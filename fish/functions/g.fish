@@ -63,7 +63,9 @@ function g
           --hide=Pictures \
           --hide=Public \
           --hide=Screenshots \
-          --hide=Workspace
+          --hide=Workspace \
+          #
+
     end
   end
 
