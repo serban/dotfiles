@@ -14,7 +14,7 @@
   cl = clone
   co = commit
   ca = commit --amend --reuse-message=HEAD
-  cb = help  # TODO: Bump
+  cb = help  # TODO(serban): Bump
   cp = cherry-pick
   di = diff --stat --patch
   ds = diff --stat --patch --staged

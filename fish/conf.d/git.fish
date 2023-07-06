@@ -18,11 +18,7 @@ abbr --add gcn git clean -d -x --dry-run
 abbr --add gcl git clone
 abbr --add gco git commit
 abbr --add gca git commit --amend --reuse-message=HEAD
-if serban_fish_version_ge 3.6.0
-abbr --add gcb --set-cursor=° git commit --message='"°Bump @ "(date "+%Y-%m-%d %H:%M:%S")'
-else
-abbr --add gcb git commit --message='"Bump @ "(date "+%Y-%m-%d %H:%M:%S")'  # TODO: Add to gitconfig
-end
+abbr --add gcb --set-cursor=° git commit --message='"°Bump @ "(date "+%Y-%m-%d %H:%M:%S")'  # TODO(serban): Add to gitconfig
 abbr --add gcp git cherry-pick
 abbr --add gdi git diff --stat --patch
 abbr --add gds git diff --stat --patch --staged
