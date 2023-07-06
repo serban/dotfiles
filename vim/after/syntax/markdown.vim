@@ -8,6 +8,8 @@
 "
 " TODO(serban): Consider using \f (:help \f) to match paths. See :help isfname.
 
+syntax case match
+
 syntax match   SerbanAcronym           '\v<\u+s?>'                    contains=@NoSpell containedin=Table,mkdNonListItemBlock,mkdListItemLine,mkdBlockquote,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlBold,htmlItalic,htmlBoldItalic
 
 syntax match   SerbanUrl               '\v<https?://\S+>'                               containedin=Table,mkdNonListItemBlock,mkdListItemLine nextgroup=SerbanLinkSeparator
