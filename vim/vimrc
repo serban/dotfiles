@@ -384,6 +384,32 @@ let g:commentary_map_backslash = 0  " Disable deprecated mappings
 let g:mw_no_mappings = 0
 let g:mwAutoSaveMarks = 0
 
+" VIM-MARKDOWN (TPOPE)
+let g:markdown_yaml_head = 1
+let g:markdown_fenced_languages = [
+\   'bash',
+\   'fish',
+\   'c',
+\   'cpp',
+\   'go',
+\   'java',
+\   'javascript',
+\   'kotlin',
+\   'lua',
+\   'perl',
+\   'python',
+\   'rust',
+\   'sql',
+\   'swift',
+\   'vim',
+\   'css',
+\   'html',
+\   'proto',
+\   'json',
+\   'toml',
+\   'yaml',
+\]
+
 " VIM-MARKDOWN-FOLDING
 let g:markdown_fold_override_foldtext = 0
 
