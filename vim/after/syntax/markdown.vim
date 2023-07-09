@@ -14,8 +14,8 @@ syntax match   SerbanAcronym           '\v<\u+s?>'        transparent contains=@
 
 syntax match   SerbanUrl               '\v<https?://\S+>'                               containedin=Table nextgroup=SerbanLinkSeparator
 syntax match   SerbanShortLink         '\v<(b|cl|g|go|google3|g3doc|omg|yaqs)/\S+>'     containedin=Table nextgroup=SerbanLinkSeparator
-syntax match   SerbanLinkSeparator     '\v - '                                                            nextgroup=SerbanLinkTitle
-syntax match   SerbanLinkTitle         '\v.*$'                                                            contained
+syntax match   SerbanLinkSeparator     '\v - '                                                            nextgroup=SerbanLinkTitle     contained
+syntax match   SerbanLinkTitle         '\v[^│]+\ze(│|$)'                                                                                contained
 syntax match   SerbanAbsolutePath      '\v(^|\s)\zs/\S+>'                               containedin=Table
 syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                             containedin=Table
 syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table
