@@ -897,75 +897,75 @@ function SerbanHighlight()
   " cyan       6  #2aa198
   " orange     9  #cb4b16
   " violet    13  #6c71c4
-  highlight VertSplit                cterm=none ctermbg=8  ctermfg=0
-  highlight StatusLine               cterm=none ctermbg=5  ctermfg=8
-  highlight StatusLineNC             cterm=none ctermbg=0  ctermfg=7
-  highlight StatusLineTerm           cterm=none ctermbg=2  ctermfg=8
-  highlight StatusLineTermNC         cterm=none ctermbg=0  ctermfg=7
-  highlight SignColumn               cterm=none ctermbg=8  ctermfg=12
-  highlight TabLineFill              cterm=none ctermbg=0  ctermfg=3
-  highlight TabLine                  cterm=none ctermbg=0  ctermfg=7
-  highlight TabLineSel               cterm=none ctermbg=5  ctermfg=8
-  highlight Folded                   cterm=none ctermbg=8  ctermfg=13
-  highlight FoldColumn               cterm=none ctermbg=0  ctermfg=13
-  highlight NonText                  cterm=none ctermbg=8  ctermfg=0
-  highlight qfFileName               cterm=none ctermbg=8  ctermfg=13
-  highlight QuickFixLine             cterm=none ctermbg=0  ctermfg=13
-  highlight SerbanConfirm            cterm=none ctermbg=8  ctermfg=13
-  highlight SerbanWorkingDir         cterm=none ctermbg=8  ctermfg=10
-  highlight SerbanPath               cterm=none ctermbg=8  ctermfg=7
-  highlight SerbanTypographyBad      cterm=none ctermbg=1  ctermfg=8
-  highlight SerbanTypographyGood     cterm=none ctermbg=2  ctermfg=8
-  highlight BufSelectHighlight       cterm=none ctermbg=8  ctermfg=7
-  highlight BufSelectBorderHighlight cterm=none ctermbg=8  ctermfg=7
-  highlight PopupSelected            cterm=none ctermbg=4  ctermfg=7
-  highlight Pmenu                    cterm=none ctermbg=0  ctermfg=7
-  highlight PmenuSel                 cterm=none ctermbg=4  ctermfg=7
-  highlight PmenuSbar                cterm=none ctermbg=10 ctermfg=7
-  highlight PmenuThumb               cterm=none ctermbg=14 ctermfg=7
-  highlight goSameId                 cterm=none ctermbg=11 ctermfg=8
-  highlight ctrlsfFilename           cterm=none ctermbg=1  ctermfg=8
-  highlight ctrlsfCuttingLine        cterm=none ctermbg=8  ctermfg=1
-  highlight ctrlsfLnumUnmatch        cterm=none ctermbg=0  ctermfg=12
-  highlight ctrlsfLnumMatch          cterm=none ctermbg=0  ctermfg=12
-  highlight ctrlsfMatch              cterm=none            ctermfg=1
+  highlight VertSplit                           cterm=none ctermbg=8  ctermfg=0
+  highlight StatusLine                          cterm=none ctermbg=5  ctermfg=8
+  highlight StatusLineNC                        cterm=none ctermbg=0  ctermfg=7
+  highlight StatusLineTerm                      cterm=none ctermbg=2  ctermfg=8
+  highlight StatusLineTermNC                    cterm=none ctermbg=0  ctermfg=7
+  highlight SignColumn                          cterm=none ctermbg=8  ctermfg=12
+  highlight TabLineFill                         cterm=none ctermbg=0  ctermfg=3
+  highlight TabLine                             cterm=none ctermbg=0  ctermfg=7
+  highlight TabLineSel                          cterm=none ctermbg=5  ctermfg=8
+  highlight Folded                              cterm=none ctermbg=8  ctermfg=13
+  highlight FoldColumn                          cterm=none ctermbg=0  ctermfg=13
+  highlight NonText                             cterm=none ctermbg=8  ctermfg=0
+  highlight qfFileName                          cterm=none ctermbg=8  ctermfg=13
+  highlight QuickFixLine                        cterm=none ctermbg=0  ctermfg=13
+  highlight SerbanConfirm                       cterm=none ctermbg=8  ctermfg=13
+  highlight SerbanWorkingDir                    cterm=none ctermbg=8  ctermfg=10
+  highlight SerbanPath                          cterm=none ctermbg=8  ctermfg=7
+  highlight SerbanTypographyBad                 cterm=none ctermbg=1  ctermfg=8
+  highlight SerbanTypographyGood                cterm=none ctermbg=2  ctermfg=8
+  highlight BufSelectHighlight                  cterm=none ctermbg=8  ctermfg=7
+  highlight BufSelectBorderHighlight            cterm=none ctermbg=8  ctermfg=7
+  highlight PopupSelected                       cterm=none ctermbg=4  ctermfg=7
+  highlight Pmenu                               cterm=none ctermbg=0  ctermfg=7
+  highlight PmenuSel                            cterm=none ctermbg=4  ctermfg=7
+  highlight PmenuSbar                           cterm=none ctermbg=10 ctermfg=7
+  highlight PmenuThumb                          cterm=none ctermbg=14 ctermfg=7
+  highlight goSameId                            cterm=none ctermbg=11 ctermfg=8
+  highlight ctrlsfFilename                      cterm=none ctermbg=1  ctermfg=8
+  highlight ctrlsfCuttingLine                   cterm=none ctermbg=8  ctermfg=1
+  highlight ctrlsfLnumUnmatch                   cterm=none ctermbg=0  ctermfg=12
+  highlight ctrlsfLnumMatch                     cterm=none ctermbg=0  ctermfg=12
+  highlight ctrlsfMatch                         cterm=none            ctermfg=1
 if !has('nvim')
-  highlight SpellBad                 cterm=underline       ctermul=1
-  highlight SpellCap                 cterm=underline       ctermul=3
-  highlight SpellLocal               cterm=underline       ctermul=6
-  highlight SpellRare                cterm=underline       ctermul=6
+  highlight SpellBad                            cterm=underline       ctermul=1
+  highlight SpellCap                            cterm=underline       ctermul=3
+  highlight SpellLocal                          cterm=underline       ctermul=6
+  highlight SpellRare                           cterm=underline       ctermul=6
 endif
 
-  execute 'highlight VertSplit                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
-  execute 'highlight StatusLine               gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
-  execute 'highlight StatusLineNC             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight StatusLineTerm           gui=none guibg=' . g:serban_solarized_green   . ' guifg=' . g:serban_solarized_base03
-  execute 'highlight StatusLineTermNC         gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight Folded                   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight FoldColumn               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight NonText                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
-  execute 'highlight qfFileName               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight QuickFixLine             gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight SerbanConfirm            gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight SerbanWorkingDir         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
-  execute 'highlight SerbanPath               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight SerbanTypographyBad      gui=none guibg=' . g:serban_solarized_red     . ' guifg=' . g:serban_solarized_base03
-  execute 'highlight SerbanTypographyGood     gui=none guibg=' . g:serban_solarized_green   . ' guifg=' . g:serban_solarized_base03
-  execute 'highlight BufSelectHighlight       gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight BufSelectBorderHighlight gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight PopupSelected            gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight Pmenu                    gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight PmenuSel                 gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight PmenuSbar                gui=none guibg=' . g:serban_solarized_base01  . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight PmenuThumb               gui=none guibg=' . g:serban_solarized_base1   . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight SpellBad                 gui=underline'                                . ' guisp=' . g:serban_solarized_red
-  execute 'highlight SpellCap                 gui=underline'                                . ' guisp=' . g:serban_solarized_yellow
-  execute 'highlight SpellLocal               gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
-  execute 'highlight SpellRare                gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
+  execute 'highlight VertSplit                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
+  execute 'highlight StatusLine                 gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
+  execute 'highlight StatusLineNC               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight StatusLineTerm             gui=none guibg=' . g:serban_solarized_green   . ' guifg=' . g:serban_solarized_base03
+  execute 'highlight StatusLineTermNC           gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight Folded                     gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight FoldColumn                 gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight NonText                    gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
+  execute 'highlight qfFileName                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight QuickFixLine               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanConfirm              gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanWorkingDir           gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
+  execute 'highlight SerbanPath                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight SerbanTypographyBad        gui=none guibg=' . g:serban_solarized_red     . ' guifg=' . g:serban_solarized_base03
+  execute 'highlight SerbanTypographyGood       gui=none guibg=' . g:serban_solarized_green   . ' guifg=' . g:serban_solarized_base03
+  execute 'highlight BufSelectHighlight         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight BufSelectBorderHighlight   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight PopupSelected              gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight Pmenu                      gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight PmenuSel                   gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight PmenuSbar                  gui=none guibg=' . g:serban_solarized_base01  . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight PmenuThumb                 gui=none guibg=' . g:serban_solarized_base1   . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight SpellBad                   gui=underline'                                . ' guisp=' . g:serban_solarized_red
+  execute 'highlight SpellCap                   gui=underline'                                . ' guisp=' . g:serban_solarized_yellow
+  execute 'highlight SpellLocal                 gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
+  execute 'highlight SpellRare                  gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
 
   " https://github.com/vim/vim/issues/10785 - g:terminal_ansi_colors not setting background color of terminal in MacVim
   " https://github.com/vim/colorschemes/issues/198 - MacVim/GUI :terminal doesn't set Terminal background
-  execute 'highlight Terminal                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base0
+  execute 'highlight Terminal                   gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base0
 
   " From the mark.vim documentation:
   " If you want to avoid losing the highlightings on :colorscheme commands,
