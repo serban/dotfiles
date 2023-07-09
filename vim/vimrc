@@ -929,6 +929,13 @@ function SerbanHighlight()
   highlight ctrlsfLnumUnmatch                   cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfLnumMatch                     cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfMatch                         cterm=none            ctermfg=1
+  highlight markdownHeadingDelimiter            cterm=bold ctermbg=8  ctermfg=9
+  highlight markdownBlockquote                  cterm=none ctermbg=8  ctermfg=6
+  highlight markdownListMarker                  cterm=none ctermbg=8  ctermfg=4
+  highlight markdownOrderedListMarker           cterm=none ctermbg=8  ctermfg=4
+  highlight markdownCodeDelimiter               cterm=none ctermbg=8  ctermfg=11
+  highlight markdownCodeBlock                   cterm=none ctermbg=8  ctermfg=3
+  highlight markdownCode                        cterm=none ctermbg=8  ctermfg=13
 if !has('nvim')
   highlight SpellBad                            cterm=underline       ctermul=1
   highlight SpellCap                            cterm=underline       ctermul=3
@@ -958,6 +965,13 @@ endif
   execute 'highlight PmenuSel                   gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PmenuSbar                  gui=none guibg=' . g:serban_solarized_base01  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PmenuThumb                 gui=none guibg=' . g:serban_solarized_base1   . ' guifg=' . g:serban_solarized_base2
+  execute 'highlight markdownHeadingDelimiter   gui=bold guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_orange
+  execute 'highlight markdownBlockquote         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_cyan
+  execute 'highlight markdownListMarker         gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_blue
+  execute 'highlight markdownOrderedListMarker  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_blue
+  execute 'highlight markdownCodeDelimiter      gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base00
+  execute 'highlight markdownCodeBlock          gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_yellow
+  execute 'highlight markdownCode               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight SpellBad                   gui=underline'                                . ' guisp=' . g:serban_solarized_red
   execute 'highlight SpellCap                   gui=underline'                                . ' guisp=' . g:serban_solarized_yellow
   execute 'highlight SpellLocal                 gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
