@@ -49,7 +49,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'myusuf3/numbers.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -385,13 +384,6 @@ let g:commentary_map_backslash = 0  " Disable deprecated mappings
 let g:mw_no_mappings = 0
 let g:mwAutoSaveMarks = 0
 
-" VIM-MARKDOWN
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_no_default_key_mappings = 1
-
 " VIM-MARKDOWN-FOLDING
 let g:markdown_fold_override_foldtext = 0
 
@@ -508,7 +500,6 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
-\   'SerbanToc',
 \   'SerbanFzfProducerModules',
 \   'SerbanFzfGoogle3Files',
 \   'SerbanFzfGoogle3Folders',
@@ -912,7 +903,6 @@ function SerbanHighlight()
   highlight ctrlsfLnumUnmatch        cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfLnumMatch          cterm=none ctermbg=0  ctermfg=12
   highlight ctrlsfMatch              cterm=none            ctermfg=1
-  highlight mkdHeading               cterm=bold ctermbg=8  ctermfg=9
 if !has('nvim')
   highlight SpellBad                 cterm=underline       ctermul=1
   highlight SpellCap                 cterm=underline       ctermul=3
@@ -942,7 +932,6 @@ endif
   execute 'highlight PmenuSel                 gui=none guibg=' . g:serban_solarized_blue    . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PmenuSbar                gui=none guibg=' . g:serban_solarized_base01  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight PmenuThumb               gui=none guibg=' . g:serban_solarized_base1   . ' guifg=' . g:serban_solarized_base2
-  execute 'highlight mkdHeading               gui=bold guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_orange
   execute 'highlight SpellBad                 gui=underline'                                . ' guisp=' . g:serban_solarized_red
   execute 'highlight SpellCap                 gui=underline'                                . ' guisp=' . g:serban_solarized_yellow
   execute 'highlight SpellLocal               gui=underline'                                . ' guisp=' . g:serban_solarized_cyan
@@ -1071,28 +1060,6 @@ function SerbanToggleTypographyHighlighting()
   let w:serban_typography_bad = matchadd('SerbanTypographyBad', '\v\.{3}|-|x|''|"')
   let w:serban_typography_good = matchadd('SerbanTypographyGood',
                                  \        '\v…|‐|‒|–|—|―|−|⁃|✗|×|′|‘|’|″|“|”')
-endfunction
-
-" FYI: The following does not work:
-"
-"   nnoremap <unique> <Leader>am :Toc <Bar> wincmd H <CR>
-"
-" This is because the command Toc is defined as:
-"
-"   command! -buffer Toc call s:Toc()
-"
-" In order to prevent Vim from interpreting `|` as an argument to the command,
-" it would have to be defined using `command -bar`. See `help :command-bar` and
-" https://unix.stackexchange.com/questions/144568/how-do-i-write-a-command-in-vim-to-run-multiple-commands.
-function SerbanToc()
-  let id = win_getid()
-  let ln = '[TOC]\ ' . fnameescape(expand('%:t'))
-  Toc
-  execute 'setlocal statusline=' . ln
-  wincmd H
-  vertical resize 40
-  setlocal winfixwidth
-  call win_gotoid(id)
 endfunction
 
 function SerbanCommandPalette()
@@ -1668,7 +1635,6 @@ endif
   nnoremap <unique> <Leader>at :Tabularize /<Bar><CR>
   nnoremap <unique> <Leader>af :call SerbanAppendGoogle3File() <CR>
   nnoremap <unique> <Leader>ao :call SerbanAppendGoogle3Folder() <CR>
-  nnoremap <unique> <Leader>am :call SerbanToc() <CR>
   nnoremap <unique> <Leader>as :call SerbanSaveSimpleSession() <CR>
 
       nmap <unique> <Leader>cc <Plug>CtrlSFCwordExec
