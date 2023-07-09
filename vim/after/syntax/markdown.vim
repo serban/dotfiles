@@ -10,7 +10,7 @@
 
 syntax case match
 
-syntax match   SerbanAcronym           '\v<\u+s?>'                    contains=@NoSpell containedin=Table
+syntax match   SerbanAcronym           '\v<\u+s?>'        transparent contains=@NoSpell containedin=ALL
 
 syntax match   SerbanUrl               '\v<https?://\S+>'                               containedin=Table nextgroup=SerbanLinkSeparator
 syntax match   SerbanShortLink         '\v<(b|cl|g|go|google3|g3doc|omg|yaqs)/\S+>'     containedin=Table nextgroup=SerbanLinkSeparator
