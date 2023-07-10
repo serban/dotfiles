@@ -25,6 +25,7 @@ syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                 
 syntax match   SerbanPend              '\v<PEND(\(serban\))?:?'                         containedin=Table
 syntax match   SerbanDone              '\v<DONE(\(serban\))?:?'                         containedin=Table
 syntax match   SerbanUserName          '\v<\l+\@'                                       containedin=Table
+syntax match   SerbanDot               '·'                                              containedin=Table
 syntax match   SerbanCheck             '✓'                                              containedin=Table
 syntax match   SerbanCross             '✗'                                              containedin=Table
 syntax match   SerbanNull              '∅'                                              containedin=Table
@@ -45,6 +46,7 @@ highlight link SerbanTodo               Special
 highlight link SerbanPend               Type
 highlight link SerbanDone               Statement
 highlight link SerbanUserName           Statement
+highlight link SerbanDot                Type
 highlight link SerbanCheck              Statement
 highlight link SerbanCross              Special
 highlight link SerbanNull               Comment
