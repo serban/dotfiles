@@ -24,6 +24,7 @@ abbr --add pt pstree -g 3 -s
 abbr --add p3 python3 -B
 abbr --add p8 ping 8.8.8.8
 
+abbr --add au 'sudo apt update && apt list --upgradable'
 abbr --add bu 'brew update && header Outdated Formulae && brew outdated'
 abbr --add it 'python3 -B ~/src/dotfiles/iterm2/Scripts/local.py'
 abbr --add jd jackd --driver coreaudio --rate 44100
