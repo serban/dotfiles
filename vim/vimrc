@@ -1489,6 +1489,7 @@ digraphs ge   8805  "  0x2265  ≥  >=      Greater-Than Or Equal To
 digraphs bn   9004  "  0x232c  ⌬          Benzene Ring
 digraphs bs   9632  "  0x25a0  ■  fS      Black Square
 digraphs bc   9679  "  0x25cf  ●  0M      Black Circle
+digraphs gr   9881  "  0x2699  ⚙          Gear
 digraphs ch  10003  "  0x2713  ✓  OK      Check Mark
 digraphs cr  10007  "  0x2717  ✗  XX      Ballot X
 digraphs lc  10013  "  0x271d  ✝          Latin Cross
