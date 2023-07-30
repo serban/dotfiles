@@ -32,6 +32,7 @@ psmisc
 python3
 python3-pip
 ripgrep
+rsync
 silversearcher-ag
 tmux
 tree
