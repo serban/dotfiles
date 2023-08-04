@@ -334,6 +334,7 @@ let g:EditorConfig_exclude_patterns = ['.\+\.go$']  " Custom indentation for gol
 
 " FZF
 let g:fzf_layout = {'window': {'width': 0.95, 'height': 0.90}}
+let g:fzf_history_dir = tempname() . '/' . 'fzf'    " fzf#wrap() creates this automatically when invoked
 
 " FZF.VIM
 let g:fzf_command_prefix = 'Fzf'
@@ -1103,7 +1104,7 @@ function SerbanToggleTypographyHighlighting()
 endfunction
 
 function SerbanCommandPalette()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-command-palette', {
   \   'source': map(copy(g:serban_command_palette_commands),
   \                 {_, v -> substitute(v, '\v^Serban', '', '')}),
   \   'sink': function('SerbanCommandPaletteRun'),
@@ -1116,27 +1117,27 @@ function SerbanCommandPaletteRun(cmd)
 endfunction
 
 function SerbanFzfProducerModules()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-producer-modules', {
   \   'source': 'fd --type file --strip-cwd-prefix ProducerModule.java',
   \ }))
 endfunction
 
 function SerbanFzfGoogle3Files()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-google3-files', {
   \   'source': 'cat ~/src/dotfiles-google/google3-files',
   \   'sink': 'PiperOpenPath',
   \ }))
 endfunction
 
 function SerbanFzfGoogle3Folders()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-google3-folders', {
   \   'source': 'cat ~/src/dotfiles-google/google3-folders',
   \   'sink': 'PiperChangeDirectory',
   \ }))
 endfunction
 
 function SerbanFzfSimpleSession()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-simple-session', {
   \   'dir': '~/ses',
   \   'source': 'fd --type file --extension txt --strip-cwd-prefix',
   \   'sink': function('SerbanLoadSimpleSession'),
@@ -1144,7 +1145,7 @@ function SerbanFzfSimpleSession()
 endfunction
 
 function SerbanNewNote()
-  call fzf#run(fzf#wrap({
+  call fzf#run(fzf#wrap('serban-new-note', {
   \   'dir': '~/txt',
   \   'source': "echo && fd --type directory --strip-cwd-prefix | sed 's|/$||'",
   \   'sink': function('SerbanNewNoteInDir'),
