@@ -290,6 +290,11 @@ execute "set <M-q>=\eq"
 execute "set <M-r>=\er"
 execute "set <M-s>=\es"
 execute "set <M-t>=\et"
+
+execute "set <M-S-h>=\eH"
+execute "set <M-S-j>=\eJ"
+execute "set <M-S-k>=\eK"
+execute "set <M-S-l>=\eL"
 endif
 
 " ------------------------------------------------------------------------------
@@ -350,6 +355,10 @@ let g:numbers_exclude = ['help', 'qf', 'tagbar']
 
 " TABLE MODE
 let g:table_mode_verbose = 0
+let g:table_mode_motion_left_map  = '<M-S-h>'
+let g:table_mode_motion_right_map = '<M-S-l>'
+let g:table_mode_motion_down_map  = '<M-S-j>'
+let g:table_mode_motion_up_map    = '<M-S-k>'
 
 " TAGBAR
 let g:tagbar_indent = 0
