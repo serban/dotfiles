@@ -29,6 +29,10 @@ function cr --argument-names changelist author slug
 
   echo $head >> $path
   echo >> $path
+  echo '```fish' >> $path
+  echo "mag review-$changelist-$slug" (cat ~/src/dotfiles-google/google3-folders | fzf) >> $path
+  echo '```' >> $path
+  echo >> $path
 
   ssh monk "fish -c 'hgd -f $client && hg patch $changelist'"
   ssh monk "fish -c 'hgd $client && hrt'" | grep --extended-regexp '^(│|├)' >> $path
