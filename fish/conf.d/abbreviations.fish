@@ -48,6 +48,8 @@ abbr --add nvl NVIM_APPNAME=nvim-lazy nvim
 
 abbr --add sha sha256sum
 
+abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
+
 # The slash in front of each name tells fd to match relative to the current
 # directory. Without the slash, fd excludes any file matching the name at any
 # level below the current one. For example, if run from $HOME, this excludes
