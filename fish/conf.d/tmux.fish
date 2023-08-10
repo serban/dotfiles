@@ -49,9 +49,12 @@ function mlv
 end
 
 function mcl
-  tmux list-sessions -F '#{?session_attached,*, } #{session_name}' \
-      | grep '^  z-' | string trim | while read --line session
+  for session in (
+      tmux list-sessions -F '#{?session_attached,*, } #{session_name}' \
+          | grep '^  z-' \
+          | string trim)
     tmux kill-session -t =$session
+    echo "Killed session $session"
   end
 end
 
@@ -184,10 +187,17 @@ function mkg
     return 1
   end
 
-  tmux list-sessions \
-      -f "#{==:#{session_group},$group}" \
-      -F '#{session_name}' \
-      | while read --line session
+  # According to the fish documentation on command substitution, “the inner
+  # command is run first and has to complete before the outer command can even
+  # be started”. This behavior is important in order to avoid concurrency issues
+  # calling `tmux kill-session` at the same time as `tmux list-sessions` is
+  # still running. This may have happened before when the loop below was
+  # constructed using `tmux list-sessions … | while read --line session` instead
+  # of with `for session in (tmux list-sessions …)`.
+  for session in (
+      tmux list-sessions \
+          -f "#{==:#{session_group},$group}" \
+          -F '#{session_name}')
     tmux kill-session -t =$session
     if test -z $_flag_quiet
       echo "Killed session $session"
