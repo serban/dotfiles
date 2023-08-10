@@ -8,6 +8,7 @@ curl
 dateutils
 dnsutils
 editorconfig
+elfutils
 fd-find
 fish
 fzf
