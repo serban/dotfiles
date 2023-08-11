@@ -5,7 +5,7 @@ function mlc
 end
 
 function mls
-  tmux list-sessions -F '#{?session_attached,*, } #{session_name}'
+  tmux list-sessions -F '#{?session_attached,✻, } #{session_name}'
 end
 
 function mlv
