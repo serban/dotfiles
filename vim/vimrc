@@ -395,6 +395,7 @@ let g:mw_no_mappings = 0
 let g:mwAutoSaveMarks = 0
 
 " VIM-MARKDOWN (TPOPE)
+let g:markdown_minlines = 200
 let g:markdown_yaml_head = 1
 let g:markdown_fenced_languages = [
 \   'bash',
