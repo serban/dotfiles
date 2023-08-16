@@ -194,7 +194,7 @@ set hlsearch                        " Highlight search results
 set incsearch                       " Search as you type
 set ignorecase                      " Case insensitive when searching...
 set smartcase                       " unless there's an uppercase character in the search string
-set gdefault                        " Replace all occurrences on a line by default (s/old/new/g)
+set nogdefault                      " Do not replace all occurrences on a line by default (s/old/new/g). Enabling gdefault inverts the meaning of the :substitute 'g' flag, which is unexpected and breaks plugins.
 set nowrapscan                      " Do not wrap around the end of the file when searching
 
 set wildmenu                        " Turn on visual selection of command line completions
@@ -827,21 +827,21 @@ function SerbanSortParagraph()
 endfunction
 
 function SerbanFormatBullets()
-  silent! %s/\v^[+-] /* /g
-  silent! %s/\v^  [*-] /  + /g
-  silent! %s/\v^    [*+] /    - /g
-  silent! %s/\v^      [*-] /      + /g
-  silent! %s/\v^        [*+] /        - /g
-  silent! %s/\v^          [*-] /          + /g
-  silent! %s/\v^            [*+] /            - /g
-  silent! %s/\v^              [*-] /              + /g
-  silent! %s/\v^                [*+] /                - /g
-  silent! %s/\v^                  [*-] /                  + /g
-  silent! %s/\v^                    [*+] /                    - /g
-  silent! %s/\v^                      [*-] /                      + /g
-  silent! %s/\v^                        [*+] /                        - /g
-  silent! %s/\v^                          [*-] /                          + /g
-  silent! %s/\v^                            [*+] /                            - /g
+  silent! %s/\v^[+-] /* /
+  silent! %s/\v^  [*-] /  + /
+  silent! %s/\v^    [*+] /    - /
+  silent! %s/\v^      [*-] /      + /
+  silent! %s/\v^        [*+] /        - /
+  silent! %s/\v^          [*-] /          + /
+  silent! %s/\v^            [*+] /            - /
+  silent! %s/\v^              [*-] /              + /
+  silent! %s/\v^                [*+] /                - /
+  silent! %s/\v^                  [*-] /                  + /
+  silent! %s/\v^                    [*+] /                    - /
+  silent! %s/\v^                      [*-] /                      + /
+  silent! %s/\v^                        [*+] /                        - /
+  silent! %s/\v^                          [*-] /                          + /
+  silent! %s/\v^                            [*+] /                            - /
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted bullets'
 endfunction
 
@@ -1033,7 +1033,7 @@ function SerbanRemoveHttpScheme()
 endfunction
 
 function SerbanRemoveTrailingWhitespace()
-  silent! %s/\v\s+$//g
+  silent! %s/\v\s+$//
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed trailing whitespace'
 endfunction
 
