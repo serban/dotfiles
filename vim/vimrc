@@ -1169,6 +1169,7 @@ function SerbanNewNoteInDir(dir)
   let head = '# ' . date . ' - ' . name
   let file = date . ' ' . name . '.md'
   let path = '~/txt/' . (a:dir ==# '' ? file : a:dir . '/' . file)
+  let cont = [head, '', '‣ Draft']
 
   if name ==# ''
     echo '✗'
@@ -1182,9 +1183,9 @@ function SerbanNewNoteInDir(dir)
   endif
 
   execute 'edit' path
-  call setline(1, head)
+  call setline(1, cont)  " setline() writes multiple lines when the second argument is a list
   execute 'write'
-  normal! $
+  normal! G$
 endfunction
 
 function SerbanRenameNote()
