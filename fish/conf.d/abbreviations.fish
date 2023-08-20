@@ -59,7 +59,7 @@ abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
 # * https://docs.rs/ignore/latest/ignore/struct.WalkBuilder.html
 #
 # Tested on 2021-12-22 with fd 8.3.0.
-abbr --add fdh 'fd -E /Data -E /Library -E /Movies -E /Music -E /Pictures -E /go -E /oss'
+abbr --add fdh 'fd -E /go -E /oss -E /Library -E /Movies -E /Music -E /Pictures -E /Data'
 
 abbr --add bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
