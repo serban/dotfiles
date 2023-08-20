@@ -1407,8 +1407,10 @@ augroup end
 " those in subdirectories.
 augroup serban-text
   autocmd!
-  autocmd BufNewFile  ~/txt/*.md silent call SerbanWrapNone()
-  autocmd BufReadPost ~/txt/*.md silent call SerbanWrapNone()
+  autocmd BufNewFile  ~/txt/*.md set textwidth=140
+  autocmd BufNewFile  ~/txt/*.md silent call SerbanWrapHint()
+  autocmd BufReadPost ~/txt/*.md set textwidth=140
+  autocmd BufReadPost ~/txt/*.md silent call SerbanWrapHint()
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/txt/*.md silent call SerbanRemoveHttpScheme()
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
