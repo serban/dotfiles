@@ -28,6 +28,7 @@ abbr --add au 'sudo apt update && apt list --upgradable'
 abbr --add bu 'brew update && header Outdated Formulae && brew outdated'
 abbr --add it 'python3 -B ~/src/dotfiles/iterm2/Scripts/local.py'
 abbr --add jd jackd --driver coreaudio --rate 44100
+abbr --add ws 'mkdir -p ~/Workspace/(date +%Y-%m-%d) && cd ~/Workspace/(date +%Y-%m-%d) && n'
 
 abbr --add gc gcert
 
