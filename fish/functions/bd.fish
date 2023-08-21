@@ -5,7 +5,7 @@ function bd
     return
   end
 
-  set --local packages (cat ~/src/dotfiles/packages/homebrew-{core,dev,media}.txt)
+  set --local packages (cat ~/src/dotfiles/packages/homebrew-{core,dev,fun,media}.txt)
   set --local output_dir (gmktemp --directory --tmpdir 'bd.XXXXXX')
 
   set --local expected          '1-expected.txt'
