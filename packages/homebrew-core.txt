@@ -39,6 +39,7 @@ md5deep
 moreutils
 neovim
 newsboat
+openssh
 pastel
 procs
 pstree
