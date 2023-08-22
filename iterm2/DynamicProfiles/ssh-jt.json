@@ -1,0 +1,14 @@
+{
+  "Profiles": [
+    {
+      "Name": "jt",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark",
+      "Shortcut": "J",
+      "Title Components": 64,
+      "Custom Command": "Yes",
+      "Command": "/opt/homebrew/bin/ssh jt",
+      "Close Sessions On End": false,
+      "Guid": "870AFB97-0B0E-47C2-9561-EA741871B2BC"
+    }
+  ]
+}
