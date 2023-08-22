@@ -141,6 +141,7 @@ function mag --argument-names client subdir
   set --local google3 /google/src/cloud/serban/$client/google3
   set --local first_window_name g4
   set --local first_window_cmd pst
+  set --local vim_cmd 'cd . && mfs && pew'
 
   if test -n "$subdir"
     set google3 /google/src/cloud/serban/$client/google3/$subdir
@@ -151,6 +152,7 @@ function mag --argument-names client subdir
     if test -e /google/src/cloud/serban/$client/.citc/annotations/fig.enabled
       set first_window_name hg
       set first_window_cmd hxl
+      set vim_cmd 'cd . && mfs && hec'
     end
     tmux new-session -c $google3  -s $target    -n $first_window_name -d
     tmux new-window  -c $google3  -t $target:2  -n vim
@@ -164,8 +166,8 @@ function mag --argument-names client subdir
     tmux new-window  -c $HOME     -t $target:10 -n gcloud
     tmux new-window  -c $HOME     -t $target:11 -n home
     dots 3
-    tmux send-keys                -t $target:1  "$first_window_cmd" Enter
-    tmux send-keys                -t $target:2  "cd . && vim -S ~/ses/$target.vim"
+    tmux send-keys                -t $target:1  $first_window_cmd Enter
+    tmux send-keys                -t $target:2  $vim_cmd
   end
 
   pushd $google3
