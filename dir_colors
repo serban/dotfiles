@@ -178,6 +178,9 @@ SETGID               04;01;31   # file that is setgid (g+s)
 .xml    00;33
 .xmp    00;33
 
+# LOGS (Skinny Magenta)
+.log    00;35
+
 # ------------------------------------------------------------------------------
 
 # AUDIO (Skinny Green)
