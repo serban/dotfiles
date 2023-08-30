@@ -1378,6 +1378,12 @@ augroup serban-highlight
   autocmd ColorScheme solarized silent call SerbanHighlight()
 augroup end
 
+augroup serban-log
+  autocmd!
+  autocmd BufNewFile  *.log silent call SerbanWrapNone()
+  autocmd BufReadPost *.log silent call SerbanWrapNone()
+augroup end
+
 augroup serban-markdown
   autocmd!
   autocmd FileType markdown TableModeEnable
