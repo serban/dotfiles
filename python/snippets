@@ -7,6 +7,8 @@ import stat
 import string
 import subprocess
 
+from serban.dotfiles import script
+
 TEMPLATE = """# $DATE - Snippets
 
 ## Week of $MONTH $DAY, $YEAR
@@ -79,7 +81,7 @@ def main():
   if not this_week_path.exists():
     write_snippets_file(this_monday)
 
-  print('\033]0;Snippets\007', end='', flush=True)
+  script.title('Snippets')
   open_vim(SCRATCH_PATH, ACTIVE_PATH, last_week_path, this_week_path)
 
 
