@@ -1,280 +1,237 @@
-# Configuration file for dircolors, a utility to help you set the
-# LS_COLORS environment variable used by GNU ls with the --color option.
-# Copyright (C) 1996, 1999-2008
-# Free Software Foundation, Inc.
-# Copying and distribution of this file, with or without modification,
-# are permitted provided the copyright notice and this notice are preserved.
-# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
-# slackware version of dircolors) are recognized but ignored.
-# You can copy this file to .dir_colors in your $HOME directory to override
-# the system defaults.
-# Below, there should be one TERM entry for each termtype that is colorizable
+# Verified for GNU ls and GNU dircolors in coreutils 9.4 from Aug 29, 2023. See:
+#
+# • man 5 dir_colors
+# • man 4 console_codes
+#
+# Notable coreutils commits:
+#
+# • 0df338f6719ec2bcf1e1dea2d8b12dc66daf8a1e (2009-06-10)
+#   ↳ ls --color: do not colorize files with multiple hard links by default
+# • 24053fbd8f9bd3639e5afd88d97d7b4bd35f61f5 (2018-06-16)
+#   ↳ ls: ignore case when coloring file extensions
+# • 6b5134770d35b045e5a9219bf4a216324e0113d3 (2022-04-03)
+#   ↳ ls: avoid expensive capability lookup by default
+# • 47988fad885e8129f9dc36f0ed4d63375de23603 (2022-09-04)
+#   ↳ ls: --color: honor separate sequences for extension cases
+#
+# NB: Per 6b5134770 above, do not set CAPABILITY because it is expensive. From
+# coreutils/src/ls.c:gobble_file(): capability lookup is only enabled when
+# is_colored(C_CAP), which checks that the color sequence is non-zero, is true:
+#
+#   if ((type == normal || S_ISREG (f->stat.st_mode))
+#       && print_with_color && is_colored (C_CAP))
+#     f->has_capability = has_capability_cache (full_name, f);
 
-# ------------------------------------------------------------------------------
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Normal - Regular Files                                                     │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-TERM Eterm
-TERM alacritty
-TERM ansi
-TERM color-xterm
-TERM con132x25
-TERM con132x30
-TERM con132x43
-TERM con132x60
-TERM con80x25
-TERM con80x28
-TERM con80x30
-TERM con80x43
-TERM con80x50
-TERM con80x60
-TERM cons25
-TERM console
-TERM cygwin
-TERM dtterm
-TERM eterm-color
-TERM gnome
-TERM gnome-256color
-TERM konsole
-TERM kterm
-TERM linux
-TERM linux-c
-TERM mach-color
-TERM mlterm
-TERM putty
-TERM rxvt
-TERM rxvt-cygwin
-TERM rxvt-cygwin-native
-TERM rxvt-unicode
-TERM rxvt-unicode-256color
-TERM screen
-TERM screen-256color
-TERM screen-bce
-TERM screen-w
-TERM screen.linux
-TERM screen.rxvt
-TERM tmux
-TERM tmux-256color
-TERM vt100
-TERM xterm
-TERM xterm-16color
-TERM xterm-256color
-TERM xterm-88color
-TERM xterm-color
-TERM xterm-debian
-TERM xterm-kitty
+    RESET                  0
+    NORMAL                 0
+    FILE                   0
+    MULTIHARDLINK          0
 
-# ------------------------------------------------------------------------------
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Red - Directories · Archives                                               │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-# Below are the color init strings for the basic file types. A color init
-# string consists of one or more of the following numeric codes:
-# Attribute codes:
-# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
-# Text color codes:
-# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
-# Background color codes:
-# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+    DIR                   31
+    STICKY                31
+    OTHER_WRITABLE        31
+    STICKY_OTHER_WRITABLE 31
 
-# ------------------------------------------------------------------------------
+    .7z                   31
+    .ace                  31
+    .arj                  31
+    .bz                   31
+    .bz2                  31
+    .cpio                 31
+    .db                   31
+    .deb                  31
+    .dmg                  31
+    .dz                   31
+    .gz                   31
+    .iso                  31
+    .jar                  31
+    .lzh                  31
+    .lzma                 31
+    .rar                  31
+    .rpm                  31
+    .rz                   31
+    .svgz                 31
+    .tar                  31
+    .taz                  31
+    .tbz2                 31
+    .tgz                  31
+    .tz                   31
+    .xz                   31
+    .z                    31
+    .zip                  31
+    .zoo                  31
 
-RESET                   00      # reset to "normal" color
-NORMAL                  00      # global default, although everything should be something.
-FILE                    00      # normal file
-MULTIHARDLINK           00      # regular file with more than one link
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Green - Audio · Source Code                                                │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-DIR                     00;31   # directory
-STICKY_OTHER_WRITABLE   00;31   # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE          00;31   # dir that is other-writable (o+w) and not sticky
-STICKY                  00;31   # dir with the sticky bit set (+t) and not other-writable
+    .aac                  32
+    .aif                  32
+    .aiff                 32
+    .au                   32
+    .caf                  32
+    .flac                 32
+    .m4a                  32
+    .m4b                  32
+    .m4p                  32
+    .m4r                  32
+    .mp3                  32
+    .ogg                  32
+    .ra                   32
+    .ram                  32
+    .wav                  32
+    .wma                  32
 
-LINK                    00;36   # symbolic link. (If you set this to 'target' instead of a numerical value, the color is as for the file pointed to.)
-ORPHAN                  00;36   # orphaned syminks
-MISSING                 07      # ... and the files they point to
+    .applescript          32
+    .asm                  32
+    .c                    32
+    .cc                   32
+    .cpp                  32
+    .cu                   32
+    .el                   32
+    .fish                 32
+    .go                   32
+    .java                 32
+    .js                   32
+    .kt                   32
+    .lua                  32
+    .ly                   32
+    .m                    32
+    .mm                   32
+    .php                  32
+    .pl                   32
+    .py                   32
+    .rb                   32
+    .s                    32
+    .scm                  32
+    .sh                   32
+    .sql                  32
+    .swift                32
+    .vim                  32
 
-FIFO                    01;35   # pipe
-SOCK                    01;35   # socket
-DOOR                    01;35   # door
-BLK                     01;35   # block device driver
-CHR                     01;35   # character device driver
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Yellow - Documents · Plain Text                                            │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-EXEC                 04;01;31   # files with execute permission
-SETUID               04;01;31   # file that is setuid (u+s)
-SETGID               04;01;31   # file that is setgid (g+s)
+    .doc                  33
+    .docx                 33
+    .html                 33
+    .ods                  33
+    .odt                  33
+    .pdf                  33
+    .ppt                  33
+    .pptx                 33
+    .ps                   33
+    .rtf                  33
+    .tex                  33
+    .xls                  33
+    .xlsx                 33
+    .xml                  33
+    .xmp                  33
 
-# ------------------------------------------------------------------------------
+    .md                   33
+    .org                  33
+    .rst                  33
+    .txt                  33
 
-# SOURCE CODE (Skinny Green)
-.S            00;32
-.applescript  00;32
-.asm          00;32
-.c            00;32
-.cc           00;32
-.cpp          00;32
-.cu           00;32
-.el           00;32
-.fish         00;32
-.go           00;32
-.java         00;32
-.js           00;32
-.kt           00;32
-.lua          00;32
-.ly           00;32
-.m            00;32
-.mm           00;32
-.php          00;32
-.pl           00;32
-.py           00;32
-.rb           00;32
-.s            00;32
-.scm          00;32
-.sh           00;32
-.sql          00;32
-.swift        00;32
-.vim          00;32
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Blue - MIDI · Object Files · Binary Data                                   │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-# HEADER FILES (Skinny Cyan)
-.css          00;36
-.h            00;36
-.ily          00;36
-.proto        00;36
-.ulss         00;36
+    .mid                  34
+    .midi                 34
 
-# CONFIGURATION (Bold Cyan)
-.csv          01;35
-.json         01;35
-.jsonnet      01;35
-.libsonnet    01;35
-.plist        01;35
-.tf           01;35
-.toml         01;35
-.yaml         01;35
-.yml          01;35
+    .class                34
+    .o                    34
+    .pyc                  34
 
-# BINARY DATA (Skinny Blue)
-.class        00;34
-.mid          00;34
-.midi         00;34
-.o            00;34
-.pyc          00;34
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Magenta - Images · Logs                                                    │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-# ------------------------------------------------------------------------------
+    .bmp                  35
+    .cr2                  35
+    .gif                  35
+    .heic                 35
+    .heics                35
+    .ico                  35
+    .jpeg                 35
+    .jpg                  35
+    .pbm                  35
+    .png                  35
+    .psd                  35
+    .svg                  35
+    .tif                  35
+    .tiff                 35
+    .webp                 35
+    .xcf                  35
+    .xpm                  35
 
-# DOCUMENTS (Skinny Yellow)
-.doc    00;33
-.docx   00;33
-.html   00;33
-.md     00;33
-.ods    00;33
-.odt    00;33
-.org    00;33
-.pdf    00;33
-.ppt    00;33
-.pptx   00;33
-.ps     00;33
-.rst    00;33
-.rtf    00;33
-.tex    00;33
-.txt    00;33
-.xls    00;33
-.xlsx   00;33
-.xml    00;33
-.xmp    00;33
+    .log                  35
 
-# LOGS (Skinny Magenta)
-.log    00;35
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Cyan - Symlinks · Video · Header Files                                     │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-# ------------------------------------------------------------------------------
+    SYMLINK               36
+    ORPHAN                36
+    MISSING                7
 
-# AUDIO (Skinny Green)
-.aac    00;32
-.aif    00;32
-.aiff   00;32
-.au     00;32
-.caf    00;32
-.flac   00;32
-.m4a    00;32
-.m4b    00;32
-.m4p    00;32
-.m4r    00;32
-.mp3    00;32
-.ogg    00;32
-.ra     00;32
-.ram    00;32
-.wav    00;32
-.wma    00;32
+    .asf                  36
+    .avi                  36
+    .flv                  36
+    .m4v                  36
+    .mkv                  36
+    .mov                  36
+    .mp4                  36
+    .mpeg                 36
+    .mpg                  36
+    .ogm                  36
+    .ogv                  36
+    .rm                   36
+    .vob                  36
+    .webm                 36
+    .wmv                  36
+    .y4m                  36
 
-# VIDEO (Skinny Cyan)
-.MOV    00;36
-.MP4    00;36
-.asf    00;36
-.avi    00;36
-.flv    00;36
-.m4v    00;36
-.mkv    00;36
-.mov    00;36
-.mp4    00;36
-.mpeg   00;36
-.mpg    00;36
-.ogm    00;36
-.ogv    00;36
-.rm     00;36
-.vob    00;36
-.webm   00;36
-.wmv    00;36
-.y4m    00;36
+    .css                  36
+    .h                    36
+    .ily                  36
+    .proto                36
+    .ulss                 36
 
-# IMAGES (Skinny Magenta)
-.CR2    00;35
-.GIF    00;35
-.HEIC   00;35
-.HEICS  00;35
-.JPG    00;35
-.PNG    00;35
-.bmp    00;35
-.cr2    00;35
-.gif    00;35
-.heic   00;35
-.heics  00;35
-.ico    00;35
-.jpeg   00;35
-.jpg    00;35
-.pbm    00;35
-.png    00;35
-.psd    00;35
-.svg    00;35
-.tif    00;35
-.tiff   00;35
-.webp   00;35
-.xcf    00;35
-.xpm    00;35
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Orange - Executables                                                       │
+# ╰────────────────────────────────────────────────────────────────────────────╯
 
-# ------------------------------------------------------------------------------
+    EXEC                  91
+    SETUID                91
+    SETGID                91
 
-# ARCHIVES (Skinny Red)
-.7z     00;31
-.Z      00;31
-.ace    00;31
-.arj    00;31
-.bz     00;31
-.bz2    00;31
-.cpio   00;31
-.db     00;31
-.deb    00;31
-.dmg    00;31
-.dz     00;31
-.gz     00;31
-.iso    00;31
-.jar    00;31
-.lzh    00;31
-.lzma   00;31
-.rar    00;31
-.rpm    00;31
-.rz     00;31
-.svgz   00;31
-.tar    00;31
-.taz    00;31
-.tbz2   00;31
-.tgz    00;31
-.tz     00;31
-.xz     00;31
-.z      00;31
-.zip    00;31
-.zoo    00;31
+# ╭────────────────────────────────────────────────────────────────────────────╮
+# │ Violet - Special Files · Configuration · Text Data                         │
+# ╰────────────────────────────────────────────────────────────────────────────╯
+
+    FIFO                  95
+    SOCK                  95
+    DOOR                  95
+    BLOCK                 95
+    CHAR                  95
+
+    .csv                  95
+    .json                 95
+    .jsonnet              95
+    .libsonnet            95
+    .plist                95
+    .tf                   95
+    .toml                 95
+    .yaml                 95
+    .yml                  95
