@@ -1,14 +1,12 @@
 import pathlib
-import platform
 import time
 
 import iterm2
 
 COMMANDS_DIR = pathlib.Path(pathlib.Path.home(), 'src', 'private', 'iterm2')
 
-async def main(connection):
-  hostname = platform.node().split('.')[0]
-  commands_path = COMMANDS_DIR / f'{hostname}.sh'
+async def launch(connection, name):
+  commands_path = COMMANDS_DIR / f'{name}.sh'
 
   with open(commands_path) as f:
     commands = [l for l in f.read().splitlines() if l and not l.startswith('#')]
@@ -31,6 +29,3 @@ async def main(connection):
     await sessions[i].async_send_text(c + '\n')
 
   await window.tabs[0].async_activate()
-
-if __name__ == '__main__':
-  iterm2.run_until_complete(main)
