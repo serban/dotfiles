@@ -45,6 +45,7 @@ ln -si ${DOTFILES}/blazerc              ~/.blazerc
 ln -si ${DOTFILES}/colordiffrc          ~/.colordiffrc
 ln -si ${DOTFILES}/conkyrc              ~/.conkyrc
 ln -si ${DOTFILES}/dir_colors           ~/.dir_colors
+ln -si ${DOTFILES}/gdbearlyinit         ~/.gdbearlyinit
 ln -si ${DOTFILES}/gdbinit              ~/.gdbinit
 ln -si ${DOTFILES}/gitconfig            ~/.gitconfig
 ln -si ${DOTFILES}/gitignore            ~/.gitignore
