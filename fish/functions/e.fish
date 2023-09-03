@@ -4,6 +4,7 @@ function e
   set options $options (fish_opt --short=n --long=neovim)
   set options $options (fish_opt --short=r --long=read-only)
   set options $options (fish_opt --short=t --long=tabs)
+  set options $options (fish_opt --short=u --long=unrestricted)
 
   if not argparse $options -- $argv
     return
@@ -13,6 +14,7 @@ function e
     set --export DISPLAY :0
   end
 
+  set --local fdargs
   set --local xargs '-o'
   set --local binary vim
   set --local args ''
@@ -46,12 +48,27 @@ function e
     set args $args -p
   end
 
+  if test -n "$_flag_unrestricted"
+    set fdargs --unrestricted
+  end
+
+  # See the following regarding the fd option `--strip-cwd-prefix`:
+  #
+  # • https://github.com/sharkdp/fd/issues/760
+  #   ↳ fd is vulnerable to filenames with leading dashes
+  # • https://github.com/sharkdp/fd/issues/1046
+  #   ↳ Ambiguity in piped vs not piped output
+  # • https://github.com/sharkdp/fd/pull/1115
+  #   ↳ Enable --strip-cwd-prefix by default except with -0
+  #
+  # TODO(serban): mlv does not pick up vim sessions started with `e --all`
+  # because #{pane_current_command} shows up as “fish”
   if test -n "$_flag_all"
-    find . -type f -not -path '*/.git/*' -print0 \
+    fd $fdargs --type file --print0 \
         | sort --zero-terminated \
-        | eval xargs -0 $xargs $binary $args > $stdout 2> $stderr
+        | eval xargs -0 $xargs $binary $args -- > $stdout 2> $stderr
     return
   end
 
-  eval $binary $args $argv > $stdout 2> $stderr
+  eval $binary $args -- $argv > $stdout 2> $stderr
 end

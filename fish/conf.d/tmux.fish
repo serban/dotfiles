@@ -36,6 +36,8 @@ function mlv
     end
   end
 
+  # TODO(serban): mlv does not pick up vim sessions started with `e --all`
+  # because #{pane_current_command} shows up as “fish”
   if test -z $_flag_fzf
     tmux list-panes -a \
         -f '#{m/ri:vim,#{pane_current_command}}' \
