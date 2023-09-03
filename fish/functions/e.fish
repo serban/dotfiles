@@ -15,14 +15,14 @@ function e
   end
 
   set --local fdargs
-  set --local xargs '-o'
+  set --local xargs -o
   set --local binary vim
-  set --local args ''
+  set --local args
   set --local stdout /dev/stdout
   set --local stderr /dev/stderr
 
   if test -n "$_flag_gui"
-    set xargs ''
+    set xargs
     set stdout /dev/null
     set stderr /dev/null
 
