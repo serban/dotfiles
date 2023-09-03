@@ -64,6 +64,10 @@ function e
   # TODO(serban): mlv does not pick up vim sessions started with `e --all`
   # because #{pane_current_command} shows up as “fish”
   if test -n "$_flag_all"
+    for arg in $argv
+      set --append fdargs --search-path $arg
+    end
+
     fd $fdargs --type file --print0 \
         | sort --zero-terminated \
         | eval xargs -0 $xargs $binary $args -- > $stdout 2> $stderr
