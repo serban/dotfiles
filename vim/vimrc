@@ -1789,6 +1789,10 @@ endif
 " ------------------------------------------------------------------------------
 " LOCAL SETTINGS
 
+if filereadable(expand('~/src/wip/vim/wip.vim'))
+  source ~/src/wip/vim/wip.vim
+endif
+
 if filereadable(expand('~/.vimrc_local'))
   source ~/.vimrc_local
 endif
