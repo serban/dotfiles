@@ -577,10 +577,18 @@ function SerbanSep()
 endfunction
 
 function SerbanConfirm(prompt)
-  echohl SerbanConfirm
+  echohl SerbanConfirmPrompt
   echo '■ ' . a:prompt . ' '
+  let response = nr2char(getchar()) ==# 'y'
+  if response
+    echohl SerbanConfirmYes
+    echon '✓'
+  else
+    echohl SerbanConfirmNo
+    echon '✗'
+  endif
   echohl None
-  return nr2char(getchar()) ==# 'y'
+  return response
 endfunction
 
 function SerbanDumpRuntimePath()
@@ -922,7 +930,9 @@ function SerbanHighlight()
   highlight NonText                             cterm=none ctermbg=8  ctermfg=0
   highlight qfFileName                          cterm=none ctermbg=8  ctermfg=13
   highlight QuickFixLine                        cterm=none ctermbg=0  ctermfg=13
-  highlight SerbanConfirm                       cterm=none ctermbg=8  ctermfg=13
+  highlight SerbanConfirmPrompt                 cterm=none ctermbg=8  ctermfg=13
+  highlight SerbanConfirmNo                     cterm=none ctermbg=8  ctermfg=1
+  highlight SerbanConfirmYes                    cterm=none ctermbg=8  ctermfg=2
   highlight SerbanWorkingDir                    cterm=none ctermbg=8  ctermfg=10
   highlight SerbanPath                          cterm=none ctermbg=8  ctermfg=7
   highlight SerbanTypographyBad                 cterm=none ctermbg=1  ctermfg=8
@@ -964,7 +974,9 @@ endif
   execute 'highlight NonText                    gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight qfFileName                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
   execute 'highlight QuickFixLine               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_violet
-  execute 'highlight SerbanConfirm              gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanConfirmPrompt        gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanConfirmNo            gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_red
+  execute 'highlight SerbanConfirmYes           gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_green
   execute 'highlight SerbanWorkingDir           gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
   execute 'highlight SerbanPath                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base2
   execute 'highlight SerbanTypographyBad        gui=none guibg=' . g:serban_solarized_red     . ' guifg=' . g:serban_solarized_base03
