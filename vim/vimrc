@@ -798,8 +798,9 @@ function SerbanSaveSimpleSession()
 
   if filereadable(expand(path))
     redraw
-    echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Session exists: ' . path
-    return
+    if !SerbanConfirm(path . ' ← Session exists. Overwrite?')
+      return
+    endif
   endif
 
   let paths = filter(bufselect#Buffers()[1], '!empty(v:val)')
