@@ -70,9 +70,9 @@ function e
 
     fd $fdargs --type file --print0 \
         | sort --zero-terminated \
-        | eval xargs -0 $xargs $binary $args -- > $stdout 2> $stderr
+        | xargs -0 $xargs $binary $args -- > $stdout 2> $stderr
     return
   end
 
-  eval $binary $args -- $argv > $stdout 2> $stderr
+  $binary $args -- $argv > $stdout 2> $stderr
 end
