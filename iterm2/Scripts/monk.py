@@ -3,7 +3,7 @@ import time
 
 import iterm2
 
-COMMANDS_PATH = pathlib.Path(pathlib.Path.home(), 'tmp', 'monk.sh')
+COMMANDS_PATH = pathlib.Path(pathlib.Path.home(), 'ses', 'monk.sh')
 
 async def main(connection):
   with open(COMMANDS_PATH) as f:
