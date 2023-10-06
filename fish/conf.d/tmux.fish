@@ -163,7 +163,7 @@ function mag --argument-names client subdir
     tmux new-window  -c $google3  -t $target:5  -n gcloud
     tmux new-window  -c $google3  -t $target:6  -n ag
     tmux new-window  -c $google3  -t $target:7  -n lf
-    tmux new-window  -c $google3  -t $target:8  -n presubmit
+    tmux new-window  -c $google3  -t $target:8  -n sub
     tmux new-window  -c $HOME/txt -t $target:9  -n msg
     tmux new-window  -c $HOME/txt -t $target:10 -n txt
     tmux new-window  -c $HOME/log -t $target:11 -n log
