@@ -167,7 +167,8 @@ function mag --argument-names client subdir
     tmux new-window  -c $HOME/txt -t $target:9  -n msg
     tmux new-window  -c $HOME/txt -t $target:10 -n txt
     tmux new-window  -c $HOME/log -t $target:11 -n log
-    tmux new-window  -c $HOME     -t $target:12 -n home
+    tmux new-window  -c $HOME/wks -t $target:12 -n ws
+    tmux new-window  -c $HOME     -t $target:13 -n home
     dots 3
     tmux send-keys                -t $target:1  $first_window_cmd Enter
     tmux send-keys                -t $target:2  $vim_cmd
