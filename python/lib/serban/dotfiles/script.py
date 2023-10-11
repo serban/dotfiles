@@ -185,7 +185,7 @@ def run(args, exit=True, verbose=True, indent=True) -> None:
     return
   try:
     if indent:
-      if returncode := _run_and_indent_output(args) != 0:
+      if (returncode := _run_and_indent_output(args)) != 0:
         raise subprocess.CalledProcessError(returncode, args)
     else:
       subprocess.run(args, check=True)
