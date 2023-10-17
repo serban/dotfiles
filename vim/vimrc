@@ -1412,6 +1412,7 @@ augroup serban-markdown
   " https://github.com/preservim/vim-markdown/issues/232 - Rewrapping a bullet point inserts new bullet points
   " https://github.com/preservim/vim-markdown/issues/390 - gq wrapping is still broken
   autocmd FileType markdown set comments=fb:*,fb:+,fb:-,n:> indentexpr=
+  autocmd FileType markdown iabbrev <buffer> !- --------------------------------------------------------------------------------------------------------------------------------------------
   autocmd FileType markdown iabbrev <buffer> hc ```
   autocmd FileType markdown iabbrev <buffer> h1 #
   autocmd FileType markdown iabbrev <buffer> h2 ##
