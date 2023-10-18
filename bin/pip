@@ -66,40 +66,6 @@ print '│ Pips                                                                 
 print '╰──────────────────────────────────────────────────────────────────────╯'
 print
 print '$ PIP_REQUIRE_VIRTUALENV=false /opt/homebrew/opt/python@3.11/bin/pip3'
-print
-print '╭──────────────────────────────────────────────────────────────────────╮'
-print '│ Bash Shell                                                           │'
-print '╰──────────────────────────────────────────────────────────────────────╯'
-print
-print 'To install virtualenv:       $ PIP_REQUIRE_VIRTUALENV=false pip3 install virtualenv virtualenvwrapper'
-print 'To create a new virtualenv:  $ mkvirtualenv -p python3 name'
-print 'To use a virtualenv:         $ workon virtualenv-name'
-print
-print '╭──────────────────────────────────────────────────────────────────────╮'
-print '│ Fish Shell                                                           │'
-print '╰──────────────────────────────────────────────────────────────────────╯'
-print
-print 'To install VirtualFish:      $ PIP_REQUIRE_VIRTUALENV=false pip3 install virtualfish'
-print 'To set up VirtualFish:       $ rm -vf ~/.config/fish/conf.d/virtualfish-loader.fish && vf install auto_activation'
-print 'To create a new virtualenv:  $ vf new -p python3 name'
-print 'To use a virtualenv:         $ vf activate virtualenv-name'
-print
-print '╭──────────────────────────────────────────────────────────────────────╮'
-print '│ VirtualFish                                                          │'
-print '╰──────────────────────────────────────────────────────────────────────╯'
-print
-print 'After bumping the system Python version, update ~/.config/fish/conf.d/virtualfish-loader.fish:'
-print
-print '①  $ rm -vf ~/.config/fish/conf.d/virtualfish-loader.fish'
-print '②  Open a new shell'
-print '③  $ vf install auto_activation'
-print '④  $ source ~/.config/fish/conf.d/virtualfish-loader.fish'
-print '⑤  $ vf ls --details'
-print '⑥  $ vf upgrade --rebuild --all'
-print
-print 'To upgrade pip in all virtualenvs:'
-print
-print '$ vf all pip install --upgrade pip'
 
 # In case this gets called from a script somewhere, make sure that script fails.
 exit 1
