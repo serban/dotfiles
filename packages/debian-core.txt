@@ -37,5 +37,6 @@ rsync
 silversearcher-ag
 tmux
 tree
+units
 unzip
 vim-nox
