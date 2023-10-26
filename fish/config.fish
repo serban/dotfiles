@@ -78,6 +78,8 @@ set --global --export PYENV_ROOT $HOME/env/pyenv
 set --global --export VIRTUALFISH_HOME $HOME/env/virtualenv
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
+set --global --export SQLITE_HISTORY $HOME/.local/state/sqlite/sqlite-history
+
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
 set --global --export FZF_DEFAULT_OPTS \
@@ -131,9 +133,9 @@ set --global --export EDITOR vim
 set --global --export PAGER less
 
 if type --query dircolors
-  eval (dircolors -c ~/.dir_colors)
+  eval (dircolors -c ~/src/dotfiles/dir_colors)
 else if type --query gdircolors
-  eval (gdircolors -c ~/.dir_colors)
+  eval (gdircolors -c ~/src/dotfiles/dir_colors)
 end
 
 if test -f $HOME/.config/fish/local.fish

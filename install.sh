@@ -43,20 +43,13 @@ ln -si ${DOTFILES}/bashrc               ~/.bashrc
 ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
 ln -si ${DOTFILES}/blazerc              ~/.blazerc
 ln -si ${DOTFILES}/colordiffrc          ~/.colordiffrc
-ln -si ${DOTFILES}/conkyrc              ~/.conkyrc
-ln -si ${DOTFILES}/dir_colors           ~/.dir_colors
 ln -si ${DOTFILES}/gdbearlyinit         ~/.gdbearlyinit
 ln -si ${DOTFILES}/gdbinit              ~/.gdbinit
-ln -si ${DOTFILES}/gitconfig            ~/.gitconfig
-ln -si ${DOTFILES}/gitignore            ~/.gitignore
-ln -si ${DOTFILES}/hgrc                 ~/.hgrc
 ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
-ln -si ${DOTFILES}/i3status.conf        ~/.i3status.conf
 ln -si ${DOTFILES}/inputrc              ~/.inputrc
 ln -si ${DOTFILES}/lesskey              ~/.lesskey
 ln -si ${DOTFILES}/screenrc             ~/.screenrc
 ln -si ${DOTFILES}/sqliterc             ~/.sqliterc
-ln -si ${DOTFILES}/tmux.conf            ~/.tmux.conf
 ln -si ${DOTFILES}/xsession             ~/.xsession
 ln -si ${DOTFILES}/Xresources           ~/.Xresources
 
@@ -65,6 +58,9 @@ ln -si ${DOTFILES}/alacritty.yml        ~/.config/alacritty/alacritty.yml
 
 mkdir -p ~/.config/bat
 ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
+
+mkdir -p ~/.config/conky
+ln -si ${DOTFILES}/conky.conf           ~/.config/conky/conky.conf
 
 mkdir -p ~/.config/emacs
 ln -si ${DOTFILES}/emacs/early-init.el  ~/.config/emacs/early-init.el
@@ -75,6 +71,19 @@ ln -si ${DOTFILES}/fish/conf.d          ~/.config/fish/conf.d
 ln -si ${DOTFILES}/fish/completions     ~/.config/fish/completions
 ln -si ${DOTFILES}/fish/functions       ~/.config/fish/functions
 ln -si ${DOTFILES}/fish/config.fish     ~/.config/fish/config.fish
+
+mkdir -p ~/.config/git
+ln -si ${DOTFILES}/git/config           ~/.config/git/config
+ln -si ${DOTFILES}/git/ignore           ~/.config/git/ignore
+
+mkdir -p ~/.config/hg
+ln -si ${DOTFILES}/hgrc                 ~/.config/hg/hgrc
+
+mkdir -p ~/.config/i3
+ln -si ${DOTFILES}/i3-config            ~/.config/i3/config
+
+mkdir -p ~/.config/i3status
+ln -si ${DOTFILES}/i3status-config      ~/.config/i3status/config
 
 mkdir -p ~/.config/kitty
 ln -si ${DOTFILES}/kitty.conf           ~/.config/kitty/kitty.conf
@@ -94,11 +103,11 @@ ln -si ${DOTFILES}/vim/vimrc            ~/.config/nvim/init.vim
 mkdir -p ~/.config/procs
 ln -si ${DOTFILES}/procs.toml           ~/.config/procs/config.toml
 
+mkdir -p ~/.config/tmux
+ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
+
 mkdir -p ~/.hammerspoon
 ln -si ${DOTFILES}/init.lua             ~/.hammerspoon/init.lua
-
-mkdir -p ~/.i3
-ln -si ${DOTFILES}/i3-config            ~/.i3/config
 
 mkdir -p ~/.ipython/profile_default
 ln -si ${DOTFILES}/ipython_config.py    ~/.ipython/profile_default/ipython_config.py
@@ -114,8 +123,13 @@ ln -si ${DOTFILES}/vim/ultisnips        ~/.vim/UltiSnips
 ln -si ${DOTFILES}/vim/gvimrc           ~/.vim/gvimrc
 ln -si ${DOTFILES}/vim/vimrc            ~/.vim/vimrc
 
-# Make the bash history folder
-mkdir -p -m 700 ~/.history
+mkdir -p -m 700 ~/.local/share
+mkdir -p -m 700 ~/.local/share/bookmarks
+
+mkdir -p -m 700 ~/.local/state
+mkdir -p -m 700 ~/.local/state/bash
+mkdir -p -m 700 ~/.local/state/bash/history
+mkdir -p -m 700 ~/.local/state/sqlite
 
 root || darwin || freebsd && {
   ln -si ${DOTFILES}/bashrc ~/.bash_profile

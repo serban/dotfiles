@@ -114,7 +114,7 @@ shopt -s cmdhist
 shopt -s histappend
 
 # Save a new history file for every session
-export HISTFILE="${HOME}/.history/$(date +%Y-%m-%d-%H%M%S)"
+export HISTFILE="${HOME}/.local/state/bash/history/$(date +%Y-%m-%d-%H%M%S).log"
 
 # Save a basically infinite number of commands per session
 export HISTSIZE=1000000
@@ -130,7 +130,7 @@ unset HISTFILESIZE
 export HISTTIMEFORMAT='[%Y-%m-%d %H:%M:%S] '
 
 darwin || freebsd || linux && {
-  ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.history/* | sort | uniq ; }
+  ig() { grep --color=always --no-messages --no-filename --ignore-case  "$@" "${HOME}"/.local/state/bash/history/* | sort | uniq ; }
 }
 
 # ------------------------------------------------------------------------------
@@ -282,12 +282,12 @@ complete -F serbanCompleteBookmarks bookmarks
 
 darwin && {
   if [ $(which gdircolors) ]; then
-    eval "$(gdircolors -b ~/.dir_colors)"
+    eval "$(gdircolors --bourne-shell ${DOTFILES}/dir_colors)"
   fi
 }
 
 linux && {
-  eval "$(dircolors -b ~/.dir_colors)"
+  eval "$(dircolors --bourne-shell ${DOTFILES}/dir_colors)"
 }
 
 # ------------------------------------------------------------------------------

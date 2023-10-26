@@ -62,7 +62,6 @@
 
 [core]
   autocrlf = false
-  excludesfile = ~/.gitignore
   quotePath = false
   whitespace = space-before-tab,tab-in-indent,trailing-space
 

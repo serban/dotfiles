@@ -62,6 +62,9 @@ abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
 # Tested on 2021-12-22 with fd 8.3.0.
 abbr --add fdh 'fd -E /env -E /go -E /opt -E /oss -E /pre -E /Library -E /Movies -E /Music -E /Pictures -E /Data'
 
+abbr --add  units  "units --history ''"
+abbr --add gunits "gunits --history ''"
+
 abbr --add bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
 # The regular expression we want to pass to perl is \\n, with two backslashes.
