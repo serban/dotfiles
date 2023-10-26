@@ -153,11 +153,11 @@ darwin && {
 
 darwin || linux && {
   mkdir -p "${SUBLIME_TEXT}"
-  ln -si  ${DOTFILES}/sublime/Preferences.sublime-settings      "${SUBLIME_TEXT}/"
-  ln -si "${DOTFILES}/sublime/Package Control.sublime-settings" "${SUBLIME_TEXT}/"
+  ln -si "${DOTFILES}/sublime/Preferences.sublime-settings"     "${SUBLIME_TEXT}/Preferences.sublime-settings"
+  ln -si "${DOTFILES}/sublime/Package Control.sublime-settings" "${SUBLIME_TEXT}/Package Control.sublime-settings"
 }
 
 darwin || linux && {
   mkdir -p "${VSCODE}"
-  ln -si ${DOTFILES}/vscode/settings.json "${VSCODE}/"
+  ln -si ${DOTFILES}/vscode/settings.json "${VSCODE}/settings.json"
 }
