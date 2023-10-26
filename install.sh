@@ -136,13 +136,13 @@ root || darwin || freebsd && {
 }
 
 darwin && {
-  mkdir -p ~/bin
-  ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/bin/
-  ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/bin/
-  ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/bin/
-  ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/bin/
-  ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/bin/
-  ln -si '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ~/bin/
+  mkdir -p ~/.local/bin
+  ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/.local/bin/kitten
+  ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/.local/bin/kitty
+  ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/.local/bin/mvim
+  ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/.local/bin/smerge
+  ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/.local/bin/subl
+  ln -si '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ~/.local/bin/code
 }
 
 darwin && {
