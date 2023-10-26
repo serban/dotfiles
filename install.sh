@@ -139,7 +139,6 @@ darwin && {
   mkdir -p ~/bin
   ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/bin/
   ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/bin/
-  ln -si  /Applications/LilyPond.app/Contents/Resources/bin/lilypond            ~/bin/
   ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/bin/
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/bin/
   ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/bin/
