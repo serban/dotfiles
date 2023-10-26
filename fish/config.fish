@@ -73,6 +73,10 @@ set --global --export PYTHONPATH \
     $HOME/src/wip/python/lib \
     #
 
+set --global --export PIP_REQUIRE_VIRTUALENV true
+set --global --export PYENV_ROOT $HOME/env/pyenv
+set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
+
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
 set --global --export FZF_DEFAULT_OPTS \
@@ -124,9 +128,6 @@ set --global --export SHELL (command -s fish)
 set --global --export VISUAL vim
 set --global --export EDITOR vim
 set --global --export PAGER less
-
-set --global --export PIP_REQUIRE_VIRTUALENV true
-set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
 if type --query dircolors
   eval (dircolors -c ~/.dir_colors)
