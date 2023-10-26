@@ -75,6 +75,7 @@ set --global --export PYTHONPATH \
 
 set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export PYENV_ROOT $HOME/env/pyenv
+set --global --export VIRTUALFISH_HOME $HOME/env/virtualenv
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
