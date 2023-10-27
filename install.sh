@@ -27,6 +27,10 @@ function root {
   [ "${WHOAMI}" = 'root' ]
 }
 
+function debian {
+  [ -f /etc/debian_version ]
+}
+
 darwin && {
   readonly        ITERM="${HOME}/Library/Application Support/iTerm2"
   readonly SUBLIME_TEXT="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
@@ -133,6 +137,11 @@ mkdir -p -m 700 ~/.local/state/sqlite
 
 root || darwin || freebsd && {
   ln -si ${DOTFILES}/bashrc ~/.bash_profile
+}
+
+debian && {
+  mkdir -p ~/.local/bin
+  ln -si /usr/bin/batcat ~/.local/bin/bat
 }
 
 darwin && {
