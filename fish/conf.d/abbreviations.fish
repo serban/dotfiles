@@ -62,6 +62,8 @@ abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
 # Tested on 2021-12-22 with fd 8.3.0.
 abbr --add fdh 'fd -E /env -E /go -E /opt -E /oss -E /pre -E /Library -E /Movies -E /Music -E /Pictures -E /Data'
 
+abbr --add mocp 'mocp --moc-dir ~/.config/moc'
+
 abbr --add  units  "units --history ''"
 abbr --add gunits "gunits --history ''"
 

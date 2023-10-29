@@ -16,7 +16,7 @@ log 'Waiting for gnome-settings-daemon'
 sleep 1
 
 log 'Sourcing ~/.Xresources'
-xrdb -merge ~/.Xresources
+xrdb -merge ~/src/dotfiles/Xresources
 
 log 'Turning off the number lock'
 numlockx off

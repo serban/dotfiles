@@ -48,6 +48,9 @@ defaults write com.apple.screencapture name Screenshot
 defaults write com.apple.screencapture include-date -bool false
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Hammerspoon
+defaults write org.hammerspoon.Hammerspoon MJConfigFile ~/.config/hammerspoon/init.lua
+
 # Restart the Dock
 killall Dock
 

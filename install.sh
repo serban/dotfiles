@@ -47,21 +47,17 @@ ln -si ${DOTFILES}/bashrc               ~/.bashrc
 ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
 ln -si ${DOTFILES}/blazerc              ~/.blazerc
 ln -si ${DOTFILES}/colordiffrc          ~/.colordiffrc
-ln -si ${DOTFILES}/gdbearlyinit         ~/.gdbearlyinit
-ln -si ${DOTFILES}/gdbinit              ~/.gdbinit
 ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
-ln -si ${DOTFILES}/inputrc              ~/.inputrc
-ln -si ${DOTFILES}/lesskey              ~/.lesskey
-ln -si ${DOTFILES}/screenrc             ~/.screenrc
-ln -si ${DOTFILES}/sqliterc             ~/.sqliterc
 ln -si ${DOTFILES}/xsession             ~/.xsession
-ln -si ${DOTFILES}/Xresources           ~/.Xresources
 
 mkdir -p ~/.config/alacritty
 ln -si ${DOTFILES}/alacritty.yml        ~/.config/alacritty/alacritty.yml
 
 mkdir -p ~/.config/bat
 ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
+
+mkdir -p ~/.config/bpython
+ln -si ${DOTFILES}/bpython-config       ~/.config/bpython/config
 
 mkdir -p ~/.config/conky
 ln -si ${DOTFILES}/conky.conf           ~/.config/conky/conky.conf
@@ -76,9 +72,16 @@ ln -si ${DOTFILES}/fish/completions     ~/.config/fish/completions
 ln -si ${DOTFILES}/fish/functions       ~/.config/fish/functions
 ln -si ${DOTFILES}/fish/config.fish     ~/.config/fish/config.fish
 
+mkdir -p ~/.config/gdb
+ln -si ${DOTFILES}/gdbearlyinit         ~/.config/gdb/gdbearlyinit
+ln -si ${DOTFILES}/gdbinit              ~/.config/gdb/gdbinit
+
 mkdir -p ~/.config/git
-ln -si ${DOTFILES}/git/config           ~/.config/git/config
-ln -si ${DOTFILES}/git/ignore           ~/.config/git/ignore
+ln -si ${DOTFILES}/git-config           ~/.config/git/config
+ln -si ${DOTFILES}/git-ignore           ~/.config/git/ignore
+
+mkdir -p ~/.config/hammerspoon
+ln -si ${DOTFILES}/init.lua             ~/.config/hammerspoon/init.lua
 
 mkdir -p ~/.config/hg
 ln -si ${DOTFILES}/hgrc                 ~/.config/hg/hgrc
@@ -89,11 +92,24 @@ ln -si ${DOTFILES}/i3-config            ~/.config/i3/config
 mkdir -p ~/.config/i3status
 ln -si ${DOTFILES}/i3status-config      ~/.config/i3status/config
 
+mkdir -p ~/.config/ipython/profile_default
+ln -si ${DOTFILES}/ipython_config.py    ~/.config/ipython/profile_default/ipython_config.py
+
+mkdir -p ~/.config/less
+ln -si ${DOTFILES}/lesskey              ~/.config/less/lesskey
+
+mkdir -p ~/.config/readline
+ln -si ${DOTFILES}/inputrc              ~/.config/readline/inputrc
+
 mkdir -p ~/.config/kitty
 ln -si ${DOTFILES}/kitty.conf           ~/.config/kitty/kitty.conf
 
 mkdir -p ~/.config/lf
 ln -si ${DOTFILES}/lfrc                 ~/.config/lf/lfrc
+
+mkdir -p ~/.config/moc/themes
+ln -si ${DOTFILES}/moc-config           ~/.config/moc/config
+ln -si ${DOTFILES}/moc-theme            ~/.config/moc/themes/serban
 
 mkdir -p ~/.config/newsboat
 ln -si ${DOTFILES}/newsboat-config      ~/.config/newsboat/config
@@ -105,20 +121,16 @@ mkdir -p ~/.config/nvim
 ln -si ${DOTFILES}/vim/vimrc            ~/.config/nvim/init.vim
 
 mkdir -p ~/.config/procs
-ln -si ${DOTFILES}/procs.toml           ~/.config/procs/config.toml
+ln -si ${DOTFILES}/procs-config.toml    ~/.config/procs/config.toml
+
+mkdir -p ~/.config/screen
+ln -si ${DOTFILES}/screenrc             ~/.config/screen/screenrc
+
+mkdir -p ~/.config/sqlite3
+ln -si ${DOTFILES}/sqliterc             ~/.config/sqlite3/sqliterc
 
 mkdir -p ~/.config/tmux
 ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
-
-mkdir -p ~/.hammerspoon
-ln -si ${DOTFILES}/init.lua             ~/.hammerspoon/init.lua
-
-mkdir -p ~/.ipython/profile_default
-ln -si ${DOTFILES}/ipython_config.py    ~/.ipython/profile_default/ipython_config.py
-
-mkdir -p ~/.moc
-ln -si ${DOTFILES}/moc/config           ~/.moc/config
-ln -si ${DOTFILES}/moc/themes           ~/.moc/themes
 
 mkdir -p ~/.vim
 ln -si ${DOTFILES}/vim/after            ~/.vim/after
@@ -133,15 +145,25 @@ mkdir -p -m 700 ~/.local/share/bookmarks
 mkdir -p -m 700 ~/.local/state
 mkdir -p -m 700 ~/.local/state/bash
 mkdir -p -m 700 ~/.local/state/bash/history
+mkdir -p -m 700 ~/.local/state/bpython
+mkdir -p -m 700 ~/.local/state/less
+mkdir -p -m 700 ~/.local/state/postgresql
 mkdir -p -m 700 ~/.local/state/sqlite
 
+mkdir -p -m 700 ~/.cache
+mkdir -p -m 700 ~/.cache/grip
+
 root || darwin || freebsd && {
-  ln -si ${DOTFILES}/bashrc ~/.bash_profile
+  ln -si ${DOTFILES}/bashrc             ~/.bash_profile
+}
+
+darwin && {
+  ln -si ~/.config/gdb                  ~/Library/Preferences/gdb
 }
 
 debian && {
   mkdir -p ~/.local/bin
-  ln -si /usr/bin/batcat ~/.local/bin/bat
+  ln -si /usr/bin/batcat                ~/.local/bin/bat
 }
 
 darwin && {

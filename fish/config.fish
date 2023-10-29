@@ -69,6 +69,16 @@ set --global --export XDG_DATA_HOME   $HOME/.local/share
 set --global --export XDG_STATE_HOME  $HOME/.local/state
 set --global --export XDG_CACHE_HOME  $HOME/.cache
 
+set --global --export LESSKEYIN       $HOME/.config/less/lesskey
+set --global --export INPUTRC         $HOME/.config/readline/inputrc
+set --global --export SCREENRC        $HOME/.config/screen/screenrc
+
+set --global --export LESSHISTFILE    $HOME/.local/state/less/less-history
+set --global --export PSQL_HISTORY    $HOME/.local/state/postgresql/psql-history
+set --global --export SQLITE_HISTORY  $HOME/.local/state/sqlite/sqlite-history
+
+set --global --export GRIPHOME        $HOME/.cache/grip
+
 set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
     $LD_LIBRARY_PATH
@@ -82,8 +92,6 @@ set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export PYENV_ROOT $HOME/env/pyenv
 set --global --export VIRTUALFISH_HOME $HOME/env/virtualenv
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
-
-set --global --export SQLITE_HISTORY $HOME/.local/state/sqlite/sqlite-history
 
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 

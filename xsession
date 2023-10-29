@@ -54,8 +54,8 @@ nitrogen --restore
 log 'Waiting for nitrogen'
 dots 6
 
-log 'Sourcing ~/.Xresources'
-xrdb -merge ~/.Xresources
+log 'Sourcing Xresources'
+xrdb -merge ~/src/dotfiles/Xresources
 
 log 'Turning off the number lock'
 numlockx off
