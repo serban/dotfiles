@@ -11,6 +11,12 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+if [[ "$(sw_vers -productVersion | cut -d . -f 1)" -ge 14 ]]; then
+  echo '❋ This fix may not be needed for macOS Sonoma. See the following for more:'
+  echo '↳ https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos'
+  exit 1
+fi
+
 readonly out=$(gmktemp --tmpdir tmux-256color.XXXXXX)
 
 /opt/homebrew/Cellar/ncurses/*/bin/infocmp -x tmux-256color > $out
