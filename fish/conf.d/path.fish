@@ -13,8 +13,8 @@ set --global --export PATH \
     $HOME/src/wip/bin \
     $HOME/src/wip/python \
     $HOME/pre/bin \
+    $HOME/env/go/bin \
     $HOME/env/pyenv/shims \
-    $HOME/go/bin \
     $HOME/.cargo/bin \
     $HOME/.local/bin \
     $HOME/opt/google-cloud-sdk/bin \
