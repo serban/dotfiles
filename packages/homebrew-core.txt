@@ -57,4 +57,5 @@ vim
 watch
 watchexec
 watchman
+wget2
 yj

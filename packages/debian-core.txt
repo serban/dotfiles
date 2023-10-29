@@ -40,3 +40,4 @@ tree
 units
 unzip
 vim-nox
+wget2
