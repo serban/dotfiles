@@ -14,6 +14,8 @@ YELLOW  = '\033[33m'
 BLUE    = '\033[34m'
 MAGENTA = '\033[35m'
 CYAN    = '\033[36m'
+ORANGE  = '\033[91m'  # Solarized
+VIOLET  = '\033[95m'  # Solarized
 
 # Setting dry_run to True makes all of the subprocess wrappers below impotent.
 # This functionality exists so that during development of a script you can
@@ -153,6 +155,35 @@ def heading(s: str) -> None:
   print('{}{}{}'.format(upper_left, horizontal_line*(pad+2), upper_right))
   print('{} {:{pad}} {}'.format(vertical_line, s, vertical_line, pad=pad))
   print('{}{}{}'.format(lower_left, horizontal_line*(pad+2), lower_right))
+
+def confirm(prompt: str) -> bool:
+  """Return a yes-or-no response from the user for the given prompt.
+
+  Accepts only ‘y’ for yes and ‘n’ for no.
+
+  Args:
+    prompt:
+      The string to print before waiting for input.
+
+  Returns:
+    A boolean indicating yes (True) or no (False).
+
+  Raises:
+    EOFError:
+      If the user triggers EOF (Ctrl-D) instead of answering the prompt.
+    KeyboardInterrupt:
+      If the user triggers SIGINT (Ctrl-C) instead of answering the prompt.
+  """
+  try:
+    while True:
+      print(f'{VIOLET}■ {prompt} {YELLOW}', end='')
+      if (response := input()) in ['y', 'n']:
+        return response == 'y'
+  except (EOFError, KeyboardInterrupt):
+    print()
+    raise
+  finally:
+    print(RESET, end='')
 
 def _run_and_indent_output(args) -> int:
   with subprocess.Popen(
