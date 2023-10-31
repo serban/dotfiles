@@ -14,8 +14,8 @@ set --global --export PATH \
     $HOME/src/wip/python \
     $HOME/pre/bin \
     $HOME/env/go/bin \
+    $HOME/env/cargo/bin \
     $HOME/env/pyenv/shims \
-    $HOME/.cargo/bin \
     $HOME/.local/bin \
     $HOME/opt/google-cloud-sdk/bin \
     /usr/lib/google-golang/bin \

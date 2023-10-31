@@ -80,6 +80,7 @@ set --global --export SQLITE_HISTORY  $HOME/.local/state/sqlite/sqlite-history
 set --global --export GRIPHOME        $HOME/.cache/grip
 
 set --global --export GOPATH          $HOME/env/go
+set --global --export CARGO_HOME      $HOME/env/cargo
 
 set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
