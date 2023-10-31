@@ -3,3 +3,4 @@ bazel
 graphviz
 pkg-config
 postgresql@14
+rustup-init
