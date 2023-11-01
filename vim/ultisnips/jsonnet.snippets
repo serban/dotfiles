@@ -1,0 +1,7 @@
+snippet 1 "Named Rule With One Address"
+{ name: '$2                                  ', filt: { from: '$1' } },
+endsnippet
+
+snippet 2 "Named Rule With Two Addresses"
+{ name: '$3                                  ', filt: { or: [{ from: '$1' }, { list: '$2' }] } },
+endsnippet
