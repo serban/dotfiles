@@ -1,5 +1,4 @@
 bat
-bpython
 bzip2
 clang
 colordiff
@@ -17,21 +16,17 @@ golang
 hashdeep
 hexyl
 htop
-httpie
 hugo
-ipython3
 jq
 jsonnet
 kitty-terminfo
 lf
 libc++-dev
-lookatme
 makepasswd
 moreutils
 neovim
 psmisc
 python3
-python3-pip
 ripgrep
 rsync
 silversearcher-ag

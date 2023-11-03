@@ -1,6 +1,5 @@
 bash
 bat
-bpython
 colordiff
 coreutils
 ctags
@@ -25,11 +24,8 @@ gnu-tar
 gnu-units
 go
 grep
-grip
 hexyl
-httpie
 hugo
-ipython
 jq
 jsonnet
 less

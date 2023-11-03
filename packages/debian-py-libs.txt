@@ -1,0 +1,6 @@
+python3-click
+python3-packaging
+python3-pendulum
+python3-phonenumbers
+python3-pynvim
+python3-rich

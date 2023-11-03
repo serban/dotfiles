@@ -1,0 +1,7 @@
+grip
+httpie
+lookatme
+pip
+virtualfish
+wavemaker
+yt-dlp

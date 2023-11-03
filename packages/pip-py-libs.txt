@@ -1,11 +1,8 @@
 click
 iterm2
-lookatme
-numpy_financial
+numpy-financial
 packaging
 pendulum
 phonenumbers
 pynvim
 rich
-virtualfish
-wavemaker

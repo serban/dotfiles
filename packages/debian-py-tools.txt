@@ -1,0 +1,4 @@
+httpie
+lookatme
+python3-pip
+yt-dlp
