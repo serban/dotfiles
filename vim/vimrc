@@ -1497,6 +1497,7 @@ digraphs wr   8217  "  0x2019  ’  '9      Right Single Quotation Mark
 digraphs ql   8220  "  0x201c  “  "6      Left Double Quotation Mark
 digraphs qr   8221  "  0x201d  ”  "9      Right Double Quotation Mark
 digraphs bl   8226  "  0x2022  •  oo      Bullet
+digraphs bi   8227  "  0x2023  ‣          Triangular Bullet
 digraphs el   8230  "  0x2026  …  ,.      Horizontal Ellipsis
 digraphs sp   8242  "  0x2032  ′  1'      Prime
 digraphs dp   8243  "  0x2033  ′  2'      Double Prime
