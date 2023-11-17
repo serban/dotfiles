@@ -3,6 +3,8 @@ function ag --wraps ag
   set options $options (fish_opt --short=f --long=files)
   set options $options (fish_opt --short=g --long=go)
   set options $options (fish_opt --short=h --long=html)
+  set options $options (fish_opt --short=j --long=java)
+  set options $options (fish_opt --short=k --long=kotlin)
   set options $options (fish_opt --short=i --long=literal)
   set options $options (fish_opt --short=l --long=list-file-types)
   set options $options (fish_opt --short=p --long=python)
@@ -35,6 +37,14 @@ function ag --wraps ag
 
   if test -n "$_flag_html"
     set args $args --html
+  end
+
+  if test -n "$_flag_java"
+    set args $args --java
+  end
+
+  if test -n "$_flag_kotlin"
+    set args $args --kotlin
   end
 
   if test -n "$_flag_literal"
