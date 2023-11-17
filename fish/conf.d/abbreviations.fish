@@ -1,4 +1,4 @@
-abbr --add h head
+abbr --add h head -n 20
 abbr --add t tail
 abbr --add l less -N
 
