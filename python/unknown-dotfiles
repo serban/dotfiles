@@ -12,7 +12,6 @@ KNOWN_DIRS = {
   '.cache',               # XDG_CACHE_HOME
   '.config',              # XDG_CONFIG_HOME
   '.cups',                # 2023-10-29: https://github.com/OpenPrinting/libcups/issues/43 · https://github.com/OpenPrinting/libcups/pull/45
-  '.fly',                 # 2023-10-29: https://community.fly.io/t/flyctl-should-follow-the-xdg-base-directory-specification/1743
   '.gmailctl',            # 2023-10-29: https://github.com/mbrt/gmailctl/issues/144
   '.local',               # XDG_DATA_HOME · XDG_STATE_HOME
   '.npm',

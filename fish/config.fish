@@ -77,6 +77,8 @@ set --global --export LESSHISTFILE    $HOME/.local/state/less/less-history
 set --global --export PSQL_HISTORY    $HOME/.local/state/postgresql/psql-history
 set --global --export SQLITE_HISTORY  $HOME/.local/state/sqlite/sqlite-history
 
+set --global --export FLY_CONFIG_DIR  $HOME/.local/state/fly
+
 set --global --export GRIPHOME        $HOME/.cache/grip
 
 set --global --export GOPATH          $HOME/env/go
