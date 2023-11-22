@@ -1,5 +1,6 @@
 import collections
 import datetime
+import os
 import pathlib
 import shlex
 import subprocess
@@ -185,6 +186,15 @@ def confirm(prompt: str) -> bool:
   finally:
     print(RESET, end='')
 
+# • https://peps.python.org/pep-0519
+#   ↳ PEP 519 – Adding a file system path protocol (2016-05-11)
+# • https://github.com/python/cpython/issues/89293
+#   ↳ shlex.join() does not accept pathlib.Path objects (2021-09-07)
+# • https://discuss.python.org/t/coerce-path-objects-in-shlex-join/26755
+#   ↳ Coerce Path objects in shlex.join (2023-05-13)
+def _shlex_join(args) -> str:
+  return shlex.join(str(a) if isinstance(a, os.PathLike) else a for a in args)
+
 def _run_and_indent_output(args) -> int:
   with subprocess.Popen(
       args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True) as p:
@@ -211,7 +221,7 @@ def run(args, exit=True, verbose=True, indent=True) -> None:
       A boolean. Indent the output of the command.
   """
   if verbose:
-    print(f'{YELLOW}»', shlex.join(args), RESET, flush=True)
+    print(f'{YELLOW}»', _shlex_join(args), RESET, flush=True)
   if dry_run:
     return
   try:
@@ -240,7 +250,7 @@ def getstatus(args, verbose=True, indent=True) -> int:
     An integer.
   """
   if verbose:
-    print(f'{YELLOW}⁖', shlex.join(args), RESET, flush=True)
+    print(f'{YELLOW}⁖', _shlex_join(args), RESET, flush=True)
   if dry_run:
     return 0
   if indent:
@@ -301,7 +311,7 @@ def getoutput(args, exit=True, verbose=True, stderr=True) -> str:
     A string.
   """
   if verbose:
-    print(f'{YELLOW}›', shlex.join(args), RESET, flush=True)
+    print(f'{YELLOW}›', _shlex_join(args), RESET, flush=True)
   if dry_run:
     return ''
   try:
