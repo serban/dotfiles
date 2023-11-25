@@ -151,9 +151,10 @@ local function openChromeHomeTabs()
 end
 
 bind("'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
-bind('\\',    function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
-bind('0',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
-bind('9',     function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 7, 7}) end) -- Center Wide
+bind('8',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
+bind('9',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
+bind('0',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 6, 9}) end) -- Center Right
+bind('\\',    function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 7, 7}) end) -- Center Wide
 bind(';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
 bind('left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
 bind('right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
@@ -202,8 +203,7 @@ bind('z',     function() highlightMousePointer() end)
 bind('4',     function() openFirefoxHomeTabs() end)
 bind('5',     function() openFirefoxChatTabs() end)
 bind('6',     function() openChromeHomeTabs() end)
-bind('7',     function() activate('YouTube.app') end)
-bind('8',     function() activate('YouTube Music.app') end)
+bind('7',     function() activate('YouTube Music.app') end)
 
 screenWatcher = hs.screen.watcher.new(function() -- global to prevent garbage collection
   logScreens()
