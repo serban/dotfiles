@@ -1464,8 +1464,12 @@ endif
 
 iabbrev td TODO(serban):
 iabbrev ts TODO(serban):
+
 iabbrev #t # TODO(serban):
+iabbrev #s # TODO(serban): DO NOT SUBMIT
+
 iabbrev /t // TODO(serban):
+iabbrev /s // TODO(serban): DO NOT SUBMIT
 
 iabbrev <expr> zd strftime('%Y-%m-%d')
 iabbrev <expr> zt strftime('%Y-%m-%d %H:%M')
