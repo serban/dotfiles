@@ -19,10 +19,17 @@ function ag --wraps ag
     return
   end
 
+  # Documentation for the --context flag is confusing. See:
+  # • https://github.com/ggreer/the_silver_searcher/issues/74
+  # • https://github.com/ggreer/the_silver_searcher/issues/404
+  # • https://github.com/ggreer/the_silver_searcher/issues/716
   set --local args \
-      --pager less \
-      --color-path '01;35' \
-      --color-line-number '00;34' \
+      --group \
+      --color \
+      --color-path 95 \
+      --color-line-number 34 \
+      --color-match 31 \
+      --context=2 \
       #
 
   if test -n "$_flag_cpp"
@@ -109,5 +116,9 @@ function ag --wraps ag
     printf '%s⁖ %s ⁙%s\n\n' (set_color magenta) $argv[1] (set_color normal)
   end
 
-  command ag $args $argv $_flag_directory
+  # https://github.com/ggreer/the_silver_searcher/issues/714
+  # ↳ Visual alignment of results, and differently-lengthed line-numbers
+  command ag $args $argv $_flag_directory \
+    | perl -pe 's/(?<=^\e\[34m)(\d+)\e\[0m\e\[K(:|-)/sprintf("%4d\e\[0m ", $1)/e' \
+    | less
 end
