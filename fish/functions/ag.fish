@@ -10,6 +10,7 @@ function ag --wraps ag
   set options $options (fish_opt --short=l --long=list-file-types)
   set options $options (fish_opt --short=p --long=python)
   set options $options (fish_opt --short=r --long=rust)
+  set options $options (fish_opt --short=s --long=shell)
   set options $options (fish_opt --short=t --long=ignore-tests)
   set options $options (fish_opt --short=u --long=unrestricted)
   set options $options (fish_opt --short=v --long=variants)
@@ -72,6 +73,10 @@ function ag --wraps ag
 
   if test -n "$_flag_rust"
     set args $args --rust
+  end
+
+  if test -n "$_flag_shell"
+    set args $args --shell
   end
 
   if test -n "$_flag_ignore_tests"
