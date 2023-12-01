@@ -120,5 +120,6 @@ function ag --wraps ag
   # ↳ Visual alignment of results, and differently-lengthed line-numbers
   command ag $args $argv $_flag_directory \
     | perl -pe 's/(?<=^\e\[34m)(\d+)\e\[0m\e\[K(:|-)/sprintf("%4d\e\[0m ", $1)/e' \
+    | perl -pe 's/^--$/   \e\[34m⋮\e\[0m/' \
     | less
 end
