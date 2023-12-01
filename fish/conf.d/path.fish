@@ -10,6 +10,8 @@ set --global --export PATH \
     $HOME/src/private/bin \
     $HOME/src/dotfiles/bin \
     $HOME/src/dotfiles/python \
+    $HOME/src/dotfiles-google/bin \
+    $HOME/src/dotfiles-google/python \
     $HOME/src/wip/bin \
     $HOME/src/wip/python \
     $HOME/pre/bin \
