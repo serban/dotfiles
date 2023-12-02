@@ -64,6 +64,10 @@ set --global fish_pager_color_description green
 
 set --global fish_greeting
 
+if test $TERM = xterm-kitty
+  set --global fish_handle_reflow 1
+end
+
 set --global --export XDG_CONFIG_HOME $HOME/.config
 set --global --export XDG_DATA_HOME   $HOME/.local/share
 set --global --export XDG_STATE_HOME  $HOME/.local/state
