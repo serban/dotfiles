@@ -1,5 +1,5 @@
 abbr --add h head -n 20
-abbr --add t tail
+abbr --add t tail -n 20
 abbr --add l less -N
 
 abbr --add d colordiff -u
