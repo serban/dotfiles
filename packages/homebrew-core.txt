@@ -1,5 +1,6 @@
 bash
 bat
+btop
 colordiff
 coreutils
 ctags
