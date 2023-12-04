@@ -34,7 +34,7 @@ Plug 'dkarter/bullets.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go'
-Plug 'foalford/vim-markdown-folding'  " https://github.com/masukomi/vim-markdown-folding/issues/42
+" Plug 'foalford/vim-markdown-folding'
 Plug 'godlygeek/tabular'
 Plug 'google/vim-jsonnet'
 Plug 'hashivim/vim-terraform'
