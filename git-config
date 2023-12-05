@@ -54,11 +54,7 @@
   date = short ; YYYY-MM-DD
 
 [branch]
-  autosetupmerge = true
-
-  # For newer versions of git, this has been superseded by pull.rebase.
-  # Keep it for now so that old versions of git still rebase on pull.
-  autosetuprebase = always
+  autoSetupMerge = true
 
 [core]
   autocrlf = false
