@@ -9,7 +9,7 @@ function caf --argument-names duration_hours
 
   pmset -g
 
-  echo -e "\033]0;awake $duration_hours hours\007"
+  title awake $duration_hours hours
   echo "Staying awake for $duration_hours hours until" \
       (date -r $expiration_time_seconds '+%Y-%m-%d %H:%M')
 
