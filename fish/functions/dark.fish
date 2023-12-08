@@ -12,7 +12,10 @@
 # enabled. See https://gitlab.com/gnachman/iterm2/-/issues/9652 -
 #   Color rendering not as vibrant as other editors.
 function dark
-  if test "$TERM" = tmux-256color
+  if test $TERM = xterm-kitty
+    echo dark
+    return
+  else if test $TERM = tmux-256color
     read response --silent --nchars 25 \
         --prompt-str \033Ptmux\;\033\033]4\;-2\;\?\007\033\\
   else
