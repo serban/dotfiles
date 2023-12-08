@@ -65,6 +65,9 @@
   context = 5
   submodule = diff
 
+[fetch]
+  prune = true
+
 [grep]
   lineNumber = true
 
