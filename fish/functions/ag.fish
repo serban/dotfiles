@@ -26,7 +26,7 @@ function ag --wraps ag
   set --local args \
       --group \
       --color \
-      --color-path 95 \
+      --color-path '44;90' \
       --color-line-number 34 \
       --color-match 31 \
       --context=2 \
