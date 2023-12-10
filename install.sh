@@ -46,7 +46,6 @@ ln -si ${DOTFILES}/bash_logout          ~/.bash_logout
 ln -si ${DOTFILES}/bashrc               ~/.bashrc
 ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
 ln -si ${DOTFILES}/blazerc              ~/.blazerc
-ln -si ${DOTFILES}/colordiffrc          ~/.colordiffrc
 ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
 ln -si ${DOTFILES}/xsession             ~/.xsession
 
@@ -58,6 +57,9 @@ ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
 
 mkdir -p ~/.config/bpython
 ln -si ${DOTFILES}/bpython-config       ~/.config/bpython/config
+
+mkdir -p ~/.config/colordiff
+ln -si ${DOTFILES}/colordiffrc          ~/.config/colordiff/colordiffrc
 
 mkdir -p ~/.config/conky
 ln -si ${DOTFILES}/conky.conf           ~/.config/conky/conky.conf

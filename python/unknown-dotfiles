@@ -35,7 +35,6 @@ KNOWN_FILES = {
   '.bashrc',
   '.bazelrc',
   '.blazerc',
-  '.colordiffrc',
   '.g4d',
   '.hushlogin',           # shadow
   '.netrc',
