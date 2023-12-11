@@ -7,3 +7,6 @@ meld =
 
 [ui]
 merge = internal:merge3
+
+[trainingwheels]
+prevent-push-dirty = false
