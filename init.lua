@@ -215,7 +215,7 @@ setDockAutoHide()
 
 local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
 for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
-                      'Preview', 'Sublime Merge', 'iTerm2'}) do
+                      'Preview', 'Sublime Merge', 'iTerm2', 'kitty'}) do
   wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
 end
 wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
