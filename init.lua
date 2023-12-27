@@ -6,7 +6,7 @@ hs.window.animationDuration = 0
 hs.grid.setGrid('7x9')
 hs.grid.setMargins('6x6')
 
-local function b(v)
+function b(v)
   if     v == nil then return '∅' -- utf8.len('∅') → 1, string.len('∅') → 3
   elseif v == true then return '✓' -- utf8.len('✓') → 1, string.len('✓') → 3
   elseif v == false then return '✗' -- utf8.len('✗') → 1, string.len('✗') → 3
@@ -21,12 +21,12 @@ function modal:entered()
   hs.timer.doAfter(1, function() modal:exit() end)
 end
 
-local function bind(key, fn)
+function bind(key, fn)
   hs.hotkey.bind('⌃⌥⇧⌘', key, fn)
   modal:bind('', key, function() fn(); modal:exit() end)
 end
 
-local function logScreens()
+function logScreens()
   logger.i('Layout › ──────────────────────────────────────────')
   local screens = hs.screen.allScreens()
   table.sort(screens, function(p, q)
@@ -41,18 +41,18 @@ local function logScreens()
   end
 end
 
-local function setDockAutoHide()
+function setDockAutoHide()
   hs.osascript.applescript(
       'tell application "System Events" to tell dock preferences to set autohide to ' ..
       (#hs.screen.allScreens() == 1 and 'true' or 'false'))
 end
 
-local function activate(name)
+function activate(name)
   hs.application.launchOrFocus(name)
   hs.application.frontmostApplication():activate(true)
 end
 
-local function stackApplicationWindows()
+function stackApplicationWindows()
   local app = hs.application.frontmostApplication()
   app:activate(true)
 
@@ -74,7 +74,7 @@ local function stackApplicationWindows()
   end
 end
 
-local function maximizeWindows()
+function maximizeWindows()
   for _, w in pairs(hs.window.allWindows()) do
     local a = w:application():name()
     if a ~= 'Finder' and a ~= 'Audio Hijack' and a ~= 'Hammerspoon' then
@@ -83,14 +83,14 @@ local function maximizeWindows()
   end
 end
 
-local function highlightMousePointer()
+function highlightMousePointer()
   local m = hs.mouse.absolutePosition()
   hs.canvas.new({x=m.x-150, y=m.y-150, w=300, h=300}):appendElements({
     type='circle', action='fill', fillColor={hex='#ff4081', alpha=0.5}, -- 2014 Material Design A200
   }):show():delete(0.75)
 end
 
-local function moveMouseToScreen(hint)
+function moveMouseToScreen(hint)
   local s = hs.screen(hint)
   local f = s:fullFrame()
   local x, y = f.w // 2, f.h // 2
@@ -101,7 +101,7 @@ local function moveMouseToScreen(hint)
   highlightMousePointer()
 end
 
-local function moveFocusedWindowToScreen(hint)
+function moveFocusedWindowToScreen(hint)
   local w = hs.window.focusedWindow()
   local s = hs.screen(hint)
   local f = s:fullFrame()
@@ -114,7 +114,7 @@ local function moveFocusedWindowToScreen(hint)
   hs.mouse.setRelativePosition(hs.geometry(x, y), s)
 end
 
-local function openFirefoxHomeTabs()
+function openFirefoxHomeTabs()
   activate('Firefox.app')
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
       'https://mail.google.com/mail/u/0/#inbox',
@@ -126,7 +126,7 @@ local function openFirefoxHomeTabs()
   end)
 end
 
-local function openFirefoxChatTabs()
+function openFirefoxChatTabs()
   activate('Firefox.app')
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
       'https://web.whatsapp.com',
@@ -137,7 +137,7 @@ local function openFirefoxChatTabs()
   end)
 end
 
-local function openChromeHomeTabs()
+function openChromeHomeTabs()
   activate('Google Chrome.app')
   os.execute(table.concat({
       '"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"',
