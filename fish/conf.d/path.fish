@@ -3,7 +3,7 @@
 #
 # When starting a new shell in a VirtualFish-connected directory, setting PATH
 # after VirtaulFish auto-activation would break the virtual environment.
-# Instead, we set PATH in this file to make it happen before VirtaulFish
+# Instead, I set PATH in this file to make it happen before VirtaulFish
 # auto-activation.
 set --global --export PATH \
     $HOME/bin \

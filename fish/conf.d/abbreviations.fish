@@ -69,10 +69,10 @@ abbr --add gunits "gunits --history ''"
 
 abbr --add bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
-# The regular expression we want to pass to perl is \\n, with two backslashes.
-# If we were typing out this abbr invocation on the command line, we would need
-# four backslashes to represent the original two. Here, we need *eight*
-# backslashes to represent the four we want inserted in the abbreviation string.
+# The regular expression I want to pass to perl is \\n, with two backslashes.
+# If I were typing out this abbr invocation on the command line, I would need
+# four backslashes to represent the original two. Here, I need *eight*
+# backslashes to represent the four I want inserted in the abbreviation string.
 abbr --add sn "perl -pe 's/\\\\\\\\n/\n/g'"
 
 abbr --add rmclass find . -type f -name "'*.class'" -exec rm -vf "'{}'" \\\;
