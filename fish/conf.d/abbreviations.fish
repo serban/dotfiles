@@ -34,9 +34,13 @@ abbr --add gc gcert
 
 abbr --add kb xset r rate 200 50  # in milliseconds and keystrokes/sec
 
-abbr --add l1 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  0
-abbr --add l2 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance 20
-abbr --add l3 m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance 30
+abbr --add l1  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance   0
+abbr --add l2  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  20
+abbr --add l3  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  30
+
+abbr --add lg1 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance   0
+abbr --add lg2 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance  80
+abbr --add lg3 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance 100
 
 abbr --add ago "ag 'TODO\(serban\)'"
 
