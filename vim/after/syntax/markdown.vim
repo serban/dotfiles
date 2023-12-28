@@ -19,6 +19,7 @@ syntax match   SerbanLinkTitle         '\v[^│]+\ze(│|$)'                    
 syntax match   SerbanAbsolutePath      '\v(^|\s)\zs/\S+>'                               containedin=Table
 syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                             containedin=Table
 syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table
+syntax match   SerbanCommit            '\v<[0-9a-f]{7,64}>'                             containedin=Table
 syntax match   SerbanDateTime          '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2}(:\d{2})?)?>'  containedin=Table
 syntax match   SerbanNotaBene          '\v<NB:'                                         containedin=Table
 syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                         containedin=Table
@@ -40,6 +41,7 @@ highlight link SerbanLinkTitle          Constant
 highlight link SerbanAbsolutePath       Special
 highlight link SerbanHomePath           Underlined
 highlight link SerbanCurrency           Statement
+highlight link SerbanCommit             Constant
 highlight link SerbanDateTime           Identifier
 highlight link SerbanNotaBene           Type
 highlight link SerbanTodo               Special
