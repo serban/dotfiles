@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env py
 
 # TODO(serban): Add an option to insert at the destination rather than swap.
 
