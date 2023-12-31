@@ -36,6 +36,7 @@ md5deep
 moreutils
 neovim
 newsboat
+numbat
 openssh
 pastel
 procs
