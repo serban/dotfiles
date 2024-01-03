@@ -68,6 +68,11 @@ if test $TERM = xterm-kitty
   set --global fish_handle_reflow 1
 end
 
+set --prepend fish_complete_path \
+    $HOME/src/dotfiles-google/fish/completions \
+    $HOME/src/wip/fish/completions \
+    #
+
 set --global --export XDG_CONFIG_HOME $HOME/.config
 set --global --export XDG_DATA_HOME   $HOME/.local/share
 set --global --export XDG_STATE_HOME  $HOME/.local/state
