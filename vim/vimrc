@@ -1540,6 +1540,8 @@ digraphs lc  10013  "  0x271d  ✝          Latin Cross
 digraphs ba  10020  "  0x2724  ✤          Heavy Four Balloon-Spoked Asterisk
 digraphs tl  10216  "  0x27e8  ⟨          Mathematical Left Angle Bracket
 digraphs tr  10217  "  0x27e9  ⟩          Mathematical Right Angle Bracket
+digraphs fl  65378  "  0xff62  ｢          Halfwidth Left Corner Bracket
+digraphs fr  65379  "  0xff63  ｣          Halfwidth Right Corner Bracket
 
 digraphs kc   8984  "  0x2318  ⌘          Place Of Interest Sign
 digraphs ko   8997  "  0x2325  ⌥          Option Key
