@@ -126,6 +126,7 @@ endif
 " SETTINGS
 
 set title                             " Set the terminal title to something appropriate (like the filename being edited)
+set cmdheight=1                       " Set the height of the command line area
 set cmdwinheight=9                    " Set the height of the command line window
 set helpheight=80                     " Set the minimum window height for help windows
 set winheight=20                      " Set the minimum window height for split windows
@@ -1773,7 +1774,7 @@ endif
   nnoremap <unique> <Leader>sl :set list! <CR>
   nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>sm :set macmeta! <CR>
-  nnoremap <unique> <Leader>so :messages <CR>
+  nnoremap <unique> <Leader>so :24messages <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
   nnoremap <unique> <Leader>vc :call SerbanChangeWorkingDirToCurrentFileParent() <Bar> call SerbanEchoWorkingDir() <CR>
