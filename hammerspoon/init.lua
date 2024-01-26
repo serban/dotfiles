@@ -1,5 +1,9 @@
+serban = {}
+
 hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
-local logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
+serban.logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
+
+serban.screen = require('serban.screen')
 
 hs.window.animationDuration = 0
 
@@ -24,27 +28,6 @@ end
 function bind(key, fn)
   hs.hotkey.bind('⌃⌥⇧⌘', key, fn)
   modal:bind('', key, function() fn(); modal:exit() end)
-end
-
-function logScreens()
-  logger.i('Layout › ──────────────────────────────────────────')
-  local screens = hs.screen.allScreens()
-  table.sort(screens, function(p, q)
-    local px, py = p:position()
-    local qx, qy = q:position()
-    return px < qx
-  end)
-  for _, s in ipairs(screens) do
-    local x, y = s:position()
-    local f = s:fullFrame()
-    logger.f('       › (%d, %d) [%4d×%4d] %s', x, y, f.w, f.h, s:name())
-  end
-end
-
-function setDockAutoHide()
-  hs.osascript.applescript(
-      'tell application "System Events" to tell dock preferences to set autohide to ' ..
-      (#hs.screen.allScreens() == 1 and 'true' or 'false'))
 end
 
 function activate(name)
@@ -94,7 +77,7 @@ function moveMouseToScreen(hint)
   local s = hs.screen(hint)
   local f = s:fullFrame()
   local x, y = f.w // 2, f.h // 2
-  logger.df(
+  serban.logger.df(
       ' Mouse → %23s [%4d×%4d] › Mouse → (%4d, %4d)',
       s:name(), f.w, f.h, x, y)
   hs.mouse.setRelativePosition(hs.geometry(x, y), s)
@@ -106,7 +89,7 @@ function moveFocusedWindowToScreen(hint)
   local s = hs.screen(hint)
   local f = s:fullFrame()
   local x, y = f.w // 2, f.h // 2
-  logger.df(
+  serban.logger.df(
       'Window → %23s [%4d×%4d] › Mouse → (%4d, %4d) › %s',
       s:name(), f.w, f.h, x, y, w:title())
   w:moveToScreen(s, false, true)
@@ -205,29 +188,21 @@ bind('5',     function() openFirefoxChatTabs() end)
 bind('6',     function() openChromeHomeTabs() end)
 bind('7',     function() activate('YouTube Music.app') end)
 
-screenWatcher = hs.screen.watcher.new(function() -- global to prevent garbage collection
-  logScreens()
-  setDockAutoHide()
-end)
-screenWatcher:start()
-logScreens()
-setDockAutoHide()
-
 local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
 for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
                       'Preview', 'Sublime Merge', 'iTerm2', 'kitty'}) do
   wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
 end
 wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
-  logger.df(
+  serban.logger.df(
       'New Window ›  %-18s  %-18s  %-18s  %d × %d', -- %-18s b/c of utf8.len()
       'isVisible: ' .. b(w:isVisible()),
       'isStandard: ' .. b(w:isStandard()),
       'isFullScreen: ' .. b(w:isFullScreen()),
       w:size().w, w:size().h) -- alternatively, use w:size().string
-  logger.df(
+  serban.logger.df(
       '           ›  %-16s  %-16s  %-16s  %s',
       w:role(), w:subrole(), app, w:title())
   hs.grid.set(w, {0, 0, 7, 9})
 end)
-logger.v(hs.inspect(wf.filters))
+serban.logger.v(hs.inspect(wf.filters))

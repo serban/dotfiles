@@ -83,6 +83,7 @@ ln -si ${DOTFILES}/git-config           ~/.config/git/config
 ln -si ${DOTFILES}/git-ignore           ~/.config/git/ignore
 
 mkdir -p ~/.config/hammerspoon
+ln -si ${DOTFILES}/hammerspoon/serban   ~/.config/hammerspoon/serban
 ln -si ${DOTFILES}/hammerspoon/init.lua ~/.config/hammerspoon/init.lua
 
 mkdir -p ~/.config/hg
