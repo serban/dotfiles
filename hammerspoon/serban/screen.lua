@@ -21,13 +21,26 @@ function M.setDockAutoHide()
       (#hs.screen.allScreens() == 1 and 'true' or 'false'))
 end
 
-M._screenWatcher = hs.screen.watcher.new(function() -- not local to prevent garbage collection
+function M.processScreenLayoutChange()
   M.logScreens()
   M.setDockAutoHide()
-end)
+end
+
+function M._timerDidFire()
+  serban.logger.i('Processing screen layout change…')
+  M.processScreenLayoutChange()
+end
+
+function M._layoutDidChange()
+  serban.logger.i('Screen layout changed')
+  M._timer:start()
+end
+
+M._timer = hs.timer.delayed.new(3, M._timerDidFire)
+
+M._screenWatcher = hs.screen.watcher.new(M._layoutDidChange)
 M._screenWatcher:start()
 
-M.logScreens()
-M.setDockAutoHide()
+M.processScreenLayoutChange()
 
 return M
