@@ -3,12 +3,11 @@ serban = {}
 hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
 serban.logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
 
+serban.grid   = require('serban.grid')
+serban.place  = require('serban.place')
 serban.screen = require('serban.screen')
 
 hs.window.animationDuration = 0
-
-hs.grid.setGrid('7x9')
-hs.grid.setMargins('6x6')
 
 function b(v)
   if     v == nil then return '∅' -- utf8.len('∅') → 1, string.len('∅') → 3

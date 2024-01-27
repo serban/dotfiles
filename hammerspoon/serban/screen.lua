@@ -24,6 +24,7 @@ end
 function M.processScreenLayoutChange()
   M.logScreens()
   M.setDockAutoHide()
+  serban.place.placeWindows()
 end
 
 function M._timerDidFire()
