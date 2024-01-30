@@ -24,6 +24,7 @@ end
 function M.processScreenLayoutChange()
   M.logScreens()
   M.setDockAutoHide()
+  serban.ax.disableAXEnhancedUserInterface()
   serban.place.placeWindows()
 end
 

@@ -3,6 +3,7 @@ serban = {}
 hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
 serban.logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
 
+serban.ax     = require('serban.ax')
 serban.grid   = require('serban.grid')
 serban.place  = require('serban.place')
 serban.screen = require('serban.screen')
