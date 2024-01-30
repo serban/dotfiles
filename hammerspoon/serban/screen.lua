@@ -32,10 +32,20 @@ function M._timerDidFire()
   M.processScreenLayoutChange()
 end
 
+-- NSApplicationDidChangeScreenParametersNotification fires randomly.
+-- Ignore the notification if the number of screens did not change.
 function M._layoutDidChange()
-  serban.logger.i('Screen layout changed')
+  local numScreens = #hs.screen.allScreens()
+  if numScreens == M._numScreens then
+    serban.logger.i('NSApplicationDidChangeScreenParametersNotification fired')
+    return
+  end
+  serban.logger.f('Screen layout changed: %d → %d', M._numScreens, numScreens)
+  M._numScreens = numScreens
   M._timer:start()
 end
+
+M._numScreens = #hs.screen.allScreens()
 
 M._timer = hs.timer.delayed.new(3, M._timerDidFire)
 
