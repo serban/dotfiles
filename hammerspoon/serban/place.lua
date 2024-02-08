@@ -54,6 +54,7 @@ end
 
 function M.placeWindows()
   local numScreens = math.min(2, #hs.screen.allScreens())
+  serban.logger.f('Placing windows on %d screens…', numScreens)
   for _, a in pairs(M.kPlacement) do
     M.moveApplicationToScreen(a['app'], table.unpack(a[numScreens]))
   end
