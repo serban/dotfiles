@@ -73,7 +73,7 @@ duti -s org.vim.MacVim              .yml                                all
 duti -s org.gnu.Emacs               .el                                 all
 duti -s org.gnu.Emacs               .org                                all
 
-duti -s com.google.Chrome           .svg                                all
+duti -s org.mozilla.Firefox         .svg                                all
 
 duti -s com.apple.Preview           com.adobe.pdf                       all
 duti -s com.apple.Preview           .pdf                                all
