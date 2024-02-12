@@ -1,13 +1,14 @@
 local M = {}
 
-M.wf = hs.window.filter.new(false, 'serban-wf', 'warning')
+M.windowFilter = hs.window.filter.new(false, 'serban-wf', 'warning')
 
-for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
-                      'Preview', 'Sublime Merge', 'iTerm2', 'kitty'}) do
-  M.wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
+for _, config in ipairs(serban.apps.kPlacement) do
+  if config.max then
+    M.windowFilter:setAppFilter(config.app, {allowRoles='AXStandardWindow'})
+  end
 end
 
-M.wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
+M.windowFilter:subscribe(hs.window.filter.windowCreated, function(w, app, event)
   serban.logger.df(
       'New Window ›  %-18s  %-18s  %-18s  %d × %d', -- %-18s b/c of utf8.len()
       'isVisible: ' .. b(w:isVisible()),
@@ -18,9 +19,9 @@ M.wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
       '           ›  %-16s  %-16s  %-16s  %s',
       w:role(), w:subrole(), app, w:title())
 
-  hs.grid.set(w, {0, 0, 7, 9})
+  hs.grid.maximizeWindow(w)
 end)
 
-serban.logger.v(hs.inspect(M.wf.filters))
+serban.logger.v(hs.inspect(M.windowFilter.filters))
 
 return M
