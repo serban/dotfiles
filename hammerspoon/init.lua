@@ -7,6 +7,7 @@ serban.grid   = require('serban.grid')
 
 serban.apps   = require('serban.apps')
 serban.ax     = require('serban.ax')
+serban.max    = require('serban.max')
 serban.place  = require('serban.place')
 serban.screen = require('serban.screen')
 
@@ -189,22 +190,3 @@ bind('4',     function() openFirefoxHomeTabs() end)
 bind('5',     function() openFirefoxChatTabs() end)
 bind('6',     function() openChromeHomeTabs() end)
 bind('7',     function() activate('YouTube Music.app') end)
-
-local wf = hs.window.filter.new(false, 'serban-wf', 'warning')
-for _, app in ipairs({'Firefox', 'Google Chrome', 'MacVim', 'OmniFocus',
-                      'Preview', 'Sublime Merge', 'iTerm2', 'kitty'}) do
-  wf:setAppFilter(app, {allowRoles='AXStandardWindow'})
-end
-wf:subscribe(hs.window.filter.windowCreated, function(w, app, event)
-  serban.logger.df(
-      'New Window ›  %-18s  %-18s  %-18s  %d × %d', -- %-18s b/c of utf8.len()
-      'isVisible: ' .. b(w:isVisible()),
-      'isStandard: ' .. b(w:isStandard()),
-      'isFullScreen: ' .. b(w:isFullScreen()),
-      w:size().w, w:size().h) -- alternatively, use w:size().string
-  serban.logger.df(
-      '           ›  %-16s  %-16s  %-16s  %s',
-      w:role(), w:subrole(), app, w:title())
-  hs.grid.set(w, {0, 0, 7, 9})
-end)
-serban.logger.v(hs.inspect(wf.filters))
