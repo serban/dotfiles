@@ -7,6 +7,7 @@ serban.grid   = require('serban.grid')
 
 serban.apps   = require('serban.apps')
 serban.ax     = require('serban.ax')
+serban.keys   = require('serban.keys')
 serban.max    = require('serban.max')
 serban.place  = require('serban.place')
 serban.screen = require('serban.screen')
@@ -19,18 +20,6 @@ function b(v)
   elseif v == false then return '✗' -- utf8.len('✗') → 1, string.len('✗') → 3
   else return '?'
   end
-end
-
-local nexus = hs.host.names()[1] == 'nexus.local'
-local modal = hs.hotkey.modal.new('⌘', 'e', 'Hotkey')
-
-function modal:entered()
-  hs.timer.doAfter(1, function() modal:exit() end)
-end
-
-function bind(key, fn)
-  hs.hotkey.bind('⌃⌥⇧⌘', key, fn)
-  modal:bind('', key, function() fn(); modal:exit() end)
 end
 
 function activate(name)
@@ -135,58 +124,3 @@ function openChromeHomeTabs()
     hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
   end)
 end
-
-bind("'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
-bind('8',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
-bind('9',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
-bind('0',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 6, 9}) end) -- Center Right
-bind('\\',    function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 7, 7}) end) -- Center Wide
-bind(';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
-bind('left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
-bind('right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
-bind('up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 5}) end) -- Top
-bind('down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 7, 4}) end) -- Bottom
-bind('f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 5}) end) -- Top Left
-bind('f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
-bind('f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
-bind('f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
-
-bind('-',     function() stackApplicationWindows() end)
-bind('=',     function() maximizeWindows() end)
-
-bind('1',     function() moveFocusedWindowToScreen('0 0') end) -- Left
-bind('2',     function() moveFocusedWindowToScreen('1 0') end) -- Center
-bind('3',     function() moveFocusedWindowToScreen('2 0') end) -- Right
-
-bind('f1',    function() moveMouseToScreen('0 0') end) -- Left
-bind('f2',    function() moveMouseToScreen('1 0') end) -- Center
-bind('f3',    function() moveMouseToScreen('2 0') end) -- Right
-
-bind('f8',    function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
-
-bind('b',     function() activate('Firefox.app') end)
-bind('c',     function() activate('Google Chrome.app') end)
-bind('f',     function() activate('Finder.app') end)
-bind('g',     function() activate(nexus and 'Numbers.app' or 'Google Chat.app') end)
-bind('h',     function() activate('Weather.app') end)
-bind('i',     function() activate('Maps.app') end)
-bind('j',     function() activate('Sublime Merge.app') end)
-bind('k',     function() activate(nexus and 'Activity Monitor.app' or 'kitty.app') end)
-bind('l',     function() activate('Preview.app') end)
-bind('m',     function() activate('Messages.app') end)
-bind('n',     function() activate('Notes.app') end)
-bind('o',     function() activate('OmniFocus.app') end)
-bind('p',     function() activate(nexus and 'Photos.app' or 'Photo Booth.app') end)
-bind('q',     function() activate('Hammerspoon.app') end)
-bind('r',     function() activate('Calendar.app') end)
-bind('s',     function() activate(nexus and 'Safari.app' or 'Google Meet.app') end)
-bind('t',     function() activate('iTerm.app') end)
-bind('u',     function() activate(nexus and 'UlyssesMac.app' or 'Cider V.app') end)
-bind('v',     function() activate('MacVim.app') end)
-bind('x',     function() activate('IINA.app') end)
-bind('y',     function() activate('Dictionary.app') end)
-bind('z',     function() highlightMousePointer() end)
-bind('4',     function() openFirefoxHomeTabs() end)
-bind('5',     function() openFirefoxChatTabs() end)
-bind('6',     function() openChromeHomeTabs() end)
-bind('7',     function() activate('YouTube Music.app') end)
