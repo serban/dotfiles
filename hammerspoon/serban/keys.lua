@@ -66,6 +66,6 @@ M.bind('z',     function() highlightMousePointer() end)
 M.bind('4',     function() openFirefoxHomeTabs() end)
 M.bind('5',     function() openFirefoxChatTabs() end)
 M.bind('6',     function() openChromeHomeTabs() end)
-M.bind('7',     function() activate('YouTube Music.app') end)
+M.bind('7',     function() activate('TIDAL.app') end)
 
 return M
