@@ -1,6 +1,7 @@
 [user]
   name = Serban Giuroiu
   email = giuroiu@gmail.com
+  useConfigOnly = true
 
 [alias]
   ad = add
