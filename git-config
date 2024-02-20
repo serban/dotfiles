@@ -63,6 +63,7 @@
   whitespace = space-before-tab,tab-in-indent,trailing-space
 
 [diff]
+  algorithm = histogram
   context = 5
   submodule = diff
 
