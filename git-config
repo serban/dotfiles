@@ -76,6 +76,7 @@
   defaultBranch = master
 
 [merge]
+  conflictStyle = zdiff3
   stat = true
 
 [pull]
