@@ -11,7 +11,10 @@ function M.logScreens()
   for _, s in ipairs(screens) do
     local x, y = s:position()
     local f = s:fullFrame()
-    serban.logger.f('       › (%d, %d) [%4d×%4d] %s', x, y, f.w, f.h, s:name())
+    local g = s:frame()
+    serban.logger.f(
+        '       › (%d, %d) [%4d×%4d] ⟨%4d×%4d⟩ %s',
+        x, y, f.w, f.h, g.w, g.h, s:name())
   end
 end
 

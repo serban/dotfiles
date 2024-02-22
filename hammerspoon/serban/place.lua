@@ -3,7 +3,8 @@ local M = {}
 function M.moveApplicationToScreen(name, hint, cell)
   local app = hs.application.find(name, true)
   local screen = hs.screen(hint)
-  local frame = screen:fullFrame()
+  local fullFrame = screen:fullFrame()
+  local gridFrame = screen:frame()
 
   if app == nil then
     serban.logger.df(
@@ -13,8 +14,9 @@ function M.moveApplicationToScreen(name, hint, cell)
 
   for _, window in pairs(app:allWindows()) do
     serban.logger.df(
-        'moveApplicationToScreen(): %16s → %23s [%4d×%4d] › %s',
-        name, screen:name(), frame.w, frame.h, string.sub(window:title(), 1, 20))
+        'moveApplicationToScreen(): %16s → %23s [%4d×%4d] ⟨%4d×%4d⟩ › %s',
+        name, screen:name(), fullFrame.w, fullFrame.h, gridFrame.w, gridFrame.h,
+        string.sub(window:title(), 1, 20))
     hs.grid.set(window, cell, screen)
   end
 end
