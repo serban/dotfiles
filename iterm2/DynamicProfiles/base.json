@@ -29,7 +29,7 @@
       "Normal Font" : "Monaco 15",
       "ASCII Anti Aliased": true,
       "ASCII Ligatures": false,
-      "Use Non-ASCII Font": true,
+      "Use Non-ASCII Font": false,
       "Non Ascii Font": "SymbolsNFM 15",
       "Non-ASCII Anti Aliased": true,
       "Non-ASCII Ligatures": false,
