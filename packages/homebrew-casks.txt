@@ -1,3 +1,4 @@
 font-jetbrains-mono
 font-jetbrains-mono-nerd-font
 font-symbols-only-nerd-font
+kitty
