@@ -57,6 +57,9 @@
 [branch]
   autoSetupMerge = true
 
+[commit]
+  verbose = true
+
 [core]
   autocrlf = false
   quotePath = false
