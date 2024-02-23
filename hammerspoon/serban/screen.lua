@@ -28,7 +28,7 @@ function M.processScreenLayoutChange()
   M.logScreens()
   M.setDockAutoHide()
   serban.ax.disableAXEnhancedUserInterface()
-  hs.timer.doAfter(0.2, serban.place.placeWindows) -- Wait for Dock to settle
+  hs.timer.doAfter(2.0, serban.place.placeWindows) -- Wait for Dock to settle
 end
 
 function M._timerDidFire()
@@ -51,7 +51,7 @@ end
 
 M._numScreens = #hs.screen.allScreens()
 
-M._timer = hs.timer.delayed.new(3, M._timerDidFire)
+M._timer = hs.timer.delayed.new(3.0, M._timerDidFire)
 
 M._screenWatcher = hs.screen.watcher.new(M._layoutDidChange)
 M._screenWatcher:start()
