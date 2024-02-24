@@ -78,26 +78,26 @@ set --prepend fish_function_path \
     $HOME/src/wip/fish/functions \
     #
 
-set --global --export XDG_CONFIG_HOME $HOME/.config
-set --global --export XDG_DATA_HOME   $HOME/.local/share
-set --global --export XDG_STATE_HOME  $HOME/.local/state
-set --global --export XDG_CACHE_HOME  $HOME/.cache
+set --global --export XDG_CONFIG_HOME     $HOME/.config
+set --global --export XDG_DATA_HOME       $HOME/.local/share
+set --global --export XDG_STATE_HOME      $HOME/.local/state
+set --global --export XDG_CACHE_HOME      $HOME/.cache
 
-set --global --export LESSKEYIN       $HOME/.config/less/lesskey
-set --global --export INPUTRC         $HOME/.config/readline/inputrc
-set --global --export SCREENRC        $HOME/.config/screen/screenrc
+set --global --export LESSKEYIN           $HOME/.config/less/lesskey
+set --global --export INPUTRC             $HOME/.config/readline/inputrc
+set --global --export SCREENRC            $HOME/.config/screen/screenrc
 
-set --global --export LESSHISTFILE    $HOME/.local/state/less/less-history
-set --global --export PSQL_HISTORY    $HOME/.local/state/postgresql/psql-history
-set --global --export SQLITE_HISTORY  $HOME/.local/state/sqlite/sqlite-history
+set --global --export LESSHISTFILE        $HOME/.local/state/less/less-history
+set --global --export PSQL_HISTORY        $HOME/.local/state/postgresql/psql-history
+set --global --export SQLITE_HISTORY      $HOME/.local/state/sqlite/sqlite-history
 
-set --global --export FLY_CONFIG_DIR  $HOME/.local/state/fly
+set --global --export FLY_CONFIG_DIR      $HOME/.local/state/fly
 
-set --global --export GRIPHOME        $HOME/.cache/grip
+set --global --export GRIPHOME            $HOME/.cache/grip
 
-set --global --export GOPATH          $HOME/env/go
-set --global --export CARGO_HOME      $HOME/env/cargo
-set --global --export RUSTUP_HOME     $HOME/env/rustup
+set --global --export GOPATH              $HOME/env/go
+set --global --export CARGO_HOME          $HOME/env/cargo
+set --global --export RUSTUP_HOME         $HOME/env/rustup
 
 set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
