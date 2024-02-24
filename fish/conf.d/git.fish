@@ -18,7 +18,7 @@ abbr --add gcn git clean -d -x --dry-run
 abbr --add gcl git clone
 abbr --add gco git commit
 abbr --add gca git commit --amend --reuse-message=HEAD
-abbr --add gcb --set-cursor=° git commit --message='"°Bump @ "(date "+%Y-%m-%d %H:%M:%S")'  # TODO(serban): Add to gitconfig
+abbr --add gcb --set-cursor=° git commit --message='"°Bump @ "(date "+%Y-%m-%d %H:%M:%S")'
 abbr --add gcp git cherry-pick
 abbr --add gdi git diff --stat --patch
 abbr --add gds git diff --stat --patch --staged
@@ -28,8 +28,9 @@ abbr --add ggi git grep --ignore-case
 abbr --add gin git init
 abbr --add glo git log --decorate --stat
 abbr --add gl1 git log --decorate=no --oneline
+#          glf
 abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
-abbr --add glp git log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
+#          glp
 abbr --add gls git ls-files
 abbr --add glu git ls-files --others --exclude-standard --directory
 abbr --add gpl git pull --recurse-submodules
@@ -107,4 +108,8 @@ function glf
            | base64)
 
   test -n "$commit" && echo -n \033]52\;p\;$commit\007
+end
+
+function glp
+  git log --pretty='%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)'
 end

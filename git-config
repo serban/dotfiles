@@ -15,7 +15,7 @@
   cl = clone
   co = commit
   ca = commit --amend --reuse-message=HEAD
-  cb = help  # TODO(serban): Bump
+  cb = help  # TODO(serban): Implement
   cp = cherry-pick
   di = diff --stat --patch
   ds = diff --stat --patch --staged
@@ -25,6 +25,7 @@
   in = init
   lo = log --decorate --stat
   l1 = log --decorate=no --oneline
+  lf = help  # TODO(serban): Implement
   lg = log --decorate=no --oneline --regexp-ignore-case --grep
   lp = log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
   ls = ls-files
