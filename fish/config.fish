@@ -94,10 +94,13 @@ set --global --export SQLITE_HISTORY      $HOME/.local/state/sqlite/sqlite-histo
 set --global --export FLY_CONFIG_DIR      $HOME/.local/state/fly
 
 set --global --export GRIPHOME            $HOME/.cache/grip
+set --global --export PYTHONPYCACHEPREFIX $HOME/.cache/python
 
-set --global --export GOPATH              $HOME/env/go
 set --global --export CARGO_HOME          $HOME/env/cargo
+set --global --export GOPATH              $HOME/env/go
+set --global --export PYENV_ROOT          $HOME/env/pyenv
 set --global --export RUSTUP_HOME         $HOME/env/rustup
+set --global --export VIRTUALFISH_HOME    $HOME/env/virtualenv
 
 set --global --export LD_LIBRARY_PATH \
     $HOME/homebrew/lib \
@@ -109,8 +112,6 @@ set --global --export PYTHONPATH \
     #
 
 set --global --export PIP_REQUIRE_VIRTUALENV true
-set --global --export PYENV_ROOT $HOME/env/pyenv
-set --global --export VIRTUALFISH_HOME $HOME/env/virtualenv
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
