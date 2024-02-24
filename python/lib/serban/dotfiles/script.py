@@ -1,4 +1,5 @@
 import collections
+import dataclasses
 import datetime
 import os
 import pathlib
@@ -345,3 +346,43 @@ def getlines(args, exit=True, verbose=True, stderr=True) -> list[str]:
     A list of strings.
   """
   return getoutput(args, exit, verbose, stderr).splitlines()
+
+@dataclasses.dataclass(frozen=True, slots=True)
+class Node:
+  """The path attributes of a file discovered by walk().
+
+  Attributes:
+    path:     A pathlib.Path. The path to the file.
+    parent:   A pathlib.Path. path.parent
+    name:     A string.       path.name
+    relative: A pathlib.Path. The path relative to the top of the search.
+    absolute: A pathlib.Path. path.absolute()
+    tilde:    A string.       tilde(path.absolute())
+  """
+  path:     pathlib.Path
+  parent:   pathlib.Path
+  name:     str
+  relative: pathlib.Path
+  absolute: pathlib.Path
+  tilde:    str
+
+def walk(top: pathlib.Path) -> collections.abc.Iterator[Node]:
+  """Recursively yield the unhidden files of a directory in sorted order.
+
+  Hidden directories are pruned; hidden files are omitted.
+
+  Args:
+    top:
+      A pathlib.Path. The root of the search.
+
+  Yields:
+    Node objects.
+  """
+  for parent, dirs, files in top.walk():
+    dirs[:] = sorted([d for d in dirs if not d.startswith('.')])
+    names = sorted([f for f in files if not f.startswith('.')])
+    for name in names:
+      path = parent / name
+      absolute = path.absolute()
+      yield Node(path, parent, name, path.relative_to(top),
+                 absolute, tilde(absolute))
