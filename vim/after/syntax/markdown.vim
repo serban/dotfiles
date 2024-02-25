@@ -34,6 +34,8 @@ syntax match   SerbanQuestion          '\v(^|\s)\zs\?'                          
 syntax match   SerbanTilde             '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table
 syntax match   SerbanTable             '\v[│├┼┤─]'
 
+syntax match   SerbanDate              '\v<(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{2}( \d{4})?>' containedin=Table
+
 highlight link SerbanUrl                Underlined
 highlight link SerbanShortLink          Underlined
 highlight link SerbanLinkSeparator      Identifier
@@ -55,3 +57,5 @@ highlight link SerbanNull               Comment
 highlight link SerbanQuestion           Folded
 highlight link SerbanTilde              Type
 highlight link SerbanTable              PreProc
+
+highlight link SerbanDate               Identifier
