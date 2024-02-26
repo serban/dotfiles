@@ -183,6 +183,7 @@ set encoding=utf-8                  " Default to UTF-8 encoding
 
 set history=27                      " The number of commands, search patterns, expressions, and input() lines to remember
 set viminfo='0,f0,<0,s0,h           " Do not store marks, file marks, or registers. Ignore previous hlsearch setting on startup
+set directory=~/.local/state/vim//  " Store swap files in a dedicated directory. The trailing double-slash is not a typo.
 set sessionoptions=buffers,curdir,folds,resize,tabpages,winpos,winsize  " What to preserve when saving a session
 
 if !has('nvim')

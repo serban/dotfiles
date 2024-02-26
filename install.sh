@@ -152,6 +152,7 @@ mkdir -p -m 700 ~/.local/state/bpython
 mkdir -p -m 700 ~/.local/state/less
 mkdir -p -m 700 ~/.local/state/postgresql
 mkdir -p -m 700 ~/.local/state/sqlite
+mkdir -p -m 700 ~/.local/state/vim
 
 mkdir -p -m 700 ~/.cache
 mkdir -p -m 700 ~/.cache/grip
