@@ -21,6 +21,7 @@ syntax match   SerbanHomePath          '\v(^|\s)\zs\~/\S+>'                     
 syntax match   SerbanCurrency          '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table
 syntax match   SerbanCommit            '\v<[0-9a-f]{7,64}>'                             containedin=Table
 syntax match   SerbanDateTime          '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2}(:\d{2})?)?>'  containedin=Table
+syntax match   SerbanTime              '\v<\d{2}:\d{2}>'                                containedin=Table
 syntax match   SerbanNotaBene          '\v<NB:'                                         containedin=Table
 syntax match   SerbanTodo              '\v<TODO(\(serban\))?:?'                         containedin=Table
 syntax match   SerbanPend              '\v<PEND(\(serban\))?:?'                         containedin=Table
@@ -45,6 +46,7 @@ highlight link SerbanHomePath           SerbanViolet
 highlight link SerbanCurrency           SerbanGreen
 highlight link SerbanCommit             SerbanCyan
 highlight link SerbanDateTime           SerbanBlue
+highlight link SerbanTime               SerbanCyan
 highlight link SerbanNotaBene           SerbanYellow
 highlight link SerbanTodo               SerbanRed
 highlight link SerbanPend               SerbanYellow
