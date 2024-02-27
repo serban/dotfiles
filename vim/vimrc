@@ -919,6 +919,15 @@ function SerbanHighlight()
   " cyan       6  #2aa198
   " orange     9  #cb4b16
   " violet    13  #6c71c4
+  highlight SerbanRed                           cterm=none ctermbg=8  ctermfg=1
+  highlight SerbanGreen                         cterm=none ctermbg=8  ctermfg=2
+  highlight SerbanYellow                        cterm=none ctermbg=8  ctermfg=3
+  highlight SerbanBlue                          cterm=none ctermbg=8  ctermfg=4
+  highlight SerbanMagenta                       cterm=none ctermbg=8  ctermfg=5
+  highlight SerbanCyan                          cterm=none ctermbg=8  ctermfg=6
+  highlight SerbanOrange                        cterm=none ctermbg=8  ctermfg=9
+  highlight SerbanViolet                        cterm=none ctermbg=8  ctermfg=13
+  highlight SerbanGray                          cterm=none ctermbg=8  ctermfg=10
   highlight VertSplit                           cterm=none ctermbg=8  ctermfg=0
   highlight StatusLine                          cterm=none ctermbg=5  ctermfg=8
   highlight StatusLineNC                        cterm=none ctermbg=0  ctermfg=7
@@ -967,6 +976,15 @@ if !has('nvim')
   highlight SpellRare                           cterm=underline       ctermul=6
 endif
 
+  execute 'highlight SerbanRed                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_red
+  execute 'highlight SerbanGreen                gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_green
+  execute 'highlight SerbanYellow               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_yellow
+  execute 'highlight SerbanBlue                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_blue
+  execute 'highlight SerbanMagenta              gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_magenta
+  execute 'highlight SerbanCyan                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_cyan
+  execute 'highlight SerbanOrange               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_orange
+  execute 'highlight SerbanViolet               gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_violet
+  execute 'highlight SerbanGray                 gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base01
   execute 'highlight VertSplit                  gui=none guibg=' . g:serban_solarized_base03  . ' guifg=' . g:serban_solarized_base02
   execute 'highlight StatusLine                 gui=none guibg=' . g:serban_solarized_magenta . ' guifg=' . g:serban_solarized_base03
   execute 'highlight StatusLineNC               gui=none guibg=' . g:serban_solarized_base02  . ' guifg=' . g:serban_solarized_base2
