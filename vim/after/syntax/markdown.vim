@@ -36,26 +36,26 @@ syntax match   SerbanTable             '\v[│├┼┤─]'
 
 syntax match   SerbanDate              '\v<(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{2}( \d{4})?>' containedin=Table
 
-highlight link SerbanUrl                Underlined
-highlight link SerbanShortLink          Underlined
-highlight link SerbanLinkSeparator      Identifier
-highlight link SerbanLinkTitle          Constant
-highlight link SerbanAbsolutePath       Special
-highlight link SerbanHomePath           Underlined
-highlight link SerbanCurrency           Statement
-highlight link SerbanCommit             Constant
-highlight link SerbanDateTime           Identifier
-highlight link SerbanNotaBene           Type
-highlight link SerbanTodo               Special
-highlight link SerbanPend               Type
-highlight link SerbanDone               Statement
-highlight link SerbanUserName           Statement
-highlight link SerbanDot                Type
-highlight link SerbanCheck              Statement
-highlight link SerbanCross              Special
-highlight link SerbanNull               Comment
-highlight link SerbanQuestion           Folded
-highlight link SerbanTilde              Type
-highlight link SerbanTable              PreProc
+highlight link SerbanUrl                SerbanViolet
+highlight link SerbanShortLink          SerbanViolet
+highlight link SerbanLinkSeparator      SerbanBlue
+highlight link SerbanLinkTitle          SerbanCyan
+highlight link SerbanAbsolutePath       SerbanRed
+highlight link SerbanHomePath           SerbanViolet
+highlight link SerbanCurrency           SerbanGreen
+highlight link SerbanCommit             SerbanCyan
+highlight link SerbanDateTime           SerbanBlue
+highlight link SerbanNotaBene           SerbanYellow
+highlight link SerbanTodo               SerbanRed
+highlight link SerbanPend               SerbanYellow
+highlight link SerbanDone               SerbanGreen
+highlight link SerbanUserName           SerbanGreen
+highlight link SerbanDot                SerbanYellow
+highlight link SerbanCheck              SerbanGreen
+highlight link SerbanCross              SerbanRed
+highlight link SerbanNull               SerbanGray
+highlight link SerbanQuestion           SerbanViolet
+highlight link SerbanTilde              SerbanYellow
+highlight link SerbanTable              SerbanOrange
 
-highlight link SerbanDate               Identifier
+highlight link SerbanDate               SerbanViolet
