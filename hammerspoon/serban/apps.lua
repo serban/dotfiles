@@ -27,6 +27,7 @@ M.kPlacement = {
   { app='Preview',          bun='com.apple.Preview',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Reminders',        bun='com.apple.reminders',                max=false,  [1]={g.kScreenLeft, g.kGridLeft},       [2]={g.kScreenLeft,   g.kGridLeft},       },
   { app='Safari',           bun='com.apple.Safari',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='Signal',           bun='org.whispersystems.signal-desktop',  max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Sublime Merge',    bun='com.sublimemerge',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='System Settings',  bun='com.apple.systempreferences',        max=false,  [1]={g.kScreenLeft, g.kGridLeft},       [2]={g.kScreenLeft,   g.kGridLeft},       },
   { app='TIDAL',            bun='com.tidal.desktop',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
