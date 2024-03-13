@@ -3,7 +3,9 @@ import dataclasses
 import datetime
 import os
 import pathlib
+import pprint
 import shlex
+import shutil
 import subprocess
 import sys
 import time
@@ -43,6 +45,18 @@ dry_run = False
 # • https://docs.python.org/3/library/typing.html#typing.SupportsFloat
 # • https://github.com/python/mypy/issues/3186 - int is not a Number?
 # • https://stackoverflow.com/a/69383462/599692 - How to hint at number types
+def _get_total_seconds(d: float | datetime.timedelta) -> int:
+  if isinstance(d, datetime.timedelta):
+    total_seconds = int(d.total_seconds())
+  else:
+    total_seconds = int(d)
+
+  if total_seconds < 0:  # Lossy. A more strict check would be d != abs(d)
+    raise ValueError(
+        f'Duration must be non-negative. Got {d!r} = {total_seconds:,} seconds')
+
+  return total_seconds
+
 def human_duration(d: float | datetime.timedelta, compact: bool = False) -> str:
   """Get a human-readable representation of a duration value.
 
@@ -56,14 +70,7 @@ def human_duration(d: float | datetime.timedelta, compact: bool = False) -> str:
   Returns:
     A string.
   """
-  if isinstance(d, datetime.timedelta):
-    total_seconds = int(d.total_seconds())
-  else:
-    total_seconds = int(d)
-
-  if total_seconds < 0:  # Lossy. A more strict check would be d != abs(d)
-    raise ValueError(
-        f'Duration must be non-negative. Got {d!r} = {total_seconds:,} seconds')
+  total_seconds = _get_total_seconds(d)
 
   days,    hours_remaining_seconds = divmod(            total_seconds, 86_400)
   hours, minutes_remaining_seconds = divmod(  hours_remaining_seconds,  3_600)
@@ -80,9 +87,9 @@ def human_duration(d: float | datetime.timedelta, compact: bool = False) -> str:
   else:
     return                                               f'{seconds:d}s'
 
-def tilde(p: pathlib.PurePath) -> str:
-  """Replace the $HOME prefix of a PurePath with '~'. Returns a string."""
-  path, home = str(p), str(pathlib.Path.home())
+def tilde(p: str | os.PathLike) -> str:
+  """Replace the $HOME prefix of a path with '~'. Returns a string."""
+  path, home = os.fsdecode(p), str(pathlib.Path.home())
   return path.replace(home, '~', 1) if path.startswith(home) else path
 
 def title(s: str) -> None:
@@ -123,6 +130,10 @@ def indent(o: typing.Any) -> None:
     else:
       print()
 
+def dump(o: typing.Any, width: int = 76) -> None:
+  """Pretty-print an object and indent each non-blank line of output."""
+  indent(pprint.pformat(o, width=width, underscore_numbers=True))
+
 def bullets(l: collections.abc.Iterable) -> None:
   """Print a bulleted list from the supplied iterable."""
   for item in l:
@@ -158,6 +169,50 @@ def heading(s: str) -> None:
   print('{} {:{pad}} {}'.format(vertical_line, s, vertical_line, pad=pad))
   print('{}{}{}'.format(lower_left, horizontal_line*(pad+2), lower_right))
 
+def wait(d: float | datetime.timedelta) -> datetime.timedelta:
+  """Wait for the given time duration with visual indication of progress.
+
+  Send SIGINT (Ctrl-C) to stop waiting before the full duration has elapsed.
+
+  Args:
+    d:
+      A numeric value encoding seconds or a datetime.timedelta. Must be
+      non-negative. Fractional components finer than a second are discarded.
+
+  Returns:
+    A datetime.timedelta representing the actual amount of time waited.
+  """
+  total_seconds = _get_total_seconds(d)
+
+  print(f'{YELLOW}⏲', f'Waiting {human_duration(total_seconds)}', RESET)
+
+  pad = len(human_duration(total_seconds))
+
+  current_second = 0
+  for second_being_processed in range(1, total_seconds + 1):
+    current_minute, current_second = divmod(second_being_processed, 60)
+
+    if current_second == 1:
+      print(f'  ', end='', flush=True)
+
+    try:
+      time.sleep(1)
+    except KeyboardInterrupt:
+      seconds_waited = second_being_processed - 1  # time.sleep() did not finish
+      print()
+      error(f'Interrupted after {human_duration(seconds_waited)}')
+      return datetime.timedelta(seconds=seconds_waited)
+
+    print('.', end='', flush=True)
+
+    if current_second == 0:
+      print(f'  {human_duration(second_being_processed):>{pad}}')
+
+  if total_seconds > 0 and current_second > 0:
+    print(f'{" " * (60 - current_second)}  {human_duration(total_seconds)}')
+
+  return datetime.timedelta(seconds=total_seconds)
+
 def confirm(prompt: str) -> bool:
   """Return a yes-or-no response from the user for the given prompt.
 
@@ -187,6 +242,76 @@ def confirm(prompt: str) -> bool:
   finally:
     print(RESET, end='')
 
+def _fzf(noun: str, items: collections.abc.Iterable[str], multi=False) -> str:
+  if not shutil.which('fzf'):
+    die('select(): fzf is not installed')
+
+  if not items:
+    raise ValueError(f'Iterable must not be empty. Got {items!r}')
+
+  for s in items:
+    if not s:
+      raise ValueError(f'Item must not be empty')
+    if '\0' in s:
+      raise ValueError(f'Item must not contain the null character. Got {s!r}')
+
+  header = f'Select {noun}:' if multi else f'Select a {noun}:'
+  try:
+    return subprocess.run(
+        ['fzf',
+         '--header', header,
+         '--read0', '--print0',
+         '--bind', 'enter:accept-non-empty',
+         '--bind', 'esc:clear-selection'] +
+        (['--bind', 'ctrl-a:select-all', '--multi'] if multi else []),
+        check=True, text=True, input='\0'.join(items),
+        stdout=subprocess.PIPE).stdout.rstrip('\0')
+  except subprocess.CalledProcessError as e:
+    match e.returncode:
+      case 130:
+        # https://peps.python.org/pep-0409 - Suppressing exception context
+        raise KeyboardInterrupt('fzf was interrupted') from None
+      case _:
+        raise
+
+def select(noun: str, items: collections.abc.Iterable[str]) -> str:
+  """Prompt the user to select an item from a list using fzf.
+
+  Args:
+    noun:
+      A singular noun describing the classification of the items in the list.
+    items:
+      An iterable of strings. Each string must not be empty and must not contain
+      the null character.
+
+  Returns:
+    A string. The item the user selected.
+
+  Raises:
+    KeyboardInterrupt:
+      If the user triggers SIGINT (Ctrl-C) instead of selecting an item.
+  """
+  return _fzf(noun, items)
+
+def selectmany(noun: str, items: collections.abc.Iterable[str]) -> list[str]:
+  """Prompt the user to select one or more items from a list using fzf.
+
+  Args:
+    noun:
+      A plural noun describing the classification of the items in the list.
+    items:
+      An iterable of strings. Each string must not be empty and must not contain
+      the null character.
+
+  Returns:
+    A list of strings. The items the user selected.
+
+  Raises:
+    KeyboardInterrupt:
+      If the user triggers SIGINT (Ctrl-C) instead of completing the selection.
+  """
+  return _fzf(noun, items, multi=True).split('\0')
+
 # • https://peps.python.org/pep-0519
 #   ↳ PEP 519 – Adding a file system path protocol (2016-05-11)
 # • https://github.com/python/cpython/issues/89293
@@ -194,7 +319,8 @@ def confirm(prompt: str) -> bool:
 # • https://discuss.python.org/t/coerce-path-objects-in-shlex-join/26755
 #   ↳ Coerce Path objects in shlex.join (2023-05-13)
 def _shlex_join(args) -> str:
-  return shlex.join(str(a) if isinstance(a, os.PathLike) else a for a in args)
+  return shlex.join(
+      os.fsdecode(a) if isinstance(a, os.PathLike) else a for a in args)
 
 def _run_and_indent_output(args) -> int:
   with subprocess.Popen(
