@@ -1,34 +1,10 @@
 #!/usr/bin/env py
 
-# See Stack Overflow questions:
-# http://stackoverflow.com/questions/1060279/iterating-through-a-range-of-dates-in-python
-# http://stackoverflow.com/questions/3615375/python-count-days-ignoring-weekends
-
 import argparse
-import calendar
 import datetime
 import os
 
-
-def date_range(start_date, end_date):
-  for i in range((end_date - start_date).days):
-    yield start_date + datetime.timedelta(days=i)
-
-
-def count_days(start, end, exclude_weekends=False, exclude=None):
-  exclude = exclude or set()
-  total_days = 0
-
-  for d in date_range(start, end):
-    if exclude_weekends and d.weekday() > calendar.FRIDAY:
-      continue
-
-    if d in exclude:
-      continue
-
-    total_days += 1
-
-  return total_days
+from serban.dotfiles import timp
 
 
 def parse_exclude_file(path):
@@ -69,8 +45,9 @@ def main():
   exclude_dates = set(
       [datetime.datetime.strptime(d, '%Y-%m-%d').date() for d in exclude])
 
-  print(count_days(datetime.date.today(), target_date,
-                   args.exclude_weekends, exclude=exclude_dates))
+  print(len(list(timp.date_range(
+      datetime.date.today(), target_date,
+      exclude_weekends=args.exclude_weekends, excluded=exclude_dates))))
 
 
 if __name__ == '__main__':

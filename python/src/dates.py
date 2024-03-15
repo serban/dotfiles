@@ -3,9 +3,7 @@
 import datetime
 import sys
 
-def date_range_inclusive(start_date, end_date):
-  for i in range((end_date - start_date).days + 1):
-    yield start_date + datetime.timedelta(days=i)
+from serban.dotfiles import timp
 
 def main():
   if len(sys.argv) < 3:
@@ -15,7 +13,7 @@ def main():
   start_date = datetime.datetime.strptime(sys.argv[1], '%Y-%m-%d').date()
   end_date   = datetime.datetime.strptime(sys.argv[2], '%Y-%m-%d').date()
 
-  for date in date_range_inclusive(start_date, end_date):
+  for date in timp.date_range_inclusive(start_date, end_date):
     print(date.strftime('%a %b %d'))
 
 if __name__ == '__main__':
