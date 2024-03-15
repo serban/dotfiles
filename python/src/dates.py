@@ -1,19 +1,20 @@
 #!/usr/bin/env py
 
+import argparse
 import datetime
-import sys
 
 from serban.dotfiles import timp
 
+def parse_command_line_arguments():
+  parser = argparse.ArgumentParser(description='Date Range Tool')
+  parser.add_argument('start_date', type=datetime.date.fromisoformat)
+  parser.add_argument('end_date', type=datetime.date.fromisoformat)
+  return parser.parse_args()
+
 def main():
-  if len(sys.argv) < 3:
-    print('Provide a start date and end date', file=sys.stderr)
-    sys.exit(1)
+  args = parse_command_line_arguments()
 
-  start_date = datetime.datetime.strptime(sys.argv[1], '%Y-%m-%d').date()
-  end_date   = datetime.datetime.strptime(sys.argv[2], '%Y-%m-%d').date()
-
-  for date in timp.date_range_inclusive(start_date, end_date):
+  for date in timp.date_range_inclusive(args.start_date, args.end_date):
     print(date.strftime('%a %b %d'))
 
 if __name__ == '__main__':
