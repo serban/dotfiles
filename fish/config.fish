@@ -114,6 +114,8 @@ set --global --export PYTHONPATH \
 set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
+set --global --export HOMEBREW_AUTO_UPDATE_SECS 21600  # 6 hours
+
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
 set --global --export FZF_DEFAULT_OPTS \
