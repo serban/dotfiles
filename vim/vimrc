@@ -1163,6 +1163,7 @@ endfunction
 function SerbanFzfNotes()
   call fzf#run(fzf#wrap('serban-notes', fzf#vim#with_preview({
   \   'dir': '~/txt',
+  \   'source': 'fd --type file --strip-cwd-prefix | sort',
   \   'options': '--prompt "⁖ ~/txt/" --no-sort',
   \ })))
 endfunction
