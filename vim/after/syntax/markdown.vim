@@ -25,11 +25,12 @@ syntax match   SerbanTime                '\v<\d{2}:\d{2}>'                      
 syntax match   SerbanHoursMinutesSeconds '\v<\d+h(\d{2}m(\d{2}s)?)?>'                     containedin=Table
 syntax match   SerbanMinutesSeconds      '\v<\d+m(\d{2}s)?>'                              containedin=Table
 syntax match   SerbanSeconds             '\v<\d+s>'                                       containedin=Table
+syntax match   SerbanFunction            '\v<\S+\(\)'                                     containedin=Table
+syntax match   SerbanUserName            '\v<\l+\@'                                       containedin=Table
 syntax match   SerbanNotaBene            '\v<NB:'                                         containedin=Table
 syntax match   SerbanTodo                '\v<TODO(\(serban\))?:?'                         containedin=Table
 syntax match   SerbanPend                '\v<PEND(\(serban\))?:?'                         containedin=Table
 syntax match   SerbanDone                '\v<DONE(\(serban\))?:?'                         containedin=Table
-syntax match   SerbanUserName            '\v<\l+\@'                                       containedin=Table
 syntax match   SerbanDot                 '·'                                              containedin=Table
 syntax match   SerbanCheck               '✓'                                              containedin=Table
 syntax match   SerbanCross               '✗'                                              containedin=Table
@@ -53,11 +54,12 @@ highlight link SerbanTime                 SerbanCyan
 highlight link SerbanHoursMinutesSeconds  SerbanYellow
 highlight link SerbanMinutesSeconds       SerbanYellow
 highlight link SerbanSeconds              SerbanYellow
+highlight link SerbanFunction             SerbanGreen
+highlight link SerbanUserName             SerbanGreen
 highlight link SerbanNotaBene             SerbanYellow
 highlight link SerbanTodo                 SerbanRed
 highlight link SerbanPend                 SerbanYellow
 highlight link SerbanDone                 SerbanGreen
-highlight link SerbanUserName             SerbanGreen
 highlight link SerbanDot                  SerbanYellow
 highlight link SerbanCheck                SerbanGreen
 highlight link SerbanCross                SerbanRed
