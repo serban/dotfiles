@@ -539,6 +539,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
+\   'SerbanFzfNotes',
 \   'SerbanFzfProducerModules',
 \   'SerbanFzfGoogle3Files',
 \   'SerbanFzfGoogle3Folders',
@@ -1159,6 +1160,13 @@ function SerbanCommandPaletteRun(cmd)
   call feedkeys(':call Serban' . a:cmd . '()' . "\n", 'n')
 endfunction
 
+function SerbanFzfNotes()
+  call fzf#run(fzf#wrap('serban-notes', fzf#vim#with_preview({
+  \   'dir': '~/txt',
+  \   'options': '--prompt "⁖ ~/txt/" --no-sort',
+  \ })))
+endfunction
+
 function SerbanFzfProducerModules()
   call fzf#run(fzf#wrap('serban-producer-modules', {
   \   'source': 'fd --type file --strip-cwd-prefix ProducerModule.java',
@@ -1756,6 +1764,7 @@ endif
   nnoremap <unique> <Leader>hc :FzfCommands <CR>
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
   nnoremap <unique> <Leader>hr :FzfRg<Space>
+  nnoremap <unique> <Leader>ht :call SerbanFzfNotes() <CR>
   nnoremap <unique> <Leader>hs :call SerbanFzfSimpleSession() <CR>
   nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
   nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
