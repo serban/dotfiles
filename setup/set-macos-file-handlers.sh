@@ -34,6 +34,7 @@ duti -s org.vim.MacVim              .conf                               all
 duti -s org.vim.MacVim              .cpp                                all
 duti -s org.vim.MacVim              .css                                all
 duti -s org.vim.MacVim              .cu                                 all
+duti -s org.vim.MacVim              .dj                                 all
 duti -s org.vim.MacVim              .fish                               all
 duti -s org.vim.MacVim              .go                                 all
 duti -s org.vim.MacVim              .h                                  all
