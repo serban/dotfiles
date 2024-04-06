@@ -55,6 +55,7 @@ duti -s org.vim.MacVim              .plist                              all
 duti -s org.vim.MacVim              .proto                              all
 duti -s org.vim.MacVim              .py                                 all
 duti -s org.vim.MacVim              .rb                                 all
+duti -s org.vim.MacVim              .rs                                 all
 duti -s org.vim.MacVim              .rst                                all
 duti -s org.vim.MacVim              .s                                  all
 duti -s org.vim.MacVim              .sh                                 all
