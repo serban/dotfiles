@@ -72,6 +72,7 @@ duti -s org.vim.MacVim              .vim                                all
 duti -s org.vim.MacVim              .xml                                all
 duti -s org.vim.MacVim              .yaml                               all
 duti -s org.vim.MacVim              .yml                                all
+duti -s org.vim.MacVim              .zig                                all
 
 duti -s org.gnu.Emacs               .el                                 all
 duti -s org.gnu.Emacs               .org                                all
