@@ -121,6 +121,7 @@ set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 set --global --export FZF_DEFAULT_OPTS \
     --reverse \
     --no-info \
+    --no-separator \
     --height 8 \
     --scroll-off 1 \
     --header-first \
