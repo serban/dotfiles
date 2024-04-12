@@ -24,6 +24,7 @@ gnu-sed
 gnu-tar
 gnu-units
 go
+gops
 grep
 hexyl
 hugo
