@@ -90,6 +90,8 @@ function mas --argument-names project
 
   if test -d $HOME/src/$project
     set repo $HOME/src/$project
+  else if test -d $HOME/frk/$project
+    set repo $HOME/frk/$project
   else if test -d $HOME/uvd/$project
     set repo $HOME/uvd/$project
   else if test -d $HOME/oss/$project
@@ -249,7 +251,7 @@ function mfs
 end
 
 function serban_complete_mas
-  for dir in (find $HOME/src $HOME/uvd $HOME/oss -mindepth 1 -maxdepth 1 -type d 2> /dev/null)
+  for dir in (find $HOME/src $HOME/frk $HOME/uvd $HOME/oss -mindepth 1 -maxdepth 1 -type d 2> /dev/null)
     echo (string split / $dir)[-1]
   end
 end
