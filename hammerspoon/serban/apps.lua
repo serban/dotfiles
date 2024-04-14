@@ -7,6 +7,7 @@ M.kPlacement = {
   { app='1Password 7',      bun='com.agilebits.onepassword7',         max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Activity Monitor', bun='com.apple.ActivityMonitor',          max=false,  [1]={g.kScreenLeft, g.kGridRight},      [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Calendar',         bun='com.apple.iCal',                     max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='Code',             bun='com.microsoft.VSCode',               max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Contacts',         bun='com.apple.AddressBook',              max=false,  [1]={g.kScreenLeft, g.kGridRight},      [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Dictionary',       bun='com.apple.Dictionary',               max=false,  [1]={g.kScreenLeft, g.kGridRight},      [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='FaceTime',         bun='com.apple.FaceTime',                 max=false,  [1]={g.kScreenLeft, g.kGridCenter},     [2]={g.kScreenLeft,   g.kGridCenter},     },
@@ -34,6 +35,7 @@ M.kPlacement = {
   { app='Ulysses',          bun='com.ulyssesapp.mac',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Weather',          bun='com.apple.weather',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Xcode',            bun='com.apple.dt.Xcode',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
+  { app='Zed',              bun='dev.zed.Zed',                        max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='iTerm2',           bun='com.googlecode.iterm2',              max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='kitty',            bun='net.kovidgoyal.kitty',               max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
 
