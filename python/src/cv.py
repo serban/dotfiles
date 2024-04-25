@@ -40,6 +40,7 @@ packages = [
     Package('click',     None,                       None,                  '2024-03-31', '8.1.3',    '8.1.7'),
     Package('packaging', None,                       None,                  '2024-03-31', '23.0',     '24.0'),
     Package('rich',      None,                       None,                  '2024-03-31', '13.3.1',   '13.7.1'),
+    Package('wcwidth',   None,                       None,                  '2024-03-31', '0.2.5',    '0.2.13'),
 ]
 
 for p in packages:

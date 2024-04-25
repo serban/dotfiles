@@ -4,3 +4,4 @@ python3-pendulum
 python3-phonenumbers
 python3-pynvim
 python3-rich
+python3-wcwidth

@@ -6,3 +6,4 @@ pendulum
 phonenumbers
 pynvim
 rich
+wcwidth
