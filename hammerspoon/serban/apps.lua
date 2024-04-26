@@ -34,6 +34,7 @@ M.kPlacement = {
   { app='TIDAL',            bun='com.tidal.desktop',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Ulysses',          bun='com.ulyssesapp.mac',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Weather',          bun='com.apple.weather',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='WezTerm',          bun='com.github.wez.wezterm',             max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Xcode',            bun='com.apple.dt.Xcode',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Zed',              bun='dev.zed.Zed',                        max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='iTerm2',           bun='com.googlecode.iterm2',              max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
