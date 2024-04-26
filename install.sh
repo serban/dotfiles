@@ -135,6 +135,9 @@ ln -si ${DOTFILES}/sqliterc             ~/.config/sqlite3/sqliterc
 mkdir -p ~/.config/tmux
 ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
 
+mkdir -p ~/.config/wezterm
+ln -si ${DOTFILES}/wezterm.lua          ~/.config/wezterm/wezterm.lua
+
 mkdir -p ~/.vim
 ln -si ${DOTFILES}/vim/after            ~/.vim/after
 ln -si ${DOTFILES}/vim/pack             ~/.vim/pack
@@ -175,6 +178,8 @@ darwin && {
   ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/.local/bin/kitten
   ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/.local/bin/kitty
   ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/.local/bin/mvim
+  ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm                      ~/.local/bin/wezterm
+  ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm-gui                  ~/.local/bin/wezterm-gui
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/.local/bin/smerge
   ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/.local/bin/subl
   ln -si '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ~/.local/bin/code
