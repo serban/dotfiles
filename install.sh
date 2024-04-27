@@ -86,6 +86,9 @@ mkdir -p ~/.config/hammerspoon
 ln -si ${DOTFILES}/hammerspoon/serban   ~/.config/hammerspoon/serban
 ln -si ${DOTFILES}/hammerspoon/init.lua ~/.config/hammerspoon/init.lua
 
+mkdir -p ~/.config/helix
+ln -si ${DOTFILES}/helix-config.toml    ~/.config/helix/config.toml
+
 mkdir -p ~/.config/hg
 ln -si ${DOTFILES}/hgrc                 ~/.config/hg/hgrc
 

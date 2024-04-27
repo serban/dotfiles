@@ -1,0 +1,27 @@
+theme = 'nightfox'
+
+[editor]
+color-modes = true
+line-number = 'relative'
+rulers = [80]
+scrolloff = 3
+
+[editor.cursor-shape]
+normal = 'block'
+insert = 'bar'
+select = 'underline'
+
+[editor.search]
+wrap-around = false
+
+[editor.statusline]
+mode.normal = 'NORMAL'
+mode.insert = 'INSERT'
+mode.select = 'SELECT'
+right = ['diagnostics', 'selections', 'register', 'position', 'file-encoding', 'file-type']
+
+[editor.whitespace.render]
+tab = 'all'
+
+[keys.normal]
+C-s = ':update'
