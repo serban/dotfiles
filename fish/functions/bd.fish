@@ -36,12 +36,12 @@ function bd
   header 'Leaves Added'
   cat $leaves_added \
     | xargs brew desc --eval-all \
-    | perl -pe 's/^([^:]+):/sprintf("%18s :", $1)/e'
+    | perl -pe 's/^([^:]+):/sprintf("%20s :", $1)/e'
 
   header 'Packages Added'
   cat $packages_added \
     | xargs brew desc --eval-all \
-    | perl -pe 's/^([^:]+):/sprintf("%18s :", $1)/e'
+    | perl -pe 's/^([^:]+):/sprintf("%20s :", $1)/e'
 
   if test -n "$_flag_missing"
     header 'Packages Missing'
