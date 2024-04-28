@@ -1,0 +1,17 @@
+// https://zed.dev/docs/vim
+// https://github.com/zed-industries/zed/blob/main/assets/keymaps/default-macos.json
+// https://github.com/zed-industries/zed/blob/main/assets/keymaps/vim.json
+// https://github.com/zed-industries/zed/blob/main/crates/vim/src/state.rs
+[
+  {
+    "context": "Editor && vim_mode == normal && vim_operator == none && !menu",
+    "bindings": {
+      "ctrl-a": "pane::SplitRight",
+      "ctrl-g": "pane::SplitDown",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
+    }
+  }
+]

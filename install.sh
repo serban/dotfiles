@@ -141,6 +141,10 @@ ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
 mkdir -p ~/.config/wezterm
 ln -si ${DOTFILES}/wezterm.lua          ~/.config/wezterm/wezterm.lua
 
+mkdir -p ~/.config/zed
+ln -si ${DOTFILES}/zed-keymap.json      ~/.config/zed/keymap.json
+ln -si ${DOTFILES}/zed-settings.json    ~/.config/zed/settings.json
+
 mkdir -p ~/.vim
 ln -si ${DOTFILES}/vim/after            ~/.vim/after
 ln -si ${DOTFILES}/vim/pack             ~/.vim/pack
@@ -183,6 +187,7 @@ darwin && {
   ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/.local/bin/mvim
   ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm                      ~/.local/bin/wezterm
   ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm-gui                  ~/.local/bin/wezterm-gui
+  ln -si  /Applications/Zed.app/Contents/MacOS/cli                              ~/.local/bin/zed
   ln -si '/Applications/Sublime Merge.app/Contents/SharedSupport/bin/smerge'    ~/.local/bin/smerge
   ln -si '/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'       ~/.local/bin/subl
   ln -si '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' ~/.local/bin/code
