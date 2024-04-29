@@ -540,6 +540,9 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
 \   'SerbanFzfNotes',
+\   'SerbanFzfSource',
+\   'SerbanFzfDotfiles',
+\   'SerbanFzfWip',
 \   'SerbanFzfProducerModules',
 \   'SerbanFzfGoogle3Files',
 \   'SerbanFzfGoogle3Folders',
@@ -1168,6 +1171,30 @@ function SerbanFzfNotes()
   \ })))
 endfunction
 
+function SerbanFzfSource()
+  call fzf#run(fzf#wrap('serban-source', fzf#vim#with_preview({
+  \   'dir': '~/src',
+  \   'options': '--prompt "⁖ ~/src/"',
+  \   'sink': 'view',
+  \ })))
+endfunction
+
+function SerbanFzfDotfiles()
+  call fzf#run(fzf#wrap('serban-dotfiles', fzf#vim#with_preview({
+  \   'dir': '~/src/dotfiles',
+  \   'options': '--prompt "⁖ ~/src/dotfiles/"',
+  \   'sink': 'view',
+  \ })))
+endfunction
+
+function SerbanFzfWip()
+  call fzf#run(fzf#wrap('serban-wip', fzf#vim#with_preview({
+  \   'dir': '~/src/wip',
+  \   'options': '--prompt "⁖ ~/src/wip/"',
+  \   'sink': 'view',
+  \ })))
+endfunction
+
 function SerbanFzfProducerModules()
   call fzf#run(fzf#wrap('serban-producer-modules', {
   \   'source': 'fd --type file --strip-cwd-prefix ProducerModule.java',
@@ -1766,6 +1793,9 @@ endif
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
   nnoremap <unique> <Leader>hr :FzfRg<Space>
   nnoremap <unique> <Leader>ht :call SerbanFzfNotes() <CR>
+  nnoremap <unique> <Leader>he :call SerbanFzfSource() <CR>
+  nnoremap <unique> <Leader>hd :call SerbanFzfDotfiles() <CR>
+  nnoremap <unique> <Leader>hw :call SerbanFzfWip() <CR>
   nnoremap <unique> <Leader>hs :call SerbanFzfSimpleSession() <CR>
   nnoremap <unique> <Leader>hg :call SerbanFzfGoogle3Files() <CR>
   nnoremap <unique> <Leader>ho :call SerbanFzfGoogle3Folders() <CR>
