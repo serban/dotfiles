@@ -10,5 +10,6 @@
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Braver's Solarized Dark",
   "workbench.preferredDarkColorTheme": "Braver's Solarized Dark",
+  "scm.countBadge": "off",
   "workbench.statusBar.visible": false
 }
