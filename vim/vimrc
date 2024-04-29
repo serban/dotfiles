@@ -1624,12 +1624,19 @@ digraphs n7   9318  "  0x2466  ⑦
 digraphs n8   9319  "  0x2467  ⑧
 digraphs n9   9320  "  0x2468  ⑨
 
-digraphs cd 128308  "  0x1f534 🔴
-digraphs co 128992  "  0x1f7e0 🟠
-digraphs cy 128993  "  0x1f7e1 🟡
-digraphs cg 128994  "  0x1f7e2 🟢
-digraphs cb 128309  "  0x1f535 🔵
-digraphs cp 128995  "  0x1f7e3 🟣
+digraphs cd 128308  "  0x1f534 🔴         Large Red Circle
+digraphs co 128992  "  0x1f7e0 🟠         Large Orange Circle
+digraphs cy 128993  "  0x1f7e1 🟡         Large Yellow Circle
+digraphs cg 128994  "  0x1f7e2 🟢         Large Green Circle
+digraphs cb 128309  "  0x1f535 🔵         Large Blue Circle
+digraphs cp 128995  "  0x1f7e3 🟣         Large Purple Circle
+
+digraphs ck   9989  "  0x2705  ✅         White Heavy Check Mark
+digraphs cx  10060  "  0x274c  ❌         Cross Mark
+
+digraphs sk  10024  "  0x2728  ✨         Sparkles
+digraphs fi 128293  "  0x1f525 🔥         Fire
+digraphs si 128680  "  0x1f6a8 🚨         Police Cars Revolving Light
 
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
