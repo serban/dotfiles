@@ -534,8 +534,8 @@ let g:serban_command_palette_commands = [
 \   'SerbanRemoveTrailingWhitespace',
 \   'SerbanSetMacVimBackground',
 \   'SerbanToggleBackground',
-\   'SerbanToggleColorColumn',
 \   'SerbanToggleWinWidth',
+\   'SerbanToggleColorColumn',
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
@@ -1090,19 +1090,19 @@ function SerbanToggleBackground()
   endif
 endfunction
 
-function SerbanToggleColorColumn()
-  if &colorcolumn !=# '0'
-    windo set colorcolumn=0
-  else
-    windo set colorcolumn=+1
-  endif
-endfunction
-
 function SerbanToggleWinWidth()
   if &winwidth ==# 86
     set winwidth=106
   else
     set winwidth=86
+  endif
+endfunction
+
+function SerbanToggleColorColumn()
+  if &colorcolumn !=# '0'
+    windo set colorcolumn=0
+  else
+    windo set colorcolumn=+1
   endif
 endfunction
 
@@ -1832,8 +1832,8 @@ endif
   nnoremap <unique> <Leader>rr :checktime <CR>
 
   nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
-  nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
   nnoremap <unique> <Leader>sw :call SerbanToggleWinWidth() <CR>
+  nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
