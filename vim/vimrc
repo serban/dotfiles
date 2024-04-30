@@ -1417,15 +1417,15 @@ endfunction
 " EVENT HANDLERS
 
 " Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
-autocmd FileType cpp       set commentstring=//\ \ %s iskeyword-=-
-autocmd FileType gitcommit set spell
-autocmd FileType go        set tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
-autocmd FileType hgcommit  set spell
-autocmd FileType java      set textwidth=100 winwidth=106
-autocmd FileType lilypond  set commentstring=%\ %s
-autocmd FileType piperspec set spell
-autocmd FileType python    set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType swift     set textwidth=100 winwidth=106
+autocmd FileType cpp       setlocal commentstring=//\ \ %s iskeyword-=-
+autocmd FileType gitcommit setlocal spell
+autocmd FileType go        setlocal tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
+autocmd FileType hgcommit  setlocal spell
+autocmd FileType java      setlocal textwidth=100 winwidth=106
+autocmd FileType lilypond  setlocal commentstring=%\ %s
+autocmd FileType piperspec setlocal spell
+autocmd FileType python    setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType swift     setlocal textwidth=100 winwidth=106
 
 if has('gui_macvim')
 augroup serban-darkmode
@@ -1461,13 +1461,13 @@ augroup serban-markdown
   " Alternatively, `let g:markdown_recommended_style = 0`:
   " ↳ https://github.com/vim/vim/blob/6b066c6d8f57aa05f1ab29ab4d098bc4bfabb1bb/runtime/ftplugin/markdown.vim#L25
   " ↳ https://github.com/tpope/vim-markdown/commit/b78bbce3371a2eb56c89f618cd4ab2baadc9ee61
-  autocmd FileType markdown set tabstop=8 shiftwidth=2 softtabstop=2 expandtab
-  autocmd FileType markdown set iskeyword=@,48-57,-,_
+  autocmd FileType markdown setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab
+  autocmd FileType markdown setlocal iskeyword=@,48-57,-,_
   " https://github.com/vim/vim/issues/5206 - Make fillchars a local setting
-  autocmd FileType markdown set foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
+  autocmd FileType markdown setlocal foldtext=getline(v:foldstart).'\ ' fillchars+=fold:·
   " https://github.com/preservim/vim-markdown/issues/232 - Rewrapping a bullet point inserts new bullet points
   " https://github.com/preservim/vim-markdown/issues/390 - gq wrapping is still broken
-  autocmd FileType markdown set comments=fb:*,fb:+,fb:-,n:> indentexpr=
+  autocmd FileType markdown setlocal comments=fb:*,fb:+,fb:-,n:> indentexpr=
   autocmd FileType markdown iabbrev <buffer> !- --------------------------------------------------------------------------------------------------------------------------------------------
   autocmd FileType markdown iabbrev <buffer> hc ```
   autocmd FileType markdown iabbrev <buffer> h1 #
@@ -1488,9 +1488,9 @@ augroup end
 " those in subdirectories.
 augroup serban-text
   autocmd!
-  autocmd BufNewFile  ~/txt/*.md set textwidth=140
+  autocmd BufNewFile  ~/txt/*.md setlocal textwidth=140
   autocmd BufNewFile  ~/txt/*.md silent call SerbanWrapHint()
-  autocmd BufReadPost ~/txt/*.md set textwidth=140
+  autocmd BufReadPost ~/txt/*.md setlocal textwidth=140
   autocmd BufReadPost ~/txt/*.md silent call SerbanWrapHint()
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/txt/*.md silent call SerbanRemoveHttpScheme()
