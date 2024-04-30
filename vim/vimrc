@@ -45,6 +45,7 @@ Plug 'inkarkat/vim-SameHighlightMotion'
 Plug 'inkarkat/vim-SearchAlternatives'
 Plug 'inkarkat/vim-SearchHighlighting'
 Plug 'inkarkat/vim-UnconditionalPaste'
+Plug 'jgm/djot', { 'rtp': 'editors/vim' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
