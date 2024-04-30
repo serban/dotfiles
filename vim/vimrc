@@ -536,6 +536,8 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleBackground',
 \   'SerbanToggleWinWidth',
 \   'SerbanToggleColorColumn',
+\   'SerbanToggleList',
+\   'SerbanToggleSpell',
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
@@ -661,6 +663,7 @@ function SerbanStatusLine()
   let s .= 'U+%04B  '       " code point under cursor
   let s .= '%(%Y  %)'       " filetype
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
+  let s .= '%{&list ? "" : "Ⓛ   "}'         " window-local · NB: Indicator appears when list is disabled
   if has('gui_macvim')
   let s .= '%{&macmeta ? "" : "Ⓜ  " }'     " buffer-local · NB: Indicator appears when macmeta is _off_
   endif
@@ -728,7 +731,7 @@ function SerbanAppendGoogle3Folder()
 endfunction
 
 function SerbanGenerateSpellFiles()
-  set spell
+  windo set spell
   mkspell! ~/.vim/spell/en.utf-8.add
   echom '--------------------------------------------------------------'
   mkspell! ~/.vim/spell/proper.utf-8.add
@@ -1103,6 +1106,22 @@ function SerbanToggleColorColumn()
     windo set colorcolumn=0
   else
     windo set colorcolumn=+1
+  endif
+endfunction
+
+function SerbanToggleList()
+  if &list
+    windo set nolist
+  else
+    windo set list
+  endif
+endfunction
+
+function SerbanToggleSpell()
+  if &spell
+    windo set nospell
+  else
+    windo set spell
   endif
 endfunction
 
@@ -1834,11 +1853,11 @@ endif
   nnoremap <unique> <Leader>sb :call SerbanToggleBackground() <CR>
   nnoremap <unique> <Leader>sw :call SerbanToggleWinWidth() <CR>
   nnoremap <unique> <Leader>sc :call SerbanToggleColorColumn() <CR>
+  nnoremap <unique> <Leader>sl :call SerbanToggleList() <CR>
+  nnoremap <unique> <Leader>ss :call SerbanToggleSpell() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
-  nnoremap <unique> <Leader>sl :set list! <CR>
-  nnoremap <unique> <Leader>ss :set spell! <CR>
   nnoremap <unique> <Leader>sm :set macmeta! <CR>
   nnoremap <unique> <Leader>so :24messages <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
