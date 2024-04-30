@@ -39,6 +39,7 @@ syntax match   SerbanCross               '✗'                                  
 syntax match   SerbanNull                '∅'                                              containedin=Table
 syntax match   SerbanQuestion            '\v(^|\s)\zs\?'                                  containedin=Table
 syntax match   SerbanTilde               '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table
+syntax match   SerbanFootnoteReference   '\v｢\S*｣'                                        containedin=Table
 syntax match   SerbanTable               '\v[│├┼┤─]'
 
 syntax match   SerbanDate                '\v<(Mon|Tue|Wed|Thu|Fri|Sat|Sun) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{2}( \d{4})?>' containedin=Table
@@ -70,6 +71,7 @@ highlight link SerbanCross                SerbanRed
 highlight link SerbanNull                 SerbanGray
 highlight link SerbanQuestion             SerbanViolet
 highlight link SerbanTilde                SerbanYellow
+highlight link SerbanFootnoteReference    SerbanOrange
 highlight link SerbanTable                SerbanOrange
 
 highlight link SerbanDate                 SerbanViolet
