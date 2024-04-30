@@ -25,6 +25,7 @@ syntax match   SerbanTime                '\v<\d{2}:\d{2}>'                      
 syntax match   SerbanHoursMinutesSeconds '\v<\d+h(\d{2}m(\d{2}s)?)?>'                     containedin=Table
 syntax match   SerbanMinutesSeconds      '\v<\d+m(\d{2}s)?>'                              containedin=Table
 syntax match   SerbanSeconds             '\v<\d+s>'                                       containedin=Table
+syntax match   SerbanPageNumber          '\v<p\d+>'                                       containedin=Table
 syntax match   SerbanSymbol              '\v<✝\S+>'                                       containedin=Table
 syntax match   SerbanFunction            '\v<\S+\(\)'                                     containedin=Table
 syntax match   SerbanUserName            '\v<\l+\@'                                       containedin=Table
@@ -55,6 +56,7 @@ highlight link SerbanTime                 SerbanCyan
 highlight link SerbanHoursMinutesSeconds  SerbanYellow
 highlight link SerbanMinutesSeconds       SerbanYellow
 highlight link SerbanSeconds              SerbanYellow
+highlight link SerbanPageNumber           SerbanCyan
 highlight link SerbanSymbol               SerbanMagenta
 highlight link SerbanFunction             SerbanGreen
 highlight link SerbanUserName             SerbanGreen
