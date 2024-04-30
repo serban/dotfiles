@@ -539,6 +539,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleList',
 \   'SerbanToggleSpell',
 \   'SerbanToggleLineNumbers',
+\   'SerbanToggleMacMeta',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
 \   'SerbanFzfNotes',
@@ -665,7 +666,7 @@ function SerbanStatusLine()
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
   let s .= '%{&list ? "" : "Ⓛ   "}'         " window-local · NB: Indicator appears when list is disabled
   if has('gui_macvim')
-  let s .= '%{&macmeta ? "" : "Ⓜ  " }'     " buffer-local · NB: Indicator appears when macmeta is _off_
+  let s .= '%{&macmeta ? "" : "Ⓜ  "}'      " buffer-local · NB: Indicator appears when macmeta is off
   endif
   let s .= '%{&foldenable ? "Ⓕ   " : ""}'   " window-local
   let s .= ObsessionStatus('Ⓢ   ', '')
@@ -1133,6 +1134,17 @@ function SerbanToggleLineNumbers()
   else
     NumbersEnable
   endif
+endfunction
+
+function SerbanToggleMacMeta()
+  let buf = bufnr()
+  if &macmeta
+    silent bufdo set nomacmeta
+  else
+    silent bufdo set macmeta
+  endif
+  execute 'silent' 'buffer' buf
+  redrawstatus!
 endfunction
 
 function SerbanToggleStatusLinePath()
@@ -1856,9 +1868,9 @@ endif
   nnoremap <unique> <Leader>sl :call SerbanToggleList() <CR>
   nnoremap <unique> <Leader>ss :call SerbanToggleSpell() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
+  nnoremap <unique> <Leader>sm :call SerbanToggleMacMeta() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
-  nnoremap <unique> <Leader>sm :set macmeta! <CR>
   nnoremap <unique> <Leader>so :24messages <CR>
   nnoremap <unique> <Leader>st :TagbarToggle <CR>
 
