@@ -9,6 +9,11 @@
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
+-- https://wezfurlong.org/wezterm/config/lua/config/term.html
+-- macOS: Compile the terminfo entry to ~/.terminfo/*/wezterm:
+-- /usr/bin/tic -x ~/oss/wezterm/termwiz/data/wezterm.terminfo
+config.term = 'wezterm'
+
 config.color_scheme = 'Sea Shells (Gogh)'
 
 config.font_size = 15.0
