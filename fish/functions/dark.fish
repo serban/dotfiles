@@ -15,6 +15,9 @@ function dark
   if test $TERM = xterm-kitty
     echo dark
     return
+  else if test $TERM = wezterm
+    echo dark
+    return
   else if test $TERM = tmux-256color
     read response --silent --nchars 25 \
         --prompt-str \033Ptmux\;\033\033]4\;-2\;\?\007\033\\
