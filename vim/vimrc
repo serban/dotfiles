@@ -26,6 +26,7 @@ call plug#begin('~/.vim/bundle')
 " GitHub Plugins
 Plug 'altercation/vim-colors-solarized'
 Plug 'andrewradev/bufferize.vim'
+Plug 'chrisbra/unicode.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dag/vim-fish'
 Plug 'dhruvasagar/vim-table-mode'
