@@ -97,7 +97,7 @@ function openFirefoxHomeTabs()
       'https://app.ynab.com',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
+    serban.grid.moveFocusedWindow(serban.grid.kGridMaximized)
   end)
 end
 
@@ -108,7 +108,7 @@ function openFirefoxChatTabs()
       'https://www.messenger.com',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
+    serban.grid.moveFocusedWindow(serban.grid.kGridMaximized)
   end)
 end
 
@@ -121,6 +121,6 @@ function openChromeHomeTabs()
           'https://mail.google.com/mail/u/0/#inbox',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
+    serban.grid.moveFocusedWindow(serban.grid.kGridMaximized)
   end)
 end

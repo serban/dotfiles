@@ -25,4 +25,8 @@ M.kGridBottomRight  = {3, 5, 4, 4}
 hs.grid.setGrid('7x9')
 hs.grid.setMargins('6x6')
 
+function M.moveFocusedWindow(cell)
+  hs.grid.set(hs.window.focusedWindow(), cell)
+end
+
 return M

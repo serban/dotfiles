@@ -1,5 +1,7 @@
 local M = {}
 
+local g = serban.grid
+
 M.nexus = hs.host.names()[1] == 'nexus.local'
 
 M._modal_pri = hs.hotkey.modal.new('⌘', 'e', 'Hotkey')
@@ -22,31 +24,31 @@ function M.bind_sec(key, fn)
   M._modal_sec:bind('', key, function() fn(); M._modal_sec:exit() end)
 end
 
-M.bind_pri("'",     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)     end)
-M.bind_pri('8',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterSkinny)  end)
-M.bind_pri('9',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterTall)    end)
-M.bind_pri('0',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterRight)   end)
-M.bind_pri('\\',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterWide)    end)
-M.bind_pri(';',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenter)        end)
-M.bind_pri('left',  function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridLeft)          end)
-M.bind_pri('right', function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridRight)         end)
-M.bind_pri('up',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTop)           end)
-M.bind_pri('down',  function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottom)        end)
-M.bind_pri('f9',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTopLeft)       end)
-M.bind_pri('f10',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTopRight)      end)
-M.bind_pri('f11',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottomLeft)    end)
-M.bind_pri('f12',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottomRight)   end)
+M.bind_pri("'",     function() g.moveFocusedWindow(g.kGridMaximized)    end)
+M.bind_pri('8',     function() g.moveFocusedWindow(g.kGridCenterSkinny) end)
+M.bind_pri('9',     function() g.moveFocusedWindow(g.kGridCenterTall)   end)
+M.bind_pri('0',     function() g.moveFocusedWindow(g.kGridCenterRight)  end)
+M.bind_pri('\\',    function() g.moveFocusedWindow(g.kGridCenterWide)   end)
+M.bind_pri(';',     function() g.moveFocusedWindow(g.kGridCenter)       end)
+M.bind_pri('left',  function() g.moveFocusedWindow(g.kGridLeft)         end)
+M.bind_pri('right', function() g.moveFocusedWindow(g.kGridRight)        end)
+M.bind_pri('up',    function() g.moveFocusedWindow(g.kGridTop)          end)
+M.bind_pri('down',  function() g.moveFocusedWindow(g.kGridBottom)       end)
+M.bind_pri('f9',    function() g.moveFocusedWindow(g.kGridTopLeft)      end)
+M.bind_pri('f10',   function() g.moveFocusedWindow(g.kGridTopRight)     end)
+M.bind_pri('f11',   function() g.moveFocusedWindow(g.kGridBottomLeft)   end)
+M.bind_pri('f12',   function() g.moveFocusedWindow(g.kGridBottomRight)  end)
 
 M.bind_pri('-',     function() stackApplicationWindows() end)
 M.bind_pri('=',     function() maximizeWindows() end)
 
-M.bind_pri('1',     function() moveFocusedWindowToScreen(serban.grid.kScreenLeft) end)
-M.bind_pri('2',     function() moveFocusedWindowToScreen(serban.grid.kScreenCenter) end)
-M.bind_pri('3',     function() moveFocusedWindowToScreen(serban.grid.kScreenRight) end)
+M.bind_pri('1',     function() moveFocusedWindowToScreen(g.kScreenLeft) end)
+M.bind_pri('2',     function() moveFocusedWindowToScreen(g.kScreenCenter) end)
+M.bind_pri('3',     function() moveFocusedWindowToScreen(g.kScreenRight) end)
 
-M.bind_pri('f1',    function() moveMouseToScreen(serban.grid.kScreenLeft) end)
-M.bind_pri('f2',    function() moveMouseToScreen(serban.grid.kScreenCenter) end)
-M.bind_pri('f3',    function() moveMouseToScreen(serban.grid.kScreenRight) end)
+M.bind_pri('f1',    function() moveMouseToScreen(g.kScreenLeft) end)
+M.bind_pri('f2',    function() moveMouseToScreen(g.kScreenCenter) end)
+M.bind_pri('f3',    function() moveMouseToScreen(g.kScreenRight) end)
 
 M.bind_pri('f8',    function() hs.osascript.applescript('tell application "System Events" to tell appearance preferences to set dark mode to not dark mode') end)
 
