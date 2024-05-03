@@ -13,6 +13,8 @@ serban.place    = require('serban.place')
 serban.screen   = require('serban.screen')
 serban.windows  = require('serban.windows')
 
+serban.finder   = require('serban.finder')
+
 serban.keys     = require('serban.keys')
 
 hs.window.animationDuration = 0

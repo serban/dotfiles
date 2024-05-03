@@ -29,4 +29,8 @@ function M.moveFocusedWindow(cell)
   hs.grid.set(hs.window.focusedWindow(), cell)
 end
 
+function M.moveFocusedWindowToScreen(screen, cell)
+  hs.grid.set(hs.window.focusedWindow(), cell, screen)
+end
+
 return M

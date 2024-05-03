@@ -1,6 +1,7 @@
 local M = {}
 
 local a = serban.actions
+local f = serban.finder
 local g = serban.grid
 local w = serban.windows
 
@@ -84,10 +85,12 @@ M.bind_pri('7',     function() a.activate('TIDAL.app') end)
 M.bind_sec('a',     function() a.activate('Activity Monitor.app') end)
 M.bind_sec('c',     function() a.activate('Contacts.app') end)
 M.bind_sec('f',     function() a.activate('FindMy.app') end)
+M.bind_sec('h',     function() f.openFinderHomeDirsTiled() end)
 M.bind_sec('o',     function() a.activate('Obsidian.app') end)
 M.bind_sec('p',     function() a.activate('Photo Booth.app') end)
 M.bind_sec('r',     function() a.activate('Reminders.app') end)
 M.bind_sec('s',     function() a.activate('Signal.app') end)
+M.bind_sec('t',     function() f.openFinderHomeDirsStacked() end)
 M.bind_sec('v',     function() a.activate('Visual Studio Code.app') end)
 M.bind_sec('w',     function() a.activate('WezTerm.app') end)
 M.bind_sec('x',     function() a.activate('Xcode.app') end)
