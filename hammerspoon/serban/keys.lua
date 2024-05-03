@@ -22,20 +22,20 @@ function M.bind_sec(key, fn)
   M._modal_sec:bind('', key, function() fn(); M._modal_sec:exit() end)
 end
 
-M.bind_pri("'",     function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9}) end) -- Maximize
-M.bind_pri('8',     function() hs.grid.set(hs.window.focusedWindow(), {2, 0, 3, 9}) end) -- Center Skinny
-M.bind_pri('9',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 5, 9}) end) -- Center Tall
-M.bind_pri('0',     function() hs.grid.set(hs.window.focusedWindow(), {1, 0, 6, 9}) end) -- Center Right
-M.bind_pri('\\',    function() hs.grid.set(hs.window.focusedWindow(), {0, 1, 7, 7}) end) -- Center Wide
-M.bind_pri(';',     function() hs.grid.set(hs.window.focusedWindow(), {1, 1, 5, 7}) end) -- Center
-M.bind_pri('left',  function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 9}) end) -- Left
-M.bind_pri('right', function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 9}) end) -- Right
-M.bind_pri('up',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 5}) end) -- Top
-M.bind_pri('down',  function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 7, 4}) end) -- Bottom
-M.bind_pri('f9',    function() hs.grid.set(hs.window.focusedWindow(), {0, 0, 3, 5}) end) -- Top Left
-M.bind_pri('f10',   function() hs.grid.set(hs.window.focusedWindow(), {3, 0, 4, 5}) end) -- Top Right
-M.bind_pri('f11',   function() hs.grid.set(hs.window.focusedWindow(), {0, 5, 3, 4}) end) -- Bottom Left
-M.bind_pri('f12',   function() hs.grid.set(hs.window.focusedWindow(), {3, 5, 4, 4}) end) -- Bottom Right
+M.bind_pri("'",     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)     end)
+M.bind_pri('8',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterSkinny)  end)
+M.bind_pri('9',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterTall)    end)
+M.bind_pri('0',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterRight)   end)
+M.bind_pri('\\',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenterWide)    end)
+M.bind_pri(';',     function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridCenter)        end)
+M.bind_pri('left',  function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridLeft)          end)
+M.bind_pri('right', function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridRight)         end)
+M.bind_pri('up',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTop)           end)
+M.bind_pri('down',  function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottom)        end)
+M.bind_pri('f9',    function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTopLeft)       end)
+M.bind_pri('f10',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridTopRight)      end)
+M.bind_pri('f11',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottomLeft)    end)
+M.bind_pri('f12',   function() hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridBottomRight)   end)
 
 M.bind_pri('-',     function() stackApplicationWindows() end)
 M.bind_pri('=',     function() maximizeWindows() end)

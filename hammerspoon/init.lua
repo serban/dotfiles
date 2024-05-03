@@ -53,7 +53,7 @@ function maximizeWindows()
   for _, w in pairs(hs.window.allWindows()) do
     local a = w:application():name()
     if a ~= 'Finder' and a ~= 'Audio Hijack' and a ~= 'Hammerspoon' then
-      hs.grid.set(w, {0, 0, 7, 9})
+      hs.grid.set(w, serban.grid.kGridMaximized)
     end
   end
 end
@@ -97,7 +97,7 @@ function openFirefoxHomeTabs()
       'https://app.ynab.com',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
   end)
 end
 
@@ -108,7 +108,7 @@ function openFirefoxChatTabs()
       'https://www.messenger.com',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
   end)
 end
 
@@ -121,6 +121,6 @@ function openChromeHomeTabs()
           'https://mail.google.com/mail/u/0/#inbox',
   }, ' '))
   hs.timer.doAfter(0.2, function()
-    hs.grid.set(hs.window.focusedWindow(), {0, 0, 7, 9})
+    hs.grid.set(hs.window.focusedWindow(), serban.grid.kGridMaximized)
   end)
 end
