@@ -120,6 +120,7 @@ function mas --argument-names project
     tmux new-window   -c $HOME -t $target:8 -n ws
     tmux new-window   -c $HOME -t $target:9 -n home
     tmux send-keys             -t $target:1.1 'git status' Enter
+    tmux send-keys             -t $target:1.3 'glf' Enter
     tmux send-keys             -t $target:2.1 'vic' Enter
     tmux select-pane           -t $target:1.1
   end
