@@ -161,6 +161,7 @@ mkdir -p -m 700 ~/.local/state/bash/history
 mkdir -p -m 700 ~/.local/state/bpython
 mkdir -p -m 700 ~/.local/state/less
 mkdir -p -m 700 ~/.local/state/postgresql
+mkdir -p -m 700 ~/.local/state/python
 mkdir -p -m 700 ~/.local/state/sqlite
 mkdir -p -m 700 ~/.local/state/vim
 
