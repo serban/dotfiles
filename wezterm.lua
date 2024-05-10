@@ -3,8 +3,13 @@
 -- https://wezfurlong.org/wezterm/config/keyboard-concepts.html
 -- https://wezfurlong.org/wezterm/config/key-encoding.html
 -- https://wezfurlong.org/wezterm/config/keys.html
+-- https://wezfurlong.org/wezterm/config/default-keys.html
 -- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
 -- https://wezfurlong.org/wezterm/config/lua/keyassignment/SendString.html
+-- https://wezfurlong.org/wezterm/config/lua/keyassignment/SpawnCommandInNewTab.html
+-- https://wezfurlong.org/wezterm/config/lua/SpawnCommand.html
+--
+-- https://wezfurlong.org/wezterm/config/lua/config/default_cwd.html
 
 local wezterm = require('wezterm')
 local config = wezterm.config_builder()
@@ -28,6 +33,8 @@ config.enable_csi_u_key_encoding = true
 config.enable_kitty_keyboard = true
 
 config.keys = {
+
+  { mods='CMD',           key='t',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir})  },
 
   { mods='CTRL',          key='0',  action=wezterm.action.SendString('\x1b[48;5u')  },
   { mods='CTRL',          key='1',  action=wezterm.action.SendString('\x1b[49;5u')  },
