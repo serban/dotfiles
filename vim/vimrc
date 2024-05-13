@@ -284,6 +284,7 @@ execute "set <M-c>=\ec"
 execute "set <M-d>=\ed"
 execute "set <M-e>=\ee"
 execute "set <M-f>=\ef"
+execute "set <M-g>=\eg"
 execute "set <M-h>=\eh"
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
@@ -1763,6 +1764,7 @@ endif
   vnoremap <unique> <M-d> r·
   nnoremap <unique> <M-e> r∅
   vnoremap <unique> <M-e> r∅
+  nnoremap <unique> <M-g> ]s
   nnoremap <unique> <M-h> :tabmove -1 <CR>
   nnoremap <unique> <M-j> :move +1 <CR>
   nnoremap <unique> <M-k> :move -2 <CR>
