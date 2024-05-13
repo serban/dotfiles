@@ -2,7 +2,7 @@
 
 set -o nounset
 
-export PATH="${HOME}/bin:${HOME}/src/dotfiles/bin:${HOME}/src/dotfiles/python:${PATH}"
+export PATH="${HOME}/bin:${HOME}/src/dotfiles/bin:${PATH}"
 readonly BACKGROUND="${HOME}/Downloads/background.jpg"
 
 log() {
