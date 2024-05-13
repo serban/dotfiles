@@ -103,10 +103,6 @@ set --global --export PYENV_ROOT          $HOME/env/pyenv
 set --global --export RUSTUP_HOME         $HOME/env/rustup
 set --global --export VIRTUALFISH_HOME    $HOME/env/virtualenv
 
-set --global --export LD_LIBRARY_PATH \
-    $HOME/homebrew/lib \
-    $LD_LIBRARY_PATH
-
 set --global --export PYTHONPATH \
     $HOME/src/dotfiles/python/lib \
     $HOME/src/wip/python/lib \
