@@ -80,3 +80,13 @@ def select_monday(count: int = 6) -> datetime.date:
       script.select('Monday', [m.isoformat() for m in mondays(count)]))
   script.result(f'Selected {monday:%a} {monday:%b} {monday:%d}')
   return monday
+
+def paydays(
+    first_friday: datetime.date,
+    count: int = 27) -> collections.abc.Iterator[datetime.date]:
+  """Yield every other Friday, count times, starting with the given Friday."""
+  if first_friday.weekday() != calendar.FRIDAY:
+    raise ValueError(
+        f'Date must be a Friday. Got {first_friday} = {first_friday:%A}')
+  for i in range(count):
+    yield first_friday + datetime.timedelta(weeks=2*i)
