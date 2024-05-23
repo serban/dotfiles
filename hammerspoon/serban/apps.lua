@@ -23,6 +23,7 @@ M.kPlacement = {
   { app='Numbers',          bun='com.apple.iWork.Numbers',            max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Obsidian',         bun='md.obsidian',                        max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='OmniFocus',        bun='com.omnigroup.OmniFocus4',           max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='Pages',            bun='com.apple.iWork.Pages',              max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Photo Booth',      bun='com.apple.PhotoBooth',               max=false,  [1]={g.kScreenLeft, g.kGridCenter},     [2]={g.kScreenLeft,   g.kGridCenter},     },
   { app='Photos',           bun='com.apple.Photos',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Preview',          bun='com.apple.Preview',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
