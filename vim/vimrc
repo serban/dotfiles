@@ -149,6 +149,7 @@ set guioptions+=c                     " Don't use popup dialogs in gVim
 set guioptions+=k                     " Keep the window size when adding or removing scrollbars
 set guicursor+=n:blinkon0             " Don't blink the cursor in normal mode
 set fillchars=vert:│                  " Use a box-drawing character to get a clean vertical line between splits
+set titleold=·                        " Replace “Thanks for flying Vim” with something shorter
 set titlestring=%t                    " Use a custom window title that just shows the filename
 set tabline=%!SerbanTabLine()         " Use a custom tab line
 set guitablabel=%!SerbanGuiTabLabel() " Use a custom tab title in gVim
