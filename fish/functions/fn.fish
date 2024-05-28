@@ -1,5 +1,6 @@
 function fn
   set --local theme (bat_theme)
+  title fn
   fd --base-directory ~/txt --type file --strip-cwd-prefix | sort \
       | fzf --no-sort \
             --multi \
