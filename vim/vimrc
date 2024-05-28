@@ -1899,6 +1899,7 @@ endif
   nnoremap <unique> <Leader>3 :set guifont=Monaco:h15 <CR>
   nnoremap <unique> <Leader>4 :set guifont=Monaco:h18 <CR>
   nnoremap <unique> <Leader>5 :set guifont=Monaco:h24 <CR>
+  nnoremap <unique> <Leader>6 :set guifont=Menlo:h15 <CR>
 
   nnoremap <unique> <Leader><Leader> :call SerbanEchoFilePath() <CR>
 
