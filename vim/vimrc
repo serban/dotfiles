@@ -1517,6 +1517,7 @@ augroup serban-markdown
   autocmd FileType markdown iabbrev <buffer> dt TODO
   autocmd FileType markdown iabbrev <buffer> td TODO:
   autocmd FileType markdown iabbrev <buffer> <expr> ud strftime('‣ Updated: %Y-%m-%d')
+  autocmd FileType markdown iabbrev <buffer> <expr> hd strftime('## %Y-%m-%d')
   autocmd FileType markdown iabbrev <buffer> <expr> hl strftime('## %Y-%m-%d %H:%M ·')
 augroup end
 
