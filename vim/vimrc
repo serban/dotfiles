@@ -1511,6 +1511,7 @@ augroup serban-markdown
   autocmd FileType markdown iabbrev <buffer> h4 ####
   autocmd FileType markdown iabbrev <buffer> h5 #####
   autocmd FileType markdown iabbrev <buffer> h6 ######
+  autocmd FileType markdown iabbrev <buffer> df ‣ Draft
   autocmd FileType markdown iabbrev <buffer> ln ‣ Link:
   autocmd FileType markdown iabbrev <buffer> sj ‣ Subject:
   autocmd FileType markdown iabbrev <buffer> dt TODO
