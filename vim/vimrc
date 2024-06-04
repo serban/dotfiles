@@ -51,6 +51,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'myusuf3/numbers.vim'
+Plug 'ojroques/vim-oscyank'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -1893,6 +1894,10 @@ endif
   nnoremap <unique> <Leader>wi :call SerbanWrapHint() <CR>
   nnoremap <unique> <Leader>wo :call SerbanWrapSoft() <CR>
   nnoremap <unique> <Leader>wn :call SerbanWrapNone() <CR>
+
+  nnoremap <unique> <Leader>y  <Plug>OSCYankOperator
+  nnoremap <unique> <Leader>yy <Plug>OSCYankOperator_
+  vnoremap <unique> <Leader>y  <Plug>OSCYankVisual
 
   nnoremap <unique> <Leader>1 :set guifont=Monaco:h10 <CR>
   nnoremap <unique> <Leader>2 :set guifont=Monaco:h12 <CR>
