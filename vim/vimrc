@@ -1517,6 +1517,16 @@ augroup serban-markdown
   autocmd FileType markdown iabbrev <buffer> sj ‣ Subject:
   autocmd FileType markdown iabbrev <buffer> dt TODO
   autocmd FileType markdown iabbrev <buffer> td TODO:
+  autocmd FileType markdown iabbrev <buffer> md ·
+  autocmd FileType markdown iabbrev <buffer> bl •
+  autocmd FileType markdown iabbrev <buffer> bi ‣
+  autocmd FileType markdown iabbrev <buffer> sl ‹
+  autocmd FileType markdown iabbrev <buffer> sr ›
+  autocmd FileType markdown iabbrev <buffer> bh ⁃
+  autocmd FileType markdown iabbrev <buffer> ar →
+  autocmd FileType markdown iabbrev <buffer> ac ↳
+  autocmd FileType markdown iabbrev <buffer> ch ✓
+  autocmd FileType markdown iabbrev <buffer> cr ✗
   autocmd FileType markdown iabbrev <buffer> <expr> ud strftime('‣ Updated: %Y-%m-%d')
   autocmd FileType markdown iabbrev <buffer> <expr> hd strftime('## %Y-%m-%d -')
   autocmd FileType markdown iabbrev <buffer> <expr> hl strftime('## %Y-%m-%d %H:%M -')
