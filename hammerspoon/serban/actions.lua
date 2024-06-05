@@ -36,6 +36,7 @@ end
 function M.openFirefoxHomeTabs()
   M.activate('Firefox.app')
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
+      'https://app.todoist.com',
       'https://mail.google.com/mail/u/0/#inbox',
       'https://calendar.google.com/calendar/u/0/r/month',
       'https://app.ynab.com',
