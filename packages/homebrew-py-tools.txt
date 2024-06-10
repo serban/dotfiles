@@ -1,4 +1,5 @@
 grip
 httpie
+pipdeptree
 virtualfish
 yt-dlp

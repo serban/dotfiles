@@ -2,6 +2,7 @@ grip
 httpie
 lookatme
 pip
+pipdeptree
 virtualfish
 wavemaker
 yt-dlp
