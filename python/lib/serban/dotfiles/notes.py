@@ -9,6 +9,66 @@ ROOT = pathlib.Path.home() / 'txt'
 _FILE_REGEX = re.compile(r'^(\d{4}-\d{2}-\d{2}) (.+)\.md$')
 _HEAD_REGEX = re.compile(r'^# (\d{4}-\d{2}-\d{2}) - (.+)$')
 
+def _parse_date(s: str) -> datetime.date | None:
+  return None if s == '0000-00-00' else datetime.date.fromisoformat(s)
+
+@dataclasses.dataclass(slots=True)
+class Metadata:
+  """The metadata of a note derived from its filesystem path.
+
+  Instantiation always succeeds but attributes are only meaningful if the
+  `valid` attribute is True.
+
+  Attributes:
+    path:     A pathlib.Path.   The full path to the note file.
+    valid:    A boolean.        True if the path is valid.
+    error:    A string.         An explanation of why `valid` is False.
+    folder:   A pathlib.Path.   The subfolder under ~/txt containing the note.
+    date:     A datetime.date.  The note creation date or None if 0000-00-00.
+    title:    A string.         The title of the note.
+  """
+  path:     pathlib.Path
+
+  valid:    bool                  = dataclasses.field(init=False, default=False)
+  error:    str                   = dataclasses.field(init=False, default='')
+
+  folder:   pathlib.Path | None   = dataclasses.field(init=False, default=None)
+  date:     datetime.date | None  = dataclasses.field(init=False, default=None)
+  title:    str                   = dataclasses.field(init=False, default='')
+
+  def __post_init__(self):
+    try:
+      folder = self.path.parent.resolve().relative_to(ROOT)
+    except ValueError:
+      self.error = 'Bad folder'
+      return
+
+    if not folder.parts:
+      self.error = 'No folder'
+      return
+
+    self.folder = folder
+
+    if file_match := re.match(_FILE_REGEX, self.path.name):
+      file_date_str, file_title = file_match.group(1), file_match.group(2)
+    else:
+      self.error = 'Bad filename'
+      return
+
+    try:
+      self.date = _parse_date(file_date_str)
+    except ValueError:
+      self.error = 'Bad date'
+      return
+
+    if file_title.strip() != file_title:
+      self.error = 'Bad title'
+      return
+
+    self.title = file_title
+
+    self.valid = True
+
 @dataclasses.dataclass(slots=True)
 class Note:
   """An in-memory representation of a note.
@@ -24,6 +84,7 @@ class Note:
     folder:   A pathlib.Path.   The subfolder under ~/txt containing the note.
     date:     A datetime.date.  The note creation date or None if 0000-00-00.
     title:    A string.         The title of the note.
+    body:     A string.         The full contents of the note minus the header.
   """
   path:     pathlib.Path
   contents: str
@@ -34,17 +95,16 @@ class Note:
   folder:   pathlib.Path | None   = dataclasses.field(init=False, default=None)
   date:     datetime.date | None  = dataclasses.field(init=False, default=None)
   title:    str                   = dataclasses.field(init=False, default='')
+  body:     str                   = dataclasses.field(init=False, default='')
 
   def __post_init__(self):
-    try:
-      self.folder = self.path.parent.resolve().relative_to(ROOT)
-    except ValueError:
-      self.error = 'Bad folder'
+    meta = Metadata(self.path)
+
+    if not meta.valid:
+      self.error = meta.error
       return
 
-    if not self.folder.parts:
-      self.error = 'No folder'
-      return
+    self.folder = meta.folder
 
     if not self.contents:
       self.error = 'No contents'
@@ -56,45 +116,36 @@ class Note:
 
     lines = self.contents.splitlines()
 
-    file_match, file_date, file_title = None, None, None
-    head_match, head_date, head_title = None, None, None
-
-    if file_match := re.match(_FILE_REGEX, self.path.name):
-      file_date, file_title = file_match.group(1), file_match.group(2)
-    else:
-      self.error = 'Bad filename'
-      return
-
     if head_match := re.match(_HEAD_REGEX, lines[0]):
-      head_date, head_title = head_match.group(1), head_match.group(2)
+      head_date_str, head_title = head_match.group(1), head_match.group(2)
     else:
       self.error = 'Bad header'
       return
 
-    if file_date == head_date:
-      if head_date != '0000-00-00':
-        try:
-          self.date = datetime.date.fromisoformat(head_date)
-        except ValueError:
-          self.error = 'Bad date'
-          return
-    else:
+    try:
+      head_date = _parse_date(head_date_str)
+    except ValueError:
+      self.error = 'Bad header date'
+      return
+
+    if head_date != meta.date:
       self.error = 'Date mismatch'
       return
 
-    if file_title == head_title:
-      self.title = head_title
+    self.date = meta.date
+
+    if head_title == meta.title:
+      self.title = meta.title
     else:
       self.error = 'Title mismatch'
-      return
-
-    if head_title.strip() != head_title:
-      self.error = 'Bad title'
       return
 
     if len(lines) > 1 and lines[1]:
       self.error = 'No blank line'
       return
+
+    if len(lines) > 2:
+      self.body = '\n'.join(lines[2:])
 
     self.valid = True
 
