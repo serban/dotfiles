@@ -224,6 +224,7 @@ set shiftround                      " Round indent to a multiple of shiftwidth f
 set autoindent                      " Keep the indentation the same when inserting a new line
 "set smartindent                    " Syntax-aware indenting
 set modeline                        " Modelines in files take precedent over these settings
+set modelines=3                     " Check only the first and last three lines for a modeline
 
 set ttimeout                        " Wait for full escape sequences to arrive …
 set ttimeoutlen=10                  " … for up to ten milliseconds.
