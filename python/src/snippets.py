@@ -25,8 +25,8 @@ TEMPLATE = """# $DATE - Snippets
 """
 
 SNIPPETS_DIR = pathlib.Path(pathlib.Path.home(), 'txt', 'snippets')
-SCRATCH_PATH = pathlib.Path(SNIPPETS_DIR, '0000-00-00 Scratch.md')
-ACTIVE_PATH  = pathlib.Path(SNIPPETS_DIR, '0000-00-00 Active.md')
+SCRATCH_PATH = pathlib.Path(SNIPPETS_DIR, '0001-01-01 Scratch.md')
+ACTIVE_PATH  = pathlib.Path(SNIPPETS_DIR, '0001-01-01 Active.md')
 
 
 def snippets_path(date):

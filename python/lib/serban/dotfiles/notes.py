@@ -9,9 +9,6 @@ ROOT = pathlib.Path.home() / 'txt'
 _FILE_REGEX = re.compile(r'^(\d{4}-\d{2}-\d{2}) (.+)\.md$')
 _HEAD_REGEX = re.compile(r'^# (\d{4}-\d{2}-\d{2}) - (.+)$')
 
-def _parse_date(s: str) -> datetime.date | None:
-  return None if s == '0000-00-00' else datetime.date.fromisoformat(s)
-
 @dataclasses.dataclass(slots=True)
 class Metadata:
   """The metadata of a note derived from its filesystem path.
@@ -24,7 +21,7 @@ class Metadata:
     valid:    A boolean.        True if the path is valid.
     error:    A string.         An explanation of why `valid` is False.
     folder:   A pathlib.Path.   The subfolder under ~/txt containing the note.
-    date:     A datetime.date.  The note creation date or None if 0000-00-00.
+    date:     A datetime.date.  The creation date of the note.
     title:    A string.         The title of the note.
   """
   path:     pathlib.Path
@@ -56,7 +53,7 @@ class Metadata:
       return
 
     try:
-      self.date = _parse_date(file_date_str)
+      self.date = datetime.date.fromisoformat(file_date_str)
     except ValueError:
       self.error = 'Bad date'
       return
@@ -82,7 +79,7 @@ class Note:
     valid:    A boolean.        True if the path and contents are valid.
     error:    A string.         An explanation of why `valid` is False.
     folder:   A pathlib.Path.   The subfolder under ~/txt containing the note.
-    date:     A datetime.date.  The note creation date or None if 0000-00-00.
+    date:     A datetime.date.  The creation date of the note.
     title:    A string.         The title of the note.
     body:     A string.         The full contents of the note minus the header.
   """
@@ -123,7 +120,7 @@ class Note:
       return
 
     try:
-      head_date = _parse_date(head_date_str)
+      head_date = datetime.date.fromisoformat(head_date_str)
     except ValueError:
       self.error = 'Bad header date'
       return
@@ -166,7 +163,7 @@ def create(
       A string. The body of the note.
     date:
       A datetime.date or ISO 8601 date string. The creation date of the note.
-      Defaults to today's date if None. Supply '0000-00-00' for no date.
+      Defaults to today's date if None.
 
   Returns:
     A Note object representing the created note.
