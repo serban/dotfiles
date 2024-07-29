@@ -48,6 +48,7 @@ ripgrep
 rsync
 rust
 sqlite
+sqlite-utils
 terminal-notifier
 the_silver_searcher
 tmux
