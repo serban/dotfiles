@@ -25,6 +25,13 @@ abbr --add pt pstree -g 3 -s
 abbr --add p3 python3 -B
 abbr --add p8 ping 8.8.8.8
 
+abbr --add rc 'gm check'
+abbr --add ro 'gm check common'
+abbr --add rl 'gm pull common'
+abbr --add rb 'gm sublime'
+abbr --add ru 'gm sublime common'
+abbr --add rw 'gm watch'
+
 abbr --add we 'watchexec --quiet --clear --shell none'
 abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m unittest discover --pattern '*_test.py'"
 
