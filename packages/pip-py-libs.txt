@@ -6,4 +6,5 @@ pendulum
 phonenumbers
 pynvim
 rich
+wat-inspector
 wcwidth
