@@ -12,4 +12,9 @@ import sys
 import time
 import zoneinfo
 
+try:
+  import wat
+except ModuleNotFoundError:
+  pass
+
 from serban.dotfiles import script
