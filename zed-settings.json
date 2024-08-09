@@ -11,6 +11,9 @@
   "scrollbar": {
     "show": "never"
   },
+  "indent_guides": {
+    "enabled": false
+  },
   "buffer_font_family": "Monaco",
   "buffer_font_size": 15,
   "cursor_blink": false,
