@@ -4,6 +4,7 @@ numpy-financial
 packaging
 pendulum
 phonenumbers
+pygit2
 pynvim
 rich
 wat-inspector

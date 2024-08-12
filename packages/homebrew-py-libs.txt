@@ -1,3 +1,4 @@
+pygit2
 python-click
 python-packaging
 rich-cli
