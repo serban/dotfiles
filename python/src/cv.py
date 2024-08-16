@@ -39,6 +39,7 @@ packages = [
     Package('watchexec', ['watchexec', '--version'], r'watchexec (\S+)',    '2024-06-30', '2.1.2',    '2.1.2'),
     Package('click',     None,                       None,                  '2024-06-30', '8.1.3',    '8.1.7'),
     Package('packaging', None,                       None,                  '2024-06-30', '23.0',     '24.1'),
+    Package('psutil',    None,                       None,                  '2024-06-30', '5.9.4',    '6.0.0'),
     Package('pygit2',    None,                       None,                  '2024-07-30', '1.11.1',   '1.15.1'),
     Package('rich',      None,                       None,                  '2024-06-30', '13.3.1',   '13.7.1'),
     Package('wcwidth',   None,                       None,                  '2024-06-30', '0.2.5',    '0.2.13'),

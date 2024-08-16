@@ -2,6 +2,7 @@ python3-click
 python3-packaging
 python3-pendulum
 python3-phonenumbers
+python3-psutil
 python3-pygit2
 python3-pynvim
 python3-rich

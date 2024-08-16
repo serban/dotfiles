@@ -4,6 +4,7 @@ numpy-financial
 packaging
 pendulum
 phonenumbers
+psutil
 pygit2
 pynvim
 rich
