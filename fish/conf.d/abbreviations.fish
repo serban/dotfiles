@@ -10,7 +10,6 @@ abbr --add i " history merge && history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' -
 
 abbr --add j jobs
 abbr --add k kill
-abbr --add v 'p | grep -i vim | awk "{print \$NF}"'
 
 abbr --add s snippets
 
