@@ -13,6 +13,12 @@ import time
 import zoneinfo
 
 try:
+  from icecream import ic
+  ic.configureOutput(prefix='⌬ ', includeContext=True)
+except ModuleNotFoundError:
+  pass
+
+try:
   import wat
 except ModuleNotFoundError:
   pass
