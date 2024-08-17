@@ -1,4 +1,5 @@
 python3-click
+python3-icecream
 python3-packaging
 python3-pendulum
 python3-phonenumbers

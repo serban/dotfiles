@@ -1,4 +1,5 @@
 click
+icecream
 iterm2
 numpy-financial
 packaging
