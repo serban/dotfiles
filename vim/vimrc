@@ -4,7 +4,7 @@
 set nocompatible                    " Don't try to be compatible with the original vi
 
 if has('gui_macvim')
-  set pythonthreedll=~/env/pyenv/versions/3.12.4/lib/libpython3.12.dylib
+  set pythonthreedll=~/env/pyenv/versions/3.12.5/lib/libpython3.12.dylib
 endif
 
 if has('nvim') && has('mac')
