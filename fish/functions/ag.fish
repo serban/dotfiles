@@ -8,6 +8,7 @@ function ag --wraps ag
   set options $options (fish_opt --short=k --long=kotlin)
   set options $options (fish_opt --short=i --long=literal)
   set options $options (fish_opt --short=l --long=list-file-types)
+  set options $options (fish_opt --short=m --long=markdown)
   set options $options (fish_opt --short=p --long=python)
   set options $options (fish_opt --short=r --long=rust)
   set options $options (fish_opt --short=s --long=shell)
@@ -72,6 +73,10 @@ function ag --wraps ag
 
   if test -n "$_flag_list_file_types"
     set args $args --list-file-types
+  end
+
+  if test -n "$_flag_markdown"
+    set args $args --markdown
   end
 
   if test -n "$_flag_python"
