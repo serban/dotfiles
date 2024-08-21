@@ -56,5 +56,6 @@ tree
 vim
 watch
 watchexec
+web-ext
 wget2
 yj
