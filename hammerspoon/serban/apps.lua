@@ -4,7 +4,7 @@ local g = serban.grid
 
 M.kPlacement = {
 
-  { app='1Password 7',      bun='com.agilebits.onepassword7',         max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='1Password',        bun='com.1password.1password',            max=false,  [1]={g.kScreenLeft, g.kGridCenterTall}, [2]={g.kScreenLeft,   g.kGridCenterTall}, },
   { app='Activity Monitor', bun='com.apple.ActivityMonitor',          max=false,  [1]={g.kScreenLeft, g.kGridRight},      [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Calendar',         bun='com.apple.iCal',                     max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Code',             bun='com.microsoft.VSCode',               max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
