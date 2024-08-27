@@ -1,5 +1,6 @@
 grip
 httpie
+magic-wormhole
 pipdeptree
 virtualfish
 yt-dlp

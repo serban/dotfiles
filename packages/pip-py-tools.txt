@@ -1,6 +1,7 @@
 grip
 httpie
 lookatme
+magic-wormhole
 pip
 pipdeptree
 virtualfish
