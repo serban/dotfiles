@@ -5,7 +5,19 @@ function ws
     return 1
   end
 
-  set --function path ~/wks/(date +%Y-%m-%d)
+  set --function slug $argv[1]
+
+  if test -z $slug
+    echo 'No slug specified'
+    return 1
+  end
+
+  if string match --quiet --regex '[^a-z0-9-]' $slug
+    echo 'Slug must contain only lowercase alphanumeric or hyphen characters'
+    return 1
+  end
+
+  set --function path ~/wks/(date +%Y-%m-%d)-$slug
 
   mkdir -p $path
   cd $path
