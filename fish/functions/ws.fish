@@ -2,17 +2,10 @@ function ws
   set --local  options (fish_opt --short=n --long=open)
 
   if not argparse $options -- $argv
-    return
+    return 1
   end
 
-  set --function date (date +%Y-%m-%d)
-  set --function fold wks
-
-  if test (uname -s) = Darwin
-    set fold Workspace
-  end
-
-  set --function path ~/$fold/$date
+  set --function path ~/wks/(date +%Y-%m-%d)
 
   mkdir -p $path
   cd $path
