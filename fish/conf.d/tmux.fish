@@ -1,5 +1,14 @@
 abbr --add mdc tmux detach-client -s
 
+function mrw
+  if test -z $TMUX
+    echo 'Not running inside tmux'
+    return 1
+  end
+
+  tmux rename-window (builtin path basename $PWD)
+end
+
 function mlc
   tmux list-clients -F '#{client_termname}  #{session_name}' | sort
 end
