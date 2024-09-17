@@ -286,6 +286,7 @@ endif
 " • https://vi.stackexchange.com/questions/2350/how-to-map-alt-key
 " • :help :set-termcap
 if !has('nvim')
+execute "set <M-a>=\ea"
 execute "set <M-b>=\eb"
 execute "set <M-c>=\ec"
 execute "set <M-d>=\ed"
@@ -1778,6 +1779,8 @@ endif
 " nnoremap <unique> <C-z>
 
   " Meta keys do not work in MacVim without setting macmeta. See :help macmeta.
+  nnoremap <unique> <M-a> r✻
+  vnoremap <unique> <M-a> r✻
   nnoremap <unique> <M-c> r✓
   vnoremap <unique> <M-c> r✓
   nnoremap <unique> <M-d> r·
