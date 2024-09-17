@@ -4,6 +4,7 @@ abbr --add l less -N
 
 abbr --add d colordiff -u
 abbr --add f find . -iname
+abbr --add w --set-cursor=° 'g ~/wks/°'
 abbr --add 3 --set-cursor=° 'tree -C ° | less'
 
 abbr --add i " history merge && history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' --reverse"
