@@ -79,15 +79,6 @@ if !filereadable('/usr/share/vim/google/google.vim')
   Plug 'ervandew/supertab'
 endif
 
-if has('nvim')
-  Plug 'ggandor/leap.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
-  Plug 'nvim-telescope/telescope-symbols.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-  Plug 'nvim-treesitter/nvim-treesitter-context'
-endif
-
 call plug#end()
 
 " ------------------------------------------------------------------------------
@@ -454,68 +445,6 @@ let g:ycm_language_server = [
 \     'filetypes': [ 'java', 'kotlin' ]
 \   },
 \]
-
-" ------------------------------------------------------------------------------
-" NEOVIM PLUGIN SETTINGS
-
-if has('nvim')
-lua << EOF
-
-require('telescope').setup({
-  defaults = {
-    layout_config = {
-      horizontal = {
-        prompt_position = 'top',
-        width = 0.95,
-        height = 0.90,
-        preview_width = 0.50,
-      },
-    },
-    sorting_strategy = 'ascending',
-  },
-})
-
-require('nvim-treesitter.configs').setup({
-  ensure_installed = {
-    'bash',
-    'c',
-    'comment',
-    'cpp',
-    'css',
-    'cuda',
-    'dockerfile',
-    'dot',
-    'fish',
-    'go',
-    'html',
-    'java',
-    'javascript',
-    'json',
-    'jsonnet',
-    'kotlin',
-    'lua',
-    'markdown',
-    'markdown_inline',
-    'proto',
-    'python',
-    'regex',
-    'rst',
-    'rust',
-    'sql',
-    'swift',
-    'toml',
-    'vim',
-    'vimdoc',
-    'yaml',
-  },
-  highlight = {enable = true},
-  incremental_selection = {enable = true},
-})
-
-require('leap').add_default_mappings()
-
-EOF
-endif
 
 " ------------------------------------------------------------------------------
 " GLOBALS
@@ -1869,18 +1798,6 @@ endif
   nnoremap <unique> <Leader>hp :call SerbanFzfProducerModules() <CR>
   nnoremap <unique> <Leader>hz :call SerbanSwitchGraphToProducerModule() <CR>
 
-  nnoremap <unique> <Leader>ib :Telescope buffers <CR>
-  nnoremap <unique> <Leader>ic :Telescope commands <CR>
-  nnoremap <unique> <Leader>ie :Telescope symbols <CR>
-  nnoremap <unique> <Leader>if :Telescope find_files <CR>
-  nnoremap <unique> <Leader>ig :Telescope grep_string <CR>
-  nnoremap <unique> <Leader>ih :Telescope help_tags <CR>
-  nnoremap <unique> <Leader>ii :Telescope builtin <CR>
-  nnoremap <unique> <Leader>il :Telescope live_grep <CR>
-  nnoremap <unique> <Leader>im :Telescope marks <CR>
-  nnoremap <unique> <Leader>ir :Telescope resume <CR>
-  nnoremap <unique> <Leader>is :Telescope spell_suggest <CR>
-  nnoremap <unique> <Leader>iz :Telescope current_buffer_fuzzy_find <CR>
   nnoremap <unique> <Leader>in :let g:clang_include_fixer_query_mode=0<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
   nnoremap <unique> <Leader>iq :let g:clang_include_fixer_query_mode=1<CR>:pyfile /usr/lib/clang-include-fixer/clang-include-fixer.py<CR>
 
