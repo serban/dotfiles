@@ -19,7 +19,6 @@ KNOWN_DIRS = {
   '.swiftpm',             # Swift Package Manager
   '.terminfo',            # 2023-10-29: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos
   '.terraform.d',         # 2023-10-29: https://github.com/hashicorp/terraform/issues/15389
-  '.vim',
   '.vscode',
 
 }

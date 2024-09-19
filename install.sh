@@ -138,19 +138,19 @@ ln -si ${DOTFILES}/sqliterc             ~/.config/sqlite3/sqliterc
 mkdir -p ~/.config/tmux
 ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
 
+mkdir -p ~/.config/vim
+ln -si ${DOTFILES}/vim/after            ~/.config/vim/after
+ln -si ${DOTFILES}/vim/pack             ~/.config/vim/pack
+ln -si ${DOTFILES}/vim/ultisnips        ~/.config/vim/UltiSnips
+ln -si ${DOTFILES}/vim/gvimrc           ~/.config/vim/gvimrc
+ln -si ${DOTFILES}/vim/vimrc            ~/.config/vim/vimrc
+
 mkdir -p ~/.config/wezterm
 ln -si ${DOTFILES}/wezterm.lua          ~/.config/wezterm/wezterm.lua
 
 mkdir -p ~/.config/zed
 ln -si ${DOTFILES}/zed-keymap.json      ~/.config/zed/keymap.json
 ln -si ${DOTFILES}/zed-settings.json    ~/.config/zed/settings.json
-
-mkdir -p ~/.vim
-ln -si ${DOTFILES}/vim/after            ~/.vim/after
-ln -si ${DOTFILES}/vim/pack             ~/.vim/pack
-ln -si ${DOTFILES}/vim/ultisnips        ~/.vim/UltiSnips
-ln -si ${DOTFILES}/vim/gvimrc           ~/.vim/gvimrc
-ln -si ${DOTFILES}/vim/vimrc            ~/.vim/vimrc
 
 mkdir -p -m 700 ~/.local/share
 mkdir -p -m 700 ~/.local/share/bookmarks

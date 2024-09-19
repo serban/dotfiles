@@ -12,8 +12,8 @@ if has('nvim') && has('mac')
 endif
 
 if has('nvim')
-  set runtimepath^=~/.vim
-  set runtimepath+=~/.vim/after
+  set runtimepath^=~/.config/vim
+  set runtimepath+=~/.config/vim/after
   let &packpath = &runtimepath
 endif
 
@@ -205,7 +205,7 @@ set wildmode=longest:full,full      " On the first press of <Tab>, complete unti
 set spellcapcheck=                  " Disable checking for a capital letter at the beginning of a sentence (SpellCap highlight).
 set spelllang=en_us                 " Use American English for spell checking
 set spellsuggest=best,9             " Limit spelling suggestions for z= to nine items
-set spellfile=~/.vim/spell/en.utf-8.add,~/.vim/spell/proper.utf-8.add,~/.vim/spell/google.utf-8.add
+set spellfile=~/.config/vim/spell/en.utf-8.add,~/.config/vim/spell/proper.utf-8.add,~/.config/vim/spell/google.utf-8.add
 
 set listchars=tab:»\ ,trail:⚐       " Show tabs and trailing whitespace
 set list
@@ -673,11 +673,11 @@ endfunction
 
 function SerbanGenerateSpellFiles()
   windo set spell
-  mkspell! ~/.vim/spell/en.utf-8.add
+  mkspell! ~/.config/vim/spell/en.utf-8.add
   echom '--------------------------------------------------------------'
-  mkspell! ~/.vim/spell/proper.utf-8.add
+  mkspell! ~/.config/vim/spell/proper.utf-8.add
   echom '--------------------------------------------------------------'
-  mkspell! ~/.vim/spell/google.utf-8.add
+  mkspell! ~/.config/vim/spell/google.utf-8.add
   echom '--------------------------------------------------------------'
   spellinfo
   echom '--------------------------------------------------------------'
@@ -1387,7 +1387,7 @@ endfunction
 " ------------------------------------------------------------------------------
 " EVENT HANDLERS
 
-" Alternatively, create ~/.vim/after/ftplugin/{cpp,go}.vim
+" Alternatively, create ~/.config/vim/after/ftplugin/{cpp,go}.vim
 autocmd FileType cpp       setlocal commentstring=//\ \ %s iskeyword-=-
 autocmd FileType gitcommit setlocal spell
 autocmd FileType go        setlocal tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
@@ -1873,6 +1873,6 @@ if filereadable(expand('~/src/wip/vim/wip.vim'))
   source ~/src/wip/vim/wip.vim
 endif
 
-if filereadable(expand('~/.vim/local.vim'))
-  source ~/.vim/local.vim
+if filereadable(expand('~/.config/vim/local.vim'))
+  source ~/.config/vim/local.vim
 endif
