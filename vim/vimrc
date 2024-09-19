@@ -1697,7 +1697,8 @@ digraphs si 128680  "  0x1f6a8 🚨         Police Cars Revolving Light
 " ------------------------------------------------------------------------------
 " KEY MAPPINGS
 
-let mapleader = ' '
+let g:mapleader = ' '
+let g:macvim_skip_cmd_opt_movement = 1
 
 if has('nvim')
   nunmap <C-l>
