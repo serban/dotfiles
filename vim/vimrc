@@ -1,5 +1,5 @@
 " ------------------------------------------------------------------------------
-" VUNDLE
+" PLUGINS
 
 set nocompatible                    " Don't try to be compatible with the original vi
 
@@ -21,7 +21,7 @@ set packpath^=~/src/wip/vim
 set runtimepath^=~/src/wip/vim
 set runtimepath^=/opt/homebrew/Cellar/lilypond/*/share/lilypond/*/vim
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.local/share/vim/plugged')
 
 " GitHub Plugins
 Plug 'altercation/vim-colors-solarized'
@@ -71,8 +71,8 @@ Plug 'udalov/kotlin-vim'
 "   + https://github.com/SirVer/ultisnips/issues/771
 "   + https://github.com/SirVer/ultisnips/issues/900
 "
-" If problems persist, blow away ~/.vim/bundle/ultisnips and start over with
-" :PluginInstall.
+" If problems persist, blow away ~/.local/share/vim/plugged/ultisnips and start
+" over with :PlugInstall.
 Plug 'SirVer/ultisnips'
 
 if !filereadable('/usr/share/vim/google/google.vim')

@@ -154,6 +154,7 @@ ln -si ${DOTFILES}/vim/vimrc            ~/.vim/vimrc
 
 mkdir -p -m 700 ~/.local/share
 mkdir -p -m 700 ~/.local/share/bookmarks
+mkdir -p -m 700 ~/.local/share/vim
 
 mkdir -p -m 700 ~/.local/state
 mkdir -p -m 700 ~/.local/state/bash
