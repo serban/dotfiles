@@ -13,6 +13,7 @@ syntax case match
 syntax match   SerbanAcronym             '\v<\u+s?>'        transparent contains=@NoSpell containedin=ALL
 
 syntax match   SerbanMetadata            '\v^‣ \S+'
+syntax match   SerbanResult              '\v^→'
 
 syntax match   SerbanUrl                 '\v<https?://\S+>'                               containedin=Table nextgroup=SerbanLinkSeparator
 syntax match   SerbanShortLink           '\v<(b|cl|g|go|google3|g3doc|omg|yaqs)/\S+>'     containedin=Table nextgroup=SerbanLinkSeparator
@@ -48,6 +49,7 @@ syntax match   SerbanTable               '\v[│├┼┤─]'
 syntax match   SerbanDate                '\v<((Mon|Tue|Wed|Thu|Fri|Sat|Sun) )?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{2}( \d{4})?>' containedin=Table
 
 highlight link SerbanMetadata             SerbanBlue
+highlight link SerbanResult               SerbanMagenta
 
 highlight link SerbanUrl                  SerbanViolet
 highlight link SerbanShortLink            SerbanViolet
