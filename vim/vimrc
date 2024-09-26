@@ -1104,6 +1104,9 @@ endfunction
 "   │ -   │  ⁃  │ U+2043 Hyphen Bullet               │
 "   │ x   │  ✗  │ U+2717 Ballot X                    │
 "   │ x   │  ×  │ U+00D7 Multiplication Sign         │
+"   │ /   │  ÷  │ U+00F7 Division Sign               │
+"   │ /   │  ⁄  │ U+2044 Fraction Slash              │
+"   │ /   │  ∕  │ U+2215 Division Slash              │
 "   │ '   │  ′  │ U+2032 Prime                       │
 "   │ '   │  ‘  │ U+2018 Left Single Quotation Mark  │
 "   │ '   │  ’  │ U+2019 Right Single Quotation Mark │
@@ -1116,9 +1119,9 @@ function SerbanToggleTypographyHighlighting()
     let w:serban_typography_good = matchdelete(w:serban_typography_good)
     return
   endif
-  let w:serban_typography_bad = matchadd('SerbanTypographyBad', '\v\.{3}|-|x|''|"')
+  let w:serban_typography_bad = matchadd('SerbanTypographyBad', '\v\.{3}|-|x|/|''|"')
   let w:serban_typography_good = matchadd('SerbanTypographyGood',
-                                 \        '\v…|‐|‒|–|—|―|−|⁃|✗|×|′|‘|’|″|“|”')
+                                 \        '\v…|‐|‒|–|—|―|−|⁃|✗|×|÷|⁄|∕|′|‘|’|″|“|”')
 endfunction
 
 function SerbanCommandPalette()
