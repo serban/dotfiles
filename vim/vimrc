@@ -1092,24 +1092,24 @@ function SerbanToggleStatusLinePath()
   redrawstatus!
 endfunction
 
-"   | Bad | Alt | Code Point                         |
-"   |-----|:---:|------------------------------------|
-"   | ... |  …  | U+2026 Horizontal Ellipsis         |
-"   | -   |  ‐  | U+2010 Hyphen                      |
-"   | -   |  ‒  | U+2012 Figure Dash                 |
-"   | --  |  –  | U+2013 En Dash                     |
-"   | --- |  —  | U+2014 Em Dash                     |
-"   | --  |  ―  | U+2015 Horizontal Bar              |
-"   | -   |  −  | U+2212 Minus Sign                  |
-"   | -   |  ⁃  | U+2043 Hyphen Bullet               |
-"   | x   |  ✗  | U+2717 Ballot X                    |
-"   | x   |  ×  | U+00D7 Multiplication Sign         |
-"   | '   |  ′  | U+2032 Prime                       |
-"   | '   |  ‘  | U+2018 Left Single Quotation Mark  |
-"   | '   |  ’  | U+2019 Right Single Quotation Mark |
-"   | "   |  ″  | U+2033 Double Prime                |
-"   | "   |  “  | U+201C Left Double Quotation Mark  |
-"   | "   |  ”  | U+201D Right Single Quotation Mark |
+"   │ Bad │ Alt │ Code Point                         │
+"   ├─────┼─────┼────────────────────────────────────┤
+"   │ ... │  …  │ U+2026 Horizontal Ellipsis         │
+"   │ -   │  ‐  │ U+2010 Hyphen                      │
+"   │ -   │  ‒  │ U+2012 Figure Dash                 │
+"   │ --  │  –  │ U+2013 En Dash                     │
+"   │ --- │  —  │ U+2014 Em Dash                     │
+"   │ --  │  ―  │ U+2015 Horizontal Bar              │
+"   │ -   │  −  │ U+2212 Minus Sign                  │
+"   │ -   │  ⁃  │ U+2043 Hyphen Bullet               │
+"   │ x   │  ✗  │ U+2717 Ballot X                    │
+"   │ x   │  ×  │ U+00D7 Multiplication Sign         │
+"   │ '   │  ′  │ U+2032 Prime                       │
+"   │ '   │  ‘  │ U+2018 Left Single Quotation Mark  │
+"   │ '   │  ’  │ U+2019 Right Single Quotation Mark │
+"   │ "   │  ″  │ U+2033 Double Prime                │
+"   │ "   │  “  │ U+201C Left Double Quotation Mark  │
+"   │ "   │  ”  │ U+201D Right Single Quotation Mark │
 function SerbanToggleTypographyHighlighting()
   if get(w:, 'serban_typography_bad') ># 0 || get(w:, 'serban_typography_good') ># 0
     let w:serban_typography_bad = matchdelete(w:serban_typography_bad)
