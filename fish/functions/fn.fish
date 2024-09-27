@@ -10,6 +10,7 @@ function fn
             --bind 'ctrl-g:change-preview-window(right,80|bottom,60%|hidden|)' \
             --bind 'ctrl-o:execute-silent(open -R ~/txt/{})' \
             --bind 'ctrl-r:reload(fd --base-directory ~/txt --type file --strip-cwd-prefix | sort)' \
+            --bind 'ctrl-s:reload(fd --base-directory ~/txt --type file --strip-cwd-prefix | sort -k 2)' \
             --bind 'double-click:execute-silent(mvim --remote-tab-silent ~/txt/{})' \
             --bind 'enter:execute-silent(mvim --remote-tab-silent ~/txt/{})' \
             --bind 'esc:cancel'
