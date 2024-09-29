@@ -41,6 +41,7 @@ syntax match   SerbanCheck               '✓'                                  
 syntax match   SerbanCross               '✗'                                              containedin=Table
 syntax match   SerbanNull                '∅'                                              containedin=Table
 syntax match   SerbanAsterisk            '✻'                                              containedin=Table
+syntax match   SerbanBalloon             '✤'                                              containedin=Table
 syntax match   SerbanArrowDownRight      '↳'                                              containedin=Table
 syntax match   SerbanQuestion            '\v(^|\s)\zs\?'                                  containedin=Table
 syntax match   SerbanTilde               '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table
@@ -78,6 +79,7 @@ highlight link SerbanCheck                SerbanGreen
 highlight link SerbanCross                SerbanRed
 highlight link SerbanNull                 SerbanGray
 highlight link SerbanAsterisk             SerbanYellow
+highlight link SerbanBalloon              SerbanMagenta
 highlight link SerbanArrowDownRight       SerbanBlue
 highlight link SerbanQuestion             SerbanViolet
 highlight link SerbanTilde                SerbanYellow
