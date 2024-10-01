@@ -401,6 +401,32 @@ let g:mwAutoSaveMarks = 0
 " VIM-MARKDOWN (TPOPE)
 let g:markdown_minlines = 200
 let g:markdown_yaml_head = 1
+
+" Vim commit 85f054aa3 (2024-09-30) ｢1｣ introduces circular syntax
+" includes between the Java and Markdown syntax files that ship with Vim.
+"
+" When `java` is in the list of `g:markdown_fenced_languages` ｢2｣, the
+" Markdown syntax file includes the Java syntax file ｢3｣ which in turn
+" includes the Markdown syntax file ｢4｣. This blows up with a lovely
+" `E847: Too many syntax includes` error.
+"
+" Work around this by setting `g:java_ignore_markdown`. See:
+"
+" • :help ft-java-plugin     ｢5｣
+" • :help ft-java-syntax     ｢6｣
+" • :help ft-markdown-syntax ｢7｣
+" • :help :syn-include       ｢8｣
+"
+" ｢1｣ https://github.com/vim/vim/commit/85f054aa3f0fb9530712d0897e3c8ba29946fad4
+"     ↳ runtime(java): Recognise the CommonMark form (///) of Javadoc comments
+" ｢2｣ https://github.com/serban/dotfiles/blob/b5685073bb264d21ffc866398115367853ace02c/vim/vimrc#L410
+" ｢3｣ https://github.com/vim/vim/blob/85f054aa3f0fb9530712d0897e3c8ba29946fad4/runtime/syntax/markdown.vim#L36
+" ｢4｣ https://github.com/vim/vim/blob/85f054aa3f0fb9530712d0897e3c8ba29946fad4/runtime/syntax/java.vim#L374
+" ｢5｣ https://vimhelp.org/filetype.txt.html#ft-java-plugin
+" ｢6｣ https://vimhelp.org/syntax.txt.html#ft-java-syntax
+" ｢7｣ https://vimhelp.org/syntax.txt.html#ft-markdown-syntax
+" ｢8｣ https://vimhelp.org/syntax.txt.html#%3Asyn-include
+let g:java_ignore_markdown = 1
 let g:markdown_fenced_languages = [
 \   'bash',
 \   'fish',
