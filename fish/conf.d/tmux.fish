@@ -124,7 +124,7 @@ function mas --argument-names project
     tmux new-window   -c $repo     -t $target:3 -n run
     tmux new-window   -c $repo     -t $target:4 -n repl
     tmux new-window   -c $repo     -t $target:5 -n build
-    tmux new-window   -c $repo     -t $target:6 -n ag
+    tmux new-window   -c $repo     -t $target:6 -n grep
     tmux new-window   -c $repo     -t $target:7 -n lf
     tmux new-window   -c $HOME/wks -t $target:8 -n wks
     tmux new-window   -c $HOME     -t $target:9 -n home
@@ -174,7 +174,7 @@ function mag --argument-names client subdir
     tmux new-window  -c $google3  -t $target:3  -n run
     tmux new-window  -c $google3  -t $target:4  -n blaze
     tmux new-window  -c $google3  -t $target:5  -n gcloud
-    tmux new-window  -c $google3  -t $target:6  -n ag
+    tmux new-window  -c $google3  -t $target:6  -n grep
     tmux new-window  -c $google3  -t $target:7  -n lf
     tmux new-window  -c $google3  -t $target:8  -n sub
     tmux new-window  -c $HOME/txt -t $target:9  -n msg
