@@ -38,6 +38,7 @@ M.kPlacement = {
   { app='Weather',          bun='com.apple.weather',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='WezTerm',          bun='com.github.wez.wezterm',             max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Xcode',            bun='com.apple.dt.Xcode',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
+  { app='YouTube Music',    bun='com.apple.Safari.WebApp.✻',          max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  }, -- Safari PWA Bundle ID UUID omitted
   { app='Zed',              bun='dev.zed.Zed',                        max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='iTerm2',           bun='com.googlecode.iterm2',              max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='kitty',            bun='net.kovidgoyal.kitty',               max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },

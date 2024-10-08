@@ -99,6 +99,7 @@ M.bind_sec('t',     function() f.openFinderHomeDirsStacked() end)
 M.bind_sec('v',     function() a.activate('Visual Studio Code.app') end)
 M.bind_sec('w',     function() a.activate('WezTerm.app') end)
 M.bind_sec('x',     function() a.activate('Xcode.app') end)
+M.bind_sec('y',     function() a.activate('YouTube Music.app') end)
 M.bind_sec('z',     function() a.highlightMousePointer() end)
 
 return M
