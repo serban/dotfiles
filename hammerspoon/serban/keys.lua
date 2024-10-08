@@ -3,6 +3,7 @@ local M = {}
 local a = serban.actions
 local f = serban.finder
 local g = serban.grid
+local p = serban.place
 local w = serban.windows
 local x = serban.ax
 
@@ -88,6 +89,7 @@ M.bind_sec('c',     function() a.activate('Contacts.app') end)
 M.bind_sec('d',     function() x.disableAXEnhancedUserInterface() end)
 M.bind_sec('f',     function() a.activate('FindMy.app') end)
 M.bind_sec('h',     function() f.openFinderHomeDirsTiled() end)
+M.bind_sec('l',     function() p.placeWindows() end)
 M.bind_sec('n',     function() a.activate('Notes.app') end)
 M.bind_sec('o',     function() a.activate('Obsidian.app') end)
 M.bind_sec('p',     function() a.activate('Photo Booth.app') end)
