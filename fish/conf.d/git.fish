@@ -105,6 +105,7 @@ function glf
                  --bind "ctrl-r:reload(git log --oneline --no-decorate $argv)" \
                  --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
                  --bind 'double-click:execute-silent(smerge search commit:{1})' \
+                 --bind 'enter:accept-non-empty' \
                  --bind 'esc:cancel' \
            | cut -d ' ' -f 1 \
            | tr -d '\n' \
