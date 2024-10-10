@@ -17,7 +17,8 @@ function fn
             --bind 'ctrl-g:change-preview-window(right,80|bottom,60%|hidden|)' \
             --bind "ctrl-o:execute-silent($open)" \
             --bind "ctrl-r:reload($fd)" \
-            --bind "ctrl-s:reload($fd -k 2)" \
+            --bind "ctrl-s:reload($fd --key 2)" \
+            --bind "ctrl-t:reload($fd --reverse)" \
             --bind "double-click:execute-silent($mvim)" \
             --bind "enter:execute-silent($mvim)" \
             --bind 'esc:cancel'
