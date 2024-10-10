@@ -100,9 +100,11 @@ function glf
                 --height 100% \
                 --preview-window 'right,60%,<84(hidden)' \
                 --preview 'git show --color --stat --patch {1}' \
+                --bind 'alt-c:execute(osc52 {1})' \
                 --bind 'ctrl-s:first' \
                 --bind 'ctrl-g:toggle-preview' \
                 --bind "ctrl-r:reload(git log --oneline --no-decorate $argv)" \
+                --bind 'ctrl-x:execute-silent(echo -n {1} | fish_clipboard_copy)' \
                 --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
                 --bind 'double-click:execute-silent(smerge search commit:{1})' \
                 --bind 'enter:accept-non-empty' \
