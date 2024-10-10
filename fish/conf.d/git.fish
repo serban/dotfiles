@@ -92,26 +92,22 @@ function gsou
 end
 
 function glf
-  set --function commit \
-      (git log --oneline --no-decorate $argv \
-           | fzf --no-sort \
-                 --track \
-                 --with-nth 2.. \
-                 --height 100% \
-                 --preview-window 'right,60%,<84(hidden)' \
-                 --preview 'git show --color --stat --patch {1}' \
-                 --bind 'ctrl-s:first' \
-                 --bind 'ctrl-g:toggle-preview' \
-                 --bind "ctrl-r:reload(git log --oneline --no-decorate $argv)" \
-                 --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
-                 --bind 'double-click:execute-silent(smerge search commit:{1})' \
-                 --bind 'enter:accept-non-empty' \
-                 --bind 'esc:cancel' \
-           | cut -d ' ' -f 1 \
-           | tr -d '\n' \
-           | base64)
-
-  test -n "$commit" && echo -n \033]52\;p\;$commit\007
+  osc52 (
+      git log --oneline --no-decorate $argv \
+          | fzf --no-sort \
+                --track \
+                --with-nth 2.. \
+                --height 100% \
+                --preview-window 'right,60%,<84(hidden)' \
+                --preview 'git show --color --stat --patch {1}' \
+                --bind 'ctrl-s:first' \
+                --bind 'ctrl-g:toggle-preview' \
+                --bind "ctrl-r:reload(git log --oneline --no-decorate $argv)" \
+                --bind 'ctrl-o:execute-silent(smerge search commit:{1})' \
+                --bind 'double-click:execute-silent(smerge search commit:{1})' \
+                --bind 'enter:accept-non-empty' \
+                --bind 'esc:cancel' \
+          | cut -d ' ' -f 1)
 end
 
 function glp
