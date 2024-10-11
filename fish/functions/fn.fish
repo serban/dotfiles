@@ -33,6 +33,7 @@ function fn
             --bind "alt-p:execute($osc52_path)" \
             --bind 'ctrl-g:change-preview-window(right,80|bottom,60%|hidden|)' \
             --bind "ctrl-o:execute-silent($open)" \
+            --bind 'ctrl-q:toggle-preview' \
             --bind "ctrl-r:reload($fd)" \
             --bind "ctrl-s:reload($fd --key 2)" \
             --bind "ctrl-t:reload($fd --reverse)" \
