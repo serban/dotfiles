@@ -475,6 +475,7 @@ let g:ycm_language_server = [
 " ------------------------------------------------------------------------------
 " GLOBALS
 
+let g:serban_statusline_font = 0
 let g:serban_statusline_path_relative = 0
 
 let g:serban_command_palette_commands = [
@@ -506,6 +507,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleSpell',
 \   'SerbanToggleLineNumbers',
 \   'SerbanToggleMacMeta',
+\   'SerbanToggleStatusLineFont',
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
 \   'SerbanFzfNotes',
@@ -628,6 +630,9 @@ function SerbanStatusLine()
   let s .= '%='             " left-right separator
   let s .= '%3v  '          " virtual column number under cursor
   let s .= 'U+%04B  '       " code point under cursor
+  if has('gui_running')
+  let s .= g:serban_statusline_font ? '%{matchstr(getfontname(), "\\v^\\w+")}  ' : ''
+  endif
   let s .= '%(%Y  %)'       " filetype
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
   let s .= '%{&list ? "" : "Ⓛ   "}'         " window-local · NB: Indicator appears when list is disabled
@@ -1110,6 +1115,11 @@ function SerbanToggleMacMeta()
     silent bufdo set macmeta
   endif
   execute 'silent' 'buffer' buf
+  redrawstatus!
+endfunction
+
+function SerbanToggleStatusLineFont()
+  let g:serban_statusline_font = !g:serban_statusline_font
   redrawstatus!
 endfunction
 
@@ -1845,6 +1855,7 @@ endif
   nnoremap <unique> <Leader>ss :call SerbanToggleSpell() <CR>
   nnoremap <unique> <Leader>sn :call SerbanToggleLineNumbers() <CR>
   nnoremap <unique> <Leader>sm :call SerbanToggleMacMeta() <CR>
+  nnoremap <unique> <Leader>sf :call SerbanToggleStatusLineFont() <CR>
   nnoremap <unique> <Leader>sp :call SerbanToggleStatusLinePath() <CR>
   nnoremap <unique> <Leader>sy :call SerbanToggleTypographyHighlighting() <CR>
   nnoremap <unique> <Leader>so :24messages <CR>
