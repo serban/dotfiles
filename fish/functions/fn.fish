@@ -27,6 +27,7 @@ function fn
       | fzf --no-sort \
             --multi \
             --height 100% \
+            --info inline-right \
             --preview-window right,60% \
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
