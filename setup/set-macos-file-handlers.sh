@@ -68,6 +68,7 @@ duti -s org.vim.MacVim              .tf                                 all
 duti -s org.vim.MacVim              .ts                                 all
 duti -s org.vim.MacVim              .toml                               all
 duti -s org.vim.MacVim              .txt                                all
+duti -s org.vim.MacVim              .typ                                all
 duti -s org.vim.MacVim              .ulss                               all
 duti -s org.vim.MacVim              .vim                                all
 duti -s org.vim.MacVim              .xml                                all

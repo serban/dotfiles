@@ -150,6 +150,7 @@
     .org                  33
     .rst                  33
     .txt                  33
+    .typ                  33
 
 # ╭────────────────────────────────────────────────────────────────────────────╮
 # │ Blue - MIDI · Object Files · Binary Data · Generated Data                  │
