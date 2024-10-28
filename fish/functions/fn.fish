@@ -28,7 +28,7 @@ function fn
             --multi \
             --height 100% \
             --info inline-right \
-            --preview-window right,60% \
+            --preview-window right,60%,noinfo \
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
             --bind "alt-p:execute($osc52_path)" \

@@ -98,7 +98,7 @@ function glf
                 --track \
                 --with-nth 2.. \
                 --height 100% \
-                --preview-window 'right,60%,<84(hidden)' \
+                --preview-window 'right,60%,noinfo,<84(hidden)' \
                 --preview 'git show --color --stat --patch {1}' \
                 --bind 'alt-c:execute(osc52 {1})' \
                 --bind 'ctrl-s:first' \
