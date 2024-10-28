@@ -451,6 +451,14 @@ let g:markdown_fenced_languages = [
 \   'yaml',
 \]
 
+" All those syntax includes add up when I have lots of Markdown files open. Keep
+" g:markdown_fenced_languages small to improve performance and reduce memory
+" consumption. In my personal notes there are 20× more fish fenced code blocks
+" than the next highest syntax language. Measure the frequency with:
+"
+"   rg --no-filename --context 0 --only-matching '^```\S+' | sort | uniq --count
+let g:markdown_fenced_languages = ['fish']
+
 " VIM-MARKDOWN-FOLDING
 let g:markdown_fold_override_foldtext = 0
 
