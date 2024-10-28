@@ -86,6 +86,27 @@ function bufselect#Buffers()
   return [numbers, paths, names]
 endfunction
 
+function bufselect#GoToBufferRelative(delta)
+  let buffers = bufselect#Buffers()
+  let numbers = buffers[0]
+
+  let idx = index(numbers, bufnr())
+
+  if idx <# 0  " Check if bufselect is being invoked from an unlisted buffer.
+    return
+  endif
+
+  execute 'silent' 'buffer' numbers[(idx + a:delta) % len(numbers)]
+endfunction
+
+function bufselect#GoToBufferPrev()
+  call bufselect#GoToBufferRelative(-1)
+endfunction
+
+function bufselect#GoToBufferNext()
+  call bufselect#GoToBufferRelative(+1)
+endfunction
+
 function bufselect#MenuCallback(_, index)
   " NB: The first menu item starts at index 1.
   if a:index > 0

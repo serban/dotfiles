@@ -1762,8 +1762,8 @@ endif
   nnoremap <unique> <M-j> :move +1 <CR>
   nnoremap <unique> <M-k> :move -2 <CR>
   nnoremap <unique> <M-l> :tabmove +1 <CR>
-  nnoremap <unique> <M-n> :bnext <CR>
-  nnoremap <unique> <M-p> :bprevious <CR>
+  nnoremap <unique> <silent> <M-n> :call SerbanDeleteEmptyBuffers(v:false) <Bar> call bufselect#GoToBufferNext() <CR>
+  nnoremap <unique> <silent> <M-p> :call SerbanDeleteEmptyBuffers(v:false) <Bar> call bufselect#GoToBufferPrev() <CR>
   nnoremap <unique> <M-q> r?
   vnoremap <unique> <M-q> r?
   nnoremap <unique> <M-r> r✗
