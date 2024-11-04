@@ -260,6 +260,39 @@ function mfs
           (tmux show-environment SSH_AUTH_SOCK))
 end
 
+function mos --argument-names project
+  if test -z $TMUX
+    echo 'Not running inside tmux'
+    return 1
+  end
+
+  if test -z $project
+    set --function project (
+        fd --base-directory ~/oss --type directory --max-depth 1 --strip-cwd-prefix \
+            | sed 's|/$||' \
+            | sort \
+            | fzf --prompt '⁖ ~/oss/' \
+                  --bind enter:accept-non-empty \
+                  --bind esc:cancel)
+  end
+
+  set --function path ~/oss/$project
+
+  if test -z $project
+    echo 'No project specified'
+    return 1
+  end
+
+  if not test -d $path
+    echo 'Not a directory'
+    return 1
+  end
+
+  tmux new-window   -c $path -n $project
+  tmux split-window -c $path
+  tmux send-keys    'g --no-pager' Enter
+end
+
 function serban_complete_mas
   for dir in (find $HOME/src $HOME/frk $HOME/uvd $HOME/oss -mindepth 1 -maxdepth 1 -type d 2> /dev/null)
     echo (string split / $dir)[-1]
@@ -287,3 +320,9 @@ complete \
   --no-files \
   --arguments \
       '(tmux list-sessions -F "#{session_name}" | grep --invert-match "^z-")'
+
+complete \
+  --command mos \
+  --no-files \
+  --arguments \
+      '(fd --base-directory ~/oss --type directory --max-depth 1 --strip-cwd-prefix | sed "s|/\$||")'
