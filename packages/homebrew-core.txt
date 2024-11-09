@@ -35,6 +35,7 @@ less
 lf
 make
 md5deep
+micro
 moreutils
 neovim
 newsboat

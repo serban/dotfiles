@@ -24,6 +24,7 @@ kitty-terminfo
 lf
 libc++-dev
 makepasswd
+micro
 moreutils
 neovim
 psmisc
