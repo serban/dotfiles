@@ -22,7 +22,7 @@ function bd
   for package in $packages
     echo $package >> $expected
   end
-  brew deps --union --full-name $packages >> $expected
+  brew deps --formula --union --full-name $packages >> $expected
   sort --unique $expected > $expected_sorted
 
   brew leaves | sort --unique > $leaves_sorted
@@ -35,12 +35,12 @@ function bd
 
   header 'Leaves Added'
   cat $leaves_added \
-    | xargs brew desc --eval-all \
+    | xargs brew desc --formula --eval-all \
     | perl -pe 's/^([^:]+):/sprintf("%20s :", $1)/e'
 
   header 'Packages Added'
   cat $packages_added \
-    | xargs brew desc --eval-all \
+    | xargs brew desc --formula --eval-all \
     | perl -pe 's/^([^:]+):/sprintf("%20s :", $1)/e'
 
   if test -n "$_flag_missing"
@@ -55,7 +55,7 @@ function bd
   echo '• brew deps --tree --include-build formula'
   echo '• brew uses --installed --recursive --include-build formula'
   echo '• brew autoremove --dry-run'
-  echo '• brew cleanup -s --dry-run'
+  echo '• brew cleanup --scrub --dry-run'
 
   popd
   rm -r $output_dir
