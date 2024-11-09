@@ -26,6 +26,7 @@ gnu-units
 go
 gops
 grep
+helix
 hexyl
 hugo
 jq
@@ -53,6 +54,7 @@ terminal-notifier
 the_silver_searcher
 tmux
 tree
+typst
 vim
 watch
 watchexec
