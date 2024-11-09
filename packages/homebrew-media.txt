@@ -1,3 +1,4 @@
+ffmpeg
 flac
 lame
 lilypond
