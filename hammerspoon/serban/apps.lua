@@ -16,6 +16,7 @@ M.kPlacement = {
   { app='Google Chrome',    bun='com.google.Chrome',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Hammerspoon',      bun='org.hammerspoon.Hammerspoon',        max=false,  [1]={g.kScreenLeft, g.kGridRight},      [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Home',             bun='com.apple.Home',                     max=false,  [1]={g.kScreenLeft, g.kGridCenter},     [2]={g.kScreenLeft,   g.kGridCenter},     },
+  { app='IINA',             bun='com.colliderli.iina',                max=false,  [1]={g.kScreenLeft, g.kGridCenter},     [2]={g.kScreenCenter, g.kGridCenter},     },
   { app='MacVim',           bun='org.vim.MacVim',                     max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Maps',             bun='com.apple.Maps',                     max=true,   [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Messages',         bun='com.apple.MobileSMS',                max=false,  [1]={g.kScreenLeft, g.kGridMaximized},  [2]={g.kScreenLeft,   g.kGridMaximized},  },
