@@ -1,3 +1,4 @@
+db-browser-for-sqlite
 font-jetbrains-mono
 font-jetbrains-mono-nerd-font
 font-sf-mono
