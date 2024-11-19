@@ -41,7 +41,9 @@ neovim
 newsboat
 numbat
 openssh
+oxipng
 pastel
+pngquant
 procs
 pstree
 pyenv
