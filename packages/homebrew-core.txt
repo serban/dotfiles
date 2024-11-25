@@ -64,3 +64,4 @@ watchexec
 web-ext
 wget2
 yj
+zig
