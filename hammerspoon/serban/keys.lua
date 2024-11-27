@@ -26,6 +26,7 @@ function M.bind_pri(key, fn)
 end
 
 function M.bind_sec(key, fn)
+  hs.hotkey.bind('⌃⌥⇧', key, fn)
   M._modal_sec:bind('', key, function() fn(); M._modal_sec:exit() end)
 end
 
