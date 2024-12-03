@@ -25,6 +25,9 @@ def Profile(light=False):
   cyan    = iterm2.Color(*hex_to_rgb('2aa198'))
   green   = iterm2.Color(*hex_to_rgb('859900'))
 
+  amber   = iterm2.Color(*hex_to_rgb('ffd740'))  # 2014 Material Design Amber A200
+  b03dark = iterm2.Color(*hex_to_rgb('002b36'))
+
   profile_delta = iterm2.LocalWriteOnlyProfile()
   profile_delta.set_background_color(base03)
   profile_delta.set_foreground_color(base0)
@@ -32,8 +35,8 @@ def Profile(light=False):
   profile_delta.set_link_color(blue)
   profile_delta.set_cursor_color(base0)
   profile_delta.set_cursor_text_color(base03)
-  profile_delta.set_selection_color(magenta)
-  profile_delta.set_selected_text_color(base03)
+  profile_delta.set_selection_color(amber)
+  profile_delta.set_selected_text_color(b03dark)
   profile_delta.set_ansi_0_color(base02)
   profile_delta.set_ansi_1_color(red)
   profile_delta.set_ansi_2_color(green)
