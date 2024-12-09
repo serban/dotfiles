@@ -816,7 +816,7 @@ endfunction
 " '{,'}sort does not work because it selects the blank lines outside the paragraph.
 "
 " Use `execute "normal! …"` instead of just `normal! …` to avoid inserting a
-" literal carriage return (aka U+0013 aka \r aka ^M aka <CR>) in the code. See:
+" literal carriage return (aka U+000D aka \r aka ^M aka <CR>) in the code. See:
 " https://stackoverflow.com/questions/9724123/vim-functions-when-to-use-normal-when-to-use-exec-and-when-to-use-nothing
 function SerbanSortParagraph()
   let v = winsaveview()
