@@ -1,5 +1,5 @@
 import calendar
-import collections
+import collections.abc
 import datetime
 
 from serban.dotfiles import script
