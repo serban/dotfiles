@@ -20,6 +20,12 @@
   "scrollbar": {
     "show": "never"
   },
+  "git": {
+    "inline_blame": {
+      "min_column": 81,
+      "show_commit_summary": true
+    }
+  },
   "buffer_font_family": "Monaco",
   "buffer_font_size": 15,
   "cursor_blink": false,
