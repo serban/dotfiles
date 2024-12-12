@@ -25,5 +25,23 @@
   "cursor_blink": false,
   "wrap_guides": [80],
   "vim_mode": true,
-  "tab_size": 2
+  "tab_size": 2,
+  "format_on_save": "off",
+  "languages": {
+    "Go": {
+      "format_on_save": "on"
+    },
+    "JSONC": {
+      "format_on_save": "on"
+    },
+    "Rust": {
+      "format_on_save": "on"
+    },
+    "Swift": {
+      "format_on_save": "on"
+    },
+    "Zig": {
+      "format_on_save": "on"
+    }
+  }
 }
