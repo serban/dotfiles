@@ -13,5 +13,11 @@
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"]
     }
+  },
+  {
+    "context": "Editor && vim_mode == normal || vim_mode == insert || vim_mode == visual && !menu",
+    "bindings": {
+      "ctrl-s": ["workspace::SendKeystrokes", "escape : u p d a t e enter"]
+    }
   }
 ]
