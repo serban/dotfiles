@@ -17,6 +17,7 @@
   {
     "context": "Editor && vim_mode == normal || vim_mode == insert || vim_mode == visual && !menu",
     "bindings": {
+      "cmd-s":  ["workspace::SendKeystrokes", "escape : u p d a t e enter"],
       "ctrl-s": ["workspace::SendKeystrokes", "escape : u p d a t e enter"]
     }
   }
