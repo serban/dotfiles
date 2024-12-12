@@ -1,5 +1,10 @@
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
 --
+-- `wezterm ls-fonts --list-system`
+-- https://wezfurlong.org/wezterm/config/fonts.html
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/font.html
+-- https://wezfurlong.org/wezterm/config/lua/wezterm/font_with_fallback.html
+--
 -- https://wezfurlong.org/wezterm/config/keyboard-concepts.html
 -- https://wezfurlong.org/wezterm/config/key-encoding.html
 -- https://wezfurlong.org/wezterm/config/keys.html
@@ -22,6 +27,10 @@ config.term = 'wezterm'
 config.color_scheme = 'Sea Shells (Gogh)'
 
 config.font_size = 15.0
+config.window_frame = {
+  font = wezterm.font('SF Mono', {weight='Medium'}),
+  font_size = 15.0,
+}
 
 config.window_decorations = 'INTEGRATED_BUTTONS | RESIZE'
 config.hide_tab_bar_if_only_one_tab = true
@@ -61,5 +70,9 @@ config.keys = {
 }
 
 config.unicode_version = 14
+
+wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+  return ' ' .. (tab.tab_index + 1) .. ' ' .. tab.active_pane.title .. ' '
+end)
 
 return config
