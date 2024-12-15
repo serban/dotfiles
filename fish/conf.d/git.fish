@@ -92,6 +92,7 @@ function gsou
 end
 
 function glf
+  test -n "$argv" && set --function args --header "$argv"
   osc52 (
       git log --oneline --no-decorate $argv \
           | fzf --no-sort \
@@ -109,6 +110,7 @@ function glf
                 --bind 'double-click:execute-silent(smerge search commit:{1})' \
                 --bind 'enter:accept-non-empty' \
                 --bind 'esc:cancel' \
+                $args \
           | cut -d ' ' -f 1)
 end
 
