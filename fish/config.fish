@@ -127,7 +127,7 @@ set --global --export FZF_DEFAULT_OPTS \
     --marker ● \
     --no-bold \
     --color dark,border:13 \
-    --color prompt:3,query:3 \
+    --color header:5,prompt:3,query:3 \
     --color gutter:-1,marker:2 \
     --color hl:1,hl+:1 \
     --color bg:-1,fg:12 \
