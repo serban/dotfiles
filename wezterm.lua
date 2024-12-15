@@ -24,7 +24,9 @@ local config = wezterm.config_builder()
 -- /usr/bin/tic -x ~/oss/wezterm/termwiz/data/wezterm.terminfo
 config.term = 'wezterm'
 
-config.color_scheme = 'Sea Shells (Gogh)'
+-- NB: https://github.com/Gogh-Co/Gogh/commit/0667af46f84df834dd4f105e644704f4deca7608
+--     ↳ 2024-10-13: Add Kanagawa Lotus. Rename Kanagawa to Kanagawa Wave
+config.color_scheme = 'Kanagawa (Gogh)'
 
 config.font_size = 15.0
 config.window_frame = {
