@@ -1507,6 +1507,7 @@ augroup serban-markdown
   autocmd FileType markdown iabbrev <buffer> bh ⁃
   autocmd FileType markdown iabbrev <buffer> ar →
   autocmd FileType markdown iabbrev <buffer> ac ↳
+  autocmd FileType markdown iabbrev <buffer> nf ∞
   autocmd FileType markdown iabbrev <buffer> ch ✓
   autocmd FileType markdown iabbrev <buffer> cr ✗
   autocmd FileType markdown iabbrev <buffer> fn ｢｣
@@ -1614,6 +1615,7 @@ digraphs lr   8646  "  0x21c6  ⇆          Leftwards Arrow Over Rightwards Arro
 digraphs es   8709  "  0x2205  ∅  /0      Empty Set
 digraphs mi   8722  "  0x2212  −  -2      Minus Sign
 digraphs sq   8730  "  0x221a  √  RT      Square Root
+digraphs nf   8734  "  0x221e  ∞  00      Infinity
 digraphs ae   8776  "  0x2248  ≈  ?2      Almost Equal To
 digraphs ne   8800  "  0x2260  ≠  !=      Not Equal To
 digraphs le   8804  "  0x2264  ≤  =<      Less-Than Or Equal To
