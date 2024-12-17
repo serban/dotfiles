@@ -1,0 +1,6 @@
+font-size                               = 15
+cursor-style-blink                      = false
+window-inherit-working-directory        = false
+copy-on-select                          = true
+macos-option-as-alt                     = true
+shell-integration-features              = no-cursor

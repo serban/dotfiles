@@ -78,6 +78,9 @@ mkdir -p ~/.config/gdb
 ln -si ${DOTFILES}/gdbearlyinit         ~/.config/gdb/gdbearlyinit
 ln -si ${DOTFILES}/gdbinit              ~/.config/gdb/gdbinit
 
+mkdir -p ~/.config/ghostty
+ln -si ${DOTFILES}/ghostty-config       ~/.config/ghostty/config
+
 mkdir -p ~/.config/git
 ln -si ${DOTFILES}/git-config           ~/.config/git/config
 ln -si ${DOTFILES}/git-ignore           ~/.config/git/ignore
@@ -186,6 +189,7 @@ darwin && {
   mkdir -p ~/.local/bin
   ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/.local/bin/kitten
   ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/.local/bin/kitty
+  ln -si  /Applications/Ghostty.app/Contents/MacOS/ghostty                      ~/.local/bin/ghostty
   ln -si  /Applications/MacVim.app/Contents/bin/mvim                            ~/.local/bin/mvim
   ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm                      ~/.local/bin/wezterm
   ln -si  /Applications/WezTerm.app/Contents/MacOS/wezterm-gui                  ~/.local/bin/wezterm-gui
