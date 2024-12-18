@@ -1,5 +1,6 @@
 automake
 bazel
+cmake
 graphviz
 pkg-config
 postgresql@14
