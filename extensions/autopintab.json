@@ -21,6 +21,16 @@
       "enabled": true
     },
     {
+      "pattern": "https://discord.com/channels/@me",
+      "isRegex": false,
+      "enabled": true
+    },
+    {
+      "pattern": "https://app.element.io/#/home",
+      "isRegex": false,
+      "enabled": true
+    },
+    {
       "pattern": "https://web.whatsapp.com/",
       "isRegex": false,
       "enabled": true
@@ -31,7 +41,7 @@
       "enabled": true
     },
     {
-      "pattern": "https://app.todoist.com/",
+      "pattern": "https://app.todoist.com/app/inbox",
       "isRegex": false,
       "enabled": true
     },
@@ -55,5 +65,6 @@
       "isRegex": false,
       "enabled": true
     }
-  ]
+  ],
+  "cfgReorderTabs": true
 }
