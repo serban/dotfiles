@@ -38,7 +38,13 @@ end
 
 # See `status features` for current shell's feature flag state.
 set --universal fish_features \
-  qmark-noglob,stderr-nocaret,ampersand-nobg-in-token,regex-easyesc
+    qmark-noglob \
+    stderr-nocaret \
+    ampersand-nobg-in-token \
+    regex-easyesc \
+    remove-percent-self \
+    test-require-arg \
+    #
 
 set --global fish_color_keyword green
 set --global fish_color_command yellow
