@@ -4,3 +4,4 @@ window-inherit-working-directory        = false
 copy-on-select                          = true
 macos-option-as-alt                     = true
 shell-integration-features              = no-cursor
+resize-overlay                          = never
