@@ -4,3 +4,4 @@ font-jetbrains-mono-nerd-font
 font-sf-mono
 font-symbols-only-nerd-font
 kitty
+utm
