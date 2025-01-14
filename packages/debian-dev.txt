@@ -1,0 +1,10 @@
+automake
+bison
+clang
+cmake
+gettext
+libc++-dev
+libevent-dev
+make
+ninja-build
+python3-dev
