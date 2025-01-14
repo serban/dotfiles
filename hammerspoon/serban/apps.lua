@@ -14,7 +14,7 @@ M.kPlacement = {
   { app='Find My',          bun='com.apple.findmy',                   max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Finder',           bun='com.apple.finder',                   max=false,  [1]={g.kScreenLeft, g.kGridCenterRight},  [2]={g.kScreenLeft,   g.kGridCenterRight},},
   { app='Firefox',          bun='org.mozilla.firefox',                max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
-  { app='Ghostty',          bun='com.mitchellh.ghostty',              max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
+  { app='Ghostty',          bun='com.mitchellh.ghostty',              max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Google Chrome',    bun='com.google.Chrome',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Hammerspoon',      bun='org.hammerspoon.Hammerspoon',        max=false,  [1]={g.kScreenLeft, g.kGridRight},        [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Home',             bun='com.apple.Home',                     max=false,  [1]={g.kScreenLeft, g.kGridCenter},       [2]={g.kScreenLeft,   g.kGridCenter},     },
