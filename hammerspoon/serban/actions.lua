@@ -49,6 +49,7 @@ end
 function M.openFirefoxChatTabs()
   M.activate('Firefox.app')
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
+      'https://discord.com/channels/@me',
       'https://app.element.io/#/home',
       'https://web.whatsapp.com',
       'https://www.messenger.com',
