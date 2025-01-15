@@ -1,6 +1,7 @@
 serban = {}
 
 hs.logger.setGlobalLogLevel('warning') -- error, warning, info, debug, verbose
+hs.hotkey.setLogLevel('warning') -- hs.logger.setGlobalLogLevel() has no effect
 serban.logger = hs.logger.new('serban', 'info') -- Quiet all loggers but mine
 
 serban.grid     = require('serban.grid')
