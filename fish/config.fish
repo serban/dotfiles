@@ -70,7 +70,7 @@ set --global fish_pager_color_description green
 
 set --global fish_greeting
 
-if test $TERM = xterm-kitty
+if test "$TERM" = xterm-kitty
   set --global fish_handle_reflow 1
 end
 
