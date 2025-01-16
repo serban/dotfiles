@@ -12,6 +12,7 @@ syntax case match
 
 syntax match   SerbanAcronym             '\v<\u+s?>'        transparent contains=@NoSpell containedin=ALL
 
+syntax match   SerbanHeading             '\v^■{1,3} .*'
 syntax match   SerbanMetadata            '\v^‣ \S+'
 syntax match   SerbanBlockQuote          '\v^\s*›'
 syntax match   SerbanResult              '\v^\s*→'
@@ -53,6 +54,7 @@ syntax match   SerbanTable               '\v[│├┼┤─]'
 
 syntax match   SerbanDate                '\v<((Mon|Tue|Wed|Thu|Fri|Sat|Sun) )?(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{2}( \d{4})?>' containedin=Table
 
+highlight link SerbanHeading              SerbanOrange
 highlight link SerbanMetadata             SerbanBlue
 highlight link SerbanBlockQuote           SerbanCyan
 highlight link SerbanResult               SerbanMagenta
