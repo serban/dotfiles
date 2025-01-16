@@ -27,6 +27,9 @@ function M.placeWindows()
   for _, a in pairs(serban.apps.kPlacement) do
     M.moveApplicationToScreen(a['app'], table.unpack(a[numScreens]))
   end
+  hs.notify.new(nil, {
+    title='Place Windows', subTitle='Done', withdrawAfter=2,
+  }):send()
 end
 
 return M
