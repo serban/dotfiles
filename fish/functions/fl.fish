@@ -8,7 +8,7 @@ function fl
 
   title 👀 $argv[1]
 
-  set --local theme (bat_theme)
+  set --local theme (dark)
   set --local argv1 (string escape $argv[1])
 
   set --local bat   "bat --color always --theme '$theme' --number --highlight-line {1} $argv1"

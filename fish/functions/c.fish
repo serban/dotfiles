@@ -1,3 +1,3 @@
 function c --wraps bat
-  bat --theme (bat_theme) $argv
+  bat --theme (dark) $argv
 end

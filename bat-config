@@ -1,3 +1,2 @@
-# NB: Setting $BAT_THEME does not override this.
-# See https://github.com/sharkdp/bat/issues/1152.
---theme ansi
+--theme-dark gruvbox-dark
+--theme-light gruvbox-light

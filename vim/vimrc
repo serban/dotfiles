@@ -1,4 +1,9 @@
 " ------------------------------------------------------------------------------
+" ENVIRONMENT
+
+let $BAT_THEME = 'ansi'
+
+" ------------------------------------------------------------------------------
 " PLUGINS
 
 set nocompatible                    " Don't try to be compatible with the original vi

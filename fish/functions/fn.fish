@@ -10,7 +10,7 @@
 function fn
   title fn
 
-  set --local theme (bat_theme)
+  set --local theme (dark)
 
   set --local root  '~/txt'
   set --local bat   "bat --color always --theme '$theme' --plain $root/{}"
