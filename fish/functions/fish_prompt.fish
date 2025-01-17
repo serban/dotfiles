@@ -11,6 +11,17 @@ function fish_prompt
     return
   end
 
+  if set --query SERBAN_FISH_PROMPT_VERSION
+    printf '%s%s⟨%s⟩ %s%s %s%s%s %s' \
+        $prompt_start \
+        (set_color cyan) $SHLVL \
+        (set_color brred) $FISH_VERSION \
+        (set_color yellow) '$' \
+        (set_color normal) \
+        $command_start
+    return
+  end
+
   set --global __fish_git_prompt_showdirtystate true
   set --global __fish_git_prompt_showuntrackedfiles true
 
