@@ -26,6 +26,7 @@ class Package:
 
 packages = [
     Package('bat',       ['bat', '--version'],       r'bat (.+)',           '2025-01-16', '0.22.1',   '0.25.0',   '0.25.0'),
+    Package('btop',      ['btop', '--version'],      r'btop version: (.+)', '2025-01-18', '1.2.13',   '1.4.0',    '1.4.0'),
     Package('delta',     ['delta', '--version'],     r'delta (.+)',         '2024-12-31', '',         '0.18.2',   '0.18.2'),
     Package('fd',        ['fd', '--version'],        r'fd(?:find)? (.+)',   '2024-12-31', '8.6.0',    '8.6.0',    '10.2.0'),
     Package('fish',      ['fish', '--version'],      r'fish, version (.+)', '2024-12-31', '3.6.0',    '3.6.0',    '3.7.1'),
