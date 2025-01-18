@@ -4,12 +4,10 @@ function vic
         (set_color brmagenta)'■ Vim or NeoVim? '(set_color yellow)
     switch $response
       case v
-        commandline vim
-        commandline --function execute
+        append_history_and_run vim
         break
       case n
-        commandline nvim
-        commandline --function execute
+        append_history_and_run nvim
         break
       case q
         break
