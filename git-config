@@ -68,6 +68,7 @@
 
 [diff]
   algorithm = histogram
+  noPrefix = true
   context = 5
   submodule = diff
 
