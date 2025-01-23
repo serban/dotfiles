@@ -21,6 +21,7 @@
     "show": "never"
   },
   "git": {
+    "git_gutter": "hide",
     "inline_blame": {
       "min_column": 81,
       "show_commit_summary": true
