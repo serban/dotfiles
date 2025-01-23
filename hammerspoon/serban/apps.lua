@@ -32,6 +32,7 @@ M.kPlacement = {
   { app='Photos',           bun='com.apple.Photos',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Preview',          bun='com.apple.Preview',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Reminders',        bun='com.apple.reminders',                max=false,  [1]={g.kScreenLeft, g.kGridLeft},         [2]={g.kScreenLeft,   g.kGridLeft},       },
+  { app='RustRover',        bun='com.jetbrains.rustrover',            max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Safari',           bun='com.apple.Safari',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Signal',           bun='org.whispersystems.signal-desktop',  max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Sublime Merge',    bun='com.sublimemerge',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
