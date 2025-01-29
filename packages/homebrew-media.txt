@@ -1,6 +1,7 @@
 ffmpeg
 flac
 lame
+librsvg
 lilypond
 timidity
 vorbis-tools
