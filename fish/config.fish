@@ -174,6 +174,10 @@ else if type --query gdircolors
   eval (gdircolors -c ~/src/dotfiles/dir_colors)
 end
 
+if test -f ~/src/wip/fish/config.fish
+  source ~/src/wip/fish/config.fish
+end
+
 if test -f $HOME/.config/fish/local.fish
   source $HOME/.config/fish/local.fish
 end
