@@ -1,5 +1,6 @@
 python3-click
 python3-icecream
+python3-jinja2
 python3-more-itertools
 python3-packaging
 python3-pendulum

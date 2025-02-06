@@ -1,6 +1,7 @@
 click
 icecream
 iterm2
+jinja2
 more-itertools
 numpy-financial
 packaging
