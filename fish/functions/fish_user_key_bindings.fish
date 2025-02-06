@@ -1,4 +1,5 @@
 function fish_user_key_bindings
+  bind \cc    cancel-commandline
   bind \ef    forward-bigword
   bind \eb    backward-bigword
   bind \ed    kill-bigword
