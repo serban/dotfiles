@@ -43,6 +43,7 @@ numbat
 openssh
 oxipng
 pastel
+perl
 pngquant
 procs
 pstree
