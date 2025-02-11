@@ -147,6 +147,7 @@ set --global --export FZF_DEFAULT_OPTS \
 set --global --export LESS \
     --RAW-CONTROL-CHARS \
     --chop-long-lines \
+    --shift 16 \
     --rscroll '|$' \
     --prompt '=%f$' \
     --mouse \
@@ -160,6 +161,7 @@ set --global --export LESS \
     --color 'Er$' \
     --color 'SKg$' \
     --line-num-width 5 \
+    --jump-target 3 \
     --incsearch \
     #
 
