@@ -4,7 +4,7 @@
 
 import argparse
 import collections
-import subprocess
+import shutil
 
 Style = collections.namedtuple('Style', 'horizontal_line')
 
@@ -49,9 +49,8 @@ def main():
   args = parse_command_line_arguments()
   assert args.width > 0
 
-  width = args.width if not args.full_width else int(
-      subprocess.run(['stty', 'size'],
-      capture_output=True).stdout.decode().split()[1])
+  width = (args.width if not args.full_width else
+           shutil.get_terminal_size().columns)
 
   line = STYLES[args.style].horizontal_line * width
 
