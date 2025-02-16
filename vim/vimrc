@@ -257,6 +257,7 @@ set hidden                          " Allow buffers with unsaved changes to be h
 "   - :help v:termrbgresp
 "   - https://vi.stackexchange.com/questions/16951/how-to-set-vims-background-based-on-terminals-background-colour
 set background=dark
+set notermguicolors                 " Stick to the basic 16-color ANSI color palette in the terminal
 
 " Set unique cursor shapes for normal mode, insert mode, and replace mode. See:
 " https://invisible-island.net/xterm/ctlseqs/ctlseqs.html - XTerm Control Sequences
