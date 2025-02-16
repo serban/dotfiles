@@ -5,6 +5,7 @@ function fish_user_key_bindings
   bind \ed                kill-bigword
   bind \e\x7f             backward-kill-bigword
   bind \ec                print_working_dir
+  bind \ev                cycle_ripgrep_wrapper
   bind \em                serban_fish_prompt_minimal_toggle
   bind \eg                serban_fish_prompt_version_toggle
   bind \ei                'commandline --insert ‣'
