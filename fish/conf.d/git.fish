@@ -32,6 +32,7 @@ abbr --add gl1 git log --decorate=no --oneline
 abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
 #          glp
 #          glr
+#          glh
 abbr --add gls git ls-files
 abbr --add glu git ls-files --others --exclude-standard --directory
 abbr --add gpl git pull --recurse-submodules
@@ -123,4 +124,13 @@ function glr
   echo -e 'This is a follow-up to commits:\n'
   TZ=UTC git log --no-walk --reverse --date=short-local \
       --pretty='• %H (%cd)%n  ↳ %s' $argv
+end
+
+function glh --argument-names repo
+  if not string match --quiet --entire / $repo
+    echo 'Specify a GitHub repository in the format “⟨ORGANIZATION⟩/⟨PROJECT⟩”'
+    return 1
+  end
+  TZ=UTC git log --no-walk --reverse --date=short-local \
+      --pretty="• https://github.com/$repo/commit/%H%n  ↳ %cd: %s" $argv[2..-1]
 end
