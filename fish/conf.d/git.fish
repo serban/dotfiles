@@ -31,6 +31,7 @@ abbr --add gl1 git log --decorate=no --oneline
 #          glf
 abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
 #          glp
+#          glr
 abbr --add gls git ls-files
 abbr --add glu git ls-files --others --exclude-standard --directory
 abbr --add gpl git pull --recurse-submodules
@@ -116,4 +117,10 @@ end
 
 function glp
   git log --pretty='%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)' $argv
+end
+
+function glr
+  echo -e 'This is a follow-up to commits:\n'
+  TZ=UTC git log --no-walk --reverse --date=short-local \
+      --pretty='• %H (%cd)%n  ↳ %s' $argv
 end
