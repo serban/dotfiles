@@ -30,6 +30,7 @@
   lp = log --pretty='"%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)"'
   lr = help  # TODO(serban): Implement
   lh = help  # TODO(serban): Implement
+  lt = help  # TODO(serban): Implement
   ls = ls-files
   lu = ls-files --others --exclude-standard --directory
   pl = pull --recurse-submodules

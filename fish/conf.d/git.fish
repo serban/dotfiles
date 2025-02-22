@@ -33,6 +33,7 @@ abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
 #          glp
 #          glr
 #          glh
+#          glt
 abbr --add gls git ls-files
 abbr --add glu git ls-files --others --exclude-standard --directory
 abbr --add gpl git pull --recurse-submodules
@@ -133,4 +134,10 @@ function glh --argument-names repo
   end
   TZ=UTC git log --no-walk --reverse --date=short-local \
       --pretty="• https://github.com/$repo/commit/%H%n  ↳ %cd: %s" $argv[2..-1]
+end
+
+function glt
+  echo -e '│ Commit Date │ Commit │ ‹ Subject │\n├'
+  TZ=UTC git log --no-walk --reverse --date=format-local:'%Y-%m-%d %H:%M' \
+      --pretty='│ %cd │ %h │ %s │' $argv
 end
