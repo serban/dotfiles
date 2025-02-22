@@ -118,7 +118,9 @@ function glf
 end
 
 function glp
-  git log --pretty='%C(yellow)%h %C(green)%as %C(default)%s%C(magenta)%d%C(default)' $argv
+  git log --date=short-local \
+      --pretty='%C(yellow)%h %C(green)%cd %C(default)%s%C(magenta)%d%C(default)' \
+      $argv
 end
 
 function glr
