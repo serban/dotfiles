@@ -28,6 +28,7 @@
   lf = help  # TODO(serban): Implement
   lg = log --decorate=no --oneline --regexp-ignore-case --grep
   lp = log --date=short-local --pretty='"%C(yellow)%h %C(green)%cd %C(default)%s%C(magenta)%d%C(default)"'
+  lz = help  # TODO(serban): Implement
   lr = help  # TODO(serban): Implement
   lh = help  # TODO(serban): Implement
   lt = help  # TODO(serban): Implement

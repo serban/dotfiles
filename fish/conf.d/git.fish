@@ -31,6 +31,7 @@ abbr --add gl1 git log --decorate=no --oneline
 #          glf
 abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
 #          glp
+#          glz
 #          glr
 #          glh
 #          glt
@@ -119,6 +120,12 @@ end
 
 function glp
   git log --date=short-local \
+      --pretty='%C(yellow)%h %C(green)%cd %C(default)%s%C(magenta)%d%C(default)' \
+      $argv
+end
+
+function glz
+  TZ=UTC git log --date=short-local \
       --pretty='%C(yellow)%h %C(green)%cd %C(default)%s%C(magenta)%d%C(default)' \
       $argv
 end
