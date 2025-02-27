@@ -4,6 +4,7 @@ lookatme
 magic-wormhole
 pip
 pipdeptree
+textual-dev
 virtualfish
 wavemaker
 yt-dlp
