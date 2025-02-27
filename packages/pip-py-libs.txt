@@ -11,5 +11,6 @@ psutil
 pygit2
 pynvim
 rich
+tomli-w
 wat-inspector
 wcwidth

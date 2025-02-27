@@ -9,4 +9,5 @@ python3-psutil
 python3-pygit2
 python3-pynvim
 python3-rich
+python3-tomli-w
 python3-wcwidth
