@@ -1,37 +1,49 @@
-# Works as of iTerm2 commit 52b36370acd987876fae3acd37edfc7379272545 from
-# August 2021 which ends the response with 0x1b 0x5c (escape backslash).
-# Previous versions would end the response with just 0x07 (bell),
-# which would require us to read one fewer byte.
+# The expected response for OSC 11 is either one of:
 #
-# For the construction of the escape codes, see:
-# • https://iterm2.com/documentation-escape-codes.html
-# • https://github.com/tmux/tmux/wiki/FAQ#what-is-the-passthrough-escape-sequence-and-how-do-i-use-it
+# → b'\x1b]11;rgb:0000/2b2b/3636\x07' (24)
+# → b'\x1b]11;rgb:0000/2b2b/3636\x1b\\' (25)
 #
-# NB: iTerm2 commit d98595cf42e24777ce10463b5ee206aed3cbaff4 adds support for
-# the Display P3 color space, which changes iTerm2's response to OSC 4 when
-# enabled. See https://gitlab.com/gnachman/iterm2/-/issues/9652 -
-#   Color rendering not as vibrant as other editors.
+# `read` swallows the first two bytes (0x1b 0x5d):
+#
+# → b'11;rgb:0000/2b2b/3636\x07' (22)
+# → b'11;rgb:0000/2b2b/3636\x1b\\' (23)
+#
+# For the terminating byte(s), `read` behaves differently based on the operating
+# system and version of fish.
+#
+# NB: iTerm2 commit d98595cf4 adds support for the Display P3 color space, which
+# changes iTerm2's response to OSC 11 when enabled. See:
+#
+# • https://gitlab.com/gnachman/iterm2/-/issues/9652
+#   ↳ Color rendering not as vibrant as other editors
+# • https://github.com/gnachman/iTerm2/commit/d98595cf42e24777ce10463b5ee206aed3cbaff4
+#   ↳ 2021-12-15: Add support for the P3 colorspace. This will cause minor
+#     breakages because colors in control sequences are now in P3 when enabled.
+#
+# │ ‹ Theme         │   Hex  │   XParseColor RGB  │
+# ├─────────────────┼────────┼────────────────────┤
+# │ Solarized Dark  │ 002b36 │ rgb:0000/2b2b/3636 │
+# │ Solarized Light │ fdf6e3 │ rgb:fdfd/f6f6/e3e3 │
 function dark
-  if test "$TERM" = xterm-256color -a "$TERM_PROGRAM" = iTerm.app
-    read response --silent --nchars 25 --prompt-str \033]4\;-2\;\?\007
-  else if test "$TERM" = tmux-256color
-    read response --silent --nchars 25 \
-        --prompt-str \033Ptmux\;\033\033]4\;-2\;\?\007\033\\
-  else
-    echo dark
-    return
+  set --function dark  rgb:0000/2b2b/3636
+  set --function light rgb:fdfd/f6f6/e3e3 rgb:ffff/ffff/ffff
+
+  set --function len 21
+  set --function start 4
+
+  if test (string split . --fields 1 $FISH_VERSION) -lt 4
+    test "$TERM" = tmux-256color && set len 22 || set len 23
+    set start 5
   end
 
-  set --local background \
-      (echo $response \
-           | grep --color=never --only-matching --extended-regexp \
-               'rgb:[[:xdigit:]]{4}/[[:xdigit:]]{4}/[[:xdigit:]]{4}')
+  read --function response --silent --nchars $len --prompt-str \033]11\;\?\007
+  set --function background (string sub --start $start --length 18 $response)
 
-  if test "$background" = rgb:fdfd/f6f6/e3e3  # Solarized Light
+  if contains $background $light
     echo light
     return
   end
 
   echo dark
-  test "$background" = rgb:0000/2b2b/3636  # Solarized Dark
+  contains $background $dark
 end
