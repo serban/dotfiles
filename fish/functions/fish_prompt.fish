@@ -33,10 +33,15 @@ function fish_prompt
   set --local cwd (prompt_pwd)
   set --local git_status (fish_git_prompt ' › %s')
   set --local virtual_env ''
+  set --local handle ''
   set --local suffix '$'
 
   if test -n "$VIRTUAL_ENV"
     set virtual_env (printf ' %s' (string split / $VIRTUAL_ENV)[-1])
+  end
+
+  if test $USER != serban
+    set handle " $USER"
   end
 
   if test $USER = root
@@ -44,9 +49,10 @@ function fish_prompt
   end
 
   # 🐟 🐠 🐡 ><>
-  printf '%s%s%s%s%s %s%s%s%s%s %s%s %s' \
+  printf '%s%s%s%s%s%s%s %s%s%s%s%s %s%s %s' \
       $prompt_start \
       (set_color red) $host \
+      (set_color magenta) $handle \
       (set_color brmagenta) "$virtual_env" \
       (set_color blue) $cwd \
       (set_color cyan) "$git_status" \
