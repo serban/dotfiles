@@ -43,6 +43,7 @@ abbr --add gpt git push --tags
 abbr --add grb git rebase
 abbr --add gre git remote
 abbr --add grs git reset
+abbr --add grp git rev-parse --short
 abbr --add gsh git show --stat --patch
 abbr --add gst git status
 abbr --add gsu git submodule update --init --recursive
