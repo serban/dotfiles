@@ -146,7 +146,12 @@ function glh --argument-names repo
 end
 
 function glt
-  echo -e '│ Commit Date │ Commit │ ‹ Subject │\n├'
+  echo ```fish
+  echo glt (git log --no-walk --reverse --pretty=%h $argv)
+  echo ```
+  echo
+  echo '│ Commit Date │ Commit │ Commit │ ‹ Subject │'
+  echo '├'
   TZ=UTC git log --no-walk --reverse --date=format-local:'%Y-%m-%d %H:%M' \
-      --pretty='│ %cd │ %h │ %s │' $argv
+      --pretty='│ %cd │ %h │ %H │ %s │' $argv
 end
