@@ -16,7 +16,7 @@
   "scm.diffDecorationsGutterVisibility": "hover",
   "terminal.integrated.fontSize": 15,
   "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Braver's Solarized Dark",
   "workbench.preferredDarkColorTheme": "Braver's Solarized Dark",
+  "workbench.preferredLightColorTheme": "Flexoki Light Orange",
   "workbench.statusBar.visible": false
 }
