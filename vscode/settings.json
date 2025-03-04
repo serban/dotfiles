@@ -2,14 +2,21 @@
   "editor.folding": false,
   "editor.fontFamily": "Monaco",
   "editor.fontSize": 15,
+  "editor.formatOnSave": true,
   "editor.guides.indentation": false,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "trailing",
+  "editor.rulers": [
+    80
+  ],
   "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "scm.countBadge": "off",
+  "scm.diffDecorationsGutterVisibility": "hover",
+  "terminal.integrated.fontSize": 15,
   "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Braver's Solarized Dark",
   "workbench.preferredDarkColorTheme": "Braver's Solarized Dark",
-  "scm.countBadge": "off",
   "workbench.statusBar.visible": false
 }
