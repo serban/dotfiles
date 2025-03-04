@@ -151,8 +151,12 @@ function glt
   echo glt (git log --no-walk --reverse --pretty=%h $argv)
   echo ```
   echo
-  echo '│ Commit Date │ Commit │ Commit │ ‹ Subject │'
+  echo '│ Commit Date │ Commit │ Commit │ ‹ Refs │ ‹ Subject │'
   echo '├'
   TZ=UTC git log --no-walk --reverse --date=format-local:'%Y-%m-%d %H:%M' \
-      --pretty='│ %cd │ %h │ %H │ %s │' $argv
+      --decorate-refs-exclude=HEAD \
+      --decorate-refs-exclude='heads/*' \
+      --decorate-refs-exclude='remotes/*/HEAD' \
+      --pretty='│ %cd │ %h │ %H │ %(decorate:prefix=,suffix=,pointer= → ,separator= · ) │ %s │' \
+      $argv
 end
