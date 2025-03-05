@@ -5,3 +5,6 @@ copy-on-select                          = clipboard
 macos-option-as-alt                     = true
 shell-integration-features              = no-cursor
 resize-overlay                          = never
+
+keybind                                 = ctrl+shift+page_up=move_tab:-1
+keybind                                 = ctrl+shift+page_down=move_tab:+1
