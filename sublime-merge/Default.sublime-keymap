@@ -1,6 +1,12 @@
 [
 
   {
+    "keys": ["super+g"],
+    "command": "show_command_palette",
+    "args": {"command": "navigate_to_commit"},
+  },
+
+  {
     "keys": ["ctrl+shift+pageup"],
     "command": "prev_file_tab",
   },
