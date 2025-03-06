@@ -32,14 +32,16 @@ function debian {
 }
 
 darwin && {
-  readonly        ITERM="${HOME}/Library/Application Support/iTerm2"
-  readonly SUBLIME_TEXT="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
-  readonly       VSCODE="${HOME}/Library/Application Support/Code/User"
+  readonly         ITERM="${HOME}/Library/Application Support/iTerm2"
+  readonly SUBLIME_MERGE="${HOME}/Library/Application Support/Sublime Merge/Packages/User"
+  readonly  SUBLIME_TEXT="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
+  readonly        VSCODE="${HOME}/Library/Application Support/Code/User"
 }
 
 linux && {
-  readonly SUBLIME_TEXT="${HOME}/.config/sublime-text-3/Packages/User"
-  readonly       VSCODE="${HOME}/.config/Code/User"
+  readonly SUBLIME_MERGE="${HOME}/.config/sublime_merge/Packages/User"
+  readonly  SUBLIME_TEXT="${HOME}/.config/sublime-text-3/Packages/User"
+  readonly        VSCODE="${HOME}/.config/Code/User"
 }
 
 ln -si ${DOTFILES}/bash_logout          ~/.bash_logout
@@ -203,6 +205,11 @@ darwin && {
   mkdir -p "${ITERM}"
   ln -si ${DOTFILES}/iterm2/DynamicProfiles "${ITERM}/DynamicProfiles"
   ln -si ${DOTFILES}/iterm2/Scripts         "${ITERM}/Scripts"
+}
+
+darwin || linux && {
+  mkdir -p "${SUBLIME_MERGE}"
+  ln -si "${DOTFILES}/sublime-merge/Default.sublime-keymap"       "${SUBLIME_MERGE}/Default.sublime-keymap"
 }
 
 darwin || linux && {

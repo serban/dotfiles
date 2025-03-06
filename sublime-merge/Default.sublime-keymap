@@ -1,0 +1,23 @@
+[
+
+  {
+    "keys": ["ctrl+shift+pageup"],
+    "command": "prev_file_tab",
+  },
+
+  {
+    "keys": ["ctrl+shift+pagedown"],
+    "command": "next_file_tab",
+  },
+
+  {
+    "keys": ["super+shift+["],
+    "command": "prev_tab",
+  },
+
+  {
+    "keys": ["super+shift+]"],
+    "command": "next_tab",
+  },
+
+]
