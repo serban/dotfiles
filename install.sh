@@ -209,6 +209,7 @@ darwin && {
 
 darwin || linux && {
   mkdir -p "${SUBLIME_MERGE}"
+  ln -si "${DOTFILES}/sublime-merge/Commit.sublime-menu"          "${SUBLIME_MERGE}/Commit.sublime-menu"
   ln -si "${DOTFILES}/sublime-merge/Default.sublime-keymap"       "${SUBLIME_MERGE}/Default.sublime-keymap"
   ln -si "${DOTFILES}/sublime-merge/Preferences.sublime-settings" "${SUBLIME_MERGE}/Preferences.sublime-settings"
 }

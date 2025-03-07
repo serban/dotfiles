@@ -1,0 +1,13 @@
+[
+
+  {"caption": "-"},
+
+  {
+    "caption": "📋 Copy ‘$short_commit’",
+    "command": "copy_to_clipboard",
+    "args": {"text": "$short_commit"},
+  },
+
+  {"caption": "-"},
+
+]
