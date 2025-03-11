@@ -1,9 +1,21 @@
 [
 
   {
+    "keys": ["super+b"],
+    "command": "show_command_palette",
+    "args": {"command": "blame"},
+  },
+
+  {
     "keys": ["super+g"],
     "command": "show_command_palette",
     "args": {"command": "navigate_to_commit"},
+  },
+
+  {
+    "keys": ["super+i"],
+    "command": "show_command_palette",
+    "args": {"command": "file_history"},
   },
 
   {
