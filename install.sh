@@ -114,6 +114,7 @@ ln -si ${DOTFILES}/inputrc              ~/.config/readline/inputrc
 
 mkdir -p ~/.config/kitty
 ln -si ${DOTFILES}/kitty.conf           ~/.config/kitty/kitty.conf
+ln -si ${DOTFILES}/kitty-paste-actions.py ~/.config/kitty/paste-actions.py
 
 mkdir -p ~/.config/lf
 ln -si ${DOTFILES}/lfrc                 ~/.config/lf/lfrc
