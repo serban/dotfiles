@@ -19,6 +19,11 @@
   },
 
   {
+    "keys": ["super+o"],
+    "command": "quick_open_repository",
+  },
+
+  {
     "keys": ["ctrl+shift+pageup"],
     "command": "prev_file_tab",
   },
