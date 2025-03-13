@@ -1,6 +1,7 @@
 {
 
   "theme": "auto",
+  "side_bar_layout": "tabs",
 
   "log_input": false,
   "log_commands": false,
