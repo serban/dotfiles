@@ -19,6 +19,12 @@
   },
 
   {
+    "keys": ["super+l"],
+    "command": "show_command_palette",
+    "args": {"command": "navigate_to_tag"},
+  },
+
+  {
     "keys": ["super+o"],
     "command": "quick_open_repository",
   },
