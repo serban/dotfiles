@@ -5,6 +5,8 @@ color-modes = true
 line-number = 'relative'
 rulers = [80]
 scrolloff = 3
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.cursor-shape]
 normal = 'block'
