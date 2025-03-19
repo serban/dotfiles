@@ -2,6 +2,7 @@ theme = 'nightfox'
 
 [editor]
 color-modes = true
+gutters = ['diagnostics', 'spacer', 'line-numbers', 'spacer']
 line-number = 'relative'
 rulers = [80]
 scrolloff = 3
