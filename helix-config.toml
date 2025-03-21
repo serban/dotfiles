@@ -27,4 +27,5 @@ right = ['diagnostics', 'selections', 'register', 'position', 'file-encoding', '
 tab = 'all'
 
 [keys.normal]
+C-q = ':quit-all'
 C-s = ':update'
