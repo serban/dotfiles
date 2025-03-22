@@ -50,5 +50,14 @@
     "Zig": {
       "format_on_save": "on"
     }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "typeCheckingMode": "off"
+        }
+      }
+    }
   }
 }
