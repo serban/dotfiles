@@ -41,6 +41,9 @@
     "JSONC": {
       "format_on_save": "on"
     },
+    "Lua": {
+      "enable_language_server": false
+    },
     "Rust": {
       "format_on_save": "on"
     },
