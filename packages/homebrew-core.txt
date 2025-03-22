@@ -48,7 +48,6 @@ pngquant
 procs
 pstree
 pyenv
-python@3.11
 ripgrep
 rsync
 rust
