@@ -12,10 +12,6 @@ if has('gui_macvim')
   set pythonthreedll=~/env/pyenv/versions/3.13.1/lib/libpython3.13.dylib
 endif
 
-if has('nvim') && has('mac')
-  let g:python3_host_prog = '/opt/homebrew/opt/python@3.11/Frameworks/Python.framework/Versions/3.11/bin/python3'
-endif
-
 if has('nvim')
   set runtimepath^=~/.config/vim
   set runtimepath+=~/.config/vim/after
