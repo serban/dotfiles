@@ -29,3 +29,6 @@ tab = 'all'
 [keys.normal]
 C-q = ':quit-all'
 C-s = ':update'
+
+[keys.insert]
+C-s = ['normal_mode', ':update']
