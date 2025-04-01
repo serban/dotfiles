@@ -12,8 +12,6 @@ abbr --add i " history merge && history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' -
 abbr --add j jobs
 abbr --add k kill
 
-abbr --add s snippets
-
 abbr --add cp cp -vi
 abbr --add mv mv -vi
 abbr --add rm rm -v
