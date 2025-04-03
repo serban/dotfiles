@@ -5,8 +5,32 @@
     "light": "Solarized Light",
     "dark": "Atelier Lakeside Dark"
   },
+  "features": {
+    "edit_prediction_provider": "none"
+  },
   "project_panel": {
-    "auto_fold_dirs": true
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "assistant": {
+    "version": "2",
+    "enabled": false
+  },
+  "terminal": {
+    "button": false,
+    "line_height": "standard",
+    "option_as_meta": true
   },
   "tab_bar": {
     "show": false
