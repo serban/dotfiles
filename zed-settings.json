@@ -38,6 +38,9 @@
   "toolbar": {
     "quick_actions": false
   },
+  "gutter": {
+    "folds": false
+  },
   "indent_guides": {
     "enabled": false
   },
