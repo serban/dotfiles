@@ -33,7 +33,13 @@
     "option_as_meta": true
   },
   "tab_bar": {
-    "show": false
+    "show": false,
+    "show_tab_bar_buttons": false
+  },
+  "tabs": {
+    "close_position": "left",
+    "show_close_button": "hidden",
+    "activate_on_close": "left_neighbour"
   },
   "toolbar": {
     "quick_actions": false
@@ -54,6 +60,7 @@
       "show_commit_summary": true
     }
   },
+  "max_tabs": 1,
   "buffer_font_family": "Monaco",
   "buffer_font_size": 15,
   "cursor_blink": false,
