@@ -57,6 +57,7 @@
   "buffer_font_family": "Monaco",
   "buffer_font_size": 15,
   "cursor_blink": false,
+  "current_line_highlight": "gutter",
   "wrap_guides": [80],
   "vim_mode": true,
   "tab_size": 2,
