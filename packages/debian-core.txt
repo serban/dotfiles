@@ -12,6 +12,7 @@ fd-find
 fish
 fzf
 git
+git-delta
 golang
 hashdeep
 hexyl
