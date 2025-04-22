@@ -59,6 +59,7 @@ tmux
 tree
 typst
 tz
+uv
 vim
 watch
 watchexec
