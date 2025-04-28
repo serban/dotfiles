@@ -30,6 +30,8 @@ abbr --add rb 'gm sublime'
 abbr --add ru 'gm sublime common'
 abbr --add rw 'gm watch'
 
+abbr --add ur 'uv run'
+
 abbr --add we 'watchexec --quiet --clear --shell none'
 abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m unittest discover --pattern '*_test.py'"
 
