@@ -1,3 +1,4 @@
+import base64
 import collections.abc
 import dataclasses
 import datetime
@@ -87,10 +88,25 @@ def human_duration(d: float | datetime.timedelta, compact: bool = False) -> str:
   else:
     return                                               f'{seconds:d}s'
 
+def mark(b: bool | None) -> str:
+  """Get a colored '✓', '✗', or '∅' for True, False, and None, respectively."""
+  if b is None:
+    return '∅'
+
+  if not isinstance(b, bool):
+    raise TypeError(f'Argument must be a bool. Got {type(b).__name__} {b!r}')
+
+  return f'{GREEN}✓{RESET}' if b else f'{RED}✗{RESET}'
+
 def tilde(p: str | os.PathLike) -> str:
   """Replace the $HOME prefix of a path with '~'. Returns a string."""
   path, home = os.fsdecode(p), str(pathlib.Path.home())
   return path.replace(home, '~', 1) if path.startswith(home) else path
+
+def clip(s: str) -> None:
+  """Write a string to the clipboard via the OSC 52 terminal escape sequence."""
+  payload = base64.b64encode(s.encode()).decode()
+  print(f'\033]52;c;{payload}\007', end='', flush=True)
 
 def title(s: str) -> None:
   """Set the terminal title."""
