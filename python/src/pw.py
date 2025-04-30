@@ -7,6 +7,7 @@ import string
 kAlphabets = {
 
   'alphanumeric': string.digits + string.ascii_letters,
+  'lowernumeric': string.digits + string.ascii_lowercase,
   'numeric':      string.digits,
 
 }
