@@ -20,6 +20,7 @@ htop
 hugo
 jq
 jsonnet
+just
 kitty-terminfo
 lf
 makepasswd
