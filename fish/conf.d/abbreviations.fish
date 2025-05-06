@@ -30,6 +30,9 @@ abbr --add rb 'gm sublime'
 abbr --add ru 'gm sublime common'
 abbr --add rw 'gm watch'
 
+abbr --add js 'just'
+abbr --add jl 'just --list'
+
 abbr --add ur 'uv run'
 
 abbr --add we 'watchexec --quiet --clear --shell none'
