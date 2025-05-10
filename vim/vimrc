@@ -9,7 +9,7 @@ let $BAT_THEME = 'ansi'
 set nocompatible                    " Don't try to be compatible with the original vi
 
 if has('gui_macvim')
-  set pythonthreedll=~/env/pyenv/versions/3.13.3/lib/libpython3.13.dylib
+  set pythonthreedll=~/env/pyenv/versions/3.14.0b1/lib/libpython3.14.dylib
 endif
 
 if has('nvim')
