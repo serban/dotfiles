@@ -12,6 +12,7 @@
   ],
   "editor.tabSize": 2,
   "files.trimTrailingWhitespace": true,
+  "outline.collapseItems": "alwaysCollapse",
   "scm.countBadge": "off",
   "scm.diffDecorationsGutterVisibility": "hover",
   "terminal.integrated.fontSize": 15,
