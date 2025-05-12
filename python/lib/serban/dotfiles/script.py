@@ -4,6 +4,7 @@ import dataclasses
 import datetime
 import os
 import pathlib
+import platform
 import pprint
 import shlex
 import shutil
@@ -36,6 +37,7 @@ VIOLET  = '\033[95m'  # Solarized
 # • getoutput() returns an empty string
 # •   getline() returns an empty string
 # •  getlines() returns an empty list
+# •      edit() does nothing
 dry_run = False
 
 # Type hints for numeric types are a mess:
@@ -327,6 +329,30 @@ def selectmany(noun: str, items: collections.abc.Iterable[str]) -> list[str]:
       If the user triggers SIGINT (Ctrl-C) instead of completing the selection.
   """
   return _fzf(noun, items, multi=True).split('\0')
+
+def edit(*paths: str | os.PathLike, gui=False, verbose=True) -> None:
+  """Open the specified files in a text editor.
+
+  Args:
+    *paths:
+      A variable number of strings or paths. The paths to the files to edit.
+    gui:
+      A boolean. When True, open a graphical editor and return immediately.
+      When False, open an editor in the terminal and block until it exits.
+    verbose:
+      A boolean. Print the editor command before running it.
+  """
+  if not paths:
+    raise TypeError('No files to edit. Need at least one')
+
+  macOS = platform.system() == 'Darwin'
+  binary = ('mvim' if macOS else 'gvim') if gui else 'vim'
+  args = ['--remote-tab-silent'] if gui else ['--not-a-term', '--']
+
+  if not shutil.which(binary):
+    die(f'edit(): {binary} is not installed')
+
+  run([binary, *args, *paths], verbose=verbose, indent=False)
 
 # • https://peps.python.org/pep-0519
 #   ↳ PEP 519 – Adding a file system path protocol (2016-05-11)
