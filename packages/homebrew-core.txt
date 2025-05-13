@@ -51,6 +51,7 @@ pstree
 pyenv
 ripgrep
 rsync
+ruff
 rust
 sqlite
 sqlite-utils
