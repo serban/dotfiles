@@ -102,6 +102,7 @@ set --global --export FLY_CONFIG_DIR      $HOME/.local/state/fly
 
 set --global --export GRIPHOME            $HOME/.cache/grip
 set --global --export PYTHONPYCACHEPREFIX $HOME/.cache/python
+set --global --export RUFF_CACHE_DIR      $HOME/.cache/ruff
 
 set --global --export CARGO_HOME          $HOME/env/cargo
 set --global --export GOPATH              $HOME/env/go
