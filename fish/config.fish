@@ -101,6 +101,7 @@ set --global --export SQLITE_HISTORY      $HOME/.local/state/sqlite/sqlite-histo
 set --global --export FLY_CONFIG_DIR      $HOME/.local/state/fly
 
 set --global --export GRIPHOME            $HOME/.cache/grip
+set --global --export MYPY_CACHE_DIR      $HOME/.cache/mypy
 set --global --export PYTHONPYCACHEPREFIX $HOME/.cache/python
 set --global --export RUFF_CACHE_DIR      $HOME/.cache/ruff
 
