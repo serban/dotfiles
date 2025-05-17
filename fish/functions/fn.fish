@@ -8,8 +8,6 @@
 #   ↳ https://github.com/fish-shell/fish-shell/issues/3847#issuecomment-1321871256
 
 function fn
-  title fn
-
   set --local theme (dark)
 
   set --local root  '~/txt'
@@ -23,6 +21,7 @@ function fn
   set --local osc52_base 'osc52 (builtin path basename {})'
   set --local osc52_path "osc52 '$root'/{}"
 
+  title fn
   eval $fd \
       | fzf --no-sort \
             --multi \
