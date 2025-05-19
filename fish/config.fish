@@ -170,6 +170,11 @@ set --global --export LESS \
     --incsearch \
     #
 
+test (less --version | head -n 1 | cut -d ' ' -f 2) -ge 678
+and set LESS $LESS \
+    --no-paste \
+    #
+
 set --global --export SHELL (command -s fish)
 set --global --export VISUAL vim
 set --global --export EDITOR vim
