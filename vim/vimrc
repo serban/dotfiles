@@ -1521,6 +1521,7 @@ augroup serban-markdown
   autocmd FileType markdown iabbrev <buffer> <expr> pr strftime('‣ Printed: %Y-%m-%d %H:%M')
   autocmd FileType markdown iabbrev <buffer> <expr> hd strftime('## %Y-%m-%d -')
   autocmd FileType markdown iabbrev <buffer> <expr> hl strftime('## %Y-%m-%d %H:%M -')
+  autocmd FileType markdown iabbrev <buffer> <expr> sd strftime('* %Y-%m-%d:')
 augroup end
 
 " The pattern ~/txt/*.md matches all files ending in '.md' under ~/txt, even
