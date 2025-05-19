@@ -27,11 +27,11 @@ function fn
             --multi \
             --height 100% \
             --info inline-right \
-            --preview-window right,60%,noinfo \
+            --preview-window right,80,noinfo \
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
             --bind "alt-p:execute($osc52_path)" \
-            --bind 'ctrl-g:change-preview-window(right,80|bottom,60%|)' \
+            --bind 'ctrl-g:change-preview-window(bottom,20|)' \
             --bind "ctrl-o:execute-silent($open)" \
             --bind 'ctrl-q:toggle-preview' \
             --bind "ctrl-r:reload($fd)" \
