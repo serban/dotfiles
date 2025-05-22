@@ -26,6 +26,7 @@ gnu-units
 go
 gops
 grep
+harper
 helix
 hexyl
 hugo
