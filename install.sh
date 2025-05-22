@@ -93,6 +93,7 @@ ln -si ${DOTFILES}/hammerspoon/init.lua ~/.config/hammerspoon/init.lua
 
 mkdir -p ~/.config/helix
 ln -si ${DOTFILES}/helix-config.toml    ~/.config/helix/config.toml
+ln -si ${DOTFILES}/helix-languages.toml ~/.config/helix/languages.toml
 
 mkdir -p ~/.config/hg
 ln -si ${DOTFILES}/hgrc                 ~/.config/hg/hgrc
