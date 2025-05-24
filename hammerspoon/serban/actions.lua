@@ -38,8 +38,9 @@ function M.openFirefoxHomeTabs()
   os.execute(table.concat({'/Applications/Firefox.app/Contents/MacOS/firefox',
       'https://app.todoist.com',
       'https://mail.google.com/mail/u/0/#inbox',
-      'https://calendar.google.com/calendar/u/0/r/month',
+--    'https://calendar.google.com/calendar/u/0/r/month',
       'https://app.ynab.com',
+      'http://localhost:7005/planning',
   }, ' '))
   hs.timer.doAfter(0.2, function()
     serban.grid.moveFocusedWindow(serban.grid.kGridMaximized)
