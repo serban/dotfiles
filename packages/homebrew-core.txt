@@ -17,6 +17,7 @@ fish
 flyctl
 fzf
 gawk
+gh
 git
 git-delta
 gmailctl
