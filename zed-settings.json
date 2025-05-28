@@ -1,5 +1,8 @@
 // https://zed.dev/docs/configuring-zed
 {
+  "auto_install_extension": {
+    "ruff": true
+  },
   "theme": {
     "mode": "system",
     "light": "Solarized Light",
@@ -70,6 +73,7 @@
   "relative_line_numbers": true,
   "search_wrap": false,
   "tab_size": 2,
+  "inline_code_actions": false,
   "format_on_save": "off",
   "languages": {
     "Go": {
