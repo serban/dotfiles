@@ -54,7 +54,16 @@
     "enabled": false
   },
   "scrollbar": {
-    "show": "never"
+    "show": "auto",
+    "cursors": false,
+    "git_diff": false,
+    "search_results": true,
+    "selected_text": false,
+    "selected_symbol": false,
+    "diagnostics": "none",
+    "axes": {
+      "horizontal": false
+    }
   },
   "git": {
     "git_gutter": "hide",
