@@ -1,12 +1,14 @@
 // https://zed.dev/docs/configuring-zed
 {
   "auto_install_extension": {
+    "catppuccin": true,
+    "fleet-themes": true,
     "ruff": true
   },
   "theme": {
     "mode": "system",
-    "light": "Solarized Light",
-    "dark": "Atelier Lakeside Dark"
+    "light": "Fleet Light",
+    "dark": "Catppuccin Mocha"
   },
   "features": {
     "edit_prediction_provider": "none"
