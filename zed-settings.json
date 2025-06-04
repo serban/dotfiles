@@ -40,6 +40,11 @@
     "line_height": "standard",
     "option_as_meta": true
   },
+  "title_bar": {
+    "show_branch_name": false,
+    "show_branch_icon": true,
+    "show_sign_in": false
+  },
   "tab_bar": {
     "show": false,
     "show_tab_bar_buttons": false
