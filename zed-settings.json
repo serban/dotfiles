@@ -32,6 +32,9 @@
     "version": "2",
     "enabled": false
   },
+  "search": {
+    "button": false
+  },
   "terminal": {
     "button": false,
     "line_height": "standard",
