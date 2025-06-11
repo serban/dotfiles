@@ -240,6 +240,7 @@
     CHAR                  95
 
     .csv                  95
+    .ini                  95
     .json                 95
     .jsonnet              95
     .libsonnet            95

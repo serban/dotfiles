@@ -39,6 +39,7 @@ duti -s org.vim.MacVim              .fish                               all
 duti -s org.vim.MacVim              .go                                 all
 duti -s org.vim.MacVim              .h                                  all
 duti -s org.vim.MacVim              .hs                                 all
+duti -s org.vim.MacVim              .ini                                all
 duti -s org.vim.MacVim              .java                               all
 duti -s org.vim.MacVim              .js                                 all
 duti -s org.vim.MacVim              .json                               all
