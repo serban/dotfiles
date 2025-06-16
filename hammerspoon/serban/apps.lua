@@ -7,6 +7,7 @@ M.kPlacement = {
   { app='1Password',        bun='com.1password.1password',            max=false,  [1]={g.kScreenLeft, g.kGridCenterTall},   [2]={g.kScreenLeft,   g.kGridCenterTall}, },
   { app='Activity Monitor', bun='com.apple.ActivityMonitor',          max=false,  [1]={g.kScreenLeft, g.kGridRight},        [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Calendar',         bun='com.apple.iCal',                     max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='Capo',             bun='com.supermegaultragroovy.capo3.mac', max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Code',             bun='com.microsoft.VSCode',               max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Contacts',         bun='com.apple.AddressBook',              max=false,  [1]={g.kScreenLeft, g.kGridRight},        [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='Dictionary',       bun='com.apple.Dictionary',               max=false,  [1]={g.kScreenLeft, g.kGridRight},        [2]={g.kScreenLeft,   g.kGridRight},      },
