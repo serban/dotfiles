@@ -1,2 +1,2 @@
-.mode box
+.mode box --escape symbol
 .headers on
