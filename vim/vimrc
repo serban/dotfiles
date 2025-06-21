@@ -225,7 +225,7 @@ set modelines=3                     " Check only the first and last three lines 
 set ttimeout                        " Wait for full escape sequences to arrive …
 set ttimeoutlen=10                  " … for up to ten milliseconds.
 set timeout                         " Wait for full key mappings to arrive …
-set timeoutlen=500                  " … for up to half a second.
+set timeoutlen=333                  " … for up to one third of a second.
 
 " Don't move comment hashes to the beginning of the line when writing Python. This behavior is caused by smartindent.
 inoremap # X#
