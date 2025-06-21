@@ -31,7 +31,9 @@ function fn
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
             --bind "alt-p:execute($osc52_path)" \
-            --bind 'ctrl-g:change-preview-window(bottom,20|)' \
+            --bind 'alt-h:change-preview-window(bottom,28|bottom,16)' \
+            --bind 'alt-v:change-preview-window(right,140|)' \
+            --bind 'ctrl-g:change-preview-window(bottom,16|)' \
             --bind "ctrl-o:execute-silent($open)" \
             --bind 'ctrl-q:toggle-preview' \
             --bind "ctrl-r:reload($fd)" \
