@@ -3,7 +3,7 @@ abbr --add t tail -n 20
 abbr --add l less -N
 
 abbr --add d colordiff -u
-abbr --add f find . -iname
+abbr --add f --set-cursor=° 'fd --color always ° | sort | less'
 abbr --add w --set-cursor=° 'g ~/wks/°'
 abbr --add 3 --set-cursor=° 'tree -C ° | less'
 
@@ -85,7 +85,6 @@ abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
 #
 # Tested on 2021-12-22 with fd 8.3.0.
 abbr --add fdh --set-cursor=° 'fd --color always -E /env -E /frk -E /git -E /opt -E /oss -E /pre -E /Library -E /Movies -E /Music -E /Pictures -E /Data ° | sort | less'
-abbr --add fd  --set-cursor=° 'fd --color always ° | sort | less'
 
 abbr --add mocp 'mocp --moc-dir ~/.config/moc'
 
