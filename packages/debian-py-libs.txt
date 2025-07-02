@@ -11,4 +11,5 @@ python3-pynvim
 python3-rich
 python3-textual
 python3-tomli-w
+python3-tomlkit
 python3-wcwidth

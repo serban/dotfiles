@@ -13,5 +13,6 @@ pynvim
 rich
 textual
 tomli-w
+tomlkit
 wat
 wcwidth
