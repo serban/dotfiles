@@ -1,4 +1,5 @@
 click
+devtools
 icecream
 iterm2
 jinja2
