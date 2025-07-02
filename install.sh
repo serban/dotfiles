@@ -156,8 +156,8 @@ mkdir -p ~/.config/wezterm
 ln -si ${DOTFILES}/wezterm.lua          ~/.config/wezterm/wezterm.lua
 
 mkdir -p ~/.config/zed
-ln -si ${DOTFILES}/zed-keymap.json      ~/.config/zed/keymap.json
-ln -si ${DOTFILES}/zed-settings.json    ~/.config/zed/settings.json
+ln -si ${DOTFILES}/zed/keymap.json      ~/.config/zed/keymap.json
+ln -si ${DOTFILES}/zed/settings.json    ~/.config/zed/settings.json
 
 mkdir -p -m 700 ~/.local/share
 mkdir -p -m 700 ~/.local/share/bookmarks
