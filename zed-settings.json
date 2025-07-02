@@ -31,7 +31,8 @@
   },
   "agent": {
     "version": "2",
-    "enabled": false
+    "enabled": false,
+    "play_sound_when_agent_done": true
   },
   "search": {
     "button": false
