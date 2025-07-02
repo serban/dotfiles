@@ -24,12 +24,16 @@ end
 -- https://github.com/Hammerspoon/hammerspoon/issues/3224#issuecomment-1294359070
 -- https://github.com/Hammerspoon/hammerspoon/issues/3224#issuecomment-1295677320
 -- https://github.com/Hammerspoon/hammerspoon/issues/3297#issuecomment-1298544048
-function M.disableAXEnhancedUserInterface()
+function M.disableAXEnhancedUserInterface(notify)
   serban.logger.i('AXEnhancedUserInterface › ─────────────────────────────────')
   M.disableAXEnhancedUserInterfaceForApp(hs.application.find('Firefox', true))
-  hs.notify.new(nil, {
-    title='AXEnhancedUserInterface', subTitle='Done', withdrawAfter=2,
-  }):send()
+  if notify then
+    hs.notify.new(nil, {
+      title='AXEnhancedUserInterface', subTitle='Done', withdrawAfter=2,
+    }):send()
+  end
 end
+
+M._timer = hs.timer.doEvery(300.0, M.disableAXEnhancedUserInterface)
 
 return M

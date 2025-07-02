@@ -27,7 +27,7 @@ end
 function M.processScreenLayoutChange()
   M.logScreens()
   M.setDockAutoHide()
-  serban.ax.disableAXEnhancedUserInterface()
+  serban.ax.disableAXEnhancedUserInterface(true)
   hs.timer.doAfter(2.0, serban.place.placeWindows) -- Wait for Dock to settle
 end
 
