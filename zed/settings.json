@@ -1,6 +1,6 @@
 // https://zed.dev/docs/configuring-zed
 {
-  "auto_install_extension": {
+  "auto_install_extensions": {
     "catppuccin": true,
     "fleet-themes": true,
     "ruff": true
@@ -30,7 +30,6 @@
     "button": false
   },
   "agent": {
-    "version": "2",
     "enabled": false,
     "play_sound_when_agent_done": true
   },
