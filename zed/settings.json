@@ -95,6 +95,7 @@
     }
   },
   "max_tabs": 1,
+  "ui_font_size": 14,
   "buffer_font_family": "Monaco",
   "buffer_font_size": 15,
   "cursor_blink": false,
