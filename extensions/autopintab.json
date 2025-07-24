@@ -16,7 +16,12 @@
       "enabled": true
     },
     {
-      "pattern": "https://musicforprogramming.net/",
+      "pattern": "https://musicforprogramming.net/latest/",
+      "isRegex": false,
+      "enabled": true
+    },
+    {
+      "pattern": "https://mynoise.net/NoiseMachines/singingBowlsDroneGenerator.php",
       "isRegex": false,
       "enabled": true
     },
