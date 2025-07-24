@@ -91,7 +91,7 @@
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "min_column": 91 // https://github.com/zed-industries/zed/issues/33346
+      "min_column": 56 // https://github.com/zed-industries/zed/issues/33346
     }
   },
   "max_tabs": 1,
