@@ -40,8 +40,10 @@ abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m uni
 
 abbr --add au 'sudo apt update && apt list --upgradable'
 
+abbr --add bi 'brew info'
 abbr --add bl 'brew list'
 abbr --add bo 'brew outdated'
+abbr --add bs 'brew uses --recursive --installed'
 abbr --add bu 'brew update && header Outdated Formulae && brew outdated'
 
 abbr --add it 'python3 -B ~/src/dotfiles/iterm2/Scripts/local.py'
