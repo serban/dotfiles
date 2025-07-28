@@ -19,6 +19,12 @@ except ModuleNotFoundError:
   pass
 
 try:
+  import rich.pretty
+  rich.pretty.install()
+except ModuleNotFoundError:
+  pass
+
+try:
   import wat
 except ModuleNotFoundError:
   pass
