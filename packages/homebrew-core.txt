@@ -1,5 +1,6 @@
 bash
 bat
+bottom
 btop
 colordiff
 coreutils
@@ -30,6 +31,7 @@ grep
 harper
 helix
 hexyl
+htop
 hugo
 jq
 jsonnet
@@ -44,6 +46,7 @@ neovim
 newsboat
 numbat
 openssh
+orbiton
 oxipng
 pastel
 perl
@@ -51,6 +54,7 @@ pngquant
 procs
 pstree
 pyenv
+qsv
 ripgrep
 rsync
 ruff
