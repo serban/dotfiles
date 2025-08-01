@@ -1537,6 +1537,12 @@ augroup serban-text
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
 augroup end
 
+augroup serban-contacts
+  autocmd!
+  autocmd BufNewFile  ~/src/contacts/*.toml silent call SerbanWrapNone()
+  autocmd BufReadPost ~/src/contacts/*.toml silent call SerbanWrapNone()
+augroup end
+
 if !has('nvim')
 augroup serban-terminal
   autocmd!
