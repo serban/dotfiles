@@ -25,6 +25,7 @@ syntax match   SerbanAbsolutePath        '\v(^|\s)\zs/\S+>'                     
 syntax match   SerbanHomePath            '\v(^|\s)\zs\~/\S+>'                             containedin=Table
 syntax match   SerbanCurrency            '\v(^|\s)\zs(\$|€)\s*(\d|,)+(\.\d\d)?>'          containedin=Table
 syntax match   SerbanCommit              '\v<[0-9a-f]{7,64}>'                             containedin=Table
+syntax match   SerbanPhoneNumber         '\v\+\d{10,15}|\+1-\d{3}-\d{3}-\d{4}'            containedin=Table
 syntax match   SerbanDateTime            '\v<\d{4}-\d{2}-\d{2}( \d{2}:\d{2}(:\d{2})?)?>'  containedin=Table
 syntax match   SerbanTime                '\v<\d{2}:\d{2}>'                                containedin=Table
 syntax match   SerbanHoursMinutesSeconds '\v<\d+h(\d{2}m(\d{2}s)?)?>'                     containedin=Table
@@ -67,6 +68,7 @@ highlight link SerbanAbsolutePath         SerbanRed
 highlight link SerbanHomePath             SerbanViolet
 highlight link SerbanCurrency             SerbanGreen
 highlight link SerbanCommit               SerbanCyan
+highlight link SerbanPhoneNumber          SerbanCyan
 highlight link SerbanDateTime             SerbanBlue
 highlight link SerbanTime                 SerbanCyan
 highlight link SerbanHoursMinutesSeconds  SerbanYellow
