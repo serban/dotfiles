@@ -1141,8 +1141,11 @@ endfunction
 
 "   │ Bad │ Alt │ Code Point                         │
 "   ├─────┼─────┼────────────────────────────────────┤
+"   │     │     │ U+00A0 No-Break Space              │
+"   │     │     │ U+2007 Figure Space                │
 "   │ ... │  …  │ U+2026 Horizontal Ellipsis         │
 "   │ -   │  ‐  │ U+2010 Hyphen                      │
+"   │ -   │  ‑  │ U+2011 Non-Breaking Hyphen         │
 "   │ -   │  ‒  │ U+2012 Figure Dash                 │
 "   │ --  │  –  │ U+2013 En Dash                     │
 "   │ --- │  —  │ U+2014 Em Dash                     │
@@ -1168,7 +1171,7 @@ function SerbanToggleTypographyHighlighting()
   endif
   let w:serban_typography_bad = matchadd('SerbanTypographyBad', '\v\.{3}|-|x|/|''|"')
   let w:serban_typography_good = matchadd('SerbanTypographyGood',
-                                 \        '\v…|‐|‒|–|—|―|−|⁃|✗|×|÷|⁄|∕|′|‘|’|″|“|”')
+                                 \        '\v | |…|‐|‑|‒|–|—|―|−|⁃|✗|×|÷|⁄|∕|′|‘|’|″|“|”')
 endfunction
 
 function SerbanCommandPalette()
