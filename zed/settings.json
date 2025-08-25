@@ -135,5 +135,10 @@
         }
       }
     }
+  },
+  "vim": {
+    "highlight_on_yank_duration": 75,
+    "toggle_relative_line_numbers": true,
+    "custom_digraphs": {}
   }
 }
