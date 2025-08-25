@@ -1,4 +1,5 @@
 font-size                               = 15
+font-feature                            = -calt,-dlig,-liga
 cursor-style-blink                      = false
 window-inherit-working-directory        = false
 copy-on-select                          = clipboard
