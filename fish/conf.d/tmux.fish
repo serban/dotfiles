@@ -293,6 +293,52 @@ function mos --argument-names project
   tmux send-keys    'g --no-pager' Enter
 end
 
+function mnw
+  if test -z $TMUX
+    echo 'Not running inside tmux'
+    return 1
+  end
+
+  set --function project (
+      fd --base-directory ~ --type directory --max-depth 1 . src frk uvd oss wks \
+          | sed 's|/$||' \
+          | sort \
+          | fzf --height 100% --bind enter:accept-non-empty)
+
+  if test -z $project
+    return 1
+  end
+
+  set --function path ~/$project
+
+  set --function panes 1
+  switch (builtin path dirname $project)
+    case src frk uvd oss
+      set panes 4
+    case wks
+      set panes 2
+  end
+
+  tmux new-window -c $path -n (builtin path basename $project)
+  switch $panes
+    case 2
+      tmux split-window -c $path
+      sleep 0.25
+      tmux send-keys    -t .1 'g --no-pager' Enter
+    case 4
+      tmux split-window -c $path -v
+      tmux split-window -c $path -h
+      tmux split-window -c $path -vf
+      tmux select-layout -E
+      sleep 0.25
+      tmux send-keys    -t .1 'vic' Enter
+      tmux send-keys    -t .2 'g --no-pager' Enter
+      tmux send-keys    -t .3 'git status' Enter
+      tmux send-keys    -t .4 'glf' Enter
+      tmux select-pane  -t .3
+  end
+end
+
 function serban_complete_mas
   for dir in (find $HOME/src $HOME/frk $HOME/uvd $HOME/oss -mindepth 1 -maxdepth 1 -type d 2> /dev/null)
     echo (string split / $dir)[-1]
