@@ -25,6 +25,11 @@
 # │ Solarized Dark  │ 002b36 │ rgb:0000/2b2b/3636 │
 # │ Solarized Light │ fdf6e3 │ rgb:fdfd/f6f6/e3e3 │
 function dark
+  if type --query termtheme
+    termtheme --force
+    return
+  end
+
   set --function dark  rgb:0000/2b2b/3636
   set --function light rgb:fdfd/f6f6/e3e3 rgb:ffff/ffff/ffff
 
