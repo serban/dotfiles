@@ -1022,7 +1022,7 @@ endif
 endfunction
 
 function SerbanMarkPalette()
-  if !exists('g:mwPalettes') || g:colors_name !=# 'solarized'
+  if !exists('g:mwPalettes') || !exists('g:colors_name') || g:colors_name !=# 'solarized'
     return
   endif
 
@@ -1559,7 +1559,7 @@ endif
 if $TERM_PROGRAM ==# 'Apple_Terminal' || &term ==# 'xterm-ghostty' || &term ==# 'wezterm'
   colorscheme habamax
 else
-  colorscheme solarized
+  silent! colorscheme solarized
 endif
 
 " MacVim does not trigger the 'ColorScheme solarized' autocommand on startup.
