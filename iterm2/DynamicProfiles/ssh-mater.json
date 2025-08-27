@@ -1,0 +1,11 @@
+{
+  "Profiles": [
+    {
+      "Name": "mater",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
+      "Shortcut": "A",
+      "Command": "/opt/homebrew/bin/ssh mater",
+      "Guid": "CA87D5D0-A6F4-42B8-8301-50C7451E4165"
+    }
+  ]
+}
