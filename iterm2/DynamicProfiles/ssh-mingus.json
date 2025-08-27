@@ -2,12 +2,9 @@
   "Profiles": [
     {
       "Name": "mingus",
-      "Dynamic Profile Parent Name": "Serban Solarized",
+      "Dynamic Profile Parent Name": "Serban Solarized Secure Shell",
       "Shortcut": "I",
-      "Title Components": 64,
-      "Custom Command": "Yes",
       "Command": "/usr/local/bin/ssh mingus",
-      "Close Sessions On End": false,
       "Guid": "396DDE49-6FE8-43AB-ABB9-49B28B4EEA2B"
     }
   ]

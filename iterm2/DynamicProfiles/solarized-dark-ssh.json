@@ -1,0 +1,12 @@
+{
+  "Profiles": [
+    {
+      "Name": "Serban Solarized Dark Secure Shell",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark",
+      "Title Components": 64,
+      "Custom Command": "Yes",
+      "Close Sessions On End": false,
+      "Guid": "F219D25B-6AE4-4F3A-ACC4-853EB3CD892F"
+    }
+  ]
+}

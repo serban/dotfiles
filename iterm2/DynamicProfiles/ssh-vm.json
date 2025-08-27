@@ -2,10 +2,8 @@
   "Profiles": [
     {
       "Name": "vm",
-      "Dynamic Profile Parent Name": "Serban Solarized Dark",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
       "Shortcut": "V",
-      "Title Components": 64,
-      "Custom Command": "Yes",
       "Command": "/opt/homebrew/bin/ssh vm",
       "Guid": "50CD5D86-11B3-445F-A312-CC45130C95C3"
     }
