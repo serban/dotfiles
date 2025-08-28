@@ -1,0 +1,11 @@
+{
+  "Profiles": [
+    {
+      "Name": "ubuntu",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
+      "Shortcut": "U",
+      "Command": "/opt/homebrew/bin/ssh ubuntu",
+      "Guid": "606FE4E9-9465-4CA1-BA8D-86CD2AC76D91"
+    }
+  ]
+}

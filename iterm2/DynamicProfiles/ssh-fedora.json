@@ -1,0 +1,11 @@
+{
+  "Profiles": [
+    {
+      "Name": "fedora",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
+      "Shortcut": "E",
+      "Command": "/opt/homebrew/bin/ssh fedora",
+      "Guid": "41E13E3B-A313-4D18-8679-9DCA9AC9EBB7"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "Profiles": [
+    {
+      "Name": "debian",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
+      "Shortcut": "B",
+      "Command": "/opt/homebrew/bin/ssh debian",
+      "Guid": "DEEE038E-9794-41A3-B3D6-35BF8AE5C0B7"
+    }
+  ]
+}
