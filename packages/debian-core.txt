@@ -19,6 +19,7 @@ hashdeep
 hexyl
 htop
 hugo
+iotop
 jq
 jsonnet
 just
