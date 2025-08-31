@@ -8,6 +8,7 @@ ctags
 curl
 dateutils
 diffutils
+dust
 duti
 editorconfig
 exiftool

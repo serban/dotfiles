@@ -6,6 +6,7 @@ colortest
 curl
 dateutils
 dnsutils
+du-dust
 editorconfig
 elfutils
 fd-find

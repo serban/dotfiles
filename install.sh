@@ -66,6 +66,9 @@ ln -si ${DOTFILES}/colordiffrc          ~/.config/colordiff/colordiffrc
 mkdir -p ~/.config/conky
 ln -si ${DOTFILES}/conky.conf           ~/.config/conky/conky.conf
 
+mkdir -p ~/.config/dust
+ln -si ${DOTFILES}/dust-config.toml     ~/.config/dust/config.toml
+
 mkdir -p ~/.config/emacs
 ln -si ${DOTFILES}/emacs/early-init.el  ~/.config/emacs/early-init.el
 ln -si ${DOTFILES}/emacs/init.el        ~/.config/emacs/init.el
