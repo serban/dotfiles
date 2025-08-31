@@ -56,6 +56,7 @@ procs
 pstree
 pyenv
 qsv
+restic
 ripgrep
 rsync
 ruff
