@@ -49,7 +49,6 @@ ln -si ${DOTFILES}/bashrc               ~/.bashrc
 ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
 ln -si ${DOTFILES}/blazerc              ~/.blazerc
 ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
-ln -si ${DOTFILES}/xsession             ~/.xsession
 
 mkdir -p ~/.config/alacritty
 ln -si ${DOTFILES}/alacritty.yml        ~/.config/alacritty/alacritty.yml

@@ -38,7 +38,6 @@ KNOWN_FILES = {
   '.g4d',
   '.hushlogin',           # shadow
   '.netrc',
-  '.xsession',
 
 }
 
