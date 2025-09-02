@@ -37,7 +37,6 @@ KNOWN_FILES = {
   '.g4d',
   '.hushlogin',           # shadow
   '.netrc',
-  '.viminfo',
   '.xsession',
 
 }
