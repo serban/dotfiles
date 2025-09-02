@@ -13,8 +13,9 @@ KNOWN_DIRS = {
   '.config',              # XDG_CONFIG_HOME
   '.cups',                # 2023-10-29: https://github.com/OpenPrinting/libcups/issues/43 · https://github.com/OpenPrinting/libcups/pull/45
   '.gmailctl',            # 2023-10-29: https://github.com/mbrt/gmailctl/issues/144
+  '.lldb',                # 2025-09-02: https://github.com/llvm/llvm-project/issues/71426
   '.local',               # XDG_DATA_HOME · XDG_STATE_HOME
-  '.npm',
+  '.npm',                 # 2025-09-02: https://github.com/npm/rfcs/issues/389 · https://github.com/npm/rfcs/issues/586
   '.ssh',
   '.swiftpm',             # Swift Package Manager
   '.terminfo',            # 2023-10-29: https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos
