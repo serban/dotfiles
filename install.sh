@@ -165,6 +165,7 @@ ln -si ${DOTFILES}/zed/settings.json    ~/.config/zed/settings.json
 
 mkdir -p -m 700 ~/.local/share
 mkdir -p -m 700 ~/.local/share/bookmarks
+mkdir -p -m 700 ~/.local/share/gnupg
 
 mkdir -p -m 700 ~/.local/state
 mkdir -p -m 700 ~/.local/state/bash
