@@ -15,7 +15,6 @@ syntax match   SerbanAcronym             '\v<\u+s?>'        transparent contains
 syntax match   SerbanHeading             '\v^■{1,3} .*'
 syntax match   SerbanMetadata            '\v^‣ \S+'
 syntax match   SerbanBlockQuote          '\v^\s*›'
-syntax match   SerbanResult              '\v^\s*→'
 
 syntax match   SerbanUrl                 '\v<https?://\S+>'                               containedin=Table nextgroup=SerbanLinkSeparator
 syntax match   SerbanShortLink           '\v<(b|cl|g|go|google3|g3doc|omg|yaqs)/\S+>'     containedin=Table nextgroup=SerbanLinkSeparator
@@ -48,6 +47,7 @@ syntax match   SerbanBalloon             '✤'                                  
 syntax match   SerbanBullet              '•'                                              containedin=Table
 syntax match   SerbanHyphenBullet        '⁃'                                              containedin=Table
 syntax match   SerbanArrowDownRight      '↳'                                              containedin=Table
+syntax match   SerbanArrowHorizontal     '\v←|→'                                          containedin=Table
 syntax match   SerbanQuestion            '\v(^|\s)\zs\?'                                  containedin=Table
 syntax match   SerbanTilde               '\v(^|\s)\zs\~\ze(\s|$)'                         containedin=Table
 syntax match   SerbanFootnoteReference   '\v｢\S*｣'                                        containedin=Table
@@ -58,7 +58,6 @@ syntax match   SerbanDate                '\v<((Mon|Tue|Wed|Thu|Fri|Sat|Sun) )?(J
 highlight link SerbanHeading              SerbanOrange
 highlight link SerbanMetadata             SerbanBlue
 highlight link SerbanBlockQuote           SerbanCyan
-highlight link SerbanResult               SerbanMagenta
 
 highlight link SerbanUrl                  SerbanViolet
 highlight link SerbanShortLink            SerbanViolet
@@ -91,6 +90,7 @@ highlight link SerbanBalloon              SerbanMagenta
 highlight link SerbanBullet               SerbanBlue
 highlight link SerbanHyphenBullet         SerbanBlue
 highlight link SerbanArrowDownRight       SerbanBlue
+highlight link SerbanArrowHorizontal      SerbanMagenta
 highlight link SerbanQuestion             SerbanViolet
 highlight link SerbanTilde                SerbanYellow
 highlight link SerbanFootnoteReference    SerbanOrange
