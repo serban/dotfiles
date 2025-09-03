@@ -182,6 +182,8 @@ set --global --export VISUAL vim
 set --global --export EDITOR vim
 set --global --export PAGER less
 
+umask u=rwx,g=rx,o=rx  # umask 022
+
 if type --query dircolors
   eval (dircolors -c ~/src/dotfiles/dir_colors)
 else if type --query gdircolors
