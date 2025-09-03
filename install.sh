@@ -44,6 +44,37 @@ linux && {
   readonly        VSCODE="${HOME}/.config/Code/User"
 }
 
+umask u=rwx,g=,o=  # umask 077
+
+mkdir -p -m 700 ~/.cache
+mkdir -p -m 700 ~/.config
+mkdir -p -m 700 ~/.local
+mkdir -p -m 700 ~/.local/bin
+mkdir -p -m 700 ~/.local/share
+mkdir -p -m 700 ~/.local/state
+
+chmod 700 ~/.cache
+chmod 700 ~/.config
+chmod 700 ~/.local
+chmod 700 ~/.local/bin
+chmod 700 ~/.local/share
+chmod 700 ~/.local/state
+
+mkdir -p -m 700 ~/.cache/grip
+
+mkdir -p -m 700 ~/.local/share/bookmarks
+mkdir -p -m 700 ~/.local/share/gnupg
+
+mkdir -p -m 700 ~/.local/state/bash
+mkdir -p -m 700 ~/.local/state/bash/history
+mkdir -p -m 700 ~/.local/state/bpython
+mkdir -p -m 700 ~/.local/state/less
+mkdir -p -m 700 ~/.local/state/postgresql
+mkdir -p -m 700 ~/.local/state/python
+mkdir -p -m 700 ~/.local/state/sqlite
+mkdir -p -m 700 ~/.local/state/vim
+mkdir -p -m 700 ~/.local/state/vim/swap
+
 ln -si ${DOTFILES}/bash_logout          ~/.bash_logout
 ln -si ${DOTFILES}/bashrc               ~/.bashrc
 ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
@@ -162,24 +193,6 @@ ln -si ${DOTFILES}/zed/snippets         ~/.config/zed/snippets
 ln -si ${DOTFILES}/zed/keymap.json      ~/.config/zed/keymap.json
 ln -si ${DOTFILES}/zed/settings.json    ~/.config/zed/settings.json
 
-mkdir -p -m 700 ~/.local/share
-mkdir -p -m 700 ~/.local/share/bookmarks
-mkdir -p -m 700 ~/.local/share/gnupg
-
-mkdir -p -m 700 ~/.local/state
-mkdir -p -m 700 ~/.local/state/bash
-mkdir -p -m 700 ~/.local/state/bash/history
-mkdir -p -m 700 ~/.local/state/bpython
-mkdir -p -m 700 ~/.local/state/less
-mkdir -p -m 700 ~/.local/state/postgresql
-mkdir -p -m 700 ~/.local/state/python
-mkdir -p -m 700 ~/.local/state/sqlite
-mkdir -p -m 700 ~/.local/state/vim
-mkdir -p -m 700 ~/.local/state/vim/swap
-
-mkdir -p -m 700 ~/.cache
-mkdir -p -m 700 ~/.cache/grip
-
 root || darwin || freebsd && {
   ln -si ${DOTFILES}/bashrc             ~/.bash_profile
 }
@@ -189,12 +202,10 @@ darwin && {
 }
 
 debian && {
-  mkdir -p ~/.local/bin
   ln -si /usr/bin/batcat                ~/.local/bin/bat
 }
 
 darwin && {
-  mkdir -p ~/.local/bin
   ln -si  /Applications/kitty.app/Contents/MacOS/kitten                         ~/.local/bin/kitten
   ln -si  /Applications/kitty.app/Contents/MacOS/kitty                          ~/.local/bin/kitty
   ln -si  /Applications/Ghostty.app/Contents/MacOS/ghostty                      ~/.local/bin/ghostty
