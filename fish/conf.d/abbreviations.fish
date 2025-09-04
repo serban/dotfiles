@@ -65,12 +65,13 @@ abbr --add ago "ag 'TODO\(serban\)'"
 abbr --add dfs 'delta --features (dark)-side-by-side'
 abbr --add dfu 'delta --features (dark)-unified-diff'
 
-abbr --add nva NVIM_APPNAME=nvim-astro nvim
-abbr --add nvc NVIM_APPNAME=nvim-chad nvim
-abbr --add nvf NVIM_APPNAME=nvim-fresh nvim
-abbr --add nvk NVIM_APPNAME=nvim-kick nvim
-abbr --add nvl NVIM_APPNAME=nvim-lazy nvim
-abbr --add nvn NVIM_APPNAME=nvim-norm nvim
+abbr --add nva NVIM_APPNAME=nvim-astro nvim   # https://astronvim.com - AstroNvim
+abbr --add nvc NVIM_APPNAME=nvim-chad nvim    # https://nvchad.com - NvChad
+abbr --add nvk NVIM_APPNAME=nvim-kick nvim    # https://github.com/nvim-lua/kickstart.nvim
+abbr --add nvl NVIM_APPNAME=nvim-lazy nvim    # https://lazyvim.org - LazyVim
+abbr --add nvn NVIM_APPNAME=nvim-norm nvim    # https://normalnvim.github.io - NormalNvim
+abbr --add nvv NVIM_APPNAME=nvim-vim nvim     # https://github.com/serban/dotfiles/blob/master/vim/vimrc
+abbr --add nvw NVIM_APPNAME=nvim-wip nvim
 
 abbr --add sha sha256sum
 

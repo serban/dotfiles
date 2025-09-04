@@ -172,8 +172,8 @@ ln -vsnf ${DOTS2}/newsboat-config               ~/.config/newsboat/config
 mkdir -p ~/.config/nitrogen
 ln -vsnf ${DOTS2}/bg-saved.cfg                  ~/.config/nitrogen/bg-saved.cfg
 
-mkdir -p ~/.config/nvim
-ln -vsnf ${DOTS2}/vim/vimrc                     ~/.config/nvim/init.vim
+mkdir -p ~/.config/nvim-vim
+ln -vsnf ${DOTS2}/vim/vimrc                     ~/.config/nvim-vim/init.vim
 
 mkdir -p ~/.config/procs
 ln -vsnf ${DOTS2}/procs-config.toml             ~/.config/procs/config.toml
