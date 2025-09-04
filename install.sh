@@ -7,9 +7,14 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DOTFILES="${HOME}/src/dotfiles"
 readonly OS="$(uname -s)"
 readonly WHOAMI="$(whoami)"
+
+readonly DOTS0='src/dotfiles'
+readonly DOTS1='../src/dotfiles'
+readonly DOTS2='../../src/dotfiles'
+readonly DOTS3='../../../src/dotfiles'
+readonly DOTFILES="${HOME}/src/dotfiles"
 
 function darwin {
   [ "${OS}" = 'Darwin' ]
@@ -75,127 +80,127 @@ mkdir -p -m 700 ~/.local/state/sqlite
 mkdir -p -m 700 ~/.local/state/vim
 mkdir -p -m 700 ~/.local/state/vim/swap
 
-ln -si ${DOTFILES}/bash_logout          ~/.bash_logout
-ln -si ${DOTFILES}/bashrc               ~/.bashrc
-ln -si ${DOTFILES}/bazelrc              ~/.bazelrc
-ln -si ${DOTFILES}/blazerc              ~/.blazerc
-ln -si ${DOTFILES}/hushlogin            ~/.hushlogin
+root || darwin || freebsd && {
+  ln -si ${DOTS0}/bashrc                ~/.bash_profile
+}
+
+ln -si ${DOTS0}/bash_logout             ~/.bash_logout
+ln -si ${DOTS0}/bashrc                  ~/.bashrc
+ln -si ${DOTS0}/bazelrc                 ~/.bazelrc
+ln -si ${DOTS0}/blazerc                 ~/.blazerc
+ln -si ${DOTS0}/hushlogin               ~/.hushlogin
 
 mkdir -p ~/.config/alacritty
-ln -si ${DOTFILES}/alacritty.yml        ~/.config/alacritty/alacritty.yml
+ln -si ${DOTS2}/alacritty.yml           ~/.config/alacritty/alacritty.yml
 
 mkdir -p ~/.config/bat
-ln -si ${DOTFILES}/bat-config           ~/.config/bat/config
+ln -si ${DOTS2}/bat-config              ~/.config/bat/config
 
 mkdir -p ~/.config/bpython
-ln -si ${DOTFILES}/bpython-config       ~/.config/bpython/config
+ln -si ${DOTS2}/bpython-config          ~/.config/bpython/config
 
 mkdir -p ~/.config/colordiff
-ln -si ${DOTFILES}/colordiffrc          ~/.config/colordiff/colordiffrc
+ln -si ${DOTS2}/colordiffrc             ~/.config/colordiff/colordiffrc
 
 mkdir -p ~/.config/conky
-ln -si ${DOTFILES}/conky.conf           ~/.config/conky/conky.conf
+ln -si ${DOTS2}/conky.conf              ~/.config/conky/conky.conf
 
 mkdir -p ~/.config/dust
-ln -si ${DOTFILES}/dust-config.toml     ~/.config/dust/config.toml
+ln -si ${DOTS2}/dust-config.toml        ~/.config/dust/config.toml
 
 mkdir -p ~/.config/emacs
-ln -si ${DOTFILES}/emacs/early-init.el  ~/.config/emacs/early-init.el
-ln -si ${DOTFILES}/emacs/init.el        ~/.config/emacs/init.el
+ln -si ${DOTS2}/emacs/early-init.el     ~/.config/emacs/early-init.el
+ln -si ${DOTS2}/emacs/init.el           ~/.config/emacs/init.el
 
 mkdir -p ~/.config/fish
-ln -si ${DOTFILES}/fish/conf.d          ~/.config/fish/conf.d
-ln -si ${DOTFILES}/fish/completions     ~/.config/fish/completions
-ln -si ${DOTFILES}/fish/functions       ~/.config/fish/functions
-ln -si ${DOTFILES}/fish/config.fish     ~/.config/fish/config.fish
+ln -si ${DOTS2}/fish/conf.d             ~/.config/fish/conf.d
+ln -si ${DOTS2}/fish/completions        ~/.config/fish/completions
+ln -si ${DOTS2}/fish/functions          ~/.config/fish/functions
+ln -si ${DOTS2}/fish/config.fish        ~/.config/fish/config.fish
 
 mkdir -p ~/.config/gdb
-ln -si ${DOTFILES}/gdbearlyinit         ~/.config/gdb/gdbearlyinit
-ln -si ${DOTFILES}/gdbinit              ~/.config/gdb/gdbinit
+ln -si ${DOTS2}/gdbearlyinit            ~/.config/gdb/gdbearlyinit
+ln -si ${DOTS2}/gdbinit                 ~/.config/gdb/gdbinit
 
 mkdir -p ~/.config/ghostty
-ln -si ${DOTFILES}/ghostty-config       ~/.config/ghostty/config
+ln -si ${DOTS2}/ghostty-config          ~/.config/ghostty/config
 
 mkdir -p ~/.config/git
-ln -si ${DOTFILES}/git-config           ~/.config/git/config
-ln -si ${DOTFILES}/git-ignore           ~/.config/git/ignore
+ln -si ${DOTS2}/git-config              ~/.config/git/config
+ln -si ${DOTS2}/git-ignore              ~/.config/git/ignore
 
 mkdir -p ~/.config/hammerspoon
-ln -si ${DOTFILES}/hammerspoon/serban   ~/.config/hammerspoon/serban
-ln -si ${DOTFILES}/hammerspoon/init.lua ~/.config/hammerspoon/init.lua
+ln -si ${DOTS2}/hammerspoon/serban      ~/.config/hammerspoon/serban
+ln -si ${DOTS2}/hammerspoon/init.lua    ~/.config/hammerspoon/init.lua
 
 mkdir -p ~/.config/helix
-ln -si ${DOTFILES}/helix-config.toml    ~/.config/helix/config.toml
-ln -si ${DOTFILES}/helix-languages.toml ~/.config/helix/languages.toml
+ln -si ${DOTS2}/helix-config.toml       ~/.config/helix/config.toml
+ln -si ${DOTS2}/helix-languages.toml    ~/.config/helix/languages.toml
 
 mkdir -p ~/.config/hg
-ln -si ${DOTFILES}/hgrc                 ~/.config/hg/hgrc
+ln -si ${DOTS2}/hgrc                    ~/.config/hg/hgrc
 
 mkdir -p ~/.config/i3
-ln -si ${DOTFILES}/i3-config            ~/.config/i3/config
+ln -si ${DOTS2}/i3-config               ~/.config/i3/config
 
 mkdir -p ~/.config/i3status
-ln -si ${DOTFILES}/i3status-config      ~/.config/i3status/config
+ln -si ${DOTS2}/i3status-config         ~/.config/i3status/config
 
 mkdir -p ~/.config/ipython/profile_default
-ln -si ${DOTFILES}/ipython_config.py    ~/.config/ipython/profile_default/ipython_config.py
+ln -si ${DOTS3}/ipython_config.py       ~/.config/ipython/profile_default/ipython_config.py
 
 mkdir -p ~/.config/less
-ln -si ${DOTFILES}/lesskey              ~/.config/less/lesskey
+ln -si ${DOTS2}/lesskey                 ~/.config/less/lesskey
 
 mkdir -p ~/.config/readline
-ln -si ${DOTFILES}/inputrc              ~/.config/readline/inputrc
+ln -si ${DOTS2}/inputrc                 ~/.config/readline/inputrc
 
 mkdir -p ~/.config/kitty
-ln -si ${DOTFILES}/kitty.conf           ~/.config/kitty/kitty.conf
-ln -si ${DOTFILES}/kitty-paste-actions.py ~/.config/kitty/paste-actions.py
+ln -si ${DOTS2}/kitty.conf              ~/.config/kitty/kitty.conf
+ln -si ${DOTS2}/kitty-paste-actions.py  ~/.config/kitty/paste-actions.py
 
 mkdir -p ~/.config/lf
-ln -si ${DOTFILES}/lfrc                 ~/.config/lf/lfrc
+ln -si ${DOTS2}/lfrc                    ~/.config/lf/lfrc
 
 mkdir -p ~/.config/moc/themes
-ln -si ${DOTFILES}/moc-config           ~/.config/moc/config
-ln -si ${DOTFILES}/moc-theme            ~/.config/moc/themes/serban
+ln -si ${DOTS2}/moc-config              ~/.config/moc/config
+ln -si ${DOTS3}/moc-theme               ~/.config/moc/themes/serban
 
 mkdir -p ~/.config/newsboat
-ln -si ${DOTFILES}/newsboat-config      ~/.config/newsboat/config
+ln -si ${DOTS2}/newsboat-config         ~/.config/newsboat/config
 
 mkdir -p ~/.config/nitrogen
-ln -si ${DOTFILES}/bg-saved.cfg         ~/.config/nitrogen/bg-saved.cfg
+ln -si ${DOTS2}/bg-saved.cfg            ~/.config/nitrogen/bg-saved.cfg
 
 mkdir -p ~/.config/nvim
-ln -si ${DOTFILES}/vim/vimrc            ~/.config/nvim/init.vim
+ln -si ${DOTS2}/vim/vimrc               ~/.config/nvim/init.vim
 
 mkdir -p ~/.config/procs
-ln -si ${DOTFILES}/procs-config.toml    ~/.config/procs/config.toml
+ln -si ${DOTS2}/procs-config.toml       ~/.config/procs/config.toml
 
 mkdir -p ~/.config/screen
-ln -si ${DOTFILES}/screenrc             ~/.config/screen/screenrc
+ln -si ${DOTS2}/screenrc                ~/.config/screen/screenrc
 
 mkdir -p ~/.config/sqlite3
-ln -si ${DOTFILES}/sqliterc             ~/.config/sqlite3/sqliterc
+ln -si ${DOTS2}/sqliterc                ~/.config/sqlite3/sqliterc
 
 mkdir -p ~/.config/tmux
-ln -si ${DOTFILES}/tmux.conf            ~/.config/tmux/tmux.conf
+ln -si ${DOTS2}/tmux.conf               ~/.config/tmux/tmux.conf
 
 mkdir -p ~/.config/vim
-ln -si ${DOTFILES}/vim/after            ~/.config/vim/after
-ln -si ${DOTFILES}/vim/pack             ~/.config/vim/pack
-ln -si ${DOTFILES}/vim/ultisnips        ~/.config/vim/UltiSnips
-ln -si ${DOTFILES}/vim/gvimrc           ~/.config/vim/gvimrc
-ln -si ${DOTFILES}/vim/vimrc            ~/.config/vim/vimrc
+ln -si ${DOTS2}/vim/after               ~/.config/vim/after
+ln -si ${DOTS2}/vim/pack                ~/.config/vim/pack
+ln -si ${DOTS2}/vim/ultisnips           ~/.config/vim/UltiSnips
+ln -si ${DOTS2}/vim/gvimrc              ~/.config/vim/gvimrc
+ln -si ${DOTS2}/vim/vimrc               ~/.config/vim/vimrc
 
 mkdir -p ~/.config/wezterm
-ln -si ${DOTFILES}/wezterm.lua          ~/.config/wezterm/wezterm.lua
+ln -si ${DOTS2}/wezterm.lua             ~/.config/wezterm/wezterm.lua
 
 mkdir -p ~/.config/zed
-ln -si ${DOTFILES}/zed/snippets         ~/.config/zed/snippets
-ln -si ${DOTFILES}/zed/keymap.json      ~/.config/zed/keymap.json
-ln -si ${DOTFILES}/zed/settings.json    ~/.config/zed/settings.json
-
-root || darwin || freebsd && {
-  ln -si ${DOTFILES}/bashrc             ~/.bash_profile
-}
+ln -si ${DOTS2}/zed/snippets            ~/.config/zed/snippets
+ln -si ${DOTS2}/zed/keymap.json         ~/.config/zed/keymap.json
+ln -si ${DOTS2}/zed/settings.json       ~/.config/zed/settings.json
 
 darwin && {
   ln -si ~/.config/gdb                  ~/Library/Preferences/gdb
