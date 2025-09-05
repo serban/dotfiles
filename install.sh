@@ -172,6 +172,10 @@ ln -vsnf ${DOTS2}/newsboat-config               ~/.config/newsboat/config
 mkdir -p ~/.config/nitrogen
 ln -vsnf ${DOTS2}/bg-saved.cfg                  ~/.config/nitrogen/bg-saved.cfg
 
+mkdir -p ~/.config/nvim
+ln -vsnf ${DOTS2}/nvim/lua                      ~/.config/nvim/lua
+ln -vsnf ${DOTS2}/nvim/init.lua                 ~/.config/nvim/init.lua
+
 mkdir -p ~/.config/nvim-vim
 ln -vsnf ${DOTS2}/vim/vimrc                     ~/.config/nvim-vim/init.vim
 
