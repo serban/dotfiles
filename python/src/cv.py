@@ -51,6 +51,9 @@ kPackages = [
 
 ]
 
+def bleach(s):
+  return re.sub(r'\x1b\[[0-9;]*m', '', s)
+
 def parse_command_line_arguments():
   parser = argparse.ArgumentParser(description='Version Checker')
   parser.color = True
@@ -73,7 +76,7 @@ def main():
       if not m:
         continue
 
-      p.have = m.group(1) if p.name != 'vim' else f'{m.group(1)}.{m.group(2)}'
+      p.have = bleach(m[1]) if p.name != 'vim' else f'{m.group(1)}.{m.group(2)}'
     else:
       p.have = importlib.metadata.version(p.name)
 
