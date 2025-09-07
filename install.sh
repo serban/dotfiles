@@ -14,6 +14,8 @@ readonly DOTS0='src/dotfiles'
 readonly DOTS1='../src/dotfiles'
 readonly DOTS2='../../src/dotfiles'
 readonly DOTS3='../../../src/dotfiles'
+readonly DOTS4='../../../../src/dotfiles'
+readonly DOTS5='../../../../../src/dotfiles'
 readonly DOTFILES="${HOME}/src/dotfiles"
 
 function darwin {
@@ -34,19 +36,6 @@ function root {
 
 function debian {
   [ -f /etc/debian_version ]
-}
-
-darwin && {
-  readonly         ITERM="${HOME}/Library/Application Support/iTerm2"
-  readonly SUBLIME_MERGE="${HOME}/Library/Application Support/Sublime Merge/Packages/User"
-  readonly  SUBLIME_TEXT="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
-  readonly        VSCODE="${HOME}/Library/Application Support/Code/User"
-}
-
-linux && {
-  readonly SUBLIME_MERGE="${HOME}/.config/sublime_merge/Packages/User"
-  readonly  SUBLIME_TEXT="${HOME}/.config/sublime-text-3/Packages/User"
-  readonly        VSCODE="${HOME}/.config/Code/User"
 }
 
 umask u=rwx,g=,o=  # umask 077
@@ -207,7 +196,7 @@ ln -vsnf ${DOTS2}/zed/keymap.json               ~/.config/zed/keymap.json
 ln -vsnf ${DOTS2}/zed/settings.json             ~/.config/zed/settings.json
 
 darwin && {
-  ln -vsnf ~/.config/gdb                        ~/Library/Preferences/gdb
+  ln -vsnf ../../.config/gdb                    ~/Library/Preferences/gdb
 }
 
 debian && {
@@ -228,25 +217,43 @@ darwin && {
 }
 
 darwin && {
-  mkdir -p "${ITERM}"
-  ln -vsnf ${DOTFILES}/iterm2/DynamicProfiles "${ITERM}/DynamicProfiles"
-  ln -vsnf ${DOTFILES}/iterm2/Scripts         "${ITERM}/Scripts"
+  mkdir -p                                                            "${HOME}/Library/Application Support/iTerm2"
+  ln -vsnf ${DOTS3}/iterm2/DynamicProfiles                            "${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
+  ln -vsnf ${DOTS3}/iterm2/Scripts                                    "${HOME}/Library/Application Support/iTerm2/Scripts"
 }
 
-darwin || linux && {
-  mkdir -p "${SUBLIME_MERGE}"
-  ln -vsnf "${DOTFILES}/sublime-merge/Commit.sublime-menu"          "${SUBLIME_MERGE}/Commit.sublime-menu"
-  ln -vsnf "${DOTFILES}/sublime-merge/Default.sublime-keymap"       "${SUBLIME_MERGE}/Default.sublime-keymap"
-  ln -vsnf "${DOTFILES}/sublime-merge/Preferences.sublime-settings" "${SUBLIME_MERGE}/Preferences.sublime-settings"
+darwin && {
+  mkdir -p                                                            "${HOME}/Library/Application Support/Code/User"
+  ln -vsnf ${DOTS4}/vscode/settings.json                              "${HOME}/Library/Application Support/Code/User/settings.json"
 }
 
-darwin || linux && {
-  mkdir -p "${SUBLIME_TEXT}"
-  ln -vsnf "${DOTFILES}/sublime/Preferences.sublime-settings"     "${SUBLIME_TEXT}/Preferences.sublime-settings"
-  ln -vsnf "${DOTFILES}/sublime/Package Control.sublime-settings" "${SUBLIME_TEXT}/Package Control.sublime-settings"
+linux && {
+  mkdir -p                                                            "${HOME}/.config/Code/User"
+  ln -vsnf ${DOTS3}/vscode/settings.json                              "${HOME}/.config/Code/User/settings.json"
 }
 
-darwin || linux && {
-  mkdir -p "${VSCODE}"
-  ln -vsnf ${DOTFILES}/vscode/settings.json "${VSCODE}/settings.json"
+darwin && {
+  mkdir -p                                                            "${HOME}/Library/Application Support/Sublime Merge/Packages/User"
+  ln -vsnf "${DOTS5}/sublime-merge/Commit.sublime-menu"               "${HOME}/Library/Application Support/Sublime Merge/Packages/User/Commit.sublime-menu"
+  ln -vsnf "${DOTS5}/sublime-merge/Default.sublime-keymap"            "${HOME}/Library/Application Support/Sublime Merge/Packages/User/Default.sublime-keymap"
+  ln -vsnf "${DOTS5}/sublime-merge/Preferences.sublime-settings"      "${HOME}/Library/Application Support/Sublime Merge/Packages/User/Preferences.sublime-settings"
+}
+
+linux && {
+  mkdir -p                                                            "${HOME}/.config/sublime_merge/Packages/User"
+  ln -vsnf "${DOTS4}/sublime-merge/Commit.sublime-menu"               "${HOME}/.config/sublime_merge/Packages/User/Commit.sublime-menu"
+  ln -vsnf "${DOTS4}/sublime-merge/Default.sublime-keymap"            "${HOME}/.config/sublime_merge/Packages/User/Default.sublime-keymap"
+  ln -vsnf "${DOTS4}/sublime-merge/Preferences.sublime-settings"      "${HOME}/.config/sublime_merge/Packages/User/Preferences.sublime-settings"
+}
+
+darwin && {
+  mkdir -p                                                            "${HOME}/Library/Application Support/Sublime Text 3/Packages/User"
+  ln -vsnf "${DOTS5}/sublime/Preferences.sublime-settings"            "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+  ln -vsnf "${DOTS5}/sublime/Package Control.sublime-settings"        "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
+}
+
+linux && {
+  mkdir -p                                                            "${HOME}/.config/sublime-text-3/Packages/User"
+  ln -vsnf "${DOTS4}/sublime/Preferences.sublime-settings"            "${HOME}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
+  ln -vsnf "${DOTS4}/sublime/Package Control.sublime-settings"        "${HOME}/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
 }
