@@ -2,6 +2,7 @@ function a --wraps eza
   eza \
       --color always            \
       --classify always         \
+      --no-quotes               \
       --git-ignore              \
       --group-directories-first \
       --sort extension          \
