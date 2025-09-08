@@ -101,6 +101,9 @@ mkdir -p ~/.config/emacs
 ln -vsnf ${DOTS2}/emacs/early-init.el           ~/.config/emacs/early-init.el
 ln -vsnf ${DOTS2}/emacs/init.el                 ~/.config/emacs/init.el
 
+mkdir -p ~/.config/eza
+ln -vsnf ${DOTS2}/eza-theme.yml                 ~/.config/eza/theme.yml
+
 mkdir -p ~/.config/fish
 ln -vsnf ${DOTS2}/fish/conf.d                   ~/.config/fish/conf.d
 ln -vsnf ${DOTS2}/fish/completions              ~/.config/fish/completions

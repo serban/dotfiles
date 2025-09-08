@@ -89,6 +89,7 @@ set --global --export XDG_DATA_HOME       $HOME/.local/share
 set --global --export XDG_STATE_HOME      $HOME/.local/state
 set --global --export XDG_CACHE_HOME      $HOME/.cache
 
+set --global --export EZA_CONFIG_DIR      $HOME/.config/eza               # https://github.com/eza-community/eza/issues/1224
 set --global --export LESSKEYIN           $HOME/.config/less/lesskey
 set --global --export INPUTRC             $HOME/.config/readline/inputrc
 set --global --export SCREENRC            $HOME/.config/screen/screenrc

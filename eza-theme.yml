@@ -1,0 +1,7 @@
+punctuation:
+  foreground: black
+  is_bold: false
+
+date:
+  foreground: yellow
+  is_bold: false

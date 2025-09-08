@@ -1,0 +1,16 @@
+function a --wraps eza
+  eza \
+      --color always            \
+      --classify always         \
+      --git-ignore              \
+      --group-directories-first \
+      --sort extension          \
+      --long                    \
+      --binary                  \
+      --time-style +%Y-%m-%d    \
+      --no-permissions          \
+      --no-user                 \
+      --tree                    \
+      $argv                     \
+    | less
+end

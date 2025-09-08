@@ -12,6 +12,7 @@ dust
 duti
 editorconfig
 exiftool
+eza
 fd
 findutils
 firebase-cli
