@@ -221,8 +221,8 @@ darwin && {
 
 darwin && {
   mkdir -p                                                            "${HOME}/Library/Application Support/iTerm2"
-  ln -vsnf ${DOTS3}/iterm2/DynamicProfiles                            "${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
-  ln -vsnf ${DOTS3}/iterm2/Scripts                                    "${HOME}/Library/Application Support/iTerm2/Scripts"
+  ln -vsnf ${DOTFILES}/iterm2/DynamicProfiles                         "${HOME}/Library/Application Support/iTerm2/DynamicProfiles"
+  ln -vsnf ${DOTFILES}/iterm2/Scripts                                 "${HOME}/Library/Application Support/iTerm2/Scripts"
 }
 
 darwin && {
