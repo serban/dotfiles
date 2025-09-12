@@ -7,12 +7,12 @@ set -o pipefail
 readonly -a kFoldersCommon=(
 
   bin
+  del
   env
   frk
   git
   log
   oss
-  pkg
   pre
   run
   ses
@@ -26,7 +26,6 @@ readonly -a kFoldersCommon=(
 readonly -a kFoldersDarwin=(
 
   Data
-  Deletable
   Screenshots
 
 )
@@ -34,6 +33,7 @@ readonly -a kFoldersDarwin=(
 declare -A kSymlinksDarwin=(
 
 # [Data]='Library/Mobile Documents/com~apple~CloudDocs/Data'
+  [Deletable]=del
   [Workspace]=wks
 
 )
