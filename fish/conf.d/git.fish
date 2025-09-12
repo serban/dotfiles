@@ -97,6 +97,7 @@ function gsou
 end
 
 function glf
+  git rev-parse || return
   test -n "$argv" && set --function args --header "$argv"
   osc52 (
       git log --oneline --no-decorate $argv \
