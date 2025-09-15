@@ -3,6 +3,7 @@ python3-dacite
 python3-icecream
 python3-jinja2
 python3-more-itertools
+python3-mutagen
 python3-packaging
 python3-pendulum
 python3-phonenumbers

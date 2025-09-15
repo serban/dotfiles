@@ -5,6 +5,7 @@ icecream
 iterm2
 jinja2
 more-itertools
+mutagen
 numpy-financial
 packaging
 pendulum
