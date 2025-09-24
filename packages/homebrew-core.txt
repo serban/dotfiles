@@ -76,5 +76,6 @@ watch
 watchexec
 web-ext
 wget2
+xh
 yj
 zig

@@ -44,3 +44,4 @@ unzip
 vim-nox
 wget2
 whois
+xh
