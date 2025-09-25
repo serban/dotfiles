@@ -1,6 +1,7 @@
 font-size                               = 15
 font-feature                            = -calt,-dlig,-liga
 cursor-style-blink                      = false
+window-inherit-font-size                = false
 window-inherit-working-directory        = false
 copy-on-select                          = clipboard
 macos-option-as-alt                     = true
@@ -9,3 +10,9 @@ resize-overlay                          = never
 
 keybind                                 = ctrl+shift+page_up=move_tab:-1
 keybind                                 = ctrl+shift+page_down=move_tab:+1
+
+keybind                                 = cmd+opt+1=set_font_size:10
+keybind                                 = cmd+opt+2=set_font_size:12
+keybind                                 = cmd+opt+3=set_font_size:15
+keybind                                 = cmd+opt+4=set_font_size:18
+keybind                                 = cmd+opt+5=set_font_size:24
