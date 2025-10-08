@@ -486,6 +486,7 @@ let g:serban_statusline_path_relative = 0
 let g:serban_command_palette_commands = [
 \   'SerbanDumpRuntimePath',
 \   'SerbanDisplayRuntimePath',
+\   'SerbanPythonVersion',
 \   'SerbanInsertModeline',
 \   'SerbanChangeWorkingDirToCurrentFileParent',
 \   'SerbanSwitchGraphToProducerModule',
@@ -599,6 +600,10 @@ function SerbanDisplayRuntimePath()
   \   'borderhighlight': ['BufSelectBorderHighlight'],
   \}
   call popup_menu(lines, opts)
+endfunction
+
+function SerbanPythonVersion()
+  python3 import sys; print(sys.version)
 endfunction
 
 function SerbanTabLine()
