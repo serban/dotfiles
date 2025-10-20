@@ -34,6 +34,9 @@
   lt = help  # TODO(serban): Implement
   ls = ls-files
   lu = ls-files --others --exclude-standard --directory
+  ma = help  # TODO(serban): Implement
+  mo = help  # TODO(serban): Implement
+  mu = help  # TODO(serban): Implement
   pl = pull --recurse-submodules
   ps = push
   pt = push --tags

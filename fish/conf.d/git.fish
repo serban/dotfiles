@@ -37,6 +37,9 @@ abbr --add glg git log --decorate=no --oneline --regexp-ignore-case --grep
 #          glt
 abbr --add gls git ls-files
 abbr --add glu git ls-files --others --exclude-standard --directory
+#          gma
+#          gmo
+#          gmu
 abbr --add gpl git pull --recurse-submodules
 abbr --add gps git push
 abbr --add gpt git push --tags
@@ -160,4 +163,16 @@ function glt
       --decorate-refs-exclude='remotes/*/HEAD' \
       --pretty='│ %cd │ %h │ %H │ %(decorate:prefix=,suffix=,pointer= → ,separator= · ) │ %s │' \
       $argv
+end
+
+function gma
+  git ls-files -z --exclude-standard --modified --others | xargs --null mvim --remote-tab-silent
+end
+
+function gmo
+  git ls-files -z --exclude-standard --modified | xargs --null mvim --remote-tab-silent
+end
+
+function gmu
+  git ls-files -z --exclude-standard --others | xargs --null mvim --remote-tab-silent
 end
