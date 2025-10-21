@@ -38,6 +38,7 @@ hugo
 jq
 jsonnet
 just
+lazygit
 less
 lf
 make

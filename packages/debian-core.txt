@@ -25,6 +25,7 @@ jq
 jsonnet
 just
 kitty-terminfo
+lazygit
 lf
 makepasswd
 micro

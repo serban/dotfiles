@@ -1,0 +1,16 @@
+git:
+  autoFetch: false
+
+gui:
+  showBottomLine: false
+  showFileTree: false
+  showListFooter: false
+  showPanelJumps: false
+  showRandomTip: false
+  showRootItemInFileTree: false
+  sidePanelWidth: 0.44
+
+notARepository: quit
+
+update:
+  method: never

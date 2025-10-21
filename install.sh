@@ -141,6 +141,9 @@ ln -vsnf ${DOTS2}/i3status-config               ~/.config/i3status/config
 mkdir -p ~/.config/ipython/profile_default
 ln -vsnf ${DOTS3}/ipython_config.py             ~/.config/ipython/profile_default/ipython_config.py
 
+mkdir -p ~/.config/lazygit
+ln -vsnf ${DOTS2}/lazygit-config.yml            ~/.config/lazygit/config.yml
+
 mkdir -p ~/.config/less
 ln -vsnf ${DOTS2}/lesskey                       ~/.config/less/lesskey
 
