@@ -148,6 +148,15 @@ set --global --export FZF_DEFAULT_OPTS \
     --color bg+:0,fg+:7,pointer:7 \
     #
 
+# • https://github.com/junegunn/fzf/releases/tag/v0.66.0
+# • https://github.com/junegunn/fzf/blob/master/CHANGELOG.md#0660
+#   ⁃ https://github.com/junegunn/fzf/blob/master/CHANGELOG.md#hiding-the-gutter-column
+test (fzf --version | cut -d . -f 2) -ge 66
+and set FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS \
+    --gutter '" "' \
+    --gutter-raw '" "' \
+    #
+
 # NB: From the `less` man page:
 # Options are also taken from the environment variable "LESS". Some options like
 # -k or -D require a string to follow the option letter. The string for that
