@@ -1573,6 +1573,8 @@ endif
 " ------------------------------------------------------------------------------
 " ABBREVIATIONS
 
+iabbrev sg Șerban
+
 iabbrev td TODO(serban):
 iabbrev ts TODO(serban):
 
