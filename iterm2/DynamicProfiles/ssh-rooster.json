@@ -1,0 +1,11 @@
+{
+  "Profiles": [
+    {
+      "Name": "rooster",
+      "Dynamic Profile Parent Name": "Serban Solarized Dark Secure Shell",
+      "Shortcut": "R",
+      "Command": "/opt/homebrew/bin/ssh rooster",
+      "Guid": "BE11FBD4-E441-4137-9AA7-88EDCDFC335B"
+    }
+  ]
+}
