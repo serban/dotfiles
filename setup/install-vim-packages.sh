@@ -17,6 +17,3 @@ curl https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
 
 print 'Installing plugins'
 vim +PlugInstall +quitall
-
-print 'Installing Go binaries'
-vim +GoInstallBinaries +quitall
