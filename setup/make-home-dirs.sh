@@ -6,6 +6,7 @@ set -o pipefail
 
 readonly -a kFoldersCommon=(
 
+  ass
   bin
   del
   env
