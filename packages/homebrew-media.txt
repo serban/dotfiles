@@ -3,5 +3,6 @@ flac
 lame
 librsvg
 lilypond
+sox
 timidity
 vorbis-tools
