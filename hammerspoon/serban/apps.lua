@@ -24,6 +24,7 @@ M.kPlacement = {
   { app='Maps',             bun='com.apple.Maps',                     max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Messages',         bun='com.apple.MobileSMS',                max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='MuseScore Studio', bun='org.musescore.MuseScore',            max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
+  { app='Neovide',          bun='com.neovide.neovide',                max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='NetNewsWire',      bun='com.ranchero.NetNewsWire-Evergreen', max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Notes',            bun='com.apple.Notes',                    max=false,  [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='Numbers',          bun='com.apple.iWork.Numbers',            max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },

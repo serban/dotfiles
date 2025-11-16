@@ -161,6 +161,9 @@ mkdir -p ~/.config/moc/themes
 ln -vsnf ${DOTS2}/moc-config                    ~/.config/moc/config
 ln -vsnf ${DOTS3}/moc-theme                     ~/.config/moc/themes/serban
 
+mkdir -p ~/.config/neovide
+ln -vsnf ${DOTS2}/neovide-config.toml           ~/.config/neovide/config.toml
+
 mkdir -p ~/.config/newsboat
 ln -vsnf ${DOTS2}/newsboat-config               ~/.config/newsboat/config
 

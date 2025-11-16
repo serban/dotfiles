@@ -1,6 +1,8 @@
 function pid#VimVariant()
   if has('gui_macvim') && has('gui_running')
     return 'MacVim'
+  elseif exists('g:neovide')
+    return 'Neovide'
   elseif has('nvim')
     return 'Neovim'
   else
@@ -9,6 +11,9 @@ function pid#VimVariant()
 endfunction
 
 function pid#VimVersion()
+  if exists('g:neovide')
+    return g:neovide_version
+  endif
   return has('nvim') ? luaeval('tostring(vim.version())') : v:versionlong
 endfunction
 

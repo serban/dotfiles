@@ -5,6 +5,7 @@ function e
   set options $options (fish_opt --short=r --long=read-only)
   set options $options (fish_opt --short=t --long=tabs)
   set options $options (fish_opt --short=u --long=unrestricted)
+  set options $options (fish_opt --short=v --long=neovide)
 
   if not argparse $options -- $argv
     return
@@ -34,6 +35,11 @@ function e
       echo 'Could not find gvim or mvim'
       return 1
     end
+  end
+
+  if test -n "$_flag_neovide"
+    set xargs
+    set binary neovide --
   end
 
   if test -n "$_flag_neovim"

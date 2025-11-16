@@ -1,0 +1,4 @@
+fork = true
+frame = 'transparent'
+maximized = true
+tabs = false

@@ -45,6 +45,7 @@ make
 md5deep
 micro
 moreutils
+neovide
 neovim
 newsboat
 numbat
