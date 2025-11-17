@@ -15,6 +15,7 @@ function fn
   set --local fd    "fd --base-directory $root --type file --strip-cwd-prefix | sort"
   set --local mvim  "mvim --remote-tab-silent $root/{}"
   set --local open  "open -R $root/{}"
+  set --local title "title 📝 {q}"
 
   set --local clip_base  'echo -n (builtin path basename {}) | fish_clipboard_copy'
   set --local clip_path  "echo -n '$root'/{} | fish_clipboard_copy"
@@ -31,6 +32,7 @@ function fn
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
             --bind "alt-p:execute($osc52_path)" \
+            --bind "alt-t:execute($title)" \
             --bind 'alt-h:change-preview-window(bottom,28|bottom,16)' \
             --bind 'alt-v:change-preview-window(right,140|)' \
             --bind 'ctrl-g:change-preview-window(bottom,16|)' \
