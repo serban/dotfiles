@@ -95,6 +95,7 @@ set --global --export INPUTRC             $HOME/.config/readline/inputrc
 set --global --export SCREENRC            $HOME/.config/screen/screenrc
 
 set --global --export GNUPGHOME           $HOME/.local/share/gnupg
+set --global --export TERMINFO_DIRS       $HOME/.local/share/terminfo
 
 set --global --export LESSHISTFILE        $HOME/.local/state/less/less-history
 set --global --export PSQL_HISTORY        $HOME/.local/state/postgresql/psql-history

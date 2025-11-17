@@ -58,6 +58,7 @@ mkdir -p -m 700 ~/.cache/grip
 
 mkdir -p -m 700 ~/.local/share/bookmarks
 mkdir -p -m 700 ~/.local/share/gnupg
+mkdir -p -m 700 ~/.local/share/terminfo
 
 mkdir -p -m 700 ~/.local/state/bash
 mkdir -p -m 700 ~/.local/state/bash/history
