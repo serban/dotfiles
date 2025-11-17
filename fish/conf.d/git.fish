@@ -100,8 +100,9 @@ function gsou
 end
 
 function glf
-  git rev-parse || return
+  set --function top (git rev-parse --show-toplevel) || return
   test -n "$argv" && set --function args --header "$argv"
+  title 📜 (builtin path basename $top)
   osc52 (
       git log --oneline --no-decorate $argv \
           | fzf --no-sort \
