@@ -68,6 +68,9 @@
   "indent_guides": {
     "enabled": false
   },
+  "sticky_scroll": {
+    "enabled": true
+  },
   "scrollbar": {
     "show": "auto",
     "cursors": false,
@@ -102,7 +105,7 @@
   "current_line_highlight": "gutter",
   "wrap_guides": [80],
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "search_wrap": false,
   "tab_size": 2,
   "inline_code_actions": false,
