@@ -23,6 +23,11 @@ abbr --add pt pstree -g 3 -s
 abbr --add p3 python3 -B
 abbr --add p8 ping 8.8.8.8
 
+abbr --add kc 'cd ~/src/config && git status'
+abbr --add kd 'cd ~/src/dotfiles && git status'
+abbr --add kp 'cd ~/src/private && git status'
+abbr --add kw 'cd ~/src/wip && git status'
+
 abbr --add rc 'gm check'
 abbr --add ro 'gm check common'
 abbr --add rl 'gm pull common'
