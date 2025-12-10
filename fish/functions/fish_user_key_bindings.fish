@@ -1,5 +1,6 @@
 function fish_user_key_bindings
   bind \cc                cancel-commandline
+  bind ctrl-enter         run_previous_command
 if test (string split . --fields 1 $FISH_VERSION) -ge 4
   bind alt-left           prevd-or-backward-token   # __fish_shared_key_bindings
   bind alt-right          nextd-or-forward-token    # __fish_shared_key_bindings
