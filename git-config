@@ -46,6 +46,7 @@
   rp = rev-parse --short
   sh = show --stat --patch
   st = status
+  sm = status --untracked-files=no
   su = submodule update --init --recursive
   sr = submodule update --remote --rebase --recursive
   sy = submodule summary

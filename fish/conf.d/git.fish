@@ -49,6 +49,7 @@ abbr --add grs git reset
 abbr --add grp git rev-parse --short
 abbr --add gsh git show --stat --patch
 abbr --add gst git status
+abbr --add gsm git status --untracked-files=no
 abbr --add gsu git submodule update --init --recursive
 abbr --add gsr git submodule update --remote --rebase --recursive
 abbr --add gsy git submodule summary
