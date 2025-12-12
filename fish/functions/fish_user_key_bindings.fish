@@ -21,4 +21,5 @@ end
   bind \ey                'commandline --insert (date +%Y-%m-%d)'
   bind \ea                'fish_commandline_append " &| head -n 20"'
   bind \ez                'fish_commandline_append " &| tail -n 20"'
+  bind \en                'fish_commandline_append " &| wc -l"'
 end
