@@ -1482,6 +1482,22 @@ augroup serban-log
   autocmd BufReadPost *.log silent call SerbanWrapNone()
 augroup end
 
+augroup serban-typst
+  autocmd!
+  autocmd FileType typst iabbrev <buffer> h1 =
+  autocmd FileType typst iabbrev <buffer> h2 ==
+  autocmd FileType typst iabbrev <buffer> h3 ===
+  autocmd FileType typst iabbrev <buffer> h4 ====
+  autocmd FileType typst iabbrev <buffer> h5 =====
+  autocmd FileType typst iabbrev <buffer> h6 ======
+  autocmd FileType typst iabbrev <buffer> dt TODO
+  autocmd FileType typst iabbrev <buffer> td TODO:
+  autocmd FileType typst iabbrev <buffer> md ·
+  autocmd FileType typst iabbrev <buffer> ar →
+  autocmd FileType typst iabbrev <buffer> ch ✓
+  autocmd FileType typst iabbrev <buffer> cr ✗
+augroup end
+
 augroup serban-markdown
   autocmd!
   autocmd FileType markdown TableModeEnable
