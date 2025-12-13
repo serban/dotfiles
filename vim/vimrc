@@ -850,6 +850,12 @@ function SerbanFormatShortlinks()
   echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Formatted shortlinks'
 endfunction
 
+function SerbanScrollToCurrentDateHeading()
+  if search('\v^## ' . strftime('%Y-%m-%d', localtime() - 3600 * 5), 'w') !=# 0
+    normal! zt
+  endif
+endfunction
+
 function SerbanHighlight()
   let g:serban_solarized_base03  = &background ==# 'dark' ? '#002b36' : '#fdf6e3'
   let g:serban_solarized_base02  = &background ==# 'dark' ? '#073642' : '#eee8d5'
@@ -1537,6 +1543,11 @@ augroup serban-text
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatBullets()
   autocmd BufWritePre ~/txt/*.md silent call SerbanRemoveHttpScheme()
   autocmd BufWritePre ~/txt/*.md silent call SerbanFormatShortlinks()
+augroup end
+
+augroup serban-snippets
+  autocmd!
+  autocmd BufWinEnter ~/txt/*Snippets.md call SerbanScrollToCurrentDateHeading()
 augroup end
 
 augroup serban-contacts
