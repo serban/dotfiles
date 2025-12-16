@@ -67,6 +67,7 @@ ruff
 rust
 sqlite
 sqlite-utils
+switchaudio-osx
 terminal-notifier
 the_silver_searcher
 tmux
