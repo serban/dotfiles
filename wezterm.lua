@@ -35,7 +35,7 @@ config.window_frame = {
 }
 
 config.window_decorations = 'INTEGRATED_BUTTONS | RESIZE'
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false -- https://github.com/wezterm/wezterm/issues/7197
 config.adjust_window_size_when_changing_font_size = false
 
 config.send_composed_key_when_left_alt_is_pressed = false
