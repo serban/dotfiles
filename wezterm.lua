@@ -37,6 +37,7 @@ config.window_frame = {
 config.window_decorations = 'INTEGRATED_BUTTONS | RESIZE'
 config.hide_tab_bar_if_only_one_tab = false -- https://github.com/wezterm/wezterm/issues/7197
 config.adjust_window_size_when_changing_font_size = false
+config.window_close_confirmation = 'NeverPrompt'
 
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
@@ -45,6 +46,7 @@ config.enable_kitty_keyboard = true
 
 config.keys = {
 
+  { mods='CMD',           key='w',  action=wezterm.action.CloseCurrentTab({confirm=false})  },
   { mods='CMD',           key='t',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir})  },
   { mods='CMD',           key='z',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir, args={'/opt/homebrew/bin/fish', '-c', 'fn'}}) },
 
