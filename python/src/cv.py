@@ -29,7 +29,7 @@ class Package:
 kPackages = [
 
   Package('bat',       ['bat', '--version'],       r'bat (.+)',           '2025-08-11', '0.25.0',   '0.25.0',   '0.25.0'),
-  Package('btop',      ['btop', '--version'],      r'btop version: (.+)', '2025-08-11', '1.3.2',    '1.3.2',    '1.4.4'),
+  Package('btop',      ['btop', '--version'],      r'btop version: (.+)', '2025-12-27', '1.3.2',    '1.4.6',    '1.4.6'),
   Package('delta',     ['delta', '--version'],     r'delta (.+)',         '2025-08-11', '0.18.2',   '0.18.2',   '0.18.2'),
   Package('fd',        ['fd', '--version'],        r'fd(?:find)? (.+)',   '2025-08-11', '10.2.0',   '10.2.0',   '10.2.0'),
   Package('fish',      ['fish', '--version'],      r'fish, version (.+)', '2025-08-11', '4.0.2',    '4.0.2',    '4.0.2'),

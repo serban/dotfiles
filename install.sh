@@ -89,6 +89,9 @@ ln -vsnf ${DOTS2}/bat-config                    ~/.config/bat/config
 mkdir -p ~/.config/bpython
 ln -vsnf ${DOTS2}/bpython-config                ~/.config/bpython/config
 
+mkdir -p ~/.config/btop
+ln -vsnf ${DOTS2}/btop.conf                     ~/.config/btop/btop.conf
+
 mkdir -p ~/.config/colordiff
 ln -vsnf ${DOTS2}/colordiffrc                   ~/.config/colordiff/colordiffrc
 
