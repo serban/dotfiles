@@ -38,6 +38,7 @@ ripgrep
 rsync
 silversearcher-ag
 sqlite-utils
+stress-ng
 tmux
 tree
 units
