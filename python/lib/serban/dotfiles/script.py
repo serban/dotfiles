@@ -165,11 +165,11 @@ def map(d: collections.abc.Mapping) -> None:
 
 def timestamp() -> None:
   """Print the current local time."""
-  print('✝', time.strftime('%Y-%m-%d %H:%M:%S'))
+  print(f'  {"─" * 26}  {time.strftime("%Y-%m-%d %H:%M:%S")}  {"─" * 27}  ')
 
 def separator() -> None:
   """Print a nice horizontal line."""
-  print(f'  {"─"*76}  ')
+  print(f'  {"─" * 76}  ')
 
 def heading(s: str) -> None:
   """Print a nice box around some text."""
