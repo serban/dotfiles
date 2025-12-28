@@ -173,19 +173,13 @@ def separator() -> None:
 
 def heading(s: str) -> None:
   """Print a nice box around some text."""
-  width = 80
-  pad = max(width - 4, len(s))
+  pad = max(len(s), 76)
+  line = '─' * pad
+  text = f'{s:{pad}}'
 
-  horizontal_line = '─'
-  vertical_line   = '│'
-  upper_left      = '╭'
-  upper_right     = '╮'
-  lower_left      = '╰'
-  lower_right     = '╯'
-
-  print('{}{}{}'.format(upper_left, horizontal_line*(pad+2), upper_right))
-  print('{} {:{pad}} {}'.format(vertical_line, s, vertical_line, pad=pad))
-  print('{}{}{}'.format(lower_left, horizontal_line*(pad+2), lower_right))
+  print(f'╭─{line}─╮')
+  print(f'│ {text} │')
+  print(f'╰─{line}─╯')
 
 def wait(d: float | datetime.timedelta) -> datetime.timedelta:
   """Wait for the given time duration with visual indication of progress.
@@ -280,7 +274,7 @@ def _fzf(noun: str, items: collections.abc.Iterable[str], multi=False) -> str:
          '--header', header,
          '--read0', '--print0',
          '--bind', 'enter:accept-non-empty',
-         '--bind', 'esc:clear-selection'] +
+         '--bind', 'esc:clear-selection'] +  # Renamed ‘clear-multi’ in fzf 0.64
         (['--bind', 'ctrl-a:select-all', '--multi'] if multi else []),
         check=True, text=True, input='\0'.join(items),
         stdout=subprocess.PIPE).stdout.rstrip('\0')
