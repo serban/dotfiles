@@ -3,6 +3,9 @@
   "theme": "auto",
   "side_bar_layout": "tabs",
 
+  "ui_scale": 1.2,
+  "font_size": 11,
+
   "log_input": false,
   "log_commands": false,
 
