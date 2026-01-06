@@ -503,6 +503,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanFormatShortlinks',
 \   'SerbanHighlight',
 \   'SerbanMarkPalette',
+\   'SerbanRemoveMarks',
 \   'SerbanRemoveHttpScheme',
 \   'SerbanRemoveTrailingWhitespace',
 \   'SerbanSetMacVimBackground',
@@ -1053,6 +1054,11 @@ function SerbanMarkPalette()
   else
     MarkPalette serban
   endif
+endfunction
+
+function SerbanRemoveMarks()
+  silent! %s/\v[®℠™]//g
+  echom strftime('[%Y-%m-%d %H:%M:%S] ') . 'Removed marks'
 endfunction
 
 function SerbanRemoveHttpScheme()
@@ -1916,6 +1922,7 @@ endif
   nnoremap <unique> <Leader>ro :call SerbanSortParagraph() <CR>
   nnoremap <unique> <Leader>rb :call SerbanFormatBullets() <CR>
   nnoremap <unique> <Leader>rs :call SerbanFormatShortlinks() <CR>
+  nnoremap <unique> <Leader>rm :call SerbanRemoveMarks() <CR>
   nnoremap <unique> <Leader>rh :call SerbanRemoveHttpScheme() <CR>
   nnoremap <unique> <Leader>rw :call SerbanRemoveTrailingWhitespace() <CR>
   nnoremap <unique> <Leader>rr :checktime <CR>
