@@ -44,7 +44,7 @@ M.kPlacement = {
   { app='TextEdit',         bun='com.apple.TextEdit',                 max=false,  [1]={g.kScreenLeft, g.kGridCenter},       [2]={g.kScreenLeft,   g.kGridCenter},     },
   { app='Ulysses',          bun='com.ulyssesapp.mac',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Weather',          bun='com.apple.weather',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
-  { app='WezTerm',          bun='com.github.wez.wezterm',             max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='WezTerm',          bun='com.github.wez.wezterm',             max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Xcode',            bun='com.apple.dt.Xcode',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='YouTube Music',    bun='com.apple.Safari.WebApp.✻',          max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  }, -- Safari PWA Bundle ID UUID omitted
   { app='Zed',              bun='dev.zed.Zed',                        max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
