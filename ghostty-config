@@ -1,3 +1,4 @@
+auto-update-channel                     = stable
 font-size                               = 15
 font-feature                            = -calt,-dlig,-liga
 cursor-style-blink                      = false
