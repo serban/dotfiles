@@ -4,6 +4,7 @@ font-feature                            = -calt,-dlig,-liga
 cursor-style-blink                      = false
 window-inherit-font-size                = false
 window-inherit-working-directory        = false
+tab-inherit-working-directory           = false
 copy-on-select                          = clipboard
 macos-option-as-alt                     = true
 shell-integration-features              = no-cursor
