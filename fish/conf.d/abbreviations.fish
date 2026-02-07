@@ -25,6 +25,7 @@ abbr --add p8 ping 8.8.8.8
 
 abbr --add kc 'cd ~/src/config && git status'
 abbr --add kd 'cd ~/src/dotfiles && git status'
+abbr --add kn 'cd ~/txt/p && git status'
 abbr --add kp 'cd ~/src/private && git status'
 abbr --add kw 'cd ~/src/wip && git status'
 
