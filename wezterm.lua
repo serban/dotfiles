@@ -27,6 +27,7 @@ config.term = 'wezterm'
 -- NB: https://github.com/Gogh-Co/Gogh/commit/0667af46f84df834dd4f105e644704f4deca7608
 --     ↳ 2024-10-13: Add Kanagawa Lotus. Rename Kanagawa to Kanagawa Wave
 config.color_scheme = 'Kanagawa (Gogh)'
+config.bold_brightens_ansi_colors = false
 
 config.font_size = 15.0
 config.window_frame = {
