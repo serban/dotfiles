@@ -101,6 +101,8 @@ abbr --add mocp 'mocp --moc-dir ~/.config/moc'
 abbr --add  units  "units --history ''"
 abbr --add gunits "gunits --history ''"
 
+abbr --add marks 'sg [©®℠™]'
+
 abbr --add bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 
 # The regular expression I want to pass to perl is \\n, with two backslashes.
