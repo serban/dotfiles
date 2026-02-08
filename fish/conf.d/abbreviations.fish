@@ -31,6 +31,8 @@ abbr --add kw 'cd ~/src/wip && git status'
 
 abbr --add rc 'gm check'
 abbr --add ro 'gm check common'
+abbr --add rt 'gm check content'
+abbr --add rd 'gm check data'
 abbr --add rl 'gm pull common'
 abbr --add rb 'gm sublime'
 abbr --add ru 'gm sublime common'
