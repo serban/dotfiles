@@ -41,6 +41,7 @@ M.kPlacement = {
   { app='Sublime Merge',    bun='com.sublimemerge',                   max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
   { app='System Settings',  bun='com.apple.systempreferences',        max=false,  [1]={g.kScreenLeft, g.kGridLeft},         [2]={g.kScreenLeft,   g.kGridLeft},       },
   { app='TIDAL',            bun='com.tidal.desktop',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
+  { app='Terminal',         bun='com.apple.Terminal',                 max=false,  [1]={g.kScreenLeft, g.kGridRight},        [2]={g.kScreenLeft,   g.kGridRight},      },
   { app='TextEdit',         bun='com.apple.TextEdit',                 max=false,  [1]={g.kScreenLeft, g.kGridCenter},       [2]={g.kScreenLeft,   g.kGridCenter},     },
   { app='Ulysses',          bun='com.ulyssesapp.mac',                 max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenCenter, g.kGridMaximized},  },
   { app='Weather',          bun='com.apple.weather',                  max=true,   [1]={g.kScreenLeft, g.kGridMaximized},    [2]={g.kScreenLeft,   g.kGridMaximized},  },
