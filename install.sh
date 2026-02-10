@@ -236,6 +236,16 @@ darwin && {
 }
 
 darwin && {
+  mkdir -p                                                            "${HOME}/Library/Application Support/numbat"
+  ln -vsnf ${DOTS3}/numbat-config.toml                                "${HOME}/Library/Application Support/numbat/config.toml"
+}
+
+linux && {
+  mkdir -p                                                            "${HOME}/.config/numbat"
+  ln -vsnf ${DOTS2}/numbat-config.toml                                "${HOME}/.config/numbat/config.toml"
+}
+
+darwin && {
   mkdir -p                                                            "${HOME}/Library/Application Support/Code/User"
   ln -vsnf ${DOTS4}/vscode/settings.json                              "${HOME}/Library/Application Support/Code/User/settings.json"
 }

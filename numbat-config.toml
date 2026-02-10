@@ -1,0 +1,9 @@
+prompt = '› '
+
+[formatting]
+digit-separator = ','
+digit-grouping-threshold = 4
+significant-digits = 5
+
+[exchange-rates]
+fetching-policy = 'on-first-use'
