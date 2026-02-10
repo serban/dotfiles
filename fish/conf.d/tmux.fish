@@ -1,4 +1,4 @@
-abbr --add mdc tmux detach-client -s
+abbr --add mdc 'tmux detach-client -s'
 
 function mrw
   if test -z $TMUX

@@ -1,6 +1,6 @@
 abbr --add gccl  'gcloud config list'
 abbr --add gccca 'gcloud config configurations activate'
-abbr --add gcpn  'gcloud projects describe --format "get(projectNumber)"'
+abbr --add gcpn  "gcloud projects describe --format 'get(projectNumber)'"
 abbr --add gcnsl 'gcloud compute networks subnets list'
 
 function gcccl

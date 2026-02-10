@@ -1,17 +1,17 @@
-abbr --add had hg add
-abbr --add ham hg amend
-abbr --add hco hg commit
-abbr --add hdc hg diff --change
-abbr --add hdf hg diff --from
-abbr --add hdi hg diff
-abbr --add hev hg evolve
-abbr --add hlo hg log --stat
-abbr --add hlp hg log --stat --patch --verbose --limit 1
-abbr --add hme hg meld
-abbr --add hrb hg rebase
-abbr --add hrs hg resolve
-abbr --add hst hg status
-abbr --add hup hg update
+abbr --add had 'hg add'
+abbr --add ham 'hg amend'
+abbr --add hco 'hg commit'
+abbr --add hdc 'hg diff --change'
+abbr --add hdf 'hg diff --from'
+abbr --add hdi 'hg diff'
+abbr --add hev 'hg evolve'
+abbr --add hlo 'hg log --stat'
+abbr --add hlp 'hg log --stat --patch --verbose --limit 1'
+abbr --add hme 'hg meld'
+abbr --add hrb 'hg rebase'
+abbr --add hrs 'hg resolve'
+abbr --add hst 'hg status'
+abbr --add hup 'hg update'
 
 abbr --add hec 'e (hg status --no-status --change .)'
 abbr --add heb 'e (hg status --no-status --rev p4base)'

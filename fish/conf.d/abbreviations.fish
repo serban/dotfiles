@@ -1,27 +1,27 @@
-abbr --add h head -n 20
-abbr --add t tail -n 20
-abbr --add l less -N
+abbr --add h 'head -n 20'
+abbr --add t 'tail -n 20'
+abbr --add l 'less -N'
 
-abbr --add d colordiff -u
+abbr --add d 'colordiff -u'
 abbr --add f --set-cursor=° 'fd --color always ° | sort | less'
 abbr --add w --set-cursor=° 'g ~/wks/°'
 abbr --add 3 --set-cursor=° 'tree -C -F --dirsfirst --gitignore ° | less'
 
 abbr --add i " history merge && history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' --reverse"
 
-abbr --add j jobs
-abbr --add k kill
+abbr --add j 'jobs'
+abbr --add k 'kill'
 
-abbr --add cp cp -vi
-abbr --add mv mv -vi
-abbr --add rm rm -v
+abbr --add cp 'cp -vi'
+abbr --add mv 'mv -vi'
+abbr --add rm 'rm -v'
 
-abbr --add lc wc -l
+abbr --add lc 'wc -l'
 
-abbr --add pt pstree -g 3 -s
+abbr --add pt 'pstree -g 3 -s'
 
-abbr --add p3 python3 -B
-abbr --add p8 ping 8.8.8.8
+abbr --add p3 'python3 -B'
+abbr --add p8 'ping 8.8.8.8'
 
 abbr --add kc 'cd ~/src/config && git status'
 abbr --add kd 'cd ~/src/dotfiles && git status'
@@ -51,39 +51,39 @@ abbr --add au 'sudo apt update && apt list --upgradable'
 abbr --add bi 'brew info'
 abbr --add bo 'brew outdated'
 abbr --add bs 'brew uses --recursive --installed'
-abbr --add --set-cursor=° bl 'brew list ° | less'
+abbr --add bl --set-cursor=° 'brew list ° | less'
 
 abbr --add it 'python3 -B ~/src/dotfiles/iterm2/Scripts/local.py'
-abbr --add jd jackd --driver coreaudio --rate 44100
+abbr --add jd 'jackd --driver coreaudio --rate 44100'
 
-abbr --add gc gcert
+abbr --add gc 'gcert'
 
-abbr --add kb xset r rate 200 50  # in milliseconds and keystrokes/sec
+abbr --add kb 'xset r rate 200 50'  # in milliseconds and keystrokes/sec
 
-abbr --add l1  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance   0
-abbr --add l2  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  20
-abbr --add l3  m1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  30
+abbr --add l1  'm1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance   0'
+abbr --add l2  'm1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  20'
+abbr --add l3  'm1ddc display 30AEF261-0000-0000-311F-0104B5462778 set luminance  30'
 
-abbr --add lg1 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance   0
-abbr --add lg2 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance  80
-abbr --add lg3 m1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance 100
+abbr --add lg1 'm1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance   0'
+abbr --add lg2 'm1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance  80'
+abbr --add lg3 'm1ddc display 1E6D933E-0000-0000-0921-0104B5221678 set luminance 100'
 
 abbr --add ago "ag 'TODO\(serban\)'"
 
 abbr --add dfs 'delta --features (dark)-side-by-side'
 abbr --add dfu 'delta --features (dark)-unified-diff'
 
-abbr --add nva NVIM_APPNAME=nvim-astro nvim   # https://astronvim.com - AstroNvim
-abbr --add nvc NVIM_APPNAME=nvim-chad nvim    # https://nvchad.com - NvChad
-abbr --add nvk NVIM_APPNAME=nvim-kick nvim    # https://github.com/nvim-lua/kickstart.nvim
-abbr --add nvl NVIM_APPNAME=nvim-lazy nvim    # https://lazyvim.org - LazyVim
-abbr --add nvn NVIM_APPNAME=nvim-norm nvim    # https://normalnvim.github.io - NormalNvim
-abbr --add nvv NVIM_APPNAME=nvim-vim nvim     # https://github.com/serban/dotfiles/blob/master/vim/vimrc
-abbr --add nvw NVIM_APPNAME=nvim-wip nvim
+abbr --add nva 'NVIM_APPNAME=nvim-astro nvim'   # https://astronvim.com - AstroNvim
+abbr --add nvc 'NVIM_APPNAME=nvim-chad nvim'    # https://nvchad.com - NvChad
+abbr --add nvk 'NVIM_APPNAME=nvim-kick nvim'    # https://github.com/nvim-lua/kickstart.nvim
+abbr --add nvl 'NVIM_APPNAME=nvim-lazy nvim'    # https://lazyvim.org - LazyVim
+abbr --add nvn 'NVIM_APPNAME=nvim-norm nvim'    # https://normalnvim.github.io - NormalNvim
+abbr --add nvv 'NVIM_APPNAME=nvim-vim nvim'     # https://github.com/serban/dotfiles/blob/master/vim/vimrc
+abbr --add nvw 'NVIM_APPNAME=nvim-wip nvim'
 
-abbr --add sha sha256sum
+abbr --add sha 'sha256sum'
 
-abbr --add sts "date '+%Y-%m-%d-%H%M%S'"
+abbr --add sts 'date +%Y-%m-%d-%H%M%S'
 
 # The slash in front of each name tells fd to match relative to the current
 # directory. Without the slash, fd excludes any file matching the name at any
@@ -111,9 +111,9 @@ abbr --add bleach "perl -pe 's/\e\[[0-9;]*m//g'"
 # backslashes to represent the four I want inserted in the abbreviation string.
 abbr --add sn "perl -pe 's/\\\\\\\\n/\n/g'"
 
-abbr --add rmclass find . -type f -name "'*.class'" -exec rm -vf "'{}'" \\\;
-abbr --add rmds find . -type f -name .DS_Store -exec rm -vf "'{}'" \\\;
-abbr --add rmpyc find . -type f -name "'*.pyc'" -exec rm -vf "'{}'" \\\;
-abbr --add rmswp find . -type f -regex "'^.*/\\.[^/]*sw[a-z]\$'" -exec rm -vf "'{}'" \\\;
+abbr --add rmclass "find . -type f -name '*.class' -exec rm -vf '{}' \;"
+abbr --add rmds    "find . -type f -name .DS_Store -exec rm -vf '{}' \;"
+abbr --add rmpyc   "find . -type f -name '*.pyc' -exec rm -vf '{}' \;"
+abbr --add rmswp   "find . -type f -regex '^.*/\\.[^/]*sw[a-z]\$' -exec rm -vf '{}' \;"
 
-abbr --add wmt watchman-make --pattern "'**/BUILD'" "'**/*.h'" "'**/*.cc'" --run "'bazel test :all'"
+abbr --add wmt "watchman-make --pattern '**/BUILD' '**/*.h' '**/*.cc' --run 'bazel test :all'"
