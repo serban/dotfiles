@@ -46,27 +46,35 @@ set --universal fish_features \
     test-require-arg \
     #
 
-set --global fish_color_keyword green
-set --global fish_color_command yellow
-set --global fish_color_option yellow
-set --global fish_color_param yellow
-set --global fish_color_quote yellow
-set --global fish_color_operator magenta
-set --global fish_color_escape brmagenta
-set --global fish_color_redirection cyan
-set --global fish_color_end blue
-set --global fish_color_error brred
-set --global fish_color_comment bryellow
-set --global fish_color_autosuggestion normal
-set --global fish_color_cancel brred --reverse
+set --global fish_color_normal          normal
+set --global fish_color_keyword         green
+set --global fish_color_command         yellow
+set --global fish_color_option          yellow
+set --global fish_color_param           yellow
+set --global fish_color_quote           yellow
+set --global fish_color_operator        magenta
+set --global fish_color_escape          brmagenta
+set --global fish_color_redirection     cyan
+set --global fish_color_end             blue
+set --global fish_color_error           brred
+set --global fish_color_comment         bryellow
+set --global fish_color_autosuggestion  normal
+set --global fish_color_cancel          brred --reverse
+set --global fish_color_valid_path      --underline
+set --global fish_color_search_match    --reverse
+set --global fish_color_history_current --bold
 
-# https://github.com/fish-shell/fish-shell/issues/2442
-# ↳ $fish_color_search_match only supports background colors
-set --global fish_color_search_match --background yellow
+set --global fish_pager_color_progress  brblack --background=yellow
 
-set --global fish_pager_color_prefix magenta --underline
-set --global fish_pager_color_completion normal
-set --global fish_pager_color_description green
+set --global fish_pager_color_background            normal
+set --global fish_pager_color_prefix                brred --bold --underline
+set --global fish_pager_color_completion            normal --bold
+set --global fish_pager_color_description           brcyan
+
+set --global fish_pager_color_selected_background   --background=cyan
+set --global fish_pager_color_selected_prefix       brwhite --bold
+set --global fish_pager_color_selected_completion   white --bold
+set --global fish_pager_color_selected_description  white
 
 set --global fish_greeting
 
