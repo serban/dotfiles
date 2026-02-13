@@ -19,6 +19,9 @@ keybind                                 = cmd+opt+2=set_font_size:12
 keybind                                 = cmd+opt+3=set_font_size:15
 keybind                                 = cmd+opt+4=set_font_size:18
 keybind                                 = cmd+opt+5=set_font_size:24
+keybind                                 = cmd+opt+6=set_font_size:27
+keybind                                 = cmd+opt+7=set_font_size:30
+keybind                                 = cmd+opt+8=set_font_size:36
 
 keybind                                 = ctrl+0=csi:48;5u
 keybind                                 = ctrl+1=csi:49;5u
