@@ -136,6 +136,13 @@ set --global --export HOMEBREW_AUTO_UPDATE_SECS 21600  # 6 hours
 set --global --export JUST_COLOR always
 set --global --export JUST_COMMAND_COLOR purple
 
+set --global --export HEXYL_COLOR_OFFSET            bright green
+set --global --export HEXYL_COLOR_NULL              black
+set --global --export HEXYL_COLOR_ASCII_PRINTABLE   yellow
+set --global --export HEXYL_COLOR_ASCII_WHITESPACE  blue
+set --global --export HEXYL_COLOR_ASCII_OTHER       red
+set --global --export HEXYL_COLOR_NONASCII          bright yellow
+
 set --global --export FZF_DEFAULT_COMMAND fd --type file --strip-cwd-prefix
 
 set --global --export FZF_DEFAULT_OPTS \
