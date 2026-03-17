@@ -47,6 +47,7 @@ abbr --add we 'watchexec --quiet --clear --shell none'
 abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m unittest discover --pattern '*_test.py'"
 
 abbr --add au 'sudo apt update && apt list --upgradable'
+abbr --add rr 'stat /var/run/reboot-required /var/run/reboot-required.pkgs'
 
 abbr --add bi 'brew info'
 abbr --add bo 'brew outdated'
