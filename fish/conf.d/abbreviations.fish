@@ -42,6 +42,11 @@ abbr --add js 'just'
 abbr --add jl 'just --list'
 
 abbr --add ur 'uv run'
+abbr --add um 'uv run main.py'
+abbr --add uh 'uv run main.py -h'
+abbr --add up 'uv run python'
+abbr --add ui 'uv run python -i'
+abbr --add ua 'uv run python -i main.py'
 
 abbr --add we 'watchexec --quiet --clear --shell none'
 abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m unittest discover --pattern '*_test.py'"
