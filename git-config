@@ -59,6 +59,9 @@
   sp = stash pop
   ss = stash save
 
+[advice]
+  statusHints = false
+
 [blame]
   showEmail = true
   showRoot = true
