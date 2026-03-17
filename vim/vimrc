@@ -1702,6 +1702,17 @@ digraphs ms   9839  "  0x266f  ♯  MX      Music Sharp Sign
 digraphs mx 119082  "  0x1d12a 𝄪          Musical Symbol Double Sharp
 digraphs mb 119083  "  0x1d12b 𝄫          Musical Symbol Double Flat
 
+digraphs f0   8304  "  0x2070  ⁰  0S      Superscript Zero
+digraphs f1    185  "  0x00b9  ¹  1S      Superscript One
+digraphs f2    178  "  0x00b2  ²  2S      Superscript Two
+digraphs f3    179  "  0x00b3  ³  3S      Superscript Three
+digraphs f4   8308  "  0x2074  ⁴  4S      Superscript Four
+digraphs f5   8309  "  0x2075  ⁵  5S      Superscript Five
+digraphs f6   8310  "  0x2076  ⁶  6S      Superscript Six
+digraphs f7   8311  "  0x2077  ⁷  7S      Superscript Seven
+digraphs f8   8312  "  0x2078  ⁸  8S      Superscript Eight
+digraphs f9   8313  "  0x2079  ⁹  9S      Superscript Nine
+
 digraphs n0   9450  "  0x24ea  ⓪
 digraphs n1   9312  "  0x2460  ①
 digraphs n2   9313  "  0x2461  ②
