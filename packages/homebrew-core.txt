@@ -71,6 +71,7 @@ stress-ng
 switchaudio-osx
 terminal-notifier
 the_silver_searcher
+tinymist
 tmux
 tree
 typst
