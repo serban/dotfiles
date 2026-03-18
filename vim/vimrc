@@ -518,6 +518,7 @@ let g:serban_command_palette_commands = [
 \   'SerbanToggleStatusLinePath',
 \   'SerbanToggleTypographyHighlighting',
 \   'SerbanFzfNotes',
+\   'SerbanFzfTypst',
 \   'SerbanFzfSource',
 \   'SerbanFzfDotfiles',
 \   'SerbanFzfWip',
@@ -1203,6 +1204,13 @@ function SerbanFzfNotes()
   \   'dir': '~/txt',
   \   'source': 'fd --type file --strip-cwd-prefix | sort',
   \   'options': '--prompt "⁖ ~/txt/" --no-sort',
+  \ })))
+endfunction
+
+function SerbanFzfTypst()
+  call fzf#run(fzf#wrap('serban-typst', fzf#vim#with_preview({
+  \   'dir': '~/src/typ/documents',
+  \   'options': '--prompt "⁖ ~/src/typ/documents/"',
   \ })))
 endfunction
 
@@ -1918,6 +1926,7 @@ endif
   nnoremap <unique> <Leader>ha :FzfMaps <CR>
   nnoremap <unique> <Leader>hr :FzfRg<Space>
   nnoremap <unique> <Leader>ht :call SerbanFzfNotes() <CR>
+  nnoremap <unique> <Leader>hy :call SerbanFzfTypst() <CR>
   nnoremap <unique> <Leader>he :call SerbanFzfSource() <CR>
   nnoremap <unique> <Leader>hd :call SerbanFzfDotfiles() <CR>
   nnoremap <unique> <Leader>hw :call SerbanFzfWip() <CR>
