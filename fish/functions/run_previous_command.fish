@@ -10,6 +10,7 @@ function run_previous_command
     return
   end
 
+  commandline --function scrollback-push
   commandline --function history-search-backward
   commandline --function execute
 end
