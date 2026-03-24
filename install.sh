@@ -155,8 +155,8 @@ mkdir -p ~/.config/readline
 ln -vsnf ${DOTS2}/inputrc                       ~/.config/readline/inputrc
 
 mkdir -p ~/.config/kitty
-ln -vsnf ${DOTS2}/kitty.conf                    ~/.config/kitty/kitty.conf
-ln -vsnf ${DOTS2}/kitty-paste-actions.py        ~/.config/kitty/paste-actions.py
+ln -vsnf ${DOTS2}/kitty/kitty.conf              ~/.config/kitty/kitty.conf
+ln -vsnf ${DOTS2}/kitty/paste-actions.py        ~/.config/kitty/paste-actions.py
 
 mkdir -p ~/.config/lf
 ln -vsnf ${DOTS2}/lfrc                          ~/.config/lf/lfrc
