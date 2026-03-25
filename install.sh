@@ -156,6 +156,8 @@ ln -vsnf ${DOTS2}/inputrc                       ~/.config/readline/inputrc
 
 mkdir -p ~/.config/kitty
 ln -vsnf ${DOTS2}/kitty/kitty.conf              ~/.config/kitty/kitty.conf
+ln -vsnf ${DOTS2}/kitty/dark-theme.auto.conf    ~/.config/kitty/dark-theme.auto.conf
+ln -vsnf ${DOTS2}/kitty/light-theme.auto.conf   ~/.config/kitty/light-theme.auto.conf
 ln -vsnf ${DOTS2}/kitty/paste-actions.py        ~/.config/kitty/paste-actions.py
 
 mkdir -p ~/.config/lf
