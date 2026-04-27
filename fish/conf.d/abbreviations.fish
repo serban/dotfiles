@@ -40,6 +40,7 @@ abbr --add rw 'gm watch'
 
 abbr --add js 'just'
 abbr --add jl 'just --list'
+abbr --add jc 'just --choose'
 
 abbr --add ur 'uv run'
 abbr --add um 'uv run main.py'
