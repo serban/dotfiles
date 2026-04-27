@@ -46,6 +46,7 @@ make
 md5deep
 micro
 moreutils
+mprocs
 neovide
 neovim
 newsboat
