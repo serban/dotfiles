@@ -4,7 +4,7 @@ function run_previous_command
   end
 
   set --function last (history --max 1 --show-time='%s ' | cut -d ' ' -f 1)
-  if test (math abs (date +%s) - $last) -gt 300
+  if test (math abs (date +%s) - $last) -gt 1200
     printf '\n%sToo slow!%s\n' (set_color brcyan) (set_color normal)
     commandline --function repaint
     return
