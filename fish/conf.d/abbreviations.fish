@@ -23,6 +23,8 @@ abbr --add pt 'pstree -g 3 -s'
 abbr --add p3 'python3 -B'
 abbr --add p8 'ping 8.8.8.8'
 
+abbr --add kr 'g (git rev-parse --show-toplevel)'
+
 abbr --add kc 'cd ~/src/config && git status'
 abbr --add kd 'cd ~/src/dotfiles && git status'
 abbr --add kn 'cd ~/txt/p && git status'
