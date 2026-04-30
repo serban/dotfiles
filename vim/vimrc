@@ -715,7 +715,9 @@ function SerbanAppendGoogle3Folder()
 endfunction
 
 function SerbanGenerateSpellFiles()
+  let n = winnr()
   windo set spell
+  execute n 'wincmd w'
   mkspell! ~/.config/vim/spell/en.utf-8.add
   echom '--------------------------------------------------------------'
   mkspell! ~/.config/vim/spell/proper.utf-8.add
@@ -1097,27 +1099,33 @@ function SerbanToggleWinWidth()
 endfunction
 
 function SerbanToggleColorColumn()
+  let n = winnr()
   if &colorcolumn !=# '0'
     windo set colorcolumn=0
   else
     windo set colorcolumn=+1
   endif
+  execute n 'wincmd w'
 endfunction
 
 function SerbanToggleList()
+  let n = winnr()
   if &list
     windo set nolist
   else
     windo set list
   endif
+  execute n 'wincmd w'
 endfunction
 
 function SerbanToggleSpell()
+  let n = winnr()
   if &spell
     windo set nospell
   else
     windo set spell
   endif
+  execute n 'wincmd w'
 endfunction
 
 function SerbanToggleLineNumbers()
