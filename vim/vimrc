@@ -637,6 +637,8 @@ function SerbanGuiTabLabel()
 endfunction
 
 function SerbanStatusLine()
+  let name = bufname(winbufnr(g:statusline_winid))
+  let note = fnamemodify(name, ':~') =~# '^\~/txt/.*\.md$'
   let s  = g:serban_statusline_path_relative ? '%f ' : '%t '  " path or filename
   let s .= '%h%w%q%r%m'     " {help,preview,quickfix,readonly,modified} flags
   let s .= '%='             " left-right separator
@@ -645,7 +647,9 @@ function SerbanStatusLine()
   if has('gui_running')
   let s .= g:serban_statusline_font ? '%{matchstr(getfontname(), "\\v^\\w+")}  ' : ''
   endif
+  if !note
   let s .= '%(%Y  %)'       " filetype
+  endif
   let s .= '%{&spell ? "Ⓐ   " : ""}'        " window-local
   let s .= '%{&list ? "" : "Ⓛ   "}'         " window-local · NB: Indicator appears when list is disabled
   if has('gui_macvim')
@@ -658,8 +662,10 @@ function SerbanStatusLine()
   let s .= '%{foxytables#IsEnabledInBuffer() ? "Ⓧ   " : ""}'         " buffer-local
   endif
   let s .= '%{zoom#statusline()}' " Ⓩ       " window-local, effectively
+  if !note
   let s .= '%{SerbanCurrentWrap()}'         " window-local + buffer-local
   let s .= '  '
+  endif
   return s
 endfunction
 
