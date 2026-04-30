@@ -1473,10 +1473,12 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType go        setlocal tabstop=2 shiftwidth=2 softtabstop=0 noexpandtab nolist
 autocmd FileType hgcommit  setlocal spell
 autocmd FileType java      setlocal textwidth=100 winwidth=106
+autocmd FileType jsonnet   setlocal formatoptions-=t formatoptions-=c colorcolumn=0
 autocmd FileType lilypond  setlocal commentstring=%\ %s
 autocmd FileType piperspec setlocal spell
 autocmd FileType python    setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType swift     setlocal textwidth=100 winwidth=106
+autocmd FileType toml      setlocal formatoptions-=t formatoptions-=c colorcolumn=0
 
 if has('gui_macvim')
 augroup serban-darkmode
@@ -1586,12 +1588,6 @@ augroup end
 augroup serban-snippets
   autocmd!
   autocmd BufWinEnter ~/txt/*Snippets.md call SerbanScrollToCurrentDateHeading()
-augroup end
-
-augroup serban-contacts
-  autocmd!
-  autocmd BufNewFile  ~/src/contacts/*.toml silent call SerbanWrapNone()
-  autocmd BufReadPost ~/src/contacts/*.toml silent call SerbanWrapNone()
 augroup end
 
 if !has('nvim')
