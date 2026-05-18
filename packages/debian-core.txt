@@ -20,6 +20,7 @@ hashdeep
 hexyl
 htop
 hugo
+hyperfine
 iotop
 jq
 jsonnet

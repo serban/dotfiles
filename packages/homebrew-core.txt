@@ -36,6 +36,7 @@ helix
 hexyl
 htop
 hugo
+hyperfine
 jq
 jsonnet
 just
