@@ -1,5 +1,7 @@
 function run_previous_command
   if commandline --current-buffer | string length --quiet
+    commandline --function scrollback-push
+    commandline --function execute
     return
   end
 
