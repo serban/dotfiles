@@ -13,6 +13,9 @@ function fn
   set --local root  '~/txt'
   set --local bat   "bat --color always --theme '$theme' --plain $root/{}"
   set --local fd    "fd --base-directory $root --type file --strip-cwd-prefix | sort"
+  set --local fdd   "fd --base-directory $root --type file --strip-cwd-prefix | sed 's/\.md\$//' | sort           | sed 's/\$/\.md/'"
+  set --local fdr   "fd --base-directory $root --type file --strip-cwd-prefix | sed 's/\.md\$//' | sort --reverse | sed 's/\$/\.md/'"
+  set --local fdt   "fd --base-directory $root --type file --strip-cwd-prefix | sed 's/\.md\$//' | sort --key 2   | sed 's/\$/\.md/'"
   set --local mvim  "mvim --remote-tab-silent +tabmove $root/{}"
   set --local open  "open -R $root/{}"
   set --local title "title 📝 {q}"
@@ -23,11 +26,15 @@ function fn
   set --local osc52_path "osc52 '$root'/{}"
 
   title fn
-  eval $fd \
+  eval $fdt \
       | fzf --no-sort \
             --multi \
             --height 100% \
             --info inline-right \
+            --input-border rounded \
+            --list-border rounded \
+            --list-label-pos -3 \
+            --list-label ' Title ↓ ' \
             --preview-window right,80,noinfo \
             --preview $bat \
             --bind "alt-c:execute($osc52_base)" \
@@ -38,9 +45,9 @@ function fn
             --bind 'ctrl-g:change-preview-window(bottom,16|)' \
             --bind "ctrl-o:execute-silent($open)" \
             --bind 'ctrl-q:toggle-preview' \
-            --bind "ctrl-r:reload($fd)" \
-            --bind "ctrl-s:reload($fd --key 2)" \
-            --bind "ctrl-t:reload($fd --reverse)" \
+            --bind "ctrl-r:reload($fdr)+change-list-label( Date ↑ )" \
+            --bind "ctrl-s:reload($fdd)+change-list-label( Date ↓ )" \
+            --bind "ctrl-t:reload($fdt)+change-list-label( Title ↓ )" \
             --bind "ctrl-v:execute-silent($clip_path)" \
             --bind "ctrl-x:execute-silent($clip_base)" \
             --bind "double-click:execute-silent($mvim)" \
