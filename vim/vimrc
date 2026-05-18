@@ -1636,6 +1636,7 @@ iabbrev /t // TODO(serban):
 iabbrev /s // TODO(serban): DO NOT SUBMIT
 
 iabbrev <expr> zd strftime('%Y-%m-%d')
+iabbrev <expr> zh strftime('%Y-%m-%d %a %b %d')
 iabbrev <expr> zt strftime('%Y-%m-%d %H:%M')
 
 iabbrev !- ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
