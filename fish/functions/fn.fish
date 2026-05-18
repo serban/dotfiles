@@ -13,7 +13,7 @@ function fn
   set --local root  '~/txt'
   set --local bat   "bat --color always --theme '$theme' --plain $root/{}"
   set --local fd    "fd --base-directory $root --type file --strip-cwd-prefix | sort"
-  set --local mvim  "mvim --remote-tab-silent $root/{}"
+  set --local mvim  "mvim --remote-tab-silent +tabmove $root/{}"
   set --local open  "open -R $root/{}"
   set --local title "title 📝 {q}"
 
@@ -48,5 +48,5 @@ function fn
             --bind 'esc:cancel'
 #           --print0 \
 #     | gsed --null-data "s|^|$root/|" \
-#     | xargs -0 mvim --remote-tab-silent
+#     | xargs -0 mvim --remote-tab-silent +tabmove
 end
