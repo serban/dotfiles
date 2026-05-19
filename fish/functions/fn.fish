@@ -25,6 +25,13 @@ function fn
   set --local osc52_base 'osc52 (builtin path basename {})'
   set --local osc52_path "osc52 '$root'/{}"
 
+  set --local preview_window 'noinfo,right,80,hidden'
+  if test "$COLUMNS" -ge 250
+    set preview_window 'noinfo,right,140'
+  else if test "$COLUMNS" -ge 190
+    set preview_window 'noinfo,right,80'
+  end
+
   title fn
   eval $fdt \
       | fzf --no-sort \
@@ -35,14 +42,15 @@ function fn
             --list-border rounded \
             --list-label-pos -3 \
             --list-label ' Title ↓ ' \
-            --preview-window right,80,noinfo \
+            --preview-window $preview_window \
             --preview $bat \
+            --bind 'resize:hide-preview' \
             --bind "alt-c:execute($osc52_base)" \
             --bind "alt-p:execute($osc52_path)" \
             --bind "alt-t:execute($title)" \
             --bind 'alt-h:change-preview-window(bottom,28|bottom,16)' \
-            --bind 'alt-v:change-preview-window(right,140|)' \
-            --bind 'ctrl-g:change-preview-window(bottom,16|)' \
+            --bind 'alt-v:change-preview-window(right,140|right,80)' \
+            --bind 'ctrl-g:change-preview-window(bottom,16|right,80)' \
             --bind "ctrl-o:execute-silent($open)" \
             --bind 'ctrl-q:toggle-preview' \
             --bind "ctrl-r:reload($fdr)+change-list-label( Date ↑ )" \
