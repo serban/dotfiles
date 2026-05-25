@@ -49,7 +49,7 @@ config.keys = {
 
   { mods='CMD',           key='w',  action=wezterm.action.CloseCurrentTab({confirm=false})  },
   { mods='CMD',           key='t',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir})  },
-  { mods='CMD',           key='z',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir, args={'/opt/homebrew/bin/fish', '-c', 'fn'}}) },
+  { mods='CMD',           key='z',  action=wezterm.action.SpawnCommandInNewTab({cwd=wezterm.home_dir, args={'/opt/homebrew/bin/fish', '-c', 'fn --title'}}) },
 
   { mods='CTRL',          key='0',  action=wezterm.action.SendString('\x1b[48;5u')  },
   { mods='CTRL',          key='1',  action=wezterm.action.SendString('\x1b[49;5u')  },

@@ -8,6 +8,12 @@
 #   ↳ https://github.com/fish-shell/fish-shell/issues/3847#issuecomment-1321871256
 
 function fn
+  set --local  options (fish_opt --short=t --long=title)
+
+  if not argparse $options -- $argv
+    return
+  end
+
   set --local theme (dark)
 
   set --local root  '~/txt'
@@ -30,6 +36,12 @@ function fn
     set preview_window 'noinfo,right,140'
   else if test "$COLUMNS" -ge 190
     set preview_window 'noinfo,right,80'
+  end
+
+  set --local args
+
+  if test -n "$_flag_title"
+    set args $args --bind "every(600):execute($title)"
   end
 
   title fn
@@ -60,8 +72,6 @@ function fn
             --bind "ctrl-x:execute-silent($clip_base)" \
             --bind "double-click:execute-silent($mvim)" \
             --bind "enter:execute-silent($mvim)" \
-            --bind 'esc:cancel'
-#           --print0 \
-#     | gsed --null-data "s|^|$root/|" \
-#     | xargs -0 mvim --remote-tab-silent +tabmove
+            --bind 'esc:cancel' \
+            $args
 end

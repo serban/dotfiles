@@ -33,7 +33,7 @@ kPackages = [
   Package('delta',     ['delta', '--version'],     r'delta (.+)',         '2025-08-11', '0.18.2',   '0.18.2',   '0.18.2'),
   Package('fd',        ['fd', '--version'],        r'fd(?:find)? (.+)',   '2025-08-11', '10.2.0',   '10.2.0',   '10.2.0'),
   Package('fish',      ['fish', '--version'],      r'fish, version (.+)', '2025-08-11', '4.0.2',    '4.0.2',    '4.0.2'),
-  Package('fzf',       ['fzf', '--version'],       r'(.+) \(.*',          '2025-08-11', '0.60',     '0.60',     '0.65.1'),
+  Package('fzf',       ['fzf', '--version'],       r'(.+) \(.*',          '2026-05-25', '0.60',     '0.60',     '0.73.1'),
   Package('git',       ['git', '--version'],       r'git version (.+)',   '2025-08-11', '2.47.2',   '2.47.2',   '2.50.1'),
   Package('just',      ['just', '--version'],      r'just (.+)',          '2026-04-21', '1.40.0',   '1.40.0',   '1.50.0'),
   Package('less',      ['less', '--version'],      r'less (.+) \(.*',     '2025-08-11', '668',      '668',      '679'),
