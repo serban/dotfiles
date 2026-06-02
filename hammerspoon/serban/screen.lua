@@ -41,7 +41,7 @@ end
 function M._layoutDidChange()
   local numScreens = #hs.screen.allScreens()
   if numScreens == M._numScreens then
-    serban.logger.i('NSApplicationDidChangeScreenParametersNotification fired')
+    serban.logger.d('NSApplicationDidChangeScreenParametersNotification fired')
     return
   end
   serban.logger.f('Screen layout changed: %d → %d', M._numScreens, numScreens)
