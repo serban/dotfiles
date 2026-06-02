@@ -97,6 +97,7 @@ duti -s com.apple.QuickTimePlayerX  .flac                               all
 duti -s com.apple.QuickTimePlayerX  .m4a                                all
 duti -s com.apple.QuickTimePlayerX  .m4r                                all
 duti -s com.apple.QuickTimePlayerX  .mp3                                all
+duti -s com.apple.QuickTimePlayerX  .ogg                                all
 duti -s com.apple.QuickTimePlayerX  .wav                                all
 duti -s com.apple.QuickTimePlayerX  .wave                               all
 
