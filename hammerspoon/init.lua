@@ -18,6 +18,7 @@ serban.finder   = require('serban.finder')
 
 serban.keys     = require('serban.keys')
 
+hs.hotkey.alertDuration = 0.2
 hs.window.animationDuration = 0
 
 function b(v)
