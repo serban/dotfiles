@@ -17,7 +17,7 @@ abbr --add gch 'git checkout'
 abbr --add gcn 'git clean -d -x --dry-run'
 abbr --add gcl 'git clone'
 abbr --add gco 'git commit'
-abbr --add gca 'git commit --amend --reuse-message=HEAD'
+abbr --add gca 'git commit --amend --reset-author --no-edit'
 abbr --add gcb --set-cursor=° "git commit --message='°Bump @ '(date '+%Y-%m-%d %H:%M:%S')"
 abbr --add gcp 'git cherry-pick'
 abbr --add gdi 'git diff --stat --patch'

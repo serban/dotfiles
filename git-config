@@ -14,7 +14,7 @@
   cn = clean -d -x --dry-run
   cl = clone
   co = commit
-  ca = commit --amend --reuse-message=HEAD
+  ca = commit --amend --reset-author --no-edit
   cb = help  # TODO(serban): Implement
   cp = cherry-pick
   di = diff --stat --patch
