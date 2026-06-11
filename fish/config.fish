@@ -190,6 +190,7 @@ set --global --export LESS \
     --no-histdups \
     --no-init \
     --quit-if-one-screen \
+    --status-line \
     --use-color \
     --color 'Pb$' \
     --color 'Er$' \
