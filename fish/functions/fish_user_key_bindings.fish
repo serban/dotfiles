@@ -23,4 +23,5 @@ end
   bind \ea                'fish_commandline_append " &| head -n 20"'
   bind \ez                'fish_commandline_append " &| tail -n 20"'
   bind \en                'fish_commandline_append " &| wc -l"'
+  bind \eq                'fish_commandline_append " --help &| less"'
 end
