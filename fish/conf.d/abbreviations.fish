@@ -9,7 +9,6 @@ abbr --add 3 --set-cursor=° 'tree -C -F --dirsfirst --gitignore ° | less'
 
 abbr --add i " history merge && history --show-time=\e'[33m[%Y-%m-%d] '\e'[0m' --reverse"
 
-abbr --add j 'jobs'
 abbr --add k 'kill'
 
 abbr --add cp 'cp -vi'
@@ -40,9 +39,11 @@ abbr --add rb 'gm sublime'
 abbr --add ru 'gm sublime common'
 abbr --add rw 'gm watch'
 
+abbr --add j  'just'
 abbr --add js 'just'
 abbr --add jl 'just --list'
 abbr --add jc 'just --choose'
+abbr --add je 'just --evaluate'
 
 abbr --add ur 'uv run'
 abbr --add um 'uv run main.py'
