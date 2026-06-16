@@ -200,8 +200,9 @@ set --global --export LESS \
     --incsearch \
     #
 
-test (less --version | head -n 1 | cut -d ' ' -f 2) -ge 678
+test (less --version | head -n 1 | cut -d ' ' -f 2) -ge 702
 and set LESS $LESS \
+    --emouse vscroll,hscroll,vdrag,hdrag \
     --no-paste \
     #
 
