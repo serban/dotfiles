@@ -13,6 +13,7 @@ phonenumbers
 psutil
 pygit2
 pynvim
+python-dateutil
 rich
 textual
 tomli-w

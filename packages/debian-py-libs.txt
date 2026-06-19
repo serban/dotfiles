@@ -1,5 +1,6 @@
 python3-click
 python3-dacite
+python3-dateutil
 python3-icecream
 python3-jinja2
 python3-more-itertools
