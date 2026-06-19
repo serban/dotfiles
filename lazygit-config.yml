@@ -1,5 +1,16 @@
+notARepository: quit
+
+update:
+  method: never
+
 git:
   autoFetch: false
+  diffContextSize: 999_999
+  pagers:
+    - pager: delta --paging never --features light-unified-diff
+    - pager: delta --paging never --features  dark-unified-diff
+    - pager: delta --paging never --features light-side-by-side
+    - pager: delta --paging never --features  dark-side-by-side
 
 gui:
   showBottomLine: false
@@ -8,9 +19,24 @@ gui:
   showPanelJumps: false
   showRandomTip: false
   showRootItemInFileTree: false
-  sidePanelWidth: 0.44
-
-notARepository: quit
-
-update:
-  method: never
+  sidePanelWidth: 0.25
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 10
+  fileTreeSortOrder: foldersFirst
+  commitAuthorShortLength: 0
+  commandLogSize: 4
+  scrollPastBottom: false
+  scrollOffMargin: 3
+  scrollHeight: 3
+  border: bold
+  theme:
+    inactiveBorderColor:
+      - yellow
+    activeBorderColor:
+      - magenta
+    searchingActiveBorderColor:
+      - cyan
+    inactiveViewSelectedLineBgColor:
+      - black
+    selectedLineBgColor:
+      - reverse
