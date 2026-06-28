@@ -34,6 +34,6 @@ function M.disableAXEnhancedUserInterface(notify)
   end
 end
 
-M._timer = hs.timer.doEvery(300.0, M.disableAXEnhancedUserInterface)
+-- M._timer = hs.timer.doEvery(300.0, M.disableAXEnhancedUserInterface)
 
 return M
