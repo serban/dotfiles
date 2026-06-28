@@ -3,6 +3,7 @@
 # ╭────────────────────────────────────────────────────────────────────────────╮
 # │ Advanced Settings                                                          │
 # ╰────────────────────────────────────────────────────────────────────────────╯
+#    Drawing › Underline OSC 8 hyperlinks                                 › No
 #    General › Synchronize search queries across windows and applications › No
 #   Terminal › Use P3 as default color space? If No, sRGB will be used.   › No
 #   Warnings › Suppress the notification asking if you want to disable    › Yes
