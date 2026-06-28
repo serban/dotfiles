@@ -178,3 +178,15 @@ end
 function gmu
   git ls-files -z --exclude-standard --others | xargs --null mvim --remote-tab-silent
 end
+
+complete \
+  --command gdis \
+  --command gdiu \
+  --no-files \
+  --arguments '(git diff --name-only)'
+
+complete \
+  --command gdss \
+  --command gdsu \
+  --no-files \
+  --arguments '(git diff --name-only --staged)'
