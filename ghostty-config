@@ -1,6 +1,6 @@
 auto-update-channel                     = stable
 theme                                   = dark:Ghostty Default Style Dark,light:Dayfox
-font-size                               = 15
+font-size                               = 18
 font-feature                            = -calt,-dlig,-liga
 cursor-style-blink                      = false
 window-inherit-font-size                = false
