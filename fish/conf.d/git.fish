@@ -183,10 +183,10 @@ complete \
   --command gdis \
   --command gdiu \
   --no-files \
-  --arguments '(git diff --name-only)'
+  --arguments '(git diff --name-only --relative)'
 
 complete \
   --command gdss \
   --command gdsu \
   --no-files \
-  --arguments '(git diff --name-only --staged)'
+  --arguments '(git diff --name-only --relative --staged)'
