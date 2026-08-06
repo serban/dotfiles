@@ -34,6 +34,7 @@ moreutils
 neovim
 psmisc
 python3
+rdap
 restic
 ripgrep
 rsync
@@ -42,6 +43,7 @@ sqlite-utils
 stress-ng
 tmux
 tree
+trippy
 units
 unzip
 vim-nox

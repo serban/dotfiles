@@ -62,6 +62,7 @@ procs
 pstree
 pyenv
 qsv
+rdap
 restic
 ripgrep
 rsync
@@ -76,6 +77,7 @@ the_silver_searcher
 tinymist
 tmux
 tree
+trippy
 typst
 tz
 uv
