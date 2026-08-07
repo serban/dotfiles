@@ -3,73 +3,73 @@
   "auto_install_extensions": {
     "catppuccin": true,
     "fleet-themes": true,
-    "ruff": true
+    "ruff": true,
   },
   "theme": {
     "mode": "system",
     "light": "Fleet Light",
-    "dark": "Catppuccin Mocha"
+    "dark": "Catppuccin Mocha",
   },
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "none",
   },
   "project_panel": {
     "dock": "left",
-    "hide_root": true
+    "hide_root": true,
   },
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "git_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "agent": {
     "enabled": false,
-    "play_sound_when_agent_done": true
+    "play_sound_when_agent_done": true,
   },
   "search": {
-    "button": false
+    "button": false,
   },
   "debugger": {
-    "button": false
+    "button": false,
   },
   "terminal": {
     "button": false,
     "line_height": "standard",
-    "option_as_meta": true
+    "option_as_meta": true,
   },
   "title_bar": {
     "show_branch_name": false,
     "show_branch_icon": true,
-    "show_sign_in": false
+    "show_sign_in": false,
   },
   "tab_bar": {
     "show": true,
     "show_nav_history_buttons": true,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "close_position": "left",
     "show_close_button": "hover",
-    "activate_on_close": "left_neighbour"
+    "activate_on_close": "left_neighbour",
   },
   "toolbar": {
-    "quick_actions": false
+    "quick_actions": false,
   },
   "gutter": {
-    "folds": false
+    "folds": false,
   },
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
   "sticky_scroll": {
-    "enabled": true
+    "enabled": true,
   },
   "scrollbar": {
     "show": "auto",
@@ -80,21 +80,21 @@
     "selected_symbol": false,
     "diagnostics": "none",
     "axes": {
-      "horizontal": false
-    }
+      "horizontal": false,
+    },
   },
   "git": {
     "git_gutter": "hide",
     "inline_blame": {
       "min_column": 81,
-      "show_commit_summary": true
-    }
+      "show_commit_summary": true,
+    },
   },
   "diagnostics": {
     "inline": {
       "enabled": true,
-      "min_column": 50
-    }
+      "min_column": 50,
+    },
   },
   "max_tabs": 1,
   "ui_font_size": 14,
@@ -112,36 +112,36 @@
   "format_on_save": "off",
   "languages": {
     "Go": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "JSONC": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "Lua": {
-      "enable_language_server": false
+      "enable_language_server": false,
     },
     "Rust": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "Swift": {
-      "format_on_save": "on"
+      "format_on_save": "on",
     },
     "Zig": {
-      "format_on_save": "on"
-    }
+      "format_on_save": "on",
+    },
   },
   "lsp": {
     "pyright": {
       "settings": {
         "python.analysis": {
-          "typeCheckingMode": "off"
-        }
-      }
-    }
+          "typeCheckingMode": "off",
+        },
+      },
+    },
   },
   "vim": {
     "highlight_on_yank_duration": 75,
     "toggle_relative_line_numbers": true,
-    "custom_digraphs": {}
-  }
+    "custom_digraphs": {},
+  },
 }
