@@ -3,15 +3,14 @@
   "auto_install_extensions": {
     "catppuccin": true,
     "fleet-themes": true,
-    "ruff": true,
   },
   "theme": {
     "mode": "system",
     "light": "Fleet Light",
     "dark": "Catppuccin Mocha",
   },
-  "features": {
-    "edit_prediction_provider": "none",
+  "edit_predictions": {
+    "provider": "none",
   },
   "project_panel": {
     "dock": "left",
@@ -26,12 +25,9 @@
   "git_panel": {
     "button": false,
   },
-  "notification_panel": {
-    "button": false,
-  },
   "agent": {
     "enabled": false,
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
   },
   "search": {
     "button": false,
@@ -45,8 +41,8 @@
     "option_as_meta": true,
   },
   "title_bar": {
+    "show_worktree_name": false,
     "show_branch_name": false,
-    "show_branch_icon": true,
     "show_sign_in": false,
   },
   "tab_bar": {
@@ -131,7 +127,7 @@
     },
   },
   "lsp": {
-    "pyright": {
+    "basedpyright": {
       "settings": {
         "python.analysis": {
           "typeCheckingMode": "off",
