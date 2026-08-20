@@ -14,6 +14,7 @@ psutil
 pygit2
 pynvim
 python-dateutil
+requests
 rich
 terminaltexteffects
 textual
