@@ -92,6 +92,8 @@
       "min_column": 50,
     },
   },
+  "default_open_behavior": "new_window",
+  "cli_default_open_behavior": "existing_window",
   "max_tabs": 1,
   "ui_font_size": 14,
   "buffer_font_family": "Monaco",
