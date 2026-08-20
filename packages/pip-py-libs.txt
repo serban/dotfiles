@@ -20,5 +20,6 @@ terminaltexteffects
 textual
 tomli-w
 tomlkit
+volant
 wat
 wcwidth
