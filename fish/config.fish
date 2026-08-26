@@ -48,6 +48,8 @@ set --universal fish_features \
 
 set --global fish_color_normal          normal
 set --global fish_color_keyword         green
+set --global fish_color_builtin         yellow
+set --global fish_color_function        yellow
 set --global fish_color_command         yellow
 set --global fish_color_option          yellow
 set --global fish_color_param           yellow
