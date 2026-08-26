@@ -55,7 +55,8 @@ abbr --add ua 'uv run python -i main.py'
 abbr --add we 'watchexec --quiet --clear --shell none'
 abbr --add wp "watchexec --quiet --clear --shell none --exts py -- python -m unittest discover --pattern '*_test.py'"
 
-abbr --add au 'sudo apt update && apt list --upgradable'
+abbr --add al 'sudo apt update && nala list --upgradable && apt list --upgradable'
+abbr --add au 'sudo apt upgrade --yes && sudo apt autoremove --yes'
 abbr --add rr 'stat /var/run/reboot-required /var/run/reboot-required.pkgs'
 
 abbr --add bi 'brew info'
