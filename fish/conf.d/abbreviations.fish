@@ -20,7 +20,7 @@ abbr --add lc 'wc -l'
 abbr --add pt 'pstree -g 3 -s'
 
 abbr --add p3 'python3 -B'
-abbr --add p8 'ping 8.8.8.8'
+abbr --add p8 'ping 8.8.8.8 -c 3'
 
 abbr --add kr 'g (git rev-parse --show-toplevel)'
 
