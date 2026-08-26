@@ -9,6 +9,7 @@
 
 function fn
   set --local  options (fish_opt --short=t --long=title)
+  set options $options (fish_opt --short=q --long=query --required-val)
 
   if not argparse $options -- $argv
     return
@@ -42,6 +43,10 @@ function fn
 
   if test -n "$_flag_title"
     set args $args --bind "every(600):execute($title)"
+  end
+
+  if test -n "$_flag_query"
+    set args $args --query $_flag_query
   end
 
   title fn
