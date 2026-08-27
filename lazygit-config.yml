@@ -3,6 +3,10 @@ notARepository: quit
 update:
   method: never
 
+refresher:
+  refreshInterval: 20  # seconds
+  externalChangeCheckInterval: 20  # seconds
+
 git:
   autoFetch: false
   diffContextSize: 999_999
