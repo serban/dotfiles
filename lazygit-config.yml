@@ -6,11 +6,15 @@ update:
 git:
   autoFetch: false
   diffContextSize: 999_999
-  pagers:
-    - pager: delta --paging never --features light-unified-diff
-    - pager: delta --paging never --features  dark-unified-diff
-    - pager: delta --paging never --features light-side-by-side
-    - pager: delta --paging never --features  dark-side-by-side
+  diffRenderers:
+    - command: delta --paging never --features light-unified-diff
+      name: Unified Diff Light
+    - command: delta --paging never --features  dark-unified-diff
+      name: Unified Diff Dark
+    - command: delta --paging never --features light-side-by-side
+      name: Side-By-Side Light
+    - command: delta --paging never --features  dark-side-by-side
+      name: Side-By-Side Dark
 
 gui:
   showBottomLine: false
