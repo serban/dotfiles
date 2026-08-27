@@ -48,3 +48,10 @@ gui:
       - black
     selectedLineBgColor:
       - reverse
+
+keybinding:
+  universal:
+    nextScreenMode:                   <alt+m>
+    prevScreenMode:             <shift+alt+m>
+    cycleDiffRenderers:               <alt+i>
+    cycleDiffRenderersReverse:  <shift+alt+i>
