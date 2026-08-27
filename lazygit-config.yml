@@ -26,6 +26,10 @@ gui:
   sidePanelWidth: 0.25
   expandFocusedSidePanel: true
   expandedSidePanelWeight: 10
+  shrinkSidePanelsToContent: false
+  sidePanels:
+    - [files]
+    - [commits, branches]
   fileTreeSortOrder: foldersFirst
   commitAuthorShortLength: 0
   commandLogSize: 4
