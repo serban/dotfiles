@@ -9,6 +9,7 @@ tab-inherit-working-directory           = false
 copy-on-select                          = clipboard
 macos-option-as-alt                     = true
 shell-integration-features              = no-cursor
+window-new-tab-position                 = end
 resize-overlay                          = never
 
 keybind                                 = ctrl+shift+page_up=move_tab:-1
