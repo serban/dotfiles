@@ -93,6 +93,9 @@
 [init]
   defaultBranch = master
 
+[log]
+  date = default-local
+
 [merge]
   conflictStyle = zdiff3
   stat = true
