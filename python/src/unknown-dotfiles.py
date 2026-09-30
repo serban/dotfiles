@@ -12,7 +12,6 @@ KNOWN_DIRS = {
   '.cache',               # XDG_CACHE_HOME
   '.config',              # XDG_CONFIG_HOME
   '.cups',                # 2023-10-29: https://github.com/OpenPrinting/libcups/issues/43 · https://github.com/OpenPrinting/libcups/pull/45
-  '.gmailctl',            # 2023-10-29: https://github.com/mbrt/gmailctl/issues/144
   '.lldb',                # 2025-09-02: https://github.com/llvm/llvm-project/issues/71426
   '.local',               # XDG_DATA_HOME · XDG_STATE_HOME
   '.npm',                 # 2025-09-02: https://github.com/npm/rfcs/issues/389 · https://github.com/npm/rfcs/issues/586
