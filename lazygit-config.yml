@@ -11,14 +11,10 @@ git:
   autoFetch: false
   diffContextSize: 999_999
   diffRenderers:
-    - command: delta --paging never --features light-unified-diff
-      name: Unified Diff Light
-    - command: delta --paging never --features  dark-unified-diff
-      name: Unified Diff Dark
-    - command: delta --paging never --features light-side-by-side
-      name: Side-By-Side Light
-    - command: delta --paging never --features  dark-side-by-side
-      name: Side-By-Side Dark
+    - command: delta --paging never --features {{colorScheme}}-unified-diff
+      name: Unified Diff
+    - command: delta --paging never --features {{colorScheme}}-side-by-side
+      name: Side-By-Side
 
 gui:
   showBottomLine: false
