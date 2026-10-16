@@ -133,7 +133,8 @@ set --global --export PYTHONPATH \
 set --global --export PIP_REQUIRE_VIRTUALENV true
 set --global --export PYTHONSTARTUP $HOME/src/dotfiles/pythonstartup.py
 
-set --global --export HOMEBREW_AUTO_UPDATE_SECS 21600  # 6 hours
+set --global --export HOMEBREW_API_AUTO_UPDATE_SECS  3600  # 1 hour
+set --global --export HOMEBREW_AUTO_UPDATE_SECS     21600  # 6 hours
 set --global --export HOMEBREW_NO_ASK true
 
 set --global --export JUST_COLOR always
