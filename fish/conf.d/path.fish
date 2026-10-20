@@ -22,6 +22,7 @@ set --global --export PATH \
     /usr/local/git/current/bin \
     /opt/homebrew/bin \
     /opt/homebrew/sbin \
+    /opt/homebrew/opt/curl/bin \
     /opt/homebrew/opt/sqlite/bin \
     /usr/local/bin \
     /usr/local/sbin \
