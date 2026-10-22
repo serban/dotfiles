@@ -195,6 +195,9 @@ ln -vsnf ${DOTS2}/sqliterc                      ~/.config/sqlite3/sqliterc
 mkdir -p ~/.config/tmux
 ln -vsnf ${DOTS2}/tmux.conf                     ~/.config/tmux/tmux.conf
 
+mkdir -p ~/.config/uv
+ln -vsnf ${DOTS2}/uv.toml                       ~/.config/uv/uv.toml
+
 mkdir -p ~/.config/vim
 ln -vsnf ${DOTS2}/vim/after                     ~/.config/vim/after
 ln -vsnf ${DOTS2}/vim/pack                      ~/.config/vim/pack
