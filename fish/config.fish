@@ -137,6 +137,12 @@ set --global --export HOMEBREW_API_AUTO_UPDATE_SECS  3600  # 1 hour
 set --global --export HOMEBREW_AUTO_UPDATE_SECS     21600  # 6 hours
 set --global --export HOMEBREW_NO_ASK true
 
+if test (uname -s) = Darwin
+  set --global --export HOMEBREW_FORCE_BREWED_CA_CERTIFICATES true
+  set --global --export HOMEBREW_FORCE_BREWED_CURL true
+  set --global --export HOMEBREW_FORCE_BREWED_GIT true
+end
+
 set --global --export JUST_COLOR always
 set --global --export JUST_COMMAND_COLOR purple
 
